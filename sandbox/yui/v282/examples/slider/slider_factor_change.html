@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <title>DualSlider: Change the effective value range</title>
+    <link type="text/css" rel="stylesheet" href="../assets/dpSyntaxHighlighter.css">
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/3.2.0/build/cssgrids/grids-min.css">
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.8.2r1/build/slider/assets/skins/sam/slider.css">
+    <style type="text/css">
+        body {
+            font: normal .77em/1.4 Arial,sans-serif;
+        }
+
+        .origin {
+            display: block;
+            background: #795089;
+            padding: 1ex;
+            color: #fff;
+            text-align: right;
+            margin-bottom: 1em;
+        }
+        .markup {
+            padding-left: 100px;
+        }
+
+        #ticks {
+            width: 374px;
+            padding: 0;
+            margin: 0 0 3px -26px;
+            text-align: center;
+        }
+
+        #bg {
+            width: 320px;
+            margin-bottom: 1em;
+            background-image: url(long-slider-bg.gif);
+        }
+    </style>
+</head>
+<body class="yui-skin-sam">
+<a class="origin" href="http://stackoverflow.com/questions/4038654/yui-api-dual-slider-control-question">stackoverflow origin</a>
+<h1>Updating the value range of a DualSlider</h1>
+<h3>Challenge:</h3>
+<p>Change the range of calculated values associated with a DualSlider at run-time.</p>
+
+<h3>Solution:</h3>
+<div class="markup">
+    <ol id="ticks" class="yui3-g">
+        <li class="yui3-u-1-5">0</li>
+        <li class="yui3-u-1-5">2000</li>
+        <li class="yui3-u-1-5">4000</li>
+        <li class="yui3-u-1-5">6000</li>
+        <li class="yui3-u-1-5">10000</li>
+    </ol>
+    <div id="bg" class="yui-h-slider">
+        <div id="mint" class="yui-slider-thumb"><img src="http://yui.yahooapis.com/2.8.2r1/build/slider/assets/left-thumb.png"></div>
+        <div id="maxt" class="yui-slider-thumb"><img src="http://yui.yahooapis.com/2.8.2r1/build/slider/assets/right-thumb.png"></div>
+    </div>
+    <button id="zoomin">Zoom in!</button>
+    <button id="zoomout">Reset</button>
+    <p>Range: <em id="min">0</em> - <em id="max">10000</em>
+</div>
+
+<script src="http://yui.yahooapis.com/2.8.2r1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="http://yui.yahooapis.com/2.8.2r1/build/dragdrop/dragdrop.js"></script>
+<script src="http://yui.yahooapis.com/2.8.2r1/build/animation/animation.js"></script>
+<script src="http://yui.yahooapis.com/2.8.2r1/build/slider/slider.js"></script>
+<script>
+YAHOO.util.Event.onDOMReady(function() {
+
+    var Dom   = YAHOO.util.Dom,
+        Event = YAHOO.util.Event,
+
+        ticks      = Dom.get('ticks').getElementsByTagName('li'),
+        minDisplay = Dom.get('min'),
+        maxDisplay = Dom.get('max'),
+
+        SliderFactory    = YAHOO.widget.Slider,
+        slideRange       = 300,
+        slider;
+
+    // Create the Dual Slider
+    slider = SliderFactory.getHorizDualSlider('bg', 'mint', 'maxt', slideRange);
+
+
+    // Store the value range that will correspond to the min and max
+    // positions on the slider
+    slider.valueRange = [ 0, 10000 ];
+
+    // Add a generic conversion calculation to allow for range values changing.
+    slider._offsetToValue = function (pixelOffset) {
+        var min = this.valueRange[0],
+            max = this.valueRange[1];
+
+        return Math.round(pixelOffset * ((max - min) / slideRange) + min);
+    };
+
+
+    // Add some extra convenience APIs for getting the calculated thumb values
+    slider.getMinValue = function () {
+        return this._offsetToValue(this.minVal);
+    };
+
+    slider.getMaxValue = function () {
+        return this._offsetToValue(this.maxVal);
+    };
+
+
+
+    function updateUI(newMin, newMax) {
+        // Important step #1
+        // Update the valueRange property used for offset->value conversion
+        slider.valueRange = [ newMin, newMax ];
+
+        // Important part #2
+        // After adjusting the range, move the thumbs to the end points
+        slider.setValues(0, slideRange);
+
+        updateTicks();
+    }
+
+    function updateTicks() {
+        // Update the displayed tick mark values
+        var min = slider.valueRange[0],
+            max = slider.valueRange[1],
+            increment = Math.round((max - min) / ticks.length),
+            i, len;
+
+        ticks[0].innerHTML = min;
+        ticks[ticks.length - 1].innerHTML = max;
+
+        for (i = 1, len = ticks.length - 1; i < len; ++i) {
+            ticks[i].innerHTML = '';
+        }
+
+        setTimeout(function () {
+            for (i = 1, len = ticks.length - 1; i < len; ++i) {
+                ticks[i].innerHTML = min + (i * increment);
+            }
+        }, 250);
+    }
+
+    // Wire up the buttons to update the effective value range
+    Event.on('zoomin', 'click', function () {
+        updateUI(slider.getMinValue(), slider.getMaxValue());
+    });
+
+    Event.on('zoomout', 'click', function () {
+        updateUI(0, 10000);
+    });
+        
+    // Display the current min and max
+    slider.subscribe("change", function () {
+        minDisplay.innerHTML = slider.getMinValue();
+        maxDisplay.innerHTML = slider.getMaxValue();
+    });
+
+});
+</script>
+<script src="../assets/dpSyntaxHighlighter.js" ></script>
+<script src="../assets/dpSyntaxHighlightExample.js"></script>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1363351817" alt="setstats" border="0" width="1" height="1"></noscript>

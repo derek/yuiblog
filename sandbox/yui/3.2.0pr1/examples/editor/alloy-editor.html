@@ -1,0 +1,803 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>YUI Library Examples: Editor: YUI Editor with AlloyUI Toolbar</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    	<link rel="stylesheet" type="text/css" href="../../assets/yui.css" >
+
+<style>
+    /*Supplemental CSS for the YUI distribution*/
+    #custom-doc { width: 95%; min-width: 950px; }
+    #pagetitle {background-image: url(../../assets/bg_hd.gif);}
+/*    #pagetitle h1 {background-image: url(../../assets/title_h_bg.gif);}*/
+</style>
+
+<link rel="stylesheet" type="text/css" href="../../assets/dpSyntaxHighlighter.css">
+
+<!--there is no custom header content for this example-->
+
+<link type="text/css" rel="stylesheet" href="../../build/cssfonts/fonts-min.css" />
+<script type="text/javascript" src="../../build/yui/yui-min.js"></script>
+
+</head>
+<body id="yahoo-com" class="yui3-skin-sam  yui-skin-sam">
+<div id="custom-doc" class="yui-t2">
+<div id="hd">
+	<div id="ygunav">
+		<p>
+            <em>
+                <a href="http://developer.yahoo.com/yui/3/">YUI 3.x Home</a> <i> - </i>	
+            </em>
+		</p>
+		<form action="http://search.yahoo.com/search" id="sitesearchform">
+            <input name="vs" type="hidden" value="developer.yahoo.com">
+            <input name="vs" type="hidden" value="yuiblog.com">
+		    <div id="sitesearch">
+		    	<label for="searchinput">Site Search (YDN &amp; YUIBlog): </label>
+			    <input type="text" id="searchinput" name="p">
+			    <input type="submit" value="Search" id="searchsubmit" class="ygbt">
+		    </div>
+		</form>
+    </div>
+	<div id="ygma"><a href="../../"><img src="../../assets/logo.gif"  border="0" width="200" height="93"></a></div>
+	<div id="pagetitle"><h1>YUI Library Examples: Editor: YUI Editor with AlloyUI Toolbar</h1></div>
+</div>
+<div id="bd">
+
+
+	<div id="yui-main">
+		<div class="yui-b">
+		  <div class="yui-ge">
+			  <div class="yui-u first example" id="main">
+
+	<h2>Editor: YUI Editor with AlloyUI Toolbar</h2>
+
+	<div id="example" class="promo">
+	<div class="example-intro">
+	<p>This example uses the <a href="http://yuilibrary.com/gallery/show/aui-toolbar" title="YUI Library :: Gallery :: AlloyUI Toolbar">AlloyUI Toolbar module from the YUI 3 Gallery</a> to add a GUI to EditorBase.</p>
+	</div>	
+
+	<div class="module example-container  newWindow">
+			<div id="example-canvas" class="bd">
+
+		<p class="newWindowButton yui-skin-sam">
+        <span id="newWindowLink">
+            <span class="first-child">
+                <a href="alloy-editor_source.html" target="_blank">View example in new window.</a>
+            </span>
+        </span>	
+    </p>
+	
+		
+		</div>
+	</div>			
+	</div>
+		
+	<h3>Working with EditorBase</h3>
+<p><code>EditorBase</code> is not a fully functional Editor, it's simply the base utility under the hood that will be used to create an Editor. In this example
+we will show how to setup <code>EditorBase</code> and use the <a href="http://yuilibrary.com/gallery/show/aui-toolbar">AlloyUI Toolbar Gallery module</a> to interact with the it.</p>
+
+<h3>Setting up the HTML Source</h3>
+<p>The first step is to create the markup for our toolbar and our container for the Editor. Here we are creating a wrapper
+for the entire editor that includes a toolbar with Font Family and Font Size select lists and a container to render the Editor.</p>
+
+<div id="syntax-0f76e17aca086427103850dd1247f9f4" class="yui-syntax-highlight"><div class="numbers"><pre class="html4strict" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;editor_cont&quot;</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;toolbar&quot;</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">h2</span> <span class="kw3">tabindex</span><span class="sy0">=</span><span class="st0">&quot;-1&quot;</span>&gt;</span>Text Editing Tools<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h2</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">select</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;fontname&quot;</span>&gt;</span></div></li><li class="li2"><div class="de2">            <span class="sc2">&lt;<span class="kw2">option</span> selected&gt;</span> <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Arial<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Arial Black<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Comic Sans MS<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Courier New<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li2"><div class="de2">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Lucida Console<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Tahoma<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Times New Roman<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Trebuchet MS<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Verdana<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li2"><div class="de2">        <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">select</span>&gt;</span></div></li><li class="li1"><div class="de1">        <span class="sc2">&lt;<span class="kw2">select</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;fontsize&quot;</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> selected&gt;</span> <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;1&quot;</span>&gt;</span>10<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;2&quot;</span>&gt;</span>13<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li2"><div class="de2">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;3&quot;</span>&gt;</span>16<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;4&quot;</span>&gt;</span>18<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;5&quot;</span>&gt;</span>24<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;6&quot;</span>&gt;</span>32<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li1"><div class="de1">            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;7&quot;</span>&gt;</span>48<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span></div></li><li class="li2"><div class="de2">        <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">select</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li1"><div class="de1">    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;editor&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="html4strict" style="font-family:monospace;"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;editor_cont&quot;</span>&gt;</span>
+    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;toolbar&quot;</span>&gt;</span>
+        <span class="sc2">&lt;<span class="kw2">h2</span> <span class="kw3">tabindex</span><span class="sy0">=</span><span class="st0">&quot;-1&quot;</span>&gt;</span>Text Editing Tools<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">h2</span>&gt;</span>
+        <span class="sc2">&lt;<span class="kw2">select</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;fontname&quot;</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> selected&gt;</span> <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Arial<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Arial Black<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Comic Sans MS<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Courier New<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Lucida Console<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Tahoma<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Times New Roman<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Trebuchet MS<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span>&gt;</span>Verdana<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+        <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">select</span>&gt;</span>
+        <span class="sc2">&lt;<span class="kw2">select</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;fontsize&quot;</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> selected&gt;</span> <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;1&quot;</span>&gt;</span>10<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;2&quot;</span>&gt;</span>13<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;3&quot;</span>&gt;</span>16<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;4&quot;</span>&gt;</span>18<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;5&quot;</span>&gt;</span>24<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;6&quot;</span>&gt;</span>32<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+            <span class="sc2">&lt;<span class="kw2">option</span> <span class="kw3">value</span><span class="sy0">=</span><span class="st0">&quot;7&quot;</span>&gt;</span>48<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">option</span>&gt;</span>
+        <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">select</span>&gt;</span>
+    <span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span>
+    <span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;editor&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span>
+<span class="sc2">&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></pre></div><textarea id="syntax-0f76e17aca086427103850dd1247f9f4-plain"><div id="editor_cont">
+    <div id="toolbar">
+        <h2 tabindex="-1">Text Editing Tools</h2>
+        <select id="fontname">
+            <option selected> </option>
+            <option>Arial</option>
+            <option>Arial Black</option>
+            <option>Comic Sans MS</option>
+            <option>Courier New</option>
+            <option>Lucida Console</option>
+            <option>Tahoma</option>
+            <option>Times New Roman</option>
+            <option>Trebuchet MS</option>
+            <option>Verdana</option>
+        </select>
+        <select id="fontsize">
+            <option selected> </option>
+            <option value="1">10</option>
+            <option value="2">13</option>
+            <option value="3">16</option>
+            <option value="4">18</option>
+            <option value="5">24</option>
+            <option value="6">32</option>
+            <option value="7">48</option>
+        </select>
+    </div>
+    <div id="editor"></div>
+</div></textarea></div>
+<h3>Creating the Editor</h3>
+<p>In this step we are going to do the inital render of the Editor, set it's content and focus it when it's ready.</p>
+<div id="syntax-caa4895d54b78d129b0621616385f087" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1">YUI<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="kw2">use</span><span class="br0">&#40;</span><span class="st0">'editor'</span><span class="sy0">,</span> <span class="st0">'editor-lists'</span><span class="sy0">,</span> <span class="st0">'createlink-base'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>Y<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Create the Base Editor</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> editor <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">EditorBase</span><span class="br0">&#40;</span><span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">        content<span class="sy0">:</span> <span class="st0">'&lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; '</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Focusing the Editor when the frame is ready..</span></div></li><li class="li1"><div class="de1">    editor.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'frame:ready'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">this</span>.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Rendering the Editor.</span></div></li><li class="li1"><div class="de1">    editor.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#editor'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;">YUI<span class="br0">&#40;</span><span class="br0">&#41;</span>.<span class="kw2">use</span><span class="br0">&#40;</span><span class="st0">'editor'</span><span class="sy0">,</span> <span class="st0">'editor-lists'</span><span class="sy0">,</span> <span class="st0">'createlink-base'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>Y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+    <span class="co1">//Create the Base Editor</span>
+    <span class="kw2">var</span> editor <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">EditorBase</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+        content<span class="sy0">:</span> <span class="st0">'&lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; '</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="co1">//Focusing the Editor when the frame is ready..</span>
+    editor.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'frame:ready'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">this</span>.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="co1">//Rendering the Editor.</span>
+    editor.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#editor'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax-caa4895d54b78d129b0621616385f087-plain">YUI().use('editor', 'editor-lists', 'createlink-base', function(Y) {
+
+    //Create the Base Editor
+    var editor = new Y.EditorBase({
+        content: '<strong>This is <em>a test</em></strong> <strong>This is <em>a test</em></strong> '
+    });
+    //Focusing the Editor when the frame is ready..
+    editor.on('frame:ready', function() {
+        this.focus();
+    });
+    //Rendering the Editor.
+    editor.render('#editor');
+
+});</textarea></div>
+<h3>Adding the Toolbar</h3>
+<p>Now we need to add the AlloyUI Toolbar Gallery module and render it with the buttons we want to add. Then we will listen for a button click event and call the <code>execCommand</code> method on the Editor to invoke that action.</p>
+<div id="syntax-0b34bdfdb4023c85bba5fb1444200d9e" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1">YUIConfig.<span class="me1">modules</span> <span class="sy0">=</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="st0">'gallery-aui-skin-base'</span><span class="sy0">:</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/gallery-aui-skin-base-min.css'</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">        type<span class="sy0">:</span> <span class="st0">'css'</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="st0">'gallery-aui-skin-classic'</span><span class="sy0">:</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-classic/css/gallery-aui-skin-classic-min.css'</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">        type<span class="sy0">:</span> <span class="st0">'css'</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">        requires<span class="sy0">:</span> <span class="br0">&#91;</span><span class="st0">'gallery-aui-skin-base'</span><span class="br0">&#93;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">YUI<span class="br0">&#40;</span>YUIConfig<span class="br0">&#41;</span>.<span class="kw2">use</span><span class="br0">&#40;</span><span class="st0">'gallery-aui-toolbar'</span><span class="sy0">,</span> <span class="st0">'editor'</span><span class="sy0">,</span> <span class="st0">'editor-lists'</span><span class="sy0">,</span> <span class="st0">'createlink-base'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>Y<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Create the Base Editor</span></div></li><li class="li1"><div class="de1">    <span class="co1">//SNIPPED FROM ABOVE</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Creating a new AlloyUI Toolbar</span></div></li><li class="li2"><div class="de2">    <span class="kw2">var</span> toolbar <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">Toolbar</span><span class="br0">&#40;</span><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">			activeState<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">			children<span class="sy0">:</span> <span class="br0">&#91;</span></div></li><li class="li1"><div class="de1">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'bold'</span> <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'italic'</span> <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'underline'</span> <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'createlink'</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">			<span class="br0">&#93;</span></div></li><li class="li1"><div class="de1">		<span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">	<span class="br0">&#41;</span>.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#toolbar'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Listening for a button click on the Toolbar and firing an execCommand</span></div></li><li class="li1"><div class="de1">    toolbar.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'buttonitem:click'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">target</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;">YUIConfig.<span class="me1">modules</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+    <span class="st0">'gallery-aui-skin-base'</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/gallery-aui-skin-base-min.css'</span><span class="sy0">,</span>
+        type<span class="sy0">:</span> <span class="st0">'css'</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="st0">'gallery-aui-skin-classic'</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-classic/css/gallery-aui-skin-classic-min.css'</span><span class="sy0">,</span>
+        type<span class="sy0">:</span> <span class="st0">'css'</span><span class="sy0">,</span>
+        requires<span class="sy0">:</span> <span class="br0">&#91;</span><span class="st0">'gallery-aui-skin-base'</span><span class="br0">&#93;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+&nbsp;
+YUI<span class="br0">&#40;</span>YUIConfig<span class="br0">&#41;</span>.<span class="kw2">use</span><span class="br0">&#40;</span><span class="st0">'gallery-aui-toolbar'</span><span class="sy0">,</span> <span class="st0">'editor'</span><span class="sy0">,</span> <span class="st0">'editor-lists'</span><span class="sy0">,</span> <span class="st0">'createlink-base'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>Y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+    <span class="co1">//Create the Base Editor</span>
+    <span class="co1">//SNIPPED FROM ABOVE</span>
+&nbsp;
+    <span class="co1">//Creating a new AlloyUI Toolbar</span>
+    <span class="kw2">var</span> toolbar <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">Toolbar</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+			activeState<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span>
+			children<span class="sy0">:</span> <span class="br0">&#91;</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'bold'</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'italic'</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'underline'</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'createlink'</span> <span class="br0">&#125;</span>
+			<span class="br0">&#93;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#41;</span>.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#toolbar'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Listening for a button click on the Toolbar and firing an execCommand</span>
+    toolbar.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'buttonitem:click'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">target</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax-0b34bdfdb4023c85bba5fb1444200d9e-plain">YUIConfig.modules = {
+    'gallery-aui-skin-base': {
+        fullpath: 'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/gallery-aui-skin-base-min.css',
+        type: 'css'
+    },
+    'gallery-aui-skin-classic': {
+        fullpath: 'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-classic/css/gallery-aui-skin-classic-min.css',
+        type: 'css',
+        requires: ['gallery-aui-skin-base']
+    }
+};
+
+
+YUI(YUIConfig).use('gallery-aui-toolbar', 'editor', 'editor-lists', 'createlink-base', function(Y) {
+
+    //Create the Base Editor
+    //SNIPPED FROM ABOVE
+
+    //Creating a new AlloyUI Toolbar
+    var toolbar = new Y.Toolbar({
+			activeState: true,
+			children: [
+				{ icon: 'bold' },
+				{ icon: 'italic' },
+				{ icon: 'underline' },
+				{ icon: 'createlink' }
+			]
+		}
+	).render('#toolbar');
+
+    //Listening for a button click on the Toolbar and firing an execCommand
+    toolbar.on('buttonitem:click', function(e) {
+        var cmd = e.target.get('icon');
+        editor.focus();
+        var ex_return = editor.execCommand(cmd, '');
+        
+    });
+    
+});</textarea></div>
+<h3>Hooking up the Events</h3>
+<p>First we will listen for a <code>nodeChange</code> event from the Editor (scoped to 2 DOM events) and call a method 
+called <code>updateButtons</code>, which will update the toolbar's state to reflect that of the Editor. We will also attach a
+listener to the select lists to update the font family/size in the Editor.</p>
+
+<div id="syntax-c6e39b65d67e9dde0106a3aa08bb1f3d" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Create the Base Editor</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> editor <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">EditorBase</span><span class="br0">&#40;</span><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        content<span class="sy0">:</span> <span class="st0">'&lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; '</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Hookup the Toolbar changes</span></div></li><li class="li1"><div class="de1">    editor.<span class="me1">after</span><span class="br0">&#40;</span><span class="st0">'nodeChange'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="co1">//Scoping the toolbar update to only a couple nodeChange events.</span></div></li><li class="li1"><div class="de1">        <span class="co1">//So it doesn't happen too often</span></div></li><li class="li2"><div class="de2">        <span class="kw1">switch</span> <span class="br0">&#40;</span>e.<span class="me1">changedType</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">            <span class="kw1">case</span> <span class="st0">'keyup'</span><span class="sy0">:</span></div></li><li class="li1"><div class="de1">            <span class="kw1">case</span> <span class="st0">'mousedown'</span><span class="sy0">:</span></div></li><li class="li1"><div class="de1">                updateButtons<span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Caching a reference to the options</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> f_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontname option'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">    <span class="kw2">var</span> s_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontsize option'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Updating the toolbar with the current Editor state</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> updateButtons <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> tar <span class="sy0">=</span> e.<span class="me1">changedNode</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">if</span> <span class="br0">&#40;</span>tar<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">            <span class="kw2">var</span> cmds <span class="sy0">=</span> e.<span class="me1">commands</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            <span class="co1">//Resetting the buttons to their proper states based on the commands from the event</span></div></li><li class="li1"><div class="de1">            toolbar.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>b<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">                <span class="kw2">var</span> st <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="kw1">if</span> <span class="br0">&#40;</span>cmds<span class="br0">&#91;</span>b.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                    st <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">                b.<span class="me1">StateInteraction</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'active'</span><span class="sy0">,</span> st<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            <span class="kw2">var</span> fname <span class="sy0">=</span> e.<span class="me1">fontFamily</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">            size <span class="sy0">=</span> e.<span class="me1">fontSize</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2">            <span class="co1">//Updating the font family select</span></div></li><li class="li1"><div class="de1">            f_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">            f_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="kw1">if</span> <span class="br0">&#40;</span>val <span class="sy0">===</span> fname.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            <span class="co1">//Updating the font size select</span></div></li><li class="li2"><div class="de2">            s_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">            size <span class="sy0">=</span> size.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'px'</span><span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">            s_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">                    txt <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'text'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">                <span class="kw1">if</span> <span class="br0">&#40;</span>size <span class="sy0">===</span> txt<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Listening for the change event on the 2 select boxes</span></div></li><li class="li1"><div class="de1">    Y.<span class="me1">delegate</span><span class="br0">&#40;</span><span class="st0">'change'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'id'</span><span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">            val <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> val<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="sy0">,</span> <span class="st0">'#toolbar'</span><span class="sy0">,</span> <span class="st0">'select'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2">&nbsp;</div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;">&nbsp;
+    <span class="co1">//Create the Base Editor</span>
+    <span class="kw2">var</span> editor <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">EditorBase</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+        content<span class="sy0">:</span> <span class="st0">'&lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; '</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="co1">//Hookup the Toolbar changes</span>
+    editor.<span class="me1">after</span><span class="br0">&#40;</span><span class="st0">'nodeChange'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="co1">//Scoping the toolbar update to only a couple nodeChange events.</span>
+        <span class="co1">//So it doesn't happen too often</span>
+        <span class="kw1">switch</span> <span class="br0">&#40;</span>e.<span class="me1">changedType</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">case</span> <span class="st0">'keyup'</span><span class="sy0">:</span>
+            <span class="kw1">case</span> <span class="st0">'mousedown'</span><span class="sy0">:</span>
+                updateButtons<span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">break</span><span class="sy0">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Caching a reference to the options</span>
+    <span class="kw2">var</span> f_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontname option'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw2">var</span> s_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontsize option'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Updating the toolbar with the current Editor state</span>
+    <span class="kw2">var</span> updateButtons <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw2">var</span> tar <span class="sy0">=</span> e.<span class="me1">changedNode</span><span class="sy0">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>tar<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw2">var</span> cmds <span class="sy0">=</span> e.<span class="me1">commands</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">//Resetting the buttons to their proper states based on the commands from the event</span>
+            toolbar.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>b<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw2">var</span> st <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>cmds<span class="br0">&#91;</span>b.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                    st <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+                <span class="br0">&#125;</span>
+                b.<span class="me1">StateInteraction</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'active'</span><span class="sy0">,</span> st<span class="br0">&#41;</span><span class="sy0">;</span>
+            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+            <span class="kw2">var</span> fname <span class="sy0">=</span> e.<span class="me1">fontFamily</span><span class="sy0">,</span>
+            size <span class="sy0">=</span> e.<span class="me1">fontSize</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">//Updating the font family select</span>
+            f_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            f_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>val <span class="sy0">===</span> fname.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">//Updating the font size select</span>
+            s_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            size <span class="sy0">=</span> size.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'px'</span><span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            s_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span>
+                    txt <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'text'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>size <span class="sy0">===</span> txt<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Listening for the change event on the 2 select boxes</span>
+    Y.<span class="me1">delegate</span><span class="br0">&#40;</span><span class="st0">'change'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'id'</span><span class="br0">&#41;</span><span class="sy0">,</span>
+            val <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> val<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span> <span class="st0">'#toolbar'</span><span class="sy0">,</span> <span class="st0">'select'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+&nbsp;</pre></div><textarea id="syntax-c6e39b65d67e9dde0106a3aa08bb1f3d-plain">
+    //Create the Base Editor
+    var editor = new Y.EditorBase({
+        content: '<strong>This is <em>a test</em></strong> <strong>This is <em>a test</em></strong> '
+    });
+    //Hookup the Toolbar changes
+    editor.after('nodeChange', function(e) {
+        //Scoping the toolbar update to only a couple nodeChange events.
+        //So it doesn't happen too often
+        switch (e.changedType) {
+            case 'keyup':
+            case 'mousedown':
+                updateButtons(e);
+                break;
+        }
+    });
+
+    //Caching a reference to the options
+    var f_options = Y.all('#fontname option');
+    var s_options = Y.all('#fontsize option');
+
+    //Updating the toolbar with the current Editor state
+    var updateButtons = function(e) {
+        var tar = e.changedNode;
+        if (tar) {
+            var cmds = e.commands;
+            
+            //Resetting the buttons to their proper states based on the commands from the event
+            toolbar.each(function(b) {
+                var st = false;
+                if (cmds[b.get('icon')]) {
+                    st = true;
+                }
+                b.StateInteraction.set('active', st);
+            });
+
+            var fname = e.fontFamily,
+            size = e.fontSize;
+
+            //Updating the font family select
+            f_options.item(0).set('selected', true);
+            f_options.each(function(v) {
+                var val = v.get('value').toLowerCase();
+                if (val === fname.toLowerCase()) {
+                    v.set('selected', true);
+                }
+            });
+
+            //Updating the font size select
+            s_options.item(0).set('selected', true);
+            size = size.replace('px', '');
+            s_options.each(function(v) {
+                var val = v.get('value').toLowerCase(),
+                    txt = v.get('text');
+                if (size === txt) {
+                    v.set('selected', true);
+                }
+            });
+        }
+    };
+
+    //Listening for the change event on the 2 select boxes
+    Y.delegate('change', function(e) {
+        var cmd = e.currentTarget.get('id'),
+            val = e.currentTarget.get('value');
+        editor.focus();
+        var ex_return = editor.execCommand(cmd, val);
+    }, '#toolbar', 'select');
+    
+</textarea></div>
+<h3>Making look pretty</h3>
+<p>Here is the CSS used in this example to make the toolbar and the Editor look similar to the YUI 2 SimpleEditor.</p>
+
+<div id="syntax-82d95ed4257ba87eb586eb2fbef70875" class="yui-syntax-highlight"><div class="numbers"><pre class="css" style="font-family:monospace;"><ol><li class="li1"><div class="de1">    <span class="re0">#editor_cont</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">width</span><span class="sy0">:</span> <span class="re3">600px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">border</span><span class="sy0">:</span> <span class="re3">1px</span> <span class="kw2">solid</span> <span class="re0">#999</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin</span><span class="sy0">:</span> <span class="re3">2em</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#editor</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">height</span><span class="sy0">:</span> <span class="re3">265px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">border-bottom</span><span class="sy0">:</span> <span class="re3">1px</span> <span class="kw2">solid</span> <span class="re0">#999</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background-color</span><span class="sy0">:</span> <span class="re0">#F2F2F2</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">min-height</span><span class="sy0">:</span> <span class="re3">25px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">position</span><span class="sy0">:</span> <span class="kw2">relative</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="re0">#toolbar</span> select <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">position</span><span class="sy0">:</span> <span class="kw2">relative</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">top</span><span class="sy0">:</span> <span class="re3">-4px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin-right</span><span class="sy0">:</span> <span class="re3">7px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="re0">#fontname</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin-left</span><span class="sy0">:</span> <span class="re3">7px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background</span><span class="sy0">:</span> <span class="kw2">url</span><span class="br0">&#40;</span><span class="st0">&quot;http://yui.yahooapis.com/2.8.1/build/editor/assets/skins/sam/editor-sprite.gif&quot;</span><span class="br0">&#41;</span> <span class="kw2">no-repeat</span> <span class="kw2">scroll</span> <span class="re3">30px</span> <span class="re3">30px</span> <span class="kw2">transparent</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-bold</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background-position</span><span class="sy0">:</span> <span class="nu0">0</span> <span class="re3">-1px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-italic</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">background-position</span><span class="sy0">:</span><span class="nu0">0</span> <span class="re3">-37px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-underline</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background-position</span><span class="sy0">:</span><span class="nu0">0</span> <span class="re3">-73px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-createlink</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background-position</span><span class="sy0">:</span><span class="nu0">0</span> <span class="re3">-794px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="re1">.yui3-state-default</span><span class="sy0">,</span> </div></li><li class="li1"><div class="de1">        <span class="re0">#toolbar</span> .yui3-state-active<span class="sy0">,</span></div></li><li class="li2"><div class="de2">        <span class="re0">#toolbar</span> <span class="re1">.yui3-state-hover</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin-left</span><span class="sy0">:</span> <span class="re3">-1px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">border-color</span><span class="sy0">:</span> <span class="re0">#808080</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background</span><span class="sy0">:</span><span class="kw2">url</span><span class="br0">&#40;</span><span class="st0">&quot;http://yui.yahooapis.com/2.8.1/build/assets/skins/sam/sprite.png&quot;</span><span class="br0">&#41;</span> <span class="kw2">repeat-x</span> <span class="kw2">scroll</span> <span class="nu0">0</span> <span class="nu0">0</span> <span class="kw2">transparent</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="re0">#toolbar</span> <span class="re1">.yui3-state-active</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background-position</span><span class="sy0">:</span> <span class="nu0">0</span> <span class="re3">-1700px</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> <span class="re1">.yui3-state-hover</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background-position</span><span class="sy0">:</span> <span class="nu0">0</span> <span class="re3">-1300px</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="re0">#toolbar</span> h2 <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">letter-spacing</span><span class="sy0">:</span><span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin</span><span class="sy0">:</span><span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">color</span><span class="sy0">:</span><span class="re0">#000000</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">font-size</span><span class="sy0">:</span><span class="re3"><span class="nu0">100</span>%</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">font-weight</span><span class="sy0">:</span><span class="kw2">bold</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin</span><span class="sy0">:</span> <span class="nu0">0</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">margin-bottom</span><span class="sy0">:</span> <span class="re3">7px</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">padding</span><span class="sy0">:</span> <span class="re3">0.3em</span> <span class="re3">1em</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">text-align</span><span class="sy0">:</span><span class="kw1">left</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw1">background</span><span class="sy0">:</span><span class="kw2">url</span><span class="br0">&#40;</span><span class="st0">&quot;http://yui.yahooapis.com/2.8.1/build/assets/skins/sam/sprite.png&quot;</span><span class="br0">&#41;</span> <span class="kw2">repeat-x</span> <span class="kw2">scroll</span> <span class="nu0">0</span> <span class="re3">-206px</span> <span class="kw2">transparent</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="css" style="font-family:monospace;">    <span class="re0">#editor_cont</span> <span class="br0">&#123;</span>
+        <span class="kw1">width</span><span class="sy0">:</span> <span class="re3">600px</span><span class="sy0">;</span>
+        <span class="kw1">border</span><span class="sy0">:</span> <span class="re3">1px</span> <span class="kw2">solid</span> <span class="re0">#999</span><span class="sy0">;</span>
+        <span class="kw1">margin</span><span class="sy0">:</span> <span class="re3">2em</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#editor</span> <span class="br0">&#123;</span>
+        <span class="kw1">height</span><span class="sy0">:</span> <span class="re3">265px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="br0">&#123;</span>
+        <span class="kw1">border-bottom</span><span class="sy0">:</span> <span class="re3">1px</span> <span class="kw2">solid</span> <span class="re0">#999</span><span class="sy0">;</span>
+        <span class="kw1">background-color</span><span class="sy0">:</span> <span class="re0">#F2F2F2</span><span class="sy0">;</span>
+        <span class="kw1">min-height</span><span class="sy0">:</span> <span class="re3">25px</span><span class="sy0">;</span>
+        <span class="kw1">position</span><span class="sy0">:</span> <span class="kw2">relative</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> select <span class="br0">&#123;</span>
+        <span class="kw1">position</span><span class="sy0">:</span> <span class="kw2">relative</span><span class="sy0">;</span>
+        <span class="kw1">top</span><span class="sy0">:</span> <span class="re3">-4px</span><span class="sy0">;</span>
+        <span class="kw1">margin-right</span><span class="sy0">:</span> <span class="re3">7px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#fontname</span> <span class="br0">&#123;</span>
+        <span class="kw1">margin-left</span><span class="sy0">:</span> <span class="re3">7px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon</span> <span class="br0">&#123;</span>
+        <span class="kw1">background</span><span class="sy0">:</span> <span class="kw2">url</span><span class="br0">&#40;</span><span class="st0">&quot;http://yui.yahooapis.com/2.8.1/build/editor/assets/skins/sam/editor-sprite.gif&quot;</span><span class="br0">&#41;</span> <span class="kw2">no-repeat</span> <span class="kw2">scroll</span> <span class="re3">30px</span> <span class="re3">30px</span> <span class="kw2">transparent</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-bold</span> <span class="br0">&#123;</span>
+        <span class="kw1">background-position</span><span class="sy0">:</span> <span class="nu0">0</span> <span class="re3">-1px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-italic</span> <span class="br0">&#123;</span>
+        <span class="kw1">background-position</span><span class="sy0">:</span><span class="nu0">0</span> <span class="re3">-37px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-underline</span> <span class="br0">&#123;</span>
+        <span class="kw1">background-position</span><span class="sy0">:</span><span class="nu0">0</span> <span class="re3">-73px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-icon-createlink</span> <span class="br0">&#123;</span>
+        <span class="kw1">background-position</span><span class="sy0">:</span><span class="nu0">0</span> <span class="re3">-794px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-state-default</span><span class="sy0">,</span> 
+        <span class="re0">#toolbar</span> .yui3-state-active<span class="sy0">,</span>
+        <span class="re0">#toolbar</span> <span class="re1">.yui3-state-hover</span> <span class="br0">&#123;</span>
+        <span class="kw1">margin-left</span><span class="sy0">:</span> <span class="re3">-1px</span><span class="sy0">;</span>
+        <span class="kw1">border-color</span><span class="sy0">:</span> <span class="re0">#808080</span><span class="sy0">;</span>
+        <span class="kw1">background</span><span class="sy0">:</span><span class="kw2">url</span><span class="br0">&#40;</span><span class="st0">&quot;http://yui.yahooapis.com/2.8.1/build/assets/skins/sam/sprite.png&quot;</span><span class="br0">&#41;</span> <span class="kw2">repeat-x</span> <span class="kw2">scroll</span> <span class="nu0">0</span> <span class="nu0">0</span> <span class="kw2">transparent</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-state-active</span> <span class="br0">&#123;</span>
+        <span class="kw1">background-position</span><span class="sy0">:</span> <span class="nu0">0</span> <span class="re3">-1700px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+    <span class="re0">#toolbar</span> <span class="re1">.yui3-state-hover</span> <span class="br0">&#123;</span>
+        <span class="kw1">background-position</span><span class="sy0">:</span> <span class="nu0">0</span> <span class="re3">-1300px</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span>
+&nbsp;
+    <span class="re0">#toolbar</span> h2 <span class="br0">&#123;</span>
+        <span class="kw1">letter-spacing</span><span class="sy0">:</span><span class="nu0">0</span><span class="sy0">;</span>
+        <span class="kw1">margin</span><span class="sy0">:</span><span class="nu0">0</span><span class="sy0">;</span>
+        <span class="kw1">color</span><span class="sy0">:</span><span class="re0">#000000</span><span class="sy0">;</span>
+        <span class="kw1">font-size</span><span class="sy0">:</span><span class="re3"><span class="nu0">100</span>%</span><span class="sy0">;</span>
+        <span class="kw1">font-weight</span><span class="sy0">:</span><span class="kw2">bold</span><span class="sy0">;</span>
+        <span class="kw1">margin</span><span class="sy0">:</span> <span class="nu0">0</span><span class="sy0">;</span>
+        <span class="kw1">margin-bottom</span><span class="sy0">:</span> <span class="re3">7px</span><span class="sy0">;</span>
+        <span class="kw1">padding</span><span class="sy0">:</span> <span class="re3">0.3em</span> <span class="re3">1em</span><span class="sy0">;</span>
+        <span class="kw1">text-align</span><span class="sy0">:</span><span class="kw1">left</span><span class="sy0">;</span>
+        <span class="kw1">background</span><span class="sy0">:</span><span class="kw2">url</span><span class="br0">&#40;</span><span class="st0">&quot;http://yui.yahooapis.com/2.8.1/build/assets/skins/sam/sprite.png&quot;</span><span class="br0">&#41;</span> <span class="kw2">repeat-x</span> <span class="kw2">scroll</span> <span class="nu0">0</span> <span class="re3">-206px</span> <span class="kw2">transparent</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span></pre></div><textarea id="syntax-82d95ed4257ba87eb586eb2fbef70875-plain">    #editor_cont {
+        width: 600px;
+        border: 1px solid #999;
+        margin: 2em;
+    }
+    #editor {
+        height: 265px;
+    }
+    #toolbar {
+        border-bottom: 1px solid #999;
+        background-color: #F2F2F2;
+        min-height: 25px;
+        position: relative;
+    }
+    #toolbar select {
+        position: relative;
+        top: -4px;
+        margin-right: 7px;
+    }
+    #fontname {
+        margin-left: 7px;
+    }
+    #toolbar .yui3-icon {
+        background: url("http://yui.yahooapis.com/2.8.1/build/editor/assets/skins/sam/editor-sprite.gif") no-repeat scroll 30px 30px transparent;
+    }
+    #toolbar .yui3-icon-bold {
+        background-position: 0 -1px;
+    }
+    #toolbar .yui3-icon-italic {
+        background-position:0 -37px;
+    }
+    #toolbar .yui3-icon-underline {
+        background-position:0 -73px;
+    }
+    #toolbar .yui3-icon-createlink {
+        background-position:0 -794px;
+    }
+    #toolbar .yui3-state-default, 
+        #toolbar .yui3-state-active,
+        #toolbar .yui3-state-hover {
+        margin-left: -1px;
+        border-color: #808080;
+        background:url("http://yui.yahooapis.com/2.8.1/build/assets/skins/sam/sprite.png") repeat-x scroll 0 0 transparent;
+    }
+    #toolbar .yui3-state-active {
+        background-position: 0 -1700px;
+    }
+    #toolbar .yui3-state-hover {
+        background-position: 0 -1300px;
+    }
+    
+    #toolbar h2 {
+        letter-spacing:0;
+        margin:0;
+        color:#000000;
+        font-size:100%;
+        font-weight:bold;
+        margin: 0;
+        margin-bottom: 7px;
+        padding: 0.3em 1em;
+        text-align:left;
+        background:url("http://yui.yahooapis.com/2.8.1/build/assets/skins/sam/sprite.png") repeat-x scroll 0 -206px transparent;
+    }</textarea></div>
+<h3>Full Javascript Source</h3>
+<div id="syntax-e36c2dc807f4b9b0f712fcbf965afd4f" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> YUIConfig <span class="sy0">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">YUIConfig.<span class="me1">modules</span> <span class="sy0">=</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="st0">'gallery-aui-skin-base'</span><span class="sy0">:</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/gallery-aui-skin-base-min.css'</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">        type<span class="sy0">:</span> <span class="st0">'css'</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="st0">'gallery-aui-skin-classic'</span><span class="sy0">:</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-classic/css/gallery-aui-skin-classic-min.css'</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">        type<span class="sy0">:</span> <span class="st0">'css'</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">        requires<span class="sy0">:</span> <span class="br0">&#91;</span><span class="st0">'gallery-aui-skin-base'</span><span class="br0">&#93;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1">YUI<span class="br0">&#40;</span>YUIConfig<span class="br0">&#41;</span>.<span class="kw2">use</span><span class="br0">&#40;</span><span class="st0">'gallery-aui-toolbar'</span><span class="sy0">,</span> <span class="st0">'node'</span><span class="sy0">,</span> <span class="st0">'editor'</span><span class="sy0">,</span> <span class="st0">'editor-lists'</span><span class="sy0">,</span> <span class="st0">'createlink-base'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>Y<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Create the Base Editor</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> editor <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">EditorBase</span><span class="br0">&#40;</span><span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">        content<span class="sy0">:</span> <span class="st0">'&lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; '</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Hookup the Toolbar changes</span></div></li><li class="li1"><div class="de1">    editor.<span class="me1">after</span><span class="br0">&#40;</span><span class="st0">'nodeChange'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="co1">//Scoping the toolbar update to only a couple nodeChange events.</span></div></li><li class="li2"><div class="de2">        <span class="co1">//So it doesn't happen too often</span></div></li><li class="li1"><div class="de1">        <span class="kw1">switch</span> <span class="br0">&#40;</span>e.<span class="me1">changedType</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">            <span class="kw1">case</span> <span class="st0">'keyup'</span><span class="sy0">:</span></div></li><li class="li1"><div class="de1">            <span class="kw1">case</span> <span class="st0">'mousedown'</span><span class="sy0">:</span></div></li><li class="li1"><div class="de1">                updateButtons<span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">                <span class="kw1">break</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Focusing the Editor when the frame is ready..</span></div></li><li class="li1"><div class="de1">    editor.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'frame:ready'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">this</span>.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="co1">//Rendering the Editor.</span></div></li><li class="li1"><div class="de1">    editor.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#editor'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2">    <span class="co1">//Creating a new AlloyUI Toolbar</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> toolbar <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">Toolbar</span><span class="br0">&#40;</span><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">			activeState<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">			children<span class="sy0">:</span> <span class="br0">&#91;</span></div></li><li class="li1"><div class="de1">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'bold'</span> <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'italic'</span> <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'underline'</span> <span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'createlink'</span> <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">			<span class="br0">&#93;</span></div></li><li class="li1"><div class="de1">		<span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">	<span class="br0">&#41;</span>.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#toolbar'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Listening for a button click on the Toolbar and firing an execCommand</span></div></li><li class="li1"><div class="de1">    toolbar.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'buttonitem:click'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">target</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2">    <span class="co1">//Listening for the change event on the 2 select boxes</span></div></li><li class="li1"><div class="de1">    Y.<span class="me1">delegate</span><span class="br0">&#40;</span><span class="st0">'change'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'id'</span><span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">            val <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> val<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="sy0">,</span> <span class="st0">'#toolbar'</span><span class="sy0">,</span> <span class="st0">'select'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Caching a reference to the options</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> f_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontname option'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">    <span class="kw2">var</span> s_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontsize option'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    <span class="co1">//Updating the toolbar with the current Editor state</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> updateButtons <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        <span class="kw2">var</span> tar <span class="sy0">=</span> e.<span class="me1">changedNode</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        <span class="kw1">if</span> <span class="br0">&#40;</span>tar<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">            <span class="kw2">var</span> cmds <span class="sy0">=</span> e.<span class="me1">commands</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            <span class="co1">//Resetting the buttons to their proper states based on the commands from the event</span></div></li><li class="li1"><div class="de1">            toolbar.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>b<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">                <span class="kw2">var</span> st <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="kw1">if</span> <span class="br0">&#40;</span>cmds<span class="br0">&#91;</span>b.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                    st <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">                b.<span class="me1">StateInteraction</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'active'</span><span class="sy0">,</span> st<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            <span class="kw2">var</span> fname <span class="sy0">=</span> e.<span class="me1">fontFamily</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">            size <span class="sy0">=</span> e.<span class="me1">fontSize</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li2"><div class="de2">            <span class="co1">//Updating the font family select</span></div></li><li class="li1"><div class="de1">            f_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">            f_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="kw1">if</span> <span class="br0">&#40;</span>val <span class="sy0">===</span> fname.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li2"><div class="de2">                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">            <span class="co1">//Updating the font size select</span></div></li><li class="li2"><div class="de2">            s_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">            size <span class="sy0">=</span> size.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'px'</span><span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">            s_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">                    txt <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'text'</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">                <span class="kw1">if</span> <span class="br0">&#40;</span>size <span class="sy0">===</span> txt<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">                <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="kw2">var</span> YUIConfig <span class="sy0">=</span> <span class="br0">&#123;</span><span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+YUIConfig.<span class="me1">modules</span> <span class="sy0">=</span> <span class="br0">&#123;</span>
+    <span class="st0">'gallery-aui-skin-base'</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/gallery-aui-skin-base-min.css'</span><span class="sy0">,</span>
+        type<span class="sy0">:</span> <span class="st0">'css'</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="st0">'gallery-aui-skin-classic'</span><span class="sy0">:</span> <span class="br0">&#123;</span>
+        fullpath<span class="sy0">:</span> <span class="st0">'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-classic/css/gallery-aui-skin-classic-min.css'</span><span class="sy0">,</span>
+        type<span class="sy0">:</span> <span class="st0">'css'</span><span class="sy0">,</span>
+        requires<span class="sy0">:</span> <span class="br0">&#91;</span><span class="st0">'gallery-aui-skin-base'</span><span class="br0">&#93;</span>
+    <span class="br0">&#125;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+&nbsp;
+YUI<span class="br0">&#40;</span>YUIConfig<span class="br0">&#41;</span>.<span class="kw2">use</span><span class="br0">&#40;</span><span class="st0">'gallery-aui-toolbar'</span><span class="sy0">,</span> <span class="st0">'node'</span><span class="sy0">,</span> <span class="st0">'editor'</span><span class="sy0">,</span> <span class="st0">'editor-lists'</span><span class="sy0">,</span> <span class="st0">'createlink-base'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>Y<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+&nbsp;
+    <span class="co1">//Create the Base Editor</span>
+    <span class="kw2">var</span> editor <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">EditorBase</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+        content<span class="sy0">:</span> <span class="st0">'&lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; &lt;strong&gt;This is &lt;em&gt;a test&lt;/em&gt;&lt;/strong&gt; '</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="co1">//Hookup the Toolbar changes</span>
+    editor.<span class="me1">after</span><span class="br0">&#40;</span><span class="st0">'nodeChange'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="co1">//Scoping the toolbar update to only a couple nodeChange events.</span>
+        <span class="co1">//So it doesn't happen too often</span>
+        <span class="kw1">switch</span> <span class="br0">&#40;</span>e.<span class="me1">changedType</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw1">case</span> <span class="st0">'keyup'</span><span class="sy0">:</span>
+            <span class="kw1">case</span> <span class="st0">'mousedown'</span><span class="sy0">:</span>
+                updateButtons<span class="br0">&#40;</span>e<span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">break</span><span class="sy0">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="co1">//Focusing the Editor when the frame is ready..</span>
+    editor.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'frame:ready'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw1">this</span>.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="co1">//Rendering the Editor.</span>
+    editor.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#editor'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Creating a new AlloyUI Toolbar</span>
+    <span class="kw2">var</span> toolbar <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">Toolbar</span><span class="br0">&#40;</span><span class="br0">&#123;</span>
+			activeState<span class="sy0">:</span> <span class="kw2">true</span><span class="sy0">,</span>
+			children<span class="sy0">:</span> <span class="br0">&#91;</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'bold'</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'italic'</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'underline'</span> <span class="br0">&#125;</span><span class="sy0">,</span>
+				<span class="br0">&#123;</span> icon<span class="sy0">:</span> <span class="st0">'createlink'</span> <span class="br0">&#125;</span>
+			<span class="br0">&#93;</span>
+		<span class="br0">&#125;</span>
+	<span class="br0">&#41;</span>.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">'#toolbar'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Listening for a button click on the Toolbar and firing an execCommand</span>
+    toolbar.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">'buttonitem:click'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">target</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Listening for the change event on the 2 select boxes</span>
+    Y.<span class="me1">delegate</span><span class="br0">&#40;</span><span class="st0">'change'</span><span class="sy0">,</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw2">var</span> cmd <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'id'</span><span class="br0">&#41;</span><span class="sy0">,</span>
+            val <span class="sy0">=</span> e.<span class="me1">currentTarget</span>.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        editor.<span class="kw3">focus</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="kw2">var</span> ex_return <span class="sy0">=</span> editor.<span class="me1">execCommand</span><span class="br0">&#40;</span>cmd<span class="sy0">,</span> val<span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span><span class="sy0">,</span> <span class="st0">'#toolbar'</span><span class="sy0">,</span> <span class="st0">'select'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Caching a reference to the options</span>
+    <span class="kw2">var</span> f_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontname option'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="kw2">var</span> s_options <span class="sy0">=</span> Y.<span class="me1">all</span><span class="br0">&#40;</span><span class="st0">'#fontsize option'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    <span class="co1">//Updating the toolbar with the current Editor state</span>
+    <span class="kw2">var</span> updateButtons <span class="sy0">=</span> <span class="kw2">function</span><span class="br0">&#40;</span>e<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        <span class="kw2">var</span> tar <span class="sy0">=</span> e.<span class="me1">changedNode</span><span class="sy0">;</span>
+        <span class="kw1">if</span> <span class="br0">&#40;</span>tar<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+            <span class="kw2">var</span> cmds <span class="sy0">=</span> e.<span class="me1">commands</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">//Resetting the buttons to their proper states based on the commands from the event</span>
+            toolbar.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>b<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw2">var</span> st <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>cmds<span class="br0">&#91;</span>b.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'icon'</span><span class="br0">&#41;</span><span class="br0">&#93;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                    st <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+                <span class="br0">&#125;</span>
+                b.<span class="me1">StateInteraction</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'active'</span><span class="sy0">,</span> st<span class="br0">&#41;</span><span class="sy0">;</span>
+            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+            <span class="kw2">var</span> fname <span class="sy0">=</span> e.<span class="me1">fontFamily</span><span class="sy0">,</span>
+            size <span class="sy0">=</span> e.<span class="me1">fontSize</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">//Updating the font family select</span>
+            f_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            f_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>val <span class="sy0">===</span> fname.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+            <span class="co1">//Updating the font size select</span>
+            s_options.<span class="kw1">item</span><span class="br0">&#40;</span><span class="nu0">0</span><span class="br0">&#41;</span>.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            size <span class="sy0">=</span> size.<span class="me1">replace</span><span class="br0">&#40;</span><span class="st0">'px'</span><span class="sy0">,</span> <span class="st0">''</span><span class="br0">&#41;</span><span class="sy0">;</span>
+            s_options.<span class="me1">each</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span>v<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                <span class="kw2">var</span> val <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'value'</span><span class="br0">&#41;</span>.<span class="me1">toLowerCase</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">,</span>
+                    txt <span class="sy0">=</span> v.<span class="me1">get</span><span class="br0">&#40;</span><span class="st0">'text'</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="kw1">if</span> <span class="br0">&#40;</span>size <span class="sy0">===</span> txt<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+                    v.<span class="me1">set</span><span class="br0">&#40;</span><span class="st0">'selected'</span><span class="sy0">,</span> <span class="kw2">true</span><span class="br0">&#41;</span><span class="sy0">;</span>
+                <span class="br0">&#125;</span>
+            <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax-e36c2dc807f4b9b0f712fcbf965afd4f-plain">var YUIConfig = {};
+
+YUIConfig.modules = {
+    'gallery-aui-skin-base': {
+        fullpath: 'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/gallery-aui-skin-base-min.css',
+        type: 'css'
+    },
+    'gallery-aui-skin-classic': {
+        fullpath: 'http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-classic/css/gallery-aui-skin-classic-min.css',
+        type: 'css',
+        requires: ['gallery-aui-skin-base']
+    }
+};
+
+
+YUI(YUIConfig).use('gallery-aui-toolbar', 'node', 'editor', 'editor-lists', 'createlink-base', function(Y) {
+
+    //Create the Base Editor
+    var editor = new Y.EditorBase({
+        content: '<strong>This is <em>a test</em></strong> <strong>This is <em>a test</em></strong> '
+    });
+    //Hookup the Toolbar changes
+    editor.after('nodeChange', function(e) {
+        //Scoping the toolbar update to only a couple nodeChange events.
+        //So it doesn't happen too often
+        switch (e.changedType) {
+            case 'keyup':
+            case 'mousedown':
+                updateButtons(e);
+                break;
+        }
+    });
+    //Focusing the Editor when the frame is ready..
+    editor.on('frame:ready', function() {
+        this.focus();
+    });
+    //Rendering the Editor.
+    editor.render('#editor');
+
+    //Creating a new AlloyUI Toolbar
+    var toolbar = new Y.Toolbar({
+			activeState: true,
+			children: [
+				{ icon: 'bold' },
+				{ icon: 'italic' },
+				{ icon: 'underline' },
+				{ icon: 'createlink' }
+			]
+		}
+	).render('#toolbar');
+    
+    //Listening for a button click on the Toolbar and firing an execCommand
+    toolbar.on('buttonitem:click', function(e) {
+        var cmd = e.target.get('icon');
+        editor.focus();
+        var ex_return = editor.execCommand(cmd, '');
+        
+    });
+    
+    //Listening for the change event on the 2 select boxes
+    Y.delegate('change', function(e) {
+        var cmd = e.currentTarget.get('id'),
+            val = e.currentTarget.get('value');
+        editor.focus();
+        var ex_return = editor.execCommand(cmd, val);
+    }, '#toolbar', 'select');
+    
+    //Caching a reference to the options
+    var f_options = Y.all('#fontname option');
+    var s_options = Y.all('#fontsize option');
+
+    //Updating the toolbar with the current Editor state
+    var updateButtons = function(e) {
+        var tar = e.changedNode;
+        if (tar) {
+            var cmds = e.commands;
+            
+            //Resetting the buttons to their proper states based on the commands from the event
+            toolbar.each(function(b) {
+                var st = false;
+                if (cmds[b.get('icon')]) {
+                    st = true;
+                }
+                b.StateInteraction.set('active', st);
+            });
+
+            var fname = e.fontFamily,
+            size = e.fontSize;
+
+            //Updating the font family select
+            f_options.item(0).set('selected', true);
+            f_options.each(function(v) {
+                var val = v.get('value').toLowerCase();
+                if (val === fname.toLowerCase()) {
+                    v.set('selected', true);
+                }
+            });
+
+            //Updating the font size select
+            s_options.item(0).set('selected', true);
+            size = size.replace('px', '');
+            s_options.each(function(v) {
+                var val = v.get('value').toLowerCase(),
+                    txt = v.get('text');
+                if (size === txt) {
+                    v.set('selected', true);
+                }
+            });
+        }
+    };
+    
+});</textarea></div>				</div>
+				<div class="yui-u sidebar">
+					
+				
+					<div id="examples" class="mod box4">
+                        <div class="hd">
+						<h4>
+    Editor Examples:</h4>
+                        </div>
+						<div class="bd">
+							<ul>
+								<li class='selected'><a href='../editor/alloy-editor.html'>YUI Editor with AlloyUI Toolbar</a></li>							</ul>
+						</div>
+					</div>
+					
+					<div class="mod box4">
+                        <div class="hd">
+						<h4>More Editor Resources:</h4>
+                        </div>
+                        <div class="bd">
+						<ul>
+							<!-- <li><a href="http://developer.yahoo.com/yui/editor/">User's Guide</a> (external)</li> -->
+<li><a href="../../api/module_editor.html">API Documentation</a></li></ul>
+                        </div>
+					</div>
+			  </div>
+		</div>
+		
+		</div>
+	</div>
+
+
+<div class="yui-b toc3" id="tocWrapper">
+<!-- TABLE OF CONTENTS -->
+<div id="toc">
+	
+<ul>
+<li class="sect first">YUI 3 Resources</li><li class="item"><a title="YUI 3 -- Yahoo! User Interface (YUI) Library" href="http://developer.yahoo.com/yui/3/">YUI 3 Web Site</a></li><li class="item"><a title="Examples of every YUI utility and control in action" href="../../examples/">YUI 3 Examples</a></li><li class="item"><a title="Instantly searchable API documentation for the entire YUI library." href="../../api/">YUI 3 API Docs</a></li><li class="item"><a title="YUI 3 Dependency Configurator -- configure your custom YUI implementation" href="http://developer.yahoo.com/yui/3/configurator/index.html">YUI 3 Dependency Configurator</a></li><li class="item"><a title="The YUI 3 Forum on YUILibrary.com" href="http://yuilibrary.com/forum/viewforum.php?f=15">YUI 3 Forums (external)</a></li><li class="item"><a title="Found a bug or a missing feature? Let us know on YUILibrary.com." href="http://developer.yahoo.com/yui/articles/reportingbugs/">Bug Reports/Feature Requests</a></li><li class="item"><a title="YUI is free and open, offered under a BSD license." href="http://developer.yahoo.com/yui/license.html">YUI License</a></li><li class="item"><a title="Download and fork the YUI project on GitHub" href="http://github.com/yui">YUI on Github</a></li><li class="item"><a title="The Yahoo! User Interface Blog" href="http://yuiblog.com">YUI Blog (external)</a></li><li class="sect">YUI 3 Core - Examples</li><li class="item"><a title="YUI Global Object - Functional Examples" href="../../examples/yui/index.html">YUI Global Object</a></li><li class="item"><a title="Event - Functional Examples" href="../../examples/event/index.html">Event</a></li><li class="item"><a title="Node - Functional Examples" href="../../examples/node/index.html">Node</a></li><li class="sect">YUI 3 Component Infrastructure - Examples</li><li class="item"><a title="Attribute - Functional Examples" href="../../examples/attribute/index.html">Attribute</a></li><li class="item"><a title="Plugin - Functional Examples" href="../../examples/plugin/index.html">Plugin</a></li><li class="item"><a title="Widget - Functional Examples" href="../../examples/widget/index.html">Widget</a></li><li class="sect">YUI 3 Utilities - Examples</li><li class="item"><a title="Animation - Functional Examples" href="../../examples/anim/index.html">Animation</a></li><li class="item"><a title="AsyncQueue - Functional Examples" href="../../examples/async-queue/index.html">AsyncQueue</a></li><li class="item"><a title="Cache - Functional Examples" href="../../examples/cache/index.html">Cache</a></li><li class="item"><a title="Cookie - Functional Examples" href="../../examples/cookie/index.html">Cookie</a></li><li class="item"><a title="DataSchema - Functional Examples" href="../../examples/dataschema/index.html">DataSchema <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="DataSource - Functional Examples" href="../../examples/datasource/index.html">DataSource <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="DataType - Functional Examples" href="../../examples/datatype/index.html">DataType <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Drag &amp; Drop - Functional Examples" href="../../examples/dd/index.html">Drag &amp; Drop</a></li><li class="selected "><a title="Editor - Functional Examples" href="../../examples/editor/index.html">Editor</a></li><li class="item"><a title="Get - Functional Examples" href="../../examples/get/index.html">Get</a></li><li class="item"><a title="History - Functional Examples" href="../../examples/history/index.html">History <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="IO - Functional Examples" href="../../examples/io/index.html">IO</a></li><li class="item"><a title="ImageLoader - Functional Examples" href="../../examples/imageloader/index.html">ImageLoader</a></li><li class="item"><a title="Internationalization - Functional Examples" href="../../examples/intl/index.html">Internationalization <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="JSON (JavaScript Object Notation) - Functional Examples" href="../../examples/json/index.html">JSON</a></li><li class="item"><a title="JSONP (JSON with Padding) - Functional Examples" href="../../examples/jsonp/index.html">JSONP <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Stylesheet - Functional Examples" href="../../examples/stylesheet/index.html">Stylesheet</a></li><li class="item"><a title="Sortable - Functional Examples" href="../../examples/sortable/index.html">Sortable <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Transition - Functional Examples" href="../../examples/transition/index.html">Transition <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Uploader - Functional Examples" href="../../examples/uploader/index.html">Uploader <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="YQL Query - Functional Examples" href="../../examples/yql/index.html">YQL Query <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Widgets - Examples</li><li class="item"><a title="Overlay - Functional Examples" href="../../examples/overlay/index.html">Overlay <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="ScrollView - Functional Examples" href="../../examples/scrollview/index.html">ScrollView <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Slider - Functional Examples" href="../../examples/slider/index.html">Slider <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Tabview - Functional Examples" href="../../examples/tabview/index.html">Tabview <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Node Plugins - Examples</li><li class="item"><a title="FocusManager Node Plugin - Functional Examples" href="../../examples/node-focusmanager/index.html">FocusManager Node Plugin <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="MenuNav Node Plugin - Functional Examples" href="../../examples/node-menunav/index.html">MenuNav Node Plugin <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 CSS - Examples</li><li class="item"><a title="YUI CSS Reset - Functional Examples" href="../../examples/cssreset/index.html">CSS Reset</a></li><li class="item"><a title="YUI Fonts - Functional Examples" href="../../examples/cssfonts/index.html">CSS Fonts</a></li><li class="item"><a title="YUI Base - Functional Examples" href="../../examples/cssbase/index.html">CSS Base</a></li><li class="item"><a title="YUI Grids - Functional Examples" href="../../examples/cssgrids/index.html">CSS Grids <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Developer Tools - Examples</li><li class="item"><a title="Console - Functional Examples" href="../../examples/console/index.html">Console <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Console Filters Plugin- Functional Examples" href="../../examples/console-filters/index.html">Plugin.ConsoleFilters <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Profiler - Functional Examples" href="../../examples/profiler/index.html">Profiler</a></li><li class="item"><a title="Test - Functional Examples" href="../../examples/test/index.html">Test</a></li><li class="sect">Other Useful YUI 3 Resources</li><li class="item"><a title="Answers to Frequently Asked Questions about the YUI Library" href="http://developer.yahoo.com/yui/articles/faq/">YUI FAQ (external)</a></li><li class="item"><a title="Yahoo!'s philosophy of Graded Browser Support" href="http://developer.yahoo.com/yui/articles/gbs/">Graded Browser Support (external)</a></li><li class="item"><a title="Videos and podcasts from the YUI Team and from the Yahoo! frontend engineering community." href="http://developer.yahoo.com/yui/theater/">YUI Theater (external)</a></li></ul>
+</div>
+</div>
+	</div><!--closes bd-->
+
+	<div id="ft">
+        <p class="first">Copyright &copy; 2010 Yahoo! Inc. All rights reserved.</p>
+        <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
+            <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
+            <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
+            <a href="http://careers.yahoo.com/">Job Openings</a></p>
+	</div>
+</div>
+<script language="javascript"> 
+var yuiConfig = {};
+</script>
+<script src="../../assets/syntax.js"></script>
+<script src="../../assets/dpSyntaxHighlighter.js"></script>
+<script language="javascript"> 
+dp.SyntaxHighlighter.HighlightAll('code'); 
+</script>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1409712686" alt="setstats" border="0" width="1" height="1"></noscript><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

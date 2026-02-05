@@ -110,7 +110,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -331,8 +331,8 @@
 
 						<div class="entry">
 							
-<p class="authorbox"><em><strong>About the author:</strong><img src="http://yuiblog.com/assets/autofusion/josh-lizarraga.jpg" alt="Josh Lizarraga" width="90" height="127" align="right"><a href="http://freshcutsd.com/" target="_blank">Josh Lizarraga</a> is a YUI Contributor and frontend developer located in San Diego, California. He uses YUI to build rich frontend interfaces and Ajax applications for <a href="http://www.autofusion.com/" target="_blank">Autofusion, Inc.</a>, a San Diego firm that offers web solutions to the automotive industry in the United States and Canada. When he&#8217;s not on the clock, Josh enjoys contributing to the YUI project with test cases and <a href="http://yuilibrary.com/gallery/" target="_blank">Gallery</a> modules.</em></p>
-<p><img src="http://yuiblog.com/assets/autofusion/researchpro-1.jpg" alt="ResearchPro Home Screen" width="510" height="355"></p>
+<p class="authorbox"><em><strong>About the author:</strong><img src="/blog-archive/assets/autofusion/josh-lizarraga.jpg" alt="Josh Lizarraga" width="90" height="127" align="right"><a href="http://freshcutsd.com/" target="_blank">Josh Lizarraga</a> is a YUI Contributor and frontend developer located in San Diego, California. He uses YUI to build rich frontend interfaces and Ajax applications for <a href="http://www.autofusion.com/" target="_blank">Autofusion, Inc.</a>, a San Diego firm that offers web solutions to the automotive industry in the United States and Canada. When he&#8217;s not on the clock, Josh enjoys contributing to the YUI project with test cases and <a href="http://yuilibrary.com/gallery/" target="_blank">Gallery</a> modules.</em></p>
+<p><img src="/blog-archive/assets/autofusion/researchpro-1.jpg" alt="ResearchPro Home Screen" width="510" height="355"></p>
 <h3>About the Project</h3>
 <p>In addition to serving industry professionals, Autofusion provides end-user information resources via our <a href="http://www.carprices.com/" target="_blank">CarPrices.com</a> sister-site. &#8220;ResearchPro&#8221; is the name we&#8217;ve bestowed on our brand new car research application, which allows the user to quickly and easily find everything there is to know about a potential new car purchase.</p>
 <p>Researching a new car before you buy is typically a daunting yet necessary experience, and the current options available to consumers are not very user-friendly. ResearchPro attempts to remedy these issues with a simple, guided approach to car research. We also take the experience one step further, allowing customers to receive a free quote on their dream car from local dealers.</p>
@@ -341,7 +341,7 @@
 <p>Over the years we have used just about every YUI 2 component there is in both our client web properties and our internal tools. YUI&#8217;s proven track record and incredible documentation really set it apart from the other libraries we&#8217;ve worked with. The refinements to the library offered by <a href="http://developer.yahoo.com/yui/3/" target="_blank">YUI 3</a> made it an easy choice for this project.</p>
 <h3>How YUI is Utilized in the Project</h3>
 <p>ResearchPro makes use of several YUI 3 components, namely <a href="http://developer.yahoo.com/yui/3/io/" target="_blank">IO</a>, <a href="http://developer.yahoo.com/yui/3/json/" target="_blank">JSON</a>, <a href="http://developer.yahoo.com/yui/3/node/" target="_blank">Node</a>, <a href="http://developer.yahoo.com/yui/3/event/" target="_blank">Event</a>, <a href="http://developer.yahoo.com/yui/3/anim/" target="_blank">Animation</a>, and even the beta <a href="http://developer.yahoo.com/yui/3/slider/" target="_blank">Slider</a> widget. We&#8217;re also using the <strong>selector-css3</strong> and <strong>event-mouseenter</strong> modules, as well as a custom module that handles the JSON communication with the backend.</p>
-<p><img src="http://yuiblog.com/assets/autofusion/researchpro-2.jpg" alt="ResearchPro YUI 3 Slider Usage" width="510" height="355"></p>
+<p><img src="/blog-archive/assets/autofusion/researchpro-2.jpg" alt="ResearchPro YUI 3 Slider Usage" width="510" height="355"></p>
 <h3>Challenges and Benefits of Using YUI 3</h3>
 <p>Migrating from YUI 2 to YUI 3 was both the largest challenge and the largest benefit during ResearchPro&#8217;s development. Working with Node instances instead of DOM nodes directly can take some adjusting to at first, but we quickly found that this excellent abstraction greatly reduces the amount and complexity of the code for a given task. Likewise, the chainability of YUI 3 methods offers some great syntactic sugar that is hard to live without.</p>
 <p>The primary challenge of the YUI 3 migration was and continues to be beta bugs. The first YUI 3 beta was released a few months before we started development, and we took that opportunity to start this project with the new codeline. We wanted to be familiar with YUI 3 once it replaces YUI 2 in our workflow down the road. During development, we discovered and reported several bugs, some of which are still being worked out today.</p>
@@ -426,8 +426,8 @@
 });</pre>
 <p>In this example, the script waits until the user focuses on one of the form input elements to start loading assets that will be used in the form&#8217;s target page. This will improve the loading time of the page once the user submits the form.</p>
 <p><strong><a href="http://caridy.github.com/examples/gallery-preload/profiler-entry.html">Check the differences</a> between accessing a page directly, and preloading a set of YUI 2/YUI 3 components ahead of time:</strong></p>
-<p><img src="http://yuiblog.com/assets/preload/without-cache.jpg" /></p>
-<p><img src="http://yuiblog.com/assets/preload/with-cache.jpg" /></p>
+<p><img src="/blog-archive/assets/preload/without-cache.jpg" /></p>
+<p><img src="/blog-archive/assets/preload/with-cache.jpg" /></p>
 <p>Including few lines of codes to preload this set of components allows this page to load four times faster. No changes are required in the logic of your application, and no change is required in the target page&#8230;an inexpensive and effective performance tweak.</p>
 <p><strong>One more feature:</strong></p>
 <p>We also included a more advanced feature for those who want to be less aggressive. The module includes a built-in integration with <a href="http://yuilibrary.com/gallery/show/idletimer">Nicholas Zakas’ Idle Timer module</a>; Idle Timer allows us to preload files only if the user is inactive for a given period of time. Here is an example:</p>
@@ -458,14 +458,14 @@
 						<div class="entry">
 							<div class="interview">
 <div class="intro"><em></p>
-<p><img src="http://yuiblog.com/assets/demeter/nikoni.png" width="100" height="129" hspace="10" vspace="5" align="right" alt="Niko Ni of GenMC Demeter"> <a href="http://github.com/bluepower" target="_blank" title="Niko Ni">Niko Ni</a> is an experienced Frontend Engineer with over 5 years of web development experience located in Shanghai, China. He is currently working for <a href="http://www.genesys.com/" target="_blank">Genesys Conferencing</a> (now part of <a href="http://www.intercall.com" target="_blank">InterCall</a>). He has been concentrating on building Ajax apps based on JavaEE or LAMP and contributing to some <a href="http://github.com/bluepower" target="_blank">open source</a> <a href="http://cz9908.com/showcase/?item=showcase-list&#038;p=1" target="_blank">projects</a> during his free time.
+<p><img src="/blog-archive/assets/demeter/nikoni.png" width="100" height="129" hspace="10" vspace="5" align="right" alt="Niko Ni of GenMC Demeter"> <a href="http://github.com/bluepower" target="_blank" title="Niko Ni">Niko Ni</a> is an experienced Frontend Engineer with over 5 years of web development experience located in Shanghai, China. He is currently working for <a href="http://www.genesys.com/" target="_blank">Genesys Conferencing</a> (now part of <a href="http://www.intercall.com" target="_blank">InterCall</a>). He has been concentrating on building Ajax apps based on JavaEE or LAMP and contributing to some <a href="http://github.com/bluepower" target="_blank">open source</a> <a href="http://cz9908.com/showcase/?item=showcase-list&#038;p=1" target="_blank">projects</a> during his free time.
 </p>
 <p></em></div>
-<p><img src="http://yuiblog.com/assets/demeter/genmcdemeter-image1.png" width="510" height="315"></p>
+<p><img src="/blog-archive/assets/demeter/genmcdemeter-image1.png" width="510" height="315"></p>
 <h3>Tell us a little about your project.</h3>
 <p>&#8220;Demeter&#8221; is the codename for a recent web 2.0 application we built which provides powerful solutions to web conferencing, ad hoc meeting, and account management. Currently we have two major product suites: &#8220;Meeting Center&#8221; and &#8220;Admin Module&#8221;.</p>
 <p>Although it&#8217;s still in RC phrase with no public access to view it,  I have extracted a <a href="http://cz9908.com/blog/Niko-weblog-labs/lab-YUI/for-example/yui2-datatable-simple-extention/demo-edit-properties.html" target="_blank">prototype of the Admin Module</a> that demonstrates the management of portal properties.</p>
-<p><img src="http://yuiblog.com/assets/demeter/genmcdemeter-image2.png" width="510" height="310"></p>
+<p><img src="/blog-archive/assets/demeter/genmcdemeter-image2.png" width="510" height="310"></p>
 <h3>Which components of the YUI Library are used in your project?</h3>
 <p>When we were initially trying to decide which JS framework and UI library to use, there were three things that sold us on YUI: the great documentation, the wide variety of mature widgets, and the BSD license, so I introduced YUI to my company. The following modules are used in our project: </p>
 <ul>
@@ -551,7 +551,7 @@
    });
 </pre>
 <p>Then a cellClickEvent handler detects the underlying type of data value being edited and calls one of the customized cell editors.</p>
-<p><img src="http://yuiblog.com/assets/demeter/genmcdemeter-image3.png" width="510" height="381"></p>
+<p><img src="/blog-archive/assets/demeter/genmcdemeter-image3.png" width="510" height="381"></p>
 <p>With our server architecture consisting of the Apache Struts framework and the application container Weblogic, we found that YUI plays a good companion role as the &#8220;Clientside-Controller&#8221; and works well with Struts action results as a dynamic datasource.</p>
 <pre>
 &lt;%@ page pageEncoding="UTF-8" contentType="application/json; charset=UTF-8" %&gt;
@@ -855,7 +855,7 @@ icon.png
 					
 
 						<div class="entry">
-							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=dahl-node"><img src="http://yuiblog.com/assets/dahl-node-blog-5-5-10.jpg" alt="Ryan Dahl's Talk at the BayJax event at Yahoo! on May 5th, 2010." width="510"></a></p>
+							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=dahl-node"><img src="/blog-archive/assets/dahl-node-blog-5-5-10.jpg" alt="Ryan Dahl's Talk at the BayJax event at Yahoo! on May 5th, 2010." width="510"></a></p>
 <p>Two weeks ago, Yahoo! hosted a <a href="www.meetup.com/BayJax/" target="_blank">BayJax</a> meetup dedicated to <a href="http://www.nodejs.org/" target="_blank">NodeJS</a> (since the meetup coincided with Cinco de Mayo, we named it &#8216;Cinco de Node&#8217;). <a href="http://github.com/ry" target="_blank">Ryan Dahl</a>, the creator of NodeJS, gave a talk on the project and was very kind to let us record his presentation for YUI Theater.</p>
 <p>P.S. The video opens with a 30-second glimpse into the Cinco the Mayo celebrations at Yahoo!</p>
 <p>If the video embed below doesn&#8217;t show up correctly in your RSS reader of choice, be sure to <a href="http://developer.yahoo.com/yui/theater/video.php?v=dahl-node">click through to watch the high-resolution version of the video on YUI Theater</a>.</p>
@@ -885,7 +885,7 @@ icon.png
 					
 
 						<div class="entry">
-							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=insua-dom"><img src="http://yuiblog.com/assets/insua-dom-blog-5-5-10.jpg" alt="Elijah Insua's Talk at the BayJax event at Yahoo! on May 5th, 2010." width="510"></a></p>
+							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=insua-dom"><img src="/blog-archive/assets/insua-dom-blog-5-5-10.jpg" alt="Elijah Insua's Talk at the BayJax event at Yahoo! on May 5th, 2010." width="510"></a></p>
 <p><a href="http://www.tmpvar.com/" target="_blank">Elijah Insua</a>, a star developer from <a href="http://arc90.com/"  target="_blank">Arc90</a>, presented his work on <a href="http://github.com/tmpvar/jsdom" target="_blank">jsdom</a> at the Cinco de Node BayJax event at Yahoo!. Elijah was presenting from Brooklyn via Skype (so please forgive the less-than-ideal video and audio quality), and graciously allowed us to capture his talk for YUI Theater.</p>
 <p>If the video embed below doesn&#8217;t show up correctly in your RSS reader of choice, be sure to <a href="http://developer.yahoo.com/yui/theater/video.php?v=insua-dom">click through to watch the high-resolution version of the video on YUI Theater</a>.</p>
 <p>
@@ -927,107 +927,107 @@ icon.png
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

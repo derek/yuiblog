@@ -258,7 +258,7 @@ YAHOO.Cyril.ContactList.prototype.validateNumContacts = function(value) {
 	contact_list.config.setProperty('num_contacts', 1);
 	alert(contact_list.getProperty('num_contacts));
 </textarea> <h3 id="custom_events">Custom Events</h3>
-			<p>YAHOO.util.Event provides a powerful mechanism for you to define custom events which can be triggered by your Controls and listened to by any other javascript function. This allows you to put in practice <a href="/blog-archive/blog/2007/01/17/event-plan/">Event-Driven Development</a> in a simple, lightweight way.<p>The first thing the YAHOO.widget.Module.prototype.init function does is to call the "initEvents" method. This means you can define any custom event you wish to use for your Control by defining this "initEvents" function as part of your object's prototype:<textarea class="JScript" cols="100" name="code" rows="30">
+			<p>YAHOO.util.Event provides a powerful mechanism for you to define custom events which can be triggered by your Controls and listened to by any other javascript function. This allows you to put in practice <a href="/yuiblog/blog/2007/01/17/event-plan/">Event-Driven Development</a> in a simple, lightweight way.<p>The first thing the YAHOO.widget.Module.prototype.init function does is to call the "initEvents" method. This means you can define any custom event you wish to use for your Control by defining this "initEvents" function as part of your object's prototype:<textarea class="JScript" cols="100" name="code" rows="30">
 /**
 * Initializes the custom events for YAHOO.Cyril.ContactList. This method gets called by YAHOO.widget.Module.prototype.init
 * @method initEvents
@@ -317,7 +317,7 @@ this.initEvent.fire(YAHOO.Cyril.ContactList);
 	// create/modify DOM elements (ie. previous/next links)
 	this.initDOMManipulations();
 </textarea> <h4>initEventListeners</h4>
-					<p>I call a function named initEventListeners sets up any Event listener needed for the control to function. Note this can be regular DOM Events (set up using YAHOO.util.Event.addListener) or YUI Custom Events (using YAHOO.util.CustomEvent.prototype.subscribe).<p>In our example we will use <a href="/blog-archive/blog/2007/01/17/event-plan/">event delegation</a> (<a href="http://developer.yahoo.com/yui/examples/event/event-delegation.html">see this Event Utility example for more on event delegation in YUI</a>) and set up a listener for the "click" event on our Control. The listener function will then perform the appropriate logic if the target of the Event was a pagination link.<textarea class="JScript" cols="100" name="code" rows="30">
+					<p>I call a function named initEventListeners sets up any Event listener needed for the control to function. Note this can be regular DOM Events (set up using YAHOO.util.Event.addListener) or YUI Custom Events (using YAHOO.util.CustomEvent.prototype.subscribe).<p>In our example we will use <a href="/yuiblog/blog/2007/01/17/event-plan/">event delegation</a> (<a href="http://developer.yahoo.com/yui/examples/event/event-delegation.html">see this Event Utility example for more on event delegation in YUI</a>) and set up a listener for the "click" event on our Control. The listener function will then perform the appropriate logic if the target of the Event was a pagination link.<textarea class="JScript" cols="100" name="code" rows="30">
 	// initialise event delegation
 	this.initEventListeners();
 </textarea> <h4>Default behaviour</h4>

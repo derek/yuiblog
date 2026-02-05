@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+        <title>Radio Buttons</title>
+
+
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/fonts/fonts-min.css" />
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/button/assets/skins/sam/button.css" />
+
+
+
+        <style type="text/css">
+        
+            #button-example-form fieldset, 
+            #button-example-form fieldset div {
+        
+                border: 2px groove #ccc;
+                margin: .5em;
+                padding: .5em;
+        
+            }
+        
+            #button-example-form-postdata {
+            
+                border: dashed 1px #666;
+                background-color: #ccc;
+                padding: 1em;
+            
+            }
+        
+            #button-example-form-postdata h2 {
+            
+                margin: 0 0 .5em 0;
+                padding: 0;
+                border: none;
+            
+            }
+            
+            .yui-radio-button button {
+            
+                width: 10em;
+            
+            }
+        
+        </style>
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/element/element-beta-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/button/button-beta-min.js"></script>
+
+        <script type="text/javascript">
+        
+            YAHOO.example.init = function () {
+        
+                // "checkedButtonChange" event handler for each ButtonGroup instance
+        
+                function onCheckedButtonChange(p_oEvent) {
+        
+                    if(p_oEvent.prevValue) {
+        
+                        YAHOO.log(p_oEvent.prevValue.get("name"), "info", "example4");
+                    
+                    }
+                    
+                    if(p_oEvent.newValue) {
+        
+                        YAHOO.log(p_oEvent.newValue.get("name"), "info", "example4");
+        
+                    }
+                
+                }
+        
+        
+                // "contentready" event handler for the "radiobuttonsfrommarkup" <fieldset>    
+        
+                YAHOO.util.Event.onContentReady("radiobuttonsfrommarkup", function () {
+        
+                    var oButtonGroup1 = new YAHOO.widget.ButtonGroup("buttongroup1");
+                    oButtonGroup1.on("checkedButtonChange", onCheckedButtonChange);
+        
+                    var oButtonGroup2 = new YAHOO.widget.ButtonGroup("buttongroup2");
+                    oButtonGroup2.on("checkedButtonChange", onCheckedButtonChange);
+                
+                
+                });
+        
+        
+                // Create a ButtonGroup without using existing markup
+        
+                var oButtonGroup3 = new YAHOO.widget.ButtonGroup({ id:  "buttongroup3", name:  "radiofield3", container:  "radiobuttonsfromjavascript" });
+        
+                oButtonGroup3.addButtons([
+        
+                    { label: "Radio 9", value: "Radio 9", checked: true },
+                    { label: "Radio 10", value: "Radio 10" }, 
+                    { label: "Radio 11", value: "Radio 11" }, 
+                    { label: "Radio 12", value: "Radio 12" }
+        
+                ]);
+                
+                oButtonGroup3.on("checkedButtonChange", onCheckedButtonChange);
+            
+            } ();
+        
+        </script>
+
+
+    </head>
+
+    <body class=" yui-skin-sam">
+
+        <form id="button-example-form" name="button-example-form" method="post" action="#">
+        
+            <fieldset id="radiobuttons">
+                <legend>Radio Buttons</legend>
+        
+                <fieldset id="radiobuttonsfrommarkup">
+        
+                    <legend>From Markup</legend>
+        
+                    <div id="buttongroup1" class="yui-buttongroup">
+                        <input id="radio1" type="radio" name="radiofield1" value="Radio 1" checked>
+                        <input id="radio2" type="radio" name="radiofield1" value="Radio 2">
+                        <input id="radio3" type="radio" name="radiofield1" value="Radio 3">
+                        <input id="radio4" type="radio" name="radiofield1" value="Radio 4">
+                    </div>
+        
+                    <div id="buttongroup2" class="yui-buttongroup">
+                        <span id="radio5" class="yui-button yui-radio-button yui-button-checked"><span class="first-child"><button type="button" name="radiofield2" value="Radio 5">Radio 5</button></span></span>
+                        <span id="radio6" class="yui-button yui-radio-button"><span class="first-child"><button type="button" name="radiofield2" value="Radio 6">Radio 6</button></span></span>
+                        <span id="radio7" class="yui-button yui-radio-button"><span class="first-child"><button type="button" name="radiofield2" value="Radio 7">Radio 7</button></span></span>
+                        <span id="radio8" class="yui-button yui-radio-button"><span class="first-child"><button type="button" name="radiofield2" value="Radio 8">Radio 8</button></span></span>
+                    </div>
+        
+                </fieldset>
+        
+                <fieldset id="radiobuttonsfromjavascript">
+                    <legend>From JavaScript</legend>
+                </fieldset>
+        
+            </fieldset>
+        
+        </form>
+
+    </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1246938195" alt="setstats" border="0" width="1" height="1"></noscript>

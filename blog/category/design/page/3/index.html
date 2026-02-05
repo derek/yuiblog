@@ -110,7 +110,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -330,7 +330,7 @@
 					
 
 						<div class="entry">
-							<p><a href='http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity ' title='signing into Buzz'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/08/continuity.png' alt='Signing into Buzz' /></a></p>
+							<p><a href='http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity ' title='signing into Buzz'><img src='/yuiblog/blog/wp-content/uploads/2008/08/continuity.png' alt='Signing into Buzz' /></a></p>
 <p>Just recently I published a new pattern, <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity">Sign-in Continuity</a>, to the <a href="http://developer.yahoo.com/ypatterns/">Yahoo! Design Pattern Library</a>. It could be filed under &#8220;Engagement,&#8221; a category we have internally but that hasn&#8217;t appeared yet here, but I decided to put it in the &#8220;Social&#8221; category instead.</p>
 <p>The pattern is about making sure that a user&#8217;s momentum isn&#8217;t robbed when they want to participate in a community and have to be challenged for their login credentials in order to sign their contribution. The crux of the pattern is to preserve context and make sure the user is inconvenienced as minimally as possible so that the <em>continuity</em> of the experience is preserved.</p>
 <p>This raises a legitimate question: What&#8217;s &#8220;social&#8221; about sign-in? I have two reasons for classifying this pattern that way. </p>
@@ -357,7 +357,7 @@
 <p> Some users still don&#8217;t expect desktop-like interaction from web applications.  I remember logging into my Yahoo! Mail not long ago and seeing checkboxes next to each message.  I paused.  What were these checkboxes, these artifacts of Web 1.0, doing in my Web 2.0 application?  I had been using the new DHTML, Outlook-like version of Yahoo! Mail since its early beta and had become used to dragging and dropping in order to move and delete messages.  But the reappearance of these checkboxes was another sign that not every user&#8217;s expectations had evolved with the capabilities of the browser. </p>
 <p> As the browser has matured it has evolved it into a platform for rich application development, making it possible to deliver applications with a level of interactivity and visual fidelity of those found on the desktop.  And while the browser is now a platform, it also continues to play its original Web 1.0 role of an application, a content viewer that enables users to surf all of the news sites, blogs, etc. scattered across the eclectic Web.  But as the browser now plays these dual roles of being an application and an application development and delivery platform, how does this duality impact the user in terms of usability and accessibility?  And what user-centric features and functionality can consumers expect of a browser, especially one battling with duality?  I suspect that Opera&#8217;s answer to these questions is that not all users understand the modern browser&#8217;s dual role, and that is it necessary to render some fundamental things consistently across experiences within the browser. </p>
 <h3>Context Menus</h3>
-<p> <a href="http://developer.yahoo.com/yui/examples/menu/contextmenu_source.html"><img src="http://yuiblog.com/assets/klootsopera/contextmenu.gif" alt="The YUI Menu Control's ContextMenu in Safari (top) and Opera (bottom); Opera does not allow developers to customize the context menu in web applications." width="280" height="300" hspace="10" vspace="5" align="right"></a></p>
+<p> <a href="http://developer.yahoo.com/yui/examples/menu/contextmenu_source.html"><img src="/blog-archive/assets/klootsopera/contextmenu.gif" alt="The YUI Menu Control's ContextMenu in Safari (top) and Opera (bottom); Opera does not allow developers to customize the context menu in web applications." width="280" height="300" hspace="10" vspace="5" align="right"></a></p>
 <p>Consider context menu functionality. By not implementing the <code>contextmenu</code> event, Opera does not allow frontend engineers to override the<br />
 default context menu provided by the browser; all other <a href="http://developer.yahoo.com/yui/articles/gbs/">A-Grade browsers</a> support this feature. What benefit could there be to not implementing the <code>contextmenu</code> event?</p>
 <p>If some users  perceive everything inside the scope of the browser as a web page, that influences the user&#8217;s expectation of what functionality will be surfaced in a context menu.  Over the years many users have come to expect that raising a context menu in the scope of a browser will surface browser-centric functionality relative to HTML content (i.e. &#8220;Open Link in New Window&#8221;), rather than functionality of the web application running within the browser.  Therefore, providing a custom context menu for a web application might not be expected or seen as helpful for users who have come to rely on functionality in the browser&#8217;s context menu.</p>
@@ -367,11 +367,11 @@ default context menu provided by the browser; all other <a href="http://develope
 <h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-1">Example 1: Anchor Elements (The Good)</a></h4>
 <table>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
 <td>Focused anchor in Opera 9.5 (Mac)</td>
 </tr>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
 <td>Focused anchor styled as a button in Opera 9.5 (Mac)</td>
 </tr>
 </table>
@@ -379,11 +379,11 @@ default context menu provided by the browser; all other <a href="http://develope
 <h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-2">Example 2: Buttons (The Bad)</a></h4>
 <table>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused button in Opera 9.5 for Mac"></td>
 <td>Focused, unstyled button in Opera 9.5 (Mac)</td>
 </tr>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
 <td>Focused, styled button in Opera 9.5 (Mac)</td>
 </tr>
 </table>
@@ -398,23 +398,23 @@ default context menu provided by the browser; all other <a href="http://develope
 </thead>
 <tbody>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
-<td><img src="http://yuiblog.com/assets/klootsopera/anchor-safari.png" height="25" width="51" alt="Screen capture of a focused anchor in Safari for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/anchor-safari.png" height="25" width="51" alt="Screen capture of a focused anchor in Safari for Mac"></td>
 <td>Focused, unstyled acnhor</td>
 </tr>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
-<td><img src="http://yuiblog.com/assets/klootsopera/anchor-button-safari.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Safari for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/anchor-button-safari.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Safari for Mac"></td>
 <td>Focused anchor styled as a button</td>
 </tr>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused, unstyled button in Opera 9.5 for Mac"></td>
-<td><img src="http://yuiblog.com/assets/klootsopera/button-safari.png" height="24" width="67" alt="Screen capture of a focused, unstyled button in Safari for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused, unstyled button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/button-safari.png" height="24" width="67" alt="Screen capture of a focused, unstyled button in Safari for Mac"></td>
 <td>Focused, unstyled button</td>
 </tr>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
-<td><img src="http://yuiblog.com/assets/klootsopera/yuibutton-safari.png" height="34" width="81" alt="Screen capture of a focused, styled button in Safari for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/yuibutton-safari.png" height="34" width="81" alt="Screen capture of a focused, styled button in Safari for Mac"></td>
 <td>Focused, styled button</td>
 </tr>
 </tbody>
@@ -423,11 +423,11 @@ default context menu provided by the browser; all other <a href="http://develope
 <h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-3">Example 3: Mixed types together (The Ugly)</a></h4>
 <table>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
 <td>Focused anchor styled as a button in Opera 9.5 (Mac)</td>
 </tr>
 <tr>
-<td><img src="http://yuiblog.com/assets/klootsopera/button-4.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="/blog-archive/assets/klootsopera/button-4.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
 <td>Focused, styled button in Opera 9.5 (Mac)</td>
 </tr>
 </table>
@@ -446,10 +446,10 @@ default context menu provided by the browser; all other <a href="http://develope
 					
 
 						<div class="entry">
-							<p><a href='/yuiblog/blog/2008/06/10/patterns-for-designing-a-reputation-system/reputation-patterns/' rel='attachment wp-att-213' title='Reputation patterns'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/06/rep-patterns.jpg' alt='Reputation patterns' border='0' /></a></p>
+							<p><a href='/yuiblog/blog/2008/06/10/patterns-for-designing-a-reputation-system/reputation-patterns/' rel='attachment wp-att-213' title='Reputation patterns'><img src='/yuiblog/blog/wp-content/uploads/2008/06/rep-patterns.jpg' alt='Reputation patterns' border='0' /></a></p>
 <p>Recently, we released a family of related <a href="http://developer.yahoo.com/ypatterns/parent.php?pattern=reputation">Reputation patterns</a> to the Yahoo Design Pattern Library, the first of several collections of social-design related patterns that we&#8217;re working on. These patterns are somewhat different from the typical UI or rich-interaction type of pattern. They don&#8217;t tell you how to lay out a page or where to put an interactive widget. Instead, they address how to design a reputation system for your social software.</p>
 <p>A key element in the Reputation family of patterns is one we call <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=competitive">The Competitive Spectrum</a>:</p>
-<p><a href='/yuiblog/blog/2008/06/10/patterns-for-designing-a-reputation-system/competitive-spectrum-2/' rel='attachment wp-att-215' title='Competitive Spectrum'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/06/competitive-spectrum1.jpg' alt='Competitive Spectrum' /></a></p>
+<p><a href='/yuiblog/blog/2008/06/10/patterns-for-designing-a-reputation-system/competitive-spectrum-2/' rel='attachment wp-att-215' title='Competitive Spectrum'><img src='/yuiblog/blog/wp-content/uploads/2008/06/competitive-spectrum1.jpg' alt='Competitive Spectrum' /></a></p>
 <p>The Competitive Spectrum is the first pattern you should look at because it asks you to consider the degree of <em>competitiveness</em> in the community you are trying to build or foster. Are you aiming for a highly cooperative community, an arena for death-matches, or something in between? The answer to that question will inform which of the remaining Reputation patterns best apply to the design of your site or application.</p>
 <p>The primary author of these patterns (and the creator of the sensitizing images) is <a href="http://soldierant.net/archives/2008/06/patterns_of_reputati.html">Bryce Glass</a>, a senior interaction designer on the Y! OS social team. Product manager Yvonne French deserves some of the credit as well. The patterns were developed for an internal reputation platform here at Yahoo! that was inspired and guided by online community guru <a href="http://www.fudco.com/habitat/archives/000076.html">Randy Farmer</a>. We&#8217;re very pleased to be able to share them with the wider web community now and as always we welcome feedback and suggestions for improvement.</p>
 <p>UPDATE: I forgot to mention that Bryce gave a great talk about reputation design at the IA Summit this year: <a href="http://www.slideshare.net/soldierant/designing-your-reputation-system/">Designing Your Reputation System (in 10 Easy Steps)</a>.</p>
@@ -465,7 +465,7 @@ default context menu provided by the browser; all other <a href="http://develope
 					
 
 						<div class="entry">
-							<p><a href="http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx"><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/03/web20patterns.jpg' alt="Tim OReilly's web 2.0 patterns meme map" width="500" height="375"></a></p>
+							<p><a href="http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx"><img src='/yuiblog/blog/wp-content/uploads/2008/03/web20patterns.jpg' alt="Tim OReilly's web 2.0 patterns meme map" width="500" height="375"></a></p>
 <p>Dragos Manolescu from Microsoft Live Labs and Joe Yoder from The Refactory are organizing a <a href="http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx">pattern-mining workshop</a> at <a href="http://tools.ethz.ch/workshops.html">TOOLS 2008 Europe</a>, July 5-6 (dates still to be confirmed) in Zurich, Switzerland. I&#8217;ve agreed to be on the program committee to help review proposals and advice. </p>
 <p>In their own words:</p>
 <blockquote><p>Web 2.0 features are now commonplace &mdash; blogs, wikis, RSS feeds, social bookmarking and the like are almost everywhere you look online.  Now that these technologies are maturing, what are their common problems and challenges? How are these problems being solved? What similar challenges do Web 2.0 developers face, and how can they leverage the most common solutions?  Here’s your chance to gather with other professionals facing the same issues and work together to identify solutions.</p></blockquote>
@@ -486,7 +486,7 @@ default context menu provided by the browser; all other <a href="http://develope
 							<link rel="stylesheet" type="text/css" href="/assets/charttable/chartsstyles.css">
 <div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/heilmann.jpg" width="300" height="225" hspace="5" vspace="5" align="right"><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/yuiblog/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>. He has worked in web development for almost 9 years for several agencies and .coms and is currently a lead developer at Yahoo! in England.  Christian is a frequent speaker on the conference circuit in the UK and Europe; you can find some of his writing <a href="/yuiblog/blog/2007/01/17/event-plan/">here on YUIBlog</a> as well as on his personal blog at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</p>
+<p><img src="/blog-archive/assets/heilmann.jpg" width="300" height="225" hspace="5" vspace="5" align="right"><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/yuiblog/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>. He has worked in web development for almost 9 years for several agencies and .coms and is currently a lead developer at Yahoo! in England.  Christian is a frequent speaker on the conference circuit in the UK and Europe; you can find some of his writing <a href="/yuiblog/blog/2007/01/17/event-plan/">here on YUIBlog</a> as well as on his personal blog at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</p>
 </div>
 <p>Charts are a great idea to make rows and rows of boring numbers easier to understand and to take in &mdash; for people that can see them. However, not all of your site&#8217;s visitors can see and you&#8217;ll also want to keep information you offer available for search engines. There are a lot of libraries on the web that allow you to create charts, but not many take this use case into consideration.</p>
 <h2>In praise of data tables</h2>
@@ -563,7 +563,7 @@ default context menu provided by the browser; all other <a href="http://develope
 </tbody>
 </table>
 <p>Easy to understand, but not too pretty. And it can get boring.  How about we use this information and create a tasty pie chart like the following (click on the image below to see the working example in action)?</p>
-<p><a href="/assets/charttable/chartsexample.html"><img src="http://yuiblog.com/assets/charttable/chart-table.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="536" border="0"></a></p>
+<p><a href="/assets/charttable/chartsexample.html"><img src="/blog-archive/assets/charttable/chart-table.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="536" border="0"></a></p>
 <h2>Using table data to automatically generate charts</h2>
 <p>In order to have the table be preceeded by a pie chart like this all you need is to add two scripts at the end of the document body and a class called <code>yui-table</code> to the table itself. For example:</p>
 <pre><code>&lt;table class=&quot;yui-table&quot; summary=&quot;Results of a survey of what browser people love&quot;&gt;
@@ -604,7 +604,7 @@ default context menu provided by the browser; all other <a href="http://develope
 &lt;script src=&quot;http://yui.yahooapis.com/2.4.1/build/yuiloader/yuiloader-beta-min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;tablestoyuicharts.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>This will show in a browser with the latest Flash plugin like this:</p>
-<p><a href="/assets/charttable/chartsexample.html"><img src="http://yuiblog.com/assets/charttable/chart-table2.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="527" border="0"></a></p>
+<p><a href="/assets/charttable/chartsexample.html"><img src="/blog-archive/assets/charttable/chart-table2.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="527" border="0"></a></p>
 <p>You can define the size of the chart in CSS by defining a width and height for each div element with a class of <code>yuichartfromtable</code>:</p>
 <pre><code>div.yuichartfromtable{
   width:300px;
@@ -689,9 +689,9 @@ if(document.location.toString().indexOf('http')!==-1){
 					
 
 						<div class="entry">
-							<p><a href='http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/01/3d-carousel.thumbnail.jpg' alt='3-D carousel wireframe image' align="right" hspace="10" vspace="5"></a>As the end of last year was winding up I spent some time tinkering with the open pattern library, in order to clear the way for our latest pattern release, <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel">Carousel</a>. One reason why I needed to do this tinkering is that the Carousel pattern contains a few new fields in its data model. These are primarily elements that we have been including lately in our internal patterns that I wanted to find a way to promote to the public library.</p>
+							<p><a href='http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel'><img src='/yuiblog/blog/wp-content/uploads/2008/01/3d-carousel.thumbnail.jpg' alt='3-D carousel wireframe image' align="right" hspace="10" vspace="5"></a>As the end of last year was winding up I spent some time tinkering with the open pattern library, in order to clear the way for our latest pattern release, <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel">Carousel</a>. One reason why I needed to do this tinkering is that the Carousel pattern contains a few new fields in its data model. These are primarily elements that we have been including lately in our internal patterns that I wanted to find a way to promote to the public library.</p>
 <p>But first, a little bit about the pattern. Folks inside and outside of Yahoo! have been asking us for a carousel patterns since before I got here (and you all want carousel code from YUI too &mdash; <a href="http://tech.groups.yahoo.com/group/ydn-javascript/message/23851">we hear you</a>). It&#8217;s been possible to make a carousel using the <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=slide">Slide Transition</a> pattern and associated YUI code, as Bill Scott <a href="http://billwscott.com/carousel/">demonstrated</a> quite some time ago, but the detailed do&#8217;s and don&#8217;ts of effective carousels were still left up to the individual developers.</p>
-<p><a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel"><img src="http://yuiblog.com/assets/carousel-pattern.png" width="300" height="294" align="right" hspace="10" vspace="10" alt="The Carousel Pattern page on the Pattern Library site"></a>Internally here at Yahoo! we had a several partial carousel guidelines (carousels are used extensively across the network, especially in the Media Group sites) but no consistent standard. This past summer a large number of user experience designers carried on a week-long discussion &mdash; sharing experience and insights &mdash; and hashed out the major issues involved with carousel design. After that I gathered a group of interested designers and developers and started shaping those comments into a sketchy pattern draft.</p>
+<p><a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel"><img src="/blog-archive/assets/carousel-pattern.png" width="300" height="294" align="right" hspace="10" vspace="10" alt="The Carousel Pattern page on the Pattern Library site"></a>Internally here at Yahoo! we had a several partial carousel guidelines (carousels are used extensively across the network, especially in the Media Group sites) but no consistent standard. This past summer a large number of user experience designers carried on a week-long discussion &mdash; sharing experience and insights &mdash; and hashed out the major issues involved with carousel design. After that I gathered a group of interested designers and developers and started shaping those comments into a sketchy pattern draft.</p>
 <p><a href="/yuiblog/blog/2007/10/02/challenges-of-interface-design-for-mobile-devices/">Lucas Pettinati</a>, a designer on the YDN team who also works closely with YUI, devoted a lot of time to sorting out the subtle details and possible variations on the basic carousel theme with me, and also cooked up some basic wireframe diagrams to help illustrate the possibilities. The draft pattern made its way through several review cycles and finally emerged ready to publish near the end of last year.</p>
 <p>Why so much effort? It&#8217;s a good question. It&#8217;s certainly possible to describe a carousel in pattern format in a lot fewer words than we did. Both <a href="http://welie.com/patterns/showPattern.php?patternID=carrousel">Patterns in Interaction Design</a> and <a href="http://ui-patterns.com/pattern/Carousel">UI-patterns.com</a> manage to describe carousels in fairly simple terms (the latter even uses a Yahoo! carousel as its sensitizing example). </p>
 <p>We felt that there were more subtle issues at work here than simply queuing up a bunch of images and allowing them to scroll into a viewport. You&#8217;ll be the judge of whether we were right, and as always we welcome feedback on the pattern.</p>
@@ -744,107 +744,107 @@ if(document.location.toString().indexOf('http')!==-1){
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

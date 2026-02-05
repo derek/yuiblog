@@ -74,7 +74,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -365,7 +365,7 @@
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 5 in an ongoing series. You can read the other parts here:</em></p>
@@ -383,7 +383,7 @@
 <li>Truecolor PNG, also referred to as PNG32 or PNG24.</li>
 </ul>
 <p>Both formats support alpha (variable) transparency and, while PNG8 images degrade to a GIF-like non-variable transparency in IE6 (<a href="/assets/png8-transparency.png">example</a>, <a href="http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/">source</a>), truecolor PNGs show an uglyish background in place of the transparent pixels (source <a href=""http://www.w3.org/Graphics/PNG/inline-alpha.html>W3C</a>).</p>
-<p><img src="http://yuiblog.com/assets/png-transparency.png" alt="truecolor PNG transparency problem in IE6" /></p>
+<p><img src="/blog-archive/assets/png-transparency.png" alt="truecolor PNG transparency problem in IE6" /></p>
 <h3>The AlphaImageLoader fix</h3>
 <p>IE6 (and older versions of IE) provides a solution to the problem through its proprietary <code>filter</code> CSS property. The following code will display the proper image cross-browser:</p>
 <pre>
@@ -565,7 +565,7 @@ v\:fill  {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 3 in an ongoing series. You can read the other parts here:</em></p>
@@ -643,7 +643,7 @@ v\:fill  {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 2 in an ongoing series. You can read the other parts here:</em></p>
@@ -687,9 +687,9 @@ v\:fill  {
 <h3>Internet Explorer and PNG transparency</h3>
 <p>We said that both PNG types support alpha transparency, but there are some browser eccentricities that affect both types and about which you should be aware.</p>
 <p>With PNG8, whenever you have semi-transparent pixels they appear as fully transparent in IE (version 6 and lower). This is not ideal but it&#8217;s still useful and is the same behavior that you get from a GIF. So by using a PNG8, in the worst case (IE &lt; 7) you get the same user experience as with a GIF, while for other browsers (Firefox, Safari, Opera) you get a better experience. Below is an example that illustrates this, note how in IE6 the semi-transparent light around the bulb is missing (source: <a href="http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/">SitePoint</a>):</p>
-<p><img src="http://yuiblog.com/assets/png8-transparency.png" alt="PNG8 alpha transparency" /></p>
+<p><img src="/blog-archive/assets/png8-transparency.png" alt="PNG8 alpha transparency" /></p>
 <p>For truecolor PNGs, the situation is a much less attractive compromise. All the semi transparent pixels appear grey in IE prior to version 7 (source: <a href="http://www.w3.org/Graphics/PNG/inline-alpha.html">W3C</a>).</p>
-<p><img src="http://yuiblog.com/assets/png-transparency.png" alt="transparency in truecolor PNG" /></p>
+<p><img src="/blog-archive/assets/png-transparency.png" alt="transparency in truecolor PNG" /></p>
 <p>IE7 introduces proper native support for alpha transparency in both PNG8 and truecolor PNGs. For earlier IE versions you need to fix the truecolor PNG transparency issue using CSS and an AlphaImageLoader filter, which we&#8217;ll discuss in more details in a follow-up article. (Spoiler alert: <em>avoid AlphaImageLoader</em>.)</p>
 <h3>&#8220;All we are saying is: Give PiNG a chance!&#8221;</h3>
 <p>Although PNG8 should be the preferred of the PNGs, because it&#8217;s smaller in filesize and degrades well in early IEs without special CSS filters, there are still some use cases for truecolor PNGs:</p>
@@ -717,7 +717,7 @@ v\:fill  {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 1 in an ongoing series. You can read the other parts here:</em></p>
@@ -939,14 +939,14 @@ loader.insert();
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p>External JavaScript files block downloads and hurt your page performance, but there is an easy way to work around this problem: use dynamic scripts tags and load scripts in parallel, improving the page loading speed and the user experience.</p>
 <h2>The problem: scripts block downloads</h2>
 <p>Let&#8217;s first take a look at what the problem is with the script downloads. The thing is that before fully downloading and parsing a script, the browser can&#8217;t tell what&#8217;s in it. It may contain <code>document.write()</code> calls which modify the DOM tree or it may even contain <code>location.href</code> and send the user to a whole new page. If that happens, any components downloaded from the previous page may never be needed. In order to avoid potentially useless downloads, browsers first download, parse and execute each script before moving on with the queue of other components waiting to be downloaded. As a result, any script on your page blocks the download process and that has a negative impact on your page loading speed.</p>
 <p>Here&#8217;s how the timeline looks like when downloading a slow JavaScript file (exaggerated to take 1 second). The script download (the third row in the image) blocks the two-by-two parallel downloads of the images that follow after the script:</p>
-<p><img src="http://yuiblog.com/assets/non-block-yui/1.png" alt="Timeline - Blocking behavior of JavaScript files" width="325" height="223" /></p>
+<p><img src="/blog-archive/assets/non-block-yui/1.png" alt="Timeline - Blocking behavior of JavaScript files" width="325" height="223" /></p>
 <p><a href="/assets/non-block-yui/before.html">Here&#8217;s the example</a> to test yourself.</p>
 <h2>Problem 2: number of downloads per hostname</h2>
 <p>Another thing to note in the timeline above is how the images following the script are downloaded two-by-two. This is because of the restriction of how many components can be downloaded in parallel. In IE &lt;= 7 and Firefox 2, it&#8217;s two components at a time (following the HTTP 1.1 specs), but both IE8 and FF3 increase the default to 6.</p>
@@ -963,7 +963,7 @@ var head = document.getElementsByTagName('head')[0];
 head.appendChild(js);
 </pre>
 <p>Here&#8217;s the same test from above, modified to use the script node technique. Note that the third row in the image takes just as long to download, but the other resources on the page are loading simultaneously:</p>
-<p><img src="http://yuiblog.com/assets/non-block-yui/2.png" alt="Non-blocking JavaScript timeline" width="325" height="206" /></p>
+<p><img src="/blog-archive/assets/non-block-yui/2.png" alt="Non-blocking JavaScript timeline" width="325" height="206" /></p>
 <p><a href="/assets/non-block-yui/after.html">Test example</a></p>
 <p>As you can see the script file no longer blocks the downloads and the browser starts fetching the other components in parallel. And the overall response time is cut in half.</p>
 <h2>Dependencies</h2>
@@ -1090,107 +1090,107 @@ h.appendChild(link);
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

@@ -73,7 +73,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -293,7 +293,7 @@
 					
 
 						<div class="entry">
-							<p><a href="http://video.yahoo.com/watch/4073211/10996186"><img src="http://yuiblog.com/assets/klootsaria-20081206-220516.jpg" alt="Todd Kloots about ARIA and accessibility at Yahoo on December 3, 2008." width="510" height="310"></a></p>
+							<p><a href="http://video.yahoo.com/watch/4073211/10996186"><img src="/blog-archive/assets/klootsaria-20081206-220516.jpg" alt="Todd Kloots about ARIA and accessibility at Yahoo on December 3, 2008." width="510" height="310"></a></p>
 <p>The <a href="http://www.w3.org/TR/wai-aria/">Accessible Rich Interet Applications</a> (ARIA) specification is in working-draft form in the W3C.  It provides a framework for implementating rich web-applications that convey improved semantics to screen reader software as a user interacts with a page.  ARIA is patterned after the more established desktop experience, but it also provides a set of tools that allows room for invention.</p>
 <p>In this talk, delivered at Yahoo! on December 3, 2008, YUI engineer and accessibility specialist Todd Kloots introduces you to ARIA and provides some insights gleaned from his work in <a href="/yuiblog/blog/2008/10/02/yui-aria/">bringing ARIA support to a host of YUI widgets</a>.</p>
 <p><a href="/assets/kloots-aria.zip">Slides for Todd&#8217;s talk can be downloaded here</a> (180MB ppt includes screencaptures of ARIA scenarios as experienced with a screen reader).</p>
@@ -328,7 +328,7 @@
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 5 in an ongoing series. You can read the other parts here:</em></p>
@@ -346,7 +346,7 @@
 <li>Truecolor PNG, also referred to as PNG32 or PNG24.</li>
 </ul>
 <p>Both formats support alpha (variable) transparency and, while PNG8 images degrade to a GIF-like non-variable transparency in IE6 (<a href="/assets/png8-transparency.png">example</a>, <a href="http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/">source</a>), truecolor PNGs show an uglyish background in place of the transparent pixels (source <a href=""http://www.w3.org/Graphics/PNG/inline-alpha.html>W3C</a>).</p>
-<p><img src="http://yuiblog.com/assets/png-transparency.png" alt="truecolor PNG transparency problem in IE6" /></p>
+<p><img src="/blog-archive/assets/png-transparency.png" alt="truecolor PNG transparency problem in IE6" /></p>
 <h3>The AlphaImageLoader fix</h3>
 <p>IE6 (and older versions of IE) provides a solution to the problem through its proprietary <code>filter</code> CSS property. The following code will display the proper image cross-browser:</p>
 <pre>
@@ -528,7 +528,7 @@ v\:fill  {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 4 in an ongoing series. You can read the other parts here:</em></p>
@@ -540,10 +540,10 @@ v\:fill  {
 <p>In the <a href="/yuiblog/blog/2008/11/14/imageopt-3/">previous article</a>, the progressive JPEGs were briefly mentioned as a possible option when optimizing JPEGs. This post now diggs into this option a little deeper with the results of an optimization experiment involving over 10,000 images.</p>
 <h3>Baseline vs. progressive JPEGs</h3>
 <p>Baseline are the &#8220;normal&#8221; JPEGs, the type of JPEG that all image programs write by default. The browsers load them top-to-bottom as more of the image information comes down the wire.</p>
-<p><a href="/assets/5-base-example.jpg"><img src="http://yuiblog.com/assets/5-base-example-small.jpg" alt="Loading a baseline JPEG" /></a></p>
+<p><a href="/assets/5-base-example.jpg"><img src="/blog-archive/assets/5-base-example-small.jpg" alt="Loading a baseline JPEG" /></a></p>
 <p>Loading a baseline JPEG, click to enlarge</p>
 <p>Progressive JPEGs are another type of JPEGs, they are rendered, as the name suggests, progressively. First you see a low quality version of the whole image. Then, as more of the image information arrives over the network, the quality gradually improves.</p>
-<p><a href="/assets/4-prog-example.jpg"><img src="http://yuiblog.com/assets/4-prog-example-small.jpg" alt="Loading a baseline JPEG" /></a></p>
+<p><a href="/assets/4-prog-example.jpg"><img src="/blog-archive/assets/4-prog-example-small.jpg" alt="Loading a baseline JPEG" /></a></p>
 <p>Loading a progressive JPEG, click to enlarge</p>
 <p>From usability perspective, progressive is usually good, because the user gets feedback that something is going on. Also if you&#8217;re on a slow connection, progressive JPEG is preferable because you don&#8217;t need to wait for the whole image to arrive in order to get an idea if it is what you wanted. If not, you can click away from the page or hit the back button, without waiting for the (potentially large) high quality image.</p>
 <p>A reason against progressive JPEGs I&#8217;ve heard is that they look a bit old school and that users might be underimpressed, if not irritated, by the progressive rendering. I am not aware of a user study that focuses on this issue, please comment if you have heard or conducted such a experiment.</p>
@@ -567,20 +567,20 @@ v\:fill  {
 <li>X is the file size of the original image</li>
 </ul>
 <p>The graph shows how the results are all over the place, but there seems to be a trend &mdash; the bigger the image, the better it is to save it as a progressive JPEG.</p>
-<p><img src="http://yuiblog.com/assets/1-progressive-jpeg-overview.png" alt="Progressive vs baseline JPEG" /></p>
+<p><img src="/blog-archive/assets/1-progressive-jpeg-overview.png" alt="Progressive vs baseline JPEG" /></p>
 <p>&#8220;Zooming&#8221; into the area of smaller file sizes to see where progressive JPEGs get less effective, let&#8217;s only consider the images that are 30K and under. Then using the trendline feature of Excel, we can see where the line is drawn (for a clearer trendline mouse over or focus or click the image).</p>
 <p><a href="/assets/3-progressive-jpeg.png"><img<br />
-    src="http://yuiblog.com/assets/2-progressive-jpeg.png"<br />
+    src="/blog-archive/assets/2-progressive-jpeg.png"<br />
     id="progressive-jpeg-chart"<br />
     alt="Progressive vs baseline JPEG for smaller images"<br />
 /></a><br />
 <script type="text/javascript">
 (function(){
-new Image().src = 'http://yuiblog.com/assets/3-progressive-jpeg.png';
+new Image().src = '/blog-archive/assets/3-progressive-jpeg.png';
 var i = document.getElementById('progressive-jpeg-chart');
 var a = i.parentNode;
-a.onmouseover = a.onfocus = function() {i.src = 'http://yuiblog.com/assets/3-progressive-jpeg.png';};
-a.onmouseout  = a.onblur  = function() {i.src = 'http://yuiblog.com/assets/2-progressive-jpeg.png';};
+a.onmouseover = a.onfocus = function() {i.src = '/blog-archive/assets/3-progressive-jpeg.png';};
+a.onmouseout  = a.onblur  = function() {i.src = '/blog-archive/assets/2-progressive-jpeg.png';};
 })();
 </script></p>
 <h3>Summary</h3>
@@ -706,93 +706,93 @@ href=&quot;http://yui.yahooapis.com/2.6.0/build/yuitest/assets/testlogger.css&qu
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Container</title>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/container/assets/skins/sam/container.css" >
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/container/container-min.js"></script>
+
+        <script type="text/javascript">
+        // A copy of the 2.8.0r4 impl, with "if" checks around the beforeHideEvent...
+         
+        YAHOO.widget.Overlay.prototype.configVisible = function (type, args, obj) {
+
+            var Dom = YAHOO.util.Dom,
+                UA = YAHOO.env.ua,
+                Config = YAHOO.util.Config;
+
+            var visible = args[0],
+                currentVis = Dom.getStyle(this.element, "visibility"),
+                effect = this.cfg.getProperty("effect"),
+                effectInstances = [],
+                isMacGecko = (this.platform == "mac" && UA.gecko),
+                alreadySubscribed = Config.alreadySubscribed,
+                eff, ei, e, i, j, k, h,
+                nEffects,
+                nEffectInstances;
+
+            if (currentVis == "inherit") {
+                e = this.element.parentNode;
+
+                while (e.nodeType != 9 && e.nodeType != 11) {
+                    currentVis = Dom.getStyle(e, "visibility");
+
+                    if (currentVis != "inherit") {
+                        break;
+                    }
+
+                    e = e.parentNode;
+                }
+
+                if (currentVis == "inherit") {
+                    currentVis = "visible";
+                }
+            }
+
+            if (effect) {
+                if (effect instanceof Array) {
+                    nEffects = effect.length;
+
+                    for (i = 0; i < nEffects; i++) {
+                        eff = effect[i];
+                        effectInstances[effectInstances.length] = 
+                            eff.effect(this, eff.duration);
+
+                    }
+                } else {
+                    effectInstances[effectInstances.length] = 
+                        effect.effect(this, effect.duration);
+                }
+            }
+
+            if (visible) { // Show
+                if (isMacGecko) {
+                    this.showMacGeckoScrollbars();
+                }
+
+                if (effect) { // Animate in
+                    if (visible) { // Animate in if not showing
+                        if (currentVis != "visible" || currentVis === "") {
+                            this.beforeShowEvent.fire();
+                            nEffectInstances = effectInstances.length;
+
+                            for (j = 0; j < nEffectInstances; j++) {
+                                ei = effectInstances[j];
+                                if (j === 0 && !alreadySubscribed(
+                                        ei.animateInCompleteEvent, 
+                                        this.showEvent.fire, this.showEvent)) {
+
+                                    /*
+                                         Delegate showEvent until end 
+                                         of animateInComplete
+                                    */
+
+                                    ei.animateInCompleteEvent.subscribe(
+                                     this.showEvent.fire, this.showEvent, true);
+                                }
+                                ei.animateIn();
+                            }
+                        }
+                    }
+                } else { // Show
+                    if (currentVis != "visible" || currentVis === "") {
+                        this.beforeShowEvent.fire();
+
+                        this._setDomVisibility(true);
+
+                        this.cfg.refireEvent("iframe");
+                        this.showEvent.fire();
+                    } else {
+                        this._setDomVisibility(true);
+                    }
+                }
+            } else { // Hide
+
+                if (isMacGecko) {
+                    this.hideMacGeckoScrollbars();
+                }
+
+                if (effect) { // Animate out if showing
+                    if (currentVis == "visible") {
+                        if (this.beforeHideEvent.fire()) {
+
+                            nEffectInstances = effectInstances.length;
+                            for (k = 0; k < nEffectInstances; k++) {
+                                h = effectInstances[k];
+        
+                                if (k === 0 && !alreadySubscribed(
+                                    h.animateOutCompleteEvent, this.hideEvent.fire, 
+                                    this.hideEvent)) {
+        
+                                    /*
+                                         Delegate hideEvent until end 
+                                         of animateOutComplete
+                                    */
+        
+                                    h.animateOutCompleteEvent.subscribe(
+                                        this.hideEvent.fire, this.hideEvent, true);
+        
+                                }
+                                h.animateOut();
+                            }
+                        }
+                    } else if (currentVis === "") {
+                        this._setDomVisibility(false);
+                    }
+
+                } else { // Simple hide
+
+                    if (currentVis == "visible" || currentVis === "") {
+                        if (this.beforeHideEvent.fire()) {
+                            this._setDomVisibility(false);
+                            this.hideEvent.fire();
+                        }
+                    } else {
+                        this._setDomVisibility(false);
+                    }
+                }
+            }
+        };
+       </script>  
+
+
+        <script type="text/javascript">
+            
+            
+            YAHOO.util.Event.onDOMReady(function() {
+
+                var p = new YAHOO.widget.Panel("dlg1", {width:"10em"});
+                p.render();
+
+                p.beforeHideEvent.subscribe(function() {
+                    return confirm("Are you sure?");           
+                });
+                
+                YAHOO.util.Event.on("show", "click", function() {
+                    p.show();
+                });
+                YAHOO.util.Event.on("hide", "click", function() {
+                    p.hide();
+                });
+            });
+        </script>
+    </head>
+    <body class="yui-skin-sam">
+        <button id="show">Show</button><button id="hide">Hide</button>
+        <div id="dlg1">
+            <div class="hd">Header</div>
+            <div class="bd">Body</div>
+            <div class="ft">Footer</div>                       
+        </div>
+    </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1328486529" alt="setstats" border="0" width="1" height="1"></noscript>

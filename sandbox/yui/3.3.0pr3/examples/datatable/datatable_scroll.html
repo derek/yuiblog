@@ -1,0 +1,305 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>YUI Library Examples: DataTable: Scrolling DataTable</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    	<link rel="stylesheet" type="text/css" href="../../assets/yui.css" >
+
+<style>
+    /*Supplemental CSS for the YUI distribution*/
+    #custom-doc { width: 95%; min-width: 950px; }
+    #pagetitle {background-image: url(../../assets/bg_hd.gif);}
+/*    #pagetitle h1 {background-image: url(../../assets/title_h_bg.gif);}*/
+</style>
+
+<link rel="stylesheet" type="text/css" href="../../assets/dpSyntaxHighlighter.css">
+<link type="text/css" rel="stylesheet" href="../../build/cssfonts/fonts-min.css" />
+<script type="text/javascript" src="../../build/yui/yui-min.js"></script>
+<style type="text/css">
+/* custom styles for this example */
+.tableDemo {margin: 15px 0;}
+
+/* css to counter global site css */
+.tableDemo th {text-transform:none;}
+.tableDemo table {width:auto;}
+
+/* scrolling datatable doesn't support caption 
+.dt-example caption {display:table-caption;}*/
+</style>
+
+</head>
+<body id="yahoo-com" class="yui3-skin-sam  yui-skin-sam">
+<div id="custom-doc" class="yui-t2">
+<div id="hd">
+	<div id="ygunav">
+		<p>
+            <em>
+                <a href="http://developer.yahoo.com/yui/3/">YUI 3.x Home</a> <i> - </i>	
+            </em>
+		</p>
+		<form action="http://search.yahoo.com/search" id="sitesearchform">
+            <input name="vs" type="hidden" value="developer.yahoo.com">
+            <input name="vs" type="hidden" value="yuiblog.com">
+		    <div id="sitesearch">
+		    	<label for="searchinput">Site Search (YDN &amp; YUIBlog): </label>
+			    <input type="text" id="searchinput" name="p">
+			    <input type="submit" value="Search" id="searchsubmit" class="ygbt">
+		    </div>
+		</form>
+    </div>
+	<div id="ygma"><a href="../../"><img src="../../assets/logo.gif"  border="0" width="200" height="93"></a></div>
+	<div id="pagetitle"><h1>YUI Library Examples: DataTable: Scrolling DataTable</h1></div>
+</div>
+<div id="bd">
+
+
+	<div id="yui-main">
+		<div class="yui-b">
+		  <div class="yui-ge">
+			  <div class="yui-u first example" id="main">
+
+	<h2>DataTable: Scrolling DataTable</h2>
+
+	<div id="example" class="promo">
+	<div class="example-intro">
+	Datatables can be made to scroll along the x, y, or xy-axes. The Scrolling Datatable plugin enables this functionality. The width and height of the table can be passed into the plugin. If both width and height are provided, the table allows for xy-scrolling. If only a width is provided, the table allows for x-scrolling. If only a height is provided, the table allows for y-scrolling. Providing neither creates a table that does not scroll (auto-fits the table on the page).	</div>	
+
+	<div class="module example-container ">
+			<div class="hd exampleHd">
+			<p class="newWindowButton yui-skin-sam">
+                <a href="datatable_scroll_clean.html" target="_blank">View example in new window.</a>
+            </p>
+		</div>		<div id="example-canvas" class="bd">
+
+		
+	<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
+	
+	<h4>xy-Scrolling Datatable</h4>
+<p>The following is a standard xy-scrolling datatable. The width, height and scroll direction are passed into the plugin.</p>
+<div id="scrolling-xy" class="tableDemo"></div>
+
+<h4>x-Scrolling Datatable</h4>
+<p>The following is a standard x-scrolling datatable. The width and scroll direction are passed into the plugin. The height is automatically set to the entire table height.</p>
+<div id="scrolling-x" class="tableDemo"></div>
+
+<h4>y-Scrolling Datatable</h4>
+<p>The following is a standard y-scrolling datatable. The height and scroll direction are passed into the plugin. The width is automatically set to width of the container.</p>
+
+<div id="scrolling-y" class="tableDemo"></div>
+
+<script type="text/javascript">
+YUI(/*{ filter: 'raw' }*/{filter:"raw"}).use("datatable-scroll", function (Y) {
+    var state_census_data = [
+        {ANSI: "00000", STATE: "UNITED STATES", TOTAL_POP: 307006550, LAND_AREA: 3537438.44, POP_PER_SQ_MILE: 79.6},
+        {ANSI: "01000", STATE: "ALABAMA", TOTAL_POP: 4708708, LAND_AREA: 50744, POP_PER_SQ_MILE: 87.6},
+        {ANSI: "02000", STATE: "ALASKA", TOTAL_POP: 698473, LAND_AREA: 571951.26, POP_PER_SQ_MILE: 1.1},
+        {ANSI: "04000", STATE: "ARIZONA", TOTAL_POP: 6595778, LAND_AREA: 113634.57, POP_PER_SQ_MILE: 45.2},
+        {ANSI: "05000", STATE: "ARKANSAS", TOTAL_POP: 2889450, LAND_AREA: 52068.17, POP_PER_SQ_MILE: 51.3},
+        {ANSI: "06000", STATE: "CALIFORNIA", TOTAL_POP: 36961664, LAND_AREA: 155959.34, POP_PER_SQ_MILE: 217.2},
+        {ANSI: "08000", STATE: "COLORADO", TOTAL_POP: 5024748, LAND_AREA: 103717.53, POP_PER_SQ_MILE: 41.5},
+        {ANSI: "09000", STATE: "CONNECTICUT", TOTAL_POP: 3518288, LAND_AREA: 4844.8, POP_PER_SQ_MILE: 702.9},
+        {ANSI: "10000", STATE: "DELAWARE", TOTAL_POP: 885122, LAND_AREA: 1953.56, POP_PER_SQ_MILE: 401},
+        {ANSI: "11000", STATE: "DISTRICT OF COLUMBIA", TOTAL_POP: 599657, LAND_AREA: 61.4, POP_PER_SQ_MILE: 9378},
+        {ANSI: "12000", STATE: "FLORIDA", TOTAL_POP: 18537969, LAND_AREA: 53926.82, POP_PER_SQ_MILE: 296.4},
+        {ANSI: "13000", STATE: "GEORGIA", TOTAL_POP: 9829211, LAND_AREA: 57906.14, POP_PER_SQ_MILE: 141.4},
+        {ANSI: "15000", STATE: "HAWAII", TOTAL_POP: 1295178, LAND_AREA: 6422.62, POP_PER_SQ_MILE: 188.6},
+        {ANSI: "16000", STATE: "IDAHO", TOTAL_POP: 1545801, LAND_AREA: 82747.21, POP_PER_SQ_MILE: 15.6},
+        {ANSI: "17000", STATE: "ILLINOIS", TOTAL_POP: 12910409, LAND_AREA: 55583.58, POP_PER_SQ_MILE: 223.4},
+        {ANSI: "18000", STATE: "INDIANA", TOTAL_POP: 6423113, LAND_AREA: 35866.9, POP_PER_SQ_MILE: 169.5},
+        {ANSI: "19000", STATE: "IOWA", TOTAL_POP: 3007856, LAND_AREA: 55869.36, POP_PER_SQ_MILE: 52.4},
+        {ANSI: "20000", STATE: "KANSAS", TOTAL_POP: 2818747, LAND_AREA: 81814.88, POP_PER_SQ_MILE: 32.9},
+        {ANSI: "21000", STATE: "KENTUCKY", TOTAL_POP: 4314113, LAND_AREA: 39728.18, POP_PER_SQ_MILE: 101.7},
+        {ANSI: "22000", STATE: "LOUISIANA", TOTAL_POP: 4492076, LAND_AREA: 43561.85, POP_PER_SQ_MILE: 102.6},
+        {ANSI: "23000", STATE: "MAINE", TOTAL_POP: 1318301, LAND_AREA: 30861.55, POP_PER_SQ_MILE: 41.3},
+        {ANSI: "24000", STATE: "MARYLAND", TOTAL_POP: 5699478, LAND_AREA: 9773.82, POP_PER_SQ_MILE: 541.9},
+        {ANSI: "25000", STATE: "MASSACHUSETTS", TOTAL_POP: 6593587, LAND_AREA: 7840.02, POP_PER_SQ_MILE: 809.8},
+        {ANSI: "26000", STATE: "MICHIGAN", TOTAL_POP: 9969727, LAND_AREA: 56803.82, POP_PER_SQ_MILE: 175},
+        {ANSI: "27000", STATE: "MINNESOTA", TOTAL_POP: 5266214, LAND_AREA: 79610.08, POP_PER_SQ_MILE: 61.8},
+        {ANSI: "28000", STATE: "MISSISSIPPI", TOTAL_POP: 2951996, LAND_AREA: 46906.96, POP_PER_SQ_MILE: 60.6},
+        {ANSI: "29000", STATE: "MISSOURI", TOTAL_POP: 5987580, LAND_AREA: 68885.93, POP_PER_SQ_MILE: 81.2},
+        {ANSI: "30000", STATE: "MONTANA", TOTAL_POP: 974989, LAND_AREA: 145552.43, POP_PER_SQ_MILE: 6.2},
+        {ANSI: "31000", STATE: "NEBRASKA", TOTAL_POP: 1796619, LAND_AREA: 76872.41, POP_PER_SQ_MILE: 22.3},
+        {ANSI: "32000", STATE: "NEVADA", TOTAL_POP: 2643085, LAND_AREA: 109825.99, POP_PER_SQ_MILE: 18.2},
+        {ANSI: "33000", STATE: "NEW HAMPSHIRE", TOTAL_POP: 1324575, LAND_AREA: 8968.1, POP_PER_SQ_MILE: 137.8},
+        {ANSI: "34000", STATE: "NEW JERSEY", TOTAL_POP: 8707739, LAND_AREA: 7417.34, POP_PER_SQ_MILE: 1134.5},
+        {ANSI: "35000", STATE: "NEW MEXICO", TOTAL_POP: 2009671, LAND_AREA: 121355.53, POP_PER_SQ_MILE: 15},
+        {ANSI: "36000", STATE: "NEW YORK", TOTAL_POP: 19541453, LAND_AREA: 47213.79, POP_PER_SQ_MILE: 401.9},
+        {ANSI: "37000", STATE: "NORTH CAROLINA", TOTAL_POP: 9380884, LAND_AREA: 48710.88, POP_PER_SQ_MILE: 165.2},
+        {ANSI: "38000", STATE: "NORTH DAKOTA", TOTAL_POP: 646844, LAND_AREA: 68975.93, POP_PER_SQ_MILE: 9.3},
+        {ANSI: "39000", STATE: "OHIO", TOTAL_POP: 11542645, LAND_AREA: 40948.38, POP_PER_SQ_MILE: 277.3},
+        {ANSI: "40000", STATE: "OKLAHOMA", TOTAL_POP: 3687050, LAND_AREA: 68667.06, POP_PER_SQ_MILE: 50.3},
+        {ANSI: "41000", STATE: "OREGON", TOTAL_POP: 3825657, LAND_AREA: 95996.79, POP_PER_SQ_MILE: 35.6},
+        {ANSI: "42000", STATE: "PENNSYLVANIA", TOTAL_POP: 12604767, LAND_AREA: 44816.61, POP_PER_SQ_MILE: 274},
+        {ANSI: "44000", STATE: "RHODE ISLAND", TOTAL_POP: 1053209, LAND_AREA: 1044.93, POP_PER_SQ_MILE: 1003.2},
+        {ANSI: "45000", STATE: "SOUTH CAROLINA", TOTAL_POP: 4561242, LAND_AREA: 30109.47, POP_PER_SQ_MILE: 133.2},
+        {ANSI: "46000", STATE: "SOUTH DAKOTA", TOTAL_POP: 812383, LAND_AREA: 75884.64, POP_PER_SQ_MILE: 9.9},
+        {ANSI: "47000", STATE: "TENNESSEE", TOTAL_POP: 6296254, LAND_AREA: 41217.12, POP_PER_SQ_MILE: 138},
+        {ANSI: "48000", STATE: "TEXAS", TOTAL_POP: 24782302, LAND_AREA: 261797.12, POP_PER_SQ_MILE: 79.6},
+        {ANSI: "49000", STATE: "UTAH", TOTAL_POP: 2784572, LAND_AREA: 82143.65, POP_PER_SQ_MILE: 27.2},
+        {ANSI: "50000", STATE: "VERMONT", TOTAL_POP: 621760, LAND_AREA: 9249.56, POP_PER_SQ_MILE: 65.8},
+        {ANSI: "51000", STATE: "VIRGINIA", TOTAL_POP: 7882590, LAND_AREA: 39594.07, POP_PER_SQ_MILE: 178.8},
+        {ANSI: "53000", STATE: "WASHINGTON", TOTAL_POP: 6664195, LAND_AREA: 66544.06, POP_PER_SQ_MILE: 88.6},
+        {ANSI: "54000", STATE: "WEST VIRGINIA", TOTAL_POP: 1819777, LAND_AREA: 24077.73, POP_PER_SQ_MILE: 75.1},
+        {ANSI: "55000", STATE: "WISCONSIN", TOTAL_POP: 5654774, LAND_AREA: 54310.1, POP_PER_SQ_MILE: 98.8},
+        {ANSI: "56000", STATE: "WYOMING", TOTAL_POP: 544270, LAND_AREA: 97100.4, POP_PER_SQ_MILE: 5.1	}
+    ],
+
+    sampleCols = [
+        {key:"ANSI"},
+        {key:"STATE", label:"State"},
+        {key:"TOTAL_POP", label:"Total Population"},
+        {key:"LAND_AREA", label:"Land Area"},
+        {key:"POP_PER_SQ_MILE", label:"Pop/Square Mile"}];
+
+    var dtScrollingXY = new Y.DataTable.Base({columnset:sampleCols, recordset:state_census_data, summary:"US state population data"});
+	dtScrollingXY.plug(Y.Plugin.DataTableScroll, {width:"300px", height:"85px"});
+	dtScrollingXY.render("#scrolling-xy");
+
+	var dtScrollingX = new Y.DataTable.Base({columnset:sampleCols, recordset:state_census_data, summary:"US state population data"});
+	dtScrollingX.plug(Y.Plugin.DataTableScroll, {width:"150px"});
+	dtScrollingX.render("#scrolling-x");
+	
+	var dtScrollingY = new Y.DataTable.Base({columnset:sampleCols, recordset:state_census_data, summary:"US state population data"});
+	dtScrollingY.plug(Y.Plugin.DataTableScroll, {height:"100px"});
+	dtScrollingY.render("#scrolling-y");
+});
+
+</script>
+	
+	<!--END SOURCE CODE FOR EXAMPLE =============================== -->
+	
+		
+		</div>
+	</div>			
+	</div>
+		
+	<h3>Set up</h3>
+<p>Set up the columnset and recordset data to represent the information that will be displayed. The keys in the columnset should correspond with the keys in the data. The columnset can also specify widths, labels and other properties.</p>
+
+<div id="syntax-31cceab89a4db8d62353ab9a3583591c" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> sampleCols <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;ANSI&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;STATE&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;State&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;TOTAL_POP&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Total Population&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;LAND_AREA&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Land Area&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;POP_PER_SQ_MILE&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Pop/Square Mile&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    sampleData <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;00000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;UNITED STATES&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">307006550</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">3537438.44</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">79.6</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;01000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ALABAMA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">4708708</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">50744</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">87.6</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;02000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ALASKA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">698473</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">571951.26</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">1.1</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;04000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ARIZONA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">6595778</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">113634.57</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">45.2</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;05000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ARKANSAS&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">2889450</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">52068.17</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">51.3</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;06000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;CALIFORNIA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">36961664</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">155959.34</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">217.2</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;08000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;COLORADO&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">5024748</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">103717.53</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">41.5</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;09000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;CONNECTICUT&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">3518288</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">4844.8</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">702.9</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;10000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;DELAWARE&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">885122</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">1953.56</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">401</span><span class="br0">&#125;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;11000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;DISTRICT OF COLUMBIA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">599657</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">61.4</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">9378</span><span class="br0">&#125;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#93;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="kw2">var</span> sampleCols <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;ANSI&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;STATE&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;State&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;TOTAL_POP&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Total Population&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;LAND_AREA&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Land Area&quot;</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>key<span class="sy0">:</span><span class="st0">&quot;POP_PER_SQ_MILE&quot;</span><span class="sy0">,</span> label<span class="sy0">:</span><span class="st0">&quot;Pop/Square Mile&quot;</span><span class="br0">&#125;</span><span class="br0">&#93;</span><span class="sy0">;</span>
+&nbsp;
+    sampleData <span class="sy0">=</span> <span class="br0">&#91;</span><span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;00000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;UNITED STATES&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">307006550</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">3537438.44</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">79.6</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;01000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ALABAMA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">4708708</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">50744</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">87.6</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;02000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ALASKA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">698473</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">571951.26</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">1.1</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;04000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ARIZONA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">6595778</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">113634.57</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">45.2</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;05000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;ARKANSAS&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">2889450</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">52068.17</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">51.3</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;06000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;CALIFORNIA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">36961664</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">155959.34</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">217.2</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;08000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;COLORADO&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">5024748</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">103717.53</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">41.5</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;09000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;CONNECTICUT&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">3518288</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">4844.8</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">702.9</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;10000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;DELAWARE&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">885122</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">1953.56</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">401</span><span class="br0">&#125;</span><span class="sy0">,</span>
+    <span class="br0">&#123;</span>ANSI<span class="sy0">:</span> <span class="st0">&quot;11000&quot;</span><span class="sy0">,</span> STATE<span class="sy0">:</span> <span class="st0">&quot;DISTRICT OF COLUMBIA&quot;</span><span class="sy0">,</span> TOTAL_POP<span class="sy0">:</span> <span class="nu0">599657</span><span class="sy0">,</span> LAND_AREA<span class="sy0">:</span> <span class="nu0">61.4</span><span class="sy0">,</span> POP_PER_SQ_MILE<span class="sy0">:</span> <span class="nu0">9378</span><span class="br0">&#125;</span>
+<span class="br0">&#93;</span><span class="sy0">;</span></pre></div><textarea id="syntax-31cceab89a4db8d62353ab9a3583591c-plain">var sampleCols = [{key:"ANSI"},
+    {key:"STATE", label:"State"},
+    {key:"TOTAL_POP", label:"Total Population"},
+    {key:"LAND_AREA", label:"Land Area"},
+    {key:"POP_PER_SQ_MILE", label:"Pop/Square Mile"}];
+
+    sampleData = [{ANSI: "00000", STATE: "UNITED STATES", TOTAL_POP: 307006550, LAND_AREA: 3537438.44, POP_PER_SQ_MILE: 79.6},
+    {ANSI: "01000", STATE: "ALABAMA", TOTAL_POP: 4708708, LAND_AREA: 50744, POP_PER_SQ_MILE: 87.6},
+    {ANSI: "02000", STATE: "ALASKA", TOTAL_POP: 698473, LAND_AREA: 571951.26, POP_PER_SQ_MILE: 1.1},
+    {ANSI: "04000", STATE: "ARIZONA", TOTAL_POP: 6595778, LAND_AREA: 113634.57, POP_PER_SQ_MILE: 45.2},
+    {ANSI: "05000", STATE: "ARKANSAS", TOTAL_POP: 2889450, LAND_AREA: 52068.17, POP_PER_SQ_MILE: 51.3},
+    {ANSI: "06000", STATE: "CALIFORNIA", TOTAL_POP: 36961664, LAND_AREA: 155959.34, POP_PER_SQ_MILE: 217.2},
+    {ANSI: "08000", STATE: "COLORADO", TOTAL_POP: 5024748, LAND_AREA: 103717.53, POP_PER_SQ_MILE: 41.5},
+    {ANSI: "09000", STATE: "CONNECTICUT", TOTAL_POP: 3518288, LAND_AREA: 4844.8, POP_PER_SQ_MILE: 702.9},
+    {ANSI: "10000", STATE: "DELAWARE", TOTAL_POP: 885122, LAND_AREA: 1953.56, POP_PER_SQ_MILE: 401},
+    {ANSI: "11000", STATE: "DISTRICT OF COLUMBIA", TOTAL_POP: 599657, LAND_AREA: 61.4, POP_PER_SQ_MILE: 9378}
+];</textarea></div>
+<h3>Instantiation &amp; Plugin</h3> 
+<p>Additional parameters can be passed into the <code>datatable-scroll</code> plugin at this time. In the example below for the XY-scrolling datatable, the width, height and scrolling direction are being passed in.</p>
+
+<div id="syntax-a340e673c81d55e374a3fc28d697f902" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> dtScrollingXY <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">DataTable</span>.<span class="me1">Base</span><span class="br0">&#40;</span><span class="br0">&#123;</span>columnset<span class="sy0">:</span>sampleCols<span class="sy0">,</span></div></li><li class="li1"><div class="de1">    recordset<span class="sy0">:</span>sampleData<span class="sy0">,</span> summary<span class="sy0">:</span><span class="st0">&quot;US state population data&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="co1">//Creating an xy-scrolling datatable with specific width and height</span></div></li><li class="li2"><div class="de2">dtScrollingXY.<span class="me1">plug</span><span class="br0">&#40;</span>Y.<span class="me1">Plugin</span>.<span class="me1">DataTableScroll</span><span class="sy0">,</span> <span class="br0">&#123;</span>width<span class="sy0">:</span><span class="st0">&quot;300px&quot;</span><span class="sy0">,</span> height<span class="sy0">:</span><span class="st0">&quot;200px&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="kw2">var</span> dtScrollingXY <span class="sy0">=</span> <span class="kw2">new</span> Y.<span class="me1">DataTable</span>.<span class="me1">Base</span><span class="br0">&#40;</span><span class="br0">&#123;</span>columnset<span class="sy0">:</span>sampleCols<span class="sy0">,</span>
+    recordset<span class="sy0">:</span>sampleData<span class="sy0">,</span> summary<span class="sy0">:</span><span class="st0">&quot;US state population data&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+<span class="co1">//Creating an xy-scrolling datatable with specific width and height</span>
+dtScrollingXY.<span class="me1">plug</span><span class="br0">&#40;</span>Y.<span class="me1">Plugin</span>.<span class="me1">DataTableScroll</span><span class="sy0">,</span> <span class="br0">&#123;</span>width<span class="sy0">:</span><span class="st0">&quot;300px&quot;</span><span class="sy0">,</span> height<span class="sy0">:</span><span class="st0">&quot;200px&quot;</span><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax-a340e673c81d55e374a3fc28d697f902-plain">var dtScrollingXY = new Y.DataTable.Base({columnset:sampleCols,
+    recordset:sampleData, summary:"US state population data"});
+
+//Creating an xy-scrolling datatable with specific width and height
+dtScrollingXY.plug(Y.Plugin.DataTableScroll, {width:"300px", height:"200px"});</textarea></div>
+
+<h3>Display</h3>
+<p>The scrolling datatable is displayed just like a regular datatable - simply call the render method and pass in a CSS selector to the element to render within.</p>
+
+<div id="syntax-40dc0cb94ef9f3e262be52144e4fbeae" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1">dtScrollingXY.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">&quot;#scrolling-xy&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;">dtScrollingXY.<span class="me1">render</span><span class="br0">&#40;</span><span class="st0">&quot;#scrolling-xy&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax-40dc0cb94ef9f3e262be52144e4fbeae-plain">dtScrollingXY.render("#scrolling-xy");</textarea></div>
+
+
+<h3>Setting a scrolling direction</h3>
+<p>The <code>width</code> and <code>height</code> values passed into the <code>datatable-scroll</code> plugin determine the scrolling directions on that particular datatable instance. The following rules apply:</p>
+<ol>
+	<li>If a width and height are both passed in through the configuration object, the datatable will support scrolling in 'x' and 'y' directions.</li>
+	<li>If only a width is passed in, the datatable will only support x-scrolling, and its height will default to <code>auto</code></li>
+		<li>If only a height is passed in, the datatable will only support y-scrolling, and its width will default to <code>auto</code></li>
+			<li>If neither width nor height are passed in, the datatable will not scroll, and both attributes will default to <code>auto</code></li>
+</ol>
+
+<h5>Notes</h5>
+<ol>
+	<li>Even if a width and height is passed in, the table will not scroll if it can entirely fit into the specified viewport. However, if additional rows are added, scrollbars will be available immediately.</li>
+	<li>The widths and heights of the scrolling data-table can currently only be set during initialization. They cannot be modified after the table has been displayed, and modifying them will not enable a certain scrolling direction.</li>
+</ol>				</div>
+				<div class="yui-u sidebar">
+					
+				
+					<div id="examples" class="mod box4">
+                        <div class="hd">
+						<h4>
+    DataTable Examples:</h4>
+                        </div>
+						<div class="bd">
+							<ul>
+								<li><a href='../datatable/datatable_basic.html'>Basic DataTable</a></li><li><a href='../datatable/datatable_dsget.html'>DataTable + DataSource.Get + JSON Data</a></li><li><a href='../datatable/datatable_dsio.html'>DataTable + DataSource.IO + XML Data</a></li><li><a href='../datatable/datatable_formatting.html'>Formatting Row Data for Display</a></li><li><a href='../datatable/datatable_nestedcols.html'>Nested Column Headers</a></li><li><a href='../datatable/datatable_sort.html'>Column Sorting</a></li><li class='selected'><a href='../datatable/datatable_scroll.html'>Scrolling DataTable</a></li>							</ul>
+						</div>
+					</div>
+					
+					<div class="mod box4">
+                        <div class="hd">
+						<h4>More DataTable Resources:</h4>
+                        </div>
+                        <div class="bd">
+						<ul>
+							<!-- <li><a href="http://developer.yahoo.com/yui/datatable/">User's Guide</a> (external)</li> -->
+<li><a href="../../api/module_datatable.html">API Documentation</a></li></ul>
+                        </div>
+					</div>
+			  </div>
+		</div>
+		
+		</div>
+	</div>
+
+
+<div class="yui-b toc3" id="tocWrapper">
+<!-- TABLE OF CONTENTS -->
+<div id="toc">
+	
+<ul>
+<li class="sect first">YUI 3 Resources</li><li class="item"><a title="YUI 3 -- Yahoo! User Interface (YUI) Library" href="http://developer.yahoo.com/yui/3/">YUI 3 Web Site</a></li><li class="item"><a title="Examples of every YUI utility and control in action" href="../../examples/">YUI 3 Examples</a></li><li class="item"><a title="Instantly searchable API documentation for the entire YUI library." href="../../api/">YUI 3 API Docs</a></li><li class="item"><a title="YUI 3 Dependency Configurator -- configure your custom YUI implementation" href="http://developer.yahoo.com/yui/3/configurator/index.html">YUI 3 Dependency Configurator</a></li><li class="item"><a title="The YUI 3 Forum on YUILibrary.com" href="http://yuilibrary.com/forum/viewforum.php?f=15">YUI 3 Forums (external)</a></li><li class="item"><a title="Found a bug or a missing feature? Let us know on YUILibrary.com." href="http://developer.yahoo.com/yui/articles/reportingbugs/">Bug Reports/Feature Requests</a></li><li class="item"><a title="YUI is free and open, offered under a BSD license." href="http://developer.yahoo.com/yui/license.html">YUI License</a></li><li class="item"><a title="Download and fork the YUI project on GitHub" href="http://github.com/yui">YUI on Github</a></li><li class="item"><a title="The Yahoo! User Interface Blog" href="http://yuiblog.com">YUI Blog (external)</a></li><li class="sect">YUI 3 Core - Examples</li><li class="item"><a title="YUI Global Object - Functional Examples" href="../../examples/yui/index.html">YUI Global Object</a></li><li class="item"><a title="Event - Functional Examples" href="../../examples/event/index.html">Event</a></li><li class="item"><a title="Node - Functional Examples" href="../../examples/node/index.html">Node</a></li><li class="sect">YUI 3 Component Infrastructure - Examples</li><li class="item"><a title="Attribute - Functional Examples" href="../../examples/attribute/index.html">Attribute</a></li><li class="item"><a title="Plugin - Functional Examples" href="../../examples/plugin/index.html">Plugin</a></li><li class="item"><a title="Widget - Functional Examples" href="../../examples/widget/index.html">Widget</a></li><li class="sect">YUI 3 Utilities - Examples</li><li class="item"><a title="Animation - Functional Examples" href="../../examples/anim/index.html">Animation</a></li><li class="item"><a title="AsyncQueue - Functional Examples" href="../../examples/async-queue/index.html">AsyncQueue</a></li><li class="item"><a title="Cache - Functional Examples" href="../../examples/cache/index.html">Cache</a></li><li class="item"><a title="Cookie - Functional Examples" href="../../examples/cookie/index.html">Cookie</a></li><li class="item"><a title="DataSchema - Functional Examples" href="../../examples/dataschema/index.html">DataSchema <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="DataSource - Functional Examples" href="../../examples/datasource/index.html">DataSource <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="DataType - Functional Examples" href="../../examples/datatype/index.html">DataType <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Drag &amp; Drop - Functional Examples" href="../../examples/dd/index.html">Drag &amp; Drop</a></li><li class="item"><a title="Editor - Functional Examples" href="../../examples/editor/index.html">Editor <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Get - Functional Examples" href="../../examples/get/index.html">Get</a></li><li class="item"><a title="History - Functional Examples" href="../../examples/history/index.html">History <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="IO - Functional Examples" href="../../examples/io/index.html">IO</a></li><li class="item"><a title="ImageLoader - Functional Examples" href="../../examples/imageloader/index.html">ImageLoader</a></li><li class="item"><a title="Internationalization - Functional Examples" href="../../examples/intl/index.html">Internationalization</a></li><li class="item"><a title="JSON (JavaScript Object Notation) - Functional Examples" href="../../examples/json/index.html">JSON</a></li><li class="item"><a title="JSONP (JSON with Padding) - Functional Examples" href="../../examples/jsonp/index.html">JSONP <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Recordset - Functional Examples" href="../../examples/recordset/index.html">Recordset <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Resize - Functional Examples" href="../../examples/resize/index.html">Resize <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Stylesheet - Functional Examples" href="../../examples/stylesheet/index.html">Stylesheet</a></li><li class="item"><a title="Sortable - Functional Examples" href="../../examples/sortable/index.html">Sortable <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Transition - Functional Examples" href="../../examples/transition/index.html">Transition <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Uploader - Functional Examples" href="../../examples/uploader/index.html">Uploader <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="YQL Query - Functional Examples" href="../../examples/yql/index.html">YQL Query <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Widgets - Examples</li><li class="item"><a title="AutoComplete - Functional Examples" href="../../examples/autocomplete/index.html">AutoComplete <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Charts - Functional Examples" href="../../examples/charts/index.html">Charts <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="selected "><a title="DataTable - Functional Examples" href="../../examples/datatable/index.html">DataTable <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Dial - Functional Examples" href="../../examples/dial/index.html">Dial <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Overlay - Functional Examples" href="../../examples/overlay/index.html">Overlay <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="ScrollView - Functional Examples" href="../../examples/scrollview/index.html">ScrollView <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Slider - Functional Examples" href="../../examples/slider/index.html">Slider <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="TabView - Functional Examples" href="../../examples/tabview/index.html">TabView <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Node Plugins - Examples</li><li class="item"><a title="FocusManager Node Plugin - Functional Examples" href="../../examples/node-focusmanager/index.html">FocusManager Node Plugin <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="MenuNav Node Plugin - Functional Examples" href="../../examples/node-menunav/index.html">MenuNav Node Plugin <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 CSS - Examples</li><li class="item"><a title="YUI Base - Functional Examples" href="../../examples/cssbase/index.html">CSS Base</a></li><li class="item"><a title="YUI Fonts - Functional Examples" href="../../examples/cssfonts/index.html">CSS Fonts</a></li><li class="item"><a title="YUI Grids - Functional Examples" href="../../examples/cssgrids/index.html">CSS Grids <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="YUI CSS Reset - Functional Examples" href="../../examples/cssreset/index.html">CSS Reset</a></li><li class="sect">YUI 3 Developer Tools - Examples</li><li class="item"><a title="Console - Functional Examples" href="../../examples/console/index.html">Console <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Console Filters Plugin- Functional Examples" href="../../examples/console-filters/index.html">Plugin.ConsoleFilters <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Profiler - Functional Examples" href="../../examples/profiler/index.html">Profiler</a></li><li class="item"><a title="Test - Functional Examples" href="../../examples/test/index.html">Test</a></li><li class="sect">Other Useful YUI 3 Resources</li><li class="item"><a title="Answers to Frequently Asked Questions about the YUI Library" href="http://developer.yahoo.com/yui/articles/faq/">YUI FAQ (external)</a></li><li class="item"><a title="Yahoo!'s philosophy of Graded Browser Support" href="http://developer.yahoo.com/yui/articles/gbs/">Graded Browser Support (external)</a></li><li class="item"><a title="Videos and podcasts from the YUI Team and from the Yahoo! frontend engineering community." href="http://developer.yahoo.com/yui/theater/">YUI Theater (external)</a></li></ul>
+</div>
+</div>
+	</div><!--closes bd-->
+
+	<div id="ft">
+        <p class="first">Copyright &copy; 2010 Yahoo! Inc. All rights reserved.</p>
+        <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
+            <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
+            <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
+            <a href="http://careers.yahoo.com/">Job Openings</a></p>
+	</div>
+</div>
+<script language="javascript"> 
+var yuiConfig = { filter: 'raw' };
+</script>
+<script src="../../assets/syntax.js"></script>
+<script src="../../assets/dpSyntaxHighlighter.js"></script>
+<script language="javascript"> 
+dp.SyntaxHighlighter.HighlightAll('code'); 
+</script>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1338186908" alt="setstats" border="0" width="1" height="1"></noscript>

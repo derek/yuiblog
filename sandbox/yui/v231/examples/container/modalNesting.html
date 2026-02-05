@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Nested Dialogs - Modality</title>
+
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.3.1/build/reset/reset-min.css" />
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.3.1/build/fonts/fonts-min.css" />        
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.3.1/build/container/assets/skins/sam/container.css" />
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.3.1/build/button/assets/skins/sam/button.css" />    
+        
+        <style type="text/css">
+            .els {
+                padding:5px;
+            }
+
+            .yui-overlay .bd {
+                /* Make sure anything rendered to bd is higher than the header/footer */
+                z-index:1;
+            }
+        </style>
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/utilities/utilities.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/container/container-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/button/button-beta-min.js"></script>
+    
+        <script type="text/javascript">
+        YAHOO.util.Event.onDOMReady(
+            function() {
+
+                var dialogOne = new YAHOO.widget.Dialog("dialogOne", {
+                    width:"300px",
+                    fixedcenter: true,
+                    constraintoviewport: true,
+            		visible:false,
+                    modal:true,
+                    buttons:[
+                        {text:"Submit", handler:function(){this.submit();}, isDefault:true},
+                        {text:"Cancel", handler:function(){this.cancel();}}]
+                });
+                dialogOne.beforeSubmitEvent.subscribe(function() { alert("Submitting:" + this.form.name);});
+                dialogOne.render();
+
+                var dialogTwo = new YAHOO.widget.Dialog("dialogTwo", {
+                    width:"400px",
+                    fixedcenter: true,
+                    constraintoviewport: true,
+                    modal:false,
+            		visible:false,
+                    buttons:[
+                        {text:"Submit", handler:function(){this.submit();}, isDefault:true},
+                        {text:"Cancel", handler:function(){this.cancel();}}]
+                });
+                dialogTwo.beforeSubmitEvent.subscribe(function() { alert("Submitting:" + this.form.name);});
+                dialogTwo.render();
+
+/*
+                // Workaround 
+            	dialogOne.showMaskEvent.subscribe(function() {
+                    var dialogTwoEl = dialogTwo.element;
+                    var disabledEls = dialogOne.focusableElements;
+                    for (var i = 0; i < disabledEls.length; i++ ) {
+                        var el = disabledEls[i];
+                        // Reversing controls "disabled" by dialogOne going modal
+                		if (YAHOO.util.Dom.isAncestor(dialogTwoEl, el)) {
+                            YAHOO.util.Event.removeListener(el, "focus");
+                        }
+                    }
+            	});
+*/
+
+                YAHOO.util.Event.addListener("openDialogOne", "click",  function() { dialogOne.show(); });
+                YAHOO.util.Event.addListener("openDialogTwo", "click", function() { dialogTwo.show(); });
+            }
+        );
+        </script>
+    </head>
+
+    <body class="yui-skin-sam">
+        <input type="button" id="openDialogOne" value="Open Dialog One" />
+    
+        <div id="dialogOne">
+          <div class="hd">Dialog One - Modal</div>
+          <div class="bd">
+                <form name="dialogOneForm" method="post" action="#">
+                    <div class="els">
+                        <input type="checkbox" name="check1" />
+                        <input type="text" name="text1" />
+                    </div>                    
+                    <div class="els">
+                	    <input type="button" id="openDialogTwo" value="Open Dialog Two" />
+                    </div>
+                </form>
+                
+                <!-- Since it's inside dialogOne, it's form elements aren't disabled -->
+                <div id="dialogTwo">
+                	<div class="hd">Dialog Two - Non Modal</div>
+                	<div class="bd">
+                		<form name="dialogTwoForm" method="post" action="#">
+                            Elements are enabled:
+                            <div class="els">
+                                <input type="checkbox" name="check2" />
+                                <input type="text" name="text2" />
+                            </div>
+                		</form>
+                	</div>
+                </div>
+
+          </div>
+        </div>
+    </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1255958952" alt="setstats" border="0" width="1" height="1"></noscript>

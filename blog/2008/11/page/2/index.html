@@ -109,7 +109,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -369,11 +369,11 @@
 <p class="q"><strong>YUI is used in your framework (CEAF), which is part of your recently-released <a href="http://www.sdl.com/en/products/global-ams/Global_ams.asp">Global AMS</a> product.  How are you using YUI in these applications?</strong></p>
 <p>We are trying to give all our products a similar look and feel so that the user experience is consistent across the whole range of products. YUI helps us by providing a common set of widgets for developers to use.</p>
 <p>CEAF allows the developers to specify in the configuration of an application what elements should be available on each page. For example, that a page will have a toolbar with buttons that add new objects to the system and a table with a list of languages which must have a context menu so that users can interact with the data being shown. YUI allows us to easily turn that configuration in to UI that users can interact with. Even the forms that don&#8217;t fit this model are easier because the YUI widgets and the widgets we build on top of them mean the developer can concentrate on what the form is doing rather than how it looks.</p>
-<p><img src="http://yuiblog.com/assets/sdl-dialog.png" alt="Dialog, Tabs and other YUI controls in use on SDL's Global AMS."></p>
+<p><img src="/blog-archive/assets/sdl-dialog.png" alt="Dialog, Tabs and other YUI controls in use on SDL's Global AMS."></p>
 <p>We use the <a href="http://developer.yahoo.com/yui/container/dialog">Dialog widget</a> the most. Each object within the system is represented at some point on a YUI-based <a href="http://developer.yahoo.com/yui/container/dialog/">Dialog</a>, either when it&#8217;s being created or edited. It might sound insignificant in that one sentence but most objects can be represented using the default dialog class and very few require anything more than that.</p>
 <p>We send the bare minimum HTML to the client until more is requested. Dialog boxes are all loaded on the fly using the <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a> before being cached if the data would be useful later on.</p>
 <p>We use the <a href="http://developer.yahoo.com/yui/layout/">Layut Manager</a> to build the basic page layout and to give the application a known starting point for all its styles. The page is split into three and we use <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> to load the main page element with data from the server.</p>
-<p><img src="http://yuiblog.com/assets/sdl-menu.png" alt="The YUI Context Menu in use on SDL's Global AMS."></p>
+<p><img src="/blog-archive/assets/sdl-menu.png" alt="The YUI Context Menu in use on SDL's Global AMS."></p>
 <p class="q"><strong>Why YUI?  There are lots of good options out there &mdash; what was it about YUI that made it a good fit for these applications?</strong></p>
 <p>We also looked quite seriously at Dojo, but in the end YUI ticked more boxes. YUI had better documentation, the weight of Yahoo! behind it and a massive community.</p>
 <p>We like the mix of <a href="http://developer.yahoo.com/yui/docs/">API documentation</a>, <a href="http://developer.yahoo.com/yui/examples/calendar/quickstart.html">getting-started tutorials</a> and more <a href="http://developer.yahoo.com/yui/examples/get/get-script-basic.html">advanced examples</a>. So much so that we&#8217;ve adopted the same model for our developer documentation we do for CEAF.</p>
@@ -396,20 +396,20 @@
 						<div class="entry">
 							<p>Here&#8217;s what we noticed in the last week or so in the world of YUI &mdash; as always, please use the comments area to let us know what we missed.</p>
 <ul id="releaselist">
-<li id="yuiBlogWild-30"><strong><a href="http://www.thestreet.com/">YUI Sightings — TheStreet.com and Other Newspaper/Consumer Media Outlets</a>:</strong> We&#8217;ve seen YUI adoption increasing among consumer media sites and online newspapers, including <em>The Wall Street Journal</em> and the <em>Huffington Post</em>.  We noticed recently that <a href="http://www.thestreet.com/">TheStreet.com</a> (and the affiliated <a href="http://www.mainstreet.com">MainStreet.com</a>) has joined that group with an impressive array of YUI components helping to power the site&#8217;s UI.  (Nate <a href="http://twitter.com/natekoechley/statuses/983514716">twittered recently</a> that the Denver Post is also using YUI and hosting YUI from Yahoo&#8217;s CDN.)  We&#8217;re also thrilled that local papers in the Media News Group like the <em><a href="http://www.mercurynews.com/">San Jose Mercury News</a></em> the <em><a href="http://www.santacruzsentinel.com/">Santa Cruz Sentinel</a></em> are YUI users.<br /><a href="http://www.thestreet.com/"><img src="http://yuiblog.com/assets/thestreet.png" vspace="10"></a></li>
+<li id="yuiBlogWild-30"><strong><a href="http://www.thestreet.com/">YUI Sightings — TheStreet.com and Other Newspaper/Consumer Media Outlets</a>:</strong> We&#8217;ve seen YUI adoption increasing among consumer media sites and online newspapers, including <em>The Wall Street Journal</em> and the <em>Huffington Post</em>.  We noticed recently that <a href="http://www.thestreet.com/">TheStreet.com</a> (and the affiliated <a href="http://www.mainstreet.com">MainStreet.com</a>) has joined that group with an impressive array of YUI components helping to power the site&#8217;s UI.  (Nate <a href="http://twitter.com/natekoechley/statuses/983514716">twittered recently</a> that the Denver Post is also using YUI and hosting YUI from Yahoo&#8217;s CDN.)  We&#8217;re also thrilled that local papers in the Media News Group like the <em><a href="http://www.mercurynews.com/">San Jose Mercury News</a></em> the <em><a href="http://www.santacruzsentinel.com/">Santa Cruz Sentinel</a></em> are YUI users.<br /><a href="http://www.thestreet.com/"><img src="/blog-archive/assets/thestreet.png" vspace="10"></a></li>
 <li id="yuiBlogWild-38"><a href="http://www.facebook.com/pages/Yahoo-User-Interface-Library-YUI/15384729838"><img src="http://ericmiraglia.com/yuiblog/assets/yuifacebook.png" align="right" hspace="10" vspace="5"></a><strong><a href="http://www.facebook.com/pages/Yahoo-User-Interface-Library-YUI/15384729838">New YUI Group on Facebook</a>:</strong> Asvin Balloo of Mauritius created a new YUI group on Facebook which provides another useful place to keep up with YUI news and notes and to network with other members of the YUI community.</li>
-<li id="yuiBlogWild-60"><strong><a href="http://blog.davglass.com/files/yui/combo/">YUI — Local Combo Handler</a>:</strong> Dav created a new &#8220;local combo handler&#8221; based on Steve Clay and Ryan Grove&#8217;s <a href="http://code.google.com/p/minify/">Minify project</a>, and in <a href="http://blog.davglass.com/files/yui/combo/">his writeup</a> he shows you how to wire this up to <a href="http://developer.yahoo.com/yui/yuiloader">YUI Loader</a> to take advantage of YUI Loader&#8217;s combo-handling support while still serving files directly from your own server (instead of the <a href="http://developer.yahoo.com/yui/articles/hosting">Yahoo CDN</a>).<br /><a href="http://blog.davglass.com/files/yui/combo/"><img src="http://yuiblog.com/assets/davcombo.png" vspace="10"></a></li>
+<li id="yuiBlogWild-60"><strong><a href="http://blog.davglass.com/files/yui/combo/">YUI — Local Combo Handler</a>:</strong> Dav created a new &#8220;local combo handler&#8221; based on Steve Clay and Ryan Grove&#8217;s <a href="http://code.google.com/p/minify/">Minify project</a>, and in <a href="http://blog.davglass.com/files/yui/combo/">his writeup</a> he shows you how to wire this up to <a href="http://developer.yahoo.com/yui/yuiloader">YUI Loader</a> to take advantage of YUI Loader&#8217;s combo-handling support while still serving files directly from your own server (instead of the <a href="http://developer.yahoo.com/yui/articles/hosting">Yahoo CDN</a>).<br /><a href="http://blog.davglass.com/files/yui/combo/"><img src="/blog-archive/assets/davcombo.png" vspace="10"></a></li>
 <li id="yuiBlogWild-66"><strong><a href="http://sites.google.com/site/tedhusted/posts/yui-test---the-new-kid-on-block">YUI Test — The New Kid on Block</a>:</strong> <a title="Ted Husted's blog." href="http://sites.google.com/site/tedhusted/blog">Ted Husted</a> of <a href="http://www.vandamme.com/content.aspx?id=362">Van Damme Associates</a>, and one of the earliest active members on the YUI Community Forums, posted a new tutorial on <a title="YUI Test" href="http://developer.yahoo.com/yui/yuitest/">YUI Test</a>.&nbsp; Ted articulates some of the key differentiators for YUI Test versus, say, JSUnit, and he also emphasizes the crucial point that YUI Test (like <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a>), though part of YUI, is designed to support your work not just on YUI-based code but on <em>any</em> JavaScript code based on <em>any</em> (or no) toolkit.</li>
 <li id="yuiBlogWild-37"><strong><a href="http://mattsnider.com/languages/javascript/animation-widget-slide-out-from-top-of-viewport/">Animation Widget — Slide Out From Top of Viewport</a>:</strong> Mint&#8217;s Matt Snider has written up an animation widget that emulates the &#8220;sheets&#8221; behavior in Mac OS X.  Sheets are dialogs that descend from the top of the window to which they&#8217;re attached &#8212; in a web app, that would often be the viewport, and that&#8217;s how Matt has coded up his examples.</li>
-<li id="yuiBlogWild-50"><strong><a href="http://yuihelp.levycodev.com/demos/calendar/multi_cals_on_a_page_help.php">Multiple Calendars With Linked Input Fields All Using a Single Widget</a>:</strong> Prolific YUI community contributor Bret Levy wrote an excellent new tutorial for <a href="http://developer.yahoo.com/yui/calendar/">the Calendar Control</a>.  This tutorial, he writes, is &#8220;intended to help users get the most out of the YUI Calendar control. The calendar control is a unique &#8216;widget&#8217; because it is actually a complete &#8216;window&#8217;. That is, it is not an element added in the flow of your page — it is specifically designed to be a &#8216;popup&#8217; element.  What most people find they want to do is have multiple calendar popups on a page, and furthermore, have &#8216;linked&#8217; user input fields for each input. In doing so, it is important to consider the efficiency of the solution, specifically, it is desirable to have a single calendar &#8216;widget&#8217;. This [tutorial shows] you how to accomplish this goal, with a play-by-play commentary on the code that allows this to happen.&#8221;<br /><a href="http://yuihelp.levycodev.com/demos/calendar/multi_cals_on_a_page_help.php"><img src="http://yuiblog.com/assets/levy-multical.png" vspace="10"></a></li>
+<li id="yuiBlogWild-50"><strong><a href="http://yuihelp.levycodev.com/demos/calendar/multi_cals_on_a_page_help.php">Multiple Calendars With Linked Input Fields All Using a Single Widget</a>:</strong> Prolific YUI community contributor Bret Levy wrote an excellent new tutorial for <a href="http://developer.yahoo.com/yui/calendar/">the Calendar Control</a>.  This tutorial, he writes, is &#8220;intended to help users get the most out of the YUI Calendar control. The calendar control is a unique &#8216;widget&#8217; because it is actually a complete &#8216;window&#8217;. That is, it is not an element added in the flow of your page — it is specifically designed to be a &#8216;popup&#8217; element.  What most people find they want to do is have multiple calendar popups on a page, and furthermore, have &#8216;linked&#8217; user input fields for each input. In doing so, it is important to consider the efficiency of the solution, specifically, it is desirable to have a single calendar &#8216;widget&#8217;. This [tutorial shows] you how to accomplish this goal, with a play-by-play commentary on the code that allows this to happen.&#8221;<br /><a href="http://yuihelp.levycodev.com/demos/calendar/multi_cals_on_a_page_help.php"><img src="/blog-archive/assets/levy-multical.png" vspace="10"></a></li>
 <li id="yuiBlogWild-39"><strong><a href="http://grails.org/GrailsUI+Plugin">GrailsUI — More YUI Love for Grails Users</a>:</strong> From <a href="http://grails.org/GrailsUI+Plugin">the website</a>: &#8220;GrailsUI (GUI) is a plugin that provides an extensive tag library of rich ajax components based on the Yahoo! UI (YUI) JavaScript library and a YUI extension called the <a href="http://www.bubbling-library.com">Bubbling Library</a>. It has been designed for ease-of-use as well as configurability.&#8221;  (<a href="http://twitter.com/webdevsensei/statuses/986637781">Original source.</a>)</li>
 <li id="yuiBlogWild-54"><strong><a href="http://tech.groups.yahoo.com/group/ydn-javascript/message/40059">Nate Koechley on Grids CSS and W3C Validation</a>:</strong> YUI community member &#8220;norman&#8221; posted a question to the forum about his experiences trying to validate YUI Grids using the W3C  CSS Validator.  Nate Koechley (Grids&#8217;s author) replied with a deep-dive on this issue that is likely of interest to anyone using the YUI CSS foundation (<a href="http://developer.yahoo.com/yui/reset">Reset</a>, <a href="http://developer.yahoo.com/yui/fonts">Fonts</a>, and <a href="http://developer.yahoo.com/yui/grids">Grids</a>).</li>
 <li id="yuiBlogWild-61"><strong><a href="http://weblog.dangertree.net/2008/11/02/using-grailsui-datatable-tag/">Using GrailsUI DataTable Tag</a>:</strong> Matt Taylor writes: &#8220;The GUI dataTable is the most complicated tag to set up, because there is a lot of data configuration required. You have to correctly set up the column definitions in the tag, and you have to set up the controller to serve up the proper data.&#8221;  His <a href="http://weblog.dangertree.net/2008/11/02/using-grailsui-datatable-tag/">detailed tutorial</a> is just what you need to get started using <a href="http://developer.yahoo.com/yui/datatable">YUI DataTable</a> with GrailsUI.</li>
-<li id="yuiBlogWild-63"><a href="http://blogs.sun.com/socialsite/entry/a_little_more_about_socialsite"><img src="http://yuiblog.com/assets/socialsite.png" align="right" hspace="10" vspace="5"></a><strong><a href="http://blogs.sun.com/socialsite/entry/a_little_more_about_socialsite">Sun&#8217;s New SocialSite Dashboard Gadget Using YUI</a>:</strong> Dave Johnson on Sun&#8217;s <a href="https://socialsite.dev.java.net/">SocialSite</a> blog talks about the second milestone of the SocialSite project: &#8220;M2 build is the first-cut of our new Dashboard Gadget, which is the place where a SocialSite user can respond to friend and group membership requests, search the social graph and more. As I mentioned yesterday, it&#8217;s written using JavaScript, Open Social Templates and YUI components.&#8221;</li>
-<li id="yuiBlogWild-29"><strong><a href="http://www.webreference.com/programming/javascript/rg20/2.html">Popular JavaScript Framework Libraries: An Overview</a>:</strong> Rob Gravelle has written up a review of jQuery, YUI and Mochikit for WebReference.com, providing a high-level overview of each.  It&#8217;s always interesting to see a new take on this established pattern of comparison that has emerged over the past several years.<br /><a href="http://www.webreference.com/programming/javascript/rg20/2.html"><img src="http://yuiblog.com/assets/yuireview.png" vspace="10"></a></li>
+<li id="yuiBlogWild-63"><a href="http://blogs.sun.com/socialsite/entry/a_little_more_about_socialsite"><img src="/blog-archive/assets/socialsite.png" align="right" hspace="10" vspace="5"></a><strong><a href="http://blogs.sun.com/socialsite/entry/a_little_more_about_socialsite">Sun&#8217;s New SocialSite Dashboard Gadget Using YUI</a>:</strong> Dave Johnson on Sun&#8217;s <a href="https://socialsite.dev.java.net/">SocialSite</a> blog talks about the second milestone of the SocialSite project: &#8220;M2 build is the first-cut of our new Dashboard Gadget, which is the place where a SocialSite user can respond to friend and group membership requests, search the social graph and more. As I mentioned yesterday, it&#8217;s written using JavaScript, Open Social Templates and YUI components.&#8221;</li>
+<li id="yuiBlogWild-29"><strong><a href="http://www.webreference.com/programming/javascript/rg20/2.html">Popular JavaScript Framework Libraries: An Overview</a>:</strong> Rob Gravelle has written up a review of jQuery, YUI and Mochikit for WebReference.com, providing a high-level overview of each.  It&#8217;s always interesting to see a new take on this established pattern of comparison that has emerged over the past several years.<br /><a href="http://www.webreference.com/programming/javascript/rg20/2.html"><img src="/blog-archive/assets/yuireview.png" vspace="10"></a></li>
 <li id="yuiBlogWild-53"><strong><a href="http://www.stripesbook.com/blog/index.php?/archives/17-AutoComplete-with-Stripes-and-YUI.html">AutoComplete with Stripes and YUI</a>:</strong> Freddy Daoud wrote up a tutorial (with plenty of code samples) that shows how to use <a href="http://developer.yahoo.com/yui/autocomplete">YUI AutoComplete</a> with the <a href="http://www.stripesframework.org/">Stripes</a> Java framework.  Freddy concludes that the two frameworks get along quite well.</li>
-<li id="yuiBlogWild-62"><a href="http://www.webmonkey.com/tutorial/Get_Local_Search_Results_With_Yahoo_Maps_API"><img src="http://yuiblog.com/assets/burritomap.png" align="right" hspace="10" vspace="5"></a><strong><a href="http://www.webmonkey.com/tutorial/Get_Local_Search_Results_With_Yahoo_Maps_API">WebMonkey on Building Local Search Widgets with Yahoo Maps</a>:</strong> WebMonkey (which itself currently uses YUI 2.5.1 in addition to Prototype) created <a href="http://www.webmonkey.com/tutorial/Get_Local_Search_Results_With_Yahoo_Maps_API">a new how-to guide</a> on building local-search solutions with the <a href="http://developer.yahoo.com/maps/ajax/">Yahoo! Maps AJAX API</a>.  This isn&#8217;t a YUI tutorial, specifically, although the widget you create will use YUI under the hood (Yahoo Maps and the AJAX API are both YUI-based).  If you find the widget you build isn&#8217;t playing nicely with your current YUI implementation, check out <a href="/yuiblog/blog/2006/12/14/maps-plus-yui/trackback/">this simple remedy</a>.</li>
-<li id="yuiBlogWild-64"><strong><a href="http://www.weather.com/">YUI Sighting — Weather.com</a>:</strong> Weather.com uses YUI&#8217;s AutoComplete control (and many of the YUI Utilities) for its main search box and YUI Grids CSS for its page layout.<br /><a href="http://www.weather.com/"><img src="http://yuiblog.com/assets/2008/weather-dot-com-20081106-233441.png" vspace="10"></a></li>
+<li id="yuiBlogWild-62"><a href="http://www.webmonkey.com/tutorial/Get_Local_Search_Results_With_Yahoo_Maps_API"><img src="/blog-archive/assets/burritomap.png" align="right" hspace="10" vspace="5"></a><strong><a href="http://www.webmonkey.com/tutorial/Get_Local_Search_Results_With_Yahoo_Maps_API">WebMonkey on Building Local Search Widgets with Yahoo Maps</a>:</strong> WebMonkey (which itself currently uses YUI 2.5.1 in addition to Prototype) created <a href="http://www.webmonkey.com/tutorial/Get_Local_Search_Results_With_Yahoo_Maps_API">a new how-to guide</a> on building local-search solutions with the <a href="http://developer.yahoo.com/maps/ajax/">Yahoo! Maps AJAX API</a>.  This isn&#8217;t a YUI tutorial, specifically, although the widget you create will use YUI under the hood (Yahoo Maps and the AJAX API are both YUI-based).  If you find the widget you build isn&#8217;t playing nicely with your current YUI implementation, check out <a href="/yuiblog/blog/2006/12/14/maps-plus-yui/trackback/">this simple remedy</a>.</li>
+<li id="yuiBlogWild-64"><strong><a href="http://www.weather.com/">YUI Sighting — Weather.com</a>:</strong> Weather.com uses YUI&#8217;s AutoComplete control (and many of the YUI Utilities) for its main search box and YUI Grids CSS for its page layout.<br /><a href="http://www.weather.com/"><img src="/blog-archive/assets/2008/weather-dot-com-20081106-233441.png" vspace="10"></a></li>
 <li id="yuiBlogWild-48"><strong><a href="http://bookquiz.simplewind.com/">Book Quiz</a>:</strong> YUIBlog reader &#8220;Jackson&#8221; sent in this implementation of YUI Drag &amp; Drop and other components.  It&#8217;s a fun daily quiz asking you to match up famous (and some not-so-famous) authors with titles from their oeuvre. (<a href="/yuiblog/blog/2008/10/30/wild-20081030/#comment-508187">Original source.</a>)</li>
 <li id="yuiBlogWild-67"><strong><a href="http://ericmiraglia.com/inlink/">Page Inlink Analyzer Using YUI and Site Explorer</a>:</strong> Eric cooked up a quick YUI-based UI that provides an alternative look into the <a href="http://developer.yahoo.com/search/siteexplorer/V1/inlinkData.html">Yahoo! Site Explorer API</a>.&nbsp; From a YUI perspective, this is another demo of a full-page app using Dav&#8217;s <a href="http://developer.yahoo.com/yui/layout/">Layout Manager</a>, Jenny&#8217;s <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and a host of other components; from a broader perspective, the tool gives web site operators another way to look deeply into their page inlink data. (<a href="http://ericmiraglia.com/blog/?p=72">Original source.</a>)<br /><a href="http://ericmiraglia.com/inlink/"><img src="http://ericmiraglia.com/assets/inlink.png" vspace="10"></a></li>
 </ul>
@@ -427,7 +427,7 @@
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
+<p><img src="/blog-archive/assets/stoyan.jpg" alt="Stoyan Stefanov." align="right" hspace="10" vspace="5"><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></p>
 </div>
 </div>
 <p><em>This is part 2 in an ongoing series. You can read the other parts here:</em></p>
@@ -471,9 +471,9 @@
 <h3>Internet Explorer and PNG transparency</h3>
 <p>We said that both PNG types support alpha transparency, but there are some browser eccentricities that affect both types and about which you should be aware.</p>
 <p>With PNG8, whenever you have semi-transparent pixels they appear as fully transparent in IE (version 6 and lower). This is not ideal but it&#8217;s still useful and is the same behavior that you get from a GIF. So by using a PNG8, in the worst case (IE &lt; 7) you get the same user experience as with a GIF, while for other browsers (Firefox, Safari, Opera) you get a better experience. Below is an example that illustrates this, note how in IE6 the semi-transparent light around the bulb is missing (source: <a href="http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/">SitePoint</a>):</p>
-<p><img src="http://yuiblog.com/assets/png8-transparency.png" alt="PNG8 alpha transparency" /></p>
+<p><img src="/blog-archive/assets/png8-transparency.png" alt="PNG8 alpha transparency" /></p>
 <p>For truecolor PNGs, the situation is a much less attractive compromise. All the semi transparent pixels appear grey in IE prior to version 7 (source: <a href="http://www.w3.org/Graphics/PNG/inline-alpha.html">W3C</a>).</p>
-<p><img src="http://yuiblog.com/assets/png-transparency.png" alt="transparency in truecolor PNG" /></p>
+<p><img src="/blog-archive/assets/png-transparency.png" alt="transparency in truecolor PNG" /></p>
 <p>IE7 introduces proper native support for alpha transparency in both PNG8 and truecolor PNGs. For earlier IE versions you need to fix the truecolor PNG transparency issue using CSS and an AlphaImageLoader filter, which we&#8217;ll discuss in more details in a follow-up article. (Spoiler alert: <em>avoid AlphaImageLoader</em>.)</p>
 <h3>&#8220;All we are saying is: Give PiNG a chance!&#8221;</h3>
 <p>Although PNG8 should be the preferred of the PNGs, because it&#8217;s smaller in filesize and degrades well in early IEs without special CSS filters, there are still some use cases for truecolor PNGs:</p>
@@ -500,7 +500,7 @@
 
 						<div class="entry">
 							<div class="interview">
-<div class="intro"><img src="http://yuiblog.com/assets/caridy-portrait.jpg" alt="Caridy Pati&#241;o Mayea" width="150" height="150" hspace="10" vspace="5" align="right"></p>
+<div class="intro"><img src="/blog-archive/assets/caridy-portrait.jpg" alt="Caridy Pati&#241;o Mayea" width="150" height="150" hspace="10" vspace="5" align="right"></p>
 <p><em>Caridy, a leading and always-helpful contributor to the <a href="http://groups.yahoo.com/group/ydn-javascript">YUI community forum</a>, has been working in front of a PC since the nineties. Until recently, he was a professional programmer developing LAMP applications for the University of Las Villas where he received his B.S. in Computer Science in 2003, and for several companies around the world. He recently joined Yahoo and works for Yahoo&#8217;s emerging markets group in Miami.</em></p>
 <p><em>For the last two years he&#8217;s been focused on JavaScript as a development platform. Early last year he decided to create an easy-to-adopt YUI extension called &#8220;<a href="http://bubbling-library.com/">Bubbling Library</a>&#8221; as a side project; you can read <a href="/yuiblog/blog/2007/09/13/bubbling-library-by-caridy/">his YUIBlog introduction to the Bubbling Library here</a>.</em></p>
 </div>
@@ -525,7 +525,7 @@
 var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);
 &lt;/script&gt;</pre>
 <p>(<a href="http://developer.yahoo.com/yui/examples/tabview/frommarkup.html">Live demo</a>.)</p>
-<p><a href="http://developer.yahoo.com/yui/examples/tabview/frommarkup.html"><img src="http://yuiblog.com/assets/tabviewexample.png" width="510" height="214" /></a></p>
+<p><a href="http://developer.yahoo.com/yui/examples/tabview/frommarkup.html"><img src="/blog-archive/assets/tabviewexample.png" width="510" height="214" /></a></p>
 <p>If Progressive Enhancement isn&#8217;t relevant in your implementation, you can create a TabView object purely from JavaScript, creating the tabs and rendering them into a specified DOM element.  In this case, the content of the tabs will not be available for search engines, which is a drawback, but the content for each tab can be loaded on demand using AJAX or by injecting the HTML code directly during the definition of the tab. Let&#8217;s see an example:</p>
 <pre>
 var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);
@@ -722,107 +722,107 @@ window.myVar = 1; </pre>
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

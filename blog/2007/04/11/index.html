@@ -13,7 +13,7 @@
 	<meta name="DC.title" content="Yahoo! User Interface Blog" />
 	<!-- /geocoding -->
 	<style type="text/css" media="screen">
-		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+		@import url(/yuiblog/blog/wp-content/themes/yuiblog_v1/style.css);
 	</style>
 	<link rel="Shortcut Icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
@@ -86,7 +86,7 @@
 			</div>
 		
 			<!--<div id="search">
-				<form id="searchform" method="get" action="http://www.yuiblog.com/blog">
+				<form id="searchform" method="get" action="/yuiblog/blog">
 					<input type="text" name="s" id="s" size="20" value="search in blog..." />
 				</form>
 			</div>-->
@@ -125,18 +125,18 @@
 <p>The explanation goes back to the HTTP/1.1 spec, which suggests that browsers download two components in parallel per hostname. Many web pages download all their components from a single hostname. Viewing these HTTP requests reveals a stair-step pattern, as shown in Figure 1.</p>
 <div class="chart" id="figure-1">
 <h4><strong>Figure 1.</strong> Downloading 2 components in parallel</h4>
-<p><img src="http://yuiblog.com/assets/performance/two_parallel.gif" alt="Figure 1. Downloading 2 components in parallel" width="311" height="200" longdesc="two_parallel.gif" id="two_parallel"></p>
+<p><img src="/blog-archive/assets/performance/two_parallel.gif" alt="Figure 1. Downloading 2 components in parallel" width="311" height="200" longdesc="two_parallel.gif" id="two_parallel"></p>
 </div>
 <p>If a web page evenly distributed its components across two hostnames, the overall response time would be about twice as fast. The HTTP requests would look as shown in Figure 2, with four components downloaded in parallel (two per hostname). The horizontal width of the box is the same, to give a visual cue as to how much faster this page loads.</p>
 <div class="chart" id="figure-2">
 <h4><strong>Figure 2.</strong> Downloading 4 components in parallel</h4>
-<p><img src="http://yuiblog.com/assets/performance/four_parallel.gif" alt="Figure 2. Downloading 4 components in parallel" width="311" height="200" longdesc="four_parallel.gif" id="four_parallel"></p>
+<p><img src="/blog-archive/assets/performance/four_parallel.gif" alt="Figure 2. Downloading 4 components in parallel" width="311" height="200" longdesc="four_parallel.gif" id="four_parallel"></p>
 </div>
 <p>Limiting parallel downloads to two per hostname is a guideline. By default, both Internet Explorer and Firefox follow the guideline, but users can override this default behavior. Internet Explorer stores the value in the Registry Editor. (See <a href="http://support.microsoft.com/?kbid=282402">Microsoft Help and Support</a>.) Firefox&#8217;s setting is controlled by the <span style="color:red">network.http.max-persistent-connections-per-server</span> setting, accessible in the about:config page.</p>
 <p>It&#8217;s interesting to note that for HTTP/1.0, Firefox&#8217;s default is to download eight components in parallel per hostname. Figure 3 shows what it would look like to download these ten images if Firefox&#8217;s HTTP/1.0 settings are used. It&#8217;s even faster than Figure 2, and we didn&#8217;t have to split the images across two hostnames.</p>
 <div class="chart" id="figure-3">
 <h4><strong>Figure 3.</strong> Downloading 8 components in parallel</h4>
-<p><img src="http://yuiblog.com/assets/performance/eight_parallel.gif" alt="Figure 3. Downloading 8 components in parallel" width="311" height="200" id="eight_parallel"></p>
+<p><img src="/blog-archive/assets/performance/eight_parallel.gif" alt="Figure 3. Downloading 8 components in parallel" width="311" height="200" id="eight_parallel"></p>
 </div>
 <p>Most web sites today use HTTP/1.1, but the idea of increasing parallel downloads beyond two per hostname is intriguing. Instead of relying on users to modify their browser settings, front-end engineers could simply use CNAMEs (DNS aliases) to split their components across multiple hostnames. Maximizing parallel downloads doesn&#8217;t come without a cost. Depending on your bandwidth and CPU speed, too many parallel downloads can degrade performance.</p>
 <p>If browsers limit the number of parallel downloads to two (per hostname over HTTP/1.1), this raises the question:</p>
@@ -144,7 +144,7 @@
 <p>We&#8217;ve seen a couple great blogs and articles written recently on the subject, most notably <a href="http://www.ajaxperformance.com/?p=33">Ryan Breen of Gomez</a> and <a href="http://www.die.net/musings/page_load_time/">Aaron Hopkins over at Google</a>. Here&#8217;s another spin. The performance team at Yahoo! ran an experiment to measure the impact of using various numbers of hostname aliases. The experiment measured an empty HTML document with 20 images on the page. The images were fetched from the same servers as those used by real Yahoo! pages. We ran the experiment in a controlled environment using a test harness that fetches a set of URLs repeatedly while measuring how long it takes to load the page on DSL. The results are shown in Figure 4.</p>
 <div class="chart" id="figure-4">
 <h4><strong>Figure 4.</strong> Loading an Empty HTML Document with 20 images using Various Number of Aliases</h4>
-<p><img src="http://yuiblog.com/assets/performance/expt.gif" alt="Figure 4. Loading an Empty HTML Document with 20 images using Various Number of Aliases" width="576" height="386" id="expt"></p>
+<p><img src="/blog-archive/assets/performance/expt.gif" alt="Figure 4. Loading an Empty HTML Document with 20 images using Various Number of Aliases" width="576" height="386" id="expt"></p>
 <p class="gloss"><strong>Note: </strong> Times are for cached aliases, empty file cache page loads on DSL (~800 kbps).</p>
 </div>
 <p>In our experiment, we vary the number of aliases: 1, 2, 4, 5, and 10. This increases the number of parallel downloads to 2, 4, 8, 10, and 20 respectively. We fetch 20 smaller-sized images (36 x 36 px) and 20 medium-sized images (116 x 61 px). To our surprise, increasing the number of aliases for loading the medium-size images (116 x 61px) worsens the response times using four or more aliases. Increasing the number of aliases by more than two for smaller-sized images (36 x 36px) doesn&#8217;t make much of an impact on the overall response time. On average, using two aliases is best.</p>
@@ -158,9 +158,9 @@
 </p></div>
 </div>
 			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2007/04/11/performance-research-part-4/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2007/04/11/performance-research-part-4/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane&u=http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/" title="bookmark Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/&amp;title=Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane" title="bookmark Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/&amp;title=Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane" title="post Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane&u=/yuiblog/blog/2007/04/11/performance-research-part-4/" title="bookmark Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2007/04/11/performance-research-part-4/&amp;title=Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane" title="bookmark Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2007/04/11/performance-research-part-4/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2007/04/11/performance-research-part-4/&amp;title=Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane" title="post Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -169,10 +169,10 @@
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/"
-    dc:identifier="http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/"
+			<rdf:Description rdf:about="/yuiblog/blog/2007/04/11/performance-research-part-4/"
+    dc:identifier="/yuiblog/blog/2007/04/11/performance-research-part-4/"
     dc:title="Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane"
-    trackback:ping="http://www.yuiblog.com/blog/2007/04/11/performance-research-part-4/trackback/" />
+    trackback:ping="/yuiblog/blog/2007/04/11/performance-research-part-4/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -198,7 +198,7 @@
 		  <div id="syndicate">
 			<h3>Syndicate</h3>
 				<ul class="cats">
-<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="/yuiblog/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
 <li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 <li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 

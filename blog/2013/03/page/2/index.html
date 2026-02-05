@@ -109,7 +109,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -346,7 +346,7 @@
 <p><script src="https://gist.github.com/triptych/5147020.js"></script></p>
 <p>I am processing my results in the keydown event. You could create an array of search results, etc. Performance with <strong>80</strong> parents and <strong>400</strong> children is excellent. I am sure there is a more efficient way of doing this but it does work and I have not hit any performance snags.</p>
 <p>For an interactive demo of a searchable muppet list using this technique look at <a href="http://jsbin.com/uvuhot/20/edit">this jsbin</a>.</p>
-<p class="authorbox"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/gdanko_square.jpg" class="alignright" width="150" height="150" alt=""><em><strong>About the author:</strong> Gary Danko (@gdanko)<br />
+<p class="authorbox"><img src="/yuiblog/blog/wp-content/uploads/2013/03/gdanko_square.jpg" class="alignright" width="150" height="150" alt=""><em><strong>About the author:</strong> Gary Danko (@gdanko)<br />
 Gary Danko is a husband and father, Android developer, and Yahoo! engineer who lives in California.</em></p>
 						</div>
 
@@ -371,50 +371,50 @@ Gary Danko is a husband and father, Android developer, and Yahoo! engineer who l
 <h3>Shoot, a Duck</h3>
 <p>Let’s dive right into this. I found an entertaining little example from the YUI library that takes me back to my days of being raised by circus folk. It&#8217;s a <a href="http://yuilibrary.com/yui/docs/node/ducks.html">duck shooting game</a> that illustrates the use of NodeList. I basically want to pull this sample right off the library and dump into a Windows 8 App. If I turn around and sell this in the store for $2.99, I think I&#8217;ll be well on my way to my first million.</p>
 <p>So let’s get our environment up and running. Open up Visual Studio and under file, start a “New Project” which will present you with some options:</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_001.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_001-300x207.png" alt="" title="click to expand" width="300" height="207" class="alignnone size-medium wp-image-7822" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_001.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_001-300x207.png" alt="" title="click to expand" width="300" height="207" class="alignnone size-medium wp-image-7822" /></a></p>
 <p>If you look inside the templates tree, you’ll see options for a number of different languages. We&#8217;re going to use &#8220;JavaScript&#8221; so we are working in a pure HTML5/JavaScript environment. Start simple by choosing a &#8220;Blank App,&#8221; give it a name and hit &#8220;Ok.&#8221;</p>
 <p>Let&#8217;s take a look at what&#8217;s now in front of you.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_002.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_002-300x181.png" alt="" title="click to expand" width="300" height="181" class="alignnone size-medium wp-image-7826" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_002.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_002-300x181.png" alt="" title="click to expand" width="300" height="181" class="alignnone size-medium wp-image-7826" /></a></p>
 <p>For web developers this should be a familiar landscape. In addition to some app-specific files (manifest, reference libraries), you have a few key components: default.html, default.css and default.js. These are generated files that are already set up to take advantage of the WinJS library. WinJS has a powerful feature set that can be used right alongside of YUI, but in this case, our app is already written in YUI so we’ll just put it aside.</p>
 <p>I want to make sure we’re clear that your YUI code is just going to work. So we&#8217;re going to take the code sample directly from the YUI library and run it in the app just as we would in the browser. Let&#8217;s get started by finding our code example from the YUI library: <a href="http://yuilibrary.com/yui/docs/node/ducks.html">http://yuilibrary.com/yui/docs/node/ducks.html</a></p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_003.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_003-300x204.png" alt="" title="Click to expand" width="300" height="204" class="alignnone size-medium wp-image-7831" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_003.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_003-300x204.png" alt="" title="Click to expand" width="300" height="204" class="alignnone size-medium wp-image-7831" /></a></p>
 <p>On this page scroll down to the full code example, select it and copy. Now let&#8217;s switch back to Visual Studio and go to our default.html file. Go ahead and delete the contents of the page and paste in your code sample. This gives you your HTML,CSS, and JavaScript, but not the images. Remember we&#8217;re working in a local context here, so you&#8217;ll need to copy your images over to the sample page as well. Just paste them into the &#8220;images&#8221; folder of your solutions explorer.</p>
 <p>At this point there is one BIG thing missing. YUI. We need to load YUI into your app as well. Let&#8217;s go over to github and clone a copy of the library. From the repo, copy the &#8220;build&#8221; directory and then head back to the solutions explorer in Visual studio and paste it into the &#8220;js&#8221; folder of your app.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_004.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_004-300x187.png" alt="" title="Click to expand" width="300" height="187" class="alignnone size-medium wp-image-7837" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_004.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_004-300x187.png" alt="" title="Click to expand" width="300" height="187" class="alignnone size-medium wp-image-7837" /></a></p>
 <p>That wasn&#8217;t hard at all, but you&#8217;re probably already prepping to jump to your feet and point out a tragic error that I haven&#8217;t considered. When you use the YUI CDN along with the Loader, you get a magical file concoction that loads all the proper files for you based on your &#8220;YUI requires statement.&#8221; Since we aren’t using the CDN, we don’t get that magic. The good news is, YUI&#8217;s got a tool for that. It&#8217;s called the YUI Configurator and it&#8217;s pretty snazzy too. Let&#8217;s quickly review our <code>use()</code> statement in our sample, and you will see that we are using two library components.</p>
 <p><code>YUI().use('transition', 'button', function (Y) {…</code></p>
 <p>In the Configurator we&#8217;ll select those two components from the list of components. There are a few other settings we can update to make our life easier. First, make sure you have the box unchecked to load separate files, not combined files. Next, you can update your root path. In this case, we will update it to &#8220;/js/build&#8221; since that is where the files will be in our app. Once you have these settings in place, you should have a nice list of files that we need to load into our DOM in order to have our demo function.</p>
 <p><script src="https://gist.github.com/triptych/5137491.js"></script> Let’s paste that into the header of our default.html file. Now save that file, and then run the app.</p>
 <p>Voila! Your demo game is running inside a Windows 8 App just as it was in the browser, only now as a local app.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_005.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_005-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7844" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_005.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_005-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7844" /></a></p>
 <p>Dropping a YUI app right into a Windows 8 Store app is pretty awesome from a development point of view, but it doesn&#8217;t quite look like the money maker I want it to be. To dress it up a little, I’m going to add a few lines of CSS.</p>
 <p><script src="https://gist.github.com/triptych/5138099.js"></script> And now my YUI sample is a Windows 8 gem.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_0061.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_0061-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7852" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_0061.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_0061-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7852" /></a></p>
 <h3>Upgrade to Multi-touch</h3>
 <p>Before we go release this to the market, let’s make a few minor updates. I think this app will be more fun if it’s multi-touch. I should be able to knock down two, three, or even four ducks at once if I can. With IE10, Microsoft has introduced a new specification for dealing with inputs. It&#8217;s called the <a href="http://blogs.msdn.com/b/ie/archive/2011/09/20/touch-input-for-ie10-and-metro-style-apps.aspx">Pointer Events</a> Specification, and right now there’s a <a href="http://www.w3.org/2012/pointerevents/">Working Group in the W3C</a> pounding out the details on this spec. You can think of Pointers as a normalization for all the popular screen inputs (mouse, touch and pen). The beauty of pointer events is that we as developers don&#8217;t have to write one set of code for touch and another set of code for mouse. We write for pointers, and it just works across all three input types.</p>
 <p>If you know how to use mouse events, then you know how to use pointers. Pointers produce event objects that are structures just like the parallel mouse event objects, except the event object contains a range of new data like pointer type, width and height. Pointers inherently support multi-touch. In the case of two fingers on the screen, any events triggered will fire once for each touch point. With this knowledge, let&#8217;s update our YUI delegate event to be a pointer instead of a click.</p>
 <p><code>Y.one('.duck-row').delegate('click', duckClick, 'li');</code> To this.</p>
 <p><code>Y.one('.duck-row').delegate('MSPointerUp', duckClick, 'li');</code> Since pointer events are structured just like mouse events, our same code is just going to work. No other changes are necessary to make this a multi-touch app. One more quick addition. I want to make sure that when I use more than one finger it doesn&#8217;t try to zoom the app in and out, since it may see it as an expansion on a touch interface. Let&#8217;s add this CSS to the app.</p>
 <p><script src="https://gist.github.com/triptych/5138299.js"></script> This blocks the default touch behavior and gives full control to my delegate. Now let&#8217;s give it a try.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_007.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_007-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7861" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_007.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_007-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7861" /></a></p>
 <h3>Accessing Windows APIs with YUI</h3>
 <p>One of the great things about being inside of a Windows 8 Store app is that you now have access to a whole range of Windows APIs. There are a lot of platform-specific features you can include, one of which is the share contract. The share contract allows you to share data between apps. In our case, we want to define what data will be passed to other apps when the user engages the share charm (part of the Windows 8 charms bar). In this case, I&#8217;m going to go into my YUI <code>use()</code> statement and add just a few lines of JavaScript.</p>
 <p><script src="https://gist.github.com/triptych/5138383.js"></script> We set up a listener here for an event called &#8220;datarequested&#8221; in which we set properties of our data object. At this point every app has declared (through the app manifest) what type of data can be shared to it. In this method, we are simply declaring what data we are going to share. Now when we reload our app and select the share charm from our charm bar, you’ll see a list of apps appear that are able to handle this type of shared content.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_0082.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_0082-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7868" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_0082.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_0082-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7868" /></a></p>
 <p>I’ll select the mail app and you can see how this data will be shared.</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_009.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_009-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7870" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_009.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_009-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7870" /></a></p>
 <p>More information about the share contract and other <a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx">Windows APIs can be found here</a>.</p>
 <h3>YUI Everywhere</h3>
 <p>Now that we&#8217;ve completed our Windows 8 App, let&#8217;s keep going with YUI and push this cool little app to the rest of the Windows stack. Since this is just JavaScript and HTML5, my code is going to work in any environment that supports modern web technologies. This same code that runs in my Widows 8 app, is going to work back in the browser as well. The value doesn’t stop there. Windows Phone 8 has a great webview that runs our YUI app as well.</p>
 <p>While we’re at it, wouldn&#8217;t you like to port your game to the Xbox? The Xbox now has the Internet Explorer browser, so fire up the web version of your app, and play duck shooter right on your Xbox. Choosing YUI helps you get your app everywhere:</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_010.png"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/win8_010-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7872" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2013/03/win8_010.png"><img src="/yuiblog/blog/wp-content/uploads/2013/03/win8_010-300x193.png" alt="" title="Click to expand" width="300" height="193" class="alignnone size-medium wp-image-7872" /></a></p>
 <h3>Success!</h3>
 <p>We’ve built a Windows 8 Store app using our favorite JavaScript library, YUI. To summarize this whole experiment in a few words, &#8220;it just works.&#8221; YUI works inside my Windows 8 Store app just as it would inside a browser, and I want to help you bring your YUI apps to Windows 8 as well. Use the skills you already have, and the code investments you’ve already made. It doesn’t stop at YUI, Windows 8 Apps are built on the engines that run IE10, so bring your favorite JavaScript library, your favorite YUI component or your favorite web app and go &#8220;Native&#8221; with Windows 8.</p>
 <h3>More Information</h3>
 <p>By popular demand, the author has created a <a href="https://github.com/boyofgreen/YUIWin8Duck">github repo</a> of the code examples used in this blog post. You can also catch a video of this blog post as well as it&#8217;s <a href="http://www.html5hacks.com/blog/2013/03/10/build-a-windows-8-app-with-yui/">related post</a> on <a href="http://channel9.msdn.com/posts/Title-Build-Windows-8-Apps-with-YUI">Channel 9</a> or you can watch it below.</p>
 <p><iframe style="height:288px;width:512px" src="http://channel9.msdn.com/posts/Title-Build-Windows-8-Apps-with-YUI/player?w=512&#038;h=288" frameBorder="0" scrolling="no" ></iframe></p>
 <p class="authorbox">
-  <img src="http://www.yuiblog.com/blog/wp-content/uploads/2013/03/jeffburt-150x150.png" class="alignright" width="150" height="150" alt="" /><em><strong>About the author:</strong> Jeff Burtoft (@boyofgreen) Jeff Burtoft is as an HTML5 Evangelist for Microsoft and an avid supporter of the JavaScript/HTML5 community. Being in the Web Development community for over 10 years, his job title has morphed from the likes of &#8220;Web Master&#8221; to “Front End Engineer” and everything in-between. </br></br>Jeff is a huge proponent of web standards, and loves all programing languages, as long as they are JavaScript. Additionally, Jeff is co-author of HTML5 Hacks (O’Reilly Media) and is a founding blogger of html5hacks.com. Jeff lives in Bellevue, WA with his wife and three children. </em></p>
+  <img src="/yuiblog/blog/wp-content/uploads/2013/03/jeffburt-150x150.png" class="alignright" width="150" height="150" alt="" /><em><strong>About the author:</strong> Jeff Burtoft (@boyofgreen) Jeff Burtoft is as an HTML5 Evangelist for Microsoft and an avid supporter of the JavaScript/HTML5 community. Being in the Web Development community for over 10 years, his job title has morphed from the likes of &#8220;Web Master&#8221; to “Front End Engineer” and everything in-between. </br></br>Jeff is a huge proponent of web standards, and loves all programing languages, as long as they are JavaScript. Additionally, Jeff is co-author of HTML5 Hacks (O’Reilly Media) and is a founding blogger of html5hacks.com. Jeff lives in Bellevue, WA with his wife and three children. </em></p>
 						</div>
 
 						<div class="meta">
@@ -493,100 +493,100 @@ Gary Danko is a husband and father, Android developer, and Yahoo! engineer who l
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

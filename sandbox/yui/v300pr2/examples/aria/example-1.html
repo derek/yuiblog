@@ -1,0 +1,362 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Roaming Tab Index Test</title>
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.0.0pr2/build/cssfonts/fonts-min.css">
+
+	<style type="text/css">
+
+		#button-1 {
+			display: inline-block;
+			border-width: 2px;
+			border-style: solid;
+			border-color: #999 #333 #333 #999;
+			padding: 2px 20px 2px 4px;
+			text-decoration: none;
+			color: #000;
+			background: #ccc url(menu-button-arrow.png) right center no-repeat;
+		}
+
+		/*	For Firefox: Since the "href" attribute for the anchor element has 
+			been removed the focus outline will no longer be rendered when the 
+			element is focused.  The follow style rule restores the 
+			focus outline. 	*/
+
+		#button-1:focus {
+			outline: dotted 1px #000;
+		}
+
+		.menu {
+			position: absolute;
+			background-color: #ccc;
+			border: solid 1px #999;
+		}
+
+		.hidden {
+			visibility: hidden;			
+		}
+
+		.menu li {
+		    list-style-type: none;    
+		}
+
+		.menu,
+		.menu li { 
+		    margin: 0;
+		    padding: 0;
+		}
+
+		.menu button {
+			*overflow: visible;	/*	Collapse superfluous padding in IE < 8	*/
+			border: 0;
+			padding: 2px 20px;
+			background-color: transparent;
+		}
+
+		.menu .focus {
+			background-color: #00c;
+			color: #fff;
+		}
+
+	</style>
+
+
+	<script src="http://yui.yahooapis.com/3.0.0pr2/build/yui/yui-min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+
+		YUI().use("node", function(Y) {
+
+			Y.on("contentready", function () {
+
+				var oMenu = this,
+					oMenuButton = Y.Node.get("#button-1"),
+					oDocument = oMenu.get("ownerDocument"),
+					buttons = oMenu.queryAll("button"),
+					nCurrentItemIndex = 0,
+					nLastItemIndex = buttons.size() - 1,
+					oFirstButton = buttons.item(0);
+
+
+				//	Apply all of the ARIA roles and setup the default tab flow 
+				//	for the button and its menu
+
+				oMenuButton.setAttribute("role", "button");
+				oMenuButton.setAttribute("aria-haspopup", true);
+			
+
+				//	Remove the "href" attribute from the anchor element to  
+				//	prevent JAWS and NVDA from reading the value of the "href"
+				//	attribute when the anchor is focused
+				if ((Y.UA.gecko || Y.UA.ie) && navigator.userAgent.indexOf("Windows") > -1) {
+					oMenuButton.removeAttribute("href");
+				}
+
+				//	Set the "tabIndex" attribute of the anchor element to 0 to 
+				//	place it in the browser's default tab flow.  This is 
+				//	necessary since 1) anchor elements are not in the default 
+				//	tab flow in Opera and 2) removing the "href" attribute  
+				//	prevents the anchor from firing its "click" event 
+				//	in Firefox.
+				oMenuButton.setAttribute("tabIndex", 0);
+
+				oMenu.setAttribute("role", "menu");
+				oMenu.setAttribute("aria-labelledby", oMenuButton.get("id"));
+
+				buttons.each(function (node) {
+
+					//	For NVDA: add the role of "presentation" to each LI 
+					//	element to prevent NVDA from announcing the 
+					//	"listitem" role
+					node.get("parentNode").setAttribute("role", "presentation");
+
+					node.setAttribute("role", "menuitem");
+					node.setAttribute("tabIndex", -1);
+
+				});
+
+
+				var hideMenu = function () {
+				
+					oMenu.addClass("hidden");
+
+					oMenu.setAttribute("aria-hidden", true);
+					
+					var oNode = buttons.item(nCurrentItemIndex);
+
+					if (oNode) {
+
+						oNode.get("parentNode").removeClass("focus");
+						oNode.setAttribute("tabIndex", -1);
+						
+					}
+
+					oFirstButton.setAttribute("tabIndex", 0);
+
+					nCurrentItemIndex = 0;
+			
+				};
+
+
+				var focusNode = function (node) {
+
+					//	Focusing the element using a zero-second timeout helps
+					//	screen readers keep up
+
+					Y.later(0, node, function () {
+					
+						//	Focus the element using a try/catch to suppress
+						//	any browser errors that are invalid or benign.
+					
+						try {
+							node.focus();
+						}
+						catch (ex) {
+							
+						}
+						
+					});
+
+				};
+
+				
+				Y.on("focus", function (event) {
+
+					var oTarget = event.target,
+						oNode;
+
+					if (oMenu.contains(oTarget)) {
+
+						//	If the user tabs into the Menu, the first item 
+						//	will have browser focus, but will not have the 
+						//	additional focus style applied via the "focus" 
+						//	class, so apply the "focus" class.
+
+						if (!oTarget.hasClass("focus")) {
+							oTarget.get("parentNode").addClass("focus");							
+						}
+
+					}
+					else {
+
+						//	If the user tabs away from/off the Menu, remove the 
+						//	"focus" class from the item that previously 
+						//	had browser focus.
+
+						oNode = buttons.item(nCurrentItemIndex);
+
+						if (oNode) {
+							oNode.get("parentNode").removeClass("focus");
+						}
+						
+					}
+
+				}, oDocument);
+				
+				
+				oDocument.on("mousedown", function (event) {
+
+					var oTarget = event.target;
+
+					//	Hide the button's menu if the user clicks outside of it
+					if (!oMenu.compareTo(oTarget) && !oMenu.contains(oTarget)) {
+						hideMenu();
+					}
+					
+				});
+				
+
+				oMenu.on("click", function (event) {
+					
+					var oTarget = event.target;
+
+					if (oTarget.get("nodeName").toLowerCase() === "button") {
+
+						alert("You clicked " + oTarget.get("innerHTML"));
+
+						hideMenu();
+
+					}
+					
+				});
+
+
+				Y.on("key", function (event) {
+
+					var oNode;
+
+					oNode = buttons.item(nCurrentItemIndex);
+					
+					if (oNode) {
+						oNode.get("parentNode").removeClass("focus");
+						oNode.setAttribute("tabIndex", -1);
+					}
+
+
+					switch (event.keyCode) {
+
+						case 38:	//	up arrow
+
+							if (nCurrentItemIndex >= 0) {
+
+								nCurrentItemIndex = nCurrentItemIndex - 1;
+
+								if (nCurrentItemIndex === -1) {
+									nCurrentItemIndex = nLastItemIndex;
+								}
+
+							}
+
+						break;
+
+						case 40:	//	down arrow
+
+							if (nCurrentItemIndex <= nLastItemIndex) {
+
+								nCurrentItemIndex = nCurrentItemIndex + 1;
+
+								if (nCurrentItemIndex === (nLastItemIndex + 1)) {
+									nCurrentItemIndex = 0;
+								}
+
+							}
+
+						break;
+
+					}
+
+
+					oNode = buttons.item(nCurrentItemIndex);
+
+					if (oNode) {
+
+						oNode.get("parentNode").addClass("focus");
+						oNode.setAttribute("tabIndex", 0);
+						
+						focusNode(oNode);
+						
+					}
+
+				}, this, "down:38,40");
+				
+
+				//	Hide the button's menu if the user presses the escape key
+				//	while focused either on the button or its menu.
+
+				Y.on("key", function () {
+					
+					hideMenu();
+					Y.Node.get("#button-1").focus();					
+					
+				}, ["#button-1", "#menu-1"] ,"down:27");
+				
+
+				//	Since the anchor's "href" attribute has been removed, the 
+				//	element will not fire the click event in Firefox when the 
+				//	user presses the enter key.  To fix this, dispatch the 
+				//	"click" event to the anchor when the user presses the 
+				//	enter key.
+
+				if ((Y.UA.gecko || Y.UA.ie) && navigator.userAgent.indexOf("Windows") > -1) {
+
+					Y.on("key", function (event) {
+
+						Y.Event.simulate(document.getElementById(event.target.get("id")), "click");
+
+					}, "#button-1", "down:13");
+					
+				}
+
+
+				Y.on("click", function (event) {
+
+					var aXY;
+
+					if (oMenu.hasClass("hidden")) {
+
+						oMenu.setAttribute("aria-hidden", false);
+
+						aXY = this.getXY();
+
+						aXY[1] = aXY[1] + this.get("offsetHeight");
+
+						oMenu.setXY(aXY);
+						oMenu.removeClass("hidden");
+
+						oFirstButton.setAttribute("tabIndex", 0);
+
+						focusNode(oFirstButton);
+
+						oFirstButton.get("parentNode").addClass("focus");
+						
+					}
+
+					event.preventDefault();
+
+				}, "#button-1");
+
+
+			}, "#menu-1"); 
+
+		});		
+
+	</script>
+
+</head>
+<body>
+
+	<a id="button-1" href="#menu-1">Move To</a>
+
+	<ul id="menu-1" class="menu hidden">
+		<li><button type="button">Inbox</button></li>
+		<li><button type="button">Archive</button></li>
+		<li><button type="button">Trash</button></li>
+	</ul>
+
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1351690515" alt="setstats" border="0" width="1" height="1"></noscript>

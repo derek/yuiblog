@@ -110,7 +110,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -402,7 +402,7 @@
 <p>Having evaluated both the Roaming TabIndex Technique and the use of the <code>activedescendant</code> property, the Roaming TabIndex Technique is the better choice, because it is a solution that works &#8220;with the grain&#8221;. As such, it is more forward and backward compatible — especially when you are trying to support a <a href="http://developer.yahoo.com/yui/articles/gbs/index.html">wide array of browsers</a> like we are at Yahoo!. Using the <code>activedescendant</code> property requires more effort for less overall benefit and compatibility. Here are the downsides to using the <code>activedescendant</code> property:</p>
 <ul>
 <li>Requires browser support of the <code>tabIndex</code> attribute on all elements. Currently this not supported in Safari.</li>
-<li>Suppressing the default focus outline drawn around a widget&#8217;s containing element is a slight pain in that it requires different techniques for different browsers. It turns into a bigger pain in Opera, where it is not only currently impossible but also exacerbated by Opera&#8217;s egregious focus model, illustrated in the following screen capture: <img id="opera-screen-capture" src="http://yuiblog.com/assets/managing-focus/focus-opera.png" width="157" height="120" alt="Screen capture of the focus menu from the second example running in Opera 9.6"></li>
+<li>Suppressing the default focus outline drawn around a widget&#8217;s containing element is a slight pain in that it requires different techniques for different browsers. It turns into a bigger pain in Opera, where it is not only currently impossible but also exacerbated by Opera&#8217;s egregious focus model, illustrated in the following screen capture: <img id="opera-screen-capture" src="/blog-archive/assets/managing-focus/focus-opera.png" width="157" height="120" alt="Screen capture of the focus menu from the second example running in Opera 9.6"></li>
 <li>Loss of the default, familiar focus outline drawn around a widget&#8217;s descendants. The focus outline can be restored via CSS. However, developers get the focus outline for free when using the Roaming TabIndex Technique.</li>
 <li>Since descendants aren&#8217;t focusable they cannot be clicked by pressing the enter key or space bar. This requires that developers listen explicitly for these key events and route the code responsible for handling the <code>click</code> event accordingly. When using the Roaming TabIndex technique, developers can simply listen for the <code>click</code> event.</li>
 <li>Every descendant needs a unique id.</li>
@@ -483,72 +483,72 @@
 <h4>Configuring JAWS</h4>
 <h5>Changing The Virtual Buffer Toggle Keyboard Shortcut</h5>
 <ol>
-<li> 				Open the &#8220;Keyboard Manager&#8221; dialog by selecting &#8220;Utilities&#8221; 				&#45;&#62; &#8220;Keyboard Manager&#8221; in the JAWS application menubar. 				<img src="http://yuiblog.com/assets/aria-env/jaws-1.png" width="399" height="241" alt="Screen shot of the JAWS menubar."> 			</li>
+<li> 				Open the &#8220;Keyboard Manager&#8221; dialog by selecting &#8220;Utilities&#8221; 				&#45;&#62; &#8220;Keyboard Manager&#8221; in the JAWS application menubar. 				<img src="/blog-archive/assets/aria-env/jaws-1.png" width="399" height="241" alt="Screen shot of the JAWS menubar."> 			</li>
 <li>Select the &#8220;default&#8221; profile in the left, &#8220;Profile&#8221; pane.</li>
 <li> 				In the right pane, sort by the &#8220;Script Name&#8221; column, then find 				and select the item named &#8220;VirtualPCCursorToggle&#8221;. 			</li>
-<li> 				Open the &#8220;Change Keystroke&#8221; dialog by either right clicking on 				the &#8220;VirtualPCCursorToggle&#8221; item, or by pressing Ctrl + H. 				<img src="http://yuiblog.com/assets/aria-env/jaws-2.png" width="452" height="305" alt="Screen shot of the Keyboard Manager dialog in JAWS ."> 			</li>
-<li> 				In the &#8220;Change Keystroke&#8221; dialog, choose the new keystroke by 				pressing the desired keys. (I use Ctrl + Shift + Space.) JAWS 				will warn you if the keystroke you choose in already in use. 				<img src="http://yuiblog.com/assets/aria-env/jaws-3.png" width="450" height="279" alt="Screen shot of the Change Keystroke dialog in JAWS."> 			</li>
+<li> 				Open the &#8220;Change Keystroke&#8221; dialog by either right clicking on 				the &#8220;VirtualPCCursorToggle&#8221; item, or by pressing Ctrl + H. 				<img src="/blog-archive/assets/aria-env/jaws-2.png" width="452" height="305" alt="Screen shot of the Keyboard Manager dialog in JAWS ."> 			</li>
+<li> 				In the &#8220;Change Keystroke&#8221; dialog, choose the new keystroke by 				pressing the desired keys. (I use Ctrl + Shift + Space.) JAWS 				will warn you if the keystroke you choose in already in use. 				<img src="/blog-archive/assets/aria-env/jaws-3.png" width="450" height="279" alt="Screen shot of the Change Keystroke dialog in JAWS."> 			</li>
 <li>Press the &#8220;OK&#8221; button to close the dialog.</li>
 </ol>
 <h5>Disabling JAWS From Starting Automatically</h5>
 <ol>
-<li> 				Open the &#8220;Basic Settings&#8221; dialog by selecting &#8220;Options&#8221; 				&#45;&#62; &#8220;Basics&#8221; in the JAWS application menubar. 				<img src="http://yuiblog.com/assets/aria-env/jaws-4.png" width="399" height="240" alt="Screen shot of the JAWS menubar."> 			</li>
-<li> 				In the &#8220;Basic Settings&#8221; dialog, make sure the checkbox labeled 				&#8220;Automatically start JAWS&#8221; in not checked. 				<img src="http://yuiblog.com/assets/aria-env/jaws-5.png" width="513" height="367" alt="Screen shot of the Basic Settings dialog in JAWS."> 			</li>
+<li> 				Open the &#8220;Basic Settings&#8221; dialog by selecting &#8220;Options&#8221; 				&#45;&#62; &#8220;Basics&#8221; in the JAWS application menubar. 				<img src="/blog-archive/assets/aria-env/jaws-4.png" width="399" height="240" alt="Screen shot of the JAWS menubar."> 			</li>
+<li> 				In the &#8220;Basic Settings&#8221; dialog, make sure the checkbox labeled 				&#8220;Automatically start JAWS&#8221; in not checked. 				<img src="/blog-archive/assets/aria-env/jaws-5.png" width="513" height="367" alt="Screen shot of the Basic Settings dialog in JAWS."> 			</li>
 </ol>
 <h4>Configuring Window-Eyes</h4>
 <h5>Changing The Virtual Buffer Toggle Keyboard Shortcut</h5>
 <ol>
-<li> 				Open the &#8220;Browse Mode Hot Key Definitions&#8221; dialog by selecting 				&#8220;Hotkeys&#8221; &#45;&#62; &#8220;Browse Mode&#8230;&#8221; in the Window-Eyes 				application menubar. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-1.png" width="310" height="163" alt="Screen shot of the Window-Eyes menubar."> 			</li>
-<li> 				In the &#8220;Browse Mode Hot Key Definitions&#8221; dialog, scroll down to 				the item named &#8220;Browse Mode&#8221; in the scrollable &#8220;Keys&#8221; list. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-2.png" width="443" height="398" alt="Screen shot of the Browse Mode Hot Key Definitions dialog in Window-Eyes."> 			</li>
+<li> 				Open the &#8220;Browse Mode Hot Key Definitions&#8221; dialog by selecting 				&#8220;Hotkeys&#8221; &#45;&#62; &#8220;Browse Mode&#8230;&#8221; in the Window-Eyes 				application menubar. 				<img src="/blog-archive/assets/aria-env/window-eyes-1.png" width="310" height="163" alt="Screen shot of the Window-Eyes menubar."> 			</li>
+<li> 				In the &#8220;Browse Mode Hot Key Definitions&#8221; dialog, scroll down to 				the item named &#8220;Browse Mode&#8221; in the scrollable &#8220;Keys&#8221; list. 				<img src="/blog-archive/assets/aria-env/window-eyes-2.png" width="443" height="398" alt="Screen shot of the Browse Mode Hot Key Definitions dialog in Window-Eyes."> 			</li>
 <li> 				Select the &#8220;Browse Mode&#8221; item and then press the 				&#8220;Capture Key&#8221; button. 			</li>
 <li> 				Press the keyboard combination you want to use. 				(I use Ctrl + Shift + Space.) 			</li>
 <li>Press the &#8220;OK&#8221; button to close the dialog.</li>
-<li> 				Save the configuration by selecting &#8220;File&#8221; &#45;&#62; &#8220;Save&#8221; 				&#45;&#62; &#8220;Set File and All Dictionaries&#8221; in the Window-Eyes 				application menubar. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-8.png" width="342" height="178" alt="Screen shot of the Window-Eyes menubar."> 			</li>
+<li> 				Save the configuration by selecting &#8220;File&#8221; &#45;&#62; &#8220;Save&#8221; 				&#45;&#62; &#8220;Set File and All Dictionaries&#8221; in the Window-Eyes 				application menubar. 				<img src="/blog-archive/assets/aria-env/window-eyes-8.png" width="342" height="178" alt="Screen shot of the Window-Eyes menubar."> 			</li>
 </ol>
 <h5>Disabling The Mouse Voice</h5>
 <p> 		By default Window-Eyes will speak in response to some mouse gestures. 		For example, when you press the left mouse button, Window-Eyes will 		say &#8220;left&#8221;. As a sighted person I find this feature unnecessary, so I 		disable this feature. 		</p>
 <ol>
-<li> 				Open the &#8220;Mouse Voice&#8221; dialog by selecting &#8220;Mouse&#8221; &#45;&#62; 				&#8220;Voice&#8221; in the Window-Eyes application menubar. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-4.png" width="355" height="162" alt="Screen shot of the Window-Eyes menubar."> 			</li>
-<li> 				Select the &#8220;Off&#8221; item. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-5.png" width="417" height="261" alt="Screen shot of Mouse Voice dialog in Window-Eyes."> 			</li>
+<li> 				Open the &#8220;Mouse Voice&#8221; dialog by selecting &#8220;Mouse&#8221; &#45;&#62; 				&#8220;Voice&#8221; in the Window-Eyes application menubar. 				<img src="/blog-archive/assets/aria-env/window-eyes-4.png" width="355" height="162" alt="Screen shot of the Window-Eyes menubar."> 			</li>
+<li> 				Select the &#8220;Off&#8221; item. 				<img src="/blog-archive/assets/aria-env/window-eyes-5.png" width="417" height="261" alt="Screen shot of Mouse Voice dialog in Window-Eyes."> 			</li>
 <li>Press the &#8220;OK&#8221; button to close the dialog.</li>
-<li> 				Save the configuration by selecting &#8220;File&#8221; &#45;&#62; &#8220;Save&#8221; 				&#45;&#62; &#8220;Set File and All Dictionaries&#8221; in the Window-Eyes 				application menubar. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-8.png" width="342" height="178" alt="Screen shot of the Window-Eyes menubar."> 			</li>
+<li> 				Save the configuration by selecting &#8220;File&#8221; &#45;&#62; &#8220;Save&#8221; 				&#45;&#62; &#8220;Set File and All Dictionaries&#8221; in the Window-Eyes 				application menubar. 				<img src="/blog-archive/assets/aria-env/window-eyes-8.png" width="342" height="178" alt="Screen shot of the Window-Eyes menubar."> 			</li>
 </ol>
 <h5>Disabling Window-Eyes From Starting Automatically</h5>
 <ol>
-<li> 				Open the &#8220;Startup Options&#8221; dialog by selecting &#8220;File&#8221; &#45;&#62; 				&#8220;Starup Options&#8230;&#8221; in the Window-Eyes application menubar. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-6.png" width="265" height="190" alt="Screen shot of the Window-Eyes menubar."> 			</li>
+<li> 				Open the &#8220;Startup Options&#8221; dialog by selecting &#8220;File&#8221; &#45;&#62; 				&#8220;Starup Options&#8230;&#8221; in the Window-Eyes application menubar. 				<img src="/blog-archive/assets/aria-env/window-eyes-6.png" width="265" height="190" alt="Screen shot of the Window-Eyes menubar."> 			</li>
 <li> 				In the &#8220;Startup Options&#8221; dialog:
 <ul>
 <li> 						Uncheck the checkbox labeled &#8220;Run Window-Eyes at the 						Login Screen&#8221;. 					</li>
 <li> 						Uncheck the checkbox labeled &#8220;Run Window-Eyes after 						login for all users&#8221;. 					</li>
 <li> 						Select the radio button labeled &#8220;Never&#8221; under &#8220;After 						login for Current User, Run Window-Eyes&#8221;. 					</li>
 </ul>
-<p> 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-7.png" width="287" height="260" alt="Screen shot of the Startup Options dialog in Window-Eyes."> 			</li>
+<p> 				<img src="/blog-archive/assets/aria-env/window-eyes-7.png" width="287" height="260" alt="Screen shot of the Startup Options dialog in Window-Eyes."> 			</li>
 <li>Press the &#8220;OK&#8221; button to close the dialog.</li>
-<li> 				Save the configuration by selecting &#8220;File&#8221; &#45;&#62; &#8220;Save&#8221; 				&#45;&#62; &#8220;Set File and All Dictionaries&#8221; in the Window-Eyes 				application menubar. 				<img src="http://yuiblog.com/assets/aria-env/window-eyes-8.png" width="342" height="178" alt="Screen shot of the Window-Eyes menubar."> 			</li>
+<li> 				Save the configuration by selecting &#8220;File&#8221; &#45;&#62; &#8220;Save&#8221; 				&#45;&#62; &#8220;Set File and All Dictionaries&#8221; in the Window-Eyes 				application menubar. 				<img src="/blog-archive/assets/aria-env/window-eyes-8.png" width="342" height="178" alt="Screen shot of the Window-Eyes menubar."> 			</li>
 </ol>
 <h4>Configuring NVDA</h4>
 <h5>General Settings For Efficiency</h5>
 <ol>
-<li> 				Uncheck the checkbox labeled &#8220;Show this dialog when NVDA starts&#8221; 				that pops up the first time NVDA starts 				<img src="http://yuiblog.com/assets/aria-env/nvda-1.png" width="541" height="271" alt="Screen shot of the NVDA welcome dialog"> 			</li>
+<li> 				Uncheck the checkbox labeled &#8220;Show this dialog when NVDA starts&#8221; 				that pops up the first time NVDA starts 				<img src="/blog-archive/assets/aria-env/nvda-1.png" width="541" height="271" alt="Screen shot of the NVDA welcome dialog"> 			</li>
 <li> 				Disable the confirmation dialog that pops up when you exit 				the application:
 <ol>
-<li> 						Open the &#8220;General settings&#8221; dialog by right clicking on 						the NVDA system tray icon and selecting to &#8220;Preferences&#8221; 						 &#45;&#62; &#8220;General settings&#8221; in the context menu. 						<img src="http://yuiblog.com/assets/aria-env/nvda-5.png" width="393" height="303" alt="Screen shot of the NVDA system tray context menu."> 					</li>
-<li> 						In the &#8220;General settings&#8221; dialog, uncheck the checkbox 						labeled &#8220;Warn before exiting NVDA&#8221;. 						<img src="http://yuiblog.com/assets/aria-env/nvda-6.png" width="458" height="203" alt="Screen shot of the General settings dialog in NVDA."> 					</li>
-<li> 						Right click on the NVDA icon in the system tray and select 						the &#8220;Save configuration&#8221; menu item in the context menu. 						<img src="http://yuiblog.com/assets/aria-env/nvda-7.png" width="233" height="162" alt="Screen shot of the NVDA system tray context menu."> 					</li>
+<li> 						Open the &#8220;General settings&#8221; dialog by right clicking on 						the NVDA system tray icon and selecting to &#8220;Preferences&#8221; 						 &#45;&#62; &#8220;General settings&#8221; in the context menu. 						<img src="/blog-archive/assets/aria-env/nvda-5.png" width="393" height="303" alt="Screen shot of the NVDA system tray context menu."> 					</li>
+<li> 						In the &#8220;General settings&#8221; dialog, uncheck the checkbox 						labeled &#8220;Warn before exiting NVDA&#8221;. 						<img src="/blog-archive/assets/aria-env/nvda-6.png" width="458" height="203" alt="Screen shot of the General settings dialog in NVDA."> 					</li>
+<li> 						Right click on the NVDA icon in the system tray and select 						the &#8220;Save configuration&#8221; menu item in the context menu. 						<img src="/blog-archive/assets/aria-env/nvda-7.png" width="233" height="162" alt="Screen shot of the NVDA system tray context menu."> 					</li>
 </ol>
 </li>
 </ol>
 <h5>Disabling the Mouse Voice</h5>
 <p> 		Like Window-Eyes, by default NVDA will speak in response to some mouse 		gestures. For example, when you move the mouse NVDA will play tones 		to help the user track the position of the mouse. As a sighted person I 		find this feature unnecessary, so I disable this feature. 		</p>
 <ol>
-<li> 				Open the &#8220;Mouse settings&#8221; dialog by right clicking on the NVDA 				icon in the system tray and selecting &#8220;Preferences&#8221; &#45;&#62; 				&#8220;Mouse settings&#8221; from the context menu. 				<img src="http://yuiblog.com/assets/aria-env/nvda-2.png" width="395" height="306" alt="Screen shot of the NVDA system tray context menu."> 			</li>
-<li> 				In the &#8220;Mouse settings&#8221; dialog, uncheck both &#8220;Report text under 				the mouse&#8221; and &#8220;play audio coordinates when the mouse moves&#8221;. 				<img src="http://yuiblog.com/assets/aria-env/nvda-3.png" width="281" height="210" alt="Screen shot of the Mouse settings dialog in NVDA."> 			</li>
-<li> 				Right click on the NVDA icon in the system tray and select 				the &#8220;Save configuration&#8221; menu item in the context menu. 				<img src="http://yuiblog.com/assets/aria-env/nvda-7.png" width="233" height="162" alt="Screen shot of the NVDA system tray context menu."> 			</li>
+<li> 				Open the &#8220;Mouse settings&#8221; dialog by right clicking on the NVDA 				icon in the system tray and selecting &#8220;Preferences&#8221; &#45;&#62; 				&#8220;Mouse settings&#8221; from the context menu. 				<img src="/blog-archive/assets/aria-env/nvda-2.png" width="395" height="306" alt="Screen shot of the NVDA system tray context menu."> 			</li>
+<li> 				In the &#8220;Mouse settings&#8221; dialog, uncheck both &#8220;Report text under 				the mouse&#8221; and &#8220;play audio coordinates when the mouse moves&#8221;. 				<img src="/blog-archive/assets/aria-env/nvda-3.png" width="281" height="210" alt="Screen shot of the Mouse settings dialog in NVDA."> 			</li>
+<li> 				Right click on the NVDA icon in the system tray and select 				the &#8220;Save configuration&#8221; menu item in the context menu. 				<img src="/blog-archive/assets/aria-env/nvda-7.png" width="233" height="162" alt="Screen shot of the NVDA system tray context menu."> 			</li>
 </ol>
 <h5>Changing The Virtual Buffer Toggle Keyboard Shortcut</h5>
 <ol>
 <li> 				Shut down NVDA &#8211; right click on the system track icon and choose 				&#8220;Exit&#8221; from the context menu. 			</li>
-<li> 				Navigate to the path &#8220;C:\Program Files\NVDA\appModules&#8221;. 				<img src="http://yuiblog.com/assets/aria-env/nvda-4.png" width="355" height="443" alt="Screen capture of the contents of the appModules directory."> 			</li>
+<li> 				Navigate to the path &#8220;C:\Program Files\NVDA\appModules&#8221;. 				<img src="/blog-archive/assets/aria-env/nvda-4.png" width="355" height="443" alt="Screen capture of the contents of the appModules directory."> 			</li>
 <li>Open the file named &#8220;_default_desktop.kbd&#8221;.</li>
 <li>Find the line: &#8220;NVDA+space=toggleVirtualBufferPassThrough&#8221;.</li>
 <li> 				Change to: &#8220;Control+Shift+space=toggleVirtualBufferPassThrough&#8221;. 			</li>
@@ -850,8 +850,8 @@ corresponding WAI-ARIA Roles.
 							<p>Ever since I got upgraded to a shiny Macbook Pro and a 24 inch monitor at work I had a web experience that differed a lot from what I had before. Web sites that were easy and nice to read out of a sudden showed a massive amount of white space that actually hurt my eyes. Talking to several people with visual impairments and dyslexia at <a href="http://scriptingenabled.org">Scripting Enabled</a> confirmed me that this can be a real issue.</p>
 <p>This is why I thought of writing a small script that can be used as a bookmarklet to cover the screen with a dark overlay and only shows a few lines at a time. That way you can concentrate on the bit you are reading at the moment and the rest of the screen does not bother you too much. </p>
 <p>Following are two screenshots of the same site with and without reading blinds:</p>
-<p><img src="http://yuiblog.com/assets/blinds.jpg" width="420" height="323" alt="Browser with Reading Blinds"></p>
-<p><img src="http://yuiblog.com/assets/withoutblinds.jpg" width="420" height="324" alt="Browser without Reading Blinds"></p>
+<p><img src="/blog-archive/assets/blinds.jpg" width="420" height="323" alt="Browser with Reading Blinds"></p>
+<p><img src="/blog-archive/assets/withoutblinds.jpg" width="420" height="324" alt="Browser without Reading Blinds"></p>
 <p>So how to build that?</p>
 <p>The task of building a tool like that is actually pretty easy:</p>
 <ul>
@@ -1067,7 +1067,7 @@ readingblinds.init();</pre>
   readingblinds.init();
 }</pre>
 <p>That&#8217;s the lot. You can download <a href="/assets/readingblinds.js">readingblinds.js<br />
-</a> and include it in your site, or you can drag the following link to your links toolbar: <a href="javascript:var%20x=%20function(){var%20h=document.createElement('script');h.src='http://yuiblog.com/assets/readingblinds.js';h.type='text/javascript';document.getElementsByTagName('head')[0].appendChild(h)}();">Reading Blinds</a>.</p>
+</a> and include it in your site, or you can drag the following link to your links toolbar: <a href="javascript:var%20x=%20function(){var%20h=document.createElement('script');h.src='/blog-archive/assets/readingblinds.js';h.type='text/javascript';document.getElementsByTagName('head')[0].appendChild(h)}();">Reading Blinds</a>.</p>
 						</div>
 
 						<div class="meta">
@@ -1093,107 +1093,107 @@ readingblinds.init();</pre>
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69 current-cat"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

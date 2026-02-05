@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Test Page</title>
+    <style type="text/css">
+        body {
+            font: normal .9em/1.3 Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            background: #795089;
+            padding: 1ex;
+            color: #fff;
+            margin: 0 0 1em;
+        }
+        h2 {
+            font-size: 1.5em;
+            padding-left: .75em;
+            border-top: 1px dotted #ccc;
+        }
+        p, h4 {
+            padding-left: 1em;
+            margin-top: 0;
+        }
+        h4 {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<h1 class="hd">DataTable solutions/examples</h1>
+<p>Here are a few examples thrown together (usually) in response to <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">ydn-javascript</a> questions.  This is by no means an exhaustive example set.  Please look at the following resources:</p>
+<ul>
+    <li><a href="http://developer.yahoo.com/yui/datatable/">DataTable overview page</a> on the <a href="http://developer.yahoo.com/">YAHOO Developer Network</a></li>
+    <li><a href="http://developer.yahoo.com/yui/examples/datatable/index.html">Official DataTable examples</a> (included with the YUI download)</li>
+    <li><a href="http://developer.yahoo.com/yui/docs/module_datatable.html">DataTable API docs</a></li>
+    <li><a href="http://satyam.com.ar/yui/">Satyam's examples</a></li>
+    <li>Satyam's great <a href="/blog/2007/09/12/satyam-datatable/">article</a> <a href="/blog/2007/09/26/satyam-datatable-2/">series</a> on YUIBlog</li>
+    <li><a href="/blog/?s=DataTable">YUIBlog articles about DataTable</a></li>
+</ul>
+
+<p>And <a href="http://tech.groups.yahoo.com/group/ydn-javascript/msearch_adv">search the ydn-javascript list archives</a>.  The list community is friendly and helpful.</p>
+
+<h2>The examples</h2>
+<ul>
+    <li>
+        <h4><a href="28292.html">Click vs Dblclick</a></h4>
+        <p>Handling both a click and double click in the column headers.</p>
+    </li>
+    <li>
+        <h4><a href="check_col.html">Select all/none checkbox column head</a></h4>
+        <p>Adding support for a checkbox in the column head that checks or unchecks all checkboxes in that column.</p>
+    </li>
+    <li>
+        <h4><a href="conditional_highlight.html">Custom formatter to conditionally highlight cells</a></h4>
+        <p>Listening to the DataTable's renderEvent to assign css classes to cells to give them a certain highlight color.</p>
+    </li>
+    <li>
+        <h4><a href="row_color.html">Applying conditional row coloring</a></h4>
+        <p>Using a column value to affect a custom row highlight.</p>
+    </li>
+    <li>
+        <h4><a href="dialog_vs_link.html">Stop link click events</a></h4>
+        <p>Not technically a DataTable example, but illustrates the importance of stopping the default behavior of link click events when opening a YAHOO.widget.Dialog.</p>
+    </li>
+    <li>
+        <h4><a href="link_in_dt.html">More detail on link behavior</a></h4>
+        <p>Detailing link behavior and order of operations when you have a js error in link handling code.  At least this example is in a DataTable :)</p>
+    </li>
+    <li>
+        <h4><a href="sort_vs_sum.html">Using tfoot for summary row</a></h4>
+        <p>While not officially supported, it is possible to add a tfoot to the table which will not be effected by sort operations.</p>
+    </li>
+    <li>
+        <h4><a href="tfoot.html">More tfootiness</a></h4>
+        <p>A pared down example of adding a tfoot to a table (not in a DataTable this time).</p>
+    </li>
+    <li>
+        <h4><a href="filtered_dt.html">Dynamically filtering records</a></h4>
+        <p>Using a function type DataSource to add filtering to a DataTable.  Certainly not the only way to accomplish the task.</p>
+    </li>
+    <li>
+        <h4><a href="multi_dt_sort.html">Multiple DataTables with synchronized sorting</a></h4>
+        <p>Creating multiple DataTables, but displaying only one set of column headers, and making all DataTables respond to sort requests by column head click.</p>
+    </li>
+    <li>
+        <h4><a href="array_column_val.html">Handling complex column values</a></h4>
+        <p>Extracts a column value from a nested data structure in JSON data.  Also shows how to use a custom column formatter to display complex column values (in this case, an array)</p>
+    </li>
+    <li>
+        <h4><a href="scroll_to_cell.html">Scrolling a container to show a cell</a></h4>
+        <p>Using a container element with css wih4 and overflow set.  Clicking on a cell that is partially obscured will cause the overflow container to scroll to show the entire cell.</p>
+    </li>
+    <li>
+        <h4><a href="pag_controls.html">Placing specific Paginator controls in various locations</a></h4>
+        <p>Manually instantiating and rendering Paginator.ui.* components from the Paginator's <code>rendered</code> event callback.</p>
+    </li>
+    <li>
+        <h4><a href="click_select.html">(un)select rows with a simple click</a></h4>
+        <p>DataTable supports multiple row selection using CTRL/Cmd+click and SHIFT+click via <code>onEventSelectRow</code>.  This example illustrates how to support a simple model where clicking on a row without CTRL/Cmd does not clear existing row selections, and just toggles the selected state of the target row.</p>
+    </li>
+    <li>
+        <h4><a href="col_change.html">Change DataTable columns at runtime</a></h4>
+        <p>Reuse an existing DataTable to provide multiple views of similar data with different sets of column definitions, changing between viewing modes in response to clicking on a series of links.</p>
+    </li>
+</ul>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1323520720" alt="setstats" border="0" width="1" height="1"></noscript>

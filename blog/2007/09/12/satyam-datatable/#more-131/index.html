@@ -13,7 +13,7 @@
 	<meta name="DC.title" content="Yahoo! User Interface Blog" />
 	<!-- /geocoding -->
 	<style type="text/css" media="screen">
-		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+		@import url(/yuiblog/blog/wp-content/themes/yuiblog_v1/style.css);
 	</style>
 	<link rel="Shortcut Icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
@@ -51,7 +51,7 @@
 <meta name="generator" content="FAlbum 0.2" />
 
 <style type="text/css">
-@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+@import url(/yuiblog/blog/wp-content/plugins/falbum/falbum.css);
 </style>
 </head>
 
@@ -92,7 +92,7 @@
 			<p><strong>Don&#8217;t miss <a href="/yuiblog/blog/2007/09/26/satyam-datatable-2/">Part Two of this series</a>, in which Satyam explores methods for changing data within the <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable Control</a>.</strong></p>
 <div class="interview">
 <div class="intro">
-<p><img src="http://yuiblog.com/assets/satyam.jpg" alt="Daniel Barreiro (Satyam)" width="160" height="206" align="right"><strong>About the Author:</strong>  Daniel Barreiro (screen name Satyam) has been around for quite some time.  The ENIAC was turned off the day before he was born, so he missed that &mdash; but he hasn&#8217;t missed much since.  He&#8217;s had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere.  When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic.  Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;&#8217;s and &gt;&#8217;s, he ended up learning quite a lot about the world of frontend engineering.  It&#8217;s been a long journey since COBOL and Fortran.  Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain.</p>
+<p><img src="/blog-archive/assets/satyam.jpg" alt="Daniel Barreiro (Satyam)" width="160" height="206" align="right"><strong>About the Author:</strong>  Daniel Barreiro (screen name Satyam) has been around for quite some time.  The ENIAC was turned off the day before he was born, so he missed that &mdash; but he hasn&#8217;t missed much since.  He&#8217;s had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere.  When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic.  Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;&#8217;s and &gt;&#8217;s, he ended up learning quite a lot about the world of frontend engineering.  It&#8217;s been a long journey since COBOL and Fortran.  Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain.</p>
 <p>When he&#8217;s not basking in the Mediterranean sun, Saytam can be found among the most prolific and knowledgable participants in the YUI community on the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YDN-JavaScript developer forum</a>.</p>
 </p></div>
 </div>
@@ -204,7 +204,7 @@ myDataSource.responseSchema = {<br />
 };</PRE><br />
 <P> I would assign this formatter function to the column containing the name while the column containing the eMail would not be included in the column definitions. But it <em>would </em>be included in the fields definition for the <CODE>DataSource</CODE> so that the data will actually be there for you, in the <CODE>oRecord</CODE> argument.</P> <P>As for the rest of the arguments to the formatter function, the first one is the cell, which allows you further flexibility since you are not limited to just format the contents; you can also format the container itself. In my <CODE>formatDate</CODE> function above, I put code in it to make all dates older than a month show on a red background. (While we&#8217;re on the subject of dates, do check <CODE><a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.DateMath.html">YAHOO.widget.DateMath</a></CODE>, part of the <CODE>Calendar</CODE> component, which has some potentially relevant functionality).</P> <P>The <CODE>oColumn</CODE> argument gives you a copy of the definitions you provided in the column definitions plus some more, such as the default values of the ones you left out. There is nothing preventing you from adding further properties to the column definition besides the ones <CODE>DataTable</CODE> uses; just make sure their names don&#8217;t collide with the ones <CODE>DataTable</CODE> uses. If you add extra properties, those will show up in the <CODE>oColumn</CODE> argument of the formatter. This would allow you to have a parameterized formatter, with the formatting options coming in the <CODE>oColumn</CODE> argument. And, as shown here, I use single quotes for JavaScript literals and double quotes for the HTML stuff, which spares me from having to escape double quotes within double quotes and makes it much easier to detect unbalanced quotes (but for the sake of this article I have respected the format of code that I copied from YUI documentation).</P> <H3>In-line Editing</H3> <P>One of the most exciting features of the <CODE>DataTable</CODE> is the possibility of editing cells right on the spot. If you assign an editor to a column in the column definitions, that column will be editable. Just as you add a <CODE>formatter</CODE> property to allow for different formatters, you use the <CODE>editor</CODE> property to use any of the several editors provided with the <CODE>DataTable</CODE>, which you can either call by short name or by assigning it a function or a reference to a function of your own.  You have a good sampling of the editors available in the <A HREF="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">code samples</A>.  </P> <P>Though the inline editor will take care of updating the underlying <code>RecordSet</code> and make those changes visible to the user, you would want those changes to be sent to the server, where the data resides permanently.  Other changes to the <code>DataTable</code>, such as inserting or deleting rows are closely tied to cell editing. That&#8217;s a subject for another article, as synchronizing your data between client and server is a lengthier topic than we have space for here. In any case, with the variety of editors available, you would be hard pressed to miss the one you truly needed.</P><br />
 <h2>Conclusion<BR> </h2>
-<p><img src="http://yuiblog.com/assets/satyam_datatable.gif" width="515" height="226"></p>
+<p><img src="/blog-archive/assets/satyam_datatable.gif" width="515" height="226"></p>
 <p>The image above summarizes the format of the data at each stage in the system, how it comes out from the server, how it is stored internally in the <code>DataTable</code>&#8217;s <code>RecordSet</code>, how it is presented to the user, and where to put the conversions as the data goes from one to the other and back again.</p>
 <p> <P>YUI&#8217;s <CODE>DataTable</CODE> is very flexible and allows you to do many things. Making your choices in advance allows you to define your own version of the <CODE>DataTable</CODE> and either cast some of those choices or make them more easily accessible according to your taste and preferences. The whole application will look and behave more consistently and, should you want to change anything, many of the changes will be concentrated in just one single place.</P></p>
 			
@@ -458,7 +458,7 @@ Satyam</p>
 <h2 id="postcomment">Leave a comment</h2>
 
 
-<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+<form action="/yuiblog/blog/wp-comments-post.php" method="post" id="commentform">
 
 
 <p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
@@ -497,7 +497,7 @@ Satyam</p>
 			<div id="syndicate">
 			<h3>Syndicate</h3>
 				<ul class="cats">
-<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="/yuiblog/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
 <li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 <li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 
@@ -722,8 +722,8 @@ Satyam</p>
 	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
 	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
 	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
-<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
-	<!-- <p><a href="/yuiblog/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/yuiblog/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/yuiblog/blog/feed/"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/yuiblog/blog/comments/feed/"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
 
 	<p><!-- 23 queries. 0.665 seconds. --></p>
 </div>

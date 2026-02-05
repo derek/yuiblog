@@ -13,7 +13,7 @@
 	<meta name="DC.title" content="Yahoo! User Interface Blog" />
 	<!-- /geocoding -->
 	<style type="text/css" media="screen">
-		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+		@import url(/yuiblog/blog/wp-content/themes/yuiblog_v1/style.css);
 	</style>
 	<link rel="Shortcut Icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
@@ -54,7 +54,7 @@
  <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/yuiblog/blog/wp-includes/wlwmanifest.xml" /> <meta name="generator" content="FAlbum 0.2" />
 
 <style type="text/css">
-@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+@import url(/yuiblog/blog/wp-content/plugins/falbum/falbum.css);
 </style>
 </head>
 
@@ -103,7 +103,7 @@
 <p id="figure1">Using a packet sniffer, we discover what takes place in that other 80%.  Figure 1 is a graphical view of where the time is spent loading http://www.yahoo.com with an empty cache.  Each bar represents a specific component and is shown in the order started by the browser.  The first bar is the time spent for the browser to retrieve just the HTML document.  Notice only 10% of the time is spent here for the browser to request the HTML page, and for apache to stitch together the HTML and return the response back to the browser.  The other 90% of the time is spent fetching other components in the page including images, scripts and stylesheets. </p>
 <div class="figure">
 <h4 class="caption">Figure 1. Loading http://www.yahoo.com</h4>
-<p>	<img class="figure" src="http://yuiblog.com/assets/performance/pageload.gif" alt="Figure 1. Loading http://www.yahoo.com" width="500" height="355" id="pageload" longdesc="This image is a chart showing the sequential loading of the 29 components that make up the yahoo.com homepage. The first component is the html itself, and which only takes 0.24 seconds. The remaining 28 items are images, scripts, and stylesheets. The takeaway from the graphic is that nearly all the time is on subsequent requests, not the initial server response.">
+<p>	<img class="figure" src="/blog-archive/assets/performance/pageload.gif" alt="Figure 1. Loading http://www.yahoo.com" width="500" height="355" id="pageload" longdesc="This image is a chart showing the sequential loading of the 29 components that make up the yahoo.com homepage. The first component is the html itself, and which only takes 0.24 seconds. The remaining 28 items are images, scripts, and stylesheets. The takeaway from the graphic is that nearly all the time is on subsequent requests, not the initial server response.">
 </div>
 <p id="table1">Table 1 shows popular web sites spending between 5% and 38% of the time downloading the HTML document. The other 62% to 95% of the time is spent making HTTP requests to fetch all the components in that HTML document (i.e. images, scripts, and stylesheets).  The impact of having many components in the page is exacerbated by the fact that browsers download only two or four components in parallel per hostname, depending on the HTTP version of the response and the user&#8217;s browser.  Our experience shows that reducing the number of HTTP requests has the biggest impact on reducing response time and is often the easiest performance improvement to make.</p>
 <div class="figure" id="loading-popular-web-sites">
@@ -195,7 +195,7 @@
 			<div id="syndicate">
 			<h3>Syndicate</h3>
 				<ul class="cats">
-<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="/yuiblog/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
 <li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 <li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 
@@ -423,8 +423,8 @@
 	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
 	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
 	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
-<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
-	<!-- <p><a href="/yuiblog/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/yuiblog/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/yuiblog/blog/feed/"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/yuiblog/blog/comments/feed/"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
 
 	<p><!-- 26 queries. 0.484 seconds. --></p>
 </div>

@@ -13,7 +13,7 @@
 	<meta name="DC.title" content="Yahoo! User Interface Blog" />
 	<!-- /geocoding -->
 	<style type="text/css" media="screen">
-		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+		@import url(/yuiblog/blog/wp-content/themes/yuiblog_v1/style.css);
 	</style>
 	<link rel="Shortcut Icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
@@ -49,7 +49,7 @@
 <meta name="generator" content="FAlbum 0.2" />
 
 <style type="text/css">
-@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+@import url(/yuiblog/blog/wp-content/plugins/falbum/falbum.css);
 </style>
 </head>
 
@@ -100,11 +100,11 @@
 <p>If heterogeneity drove our decisions about how to architect the library, it was an old picture of an upside-down triangle that influenced us most in creating a roadmap and an organizational structure for our work.</p>
 <p>The browser environment today shares significant common ground with where the desktop GUI industry was ten or fifteen years ago: Toolkits are comparatively new, platforms are awkward, and it&#8217;s too hard to bridge the gap between a great interactive design and real-world, cross-platform engineering implementation. While part of the problem lies in the fundamental protocols of the web, which was never meant to be a platform for deploying desktop-like applications (at least, not without the help of a Java plugin), a significant part of it lies in the browser itself. Modern browsers are tantalizingly close to making rich application development realizable and robust, but the work is still too hard and the foundation too wobbly. Early Macintosh and Windows developers often felt just this way in the early days of the desktop.</p>
 <p>In 1995, <a href="http://en.wikipedia.org/wiki/Alan_Cooper">Alan Cooper</a> (in <em><a href="http://shopping.yahoo.com/search;_ylt=Aj3NVSqtxxgh_SEBjFO7ldobFt0A;_ylu=X3oDMTBtNTA5a3RqBF9zAzE0NDg5MTE1BHNlYwNzZWFyY2g-?p=alan+cooper+about+face&amp;did=">About Face: The Essentials of Interaction Design</a></em>) created a model for how to think about the GUI ecosystem, and that model &mdash; he wrote about the desktop, but it&#8217;s enormously relevant to today&#8217;s browser &mdash; provides a wonderful picture of how an in-browser toolkit serves the larger goal of creating exceptional user interfaces:</p>
-<p><img src="http://www.yuiblog.com/i/cooper.gif" alt="Cooper's GUI canon" width="500" height="286" border="0" /></p>
+<p><img src="/yuiblog/i/cooper.gif" alt="Cooper's GUI canon" width="500" height="286" border="0" /></p>
 <p>For Cooper, the basic granules of interaction were called &#8220;primitives&#8221; &mdash; the mouse click is a primitive unit of input; combinations of primitives that took on more coherent units of interaction or intent were considered &#8220;compounds&#8221;; from compounds, application-specific &#8220;idioms&#8221; could be authored.</p>
 <p>We took Cooper&#8217;s model and re-cast it in terms of the browser and specifically in terms of the challenge of creating a toolkit to enable effective GUI development for web applications. Components that dealt with Cooper&#8217;s &#8220;primitives,&#8221; the most granular elements of interaction, we called utilities. Among our utilities, some (like <a href="http://developer.yahoo.net/yui/connection/index.html">Connection Manager</a>, encapsulating XMLHttpRequest transactions) don&#8217;t have any intrinsic visual characteristics and so would be, in Cooper&#8217;s model, perhaps something like a &#8220;sub-primitive.&#8221; But that&#8217;s how we thought of that bucket. </p>
 <p>Having built five utility components targeting the rich interactions most in demand among Yahoo! user-experience teams, we&#8217;ve turned our attention more recently to the level Cooper calls &#8220;compounds,&#8221; to a class of components we call &#8220;controls.&#8221; We consider controls to be highly recognizable visual presentations that allow users to interact with information quickly and intuitively. Controls, like  <a href="http://developer.yahoo.net/yui/calendar/index.html">Calendar</a>,  <a href="http://developer.yahoo.net/yui/slider/index.html">Slider</a> and  <a href="http://developer.yahoo.net/yui/treeview/index.html">TreeView</a> in our initial library release, should be familiar to users from the desktop world, should require virtually no discovery or learning in terms of their basic interaction, and should be easily invoked on the web page with just a few lines of code. The desktop paradigm, of course, has dozens of widgets; we don&#8217;t aim to be that comprehensive, and yet it&#8217;s clear that a lot of work remains for us to more fully populate our collection.</p>
-<p><img src="http://www.yuiblog.com/i/yahoo.gif" alt="An interpretation of that canon, applied to web application design" width="437" height="286" /></p>
+<p><img src="/yuiblog/i/yahoo.gif" alt="An interpretation of that canon, applied to web application design" width="437" height="286" /></p>
 <p>As this  foundation of utilities and widgets grows in depth and breadth, we hope that application designers will be more free to create what Cooper calls the &#8220;idiom&#8221; of the application &mdash; that set of interactions, workflows, shortcuts, and visual treatments that allow a user to get into a highly productive sense of oneness with her underlying data. Great idioms, not great libraries, toolkits or frameworks, are the essence of great applications.</p>
 <h3>Going Forward</h3>
 <p>We are early in the process of building the Yahoo! User Interface Library. Fundamentally, we see this as a body of components that maps to Cooper&#8217;s inverted pyramid &mdash; utilities that normalize and add power to basic interactions in the browser and controls that provide a rich, familiar set of interactions within the interface. There is no magic pixie dust here: Good application idioms emerge only from diligent research, inspired design, and a committed engineering process that draws on all available tools at hand. This library is just one of those tools, and ultimately a small (though, we hope, useful) part of the much larger process.</p>
@@ -269,7 +269,7 @@ Balakumar Muthu</p>
 <h2 id="postcomment">Leave a comment</h2>
 
 
-<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+<form action="/yuiblog/blog/wp-comments-post.php" method="post" id="commentform">
 
 
 <p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
@@ -308,7 +308,7 @@ Balakumar Muthu</p>
 			<div id="syndicate">
 			<h3>Syndicate</h3>
 				<ul class="cats">
-<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="/yuiblog/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
 <li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 <li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 
@@ -530,8 +530,8 @@ Balakumar Muthu</p>
 	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
 	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
 	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
-<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
-	<!-- <p><a href="/yuiblog/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/yuiblog/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/yuiblog/blog/feed/"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/yuiblog/blog/comments/feed/"><img class="icon" src="/yuiblog/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
 
 	<p><!-- 23 queries. 0.523 seconds. --></p>
 </div>

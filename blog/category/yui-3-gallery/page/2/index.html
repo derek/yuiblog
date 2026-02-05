@@ -110,7 +110,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -337,7 +337,7 @@
     //failure handler
 })</code></pre>
 <p>When this code is executed, the browser pops up a message asking for the user&#8217;s permission to reveal their current location. The dialog displayed in Firefox looks like this:</p>
-<p><img src="http://www.yuiblog.com/blog/wp-content/uploads/2011/05/geo.png" alt="Geolocation dialog in Firefox" width="379" height="168"></p>
+<p><img src="/yuiblog/blog/wp-content/uploads/2011/05/geo.png" alt="Geolocation dialog in Firefox" width="379" height="168"></p>
 <p>If the user denies permission, or an error occurs while trying to get the current position, the failure handler is called. Otherwise, the success handler is called with information about the current location. That information comes in the form of latitude and longitude coordinates (other information may be available as well, depending on the implementation).</p>
 <p>The W3C Geolocation API is supported in Internet Explorer 9+, Firefox 3.5+, Safari 5+, Chrome, and Opera 10.6 as well as on Mobile Safari and Webkit on Android, making it fairly ubiquitous. </p>
 <p>The Geo module uses the Geolocation API when it&#8217;s available, and falls back to an IP-based lookup via the YQL <a href="http://geoip.pidgets.com/">pidgets.geoip</a> open table when not available or if there is an error. This table is exceptionally useful because you can lookup location information for a specific IP address, or you can omit the IP address and it will return the location information for the IP address making the request. The latter part ensures that you need to make only one request to get location information instead of two (other solutions use one to get the IP address and then one to get the location information for that IP address).</p>
@@ -648,7 +648,7 @@ table.plug(Y.Plugin.DataTableDataSource, {datasource: ds});
 <p>The <a href="http://developer.yahoo.com/yui/3/plugin/" title="YUI 3: Plugin">YUI 3 Plugin</a> model allows developers to add new functionality or modify existing behavior to objects.  This allows adding additional functionality on top of Carousel to dynamically pull elements through Ajax, etc.  So, the YUI 3 Carousel does not have animation code baked into it, but instead I have created a plugin which adds animation support for cases where it is needed. This helps to keep the component very lightweight.</p>
 <h3>A Gallery Carousel for your own website</h3>
 <p>After reading about what a Carousel is and how it can help you to improve your website, you hopefully feel eager to get your hands dirty.  Don&#8217;t worry, with our YUI 3 Gallery Carousel extension, implementing a carousel on your website is as easy as providing a bulleted list in HTML.  That&#8217;s not just a sales pitch — that&#8217;s how we recently integrated a Gallery Carousel into the Yahoo! Sports Search Results Page.</p>
-<p><a href="http://sports.search.yahoo.com/search?p=usain+bolt&amp;fr2=sb-top&amp;fr=sports-us-ss" title="usain bolt - Yahoo! Sports Search Results"><img src="http://yuiblog.com/assets/carousel-sports.png"></a></p>
+<p><a href="http://sports.search.yahoo.com/search?p=usain+bolt&amp;fr2=sb-top&amp;fr=sports-us-ss" title="usain bolt - Yahoo! Sports Search Results"><img src="/blog-archive/assets/carousel-sports.png"></a></p>
 <h3>A simple example</h3>
 <p>Let&#8217;s start with a simple example that will cover almost everything you need to know.  The easiest way for you to use the new Gallery Carousel is to let YUI 3 automagically load it from Yahoo&#8217;s content delivery network.  Recalling what a Carousel is, a scrollable list of items, we create a list in HTML.  We include the list in a div, which allows our JavaScript to easily find and work with it.  If you already have some data that is represented in a list-like way in your markup, you might also just put the carousel div around it and test your luck!  It is very important to say that, although we are using an image example here, you can use Gallery Carousel for anything you want!</p>
 <pre>&lt;div class=&quot;carousel&quot; id=&quot;container&quot;&gt;
@@ -670,13 +670,13 @@ table.plug(Y.Plugin.DataTableDataSource, {datasource: ds});
 });</pre>
 <p>(By the way, if you are interested in getting brand new stuff you can visit the <a href="https://github.com/yui/yui3-gallery">YUI 3 Gallery repository</a> on github or <a href="https://github.com/g13n/yui3-gallery/tree/master/src/gallery-carousel">Gopal&#8217;s fork</a>, where he develops Carousel.  If you find a bug, we are always happy to hear about it.)</p>
 <p>Back to our example&#8230; YUI will take it from here.  The loader automatically pulls Gallery Carousel and its dependencies from Yahoo&#8217;s content delivery network.  After that, the Carousel is being initialized and displayed.  The user can then click the left or right arrow to scroll around. Please forgive me for bringing in one line of unnecessary complexity, but I couldn&#8217;t resist.  I used <code>Y.CarouselAnimPlugin</code> to let our carousel slide smoothly from one page to the other instead of just displaying the next page instantly.  Feel free to play with the speed parameter if you wish.</p>
-<p><img src="http://yuiblog.com/assets/carousel-1.png"></p>
+<p><img src="/blog-archive/assets/carousel-1.png"></p>
 <p>As you can see from the screenshot above, the Carousel is up and running.  However, the CSS might not fit very well into the rest of your page.  This leads us to our next section, where we&#8217;ll discuss how to customize Gallery Carousel.</p>
 <h4>Customizing Gallery Carousel</h4>
 <p>Now that you have your Carousel up and running and identified a use case for your website, you hopefully want to integrate it seamlessly.  As mentioned previously, we did so for our Sports Search Results Page.  If you want to increase the number of visible items, for example from three to four, you can do so by modifying the line which instantiates Carousel.</p>
 <pre>var carousel = new Y.Carousel({ boundingBox: "#container",
  contentBox: "#container > ol", numVisible: 4 });</pre>
-<p><img src="http://yuiblog.com/assets/carousel-2.png"></p>
+<p><img src="/blog-archive/assets/carousel-2.png"></p>
 <p>Still not good enough?  Yeah, right.  Luckily CSS allows us to add our own style definitions and even overwrite the initial ones without touching any existing CSS.  So your first step will probably be to remove the borders, because they are quite obtrusive.  Just add the following CSS to your page header.</p>
 <pre>.YUI 3-carousel {
   border: none !important;
@@ -728,7 +728,7 @@ table.plug(Y.Plugin.DataTableDataSource, {datasource: ds});
 					
 
 						<div class="entry">
-							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy"><img src="http://yuiblog.com/assets/yuiconf2010-alloy-20101126-224724.jpg" alt="Liferay engineers Nate Cavanaugh and Eduardo Lundgren speak about AlloyUI at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA." width="510"></a></p>
+							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy"><img src="/blog-archive/assets/yuiconf2010-alloy-20101126-224724.jpg" alt="Liferay engineers Nate Cavanaugh and Eduardo Lundgren speak about AlloyUI at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA." width="510"></a></p>
 <p>In this session from YUIConf 2010, <a href="http://www.liferay.com/" title="Enterprise open source portal and collaboration software - Liferay.com">Liferay</a> engineers Nate Cavanaugh and Eduardo Lundgren talk about the dozens of high-quality, YUI 3-based components contributed by their <a href="http://alloy.liferay.com/" title="Alloy UI - A project of Liferay">AlloyUI</a> project to the <a href="http://yuilibrary.com/gallery/" title="YUI Library :: Gallery">YUI 3 Gallery</a>.  You can&#8217;t appreciate the full spectrum of what YUI 3 offers without seeing what Nate and Eduardo have made available for your use.</p>
 <p>If the video embed below doesn&#8217;t show up correctly in your RSS reader of choice, be sure to <a href="http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy">click through to watch the high-resolution version of the video on YUI Theater</a>.</p>
 <p>
@@ -870,107 +870,107 @@ data: world
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
-	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

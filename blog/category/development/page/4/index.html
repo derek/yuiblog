@@ -110,7 +110,7 @@
              </div>
 	     <div class="yui3-u-1-4">
 		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
-<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+<form action="/yuiblog/blog" id="main-search" class="search" method="get">
         <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
 </form>
 </div>	     </div>
@@ -397,7 +397,7 @@ comboSep:  "~"
 <p>I discounted Option 3 early on because it included several manual steps, was not very scalable if my dependencies changed, and did not allow for an easy way to keep up with library updates. Using the configurator required me to download the JavaScript files that were provided and manually add them to the project. The advantage of this method is the reduced file size, but it wasn&#8217;t easy to use. Option 1 and 2 both rely on cloning the library, which is useful since you can fetch recent versions as they become available. However, including the entire library is unnecessary and radically increases application size (by &gt; 100mb). Instead, I went with Option 2 (including just the <code>build/</code> directory), which is about 30mb. This allowed me to include the YUI seed file (more on that below) and pull down modules using <code>YUI().use(' ... ')</code>, as I would normally. Note, that if you need to use gallery modules, you&#8217;ll need to pull those down as well. In that case, it&#8217;s not worth it to pull down the entire yui3-gallery repo; just pull in the individual modules.</p>
 <h3>Including the seed file</h3>
 <p>WinJS apps have a single-page navigation model. By default, every app has a <code>default.html</code>, which loads <code>default.css</code> and <code>default.js</code>. The <code>default.html</code> acts as a &#8220;wrapper&#8221; for all views within the app, and does not possess any UI. Similarly, <code>default.js</code> possesses general start-up code, not app-specific logic.</p>
-<p><img class="aligncenter size-full wp-image-6448" title="default-wrapper" src="http://www.yuiblog.com/blog/wp-content/uploads/2012/11/default-wrapper.png" alt="" width="295" height="230" /></p>
+<p><img class="aligncenter size-full wp-image-6448" title="default-wrapper" src="/yuiblog/blog/wp-content/uploads/2012/11/default-wrapper.png" alt="" width="295" height="230" /></p>
 <p>Since <code>default.html</code> acts as a &#8220;wrapper&#8221; for all views, I included the YUI seed file in there instead of having to include it in every view. Additionally, I had a <code>YUI_config</code> variable defined with a path to all custom modules that were being loaded. <a href="https://github.com/tilomitra/Sights/blob/master/Sights/default.html">Here&#8217;s what it looks like</a>. Adding the <a href="http://yuilibrary.com/yui/docs/yui/#yui_config"><code>YUI_config</code></a> makes my other <code>YUI().use(...)</code>statements much cleaner, and provides a single place for me to refer to for all custom modules.</p>
 <h3>MVC and re-using code</h3>
 <p>As mentioned above, <code>default.html</code> acts as a wrapper around all views. By default (if you create a new app from a template), this file also has a reference to a JS file with some <strong>model</strong>-data that is persistent across views. Each <strong>view</strong> within the app consists of an HTML file with optional CSS and JS files. I consider the CSS/HTML files to be view-related code and the JS file to be a <strong>controller</strong> for that given view. You can <a href="https://github.com/tilomitra/Sights/tree/master/Sights/pages/itemDetail">take a look at my code</a> to see what these files look like, and how relationships are defined. So breaking it down, WinJS has:</p>
@@ -409,7 +409,7 @@ comboSep:  "~"
 <p>One of the benefits of leveraging YUI is that code can be reused across environments. This is true here as well. When I started my app, I noticed that the sample model JS leveraged a lot of WinJS specific APIs. To me, a model should represent data irrespective of its environment, so I wrote my own models. I sub-classed <a href="http://yuilibrary.com/yui/docs/model/index.html">Y.Model</a> and <a href="http://yuilibrary.com/yui/docs/model-list/">Y.ModelList</a> from the YUI App Framework. Check out the code for my models, <a href="https://github.com/tilomitra/Sights/blob/master/Sights/js/ShotList.js">ShotList.js</a> and <a href="https://github.com/tilomitra/Sights/blob/master/Sights/js/Shot.js">Shot.js</a>. These models have no Windows 8 specific code and are responsible for retrieving images from YQL. I instantiate these models and set them to a WinJS GridView in <a href="https://github.com/tilomitra/Sights/blob/master/Sights/js/ydata.js">ydata.js</a>, but am hoping to clean that code up more. More on that below.</p>
 <h4>Re-using Views</h4>
 <p>When it comes to views, there are a few options. You can either use WinJS APIs for native views, such as ListView, GridView, etc., or use HTML/CSS to make your own views. There is no performance hit of making your own views as opposed to leveraging the native APIs, that I know of, since the native APIs are still manipulating the DOM under-the-hood. When you consider this, it may be worth it to take some time to construct your own views just because you&#8217;ll be able to re-use that code in other environments, if needed. A good example of this is in the Detail view for my Dribbble app:</p>
-<p><img class="aligncenter size-full wp-image-6450" title="sights-detail-med" src="http://www.yuiblog.com/blog/wp-content/uploads/2012/11/sights-detail-med.png" alt="" width="500" height="374" /></p>
+<p><img class="aligncenter size-full wp-image-6450" title="sights-detail-med" src="/yuiblog/blog/wp-content/uploads/2012/11/sights-detail-med.png" alt="" width="500" height="374" /></p>
 <p>Although it looks like a Metro interface, I&#8217;m not using any WinJS views. It&#8217;s just standard elements with my own CSS. YUI makes this easy with <code>Y.View</code>, interacting with a <code>Y.Model</code> or <code>Y.ModelList</code>. It&#8217;s definitely an option to consider, especially since the APIs for regular WinJS views are a little tricky to understand (at least they seemed that way for me).</p>
 <p><strong>An added benefit:</strong> One of the advantages in this environment is that Microsoft includes a <code>ui.css</code>file in every page, so simply writing regular HTML automatically conforms it to reflect the Windows 8 UI style. Unlike in iOS, where you have to &#8220;mock&#8221; the native UI through a lot of detailed CSS, in WinJS, it just works. This makes it easy to write your own views.</p>
 <h4>Querying for data</h4>
@@ -459,7 +459,7 @@ comboSep:  "~"
 A few months back, I hinted about the idea that I would do a public Hangout just to chat and socialize with the YUI community. Since then, I have received several requests to live up to my offer. This <strong>Friday (October 26th) at 1:00pm CST</strong> I will open a public Google Hangout that anyone is free to join.</p>
 <p>I&#8217;ll be there to answer your questions, demo some of the things I&#8217;m working on, and to just shoot the breeze. It&#8217;s not formal and won&#8217;t be recorded until we do a few more of these Hangouts. I also can&#8217;t promise that I won&#8217;t be smoking, cursing or chugging some Dew while the Hangout is open, so headphones are advised!</p>
 <p>Make sure you <a href="http://profiles.google.com/davglass">add me</a> to one of your circles so you can see the notice. I&#8217;ll see you then!</p>
-<p><a href="/yuiblog/blog/wp-content/uploads/2012/10/DewWithDav.ics" title=".ics file for your calendar"><img src="http://www.yuiblog.com/blog/wp-content/uploads/2012/10/ICS_Icon.png" alt="" title=".ics file for your calendar" width="32" height="32" class="alignleft" /></a></p>
+<p><a href="/yuiblog/blog/wp-content/uploads/2012/10/DewWithDav.ics" title=".ics file for your calendar"><img src="/yuiblog/blog/wp-content/uploads/2012/10/ICS_Icon.png" alt="" title=".ics file for your calendar" width="32" height="32" class="alignleft" /></a></p>
 						</div>
 
 						<div class="meta">
@@ -519,90 +519,90 @@ YUIConf 2012 will be held on <strong>November 14–15</strong> (Wednesday and Th
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
-	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
-	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
-	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
-	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
-	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
-	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
-	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
-	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
 	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)

@@ -13,7 +13,7 @@
 	<meta name="DC.title" content="Yahoo! User Interface Blog" />
 	<!-- /geocoding -->
 	<style type="text/css" media="screen">
-		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+		@import url(/yuiblog/blog/wp-content/themes/yuiblog_v1/style.css);
 	</style>
 	<link rel="Shortcut Icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
@@ -87,7 +87,7 @@
 			</div>
 		
 			<!--<div id="search">
-				<form id="searchform" method="get" action="http://www.yuiblog.com/blog">
+				<form id="searchform" method="get" action="/yuiblog/blog">
 					<input type="text" name="s" id="s" size="20" value="search in blog..." />
 				</form>
 			</div>-->
@@ -120,7 +120,7 @@
 We&#8217;ve been obsessed with the <code>canvas</code> tag for a while now; we think it represents a huge opportunity for creative interfaces on the web, and current browser support for the tag is excellent (as long as you don&#8217;t mind using excanvas.js for IE6/7). That being said, there are some limitations. The only available built-in transformations are <a href="http://developer.mozilla.org/en/docs/Canvas_tutorial:Transformations#Translating">translation</a>, <a href="http://developer.mozilla.org/en/docs/Canvas_tutorial:Transformations#Rotating">rotationg</a> and <a href="http://developer.mozilla.org/en/docs/Canvas_tutorial:Transformations#Scaling">scale</a>. Performing a complex transformation, such as keystoning an image so that it can be used in a faux 3D environment, has been difficult.
 </p>
 
-<img src="http://yuiblog.com/assets/slicing/slice-diagram.gif" width="344" height="560" alt="" />
+<img src="/blog-archive/assets/slicing/slice-diagram.gif" width="344" height="560" alt="" />
 
 <p>
 However, there is an easy way to <em>simulate</em> arbitrary transformations on images in canvas. If you cut the image into slices, you can redraw each slice with different dimensions. The code is simple: using the <a href="http://developer.mozilla.org/en/docs/Canvas_tutorial:Using_images#Slicing">slicing variation of the <code>drawImage</code> method</a>, it&#8217;s possible to take a slice of a source image and draw it to the canvas. This slice can be scaled horizontally and vertically according to a formula. As the number of slices increases, the edges of the image become smoother and less jagged. It&#8217;s important to note that you only need one copy of the source image, and that drawing many slices doesn&#8217;t mean there are many copies of the image in the page. You are able to use one source image to draw multiple images on a destination canvas.
@@ -178,15 +178,15 @@ function keystoneAndDisplayImage(ctx, img, x, y, pixelWidth,
 We take slices from the source image one at a time, apply a horizontal and vertical transformation, and then draw it in the correct order. This also allows us to do something interesting; if the slices are drawn in reverse order, we can reverse the image. The <a href="/assets/slicing/slicing_test.html">keystone demo page</a> shows this code in action. The two sliders control the values entered into the function as <code>pixelWidth</code> and <code>scalingFactor</code>. Keystoning has a lot of potential applications. For instance, If you animate both width and scaling, you can create a page turning effect for any image.
 </p>
 
-<img src="http://yuiblog.com/assets/slicing/vr.png" width="602" height="502" alt="" />
+<img src="/blog-archive/assets/slicing/vr.png" width="602" height="502" alt="" />
 
 <p>
 You can apply any transformation to the slices. If you were to scale the height of the slices based on a parabolic curve, you could create a cylindrical distortion that mimics a panorama view. We set up a <a href="/assets/slicing/vr_test.html">Quicktime VR-style panorama</a> using this technique. Be sure to view it with the rest of the canvas both shown and hidden to see how it works. It would also be possible to add an animating flag-ripple effect to any image, just by varying <code>dy</code>. We believe that image slicing transformations have a lot of applications in mimicing 3D environments and creating image effects. All you have to do is apply a formula to change the slice dimensions or position.
 </p>
 			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/06/23/slicing/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/06/23/slicing/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/06/23/slicing/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/06/23/slicing/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Image Transformations in Canvas with Slicing&u=http://www.yuiblog.com/blog/2008/06/23/slicing/" title="bookmark Image Transformations in Canvas with Slicing on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/06/23/slicing/&amp;title=Image Transformations in Canvas with Slicing" title="bookmark Image Transformations in Canvas with Slicing in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/06/23/slicing/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/06/23/slicing/&amp;title=Image Transformations in Canvas with Slicing" title="post Image Transformations in Canvas with Slicing to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Image Transformations in Canvas with Slicing&u=/yuiblog/blog/2008/06/23/slicing/" title="bookmark Image Transformations in Canvas with Slicing on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/06/23/slicing/&amp;title=Image Transformations in Canvas with Slicing" title="bookmark Image Transformations in Canvas with Slicing in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/06/23/slicing/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/06/23/slicing/&amp;title=Image Transformations in Canvas with Slicing" title="post Image Transformations in Canvas with Slicing to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -195,10 +195,10 @@ You can apply any transformation to the slices. If you were to scale the height 
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/06/23/slicing/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/06/23/slicing/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/06/23/slicing/"
+    dc:identifier="/yuiblog/blog/2008/06/23/slicing/"
     dc:title="Image Transformations in Canvas with Slicing"
-    trackback:ping="http://www.yuiblog.com/blog/2008/06/23/slicing/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/06/23/slicing/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -210,11 +210,11 @@ You can apply any transformation to the slices. If you were to scale the height 
 				<h2 id="post-217"><a href="/yuiblog/blog/2008/06/14/video-yui-grails/" rel="bookmark" title="Permanent Link to Video: Scott Davis on Using YUI with Grails">Video: Scott Davis on Using YUI with Grails</a></h2>
 				<small>June 14, 2008 at 6:58 am by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/yuiblog/blog/2008/06/14/video-yui-grails/#comments" title="Comment on Video: Scott Davis on Using YUI with Grails">2 Comments</a></small>
 						
-			<p><a href="http://www.therichwebexperience.com/media.jsp?id=40"><img src="http://yuiblog.com/assets/scottdavis.png" width="510" height="213" alt="Scott Davis talks about Groovy and Rails at the Rich Web Experience."></a></p>
+			<p><a href="http://www.therichwebexperience.com/media.jsp?id=40"><img src="/blog-archive/assets/scottdavis.png" width="510" height="213" alt="Scott Davis talks about Groovy and Rails at the Rich Web Experience."></a></p>
 <p><a href="http://www.ibm.com/developerworks/views/java/libraryview.jsp?search_by=mastering+grails">Mastering Grails</a> columnist (and author of books on topics ranging from Java to GIS) Scott Davis gave a fantastic talk on using <a href="http://developer.yahoo.com/yui/">YUI</a> with <a href="http://en.wikipedia.org/wiki/Grails_(Framework)">Grails</a> at the 2007 Rich Web Experience in San Jose. Thanks to Jay Zimmerman and his No Fluff Just Stuff conference team, <a href="http://www.therichwebexperience.com/media.jsp?id=40">that talk is now available freely on video from the RWE website</a>.</p>			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/06/14/video-yui-grails/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/06/14/video-yui-grails/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Video: Scott Davis on Using YUI with Grails&u=http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/" title="bookmark Video: Scott Davis on Using YUI with Grails on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/&amp;title=Video: Scott Davis on Using YUI with Grails" title="bookmark Video: Scott Davis on Using YUI with Grails in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/&amp;title=Video: Scott Davis on Using YUI with Grails" title="post Video: Scott Davis on Using YUI with Grails to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Video: Scott Davis on Using YUI with Grails&u=/yuiblog/blog/2008/06/14/video-yui-grails/" title="bookmark Video: Scott Davis on Using YUI with Grails on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/06/14/video-yui-grails/&amp;title=Video: Scott Davis on Using YUI with Grails" title="bookmark Video: Scott Davis on Using YUI with Grails in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/06/14/video-yui-grails/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/06/14/video-yui-grails/&amp;title=Video: Scott Davis on Using YUI with Grails" title="post Video: Scott Davis on Using YUI with Grails to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -223,10 +223,10 @@ You can apply any transformation to the slices. If you were to scale the height 
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/06/14/video-yui-grails/"
+    dc:identifier="/yuiblog/blog/2008/06/14/video-yui-grails/"
     dc:title="Video: Scott Davis on Using YUI with Grails"
-    trackback:ping="http://www.yuiblog.com/blog/2008/06/14/video-yui-grails/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/06/14/video-yui-grails/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -323,13 +323,13 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 <p>All tests were done on a Macbook Pro running OSX 10.4.  The IEs and FF2 were tested on Parallels instances running Windows XP.  I only documented properties that weren&#8217;t prefixed with a vendor identifier (e.g. -moz), and omitted methods and meta fields such as <code>setProperty</code> and <code>length</code>.  The only exception to this being <code>cssText</code>, which I&#8217;ll talk more about later.  So without further ado&#8230;</p>
 
 <div id="bridge">
-<p><a href="/yuiblog/"><img src="http://yuiblog.com/assets/lukecss.png" width="510" height="310"/></a></p>
+<p><a href="/yuiblog/"><img src="/blog-archive/assets/lukecss.png" width="510" height="310"/></a></p>
 <p><a href="/yuiblog/">Click through to see the full table of CSS properties</a>.</p>
 </div>
  <a href="/yuiblog/blog/2008/06/12/a-style-all-their-own/#more-216" class="more-link">Continue reading A Style All Their Own&#8230;</a>			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/06/12/a-style-all-their-own/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/06/12/a-style-all-their-own/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=A Style All Their Own&u=http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/" title="bookmark A Style All Their Own on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/&amp;title=A Style All Their Own" title="bookmark A Style All Their Own in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/&amp;title=A Style All Their Own" title="post A Style All Their Own to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=A Style All Their Own&u=/yuiblog/blog/2008/06/12/a-style-all-their-own/" title="bookmark A Style All Their Own on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/06/12/a-style-all-their-own/&amp;title=A Style All Their Own" title="bookmark A Style All Their Own in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/06/12/a-style-all-their-own/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/06/12/a-style-all-their-own/&amp;title=A Style All Their Own" title="post A Style All Their Own to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -338,10 +338,10 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/06/12/a-style-all-their-own/"
+    dc:identifier="/yuiblog/blog/2008/06/12/a-style-all-their-own/"
     dc:title="A Style All Their Own"
-    trackback:ping="http://www.yuiblog.com/blog/2008/06/12/a-style-all-their-own/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/06/12/a-style-all-their-own/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -353,9 +353,9 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 				<h2 id="post-210"><a href="/yuiblog/blog/2008/06/06/accordion/" rel="bookmark" title="Permanent Link to Notoptimal Dev&#8217;s New YUI-Based Accordion Menu">Notoptimal Dev&#8217;s New YUI-Based Accordion Menu</a></h2>
 				<small>June 6, 2008 at 10:04 pm by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/yuiblog/blog/2008/06/06/accordion/#comments" title="Comment on Notoptimal Dev&#8217;s New YUI-Based Accordion Menu">4 Comments</a></small>
 						
-			<p><a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html"><img src="http://yuiblog.com/assets/notoptimal.png" alt="Visit Notoptimal Dev's blog post about the new Accordion Menu." width="510" height="148"></a></p>
+			<p><a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html"><img src="/blog-archive/assets/notoptimal.png" alt="Visit Notoptimal Dev's blog post about the new Accordion Menu." width="510" height="148"></a></p>
 
-<p><a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html"><img src="http://yuiblog.com/assets/notoptimal-menu.png" alt="Visit Notoptimal Dev's blog post about the new Accordion Menu." width="280" height="132" hspace="10" vspace="5" align="right"></a>Juan I. Leon at Notoptimal Dev <a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html">went looking for the perfect Accordion Menu recently</a>, but the search was not a success.  The criteria:</p>
+<p><a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html"><img src="/blog-archive/assets/notoptimal-menu.png" alt="Visit Notoptimal Dev's blog post about the new Accordion Menu." width="280" height="132" hspace="10" vspace="5" align="right"></a>Juan I. Leon at Notoptimal Dev <a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html">went looking for the perfect Accordion Menu recently</a>, but the search was not a success.  The criteria:</p>
 
 <ul>
   <li>be lightweight </li>
@@ -367,9 +367,9 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 <p>Writes Juan: &#8220;My search came up short. Most were overly complicated, or they required libraries other than what I already have running on my sites. Too much bloat. I guess I&#8217;d have to write my own. Since I already use the *radical* YUI libraries on my sites, making it YUI-powered was the way to go for me. I set my goal to &lt;100 lines of good OO unobtrusive Javascript. The current version <a href="http://notoptimal.net/sample_code/JILS_accordion/JILS_accordion.js">sits at 80 LOC with lots of comments</a>.&#8221;</p>
 
 <p>You can <a href="http://dev.notoptimal.net/2008/06/simple-yui-powered-accordion-widget.html">check out the blog article</a> or <a href="http://notoptimal.net/sample_code/JILS_accordion/accordion_example.html">jump directly to the example</a>.</p>			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/06/06/accordion/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/06/06/accordion/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/06/06/accordion/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/06/06/accordion/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Notoptimal Dev&#8217;s New YUI-Based Accordion Menu&u=http://www.yuiblog.com/blog/2008/06/06/accordion/" title="bookmark Notoptimal Dev&#8217;s New YUI-Based Accordion Menu on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/06/06/accordion/&amp;title=Notoptimal Dev&#8217;s New YUI-Based Accordion Menu" title="bookmark Notoptimal Dev&#8217;s New YUI-Based Accordion Menu in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/06/06/accordion/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/06/06/accordion/&amp;title=Notoptimal Dev&#8217;s New YUI-Based Accordion Menu" title="post Notoptimal Dev&#8217;s New YUI-Based Accordion Menu to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Notoptimal Dev&#8217;s New YUI-Based Accordion Menu&u=/yuiblog/blog/2008/06/06/accordion/" title="bookmark Notoptimal Dev&#8217;s New YUI-Based Accordion Menu on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/06/06/accordion/&amp;title=Notoptimal Dev&#8217;s New YUI-Based Accordion Menu" title="bookmark Notoptimal Dev&#8217;s New YUI-Based Accordion Menu in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/06/06/accordion/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/06/06/accordion/&amp;title=Notoptimal Dev&#8217;s New YUI-Based Accordion Menu" title="post Notoptimal Dev&#8217;s New YUI-Based Accordion Menu to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -378,10 +378,10 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/06/06/accordion/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/06/06/accordion/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/06/06/accordion/"
+    dc:identifier="/yuiblog/blog/2008/06/06/accordion/"
     dc:title="Notoptimal Dev&#8217;s New YUI-Based Accordion Menu"
-    trackback:ping="http://www.yuiblog.com/blog/2008/06/06/accordion/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/06/06/accordion/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -393,16 +393,16 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 				<h2 id="post-206"><a href="/yuiblog/blog/2008/05/29/mojarra-scales/" rel="bookmark" title="Permanent Link to Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components">Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components</a></h2>
 				<small>May 29, 2008 at 7:37 am by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/yuiblog/blog/2008/05/29/mojarra-scales/#respond" title="Comment on Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components">No Comments</a></small>
 						
-			<p><a href="http://blogs.steeplesoft.com/mojarra-scales-10-release-candidate-1/"><img src="http://yuiblog.com/assets/mojara.png" alt="Read the official Mojara Scales Release Candidate announcement." width="510" height="165"></a></p>
+			<p><a href="http://blogs.steeplesoft.com/mojarra-scales-10-release-candidate-1/"><img src="/blog-archive/assets/mojara.png" alt="Read the official Mojara Scales Release Candidate announcement." width="510" height="165"></a></p>
 
 <p>Jason Lee announced the Release Candidate of <a href="https://scales.dev.java.net">Mojarra Scales</a>, a new JSF component library that provides support for YUI Charts, Menus, Calendars, Rich Text Editors, Sliders, TabViews and TreeViews (demos of these components and others <a href="http://jsftemplating.org/mojarra-scales-demo/">are available</a>).  From <a href="http://blogs.steeplesoft.com/mojarra-scales-10-release-candidate-1/">the announcement</a>:</p>
 
 <blockquote>I am pleased to announce the first release candidate of Mojarra Scales 1.0, a new JSF component set. Mojarra Scales started out as the Sandbox for the JSF RI (now known as Mojarra) and was recently promoted to its own java.net project. The component set includes a tab view, several menu controls, JavaScript charts, a multi-file upload control, the first (as far as we can tell) free JSF rich text editor control, as well as several other visual controls. Additionally, Scales offers a simple, easy to use pretty URL component, allowing JSF applications to offer search engine-friendly &#8220;deep links.&#8221;</blockquote>
 
 <p>Congratulations to Jason, Ken and Ryan on the launch.</p>			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/05/29/mojarra-scales/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/05/29/mojarra-scales/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components&u=http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/" title="bookmark Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/&amp;title=Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components" title="bookmark Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/&amp;title=Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components" title="post Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components&u=/yuiblog/blog/2008/05/29/mojarra-scales/" title="bookmark Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/05/29/mojarra-scales/&amp;title=Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components" title="bookmark Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/05/29/mojarra-scales/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/05/29/mojarra-scales/&amp;title=Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components" title="post Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -411,10 +411,10 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/05/29/mojarra-scales/"
+    dc:identifier="/yuiblog/blog/2008/05/29/mojarra-scales/"
     dc:title="Mojarra Scales &mdash; New JSF Component Library Supporting Numerous YUI Components"
-    trackback:ping="http://www.yuiblog.com/blog/2008/05/29/mojarra-scales/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/05/29/mojarra-scales/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -426,7 +426,7 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 				<h2 id="post-205"><a href="/yuiblog/blog/2008/05/28/yui-252/" rel="bookmark" title="Permanent Link to YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases">YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases</a></h2>
 				<small>May 28, 2008 at 2:59 pm by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/yuiblog/blog/2008/05/28/yui-252/#comments" title="Comment on YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases">9 Comments</a></small>
 						
-			<p><a href="http://developer.yahoo.com/yui/"><img src="http://yuiblog.com/assets/yuilib.jpg" alt="Visit the YUI web site, where you can download YUI or learn more about the libaries 30+ components that make rich internet application development easier for professionals." width="260" height="161" hspace="10" vspace="5" align="right"></a>The YUI development team released version 2.5.2 today; you can <a href="http://developer.yahoo.com/yui/download/">download the new release from SourceForge</a> or <a href="http://developer.yahoo.com/yui/articles/hosting/#configure">configure your implementation using the YUI Configurator</a>. This is a focused release that addresses several key bugs while providing support for Firefox 3 and Opera 9.5, both of which are expected to reach GA this summer. Key points for YUI 2.5.2:</p>
+			<p><a href="http://developer.yahoo.com/yui/"><img src="/blog-archive/assets/yuilib.jpg" alt="Visit the YUI web site, where you can download YUI or learn more about the libaries 30+ components that make rich internet application development easier for professionals." width="260" height="161" hspace="10" vspace="5" align="right"></a>The YUI development team released version 2.5.2 today; you can <a href="http://developer.yahoo.com/yui/download/">download the new release from SourceForge</a> or <a href="http://developer.yahoo.com/yui/articles/hosting/#configure">configure your implementation using the YUI Configurator</a>. This is a focused release that addresses several key bugs while providing support for Firefox 3 and Opera 9.5, both of which are expected to reach GA this summer. Key points for YUI 2.5.2:</p>
 <ul>
   <li><strong>Anticipating Opera and Firefox updates:</strong> When <a href="http://www.mozilla.com/en-US/firefox/all-beta.html">Firefox 3</a> and <a href="http://www.opera.com/products/desktop/next/">Opera 9.5</a> go GA this summer, they will be <a href="http://developer.yahoo.com/yui/articles/gbs/">A-Grade browsers</a>, and we wanted to make sure that we anticipated those debuts with a release that was validated against the latest betas available. YUI 2.5.2 was tested against Opera 9.5b2 and Firefox 3.0RC1. In both cases, the new browsers look terrific, and this YUI release incorporates several changes that will help users make the upgrade seamlessly.</li>
   <li><strong>Major bug fixes:</strong> <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>, <a href="http://developer.yahoo.com/yui/menu/">Menu</a>, <a href="http://developer.yahoo.com/yui/editor/">Rich Text Editor</a> and <a href="http://developer.yahoo.com/yui/button/">Button</a> are the key beneficiaries of bug fixes in 2.5.2, but dozens of fixes are provided throughout the library. <a href="http://tech.groups.yahoo.com/group/ydn-javascript/message/31724">Check out George Puckett&#8217;s release rollup in the YUI Community Forum for a complete rundown of what has changed in this release.</a></li>
@@ -434,9 +434,9 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
   <li><strong>ActionScript Source:</strong> The ActionScript source for components that use Flash (Charts and <a href="http://developer.yahoo.com/yui/uploader/">Uploader</a>) is now available as part of the <a href="http://developer.yahoo.com/yui/download/">download</a> for developers who want to dig more deeply into these components.</li>
 </ul>
 <p>After you&#8217;ve <a href="http://developer.yahoo.com/yui/download/">downloaded YUI 2.5.2</a> (or changed your pathnames <a href="http://developer.yahoo.com/yui/articles/hosting/">using Yahoo!&#8217;s free edge-hosting service</a>), head over to the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YUI Community Forum</a> and let us know how it&#8217;s working for you.</p>			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/05/28/yui-252/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/05/28/yui-252/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/05/28/yui-252/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/05/28/yui-252/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases&u=http://www.yuiblog.com/blog/2008/05/28/yui-252/" title="bookmark YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/05/28/yui-252/&amp;title=YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases" title="bookmark YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/05/28/yui-252/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/05/28/yui-252/&amp;title=YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases" title="post YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases&u=/yuiblog/blog/2008/05/28/yui-252/" title="bookmark YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/05/28/yui-252/&amp;title=YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases" title="bookmark YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/05/28/yui-252/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/05/28/yui-252/&amp;title=YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases" title="post YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -445,10 +445,10 @@ use <code>cssFloat</code> (Opera also supports <code>styleFloat</code>, actually
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/05/28/yui-252/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/05/28/yui-252/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/05/28/yui-252/"
+    dc:identifier="/yuiblog/blog/2008/05/28/yui-252/"
     dc:title="YUI 2.5.2 Released: Bug Fixes and Support for Upcoming Firefox and Opera Releases"
-    trackback:ping="http://www.yuiblog.com/blog/2008/05/28/yui-252/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/05/28/yui-252/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -506,9 +506,9 @@ of the object to the attacker. It does not weaken or confuse the object. Each me
 Durable objects allow code from multiple (possibly untrusted) parties to
 cooperate. Durable objects can be expressed in a safe subset of JavaScript,
 such as ADsafe or Cajita.			
-			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/05/24/durable-objects/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/05/24/durable-objects/" title="find related discusion on technorati">technorati</a></p>
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/05/24/durable-objects/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/05/24/durable-objects/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 
-			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Durable Objects&u=http://www.yuiblog.com/blog/2008/05/24/durable-objects/" title="bookmark Durable Objects on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/05/24/durable-objects/&amp;title=Durable Objects" title="bookmark Durable Objects in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/05/24/durable-objects/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/05/24/durable-objects/&amp;title=Durable Objects" title="post Durable Objects to reddit">reddit!</a></p>
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Durable Objects&u=/yuiblog/blog/2008/05/24/durable-objects/" title="bookmark Durable Objects on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/05/24/durable-objects/&amp;title=Durable Objects" title="bookmark Durable Objects in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/05/24/durable-objects/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/05/24/durable-objects/&amp;title=Durable Objects" title="post Durable Objects to reddit">reddit!</a></p>
 								
 			<div class="feedback"></div>
 
@@ -517,10 +517,10 @@ such as ADsafe or Cajita.
 			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 				xmlns:dc="http://purl.org/dc/elements/1.1/"
 				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
-			<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/05/24/durable-objects/"
-    dc:identifier="http://www.yuiblog.com/blog/2008/05/24/durable-objects/"
+			<rdf:Description rdf:about="/yuiblog/blog/2008/05/24/durable-objects/"
+    dc:identifier="/yuiblog/blog/2008/05/24/durable-objects/"
     dc:title="Durable Objects"
-    trackback:ping="http://www.yuiblog.com/blog/2008/05/24/durable-objects/trackback/" />
+    trackback:ping="/yuiblog/blog/2008/05/24/durable-objects/trackback/" />
 </rdf:RDF>			-->
 
 
@@ -546,7 +546,7 @@ such as ADsafe or Cajita.
 		  <div id="syndicate">
 			<h3>Syndicate</h3>
 				<ul class="cats">
-<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="/yuiblog/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
 <li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 <li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
 

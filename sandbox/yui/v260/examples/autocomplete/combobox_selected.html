@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Combobox with default selections</title>
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/reset/reset-min.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/fonts/fonts-min.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/base/base-min.css">
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/button/assets/skins/sam/button.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/autocomplete/assets/skins/sam/autocomplete.css">
+
+<style type="text/css">
+/* combobox */
+.yui-skin-sam .yui-ac-input { position:static;width:20em; vertical-align:middle;}
+.yui-skin-sam .yui-ac-container { width:20em;left:0px;}
+
+/* buttons */
+.yui-ac .yui-button {vertical-align:middle;}
+.yui-ac .yui-button button {background: url(http://developer.yahoo.com/yui/examples/autocomplete/assets/img/ac-arrow-rt.png) center center no-repeat }
+.yui-ac .open .yui-button button {background: url(http://developer.yahoo.com/yui/examples/autocomplete/assets/img/ac-arrow-dn.png) center center no-repeat}
+</style>
+</head>
+<body class=" yui-skin-sam">
+
+<h3>What would you like for dinner?</h3>
+<div id="dAutoComplete">
+	<input id="dInput" type="text"> <span id="dToggle"></span>
+	<div id="dContainer"></div>
+</div>
+
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo/yahoo.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/dom/dom.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/event/event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/animation/animation.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/element/element-beta.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/button/button.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/datasource/datasource-debug.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/autocomplete/autocomplete-debug.js"></script>
+
+<script type="text/javascript">
+YAHOO.example.Combobox = function() {
+    // Data with a flag for default selection
+    var dinners = [
+        {dish:"meatloaf"},
+        {dish:"pot roast"},
+        {dish:"roast chicken"},
+        {dish:"spaghetti", selected:true},
+        {dish:"steak"}
+    ];
+    
+    // Prefill with current selection
+    var currentSelection;
+    for(var i=0; i<dinners.length; i++) {
+        if(dinners[i].selected) {
+            currentSelection = dinners[i].dish;
+        }
+    }
+    YAHOO.util.Dom.get("dInput").value = currentSelection;
+
+    // Instantiate DataSource
+    var ds = new YAHOO.util.LocalDataSource(dinners);
+    ds.responseSchema = {fields:["dish", "selected"]};
+
+    // Instantiate AutoComplete
+    var configs = {
+        prehighlightClassName: "yui-ac-prehighlight",
+        useShadow: true,
+        queryDelay: 0,
+        minQueryLength: 0,
+        animVert: .01,
+        resultTypeList: false
+    }
+    var ac = new YAHOO.widget.AutoComplete("dInput", "dContainer", ds, configs);
+        
+    // Toggle container with button
+    var toggler = YAHOO.util.Dom.get("dToggle");
+    var button = new YAHOO.widget.Button({container:toggler});
+    var handleToggleClick = function(e) {
+        if(!YAHOO.util.Dom.hasClass(toggler, "open")) {
+            YAHOO.util.Dom.addClass(toggler, "open")
+        }
+        
+        // Close if open
+        if(ac.isContainerOpen()) {
+            ac.collapseContainer();
+        }
+        // Open if closed
+        else {
+            // Focus needed to keep widget active
+            ac.getInputEl().focus();
+            
+            // Timeout needed for IE
+            setTimeout(function() {
+                ac.sendQuery("");
+            },0);
+        }
+    }
+    button.on("click", handleToggleClick);
+    
+    // Update current selection tracker as necessary
+    ac.itemSelectEvent.subscribe(function(type, args){
+        currentSelection = args[2].dish;
+    });
+
+    // Update current selection tracker as necessary
+    ac.textboxKeyEvent.subscribe(function(type, args){
+        currentSelection = null;
+    });
+
+    // Set button's UI to "closed"
+    ac.containerCollapseEvent.subscribe(function(){YAHOO.util.Dom.removeClass(toggler, "open")});
+    // Highlight current selection before opening container
+    ac.doBeforeExpandContainer = function(a,b,c,d) {
+        if(currentSelection) {
+            var items = this.getListItems(),
+                item, itemData;
+            for(var i=0; i<items.length; i++) {
+                item = items[i];
+                itemData = this.getListItemData(item);
+                if(itemData && (itemData.dish === currentSelection)) {
+                   this._toggleHighlight(item, "to");
+                    
+                }
+            }
+        }
+        return true;
+    };
+
+    return {
+        ds: ds,
+        ac: ac
+    };
+}();
+</script>
+
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1409735971" alt="setstats" border="0" width="1" height="1"></noscript><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

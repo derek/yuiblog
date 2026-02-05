@@ -1,0 +1,274 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Tycoon Rats Home Page</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+<!-- css  -->
+<link rel="stylesheet" type="text/css" href="http://www.steelbreeze.us/compressor/includes_compress.php?type=css&amp;css_type=dark" />
+
+<!-- Fonts CSS - Recommended but not required -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/fonts/fonts-min.css">
+
+<!-- Core + Skin CSS -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/menu/assets/skins/sam/menu.css">
+
+<!-- Dependencies --> 
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container_core-min.js"></script>
+
+<!-- Source File -->
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/menu/menu-min.js"></script>
+
+
+<script type="text/javascript" src="http://www.steelbreeze.us/compressor/includes_compress.php?type=js&amp;js_type=js&amp;files=ajax.js"></script>
+
+
+
+<script type="text/javascript">
+YAHOO.util.Event.onContentReady('side-bar', userBars);
+function userBars() {
+	positionBars('my-health', 100);
+	positionBars('my-energy', 100);
+	positionBars('my-nerve', 100);
+}
+function positionBars(ub_element, ub_value) {
+	Dom = YAHOO.util.Dom;
+	var ubar = Dom.get(ub_element);
+	ub_value = ((100 - ub_value) * -1.74) + 'px 100%';
+	Dom.setStyle(ubar, 'backgroundPosition', ub_value);
+//	alert(ub_value);
+//	document.getElementById(ub_element).style.backgroundPosition = ub_value;
+}
+
+(function() {
+var subData = [
+
+{id: 'submenu-myarea', itemdata: [
+	{text: 'Home', url: 'index.php'},
+	{text: 'Inventory', url: 'index.php?p=inventory'},
+	{text: 'Events (0)', url: 'index.php?p=events'},
+	{text: 'Mail (0)', url: 'index.php?p=mail'},
+	{text: 'Forum', url: 'forum/'},
+	{text: 'Announcements', url: 'index.php?p=announcements'},
+	{text: 'Preferences', url: 'index.php?p=preferences'},
+	{text: 'My Profile', url: 'index.php?p=profile'},
+	{text: 'User Search', url: 'index.php?p=user_search'},
+	{text: 'Cash Transfers', url: 'index.php?p=cash_xfer'},
+	{text: 'Item Transfers', url: 'index.php?p=item_xfer'},
+	{text: 'My Notes', url: 'index.php?p=my_notes'},
+	{text: 'Friends &amp; Emenies', url: 'index.php?p=mylist'}
+]},
+
+{id: 'submenu-explore', itemdata: [
+	{text: 'Training', url: 'index.php?p=training'},
+	{text: 'User List', url: 'index.php?p=user_list'},
+	{text: 'Users Online', url: 'index.php?p=users_online'},
+	{text: 'Shops', url: 'index.php?p=shops'},
+	{text: 'Game Stats', url: 'index.php?p=stats'},
+	{text: 'Bug Reports', url: 'index.php?p=bugs'},
+	{text: 'Player Reports', url: 'index.php?p=player_report'},
+	{text: 'Donate', url: 'index.php?p=donate'},
+	{text: 'Vote', url: 'index.php?p=vote'}
+]}
+];
+
+YAHOO.util.Event.onContentReady("my_menu", function () {
+
+	var oMenuBar = new YAHOO.widget.MenuBar("my_menu", { 
+		autosubmenudisplay: true, 
+		hidedelay: 750, 
+		lazyload: true
+	});
+	
+	oMenuBar.getItem(0).cfg.setProperty("submenu", subData[0]);
+	oMenuBar.getItem(1).cfg.setProperty("submenu", subData[1]);
+	
+	oMenuBar.render();
+});
+
+
+YAHOO.util.Event.onContentReady("my_side_menu", function () {
+	var i, menuData = subData;
+	for (i = 0; i < menuData.length; i++) {
+		menuData[i].id += '_menu';
+	}
+			
+	var oMenu = new YAHOO.widget.Menu("my_side_menu", {
+		position: 'static',
+		submenuhidedelay: 150
+	});
+	
+	oMenu.getItem(0).cfg.setProperty("submenu", menuData[0]);
+	oMenu.getItem(1).cfg.setProperty("submenu", menuData[1]);
+	
+	oMenu.render();
+});
+})();
+
+
+</script>
+</head>
+<body class="yui-skin-sam">
+<div id="doc4" class="yui-t2">
+	<div id="hd">
+	<div style="height: 10px"></div>
+	<table style="width: 100%">
+		<tr>
+			<td style="width: 180px; padding-top: 20px" valign="top">
+			thedemo [5]<br />
+			Donor days: <span id="donordays">0</span><br />
+			Cash: <span id="my-cash">$10,000</span><br />
+			<a href="http://www.steelbreeze.us/login.php?case=logout">Logout</a>
+			
+			</td>
+			<td style="padding-left: 10px">
+			<a href="index.php"><img src="images/hzone.png" alt="Tycoon Rats" /></a>
+			</td>
+		</tr>
+	</table>
+	
+	<div id="my_menu" class="yuimenubar">
+		<div class="bd">
+		
+		<ul class="first-of-type">
+			<li class="yuimenubaritem">
+				<a class="yuimenubaritemlabel" href="#submenu-myarea">My Area</a>
+			</li>
+			<li class="yuimenubaritem">
+				<a class="yuimenubaritemlabel" href="#submenu-explore">Explore</a>
+			</li>
+
+		</ul>
+		
+		</div>
+	</div>
+
+	
+		<!--</div>-->
+	</div>
+	
+	
+	
+	<div id="bd">
+	
+	
+	<div class="yui-b side-menu" id="side-bar">
+	<div class="bar-container">
+		<div id="my-health"><p><strong>Health:</strong> <span id="health_display">100</span>%</p></div>
+	</div>
+	<div class="bar-container">
+		<div id="my-energy"><p><strong>Energy:</strong> <span id="energy_display">100</span>%</p></div>
+	</div>
+	<div class="bar-container">
+		<div id="my-nerve"><p><strong>Nerve:</strong> <span id="nerve_display">100</span>%</p></div>
+	</div>
+	<br />
+	
+	
+	<div id="my_side_menu" class="yuimenu">
+		<div class="bd">
+		<h6>Side Menu</h6>
+		<ul class="first-of-type">
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">My Area</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Explore</a>
+			</li>
+			
+		</ul>
+		<h6>Side Menu Group 2</h6>
+		<ul class="first-of-type">
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="index.php?p=events">Events (0)</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="index.php?p=mail">Mail (0)</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Link</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="forum/">Forum</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Link</a>
+			</li>
+		</ul>
+		<h6>Side Menu Group 3</h6>
+		<ul class="first-of-type">
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Link</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Link</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Link</a>
+			</li>
+			<li class="yuimenuitem">
+				<a class="yuimenuitemlabel" href="#">Link</a>
+			</li>
+		</ul>
+		
+		</div>
+	</div>
+	
+	</div>
+	<div id="yui-main">
+		<div class="yui-b" style="padding: 10px">
+<h1>Tycoon Rats Home Page</h1>
+Users are directed to this page when they login.<br />
+Clicking on the main game banner or the "Home" link on the "My Area" drop down menus will direct them to this page as well.
+<br />
+<br />
+<br />
+
+<h3>Please customize this page!</h3>		</div>
+	</div>
+	</div>
+
+	<div id="ft" class="center" style="padding: 10px">
+	<div class="yui-gb">
+		<div class="yui-u first" id="servertime">&nbsp;</div>
+		<div class="yui-u">Powered by <a href="http://www.phphorizons.com">PHP Horizons Inc.</a></div>
+		<div class="yui-u">&nbsp;</div>
+	</div>
+	
+	</div> 
+	
+</div>
+</body>
+<head>
+<!-- This clock copied from Will on Criminal Existence Forums -->
+
+<script type="text/javascript">
+var currenttime = 'October 03, 2008 13:31:25';
+
+
+var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+var serverdate=new Date(currenttime);
+
+function padlength(what){
+var output=(what.toString().length==1)? "0"+what : what;
+return output;
+}
+
+function displaytime(){
+serverdate.setSeconds(serverdate.getSeconds()+1);
+var datestring=montharray[serverdate.getMonth()]+" "+padlength(serverdate.getDate())+", "+serverdate.getFullYear();
+var timestring=padlength(serverdate.getHours())+":"+padlength(serverdate.getMinutes())+":"+padlength(serverdate.getSeconds());
+try {
+	document.getElementById("servertime").innerHTML=datestring+" "+timestring;
+} catch(e) {}
+}
+
+window.onload=function(){
+setInterval("displaytime()", 1000);
+}
+</script>
+</head>
+</html> <!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1250271776" alt="setstats" border="0" width="1" height="1"></noscript>

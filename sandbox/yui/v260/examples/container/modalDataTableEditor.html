@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Inline Cell Editing</title>
+
+<style type="text/css">
+/*margin and padding on body element
+  can introduce errors in determining
+  element position and are not recommended;
+  we turn them off as a foundation for YUI
+  CSS treatments. */
+body {
+	margin:0;
+	padding:0;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/calendar/assets/skins/sam/calendar.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/datatable/assets/skins/sam/datatable.css" />
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.6.0/build/container/assets/skins/sam/container.css" />
+
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/yahoo/yahoo.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/dom/dom.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/event/event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/dragdrop/dragdrop.js"></script>
+
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/calendar/calendar-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/element/element-beta-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/datatable/datatable-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.6.0/build/container/container-min.js"></script>
+
+<script type="text/javascript">
+YAHOO.example.Data = {
+    addresses: [
+        {name:"John A. Smith", address:"1236 Some Street", city:"San Francisco", state:"CA", amount:5, active:"yes", colors:["red"], last_login:"4/19/2007"},
+        {name:"Joan B. Jones", address:"3271 Another Ave", city:"New York", state:"NY", amount:3, active:"no", colors:["red","blue"], last_login:"2/15/2006"},
+        {name:"Bob C. Uncle", address:"9996 Random Road", city:"Los Angeles", state:"CA", amount:0, active:"maybe", colors:["green"], last_login:"1/23/2004"},
+        {name:"John D. Smith", address:"1623 Some Street", city:"San Francisco", state:"CA", amount:5, active:"yes", colors:["red"], last_login:"4/19/2007"},
+        {name:"Joan E. Jones", address:"3217 Another Ave", city:"New York", state:"NY", amount:3, active:"no", colors:["red","blue"], last_login:"2/15/2006"}
+    ],
+    
+    stateAbbrs: [
+        "AL","AK","AZ","AR","CA","CO","CT","DE","DC","FL","GA","HI",
+        "ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS",
+        "MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR",
+        "PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY"
+    ]
+};
+</script>
+
+<!--begin custom header content for this example-->
+<style type="text/css">
+/* custom styles for this example */
+.yui-skin-sam .yui-dt-col-address pre { font-family:arial;font-size:100%; } /* Use PRE in first col to preserve linebreaks*/
+
+.yui-skin-sam .yui-dt-editor .yui-calcontainer {
+    /* Rendering to a constrained area means we need to avoid shrink-to-wrap, for Calendar, to avoid squishing */
+    width:14em;
+}
+
+.yui-skin-sam .yui-dt-editor .yui-dt-button {
+    /* Not sure why this is required, but the DateEditor buttons wraps in IE6 */
+    white-space:nowrap;
+}
+</style>
+
+<!--end custom header content for this example-->
+
+</head>
+
+<body class=" yui-skin-sam">
+
+
+<h1>Inline Cell Editing</h1>
+
+<div class="exampleIntro">
+	<p>This example demonstrates basic inline cell editing features, as well as
+more complex customizations, such as input validation and click-to-save interactions.</p>
+			
+</div>
+
+<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
+
+<div id="panel">
+    <div class="hd">Modal Panel</div>
+    <div class="bd">
+        <div id="cellediting"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+YAHOO.util.Event.addListener(window, "load", function() {
+    
+    YAHOO.example.InlineCellEditing = function() {
+        
+        YAHOO.example.modalPanel = new YAHOO.widget.Panel("panel", {modal:true});
+
+        // Custom formatter for "address" column to preserve line breaks
+        var formatAddress = function(elCell, oRecord, oColumn, oData) {
+            elCell.innerHTML = "<pre class=\"address\">" + oData + "</pre>";
+        };
+
+        var myColumnDefs = [
+            {key:"uneditable"},
+            {key:"address", formatter:formatAddress, editor: new YAHOO.widget.TextareaCellEditor()},
+            {key:"city", editor: new YAHOO.widget.TextboxCellEditor({disableBtns:true})},
+            {key:"state", editor: new YAHOO.widget.DropdownCellEditor({dropdownOptions:YAHOO.example.Data.stateAbbrs,disableBtns:true})},
+            {key:"amount", editor: new YAHOO.widget.TextboxCellEditor({validator:YAHOO.widget.DataTable.validateNumber})},
+            {key:"active", editor: new YAHOO.widget.RadioCellEditor({radioOptions:["yes","no","maybe"],disableBtns:true})},
+            {key:"colors", editor: new YAHOO.widget.CheckboxCellEditor({checkboxOptions:["red","yellow","blue"]})},
+            {key:"last_login", formatter:YAHOO.widget.DataTable.formatDate, editor: new YAHOO.widget.DateCellEditor()}
+        ];
+
+        var myDataSource = new YAHOO.util.DataSource(YAHOO.example.Data.addresses);
+        
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;
+        myDataSource.responseSchema = {
+            fields: ["address","city","state","amount","active","colors",{key:"last_login",parser:"date"}]
+        };
+
+        var myDataTable = new YAHOO.widget.DataTable("cellediting", myColumnDefs, myDataSource, {});
+
+        // Set up editing flow
+        var highlightEditableCell = function(oArgs) {
+            var elCell = oArgs.target;
+            if(YAHOO.util.Dom.hasClass(elCell, "yui-dt-editable")) {
+                this.highlightCell(elCell);
+            }
+        };
+
+        myDataTable.doBeforeShowCellEditor = function(cellEditor) {
+            var el = cellEditor.getContainerEl();
+
+            if (el.parentNode === document.body) {
+                YAHOO.example.modalPanel.body.appendChild(el);
+
+                cellEditor.subscribe("showEvent", function() {
+                    // Need to wait till show, because Dom.setXY won't work on 
+                    // elements with display:none, and we need to use Dom.setXY to
+                    // set page co-ordinates, instead of offsetParent relative 
+                    // co-ordinates
+                    var xy = YAHOO.util.Dom.getXY(this.getTdEl());
+                    YAHOO.util.Dom.setXY(this.getContainerEl(), xy);
+                });
+            }
+
+            return true;
+        };
+
+        myDataTable.subscribe("cellMouseoverEvent", highlightEditableCell);
+        myDataTable.subscribe("cellMouseoutEvent", myDataTable.onEventUnhighlightCell);
+        myDataTable.subscribe("cellClickEvent", myDataTable.onEventShowCellEditor);
+        
+        YAHOO.example.modalPanel.render();
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable
+        };
+    }();
+});
+</script>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1328512001" alt="setstats" border="0" width="1" height="1"></noscript>

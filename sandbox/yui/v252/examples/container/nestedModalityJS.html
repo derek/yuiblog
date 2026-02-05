@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Nested Modality Dialog</title>
+
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/reset/reset.css" />
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/fonts/fonts.css" />
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css" />
+    <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/button/assets/skins/sam/button.css" />
+
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/element/element-beta-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/animation/animation-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/dragdrop/dragdrop-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/connection/connection-min.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container.js"></script>
+    <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/button/button-min.js"></script>
+
+    <style>
+        .yui-panel-container select {
+            _visibility: hidden;
+        }
+
+        .yui-modal select {
+            _visibility: inherit;
+        }
+    </style>
+
+    <script type="text/javascript">
+    YAHOO.util.Event.onDOMReady(
+        function init() {
+
+            var myDialogOne = new YAHOO.widget.Dialog("myDialogOne", {
+                width:"400px",
+                fixedcenter: true,
+                constraintoviewport: true,
+                visible:false,
+                modal:true,
+                buttons:[
+                    {text:"Submit", handler:function(){this.cancel();}, isDefault:true},
+                    {text:"Cancel", handler:function(){this.cancel();}}]
+            });
+            myDialogOne.render();
+
+            var myDialogTwo = new YAHOO.widget.Dialog("myDialogTwo", {
+                width:"400px",
+                fixedcenter: true,
+                constraintoviewport: true,
+                modal:true,
+                visible:false,
+                buttons:[
+                    {text:"Submit", handler:function(){this.cancel();}, isDefault:true},
+                    {text:"Cancel", handler:function(){this.cancel();}}]
+            });
+            myDialogTwo.render();
+
+            YAHOO.util.Event.addListener("openDialogOne", "click",  function() { myDialogOne.show(); });
+            YAHOO.util.Event.addListener("openDialogTwo", "click", function() { myDialogTwo.show(); });
+
+            // Custom Nested Handling
+            function markModal() {
+                YAHOO.util.Dom.addClass(this.element, "yui-modal");
+            }
+
+            function unmarkModal() {
+                YAHOO.util.Dom.removeClass(this.element, "yui-modal");
+            }
+
+            myDialogOne.showMaskEvent.subscribe(markModal);
+            myDialogOne.hideMaskEvent.subscribe(unmarkModal);
+            myDialogTwo.showMaskEvent.subscribe(markModal);
+            myDialogTwo.hideMaskEvent.subscribe(unmarkModal);
+
+            myDialogTwo.showEvent.subscribe(function() {
+                myDialogOne.hideMask();
+                YAHOO.util.Dom.addClass(document.body, "masked");
+            });
+
+            myDialogTwo.hideEvent.subscribe(function() {
+                myDialogOne.showMask();
+            });
+        }
+    );
+    </script>
+</head>
+
+<body class="yui-skin-sam">
+
+    <input type="button" id="openDialogOne" value="Open Dialog One" />
+    <select>
+        <option>Hide me in IE6 when anything is Modal</option>
+    </select>
+    
+
+    <div id="myDialogOne">
+      <div class="hd">Test Dialog</div>
+      <div class="bd">
+            <form name="dlgOneForm" method="post" action="#">
+                <select name="sel" id="sel">
+                  <option value="1">Apple</option>
+                  <option value="2">Orange</option>
+                  <option value="3">Lemon</option>
+                </select>
+                <input type="button" id="openDialogTwo" value="Open Dialog Two" />
+            </form>
+      </div>
+    </div>
+
+    <div id="myDialogTwo">
+        <div class="hd">Please enter your information</div>
+        <div class="bd">
+            <form name="dlgTwoForm" method="post" action="#">
+                <p>Please enter your personal contact information:</p>
+                <label for="firstname">First Name:</label><br />
+                <input type="text" name="firstname" id="firstname" /><br />
+                <label for="lastname">Last Name:</label><br />
+                <input type="text" name="lastname" id="lastname" /><br />
+                <select name="sel" id="sel">
+                    <option value="1">Apple</option>
+                    <option value="2">Orange</option>
+                    <option value="3">Lemon</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1255958984" alt="setstats" border="0" width="1" height="1"></noscript>

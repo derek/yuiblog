@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <title>Renderer Performance</title>
+        
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/reset/reset-min.css">
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/fonts/fonts-min.css">
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/calendar/assets/skins/sam/calendar.css">
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/calendar/calendar.js"></script>
+
+        <script type="text/javascript">
+        YAHOO.util.Event.onDOMReady(function() {
+
+            /***  FAST METHOD ***/
+            /*
+                This is the central set of dates which need special treatment.
+                If you have more individual dates than ranges, you can change the object structure to 
+                something more suitable. Can also be updated dynamically without have to change renderers.
+            */ 
+            var HIGHLIGHT_DATE_HASH = {
+                "2006" : {  
+                    "1":{from:10, to:18},       
+                    "2":{from:21, to:25},        
+                    "3":{from:24, to:30},      
+                    "4":{from:10, to:18},       
+                    "5":{from:21, to:25},        
+                    "6":{from:24, to:30},      
+                    "10":{from:10, to:18},       
+                    "11":{from:21, to:25},        
+                    "12":{from:24, to:30}      
+                }, 	
+
+                "2007" : {  
+                    "10":{from:10, to:18},       
+                    "11":{from:21, to:25},        
+                    "12":{from:24, to:30}      
+                }, 	
+
+                "2008" : {  
+                    "1":{from:1, to:5},        // Dates to highlight in JAN - 1st to 5th
+                    "2":{from:10, to:15},      // Dates to highlight in FEB
+                    "3":{from:15, to:20}       // Dates to highlight in APR
+                }, 	
+    
+                "2009" : {
+                    "1":{from:1, to:5},
+                    "2":{from:4, to:9}
+                }
+            };
+
+            var cal = new YAHOO.widget.CalendarGroup("cal", {pagedate: "5/2006", title:"Performs Well", iframe:false});
+
+            /* 
+                The Custom Renderer only needs to be attached once per dayofweek (minimum currently do-able)
+                It looks at the HIGHLIGHT_DATE_HASH to figure out which dates need highlighting
+            */
+            function customHighlightRenderer(workingDate, cell) {
+                var isHighlighted = false;
+
+                var yr = HIGHLIGHT_DATE_HASH[workingDate.getFullYear()];
+                if (yr) {
+                    var month = yr[workingDate.getMonth()+1];
+                    if (month){
+                        var fromDate = month.from;
+                        var toDate = month.to;
+                        var date = workingDate.getDate();
+
+                        if (date >= fromDate && date <= toDate) {
+                            isHighlighted = true;
+                        }
+                    }
+                }
+
+                if (isHighlighted) {
+                    YAHOO.util.Dom.addClass(cell, this.Style.CSS_CELL_HIGHLIGHT4);
+                }
+            }
+
+            for (var i = 1; i <= 7; i++) {
+                // Attach to the Weekday, instead of individual dates/ranges, to improve performance.
+                cal.addWeekdayRenderer(i, customHighlightRenderer);
+            }
+            cal.render();
+
+            /*** SLOW METHOD ***/
+            /* 
+               Attach multiple renderers, based on ranges you need special treatment for. 
+               Doesn't scale well.
+             */
+            var cal2 = new YAHOO.widget.CalendarGroup("cal2", {pagedate:"5/2006", title:"Performs Poorly", iframe:false});
+
+            cal2.addRenderer("1/10/2006-1/18/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("2/21/2006-2/25/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("3/24/2006-3/30/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("4/10/2006-4/18/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("5/21/2006-5/25/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("6/24/2006-6/30/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("10/10/2006-10/18/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("11/21/2006-11/25/2006", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("12/24/2006-12/30/2006", cal2.renderCellStyleHighlight4);
+
+            cal2.addRenderer("10/10/2007-10/18/2007", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("11/21/2007-11/25/2007", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("12/24/2007-12/30/2007", cal2.renderCellStyleHighlight4);
+            
+            cal2.addRenderer("1/1/2008-1/5/2008", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("2/10/2008-2/15/2008", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("3/15/2008-3/20/2008", cal2.renderCellStyleHighlight4);
+
+            cal2.addRenderer("1/1/2009-1/5/2009", cal2.renderCellStyleHighlight4);
+            cal2.addRenderer("2/4/2009-2/9/2009", cal2.renderCellStyleHighlight4);
+            cal2.render();
+        });
+        </script>		
+    </head>
+    <body class="yui-skin-sam">
+        <div id="cal"></div>
+        <div id="cal2"></div>
+   </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1364690118" alt="setstats" border="0" width="1" height="1"></noscript>

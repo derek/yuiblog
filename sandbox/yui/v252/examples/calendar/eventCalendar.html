@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/reset/reset-min.css">
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/fonts/fonts-min.css">
+        <link type="text/css" rel="stylesheet" href="http://yui.yahooapis.com/2.5.2/build/calendar/assets/skins/sam/calendar.css">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.5.2/build/container/assets/skins/sam/container.css">
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/connection/connection.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/dragdrop/dragdrop.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/animation/animation.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/container/container.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.5.2/build/calendar/calendar.js"></script>
+
+        <style type="text/css">
+            .yui-pe .yui-pe-module { 
+                display:none;
+            }
+
+            #dialog form label {
+                display:block;
+                margin-top:5px;
+                font-weight:bold;
+            }
+
+            #dialog form textarea, #dialog form input {
+                width:15em;
+            }
+
+            .yui-skin-sam .yui-calendar {
+                font-size:123.1%;
+                table-layout:fixed;
+                width:50em;
+            }
+
+            .yui-skin-sam .yui-calendar td.calcell { 
+                height:7em;
+                text-align:left;
+                vertical-align:top;
+                line-height:normal;
+                font-weight:bold;
+                color:#0000cc;
+                padding:5px;
+            }
+            
+            .yui-skin-sam .yui-calendar td.calcell .evt {
+                display:block;
+                color:#000;
+                background-color:#ccc;
+                margin:2px;
+                overflow:hidden;
+                font-size:70%;
+            }
+        </style>
+
+        <script type="text/javascript">
+            YAHOO.util.Event.onDOMReady(function() {
+                
+                var events = {
+                    data: {
+                        "2008" : {
+                            "6": {
+                                "5":["Soccer Practice", "Tango Lessons"],
+                                "10":["AA Meeting"]
+                            },
+                            "7": {
+                                8:["Bar Night"]
+                            }
+                        }
+                    },
+                    add : function(date, info) {
+                        var y = date.getFullYear();
+                        var m = date.getMonth() + 1;
+                        var d = date.getDate();
+        
+                        this.data[y] = this.data[y] || {};
+                        this.data[y][m] = this.data[y][m] || {};
+                        this.data[y][m][d] =  this.data[y][m][d] || [];
+                        this.data[y][m][d].push(info);
+                    },
+                    
+                    get : function(date) {
+                        var evts,
+                            y = this.data[date.getFullYear()];
+                        if (y) {
+                            var m = y[date.getMonth()+1];
+                            if (m) {
+                                evts = m[date.getDate()];
+                            }
+                        }
+                        return evts || [];
+                    }
+                };
+
+                function eventRenderer(date, cell) {
+                    var evts = events.get(date);
+
+                    if (evts && evts.length > 0) {
+                        // Assuming all dates are selectable;
+                        // TODO: Instead of nesting everything inside
+                        // an anchor, change to use it's own markup
+                        // SPAN and a UL probably. For now just
+                        // using default renderers/styles
+                        this.renderCellDefault(date,cell);
+                        this.styleCellDefault(date, cell);
+                        var p = cell.getElementsByTagName("A")[0];
+                        for (var i = 0; i < evts.length; ++i) {
+                            p.innerHTML += '<span class="evt">' + evts[i] + "</span>";
+                        }
+                        return YAHOO.widget.Calendar.STOP_RENDER;
+                    }
+                }
+
+                var cal = new YAHOO.widget.Calendar("cal");
+
+                for (var day = 1; day < 8; day++) {
+                    cal.addWeekdayRenderer(day, eventRenderer);
+                }
+
+                cal.selectEvent.subscribe(function(type, args) {
+                    if (!cal.dlg) {
+                        var el = YAHOO.util.Dom.get("dialog");
+
+                        // Remove before initializing dialog, so that 
+                        // display:none doesn't impact Dialog behavior
+                        YAHOO.util.Dom.removeClass(el, "yui-pe-module");
+
+                        cal.dlg = new YAHOO.widget.Dialog(el, {
+                            width:"18em",
+                            visible:false,
+                            close:true,
+                            effect:[{effect:YAHOO.widget.ContainerEffect.FADE, duration:0.2}],
+                            buttons:[
+                                { 
+                                    text:"OK", 
+                                    isDefault:true, 
+                                    handler:function() { 
+                                        events.add(this.date, this.form.eventInfo.value);
+                                        this.hide(); 
+                                        this.cal.render();
+                                    }
+                                },
+                                {   text:"Cancel", handler:function() { 
+                                    this.hide();
+                                }}]
+                        });
+                        cal.dlg.cal = cal;
+                        cal.dlg.render();
+                    }
+                    var dlg = cal.dlg;
+                    var date = this.toDate(args[0][0]);
+                    var cell = this.cells[this.getCellIndex(date)];
+
+                    dlg.cfg.setProperty("context", [cell, "tl", "tr"]);
+                    dlg.setHeader("Add An Event - " + (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear());
+                    dlg.date = date;
+                    dlg.show();
+
+                }, cal, true);
+                cal.render();
+            });
+        </script>
+    </head>
+    <body class="yui-skin-sam">
+        <script type="text/javascript">
+            // Hide progressive enhancement markup, if JS present.
+            YAHOO.util.Dom.addClass(document.body, "yui-pe");
+        </script>
+
+        <div id="cal"></div>
+        <div id="dialog" class="yui-pe-module">
+            <div class="hd"></div>
+            <div class="bd">
+                <form>
+                    <label for="eventInfo">Event Info:</label>
+                    <textarea name="eventInfo" ></textarea>
+                </form>
+            </div>
+        </div>
+    </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1409746971" alt="setstats" border="0" width="1" height="1"></noscript><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

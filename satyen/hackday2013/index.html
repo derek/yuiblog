@@ -1,0 +1,655 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>YUI</title>
+        <meta name="description" content="YUI for Hackers Who Only Have 24 Hours Give Or Take A Bathroom Break">
+        <meta name="author" content="Satyen Desai">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/default.css" id="theme">
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <style>
+            .reveal ul.small-list {
+                margin-top:1em;
+                font-size:75%;
+            }
+
+            .reveal pre {
+                width:inherit;
+            }
+
+            .reveal pre code {
+                max-height: inherit;
+            }
+
+            .reveal pre code.centered {
+                text-align: center;
+            }
+
+            #intro-contact {
+                margin-top:2em;
+                font-size:60%;
+            }
+
+            #intro-contact .strike {
+                text-decoration: line-through;
+                color:#aaa;
+            }
+
+            #maintainable {
+                text-align:center;
+            }
+
+            #xml {
+                margin-top:1em;
+            }
+
+            #skin-builder img {
+                height:75%;
+            }
+
+            #grid-builder img {
+                height:75%;
+            }
+
+            #gallery {
+                margin-top:2em;
+            }
+
+            #references p, #references li {
+                font-size:75%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>YUI</h1>
+                    <h2 class="fragment fade-in">For Hackers</h2>
+                    <h4 class="fragment fade-in">Who Only Have 24 Hours, <span class="fragment fade-in">Give Or Take A Bathroom Break</span></h4>
+                    <div id="intro-contact">
+                        <p>Satyen Desai</p>
+                        <p><a href="mailto:sdesai@yahoo-inc.com">sdesai@yahoo-inc.com</a></p>
+                        <p><span class="strike">@dezziness</span></p>
+                        <p><a href="yim:sdezzi">Y! IM: sdezzi</a></p>
+                    </p>
+                </section>
+
+                <section>
+                    <h3>Public Speaking Is Not My Thing, So If I Faint</h3>
+                    <p><a href="http://yuilibrary.com" target="newwin">http://yuilibrary.com</a></p>
+                    <p class="fragment fade-in"><small>(and if it isn't too much trouble, please call a doctor)</small></p>
+                </section>
+                <!-- Example of nested vertical slides -->
+                <section id="basics">
+                    <section>
+                        <h2>The Basics</h2>
+                    </section>
+                    <section>
+                        <h2>Made For Mashups</h2>
+                        <p>Your own copy of the library</p>
+<pre><code contenteditable>&lt;script src="http://yui.yahooapis.com/3.9.1/build/yui/yui-min.js">&lt;/script&gt;</code></pre>
+<pre><code contenteditable>YUI().use("overlay", function(Y) {
+    var overlay = new Y.Overlay();
+    ...
+});
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>DOM Nodes</h2>
+                        <h3>Basics</h3>
+<pre><code contenteditable>YUI().use("node", function(Y) {
+    // Select
+    var body = Y.Node.one("body");
+    var items = Y.Node.all("#friends li");
+
+    // Create
+    var div = Y.Node.create("&lt;div&gt");
+
+    // Change
+    body.appendChild(div);
+});
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>DOM Nodes</h2>
+                        <h3>Basics</h3>
+<pre><code contenteditable class="javascript">// Properties
+div.set("id", "foo");   // div.id = "foo";
+div.get("offsetWidth"); // div.offsetWidth;
+
+// Methods
+div.appendChild(someOtherNode);
+
+// Styles
+div.setStyle("backgroundColor", "#f00");
+div.setStyles({...});
+
+// Classes
+div.addClass("foo");
+div.toggleClass("foo");
+div.removeClass("foo");
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>DOM Nodes</h2>
+                        <h4>Value Adds</h4>
+<pre><code contenteditable class="javascript">div.setXY([100, 200]);
+div.getXY();
+div.get("region"); // {top, bottom, left, right, width, height}
+
+div.show(); div.hide();
+
+div.load(url);
+
+div.remove();
+</code></pre>
+                        <h4>More Value Adds</h4>
+<pre><code contenteditable>// Plugin to a single instance.
+body.plug(Y.Plugin.ScrollInfo);
+
+body.scrollInfo.getOffscreenNodes();
+body.scrollInfo.on("scrollToBottom", function(){});
+
+// Plugin to a single instance
+div.plug(Y.Plugin.Align);
+
+div.align.to(otherNode, "tl", "tr");
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>DOM Events</h2>
+<pre><code contenteditable>/* use "node", "event" */
+
+div.on("click", function(e) {
+  var target = e.target;
+
+  if (e.pageX > 500) {
+     e.preventDefault();
+  }
+});
+
+div.once("click", function(e){...});
+
+div.delegate("click", function(e) {
+
+  var target = e.target,               // Target
+      container = e.container,         // Delegate container: 'div'
+      currentTarget = e.currentTarget; // Delegate target: '.contact'
+
+}, ".contact");
+</code></pre>
+                    </section>
+                    <section>
+                        <h2>Extended DOM Events</h2>
+<pre><code contenteditable>// Don't need any target/ancestor filtering
+div.on("mouseenter", function(e){...});
+div.on("mouseleave", function(e){...});
+div.on("clickoutside", function(e){...});
+
+// Gestures - Abstraction across touch/mouse/ms-pointer events.
+div.on("flick", function(e){...}, {minVelocity: ..., minDistance: ...});
+div.on("tap", function(e){...});
+
+div.on("gesturemovestart", function(e){...});
+   div.on("gesturemove", function(e){...});
+   div.on("gesturemoveend", function(e){...});
+
+// Input
+input.on("valuechange", function(e){...});
+input.on("key", function(e){...}, "enter");
+</code></pre>
+                    </section>
+                    <!--section>
+                        <h2>Custom Events</h2>
+<pre><code contenteditable>
+</code></pre>
+                    </section-->
+                </section>
+                <section id="data">
+                    <section>
+                        <h2>Getting Data</h2>
+                    </section>
+                    <section>
+                        <h2>YQL</h2>
+<pre><code contenteditable class="javascript">/* use "yql" */
+
+Y.YQL("select * from weather.forecast where location=90210", function(o) {
+
+  // Use the YQL console, to figure out where to look in 'o'
+  myDiv.setHTML(o.query.results.channel.item.description);
+
+});
+</code></pre>
+
+<p>Works everywhere, including nodejs and inside win8 apps</p>
+
+<ul class="fragment small-list fade-in">
+    <li>http://query.yahooapis.com/v1/public/yql</li>
+    <li>q=select%20*%20from%20weather.forecast%20where%20location%3D90210</li>
+    <li>format=json</li>
+    <li>env=http%3A%2F%2Fdatatables.org%2Falltables.env</li>
+    <li>callback=YUI.Env.JSONP.yui_3_9_1_1_1366758190852_8</li>
+</ul>
+                    </section>
+                    <section>
+                        <h2>JSONP</h2>
+<pre><code contenteditable>/* use "jsonp" */
+
+Y.jsonp("https://api.github.com/users/yui?callback={callback}", function(o) {
+
+   // Use the service docs to figure out where to look
+   myDiv.setHTML(o.data);
+
+});
+</code></pre>
+
+<ul class="fragment fade-in">
+    <li>Remember the "callback={callback}"</li>
+    <li>Use only with trusted services</li>
+</ul>
+                    </section>
+                    <section>
+                        <h2>IO</h2>
+<pre><code contenteditable>/* use "io" */
+
+Y.io("http://samedomain/service?foo=bar", {
+   headers: {
+      'Content-Type': 'application/json'
+   },
+   on : {
+      start : function() {...},
+      failure : function() {...},
+      success : function(o) {
+         myDiv.setHTML(o.responseText); // or o.responseXML;
+      }
+   }
+});
+</code></pre>
+
+<ul class="fragment fade-in">
+    <li>Safer - XHR restrictions</li>
+    <li>More granular control</li>
+    <li>XDR support</li>
+    <li>Form mining support</li>
+</ul>
+                    </section>
+                    <section>
+                        <h2>Aaargh! Raw String Data</h2>
+                        <h3>JSON</h3>
+<pre><code contenteditable>/* use "json" */
+
+var arr = Y.JSON.parse("[{name:'Abc', rank:1}, ...]");
+</code></pre>
+
+                        <h3 id="xml">XML</h3>
+<pre><code contenteditable class="javascript">/* use "datatype-xml" */
+
+var xmlDoc = Y.XML.parse(
+  "&lt;root&gt;&lt;item&gt;&lt;name&gt;Abc&lt;/name&gt;&lt;rank&gt;1&lt;/rank&gt;&lt;/item&gt;...&lt;/root&gt;");
+</code></pre>
+                        <p>Yes, I know, XML. Nobody said life is fair</p>
+                    </section>
+                </section>
+
+                <!--section>
+                    <section>
+                        <h2>Sending Data</h2>
+<pre><code contenteditable>
+</code></pre>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2>Getting Code</h2>
+<pre><code contenteditable>
+</code></pre>
+                    </section-->
+            <section id="csspretty">
+                <section>
+                    <h2>Making Things Pretty</h2>
+                    <h2>Without JS</h2>
+                </section>
+                <section>
+                    <h2>Normalize The Browser's Idea Of Pretty</h2>
+<pre><code contenteditable class="html">&lt;link rel="stylesheet" type="text/css"
+ href="http://yui.yahooapis.com/3.9.1/build/cssnormalize/cssnormalize-min.css"&gt;</code></pre>
+    <!--a href="http://yuilibrary.com/yui/docs/cssnormalize/normalize-basic-example.html">Example</a-->
+                </section>
+                <section>
+                    <h2>Now Add Your Own Pretty!</h2>
+                </section>
+                <section>
+                    <h3>Form, Pretty!</h3>
+                    <img src="yuicss-forms.png">
+<pre><code contenteditable class="html centered">&lt;form class="yui3-form yui3-form-stacked"&gt;...&lt;/form&gt;</pre></code>
+                </section>
+                <section>
+                    <h3>Button, Pretty!</h3>
+                    <img src="yuicss-buttons.png">
+<pre><code contenteditable class="html centered">&lt;a class="yui3-button yui3-button-selected"&gt;Selected&lt;/a&gt;​</pre></code>
+                </section>
+                <section>
+                    <h3>Popover, Pretty!</h3>
+                    <img src="yuicss-popups.png">
+<pre><code contenteditable class="html centered">&lt;div class=​"yui3-popover left"&gt;...​&lt;/div&gt;​</pre></code>
+                </section>
+                <section id="grid-builder">
+                    <h3>Grids, Pretty!</h3>
+                    <a href="http://yui.github.io/gridbuilder/" target="newwin"><img src="yuicss-grids.png"></a>
+                </section>
+                <section>
+                    <h3>Grids, Pretty!</h3>
+<pre><code contenteditable class="html">&lt;div class='yui3-g-responsive'&gt;
+   &lt;div class="yui3-u-1-3"&gt;...&lt;/div&gt;
+   &lt;div class="yui3-u-1-3"&gt;...&lt;/div&gt;
+   &lt;div class="yui3-u-1-3"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                <p><a href="http://yui.github.io/gridbuilder/" target="newwin">Grid Builder</a></p>
+                </section>
+                <section>
+                    <h3>I Want! I Want! Gimee!</h3>
+<pre><code contenteditable class="html">&lt;link rel="stylesheet" href="http://yui.yahooapis.com/combo?
+ 3.9.1/build/cssnormalize/cssnormalize-min.css&
+ 3.9.1/build/cssgrids-responsive/cssgrids-responsive-min.css&
+ 3.9.1/build/cssbutton/cssbutton-min.css&
+
+ gallery-2013.03.27-22-06/build/gallerycss-csslist/gallerycss-csslist-min.css&
+ gallery-2013.03.27-22-06/build/gallerycss-csstable/gallerycss-csstable-min.css&
+ gallery-2013.03.27-22-06/build/gallerycss-cssform/gallerycss-cssform-min.css"&gt;</code></pre>
+
+                <p><a href="http://tilomitra.github.io/" target="newwin">YUI CSS</a></p>
+                </section>
+                <section id="skin-builder">
+                    <h3>Skin Builder; Pretty And Smart!</h3>
+                    <a href="http://yui.github.io/skinbuilder/" target="newwin"><img src="yuicss-skinbuilder.png"></a>
+                </section>
+            </section>
+            <section id="jspretty">
+                <section>
+                    <h2>Making Things Pretty</h2>
+                    <h2>With JS</h2>
+                </section>
+                <section>
+                    <h2>Transition</h2>
+<pre><code contenteditable>/* use "transition" */
+
+mydiv.transition({
+    easing: 'ease-out',
+    duration: 0.75, // seconds
+    width: '10px',
+    height: '10px'
+}, function() {     // callback
+    this.remove();
+});</code></pre>
+                </section>
+                <section>
+                    <h2>Anim</h2>
+<pre><code contenteditable class="javascript">/* use "anim" */
+
+new Y.Anim({
+    node: demoA,
+    duration: 1.5,
+    to : {
+        curve: [[120, 100], [250, 230], [350, 400]]
+    }
+}).run();</code></pre>
+                    <ul>
+                        <li>Tween Events</li>
+                        <li>Animating along a curve</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>Graphics</h2>
+<pre><code contenteditable>/* use "graphics" */
+
+var mygraphic = new Y.Graphic({render:"#mygraphiccontainer"}),
+
+    myrect = mygraphic.addShape({
+        type: "rect",
+        width: 300,
+        height: 200,
+        fill: {
+            color: "#0000ff"
+        },
+        stroke: {
+            weight: 2,
+            color: "#ff0000"
+        },
+        x: 50,
+        y: 100
+    });
+</code></pre>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>App Flows</h2>
+                </section>
+                <section>
+                    <h2>Single Page Apps</h2>
+<pre><code contenteditable class="javascript">/* use "app", "handlebars" */
+
+var app = new Y.App({
+
+   views: {
+      home : {
+         type: HomeView
+      },
+      users: {
+         type: UsersView
+      },
+      user : {
+         type: UserView,
+            parent: 'users'
+         }
+      }
+   },
+
+   serverRouting: false,
+   transitions: true
+
+});
+</pre></code>
+                </section>
+                <section>
+                    <h2>Views</h2>
+                    <h3>Handlebars Template</h3>
+<pre><code contenteditable class="html">&lt;script id="user-template" type="text/x-handlebars-template"&gt;
+    &lt;h1&gt;User Form&lt;/h1&gt;
+    &lt;form&gt;
+        &lt;label&gt;First Name: &lt;input ... value="{{firstname}}"&gt;&lt;/label&gt;
+        &lt;label&gt;Last Name: &lt;input ... value="{{lastname}}"&gt;&lt;/label&gt;
+    &lt;/form&gt;
+&lt;/script&gt;</code></pre>
+                    <h3>View Instance</h3>
+<pre><code contenteditable class="javascript">var UserView = Y.Base.create("user", Y.View, [], {
+
+      template: Y.Handlebars.compile(Y.one('#user-template').getHTML()),
+
+      render: function () {
+         var html = this.template({firstname: "Satyen", lastname: "Desai"});
+         this.get('container').setHTML(html);
+
+         return this;
+      }
+   });
+</code></pre>
+                </section>
+                <section>
+                    <h2>App Flow</h2>
+<pre><code contenteditable class="javascript">// add route (for history, back-button)
+app.route("/users", navigateToUsers);
+
+// navigate to route (updating history)
+app.navigate("/users");
+
+// show view without updating history
+app.showView("users");
+...
+</code></pre>
+
+<p><a href="appTemplate">A Quick And Dirty Template Based On These Slides</a></p>
+                </section>
+            </section>
+            <section id="widgets">
+                <section>
+                    <h2>Widgets</h2>
+                    <ul>
+                        <li>Overlay</li>
+                        <li>Panel</li>
+                        <li>Charts</li>
+                        <li>ScrollView</li>
+                        <li>TabView</li>
+                        <li>AutoComplete</li>
+                        <li>Slider</li>
+                        <li>Dial</li>
+                    <ul>
+
+                    <p id="gallery"><a href="http://yuilibrary.com/gallery/" target="newwin">Gallery</a></p>
+                </section>
+                <section>
+                    <h2>Widgets</h2>
+<pre><code contenteditable>/* use "slider" */
+
+var slider = new Y.Slider({
+  min: -200,
+  max: 200,
+  value: 100,
+  render: true
+});
+
+slider.after("valueChange", function(e) {
+  if (e.prevVal > 0 && e.newVal <= 0) {
+     // Moved backwards across the 0 value
+  }
+});
+</code></pre>
+                </section>
+            </section>
+                <!--section>
+                    <section>
+                        <h2>Getting Things To Work Across Devices</h2>
+                    </section>
+                    <section>
+                        <ul>
+                            <li><a href="http://yuilibrary.com/target" target="newwin">Target Environments</a></li>
+                            <li><a href="http://yuilibrary.com/nodejs" target="newwin">NodeJS</a></li>
+                            <li>Conditional Loading</li>
+                        </ul>
+                    </section>
+                </section-->
+            <section id="misc">
+                <h2>Lots Of Other Stuff</h2>
+                <ul>
+                    <li>Language Utils: Y.Array, Y.Object, Y.extend, Y.bind</li>
+                    <li>Drag and Drop</li>
+                    <li>Resize</li>
+                    <li>Cache : Local Storage</li>
+                    <li>Cookie</li>
+                    <li>...</li>
+                </ul>
+            </section>
+            <section>
+                <section id="maintainable">
+                    <h2>1 Developer, 1 Location, 24 hours</h2>
+                    <h2 class="fragment fade-in">100 Developers, 10 Locations, 4 years</h2>
+                </section>
+                <section>
+                    <ul>
+                        <li>YUI.add(name, module, dependencies)</li>
+                        <li>OOP</li>
+                        <li>Promises</li>
+                        <li>Custom Event</li>
+                        <li>App: MVC</li>
+                        <li>Attribute</li>
+                        <li>Base
+                            <ul>
+                                <li>Plugins</li>
+                                <li>Extensions</li>
+                            </ul>
+                        </li>
+                        <li>Widget</li>
+                        <li>Intl</li>
+                    </ul>
+                </section>
+            </section>
+            <section>
+                <h2>42</h2>
+                <p>Any <em class="highlight">other</em> questions?</p>
+            </section>
+            <section id="references">
+                <h2>References</h2>
+
+                <p>This deck: <a href="/satyen/hackday2013/">http://yuiblog.com/satyen/hackday2013/</a> (too much recursion)</p>
+
+                <ul>
+                    <li><a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a></li>
+                    <li><a href="http://yuilibrary.com/yui/docs/api/">API Docs</a></li>
+                    <li><a href="http://yuilibrary.com/yui/docs/examples/">Examples</a></li>
+                    <li><a href="http://tilomitra.github.io/">YUI CSS</a></li>
+                    <li><a href="http://yui.github.io/skinbuilder/">Skin Builder</a></li>
+                    <li><a href="http://yui.github.io/gridbuilder/">Grid Builder</a></li>
+                    <li><a href="http://yuilibrary.com/gallery/">YUI Gallery</a></li>
+                    <li><a href="http://yuilibrary.com/yui/environments/">Supported Environments</a></li>
+                    <li><a href="http://yuilibrary.com/yui/docs/yui/nodejs.html">Using YUI on NodeJS</a></li>
+                    <li><a href="/blog/2013/03/12/windows-8-loves-yui/">Using YUI in Win8 Apps</a></li>
+                </ul>
+
+                <p>Shoutout to <a href="http://lab.hakim.se/reveal-js/#/">reveal.js</a> which is driving this presentation</p>
+
+            </section>
+            <section id="iwillbearound">
+                <h2>If You Need Help And Can't See Me</h2>
+                <p>Satyen Desai</p>
+                <p><a href="mailto:sdesai@yahoo-inc.com">sdesai@yahoo-inc.com</a></p>
+                <p><a href="yim:sdezzi">Y! IM: sdezzi</a></p>
+                <p>&nbsp;</p>
+                <p><small>Or I may be in the bathroom</small></p>
+            </section>
+            </div>
+        </div>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+    </body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1385035046" alt="setstats" border="0" width="1" height="1"></noscript>

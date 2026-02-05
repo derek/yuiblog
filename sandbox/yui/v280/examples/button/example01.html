@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>Example: Website Top Nav With Submenus From JavaScript (YUI Library)</title>
+        
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/menu/assets/skins/sam/menu.css">  
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/button/assets/skins/sam/button.css">  
+
+        <style type="text/css">
+
+            div.yui-b p {
+            
+                margin: 0 0 .5em 0;
+                color: #999;
+            
+            }
+            
+            div.yui-b p strong {
+            
+                font-weight: bold;
+                color: #000;
+            
+            }
+            
+            div.yui-b p em {
+
+                color: #000;
+            
+            }            
+            
+            h1 {
+
+                font-weight: bold;
+                margin: 0 0 1em 0;
+                padding: .25em .5em;
+                background-color: #ccc;
+
+            }
+
+            #productsandservices {
+
+                margin: 0 0 10px 0;
+            
+            }
+
+            #productsandservices .yui-button {
+                margin: auto;
+            }
+
+        </style>
+
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/container/container_core-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/menu/menu-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/element/element-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/button/button-min.js"></script>
+
+        <script type="text/javascript">
+
+            YAHOO.util.Event.onContentReady("productsandservices", function () {
+
+        		var communicationMenu = [ 
+                    { text: "360", url: "http://360.yahoo.com" },
+                    { text: "Alerts", url: "http://alerts.yahoo.com" },
+                    { text: "Avatars", url: "http://avatars.yahoo.com" },
+                    { text: "Groups", url: "http://groups.yahoo.com " },
+                    { text: "Internet Access", url: "http://promo.yahoo.com/broadband" },
+                    {
+                        text: "PIM", 
+                        submenu: { 
+                                    id: "pim", 
+                                    itemdata: [
+                                        { text: "Yahoo! Mail", url: "http://mail.yahoo.com" },
+                                        { text: "Yahoo! Address Book", url: "http://addressbook.yahoo.com" },
+                                        { text: "Yahoo! Calendar",  url: "http://calendar.yahoo.com" },
+                                        { text: "Yahoo! Notepad", url: "http://notepad.yahoo.com" }
+                                    ] 
+                                }
+                    
+                    }, 
+                    { text: "Member Directory", url: "http://members.yahoo.com" },
+                    { text: "Messenger", url: "http://messenger.yahoo.com" },
+                    { text: "Mobile", url: "http://mobile.yahoo.com" },
+                    { text: "Flickr Photo Sharing", url: "http://www.flickr.com" },
+                ];
+
+
+        		var communicationButon = new YAHOO.widget.Button({	type: "menu", 
+        														label: "Communication", 
+        														menu: communicationMenu, 
+        														container: this });
+
+
+                var shoppingMenu = [
+                    { text: "Auctions", url: "http://auctions.shopping.yahoo.com" },
+                    { text: "Autos", url: "http://autos.yahoo.com" },
+                    { text: "Classifieds", url: "http://classifieds.yahoo.com" },
+                    { text: "Flowers & Gifts", url: "http://shopping.yahoo.com/b:Flowers%20%26%20Gifts:20146735" },
+                    { text: "Real Estate", url: "http://realestate.yahoo.com" },
+                    { text: "Travel", url: "http://travel.yahoo.com" },
+                    { text: "Wallet", url: "http://wallet.yahoo.com" },
+                    { text: "Yellow Pages", url: "http://yp.yahoo.com" }                    
+                ];
+
+        		var shoppingButon = new YAHOO.widget.Button({	type: "menu", 
+        														label: "Shopping", 
+        														menu: shoppingMenu, 
+        														container: this });
+
+
+                var entertainmentMenu = [
+                    { text: "Fantasy Sports", url: "http://fantasysports.yahoo.com" },
+                    { text: "Games", url: "http://games.yahoo.com" },
+                    { text: "Kids", url: "http://www.yahooligans.com" },
+                    { text: "Music", url: "http://music.yahoo.com" },
+                    { text: "Movies", url: "http://movies.yahoo.com" },
+                    { text: "Radio", url: "http://music.yahoo.com/launchcast" },
+                    { text: "Travel", url: "http://travel.yahoo.com" },
+                    { text: "TV", url: "http://tv.yahoo.com" }                 
+                ];
+
+
+        		var entertainmenuButon = new YAHOO.widget.Button({	type: "menu", 
+        														label: "Entertainment", 
+        														menu: entertainmentMenu, 
+        														container: this });
+
+
+                var informationMenu = [
+                    { text: "Downloads", url: "http://downloads.yahoo.com" },
+                    { text: "Finance", url: "http://finance.yahoo.com" },
+                    { text: "Health", url: "http://health.yahoo.com" },
+                    { text: "Local", url: "http://local.yahoo.com" },
+                    { text: "Maps & Directions", url: "http://maps.yahoo.com" },
+                    { text: "My Yahoo!", url: "http://my.yahoo.com" },
+                    { text: "News", url: "http://news.yahoo.com" },
+                    { text: "Search", url: "http://search.yahoo.com" },
+                    { text: "Small Business", url: "http://smallbusiness.yahoo.com" },
+                    { text: "Weather", url: "http://weather.yahoo.com" }              
+                ];
+
+
+        		var informationButton = new YAHOO.widget.Button({	type: "menu", 
+        														label: "Information", 
+        														menu: informationMenu, 
+        														container: this });
+            
+            });
+
+        </script>
+
+    </head>
+    <body class="yui-skin-sam" id="yahoo-com">
+
+        <div id="doc" class="yui-t1">
+            <div id="hd">
+                <!-- start: your content here -->
+                
+                    <h1>Example: Website Top Nav With Submenus From JavaScript (YUI Library)</h1>
+        
+                <!-- end: your content here -->
+            </div>
+            <div id="bd">
+
+                <!-- start: primary column from outer template -->
+                <div id="yui-main">
+                    <div class="yui-b">
+                        <!-- start: stack grids here -->
+
+                        <div id="productsandservices"></div>
+
+                        <p><strong>NOTE:</strong> <em>This example demonstrates how to add submenus via JavaScript to a menu bar built from existing markup.  The menu bar is constructed using markup and enables the user to navigate to different landing pages for each product category.  If JavaScript is enabled, submenus are constructed and appended to the items in the menu bar.  This allows the user to skip the product landing pages and proceed directly to a given property.</em></p>
+
+                        <form name="example">
+                            <select name="test">
+                                <option value="one">One</option>
+                                <option value="two">Two</option>
+                                <option value="three">Three</option>                                
+                            </select>
+                        </form>
+
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat dolor, id aliquam leo tortor eget odio. Pellentesque orci arcu, eleifend at, iaculis sit amet, posuere eu, lorem. Aliquam erat volutpat. Phasellus vulputate. Vivamus id erat. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nunc gravida. Ut euismod, tortor eget convallis ullamcorper, arcu odio egestas pede, ut ornare urna elit vitae mauris. Aenean ullamcorper eros a lacus. Curabitur egestas tempus lectus. Donec et lectus et purus dapibus feugiat. Sed sit amet diam. Etiam ipsum leo, facilisis ac, rutrum nec, dignissim quis, tellus. Sed eleifend.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat dolor, id aliquam leo tortor eget odio. Pellentesque orci arcu, eleifend at, iaculis sit amet, posuere eu, lorem. Aliquam erat volutpat. Phasellus vulputate. Vivamus id erat. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nunc gravida. Ut euismod, tortor eget convallis ullamcorper, arcu odio egestas pede, ut ornare urna elit vitae mauris. Aenean ullamcorper eros a lacus. Curabitur egestas tempus lectus. Donec et lectus et purus dapibus feugiat. Sed sit amet diam. Etiam ipsum leo, facilisis ac, rutrum nec, dignissim quis, tellus. Sed eleifend.</p>
+
+                        <!-- end: stack grids here -->
+                    </div>
+                </div>
+                <!-- end: primary column from outer template -->
+
+                <!-- start: secondary column from outer template -->
+                <div class="yui-b">
+
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat dolor, id aliquam leo tortor eget odio. Pellentesque orci arcu, eleifend at, iaculis sit amet, posuere eu, lorem. Aliquam erat volutpat. Phasellus vulputate. Vivamus id erat. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Nunc gravida. Ut euismod, tortor eget convallis ullamcorper, arcu odio egestas pede, ut ornare urna elit vitae mauris. Aenean ullamcorper eros a lacus. Curabitur egestas tempus lectus. Donec et lectus et purus dapibus feugiat. Sed sit amet diam. Etiam ipsum leo, facilisis ac, rutrum nec, dignissim quis, tellus. Sed eleifend.</p>
+                    
+                </div>
+                <!-- end: secondary column from outer template -->
+            </div>
+            <div id="ft">
+
+                <p>FOOTER: Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas sit amet metus. Nunc quam elit, posuere nec, auctor in, rhoncus quis, dui. Aliquam erat volutpat. Ut dignissim, massa sit amet dignissim cursus, quam lacus feugiat.</p>
+
+            </div>
+        </div>
+        
+    </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1409725521" alt="setstats" border="0" width="1" height="1"></noscript><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

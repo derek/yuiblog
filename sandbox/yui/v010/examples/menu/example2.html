@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <title>MenuBar Exmaple</title>
+
+        <!-- Stanard reset, fonts and grids -->
+        <link rel="stylesheet" type="text/css" href="../../build/reset/reset.css">
+        <link rel="stylesheet" type="text/css" href="../../build/fonts/fonts.css">
+
+        <!-- CSS for Menu -->
+        <link rel="stylesheet" type="text/css" href="../../build/menu/assets/menu.css">
+
+
+        <style>
+
+            div.yuimenu li.yuimenuitem img {
+              
+                margin:0 -16px 0 10px;
+                border:0;
+            
+            }        
+        
+        </style>
+
+
+        <!-- Namespace source file -->
+        <script type="text/javascript" src="../../build/yahoo/yahoo.js"></script>
+        
+        <!-- Dependency source files -->
+        <script type="text/javascript" src="../../build/event/event.js"></script>
+        <script type="text/javascript" src="../../build/dom/dom.js"></script>
+        <script type="text/javascript" src="../../build/container/container_core.js"></script>
+        
+        <!-- Menu source file -->
+        <script type="text/javascript" src="../../build/menu/menu.js"></script>
+
+        <!-- Page-specific script -->
+        <script type="text/javascript">
+
+            YAHOO.example.OverlayManager = new YAHOO.widget.OverlayManager();
+
+
+            // "click" event handler for the document
+
+            function onDocumentClick(p_oEvent) {
+            
+                YAHOO.example.OverlayManager.hideAll();
+
+            }
+
+
+            // "click" event handler for each item in the root MenuBar instance
+
+            function onMenuBarItemClick(p_sType, p_sArguments) {
+            
+                var oActiveItem = this.parent.activeItem;
+            
+            
+                // Hide any other submenus that might be visible
+            
+                if(oActiveItem && oActiveItem != this) {
+            
+                    this.parent.clearActiveItem();
+            
+                }
+            
+            
+                // Select and focus the current MenuItem instance
+            
+                this.cfg.setProperty("selected", true);
+                this.focus();
+            
+            
+                // Show the submenu for this instance
+            
+                var oSubmenu = this.cfg.getProperty("submenu");
+
+                if(oSubmenu) {
+            
+                    if(oSubmenu.cfg.getProperty("visible")) {
+                    
+                        oSubmenu.hide();
+                    
+                    }
+                    else {
+                    
+                        oSubmenu.show();                    
+                    
+                    }
+            
+                }
+
+            }
+
+
+            // "beforeshow" event handler for a submenu instance
+
+            function onSubmenuBeforeShow(p_sType, p_aArgument, p_oMenu) {
+
+                this.align("tl", "tr");
+            
+            }
+
+
+            // "load" event handler for the window
+
+            function onWindowLoad() {
+
+                var oApplicationsMenu = new YAHOO.widget.Menu("applications");
+                
+                oApplicationsMenu.addItem(new YAHOO.widget.MenuItem("Application 1"));
+
+                oApplicationsMenu.addItem(new YAHOO.widget.MenuItem("Application 2"));
+
+                oApplicationsMenu.addItem(new YAHOO.widget.MenuItem("Application 3"));
+
+                oApplicationsMenu.addItem(new YAHOO.widget.MenuItem("Application 3"));
+
+
+                var oFileMenu = new YAHOO.widget.Menu("filemenu");
+                
+                oFileMenu.addItem(new YAHOO.widget.MenuItem("New File"));
+
+                oFileMenu.addItem(new YAHOO.widget.MenuItem("New Folder"));
+                
+                oFileMenu.addItem(new YAHOO.widget.MenuItem("Open"));
+
+                oFileMenu.addItem(new YAHOO.widget.MenuItem("Open With...", { submenu: oApplicationsMenu }));
+
+
+                var oMenuBar = new YAHOO.widget.MenuBar("test");
+
+                oMenuBar.addItem(new YAHOO.widget.MenuBarItem("File", { submenu: oFileMenu }));
+
+                oMenuBar.addItem(new YAHOO.widget.MenuBarItem("Edit"));
+
+                oMenuBar.addItem(new YAHOO.widget.MenuBarItem("View"));
+
+
+                // Render the MenuBar instance and corresponding submenus
+
+                oMenuBar.render(document.body);
+
+
+                /*
+                    Add a "click" event handler to each item in the root 
+                    MenuBar instnace
+                */
+
+                var i = oMenuBar.getItemGroups()[0].length - 1,
+                    oMenuBarItem;
+
+                do {
+
+                    oMenuBarItem = oMenuBar.getItem(i);
+                    
+                    if(oMenuBarItem) {
+
+                        oMenuBarItem.clickEvent.subscribe(
+                                onMenuBarItemClick,
+                                oMenuBarItem,
+                                true
+                            );
+
+                    }
+                
+                }
+                while(i--);
+
+
+                /*
+                     Add a "beforeshow" event listener to the 
+                     "applications" submenu
+                */
+
+                oApplicationsMenu.beforeShowEvent.subscribe(
+                        onSubmenuBeforeShow, 
+                        oApplicationsMenu, 
+                        true
+                    );
+
+
+                // Add a "mousedown" handler to the document
+
+                YAHOO.util.Event.addListener(
+                        document, 
+                        "click", 
+                        onDocumentClick
+                    );
+
+
+                // Register the menus with the Overlay mananger
+
+                YAHOO.example.OverlayManager.register(oFileMenu);
+
+                YAHOO.example.OverlayManager.register(oApplicationsMenu);
+
+            }
+
+
+            // Add a "load" handler for the window
+
+            YAHOO.util.Event.addListener(window, "load", onWindowLoad);
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1228914769" alt="setstats" border="0" width="1" height="1"></noscript>

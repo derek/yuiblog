@@ -1,0 +1,270 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>YUI Library Examples: JSONP: Getting cross domain JSONP data using Y.jsonp()</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    	<link rel="stylesheet" type="text/css" href="../../assets/yui.css" >
+
+<style>
+    /*Supplemental CSS for the YUI distribution*/
+    #custom-doc { width: 95%; min-width: 950px; }
+    #pagetitle {background-image: url(../../assets/bg_hd.gif);}
+/*    #pagetitle h1 {background-image: url(../../assets/title_h_bg.gif);}*/
+</style>
+
+<link rel="stylesheet" type="text/css" href="../../assets/dpSyntaxHighlighter.css">
+<link type="text/css" rel="stylesheet" href="../../build/cssfonts/fonts-min.css" />
+<script type="text/javascript" src="../../build/yui/yui-min.js"></script>
+<style type="text/css">
+    #out {
+        margin-top: 2em;
+    }
+</style>
+
+</head>
+<body id="yahoo-com" class="yui3-skin-sam  yui-skin-sam">
+<div id="custom-doc" class="yui-t2">
+<div id="hd">
+	<div id="ygunav">
+		<p>
+            <em>
+                <a href="http://developer.yahoo.com/yui/3/">YUI 3.x Home</a> <i> - </i>	
+            </em>
+		</p>
+		<form action="http://search.yahoo.com/search" id="sitesearchform">
+            <input name="vs" type="hidden" value="developer.yahoo.com">
+            <input name="vs" type="hidden" value="yuiblog.com">
+		    <div id="sitesearch">
+		    	<label for="searchinput">Site Search (YDN &amp; YUIBlog): </label>
+			    <input type="text" id="searchinput" name="p">
+			    <input type="submit" value="Search" id="searchsubmit" class="ygbt">
+		    </div>
+		</form>
+    </div>
+	<div id="ygma"><a href="../../"><img src="../../assets/logo.gif"  border="0" width="200" height="93"></a></div>
+	<div id="pagetitle"><h1>YUI Library Examples: JSONP: Getting cross domain JSONP data using Y.jsonp()</h1></div>
+</div>
+<div id="bd">
+
+
+	<div id="yui-main">
+		<div class="yui-b">
+		  <div class="yui-ge">
+			  <div class="yui-u first example" id="main">
+
+	<h2>JSONP: Getting cross domain JSONP data using Y.jsonp()</h2>
+
+	<div id="example" class="promo">
+	<div class="example-intro">
+	<p>This example illustrates basic use of the <code>Y.jsonp( url, callback )</code> method, provided by the <code>jsonp</code> module.</p>
+
+<p>For this example, we will use a JSONP service hosted on <a href="http://yuilibrary.com">YUILibrary</a> to fetch information about a random Gallery module and render some of the information on the page.</p>
+	</div>	
+
+	<div class="module example-container ">
+			<div class="hd exampleHd">
+			<p class="newWindowButton yui-skin-sam">
+                <a href="jsonp_gallery_clean.html" target="_blank">View example in new window.</a>
+            </p>
+		</div>		<div id="example-canvas" class="bd">
+
+		
+	<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
+	
+	<div id="demo">
+    <input type="button" id="demo_btn" value="Get a YUI 3 Gallery module">
+    <div id="out">
+    </div>
+</div>
+<script>
+YUI().use("jsonp-base", "node", "substitute",function (Y) {
+
+    var url = "http://yuilibrary.com/gallery/api/random?callback={callback}";
+
+    function handleJSONP(response) {
+        var module = response.modules[0],
+
+            module_template =
+                '<h4><a href="{url}">{title}</a></h4>' +
+                '<p class="author">{authorHTML}</p>' +
+                '<div>{summary}</div>';
+            author_template =
+                '<img src="{icon}" height="30" width="30">' +
+                ' {fullname} <span class="rank">({rank})</span>';
+
+        module.authorHTML = Y.substitute(author_template, module.owner);
+
+        Y.one("#out").setContent( Y.substitute(module_template, module) );
+    };
+
+    // Click the button to send the JSONP request
+    Y.one("#demo_btn").on("click", function (e) {
+        Y.jsonp(url, handleJSONP);
+    });
+
+});
+</script>
+	
+	<!--END SOURCE CODE FOR EXAMPLE =============================== -->
+	
+		
+		</div>
+	</div>			
+	</div>
+		
+	<h3>The data</h3>
+<p>The structure of the JavaScript object returned from YUILibrary's JSONP service will look like this:</p>
+
+<div id="syntax-0b350b34510773be00c7f3bd57738371" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    modules<span class="sy0">:</span> <span class="br0">&#91;</span></div></li><li class="li1"><div class="de1">        <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">            url<span class="sy0">:</span> <span class="br0">&#40;</span>the url to the module<span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">            title<span class="sy0">:</span> <span class="br0">&#40;</span>the title of the module<span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">            summary<span class="sy0">:</span> <span class="br0">&#40;</span>short description of the module<span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">            ...<span class="sy0">,</span></div></li><li class="li1"><div class="de1">            owner<span class="sy0">:</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">                icon<span class="sy0">:</span> <span class="br0">&#40;</span>url to the author<span class="st0">'s thumb image),</span></div></li><li class="li2"><div class="de2"><span class="st0">                fullname: (the author'</span>s full <span class="kw3">name</span><span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">                rank<span class="sy0">:</span> <span class="br0">&#40;</span>YUI Team member<span class="sy0">?,</span> Contributor<span class="sy0">?</span> etc<span class="br0">&#41;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">                ...</div></li><li class="li1"><div class="de1">            <span class="br0">&#125;</span></div></li><li class="li1"><div class="de1">        <span class="br0">&#125;</span></div></li><li class="li2"><div class="de2">    <span class="br0">&#93;</span><span class="sy0">,</span></div></li><li class="li1"><div class="de1">    ...</div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="br0">&#123;</span>
+    modules<span class="sy0">:</span> <span class="br0">&#91;</span>
+        <span class="br0">&#123;</span>
+            url<span class="sy0">:</span> <span class="br0">&#40;</span>the url to the module<span class="br0">&#41;</span><span class="sy0">,</span>
+            title<span class="sy0">:</span> <span class="br0">&#40;</span>the title of the module<span class="br0">&#41;</span><span class="sy0">,</span>
+            summary<span class="sy0">:</span> <span class="br0">&#40;</span>short description of the module<span class="br0">&#41;</span><span class="sy0">,</span>
+            ...<span class="sy0">,</span>
+            owner<span class="sy0">:</span> <span class="br0">&#123;</span>
+                icon<span class="sy0">:</span> <span class="br0">&#40;</span>url to the author<span class="st0">'s thumb image),
+                fullname: (the author'</span>s full <span class="kw3">name</span><span class="br0">&#41;</span><span class="sy0">,</span>
+                rank<span class="sy0">:</span> <span class="br0">&#40;</span>YUI Team member<span class="sy0">?,</span> Contributor<span class="sy0">?</span> etc<span class="br0">&#41;</span><span class="sy0">,</span>
+                ...
+            <span class="br0">&#125;</span>
+        <span class="br0">&#125;</span>
+    <span class="br0">&#93;</span><span class="sy0">,</span>
+    ...
+<span class="br0">&#125;</span></pre></div><textarea id="syntax-0b350b34510773be00c7f3bd57738371-plain">{
+    modules: [
+        {
+            url: (the url to the module),
+            title: (the title of the module),
+            summary: (short description of the module),
+            ...,
+            owner: {
+                icon: (url to the author's thumb image),
+                fullname: (the author's full name),
+                rank: (YUI Team member?, Contributor? etc),
+                ...
+            }
+        }
+    ],
+    ...
+}</textarea></div>
+<p>We can use these objects to populate HTML templates with data <em>{placeholder}</em>s using <code>Y.substitute( template, object )</code>.  The resulting HTML can then simply be passed to any of YUI 3's DOM creation methods, such as <code>node.setContent( html )</code> or <code>node.append( html )</code>.  We'll do this in the function that will receive the JSONP response (seen below).</p>
+
+<h3>Format the JSONP url</h3>
+<p>Typical JSONP urls are formatted like &quot;http://example.com/service?format=json&callback=handleJSONP&quot;.  To use YUI 3's JSONP utility, replace the name of the callback function in the url with placeholder text &quot;{callback}&quot;.</p>
+
+<div id="syntax-f46dc774f0668d93ca6d158dd2e01fde" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="co1">// BEFORE</span></div></li><li class="li1"><div class="de1"><span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">&quot;http://yuilibrary.com/gallery/api/random?callback=handleJSONP&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="co1">//AFTER</span></div></li><li class="li2"><div class="de2"><span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">&quot;http://yuilibrary.com/gallery/api/random?callback={callback}&quot;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="co1">// BEFORE</span>
+<span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">&quot;http://yuilibrary.com/gallery/api/random?callback=handleJSONP&quot;</span><span class="sy0">;</span>
+&nbsp;
+<span class="co1">//AFTER</span>
+<span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">&quot;http://yuilibrary.com/gallery/api/random?callback={callback}&quot;</span><span class="sy0">;</span></pre></div><textarea id="syntax-f46dc774f0668d93ca6d158dd2e01fde-plain">// BEFORE
+var url = "http://yuilibrary.com/gallery/api/random?callback=handleJSONP";
+
+//AFTER
+var url = "http://yuilibrary.com/gallery/api/random?callback={callback}";</textarea></div>
+<p>Then simply pass the url and the function that should handle the JSONP response object to <code>Y.jsonp(<em>url</em>, <em>handleJSONP</em>)</code>.</p>
+
+<div id="syntax-fd678ae960a4a88c06187b9c0d24175d" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">&quot;http://yuilibrary.com/gallery/api/random?callback={callback}&quot;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="kw2">function</span> handleJSONP<span class="br0">&#40;</span>response<span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> module <span class="sy0">=</span> response.<span class="me1">modules</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span></div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1">        module_template <span class="sy0">=</span></div></li><li class="li1"><div class="de1">            <span class="st0">'&lt;h4&gt;&lt;a href=&quot;{url}&quot;&gt;{title}&lt;/a&gt;&lt;/h4&gt;'</span> <span class="sy0">+</span></div></li><li class="li1"><div class="de1">            <span class="st0">'&lt;p class=&quot;author&quot;&gt;{authorHTML}&lt;/p&gt;'</span> <span class="sy0">+</span></div></li><li class="li1"><div class="de1">            <span class="st0">'&lt;div&gt;{summary}&lt;/div&gt;'</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        author_template <span class="sy0">=</span></div></li><li class="li1"><div class="de1">            <span class="st0">'&lt;img src=&quot;{icon}&quot; height=&quot;30&quot; width=&quot;30&quot;&gt;'</span> <span class="sy0">+</span></div></li><li class="li1"><div class="de1">            <span class="st0">' {fullname} &lt;span class=&quot;rank&quot;&gt;({rank})&lt;/span&gt;'</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1">    module.<span class="me1">authorHTML</span> <span class="sy0">=</span> Y.<span class="me1">substitute</span><span class="br0">&#40;</span>author_template<span class="sy0">,</span> module.<span class="me1">owner</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">&nbsp;</div></li><li class="li1"><div class="de1">    Y.<span class="me1">one</span><span class="br0">&#40;</span><span class="st0">&quot;#out&quot;</span><span class="br0">&#41;</span>.<span class="me1">setContent</span><span class="br0">&#40;</span> Y.<span class="me1">substitute</span><span class="br0">&#40;</span>module_template<span class="sy0">,</span> module<span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">&nbsp;</div></li><li class="li1"><div class="de1"><span class="co1">// Click the button to send the JSONP request</span></div></li><li class="li2"><div class="de2">Y.<span class="me1">one</span><span class="br0">&#40;</span><span class="st0">&quot;#demo_btn&quot;</span><span class="br0">&#41;</span>.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">&quot;click&quot;</span><span class="sy0">,</span> <span class="kw2">function</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    Y.<span class="me1">jsonp</span><span class="br0">&#40;</span>url<span class="sy0">,</span> handleJSONP<span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="kw2">var</span> url <span class="sy0">=</span> <span class="st0">&quot;http://yuilibrary.com/gallery/api/random?callback={callback}&quot;</span><span class="sy0">;</span>
+&nbsp;
+<span class="kw2">function</span> handleJSONP<span class="br0">&#40;</span>response<span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> module <span class="sy0">=</span> response.<span class="me1">modules</span><span class="br0">&#91;</span><span class="nu0">0</span><span class="br0">&#93;</span><span class="sy0">,</span>
+&nbsp;
+        module_template <span class="sy0">=</span>
+            <span class="st0">'&lt;h4&gt;&lt;a href=&quot;{url}&quot;&gt;{title}&lt;/a&gt;&lt;/h4&gt;'</span> <span class="sy0">+</span>
+            <span class="st0">'&lt;p class=&quot;author&quot;&gt;{authorHTML}&lt;/p&gt;'</span> <span class="sy0">+</span>
+            <span class="st0">'&lt;div&gt;{summary}&lt;/div&gt;'</span><span class="sy0">;</span>
+        author_template <span class="sy0">=</span>
+            <span class="st0">'&lt;img src=&quot;{icon}&quot; height=&quot;30&quot; width=&quot;30&quot;&gt;'</span> <span class="sy0">+</span>
+            <span class="st0">' {fullname} &lt;span class=&quot;rank&quot;&gt;({rank})&lt;/span&gt;'</span><span class="sy0">;</span>
+&nbsp;
+    module.<span class="me1">authorHTML</span> <span class="sy0">=</span> Y.<span class="me1">substitute</span><span class="br0">&#40;</span>author_template<span class="sy0">,</span> module.<span class="me1">owner</span><span class="br0">&#41;</span><span class="sy0">;</span>
+&nbsp;
+    Y.<span class="me1">one</span><span class="br0">&#40;</span><span class="st0">&quot;#out&quot;</span><span class="br0">&#41;</span>.<span class="me1">setContent</span><span class="br0">&#40;</span> Y.<span class="me1">substitute</span><span class="br0">&#40;</span>module_template<span class="sy0">,</span> module<span class="br0">&#41;</span> <span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="sy0">;</span>
+&nbsp;
+<span class="co1">// Click the button to send the JSONP request</span>
+Y.<span class="me1">one</span><span class="br0">&#40;</span><span class="st0">&quot;#demo_btn&quot;</span><span class="br0">&#41;</span>.<span class="me1">on</span><span class="br0">&#40;</span><span class="st0">&quot;click&quot;</span><span class="sy0">,</span> <span class="kw2">function</span> <span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    Y.<span class="me1">jsonp</span><span class="br0">&#40;</span>url<span class="sy0">,</span> handleJSONP<span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax-fd678ae960a4a88c06187b9c0d24175d-plain">var url = "http://yuilibrary.com/gallery/api/random?callback={callback}";
+
+function handleJSONP(response) {
+    var module = response.modules[0],
+
+        module_template =
+            '<h4><a href="{url}">{title}</a></h4>' +
+            '<p class="author">{authorHTML}</p>' +
+            '<div>{summary}</div>';
+        author_template =
+            '<img src="{icon}" height="30" width="30">' +
+            ' {fullname} <span class="rank">({rank})</span>';
+
+    module.authorHTML = Y.substitute(author_template, module.owner);
+
+    Y.one("#out").setContent( Y.substitute(module_template, module) );
+};
+
+// Click the button to send the JSONP request
+Y.one("#demo_btn").on("click", function () {
+    Y.jsonp(url, handleJSONP);
+});</textarea></div>				</div>
+				<div class="yui-u sidebar">
+					
+				
+					<div id="examples" class="mod box4">
+                        <div class="hd">
+						<h4>
+    JSONP Examples:</h4>
+                        </div>
+						<div class="bd">
+							<ul>
+								<li class='selected'><a href='../jsonp/jsonp_gallery.html'>Getting cross domain JSONP data using Y.jsonp()</a></li>							</ul>
+						</div>
+					</div>
+					
+					<div class="mod box4">
+                        <div class="hd">
+						<h4>More JSONP Resources:</h4>
+                        </div>
+                        <div class="bd">
+						<ul>
+							<!-- <li><a href="http://developer.yahoo.com/yui/jsonp/">User's Guide</a> (external)</li> -->
+<li><a href="../../api/module_jsonp.html">API Documentation</a></li></ul>
+                        </div>
+					</div>
+			  </div>
+		</div>
+		
+		</div>
+	</div>
+
+
+<div class="yui-b toc3" id="tocWrapper">
+<!-- TABLE OF CONTENTS -->
+<div id="toc">
+	
+<ul>
+<li class="sect first">YUI 3 Resources</li><li class="item"><a title="YUI 3 -- Yahoo! User Interface (YUI) Library" href="http://developer.yahoo.com/yui/3/">YUI 3 Web Site</a></li><li class="item"><a title="Examples of every YUI utility and control in action" href="../../examples/">YUI 3 Examples</a></li><li class="item"><a title="Instantly searchable API documentation for the entire YUI library." href="../../api/">YUI 3 API Docs</a></li><li class="item"><a title="YUI 3 Dependency Configurator -- configure your custom YUI implementation" href="http://developer.yahoo.com/yui/3/configurator/index.html">YUI 3 Dependency Configurator</a></li><li class="item"><a title="The YUI 3 Forum on YUILibrary.com" href="http://yuilibrary.com/forum/viewforum.php?f=15">YUI 3 Forums (external)</a></li><li class="item"><a title="Found a bug or a missing feature? Let us know on YUILibrary.com." href="http://developer.yahoo.com/yui/articles/reportingbugs/">Bug Reports/Feature Requests</a></li><li class="item"><a title="YUI is free and open, offered under a BSD license." href="http://developer.yahoo.com/yui/license.html">YUI License</a></li><li class="item"><a title="Download and fork the YUI project on GitHub" href="http://github.com/yui">YUI on Github</a></li><li class="item"><a title="The Yahoo! User Interface Blog" href="http://yuiblog.com">YUI Blog (external)</a></li><li class="sect">YUI 3 Core - Examples</li><li class="item"><a title="YUI Global Object - Functional Examples" href="../../examples/yui/index.html">YUI Global Object</a></li><li class="item"><a title="Event - Functional Examples" href="../../examples/event/index.html">Event</a></li><li class="item"><a title="Node - Functional Examples" href="../../examples/node/index.html">Node</a></li><li class="sect">YUI 3 Component Infrastructure - Examples</li><li class="item"><a title="Attribute - Functional Examples" href="../../examples/attribute/index.html">Attribute</a></li><li class="item"><a title="Plugin - Functional Examples" href="../../examples/plugin/index.html">Plugin</a></li><li class="item"><a title="Widget - Functional Examples" href="../../examples/widget/index.html">Widget</a></li><li class="sect">YUI 3 Utilities - Examples</li><li class="item"><a title="Animation - Functional Examples" href="../../examples/anim/index.html">Animation</a></li><li class="item"><a title="AsyncQueue - Functional Examples" href="../../examples/async-queue/index.html">AsyncQueue</a></li><li class="item"><a title="Cache - Functional Examples" href="../../examples/cache/index.html">Cache</a></li><li class="item"><a title="Cookie - Functional Examples" href="../../examples/cookie/index.html">Cookie</a></li><li class="item"><a title="DataSchema - Functional Examples" href="../../examples/dataschema/index.html">DataSchema <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="DataSource - Functional Examples" href="../../examples/datasource/index.html">DataSource <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="DataType - Functional Examples" href="../../examples/datatype/index.html">DataType <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Drag &amp; Drop - Functional Examples" href="../../examples/dd/index.html">Drag &amp; Drop</a></li><li class="item"><a title="Editor - Functional Examples" href="../../examples/editor/index.html">Editor</a></li><li class="item"><a title="Get - Functional Examples" href="../../examples/get/index.html">Get</a></li><li class="item"><a title="History - Functional Examples" href="../../examples/history/index.html">History <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="IO - Functional Examples" href="../../examples/io/index.html">IO</a></li><li class="item"><a title="ImageLoader - Functional Examples" href="../../examples/imageloader/index.html">ImageLoader</a></li><li class="item"><a title="Internationalization - Functional Examples" href="../../examples/intl/index.html">Internationalization <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="JSON (JavaScript Object Notation) - Functional Examples" href="../../examples/json/index.html">JSON</a></li><li class="selected "><a title="JSONP (JSON with Padding) - Functional Examples" href="../../examples/jsonp/index.html">JSONP <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Stylesheet - Functional Examples" href="../../examples/stylesheet/index.html">Stylesheet</a></li><li class="item"><a title="Sortable - Functional Examples" href="../../examples/sortable/index.html">Sortable <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Transition - Functional Examples" href="../../examples/transition/index.html">Transition <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Uploader - Functional Examples" href="../../examples/uploader/index.html">Uploader <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="YQL Query - Functional Examples" href="../../examples/yql/index.html">YQL Query <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Widgets - Examples</li><li class="item"><a title="Overlay - Functional Examples" href="../../examples/overlay/index.html">Overlay <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="ScrollView - Functional Examples" href="../../examples/scrollview/index.html">ScrollView <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Slider - Functional Examples" href="../../examples/slider/index.html">Slider <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Tabview - Functional Examples" href="../../examples/tabview/index.html">Tabview <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Node Plugins - Examples</li><li class="item"><a title="FocusManager Node Plugin - Functional Examples" href="../../examples/node-focusmanager/index.html">FocusManager Node Plugin <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="MenuNav Node Plugin - Functional Examples" href="../../examples/node-menunav/index.html">MenuNav Node Plugin <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 CSS - Examples</li><li class="item"><a title="YUI CSS Reset - Functional Examples" href="../../examples/cssreset/index.html">CSS Reset</a></li><li class="item"><a title="YUI Fonts - Functional Examples" href="../../examples/cssfonts/index.html">CSS Fonts</a></li><li class="item"><a title="YUI Base - Functional Examples" href="../../examples/cssbase/index.html">CSS Base</a></li><li class="item"><a title="YUI Grids - Functional Examples" href="../../examples/cssgrids/index.html">CSS Grids <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="sect">YUI 3 Developer Tools - Examples</li><li class="item"><a title="Console - Functional Examples" href="../../examples/console/index.html">Console <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Console Filters Plugin- Functional Examples" href="../../examples/console-filters/index.html">Plugin.ConsoleFilters <img alt='beta' src='http://l.yimg.com/a/i/not/beta_1.gif'></a></li><li class="item"><a title="Profiler - Functional Examples" href="../../examples/profiler/index.html">Profiler</a></li><li class="item"><a title="Test - Functional Examples" href="../../examples/test/index.html">Test</a></li><li class="sect">Other Useful YUI 3 Resources</li><li class="item"><a title="Answers to Frequently Asked Questions about the YUI Library" href="http://developer.yahoo.com/yui/articles/faq/">YUI FAQ (external)</a></li><li class="item"><a title="Yahoo!'s philosophy of Graded Browser Support" href="http://developer.yahoo.com/yui/articles/gbs/">Graded Browser Support (external)</a></li><li class="item"><a title="Videos and podcasts from the YUI Team and from the Yahoo! frontend engineering community." href="http://developer.yahoo.com/yui/theater/">YUI Theater (external)</a></li></ul>
+</div>
+</div>
+	</div><!--closes bd-->
+
+	<div id="ft">
+        <p class="first">Copyright &copy; 2010 Yahoo! Inc. All rights reserved.</p>
+        <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
+            <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
+            <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
+            <a href="http://careers.yahoo.com/">Job Openings</a></p>
+	</div>
+</div>
+<script language="javascript"> 
+var yuiConfig = {};
+</script>
+<script src="../../assets/syntax.js"></script>
+<script src="../../assets/dpSyntaxHighlighter.js"></script>
+<script language="javascript"> 
+dp.SyntaxHighlighter.HighlightAll('code'); 
+</script>
+</body>
+</html>
+<!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://l.yimg.com/d/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1341291435" alt="setstats" border="0" width="1" height="1"></noscript>

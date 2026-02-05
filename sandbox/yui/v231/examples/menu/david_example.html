@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/reset/reset-min.css" />
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/fonts/fonts-min.css" />
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/menu/assets/skins/sam/menu.css" />
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/button/assets/skins/sam/button.css" />
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/container/assets/skins/sam/container.css" />
+
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/utilities/utilities.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/container/container-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/menu/menu-min.js"></script>
+        <script type="text/javascript" src="http://yui.yahooapis.com/2.3.1/build/button/button-beta-min.js"></script>
+
+        <script type="text/javascript">
+
+            function myShapeInterface (divId, tableName, myColumnDefs, rowsPerPage, newFormDivId) {
+        
+                // Dialog instance
+                this.myDialog = new YAHOO.widget.Dialog(newFormDivId, {
+                    width: "450px",
+                    fixedcenter: true,
+                    visible: false,
+                    constraintoviewport: true,
+                    postmethod: "async"
+                });
+        
+                this.myDialog.handleSubmit = function () {
+
+                       alert("ready to submit");
+                
+                    var data = this.getData();
+                    // for some reason pulldowns get stored in arrays
+                    for (var item in data) {
+                        // delete all fields not meant for submission, starts with '_'
+                        if (item.substr(0,1) == '_') {
+                            delete(data[item]);
+                        } else {
+                            // convert single item array to string
+                            if (typeof(data[item]) == 'object') {
+                                data[item] = data[item][0];
+                            }
+                        }
+                    }
+        
+                    if (this.validate(data)) {
+                    
+                        YAHOO.util.Connect.asyncRequest(
+                            'POST',
+                            '/main/en/content/getjsondata',
+                            {
+                                success: this.callback.success,
+                                failure: this.callback.failure,
+                                parent: this
+                            },
+                            'jsondata=' + YAHOO.Tools.JSONEncode({
+                                't': tableName,
+                                'act': 'c',
+                                'values': data
+                            })
+                        );
+
+                    }
+
+                }
+        
+                this.myDialog.handleCancel = function () {
+
+                    this.hide();
+
+                };
+        
+                this.myDialog.myButtons = [
+                    {text:"Submit", handler:this.myDialog.handleSubmit, isDefault:true},
+                    {text:"Cancel", handler:this.myDialog.handleCancel}
+                ];
+
+                this.myDialog.cfg.queueProperty("buttons", this.myDialog.myButtons);
+
+                this.myDialog.validate = function (data) {
+                    for (i = 0; i < myColumnDefs.length; i++) {
+                        var col = myColumnDefs[i];
+                        if (col.req && data[col.key] == '') {
+                            alert('Please enter a value for: ' + col.name + " (" + col.key + ")");
+                            return false;
+                        }
+                    }
+                    return true;
+                };
+
+                this.myDialog.dialogSuccess = function (o) {
+                    var oSelf = this.parent.callback.parent;
+                    var r = YAHOO.Tools.JSONParse(o.responseText);
+                    if (r.status == 'Ok') {
+                        oSelf.myDialog.hide();
+                        oSelf.myDataTable.addRow(r.data, 0);
+                        oSelf.myDataTable.highlightRow(0);
+                        setTimeout(function () {
+                            oSelf.myDataTable.unhighlightRow(0);
+                        }, 1500);
+                    } else {
+                        alert(r.message);
+                    }
+                };
+                
+                this.myDialog.dialogFailure = function (o) {
+                    alert("Submission failed: " + o.status);
+                };
+                
+                this.myDialog.callback = {
+                    success: this.myDialog.dialogSuccess,
+                    failure: this.myDialog.dialogFailure,
+                    parent: this
+                };
+                
+                this.myDialog.render();
+        
+                // Hook up "add new" dialog
+                this.showDialog = function (e) {
+                    YAHOO.util.Event.stopEvent(e);
+                    this.myDialog.show();
+                };
+        
+                YAHOO.util.Event.addListener("newLink", "click", this.showDialog, this, true);
+
+            }
+
+            // declare some global variables
+            var interfaceTableName = "GarmentTypeDefinition";
+            
+            // for auto-complete fields, set ac=true
+            // for required fields, set req=true
+            var columnDefs = [
+                {key:'GarmentTypeDefinitionId', label:"ID", sortable:true, resizeable:true, ac:false},
+                {key:"PicklistIdGarmentTypeCode", label:"Garment Type Code", sortable:true, resizeable:true, ac:true, req:true}
+            ];
+            
+            YAHOO.util.Event.onDOMReady(function () {
+
+                var oInterface = new myShapeInterface("serverpagination", interfaceTableName, columnDefs, 50, "addnewdialog");
+
+                var oMenu = new YAHOO.widget.MenuBar("navmenu");
+                oMenu.render();
+
+            });
+
+        </script>
+		
+	</head>
+	
+    <body class="yui-skin-sam">
+
+        <div id="navmenu" class="yuimenubar yuimenubarnav">
+            <div class="bd">
+
+                <ul class="first-of-type">
+                    <li class="yuimenubaritem first-of-type">
+                        <a class="yuimenubaritemlabel" href="#">ShapeMatch Data</a>
+		
+                        <div id="shapematchdata" class="yuimenu">
+                            <div class="bd">
+                                <ul>
+                                    <li class="yuimenuitem"><a class="yuimenuitemlabel" href="#"><em>Garments</em></a></li>
+                                    <li class="yuimenuitem"><a class="yuimenuitemlabel" href="#"><em>Shape Code Variables</em></a></li>
+    							</ul>
+							</div>
+                        </div>      
+                    </li>
+                </ul>            
+
+            </div>
+        </div> 
+
+		<h2>
+			<span id="newLink"><a href="#new">Click HERE!</a></span>
+		</h2>
+
+        <div id="serverpagination"></div>
+        <div id="addnewdialog"></div>
+
+	</body>
+</html><!-- text below generated by server. PLEASE REMOVE --><!-- Counter/Statistics data collection code --><script language="JavaScript" src="http://us.js2.yimg.com/us.js.yimg.com/lib/smb/js/hosting/cp/js_source/whv2_001.js"></script><script language="javascript">geovisit();</script><noscript><img src="http://visit.webhosting.yahoo.com/visit.gif?us1203221999" alt="setstats" border="0" width="1" height="1"></noscript>
