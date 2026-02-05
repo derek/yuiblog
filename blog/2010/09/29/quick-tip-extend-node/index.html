@@ -112,7 +112,7 @@
 
 				<div class="entry yui3-u-1">
 					<div class="meta">
-    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 29, 2010<span></div></div>
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By Eric Miraglia</a><span class="date">September 29, 2010<span></div></div>
 
 <div class="blog" id="blog-content">
 	<p>Luke (<a href="http://twitter.com/ls_n">@ls_n</a>) posted this snippet in response to a question the other day, and I thought it was worth sharing here as a quick tip.<p>As with most selector-based idioms, a lot of YUI 3's expressive power comes from what you can do once you have reference to one or more HTMLElements &mdash; in YUI 3, that means having a Node reference, which you usually get via <code>Y.one(<em>selector string</em>)</code> or <code>Y.all(<em>selector string</em>)</code>. So, <code>Y.one("#foo").<em>doSomethingInteresting</em></code> is a common pattern.<p>It's easy to extend YUI 3's expressiveness by adding your own magic to Node (and/or NodeList). Here's one way to make your extension modular and reusable.<p>First, create a new custom module (we'll call it <code>node++</code>):<pre>YUI.add('node++', function (Y) {
