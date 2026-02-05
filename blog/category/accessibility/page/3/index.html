@@ -980,7 +980,7 @@ The following code snippet illustrates how it all comes together:
 <p> Some users still don&#8217;t expect desktop-like interaction from web applications.  I remember logging into my Yahoo! Mail not long ago and seeing checkboxes next to each message.  I paused.  What were these checkboxes, these artifacts of Web 1.0, doing in my Web 2.0 application?  I had been using the new DHTML, Outlook-like version of Yahoo! Mail since its early beta and had become used to dragging and dropping in order to move and delete messages.  But the reappearance of these checkboxes was another sign that not every user&#8217;s expectations had evolved with the capabilities of the browser. </p>
 <p> As the browser has matured it has evolved it into a platform for rich application development, making it possible to deliver applications with a level of interactivity and visual fidelity of those found on the desktop.  And while the browser is now a platform, it also continues to play its original Web 1.0 role of an application, a content viewer that enables users to surf all of the news sites, blogs, etc. scattered across the eclectic Web.  But as the browser now plays these dual roles of being an application and an application development and delivery platform, how does this duality impact the user in terms of usability and accessibility?  And what user-centric features and functionality can consumers expect of a browser, especially one battling with duality?  I suspect that Opera&#8217;s answer to these questions is that not all users understand the modern browser&#8217;s dual role, and that is it necessary to render some fundamental things consistently across experiences within the browser. </p>
 <h3>Context Menus</h3>
-<p> <a href="http://developer.yahoo.com/yui/examples/menu/contextmenu_source.html"><img src="/blog-archive/assets/klootsopera/contextmenu.gif" alt="The YUI Menu Control's ContextMenu in Safari (top) and Opera (bottom); Opera does not allow developers to customize the context menu in web applications." width="280" height="300" hspace="10" vspace="5" align="right"></a></p>
+<p> <a href="http://developer.yahoo.com/yui/examples/menu/contextmenu_source.html"><img src="/yuiblog/blog-archive/assets/klootsopera/contextmenu.gif" alt="The YUI Menu Control's ContextMenu in Safari (top) and Opera (bottom); Opera does not allow developers to customize the context menu in web applications." width="280" height="300" hspace="10" vspace="5" align="right"></a></p>
 <p>Consider context menu functionality. By not implementing the <code>contextmenu</code> event, Opera does not allow frontend engineers to override the<br />
 default context menu provided by the browser; all other <a href="http://developer.yahoo.com/yui/articles/gbs/">A-Grade browsers</a> support this feature. What benefit could there be to not implementing the <code>contextmenu</code> event?</p>
 <p>If some users  perceive everything inside the scope of the browser as a web page, that influences the user&#8217;s expectation of what functionality will be surfaced in a context menu.  Over the years many users have come to expect that raising a context menu in the scope of a browser will surface browser-centric functionality relative to HTML content (i.e. &#8220;Open Link in New Window&#8221;), rather than functionality of the web application running within the browser.  Therefore, providing a custom context menu for a web application might not be expected or seen as helpful for users who have come to rely on functionality in the browser&#8217;s context menu.</p>
@@ -990,11 +990,11 @@ default context menu provided by the browser; all other <a href="http://develope
 <h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-1">Example 1: Anchor Elements (The Good)</a></h4>
 <table>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
 <td>Focused anchor in Opera 9.5 (Mac)</td>
 </tr>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
 <td>Focused anchor styled as a button in Opera 9.5 (Mac)</td>
 </tr>
 </table>
@@ -1002,11 +1002,11 @@ default context menu provided by the browser; all other <a href="http://develope
 <h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-2">Example 2: Buttons (The Bad)</a></h4>
 <table>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused button in Opera 9.5 for Mac"></td>
 <td>Focused, unstyled button in Opera 9.5 (Mac)</td>
 </tr>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
 <td>Focused, styled button in Opera 9.5 (Mac)</td>
 </tr>
 </table>
@@ -1021,23 +1021,23 @@ default context menu provided by the browser; all other <a href="http://develope
 </thead>
 <tbody>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
-<td><img src="/blog-archive/assets/klootsopera/anchor-safari.png" height="25" width="51" alt="Screen capture of a focused anchor in Safari for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/anchor-safari.png" height="25" width="51" alt="Screen capture of a focused anchor in Safari for Mac"></td>
 <td>Focused, unstyled acnhor</td>
 </tr>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
-<td><img src="/blog-archive/assets/klootsopera/anchor-button-safari.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Safari for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/anchor-button-safari.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Safari for Mac"></td>
 <td>Focused anchor styled as a button</td>
 </tr>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused, unstyled button in Opera 9.5 for Mac"></td>
-<td><img src="/blog-archive/assets/klootsopera/button-safari.png" height="24" width="67" alt="Screen capture of a focused, unstyled button in Safari for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused, unstyled button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/button-safari.png" height="24" width="67" alt="Screen capture of a focused, unstyled button in Safari for Mac"></td>
 <td>Focused, unstyled button</td>
 </tr>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
-<td><img src="/blog-archive/assets/klootsopera/yuibutton-safari.png" height="34" width="81" alt="Screen capture of a focused, styled button in Safari for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/yuibutton-safari.png" height="34" width="81" alt="Screen capture of a focused, styled button in Safari for Mac"></td>
 <td>Focused, styled button</td>
 </tr>
 </tbody>
@@ -1046,11 +1046,11 @@ default context menu provided by the browser; all other <a href="http://develope
 <h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-3">Example 3: Mixed types together (The Ugly)</a></h4>
 <table>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
 <td>Focused anchor styled as a button in Opera 9.5 (Mac)</td>
 </tr>
 <tr>
-<td><img src="/blog-archive/assets/klootsopera/button-4.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="/yuiblog/blog-archive/assets/klootsopera/button-4.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
 <td>Focused, styled button in Opera 9.5 (Mac)</td>
 </tr>
 </table>
@@ -1069,10 +1069,10 @@ default context menu provided by the browser; all other <a href="http://develope
 					
 
 						<div class="entry">
-							<p><a href="http://2tbsp.com/node/91"><img src="/blog-archive/assets/2tbsp-1.png" alt="Introduction to Unobtrusive JavaScript, DOM Scripting, and the Yahoo! User Interface (YUI) Library on 2tsp.com." width="510" height="174"></a></p>
+							<p><a href="http://2tbsp.com/node/91"><img src="/yuiblog/blog-archive/assets/2tbsp-1.png" alt="Introduction to Unobtrusive JavaScript, DOM Scripting, and the Yahoo! User Interface (YUI) Library on 2tsp.com." width="510" height="174"></a></p>
 <p>Chad at 2tbsp.com <a href="http://2tbsp.com/node/91">wrote up a nice tutorial last week</a> outlining some practical fundamentals with respect to writing &quot;unobtrusive JavaScript.&quot; His example implements a standard rollover, beginning with bad-old-days obtrusive scripting, migrating to unobtrusive scripting, and concluding with an unobtrusive script that leverages YUI&#8217;s <a href="http://developer.yahoo.com/yui/event/">Event Utility</a> for event attachment and the <a href="http://developer.yahoo.com/yui/dom/">Dom Collection</a>&#8216;s <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Dom.html#method_getElementsByClassName"><code>getElementsByClassName</code></a>, <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Dom.html#method_addClass"><code>addClass</code></a> and <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Dom.html#method_removeClass"><code>removeClass</code></a> for class management.</p>
 <p><a href="http://2tbsp.com/system/files/yui-rollover.html">Click through</a> for his functioning example.</p>
-<p><a href="http://2tbsp.com/system/files/yui-rollover.html"><img src="/blog-archive/assets/2tbsp-2.png" alt="Click through for the functioning example." width="510" height="96"></a></p>
+<p><a href="http://2tbsp.com/system/files/yui-rollover.html"><img src="/yuiblog/blog-archive/assets/2tbsp-2.png" alt="Click through for the functioning example." width="510" height="96"></a></p>
 <p>Of course, Chad just means this as an example of some of the practical points involved in unobtrusive scripting. Others have looked at the problem more encyclopedically — for a more ambitious (and not YUI-related) analysis of the paradigm, check out Christian Heilmann&#8217;s &quot;<a href="http://icant.co.uk/articles/seven-rules-of-unobtrusive-javascript/">The seven rules of Unobtrusive JavaScript</a>&quot;.</p>
 						</div>
 
@@ -1159,7 +1159,7 @@ TABLE {
     </style>
 <div class="interview">
 <div class="intro">
-<p><img src="/blog-archive/assets/mikedavies.jpg" width="250" height="188" hspace="5" vspace="5" align="right" alt=""><strong>About the Author:</strong> Mike Davies is a web developer for Yahoo! Europe focusing on web accessibility. He was the Technical Lead Developer of a website redesign which became a PAS 78 case study into the business benefits of accessible websites. Mike writes about web accessibility, Atom and web standards on his personal blog at <a href="http://www.isolani.co.uk/">isolani.co.uk</a>. (<a href="http://www.flickr.com/photos/thevoicewithin/374414594/">Photograph courtesy of Neil Crosby</a>)</p>
+<p><img src="/yuiblog/blog-archive/assets/mikedavies.jpg" width="250" height="188" hspace="5" vspace="5" align="right" alt=""><strong>About the Author:</strong> Mike Davies is a web developer for Yahoo! Europe focusing on web accessibility. He was the Technical Lead Developer of a website redesign which became a PAS 78 case study into the business benefits of accessible websites. Mike writes about web accessibility, Atom and web standards on his personal blog at <a href="http://www.isolani.co.uk/">isolani.co.uk</a>. (<a href="http://www.flickr.com/photos/thevoicewithin/374414594/">Photograph courtesy of Neil Crosby</a>)</p>
 </div>
 <p>With the help of other members of the Yahoo! Accessibility Stakeholders group, I ran a screen reader test to establish whether links that contain no link text were an accessibility barrier. We tested a number of approaches to hiding links across a typical range of screen reader and browsers.</p>
 <p>The conclusion is that the most accessible link is one that contains link text. Different techniques of hiding links, from no link text, through to hiding by <abbr title="Cascading Stylesheets">CSS</abbr> can cause an accessibility barrier to screen reader users. Each screen reader presented its user with a different set of problems and barriers.</p>
@@ -1519,7 +1519,7 @@ TABLE {
 							<link rel="stylesheet" type="text/css" href="/assets/charttable/chartsstyles.css">
 <div class="interview">
 <div class="intro">
-<p><img src="/blog-archive/assets/heilmann.jpg" width="300" height="225" hspace="5" vspace="5" align="right"><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/yuiblog/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>. He has worked in web development for almost 9 years for several agencies and .coms and is currently a lead developer at Yahoo! in England.  Christian is a frequent speaker on the conference circuit in the UK and Europe; you can find some of his writing <a href="/yuiblog/blog/2007/01/17/event-plan/">here on YUIBlog</a> as well as on his personal blog at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</p>
+<p><img src="/yuiblog/blog-archive/assets/heilmann.jpg" width="300" height="225" hspace="5" vspace="5" align="right"><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/yuiblog/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>. He has worked in web development for almost 9 years for several agencies and .coms and is currently a lead developer at Yahoo! in England.  Christian is a frequent speaker on the conference circuit in the UK and Europe; you can find some of his writing <a href="/yuiblog/blog/2007/01/17/event-plan/">here on YUIBlog</a> as well as on his personal blog at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</p>
 </div>
 <p>Charts are a great idea to make rows and rows of boring numbers easier to understand and to take in &mdash; for people that can see them. However, not all of your site&#8217;s visitors can see and you&#8217;ll also want to keep information you offer available for search engines. There are a lot of libraries on the web that allow you to create charts, but not many take this use case into consideration.</p>
 <h2>In praise of data tables</h2>
@@ -1596,7 +1596,7 @@ TABLE {
 </tbody>
 </table>
 <p>Easy to understand, but not too pretty. And it can get boring.  How about we use this information and create a tasty pie chart like the following (click on the image below to see the working example in action)?</p>
-<p><a href="/assets/charttable/chartsexample.html"><img src="/blog-archive/assets/charttable/chart-table.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="536" border="0"></a></p>
+<p><a href="/assets/charttable/chartsexample.html"><img src="/yuiblog/blog-archive/assets/charttable/chart-table.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="536" border="0"></a></p>
 <h2>Using table data to automatically generate charts</h2>
 <p>In order to have the table be preceeded by a pie chart like this all you need is to add two scripts at the end of the document body and a class called <code>yui-table</code> to the table itself. For example:</p>
 <pre><code>&lt;table class=&quot;yui-table&quot; summary=&quot;Results of a survey of what browser people love&quot;&gt;
@@ -1637,7 +1637,7 @@ TABLE {
 &lt;script src=&quot;http://yui.yahooapis.com/2.4.1/build/yuiloader/yuiloader-beta-min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;tablestoyuicharts.js&quot;&gt;&lt;/script&gt;</code></pre>
 <p>This will show in a browser with the latest Flash plugin like this:</p>
-<p><a href="/assets/charttable/chartsexample.html"><img src="/blog-archive/assets/charttable/chart-table2.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="527" border="0"></a></p>
+<p><a href="/assets/charttable/chartsexample.html"><img src="/yuiblog/blog-archive/assets/charttable/chart-table2.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="527" border="0"></a></p>
 <p>You can define the size of the chart in CSS by defining a width and height for each div element with a class of <code>yuichartfromtable</code>:</p>
 <pre><code>div.yuichartfromtable{
   width:300px;
@@ -1726,7 +1726,7 @@ if(document.location.toString().indexOf('http')!==-1){
 <tbody>
 <tr>
 <td>
-		   <img src="/blog-archive/assets/kloots_tsaran.jpg" alt="Victor Tsaran (left) and Todd Kloots of Yahoo!" width="430" height="300">
+		   <img src="/yuiblog/blog-archive/assets/kloots_tsaran.jpg" alt="Victor Tsaran (left) and Todd Kloots of Yahoo!" width="430" height="300">
 		</td>
 <td valign="bottom" style="font-size:10px;">
 			<a href="http://www.flickr.com/photo_zoom.gne?id=414400167&#038;size=o">Image of Victor Tsaran by Stephen Woods</a>; <a href="http://www.flickr.com/photo_zoom.gne?id=413976052&#038;size=l">image of Todd Kloots by Sandy Leung</a>. Used by kind permission.</td>
@@ -1939,7 +1939,7 @@ oMenuBar.subscribe("render", function () {
 <ul>
 <li><a href="http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/henry-wcag.mp4">This video is also available in a downloadable <code>.mp4</code> format.</a></li>
 </ul>
-<p><a href="http://video.yahoo.com/video/play?vid=955300"><img src="/blog-archive/assets/shawnhenry.jpg" width="200" height="225" hspace="10" vspace="5" border="0" align="right" alt="Shawn Lawton Henry of the W3C"></a>Lots of the work in technology that we do is based on standards. In the Web world many standards such as HTML, CSS and many more have been produced by the World Wide Web Consortium (W3C).  <a href="http://www.w3.org/People/Shawn/">Shawn Lawton Henry</a> gave us an update on the standards produced by W3C&#8217;s Web Accessibility Initiative at Yahoo&#8217;s European headquarters in London. Where the Web Content Accessibility Guidelines (WCAG) 1.0 are very precise and contain a number of technical requirements that might be outdated, WCAG 2.0 takes a different approach. WCAG 2.0 takes a much more user-oriented approach. In her presentation, Shawn looks at the changes to WCAG as well as some of the other Accessibility standards produced by the W3C. Most of all she asks &quot;how can I build more accessible sites?&quot; so we can make the web a more friendly place.</p>
+<p><a href="http://video.yahoo.com/video/play?vid=955300"><img src="/yuiblog/blog-archive/assets/shawnhenry.jpg" width="200" height="225" hspace="10" vspace="5" border="0" align="right" alt="Shawn Lawton Henry of the W3C"></a>Lots of the work in technology that we do is based on standards. In the Web world many standards such as HTML, CSS and many more have been produced by the World Wide Web Consortium (W3C).  <a href="http://www.w3.org/People/Shawn/">Shawn Lawton Henry</a> gave us an update on the standards produced by W3C&#8217;s Web Accessibility Initiative at Yahoo&#8217;s European headquarters in London. Where the Web Content Accessibility Guidelines (WCAG) 1.0 are very precise and contain a number of technical requirements that might be outdated, WCAG 2.0 takes a different approach. WCAG 2.0 takes a much more user-oriented approach. In her presentation, Shawn looks at the changes to WCAG as well as some of the other Accessibility standards produced by the W3C. Most of all she asks &quot;how can I build more accessible sites?&quot; so we can make the web a more friendly place.</p>
 <p>A <a href="http://www.w3.org/WAI/highlights/200706wcag2pres">transcript of Shawn&#8217;s presentation</a> is available on the WAI website. Many thanks to Shawn for allowing us to record the session and share it <a href="http://developer.yahoo.com/yui/theater/">on YUI Theater</a>. </p>
 <h3>Links:</h3>
 <ol>

@@ -330,7 +330,7 @@
 
 						<div class="entry">
 							<div class="authorbox">
-<p><img align="right" src="/blog-archive/assets/philip.jpg" height="75" width="75" hspace="10" vspace="5"><em><strong>About the author</strong>: Philip Tellis (<a href="http://twitter.com/bluesmoon">@bluesmoon</a>) is a geek working with Yahoo!&#8217;s Exceptional Performance team where he analyses the impact of various design decisions on web application performance.  He also maintains YUI&#8217;s date formatter and the <a href="http://github.com/bluesmoon/yui-flot" title="bluesmoon's yui-flot at master - GitHub">YUI port of the flot charting library</a>.  You can find him on the web at <a href="http://bluesmoon.info/" title="Welcome to the moon">http://bluesmoon.info/</a>.</em></p>
+<p><img align="right" src="/yuiblog/blog-archive/assets/philip.jpg" height="75" width="75" hspace="10" vspace="5"><em><strong>About the author</strong>: Philip Tellis (<a href="http://twitter.com/bluesmoon">@bluesmoon</a>) is a geek working with Yahoo!&#8217;s Exceptional Performance team where he analyses the impact of various design decisions on web application performance.  He also maintains YUI&#8217;s date formatter and the <a href="http://github.com/bluesmoon/yui-flot" title="bluesmoon's yui-flot at master - GitHub">YUI port of the flot charting library</a>.  You can find him on the web at <a href="http://bluesmoon.info/" title="Welcome to the moon">http://bluesmoon.info/</a>.</em></p>
 </div>
 <p>
 A few months ago, Eric helped me run some analysis on the types of network connections that were coming in to <a href="/yuiblog/" title="Yahoo! User Interface Blog (YUIBlog)">YUIBlog</a>. In this article, I&#8217;ll analyze the data we collected and look for insights about the tools and infrastructure the YUIBlog readership uses to browse the web.  Being the performance guy at Yahoo!, my interest focuses how fast our readers connections are.  In particular, with what kind of network bandwidth and latency do YUI geeks experience the web?  Although your mileage will vary, YUIBlog is likely to be representative of US  tech blogs read by people in the software industry, and the data here may prove useful for those of you catering to a similar audience.
@@ -404,13 +404,13 @@ The type of network connection you have with your ISP determines the primary ban
 </table>
 </div>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/connection-types.png" alt="Pie chart of data point counts from table #connection-type-table" id="connection-type-chart">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/connection-types.png" alt="Pie chart of data point counts from table #connection-type-table" id="connection-type-chart">
 </p>
 <p>
 Of all the connection types we&#8217;ve seen, Cable and T1 offer the best bandwidth and latency, going over four times as fast as Broadband with half the latency.  This could possibly mean that most of these connections were within the US while the others span the globe.  The low latency seems to suggest that, but drilling down reduces the sample size too much to make an accurate assessment.  From the data we see a clear inverse relationship between bandwidth and latency.
 </p>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/bandwidth-latency.png" alt="3D Bar chart of bandwidth and latency data from table #connection-type-table" id="connection-type-bw-lat-bar">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/bandwidth-latency.png" alt="3D Bar chart of bandwidth and latency data from table #connection-type-table" id="connection-type-bw-lat-bar">
 </p>
 <h3>International data</h3>
 <p>
@@ -586,19 +586,19 @@ We expected connections from outside the US to appear slower because the test ha
 </table>
 </div>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/high-bw.png" alt="Bar chart of bandwidth data for top 18 countries (CA to HU) in table #international-bandwidth-table">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/high-bw.png" alt="Bar chart of bandwidth data for top 18 countries (CA to HU) in table #international-bandwidth-table">
 </p>
 <p>
 The US and Canada top the list as expected.  All other countries with a bandwidth over 1 Mbps are from Europe.  Looking at the other end of the spectrum, we see a few surprises.
 </p>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/low-bw.png" alt="Bar chart of bandwidth data for bottom 17 countries (GR to ID) in table #international-bandwidth-table">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/low-bw.png" alt="Bar chart of bandwidth data for bottom 17 countries (GR to ID) in table #international-bandwidth-table">
 </p>
 <p>
 I know from recent experience that Korea and Hong Kong have really high bandwidth network connections.  Faster than most of the US in fact.  The data puts them at less than one sixth the bandwidth of the US.  A possible explanation is the latency.  As we already know, there&#8217;s a correlation between bandwidth and latency.  Looking at the latency numbers for these countries gives us a possible answer.
 </p>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/low-bw-latency.png" alt="Bar chart of latency data for bottom 17 countries (GR to ID) in table #international-bandwidth-table">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/low-bw-latency.png" alt="Bar chart of latency data for bottom 17 countries (GR to ID) in table #international-bandwidth-table">
 </p>
 <p>
 We get hits from many more countries (147 in all).  They either fell between these two blocks or had too few data points to be a statistically sound sample.
@@ -758,7 +758,7 @@ As the final piece of analysis, I looked at ISP information.  I only looked at a
 </table>
 </div>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/isp-bw.png" "Bar chart of bandwidth data for US and Canadian ISPs from table #isp-bandwidth-table">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/isp-bw.png" "Bar chart of bandwidth data for US and Canadian ISPs from table #isp-bandwidth-table">
 </p>
 <p>
 I&#8217;m not sure what the difference between AT&amp;T Worldnet and AT&amp;T Internet is, but I&#8217;ll leave that for you to figure out.  We saw more hits from Comcast than from any other ISP on the planet.
@@ -811,7 +811,7 @@ The browser you use doesn&#8217;t affect your bandwidth (at least hasn&#8217;t i
 </table>
 </div>
 <p>
-<img src="/blog-archive/assets/tellis-bandwidth/user-agent-profile.png" alt="Radar chart of bandwidth and latency data across user agents from table #useragent-table">
+<img src="/yuiblog/blog-archive/assets/tellis-bandwidth/user-agent-profile.png" alt="Radar chart of bandwidth and latency data across user agents from table #useragent-table">
 </p>
 <p>
 The iPhone&#8217;s latency is close to other mobile phones.  All other browsers have the same latency.  This is as expected.  Bandwidth tells a different story though.  It appears that those of you with the fastest internet connections use a Webkit based browser like Safari, Chrome or Konqueror, while users with the slowest internet connections use Internet Explorer.
@@ -835,7 +835,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 					
 
 						<div class="entry">
-							<p><a href="/assets/High_Perf_JavaScr_Ch2.pdf"><img align=right hspace=10 vspace=5 src="/blog-archive/assets/high-performance-javascript-20100403-070804.jpg" alt="High Performance JavaScript, by Nicholas Zakas (book cover)"></a>Nicholas C. Zakas has teamed with a select group of fellow Yahoo! engineers to produce a new volume from O&#8217;Reilly and Yahoo! Press on <em><a href="http://www.amazon.com/High-Performance-JavaScript-Nicholas-Zakas/dp/059680279X/" title="Amazon.com: High Performance JavaScript (9780596802790): Nicholas C. Zakas: Books">High Performance JavaScript</a></em>.</p>
+							<p><a href="/assets/High_Perf_JavaScr_Ch2.pdf"><img align=right hspace=10 vspace=5 src="/yuiblog/blog-archive/assets/high-performance-javascript-20100403-070804.jpg" alt="High Performance JavaScript, by Nicholas Zakas (book cover)"></a>Nicholas C. Zakas has teamed with a select group of fellow Yahoo! engineers to produce a new volume from O&#8217;Reilly and Yahoo! Press on <em><a href="http://www.amazon.com/High-Performance-JavaScript-Nicholas-Zakas/dp/059680279X/" title="Amazon.com: High Performance JavaScript (9780596802790): Nicholas C. Zakas: Books">High Performance JavaScript</a></em>.</p>
 <p>Nicholas&#8217;s coauthors on the project include Julien Lecomte and Stoyan Stefanov of Yahoo! Search, Ross Harmes of Flickr, and Matt Sweeney from the YUI team.  Subjects include DOM scripting performance, algorithms and flow control, strings and regular expressions, Ajax, and performance optimization tools.</p>
 <p> Nicholas and the publisher were kind enough to share a sample chapter with us here &mdash; <a href="/assets/High_Perf_JavaScr_Ch2.pdf" title="Data Access, from High Performance JavaScript">Chapter 2 on &#8220;Data Access&#8221;</a>.  In this chapter, Nicholas begins with a lucid explanation of scope chains in JavaScript and their implications for performance and then looks at different ways of managing data in JavaScript.</p>
 <blockquote><p>One of the classic computer science problems is determining where data should be stored for optimal reading and writing. Where data is stored is related to how quickly it can be retrieved during code execution. This problem in JavaScript is somewhat simplified because of the small number of options for data storage. Similar to other languages, though, where data is stored can greatly affect how quickly it can be accessed later. There are four basic places from which data can be accessed in JavaScript:</p>
@@ -860,7 +860,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 					
 
 						<div class="entry">
-							<p><a href="http://www.meetup.com/BayJax/calendar/13107337/" title="High performance JavaScript -  BayJax - The Bay Area Ajax and JavaScript Meetup (Palo Alto, CA) - Meetup.com"><img src="/blog-archive/assets/performanceauthors.jpg"></a></p>
+							<p><a href="http://www.meetup.com/BayJax/calendar/13107337/" title="High performance JavaScript -  BayJax - The Bay Area Ajax and JavaScript Meetup (Palo Alto, CA) - Meetup.com"><img src="/yuiblog/blog-archive/assets/performanceauthors.jpg"></a></p>
 <p><a href="http://www.meetup.com/BayJax/calendar/13107337/" title="High performance JavaScript -  BayJax - The Bay Area Ajax and JavaScript Meetup (Palo Alto, CA) - Meetup.com">Gonzalo has posted details on the April 2010 BayJax meetup</a>, which we&#8217;ll be hosting at Yahoo! again next week:</p>
 <blockquote>
 <p>
@@ -905,7 +905,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img align="right" hspace=10 vspace=10 src="/blog-archive/assets/jconniff.jpg" width="118" height="146"/>	<em><strong>About the Author:</strong>  Jeff Conniff is an interaction designer, prototyper, and visual designer working at Yahoo since 2005 in the HotJobs and Small Business groups. Jeff has a degree in Graphic Design from San Jose State University, and has worked at many companies designing software user experience since 1983. Jeff uses the YUI platform daily in his prototyping work and loves its clean syntax and great capabilities.</em></p>
+<p><img align="right" hspace=10 vspace=10 src="/yuiblog/blog-archive/assets/jconniff.jpg" width="118" height="146"/>	<em><strong>About the Author:</strong>  Jeff Conniff is an interaction designer, prototyper, and visual designer working at Yahoo since 2005 in the HotJobs and Small Business groups. Jeff has a degree in Graphic Design from San Jose State University, and has worked at many companies designing software user experience since 1983. Jeff uses the YUI platform daily in his prototyping work and loves its clean syntax and great capabilities.</em></p>
 </div>
 </div>
 <p>
@@ -933,13 +933,13 @@ We decided to take the <a href="http://developer.yahoo.com/yui/3/slider/">YUI 3 
 </ol>
 <p>Compare the YUI 2 slider skins with the YUI 3 ones below. The new set has more variety and should serve a broad spectrum of pages and styles. </p>
 <p>YUI 2 Slider Skins:</p>
-<p><img src="/blog-archive/assets/yui2_slider_skins.gif" alt="YUI 2 Slider Skins"/></p>
+<p><img src="/yuiblog/blog-archive/assets/yui2_slider_skins.gif" alt="YUI 2 Slider Skins"/></p>
 <p>YUI 3 Slider Skins:</p>
-<p><img src="/blog-archive/assets/yui3_slider_skins.jpg" alt="YUI 3 Slider Skins"/></p>
+<p><img src="/yuiblog/blog-archive/assets/yui3_slider_skins.jpg" alt="YUI 3 Slider Skins"/></p>
 <p>We didn&#8217;t restrict the thumbs to rectangles and 45 degree angles. This posed some challenges with anti-aliasing. The YUI 2 thumbs have shadows incorporated into the thumb image, so they are a solid color gray. We&#8217;ve improved this by making a shadow object that&#8217;s separate from the thumb image. The shadow has <code>opacity: 0.15</code>. This means it looks natural as the shadow falls on the rail and the tick marks.</p>
-<p><img src="/blog-archive/assets/shadow_compare2.jpg"/></p>
+<p><img src="/yuiblog/blog-archive/assets/shadow_compare2.jpg"/></p>
 <p>We will be providing original photoshop files containing each of the rail and thumb images. This will provide developers the source from which to easily customize the images so that they look their best when placed on whatever color background your site has.</p>
-<p><img src="/blog-archive/assets/slider_blue_3.jpg"/></p>
+<p><img src="/yuiblog/blog-archive/assets/slider_blue_3.jpg"/></p>
 <p>YUI 3&#8217;s widget foundation reached GA status last week <a href="/yuiblog/blog/2010/03/31/announcing-yui-3-1-0/">with the release of YUI 3.1.0</a>.  We don&#8217;t yet have a full slate of native YUI 3 widgets, and we haven&#8217;t yet defined a set of global skins.  However, the work we did on visual assets for the beta Slider Component should make it more useful in the short term, and we&#8217;ll carry all of these visual options on as alternative themes or examples once YUI 3&#8217;s baseline themes are in place.</p>
 <p>Have a look at these <a href="http://developer.yahoo.com/yui/3/examples/slider/slider_skin.html">working code examples</a> of the new sliders. Checkout the behind the scenes <a href="http://developer.yahoo.com/yui/3/slider/#skinning">detailed workings</a> of the skin images and CSS.</p>
 <p>We hope these new sliders will be a nice visual addition to your bag of tricks.</p>

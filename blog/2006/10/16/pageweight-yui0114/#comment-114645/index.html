@@ -101,7 +101,7 @@
 <p>Here is a filesize profile of the YUI Library JavaScript utilities&#8217; core files in (1) full, (2) minified, and (3) minified/gzipped form.</p>
 <div class="chart">
 <h4>Filesize Profile of YUI Utilities in Full, Minified and Minified/Gzipped Forms</h4>
-<p>	<img src="/blog-archive/assets/pageweight/filesize_by_type.gif" alt="Chart: Filesize of YUI utilies JavaScript files in full, minified, and minified/gzipped profiles." width="550" height="255" longdesc="/blog-archive/assets/pageweight/filesize_by_type.html" id="filesize_by_type"></p>
+<p>	<img src="/yuiblog/blog-archive/assets/pageweight/filesize_by_type.gif" alt="Chart: Filesize of YUI utilies JavaScript files in full, minified, and minified/gzipped profiles." width="550" height="255" longdesc="/yuiblog/blog-archive/assets/pageweight/filesize_by_type.html" id="filesize_by_type"></p>
 <p class="gloss"><strong>Note:</strong> This chart does not include dependencies; the file sizes here are for each utility&#8217;s core source file only.</p>
 </div>
 <p>The data-transmission savings gained from minification and gzipping are dramatic &mdash; a document loading the entire YUI utility suite would incur 232.5KB in additional pageweight if serving the fully-commented source; that weight drops to <em>less than 20KB</em> when the files are minified and served with gzip compression, a savings of 91.9%.  In assessing library weight, we focus primarily on filesizes after minification and gzipping, as that is the truest measure of how much data needs to be transmitted to the browser. It&#8217;s worth reiterating, however, that this is only one part of the larger performance story.</p>
@@ -109,7 +109,7 @@
 <p>One of the most important metrics for us in evaluating the success of YUI&#8217;s <em>&agrave; la carte</em> strategy is the aggregate filesize of each component, including its dependencies.  All YUI JavaScript components require the <a href="http://developer.yahoo.com/yui/yahoo/">Yahoo Object</a>; most also require <a href="http://developer.yahoo.com/yui/event/">Event</a> and <a href="http://developer.yahoo.com/yui/dom/">Dom</a>. The dependency tree beyond those foundations is more diverse. <strong>Including all JavaScript dependencies</strong> (even optional dependencies), what is the cost in transmitted filesize to include a  single YUI component when serving the minified files and gzipping the payload sent to the browser?</p>
 <div class="chart">
 <h4><em>&Agrave; la Carte</em> Pageweight of Individual YUI JavaScript Components, Including All Dependencies</h4>
-<p>	<img id="infographic" src="/blog-archive/assets/pageweight/infographic.gif" alt="Chart: Kweight of individual YUI components, including dependencies." width="550" height="372" longdesc="/blog-archive/assets/pageweight/infographic.html"></p>
+<p>	<img id="infographic" src="/yuiblog/blog-archive/assets/pageweight/infographic.gif" alt="Chart: Kweight of individual YUI components, including dependencies." width="550" height="372" longdesc="/yuiblog/blog-archive/assets/pageweight/infographic.html"></p>
 <p class="gloss"><strong>Note:</strong> Optional dependencies can have a significant impact on overall pageweight.  Container, for example, can make use of Connection Manager for wiring Dialog Controls to the server via XHR; it can also use Drag &amp; Drop to enable draggable Panels and Dialogs and Animation effects when showing and hiding Panels.  Those three optional components account for nearly 40% of Container&#8217;s pageweight in the chart above. The Panel implementation used above to show the large-format version of the chart image omits all of these optional effects, and as a result requires only 20.8KB of transmitted YUI JavaScript.  (Component filesizes represented in the chart do not include CSS resources.)</p>
 </div>
 <p>Because of YUI’s <em>&agrave; la carte</em> architecture, even the heaviest component is roughly half the weight of the image containing the chart above.  Looking at the single dimension of weight-on-the-wire, then, we feel comfortable that YUI is succeeding in one of its core goals: allowing implementers to choose specific richly interactive elements on a page-by-page basis without unduly inflating pageweight.</p>
@@ -118,13 +118,13 @@
 <p>For reference, here are the filesize profiles of the YUI CSS foundation files in (1) full, (2) minified, and (3) minified/gzipped forms.</p>
 <div class="chart">
 <h4>Filesize Profile of YUI CSS Foundation Files in Full, Minified and Minified/Gzipped Forms</h4>
-<p>	<img src="/blog-archive/assets/pageweight/css_filesize_by_type.gif" alt="Chart: Filesize of YUI CSS foundation files in full, minified, and minified/gzipped profiles." width="400" height="193" longdesc="/blog-archive/assets/pageweight/css_filesize_by_type.html" id="css_filesize_by_type"></div>
+<p>	<img src="/yuiblog/blog-archive/assets/pageweight/css_filesize_by_type.gif" alt="Chart: Filesize of YUI CSS foundation files in full, minified, and minified/gzipped profiles." width="400" height="193" longdesc="/yuiblog/blog-archive/assets/pageweight/css_filesize_by_type.html" id="css_filesize_by_type"></div>
 <p></p>
 <h3>Beyond Filesize</h3>
 <p>Obviously, there&#8217;s a great deal to be said about library performance beyond raw k-weight on the wire; this single dimension is an important one, but achieving &#8220;performant richness&#8221; is a multifaceted problem.  Over time, we&#8217;ll explore some of these additional dimensions here on YUIBlog.</p>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.2.0/build/container/assets/container.css">
 <script type="text/javascript" src="http://yui.yahooapis.com/2.2.0/build/container/container-min.js"></script><br />
-<script type="text/javascript" src="/blog-archive/assets/pageweight/pageweight.js"></script> </p>
+<script type="text/javascript" src="/yuiblog/blog-archive/assets/pageweight/pageweight.js"></script> </p>
 			
 			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: 

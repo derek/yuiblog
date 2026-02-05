@@ -648,7 +648,7 @@ table.plug(Y.Plugin.DataTableDataSource, {datasource: ds});
 <p>The <a href="http://developer.yahoo.com/yui/3/plugin/" title="YUI 3: Plugin">YUI 3 Plugin</a> model allows developers to add new functionality or modify existing behavior to objects.  This allows adding additional functionality on top of Carousel to dynamically pull elements through Ajax, etc.  So, the YUI 3 Carousel does not have animation code baked into it, but instead I have created a plugin which adds animation support for cases where it is needed. This helps to keep the component very lightweight.</p>
 <h3>A Gallery Carousel for your own website</h3>
 <p>After reading about what a Carousel is and how it can help you to improve your website, you hopefully feel eager to get your hands dirty.  Don&#8217;t worry, with our YUI 3 Gallery Carousel extension, implementing a carousel on your website is as easy as providing a bulleted list in HTML.  That&#8217;s not just a sales pitch — that&#8217;s how we recently integrated a Gallery Carousel into the Yahoo! Sports Search Results Page.</p>
-<p><a href="http://sports.search.yahoo.com/search?p=usain+bolt&amp;fr2=sb-top&amp;fr=sports-us-ss" title="usain bolt - Yahoo! Sports Search Results"><img src="/blog-archive/assets/carousel-sports.png"></a></p>
+<p><a href="http://sports.search.yahoo.com/search?p=usain+bolt&amp;fr2=sb-top&amp;fr=sports-us-ss" title="usain bolt - Yahoo! Sports Search Results"><img src="/yuiblog/blog-archive/assets/carousel-sports.png"></a></p>
 <h3>A simple example</h3>
 <p>Let&#8217;s start with a simple example that will cover almost everything you need to know.  The easiest way for you to use the new Gallery Carousel is to let YUI 3 automagically load it from Yahoo&#8217;s content delivery network.  Recalling what a Carousel is, a scrollable list of items, we create a list in HTML.  We include the list in a div, which allows our JavaScript to easily find and work with it.  If you already have some data that is represented in a list-like way in your markup, you might also just put the carousel div around it and test your luck!  It is very important to say that, although we are using an image example here, you can use Gallery Carousel for anything you want!</p>
 <pre>&lt;div class=&quot;carousel&quot; id=&quot;container&quot;&gt;
@@ -670,13 +670,13 @@ table.plug(Y.Plugin.DataTableDataSource, {datasource: ds});
 });</pre>
 <p>(By the way, if you are interested in getting brand new stuff you can visit the <a href="https://github.com/yui/yui3-gallery">YUI 3 Gallery repository</a> on github or <a href="https://github.com/g13n/yui3-gallery/tree/master/src/gallery-carousel">Gopal&#8217;s fork</a>, where he develops Carousel.  If you find a bug, we are always happy to hear about it.)</p>
 <p>Back to our example&#8230; YUI will take it from here.  The loader automatically pulls Gallery Carousel and its dependencies from Yahoo&#8217;s content delivery network.  After that, the Carousel is being initialized and displayed.  The user can then click the left or right arrow to scroll around. Please forgive me for bringing in one line of unnecessary complexity, but I couldn&#8217;t resist.  I used <code>Y.CarouselAnimPlugin</code> to let our carousel slide smoothly from one page to the other instead of just displaying the next page instantly.  Feel free to play with the speed parameter if you wish.</p>
-<p><img src="/blog-archive/assets/carousel-1.png"></p>
+<p><img src="/yuiblog/blog-archive/assets/carousel-1.png"></p>
 <p>As you can see from the screenshot above, the Carousel is up and running.  However, the CSS might not fit very well into the rest of your page.  This leads us to our next section, where we&#8217;ll discuss how to customize Gallery Carousel.</p>
 <h4>Customizing Gallery Carousel</h4>
 <p>Now that you have your Carousel up and running and identified a use case for your website, you hopefully want to integrate it seamlessly.  As mentioned previously, we did so for our Sports Search Results Page.  If you want to increase the number of visible items, for example from three to four, you can do so by modifying the line which instantiates Carousel.</p>
 <pre>var carousel = new Y.Carousel({ boundingBox: "#container",
  contentBox: "#container > ol", numVisible: 4 });</pre>
-<p><img src="/blog-archive/assets/carousel-2.png"></p>
+<p><img src="/yuiblog/blog-archive/assets/carousel-2.png"></p>
 <p>Still not good enough?  Yeah, right.  Luckily CSS allows us to add our own style definitions and even overwrite the initial ones without touching any existing CSS.  So your first step will probably be to remove the borders, because they are quite obtrusive.  Just add the following CSS to your page header.</p>
 <pre>.YUI 3-carousel {
   border: none !important;
@@ -728,7 +728,7 @@ table.plug(Y.Plugin.DataTableDataSource, {datasource: ds});
 					
 
 						<div class="entry">
-							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy"><img src="/blog-archive/assets/yuiconf2010-alloy-20101126-224724.jpg" alt="Liferay engineers Nate Cavanaugh and Eduardo Lundgren speak about AlloyUI at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA." width="510"></a></p>
+							<p><a href="http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy"><img src="/yuiblog/blog-archive/assets/yuiconf2010-alloy-20101126-224724.jpg" alt="Liferay engineers Nate Cavanaugh and Eduardo Lundgren speak about AlloyUI at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA." width="510"></a></p>
 <p>In this session from YUIConf 2010, <a href="http://www.liferay.com/" title="Enterprise open source portal and collaboration software - Liferay.com">Liferay</a> engineers Nate Cavanaugh and Eduardo Lundgren talk about the dozens of high-quality, YUI 3-based components contributed by their <a href="http://alloy.liferay.com/" title="Alloy UI - A project of Liferay">AlloyUI</a> project to the <a href="http://yuilibrary.com/gallery/" title="YUI Library :: Gallery">YUI 3 Gallery</a>.  You can&#8217;t appreciate the full spectrum of what YUI 3 offers without seeing what Nate and Eduardo have made available for your use.</p>
 <p>If the video embed below doesn&#8217;t show up correctly in your RSS reader of choice, be sure to <a href="http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy">click through to watch the high-resolution version of the video on YUI Theater</a>.</p>
 <p>

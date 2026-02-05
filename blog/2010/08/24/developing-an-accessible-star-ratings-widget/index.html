@@ -115,13 +115,13 @@
     <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By Thierry Koblentz</a><span class="date">August 24, 2010<span></div></div>
 
 <div class="blog" id="blog-content">
-	<p>In a hurry? Skip to the <a href="http://tjkdesign.com/lab/stars/demo.html">demo page</a>.<p>Many ecommerce sites, social networking services, and online communities include rating or assessment features. Soliciting people's opinion has even become a business model; there are now sites dedicated to rating products, services, businesses, and more.<p>The most common interface used to display votes is the "star rating system," in which a particular number of points (often expressed as stars) is assigned to an item by each reviewer. We find this model on many sites, from Amazon to Yelp. <div class="figure"><img alt="Examples of star rating systems" height="284" src="/blog-archive/assets/star-examples-20100823-131202.jpg" width="501" /><p class="legend">Figure A. Star rating examples from <a href="http://www.amazon.com">Amazon</a> and <a href="http://www.yelp.com">Yelp</a>.</div> <p>As <a href="#A">Figure A</a> shows, both visual interfaces are similar, but what makes these two solutions <em>interesting</em> is their markup base. One relies on <code>&lt;map&gt;</code>, the other on <code>&lt;img&gt;</code>.<p>You might think that most rating systems would be based on some markup proven to be semantic and &quot;operational&quot; across many User Agents — that is, that rating systems would be based on a specific set of HTML elements and attributes to which one applies behavior and style via JS and CSS. That would make sense, but it is far from the truth. When it comes to markup, authors try just about everything:<ul>
+	<p>In a hurry? Skip to the <a href="http://tjkdesign.com/lab/stars/demo.html">demo page</a>.<p>Many ecommerce sites, social networking services, and online communities include rating or assessment features. Soliciting people's opinion has even become a business model; there are now sites dedicated to rating products, services, businesses, and more.<p>The most common interface used to display votes is the "star rating system," in which a particular number of points (often expressed as stars) is assigned to an item by each reviewer. We find this model on many sites, from Amazon to Yelp. <div class="figure"><img alt="Examples of star rating systems" height="284" src="/yuiblog/blog-archive/assets/star-examples-20100823-131202.jpg" width="501" /><p class="legend">Figure A. Star rating examples from <a href="http://www.amazon.com">Amazon</a> and <a href="http://www.yelp.com">Yelp</a>.</div> <p>As <a href="#A">Figure A</a> shows, both visual interfaces are similar, but what makes these two solutions <em>interesting</em> is their markup base. One relies on <code>&lt;map&gt;</code>, the other on <code>&lt;img&gt;</code>.<p>You might think that most rating systems would be based on some markup proven to be semantic and &quot;operational&quot; across many User Agents — that is, that rating systems would be based on a specific set of HTML elements and attributes to which one applies behavior and style via JS and CSS. That would make sense, but it is far from the truth. When it comes to markup, authors try just about everything:<ul>
 			<li><code>&lt;a&gt;</code>,<li><code>&lt;img&gt;</code>,<li><code>&lt;span&gt;</code>,<li><code>&lt;li&gt;</code>,<li><code>&lt;map&gt;</code>,<li><code>&lt;div&gt;</code>,<li><code>&lt;input&gt;</code>,<li>and more...</ul> <h3>The case of Microformats</h3>
 	<p>Before presenting a few image-based techniques to mark up ratings, I think it is worth mentioning a basic and straightforward approach (from <a href="http://microformats.org/wiki/hreview">Microformats</a>) that uses <em>characters</em>:<pre><code>&lt;abbr class=&quot;rating&quot; title=&quot;3 stars&quot;&gt;***&lt;/abbr&gt;</code></pre><dl>
 			<dt>Pros<dd>It is straightforward and semantic.<dd>The markup is minimal.<dd>The method is not reliant on <abbr title="Cascading Styles Sheet">CSS</abbr>.<dd>The method is not reliant on images.<dd>There is no HTTP request.<dt>Cons<dd>It is impossible to represent half values (i.e. 3.5 stars)<dd>It &quot;works&quot; only with asterisks (&quot;star rating&quot;).<dd>Screen-readers, by default, do not expand abbreviations (which may not be a big deal in this case).</dl> <p><em>Note</em>: I use &quot;*&quot; rather than &#9733; (&#9733;) because screen-readers (at least <a href="http://www.freedomscientific.com/products/fs/jaws-product-page.asp">JAWS</a> and <a href="http://www.nvda-project.org/">NVDA</a>) seem to ignore html entities.<h3>Markup to <em>display</em> image-based ratings</h3>
 	<p>When it comes to display images, authors have many options.<h4>One image per rating</h4>
 	<p>Using a single image:<pre><code>&lt;img src=&quot;4stars.png&quot; alt=&quot;4 out of five&quot;&gt;</code></pre><dl>
-			<dt>One star<dd><img alt="1 out of five" src="/blog-archive/assets/starTutorial/1-star.png" /><dt>Two stars<dd><img alt="2 out of five" src="/blog-archive/assets/starTutorial/2-stars.png" /><dt>Three stars<dd><img alt="3 out of five" src="/blog-archive/assets/starTutorial/3-stars.png" /><dt>Four stars<dd><img alt="4 out of five" src="/blog-archive/assets/starTutorial/4-stars.png" /><dt>Five stars<dd><img alt="5 out of five" src="/blog-archive/assets/starTutorial/5-stars.png" /></dl>
+			<dt>One star<dd><img alt="1 out of five" src="/yuiblog/blog-archive/assets/starTutorial/1-star.png" /><dt>Two stars<dd><img alt="2 out of five" src="/yuiblog/blog-archive/assets/starTutorial/2-stars.png" /><dt>Three stars<dd><img alt="3 out of five" src="/yuiblog/blog-archive/assets/starTutorial/3-stars.png" /><dt>Four stars<dd><img alt="4 out of five" src="/yuiblog/blog-archive/assets/starTutorial/4-stars.png" /><dt>Five stars<dd><img alt="5 out of five" src="/yuiblog/blog-archive/assets/starTutorial/5-stars.png" /></dl>
 		<dl>
 			<dt>Pros<dd>Using one image per rating is straightforward and semantic.<dd>The method is not reliant on <abbr>CSS</abbr>.<dd>Minimal markup.<dt>Cons<dd>It creates many HTTP requests as there are many different images.<dd>On top of the performance issue, it can be a maintenance nightmare as authors have to deal with <em>more</em> assets (images to create, to push to a CDN, to modify when site colors change, etc.).<dd>Text selection <em>is not possible</em> in Opera (at least in version 9.52) as the <em>alternate text</em> is ignored</dl> <h4>One image per unit</h4>
 	<p>From the <abbr title="Web Hypertext Application Technology Working Group">whatwg</abbr>'s <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content-0.html#a-group-of-images-that-form-a-single-larger-picture-with-no-links">working draft</a>: <pre><code>&lt;img alt=&quot;4 out of 5&quot; src=&quot;one-star.png&quot;&gt;
@@ -129,7 +129,7 @@
 &lt;img alt=&quot;&quot; src=&quot;one-star.png&quot;&gt;
 &lt;img alt=&quot;&quot; src=&quot;one-star.png&quot;&gt;
 &lt;img alt=&quot;&quot; src=&quot;no-star.png&quot;&gt;</code></pre><dl>
-			<dt>One star<dd><span class="rating"> <img alt="1 out of five" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Two stars<dd><span class="rating"> <img alt="2 out of five" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Three stars<dd><span class="rating"> <img alt="3 out of five" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Four stars<dd><span class="rating"> <img alt="4 out of five" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Five stars<dd><span class="rating"> <img alt="5 out of five" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/blog-archive/assets/starTutorial/one-star.png" /> </span></dl>
+			<dt>One star<dd><span class="rating"> <img alt="1 out of five" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Two stars<dd><span class="rating"> <img alt="2 out of five" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Three stars<dd><span class="rating"> <img alt="3 out of five" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Four stars<dd><span class="rating"> <img alt="4 out of five" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/no-star.png" /> </span><dt>Five stars<dd><span class="rating"> <img alt="5 out of five" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> <img alt="" src="/yuiblog/blog-archive/assets/starTutorial/one-star.png" /> </span></dl>
 		<dl>
 			<dt>Pros<dd>Using two <code>img</code> elements per rating diminishes the number of HTTP requests.<dd>The method is not reliant on <abbr>CSS</abbr>.<dt>Cons<dd>In Opera, when images are disabled, <em>alternate text</em> is not selectable, and (in small-screen view) that text is rendered with a border which makes it less legible.</dl> <p>Note that this is taken from a <em>controversial working draft</em>. In my opinion, this method is not acceptable because the alternate text does not describe the image <em>accurately</em> and succinctly. Besides, if the basis of this approach is that these images represent content, then why leave some of them with <em>no</em> <code>alt</code> text?<p> On <a href="http://ajaxian.com/">Ajaxian</a>, for example, the author is using alternate text with <em>every single image</em>, which makes a lot of sense if he considers that <em>each one is content</em>: <pre><code>&lt;img [snip] alt=&quot;+&quot; src=&quot;star1.png&quot;/&gt;
 &lt;img [snip] alt=&quot;+&quot; src=&quot;star1.png&quot;/&gt;
@@ -185,7 +185,7 @@
 .r3 img { left: -16.2em; }
 .r4 img { left: -8.1em; }
 </code></pre><dl class="tjk-tip">
-		<dt>One star<dd><span class="r15" title="1 out of 5"><img alt="" height="1" src="/blog-archive/assets/starTutorial/sprite.gif" width="0" />1 out of 5</span><dt>Two stars<dd><span class="r25" title="2 out of 5"><img alt="" height="1" src="/blog-archive/assets/starTutorial/sprite.gif" width="0" />2 out of 5</span><dt>Three stars<dd><span class="r35" title="3 out of 5"><img alt="" height="1" src="/blog-archive/assets/starTutorial/sprite.gif" width="0" />3 out of 5</span><dt>Four stars<dd><span class="r45" title="4 out of 5"><img alt="" height="1" src="/blog-archive/assets/starTutorial/sprite.gif" width="0" />4 out of 5</span><dt>Five stars<dd><span class="r55" title="5 out of 5"><img alt="" height="1" src="/blog-archive/assets/starTutorial/sprite.gif" width="0" />5 out of 5</span></dl>
+		<dt>One star<dd><span class="r15" title="1 out of 5"><img alt="" height="1" src="/yuiblog/blog-archive/assets/starTutorial/sprite.gif" width="0" />1 out of 5</span><dt>Two stars<dd><span class="r25" title="2 out of 5"><img alt="" height="1" src="/yuiblog/blog-archive/assets/starTutorial/sprite.gif" width="0" />2 out of 5</span><dt>Three stars<dd><span class="r35" title="3 out of 5"><img alt="" height="1" src="/yuiblog/blog-archive/assets/starTutorial/sprite.gif" width="0" />3 out of 5</span><dt>Four stars<dd><span class="r45" title="4 out of 5"><img alt="" height="1" src="/yuiblog/blog-archive/assets/starTutorial/sprite.gif" width="0" />4 out of 5</span><dt>Five stars<dd><span class="r55" title="5 out of 5"><img alt="" height="1" src="/yuiblog/blog-archive/assets/starTutorial/sprite.gif" width="0" />5 out of 5</span></dl>
 	<dl>
 		<dt>Pros<dd>This method requires a single HTTP request.<dd>This technique is the only one of the four methods above that <em>reveals</em> content when Firefox users select &quot;hide images&quot; or &quot;make images invisible&quot; (from the developer's toolbar).<dd>When images are unavailable a red &quot;x&quot; appears only in the highest rating (i.e. 5 out of 5) instead of in each one as it is the case with other solutions that rely on <code>img</code> elements.<dt>Cons<dd>The display of images is reliant on <abbr>CSS</abbr>.</dl>
 	<p> It is worth noting that unlike other Image Replacement techniques, this method allows:<ul>
@@ -249,15 +249,15 @@
 	<form action="" class="tjk-form" method="post" name="form_trois">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h3>Styling</h3>
 	<h4>Giving dimensions to the image via CSS</h4>
 	<p>We use <code>em</code> to allow the image to grow or shrink depending on font-size.<h5>Markup</h5>
@@ -268,15 +268,15 @@
 	<form action="" class="tjk-form" id="tjk-une" method="post" name="tjk-une">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<p>As you can see already, clicking on an image selects the corresponding radio button. There is no need for scripting as implicit labeling produces this behavior (except in IE).<h4>Removing the image from the flow</h4>
 	<p>Styling the <code>label</code> with <code>position:relative</code> and the image with <code>position:absolute</code> with <code>top</code>/<code>left</code> values is enough to hide <code>input</code> and text inside the labels.<h5>Markup</h5>
 	<p>Unchanged<h5>CSS</h5><pre><code><ins>label {</ins>
@@ -292,15 +292,15 @@ img {
 	<form action="" class="tjk-form" id="tjk-deux" method="post" name="tjk-deux">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h4>Displaying one star per label</h4>
 	<p>We style the label so its dimensions match the height and width of a single star.<h5>Markup</h5>
 	<p>Unchanged<h5>CSS</h5><pre><code>label {
@@ -320,15 +320,15 @@ img {
 	<form action="" class="tjk-form" id="tjk-trois" method="post" name="tjk-trois">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h4>Displaying the stars horizontally</h4>
 	<p>We remove the <code>br</code>s and we float the labels.<h5>Markup</h5>
 	<p>Unchanged<h5>CSS</h5><pre><code><ins>br {
@@ -352,15 +352,15 @@ img {
 	<form action="" class="tjk-form" id="tjk-quatre" method="post" name="tjk-quatre">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h4>Displaying the sprite image depending on rating</h4>
 	<p>To set a &quot;3 out of 5&quot; rating, we apply the same class to the last two labels. This class will shift the position of the image inside the label.<h5>Markup</h5><pre><code>&lt;fieldset&gt;
 &lt;legend&gt;Rating&lt;/legend&gt;
@@ -392,15 +392,15 @@ img {
 	<form action="" class="tjk-form" id="tjk-cinq" method="post" name="tjk-cinq">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h4>Not relying on image alone to display information</h4>
 	<p>It's important to offer an alternative to the display of stars in case images are not available. This is because labels and radio buttons are styled to be on top of each other. A simple solution is to move <code>input</code> and text off-screen (i.e. using <code>text-indent:-999em</code>) and apply a background color to the labels.<h5>Markup</h5>
 	<p>No change<h5>CSS</h5><pre><code>br {
@@ -433,15 +433,15 @@ img {
 	<form action="" class="tjk-form" id="tjk-six" method="post" name="tjk-six">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h4>Finishing touch</h4>
 	<ul>
 		<li>We use the pseudo-class <code>:hover</code> to create some rollover effect,<li>We hide the fieldset border,<li>We hide the legend,<li>We style the cursor.</ul>
@@ -487,19 +487,19 @@ fieldset {
 }
 legend {
 </ins>  <ins>text-indent:-999em;
-}</ins></code></pre><p><em>Note</em>: <code>label:hover</code> is ignored by IE6 and in Opera the background color bleeds through the images. In the <a href="http://tjkdesign.com/lab/stars/demo.html">demo page</a>, instead of using <code>opacity</code>, I am using a <a href="/blog-archive/assets/starTutorial/star-sprite.gif">different sprite</a> that shows four states.<h4>Result</h4>
+}</ins></code></pre><p><em>Note</em>: <code>label:hover</code> is ignored by IE6 and in Opera the background color bleeds through the images. In the <a href="http://tjkdesign.com/lab/stars/demo.html">demo page</a>, instead of using <code>opacity</code>, I am using a <a href="/yuiblog/blog-archive/assets/starTutorial/star-sprite.gif">different sprite</a> that shows four states.<h4>Result</h4>
 	<form action="" class="tjk-form" id="tjk-sept" method="post" name="tjk-sept">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h3>Displaying the ratings without allowing user interaction</h3>
 	<p>We can make the ratings &quot;read-only&quot; by adding <code>disabled</code> and <code>checked</code> attributes in the appropriate <code>input</code> fields. <h4>Markup</h4><pre><code>&lt;fieldset&gt;
   &lt;legend&gt;Rating&lt;/legend&gt;
@@ -512,21 +512,21 @@ legend {
 	<p>The rule using <code>:hover</code> has been removed h4>Result <form action="" class="tjk-form" id="tjk-huit" method="post" name="tjk-huit">
 		<fieldset>
 			<legend>Rating</legend>
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="1_5" /> 1/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="1_5" /> 1/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="2_5" /> 2/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="2_5" /> 2/5</label>
 			<br />
-			<label><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input checked name="movie" type="radio" value="3_5" /> 3/5</label>
+			<label><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input checked name="movie" type="radio" value="3_5" /> 3/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="4_5" /> 4/5</label>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="4_5" /> 4/5</label>
 			<br />
-			<label class="no_star"><img alt="stars" height="1" src="/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
+			<label class="no_star"><img alt="stars" height="1" src="/yuiblog/blog-archive/assets/starTutorial/small-sprite.gif" width="0" /><input disabled name="movie" type="radio" value="5_5" /> 5/5</label> </fieldset> </form>
 	<h3>Giving more thought to the process</h3>
 	<p>At this point, it is possible to cast votes without script support, but sighted users have no clue about their selection. So we use JavaScript to:<ul>
 			<li>give feedback to the user regarding his selection,<li>give keyboard users a visual clue while they navigate through the radio buttons. </ul> <p>At the same time, we take advantage of using a script to insert <code>title</code> attributes that will create &quot;tooltips&quot; when users hover over the labels/stars.<p>Because of the lack of feedback regarding selection without JavaScript, we style labels and form controls <em>only</em> if there is script support. To do so we use JavaScript to set a flag on the <code>html</code> element and then we create a rule based on descendant selectors containing that hook. If the flag is missing, that rule does not apply and elements are <strong>not</strong> styled.<p class="next">This is the <a href="http://tjkdesign.com/lab/stars/demo.html">demo page</a>, the final product. To see how this solution behaves according to various settings, you may want to use your favorite developer tools to increase text-size, break image paths, disable JavaScript, turn CSS off, and more...<h3>Wrap up</h3>
 	<p>Coming up with a &quot;acceptable&quot; solution requires to identify users' needs, User Agents' peculiarities, User Agents' settings and more - which means extensive testing. <p>In this process, users' feedback is essential because following best practices is not always a sure thing. For example, as mentioned earlier, setting no value for the <code>alt</code> attribute of the images within the labels seem to be the safe thing to do, but it turns out that it creates issues with at least two screenreaders (see <a href="http://public.yahoo.com/~thierryk/test-case/implicit-labeling-and-attributes.html" title="TITLE and ALT create issues in JAWS and NVDA">test case</a>). <p>Also, feedback from assistive devices' users allows to ignore some validation error messages - as the one that the Firefox Accessibility Toolbar reports (according to <a href="http://bestpractices.cita.uiuc.edu/html/nav/form/">http://bestpractices.cita.uiuc.edu/html/nav/form/</a>). <p>The goal here was not to fix everything, though. Being able to cast votes without a pointing device was one of my priorities, but improving the look and feel of the solution in Opera when images are disabled is not something I consider essential.<p>The most interesting part of this &quot;journey&quot; was to make the solution accessible to many users under various conditions, addressing issues such as:<ul>
 			<li>images off,<li>javascript off,<li> CSS off,<li>a combination of the above.</ul> <p>It is also nice to know that this technique relies on <code>img</code> elements rather than background images, which allows the stars to:<ul>
-			<li> resize themselves according to the user's settings, <li>show in high contrast mode,<li>be printed by default (unlike background images). </ul> <p>All of this comes without sacrificing performance, as this solution relies on this single sprite: <img alt="stars" src="/blog-archive/assets/starTutorial/star-sprite.gif" /><h3>Late finding</h3>
+			<li> resize themselves according to the user's settings, <li>show in high contrast mode,<li>be printed by default (unlike background images). </ul> <p>All of this comes without sacrificing performance, as this solution relies on this single sprite: <img alt="stars" src="/yuiblog/blog-archive/assets/starTutorial/star-sprite.gif" /><h3>Late finding</h3>
 	<p>I recently discovered the system Amazon has built for its voting page. It is quite interesting as they serve a <em>different</em> solution depending on script support. If there is script support, they use an image <code>&lt;map&gt;</code> (interesting approach), if there is no script support they use <strong>radio buttons</strong>. In both cases, the solution is <em>accessible</em> to keyboard users, and this helps to maximize access to a feature that is a core differentiator for the Amazon platform.<p>Note that they do not use JavaScript to <em>replace</em> the radio buttons with a image <code>&lt;map&gt;</code>; instead, they use <code>noscript</code> elements in which table markup contains radio buttons. <h3>&quot;Out of the box&quot; solutions</h3>
 	<dl>
 		<dt>Dreamweaver<sup>&reg;</sup><dd><a href="http://labs.adobe.com/technologies/spry/samples/rating/RatingSample.html">Spry Rating Widget</a><dt>YUI<dd><a href="http://www.unessa.net/en/hoyci/projects/yui-star-rating/">Star Rating Script for YUI</a><dd><a href="http://www.devseo.co.uk/blog/view/star-rating-script-with-yui">Star Rating script with YUI</a><dt>JQuery<dd><a href="http://www.javascriptplugins.com/framework/jquery/half-star-rating-plugin/">Half-Star Rating Plugin</a><dd><a href="http://www.javascriptplugins.com/framework/jquery/jquery-ajax-rater/">jQuery Ajax Rater</a><dd><a href="http://www.javascriptplugins.com/framework/jquery/simple-star-rating-system/">Simple Star Rating System</a><dd><a href="http://webtint.net/tutorials/5-star-rating-system-in-php-mysql-and-jquery/">5 star rating system in PHP, MySQL and jQuery</a><dt>Wordpress<dd><a href="http://www.blogperfume.com/plugin-gd-star-rating-system-for-wordpress/">GD Star Rating System for WordPress</a><dd><a href="http://wordpress.org/extend/plugins/gd-star-rating/">GD Star Rating</a><dd><a href="http://www.channel-ai.com/blog/plugins/star-rating/">Star Rating for Reviews</a><dt>Flash<dd><a href="http://www.adriantnt.com/products/rating_system/?gclid=CL3Vm--7oKECFSCjiQodwxTvyA">5 Star rating system component</a><dt>Misc.<dd><a href="http://nofunc.org/AJAX_Star_Rating/">How a star rating should be</a><dd><a href="http://www.duarte.com/starry/">Starry widget 2</a></dl>

@@ -151,7 +151,7 @@ s += "  en-US:\t" + YAHOO.util.Date.format(d, f, "en-US");
 s += "  en-GB:\t" + YAHOO.util.Date.format(d, f, "en-GB");
 
 alert(s);
-</pre><p><a href="/blog-archive/assets/dateformatting/locale-example1.html">See a working example</a>. Note the different output for en-US and en-GB. Similar differences between these two locales can be seen for <code>%r</code>, <code>%c</code>, and <code>%X</code>.<h3>Supporting other languages</h3>
+</pre><p><a href="/yuiblog/blog-archive/assets/dateformatting/locale-example1.html">See a working example</a>. Note the different output for en-US and en-GB. Similar differences between these two locales can be seen for <code>%r</code>, <code>%c</code>, and <code>%X</code>.<h3>Supporting other languages</h3>
 	<p>Now, there are many languages other than English, and many web applications that cater to speakers of these languages which the date formatter should support. While these aren't provided by YUI itself, it is fairly easy to add your own locale patch. Let's create one now for French. We do this by mixing in the <code>YAHOO.util.DateLocale</code> class with our locale definitions using the <a href="http://developer.yahoo.com/yui/docs/YAHOO.lang.html#method_merge">YAHOO.lang.merge</a> method: <pre>
 YAHOO.util.DateLocale["fr"] = YAHOO.lang.merge(YAHOO.util.DateLocale, {
 	a: ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"],
@@ -172,7 +172,7 @@ s += "  Default:\t" + YAHOO.util.Date.format(d, f);
 s += "  fr:   \t" + YAHOO.util.Date.format(d, f, "fr");
 
 alert(s);
-</pre><p><a href="/blog-archive/assets/dateformatting/locale-example2.html">Try it out</a>.<p>Similarly, we can create one for Canadian French by using the French locale as a base. The only difference is in the locale-specific date format <code>%x</code>:<pre>
+</pre><p><a href="/yuiblog/blog-archive/assets/dateformatting/locale-example2.html">Try it out</a>.<p>Similarly, we can create one for Canadian French by using the French locale as a base. The only difference is in the locale-specific date format <code>%x</code>:<pre>
 YAHOO.util.DateLocale["fr-CA"] = YAHOO.lang.merge(YAHOO.util.DateLocale["fr"], {
 	x: "%Y-%m-%d"
 });
@@ -187,8 +187,8 @@ s += "  fr-CH:\t" + YAHOO.util.Date.format(d, f, "fr-CH");
 s += "  de-CH:\t" + YAHOO.util.Date.format(d, f, "de-CH");
 
 alert(s);
-</pre><p><a href="/blog-archive/assets/dateformatting/locale-example3.html">Try it out</a>.<p> <p>Notice that we also try to access <code>fr-CH</code> and <code>de-CH</code> which haven't been defined. In this case, the Date utility falls back to a less specific locale and tries <code>fr</code> and <code>de</code> instead. Since <code>de</code> hasn't been defined either, it falls back to <code>en</code>, which is built in.<p>I've included definitions for a few locales as examples. If you'd like to use these locales, it may make more sense to just include the code directly in your HTML pages, or copy the files to your own servers.<ul>
-			<li><a href="/blog-archive/assets/dateformatting/datelocale-fr.js">fr</a> - French, Canadian French and Swiss French<li><a href="/blog-archive/assets/dateformatting/datelocale-de.js">de</a> - German, and Swiss German<li><a href="/blog-archive/assets/dateformatting/datelocale-hi.js">hi</a> - Hindi<li><a href="/blog-archive/assets/dateformatting/datelocale-ko.js">ko</a> - Korean</ul> </div>
+</pre><p><a href="/yuiblog/blog-archive/assets/dateformatting/locale-example3.html">Try it out</a>.<p> <p>Notice that we also try to access <code>fr-CH</code> and <code>de-CH</code> which haven't been defined. In this case, the Date utility falls back to a less specific locale and tries <code>fr</code> and <code>de</code> instead. Since <code>de</code> hasn't been defined either, it falls back to <code>en</code>, which is built in.<p>I've included definitions for a few locales as examples. If you'd like to use these locales, it may make more sense to just include the code directly in your HTML pages, or copy the files to your own servers.<ul>
+			<li><a href="/yuiblog/blog-archive/assets/dateformatting/datelocale-fr.js">fr</a> - French, Canadian French and Swiss French<li><a href="/yuiblog/blog-archive/assets/dateformatting/datelocale-de.js">de</a> - German, and Swiss German<li><a href="/yuiblog/blog-archive/assets/dateformatting/datelocale-hi.js">hi</a> - Hindi<li><a href="/yuiblog/blog-archive/assets/dateformatting/datelocale-ko.js">ko</a> - Korean</ul> </div>
 
 
 

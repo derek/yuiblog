@@ -331,23 +331,23 @@
 
 						<div class="entry">
 							<div class="authorbox">
-<p><em><strong><img src="/blog-archive/assets/vitalist/headshot.jpg" align="right" alt="" />About the author:</strong>Matt Berg is a co-founder of <a href="http://www.vitalist.com/" title="GTD Software Online for Getting Things Done &raquo; Vitalist">Vitalist</a>, the premier web-based productivity manager for GTD.  Matt is responsible for the UI and usability of the various Vitalist applications.  He has a B.B.A. in MIS from the University of Texas at Austin and has been working on web applications since 2000.  You can follow Matt on Twitter at <a href="http://twitter.com/mattberg" title="Matt Berg on Twitter">@mattberg</a></em></p>
+<p><em><strong><img src="/yuiblog/blog-archive/assets/vitalist/headshot.jpg" align="right" alt="" />About the author:</strong>Matt Berg is a co-founder of <a href="http://www.vitalist.com/" title="GTD Software Online for Getting Things Done &raquo; Vitalist">Vitalist</a>, the premier web-based productivity manager for GTD.  Matt is responsible for the UI and usability of the various Vitalist applications.  He has a B.B.A. in MIS from the University of Texas at Austin and has been working on web applications since 2000.  You can follow Matt on Twitter at <a href="http://twitter.com/mattberg" title="Matt Berg on Twitter">@mattberg</a></em></p>
 </div>
 <h3>About Vitalist</h3>
 <p><a href="http://www.vitalist.com/" title="GTD Software Online for Getting Things Done &raquo; Vitalist">Vitalist</a> is a powerful personal organization tool that closely follows the popular <a href="http://www.davidco.com/" title="David Allen, Getting Things Done&reg; and GTD&reg;">Getting Things Done methodology by David Allen</a>.  With Vitalist, all of your to-dos are online, in GTD format, and ready to be accessed or updated from anywhere.</p>
-<p><img src="/blog-archive/assets/vitalist/main-small.png" alt="" /></p>
+<p><img src="/yuiblog/blog-archive/assets/vitalist/main-small.png" alt="" /></p>
 <h3>Why YUI?</h3>
 <p>We have been using YUI at Vitalist pretty heavily since around version 2.2.0 &mdash; for about three years.  Initially we ended up choosing YUI out of the available JavaScript frameworks for two major reasons: documentation and code footprint.  To this day, I feel YUI continues to lead the pack in both of those areas.</p>
 <p>With user interfaces getting more complex everyday, another major benefit of YUI is the number of available utilities and widgets.  And at Vitalist we are taking full advantage, using the following components (version 2.8.0r4): <a href="http://developer.yahoo.com/yui/animation/">animation</a>, <a href="http://developer.yahoo.com/yui/autocomplete/">autocomplete</a>, <a href="http://developer.yahoo.com/yui/history/">browser history</a>, <a href="http://developer.yahoo.com/yui/calendar/">calendar</a>, <a href="http://developer.yahoo.com/yui/compressor/">compressor</a>, <a href="http://developer.yahoo.com/yui/connection/">connection</a>, <a href="http://developer.yahoo.com/yui/cookie/">cookie</a>, <a href="http://developer.yahoo.com/yui/fonts/">CSS fonts</a>, <a href="http://developer.yahoo.com/yui/reset/">CSS reset</a>, <a href="http://developer.yahoo.com/yui/datasource/">datasource</a>, <a href="http://developer.yahoo.com/yui/dom/">dom</a>, <a href="http://developer.yahoo.com/yui/dragdrop/">drag and drop</a>, <a href="http://developer.yahoo.com/yui/element/">element</a>, <a href="http://developer.yahoo.com/yui/event/">event</a>, <a href="http://developer.yahoo.com/yui/json/">json</a>, <a href="http://developer.yahoo.com/yui/logger/">logger</a>, <a href="http://developer.yahoo.com/yui/menu/">menu</a>, <a href="http://developer.yahoo.com/yui/selector/">selector</a>, <a href="http://developer.yahoo.com/yui/swf/">swf</a>, <a href="http://developer.yahoo.com/yui/container/tooltip/">tooltip</a>, <a href="http://developer.yahoo.com/yui/yahoo/">yahoo</a>.</p>
 <h3>Obsession with Performance and Responsiveness</h3>
 <p>Early on at Vitalist we decided to go the rout of loading most of the necessary components and data on the initial visit to our main application.  This was done for two reasons, UI responsiveness and ease of offline setup.  Let&#8217;s focus on responsiveness.</p>
 <p>While in theory it&#8217;s simple, having JavaScript handle basically all of our UI generation definitely added some complexities.  For example, the speed of appending and traversing the DOM is of the utmost importance.  Something as simple as adding a root element to the <code>getElementsByClassName</code> function boosts performance significantly.  And sometimes we had to sacrifice programmatic convenience for speed.  While the <a href="http://developer.yahoo.com/yui/selector/" title="YUI 2: Selector Utility">YUI 2 Selector Utility</a> can be very powerful, we originally found <code>getElementsByClassName</code> to be faster.  (With the latest releases of YUI 2, the Selector Utility performance seems to have increased quite a bit, but we still default to <code>getElementsByClassName</code> when possible to boost performance &mdash; especially in browsers that have native support, which <a href="http://developer.yahoo.com/yui/dom/" title="YUI 2: Dom Collection">YUI 2&#8242;s Dom Utility</a> leverages.)</p>
-<p><img src="/blog-archive/assets/vitalist/autocomplete-small.png" alt="" /></p>
+<p><img src="/yuiblog/blog-archive/assets/vitalist/autocomplete-small.png" alt="" /></p>
 <p><a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">YUI 2 AutoComplete</a> powers one of the newer features of Vitalist, released in the last year or so, but it has also been one of the hardest implementations in terms of responsiveness and browser CPU usage.  In our initial attempt, every time we needed a new autocomplete control for an input we would create a new instance, destroying it once it was no longer needed.  This typically happens when moving from &#8220;page&#8221; to &#8220;page&#8221; (keep in mind, all of our &#8220;pages&#8221; are just client-generated screens). Internet Explorer struggled with this, often pegging the CPU at 100% and effectively bringing the computer to a halt.  This forced us to turn off autocomplete support for IE.  Two key changes helped us create a more efficient autocomplete.  First, we create just a few generic instances of the autocomplete that can be shared from &#8220;page&#8221; to &#8220;page&#8221;.  Then the only update necessary is setting a new DataSource, which in our implementation requires less CPU effort.  Number two, pay attention to the <code>maxResultsDisplayed</code> property.  Because we allow the full autocomplete list to be displayed without any input (we also added the down arrow key to show the list), we initially set the <code>maxResultsDisplayed</code> to an arbitrarily large number like 10,000.  Simply changing this number to the length of our actual datasource resulted in significant CPU performance gains.</p>
-<p><img src="/blog-archive/assets/vitalist/logger-small.png" alt="" /></p>
+<p><img src="/yuiblog/blog-archive/assets/vitalist/logger-small.png" alt="" /></p>
 <p>For monitoring performance on the front-end, we use the <a href="http://developer.yahoo.com/yui/logger/" title="YUI 2: Logger">YUI 2 Logger Control</a>.  When in debug mode, we output many log updates detailing the various steps of JavaScript processing.  One great thing about the logger is the fact that it keeps a timestamp of when it was last updated.  This has been very helpful when trying to figure out the bottlenecks in our code.  And for more of the server side performance monitoring, <a href="http://developer.yahoo.com/yslow/" title="Yahoo! YSlow for Firebug">YSlow</a> has also been very helpful in making sure we are generating http requests as fast as possible.</p>
 <h3>Most Interesting Implementation Feature</h3>
-<p><img src="/blog-archive/assets/vitalist/dragdrop-small.png" alt="" /></p>
+<p><img src="/yuiblog/blog-archive/assets/vitalist/dragdrop-small.png" alt="" /></p>
 <p>Personally, I had the most fun implementing drag and drop in Vitalist (using <a href="http://developer.yahoo.com/yui/dragdrop/" title="YUI 2: Drag &#038; Drop">YUI 2 Drag and Drop</a>).  Drag and drop actually serves two purposes in Vitalist for the same drag element.  First, we use it for manually re-sorting lists; secondly, we use it for moving tasks between lists.  To accomplish this, two different drop target &#8220;zones&#8221; are used: one for the list elements in the content and one for the list elements in the left sidebar menu.</p>
 <p>The interesting part here is the two different zones function quite differently.  When dragging in the content area, we want the drag element to constantly move the hovered element and append the drag element in the new location.  In the menu area, we don&#8217;t want to anything to shift, but we do want to highlight the menu selection we are hovering over.  Here is a code snippet from the onDragOver method:</p>
 <pre>
@@ -370,7 +370,7 @@ if (destElNodeName === "li") {
 }
 </pre>
 <h3>Building Vitalist components with YUI Compressor</h3>
-<p><img src="/blog-archive/assets/vitalist/admin-small.png" alt="" /></p>
+<p><img src="/yuiblog/blog-archive/assets/vitalist/admin-small.png" alt="" /></p>
 <p>Related to our obsession with performance, we created a web front-end that uses the <a href="http://developer.yahoo.com/yui/compressor/" title="YUI Compressor">YUI Compressor</a> in conjunction with some other scripts to build the various JavaScript and CSS components used throughout Vitalist.  This ensures we are keeping the smallest code footprint possible for each of the major sections of our site.  And as you may know, keeping the number of http requests as low as possible helps on page load times, so combining JavaScript and CSS files where possible can help a great deal.</p>
 <p>Some background is necessary here. Vitalist has its own core set of JavaScript utilities and CSS that are shared across all of the major sections of the site.  Each individual section (such as the main application, iPhone-optimized application, or marketing site) has its own specific JavaScript and CSS.</p>
 <p>So the basics of the build process are as follows:  First, the global JavaScript and CSS files are minified using YUI Compressor.  Then, for each section, the various JavaScript and CSS files are minified, and then combined with the global file to create one single file.  In addition, each section only requires certain components of YUI, so each of the required pieces are combined into a single YUI file, further reducing the number of files needed.</p>
@@ -391,7 +391,7 @@ if (destElNodeName === "li") {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><strong>About the Author:</strong> <em><img src="/blog-archive/assets/pbernou.png" alt="Philippe Bernou" vspace="5" align="right" hspace="10" /><a href="http://fr.linkedin.com/pub/philippe-bernou/7/722/b58">Philippe Bernou</a> is the founder and CEO of the French startup <a href="http://www.etreproprio.com">EtreProprio.com</a>, a real estate website for individuals. After working for four years in Luxemburg on IBM technologies, he launched EtreProprio.com in 2008 with Aurélie Eav.</em></p>
+<p><strong>About the Author:</strong> <em><img src="/yuiblog/blog-archive/assets/pbernou.png" alt="Philippe Bernou" vspace="5" align="right" hspace="10" /><a href="http://fr.linkedin.com/pub/philippe-bernou/7/722/b58">Philippe Bernou</a> is the founder and CEO of the French startup <a href="http://www.etreproprio.com">EtreProprio.com</a>, a real estate website for individuals. After working for four years in Luxemburg on IBM technologies, he launched EtreProprio.com in 2008 with Aurélie Eav.</em></p>
 </div>
 </div>
 <p>EtreProprio.com aims to provide high quality classifieds for free (<a href="http://www.etreproprio.com/21771">see an example of a listing here</a>). There are currently more than five thousand property owners selling their houses on EtreProprio.com. We wanted to provide a simple but powerful interface, and we needed a lot of front-end logic. After a little experimentation, we chose YUI which struck us as powerful, robust, very well documented and highly customizable.  As a consequence, EtreProprio.com is using YUI (2.8.0) heavily for its front-end.</p>
@@ -428,7 +428,7 @@ The following modules are used:</p>
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img align="right" hspace="10" vspace="5" src="/blog-archive/assets/ekoc.jpg" alt="Erol Koç"><em><strong>About the Author:</strong><br />
+<p><img align="right" hspace="10" vspace="5" src="/yuiblog/blog-archive/assets/ekoc.jpg" alt="Erol Koç"><em><strong>About the Author:</strong><br />
 			Erol Koç is a co-founder of <a href="http://www.fybit.com/">Fybit</a>, a Switzerland<br />
 			based startup company. Before joining Fybit, he worked as a software architect for a security company<br />
 			where he was the tech lead for the product&#8217;s web frontend. He has an MS degree in<br />
@@ -533,7 +533,7 @@ public class DemoPanel {
 		<code>@MainPanel</code> annotation above. In the HTML body, you can find<br />
 		the aforementioned HTML button. Riatrax4Js wraps the YUI Button over this button.
 		</p>
-<p><img src="/blog-archive/assets/buttons.jpg" alt="A YUI button with server invocation"></img></p>
+<p><img src="/yuiblog/blog-archive/assets/buttons.jpg" alt="A YUI button with server invocation"></img></p>
 <p>
 		When you compile the application, Riatrax4Js analyses the source files and generates the file app-index.js<br />
 		consisting of the Java classes needed in the browser translated to JavaScript<br />
@@ -549,7 +549,7 @@ public class DemoPanel {
 		easily with interactive features by wrapping ordinary HTML elements with YUI elements.
 		</p>
 <p><a href="http://www.fybit.com/Riatrax4JsNew/showcase.html"><br />
-			<img src="/blog-archive/assets/showcase.jpg" alt="The full Fybit sowcase" width="510"></img><br />
+			<img src="/yuiblog/blog-archive/assets/showcase.jpg" alt="The full Fybit sowcase" width="510"></img><br />
 		</a></p>
 <h3>Beyond demos: &#8220;PublicationManager&#8221; written with Riatrax4Js</h3>
 <p>We used Riatrax4Js to develop a user-friendly web application to<br />
@@ -561,7 +561,7 @@ public class DemoPanel {
 		entered by the users are stored in a database and can be edited and complemented with<br />
 		files with just a few clicks.</p>
 <p><a href="http://www.fybit.com/PaperManager/"><br />
-			<img src="/blog-archive/assets/publicationmanager.jpg" alt="Publication manager for a research group at ETH Zurich" width="510"></img><br />
+			<img src="/yuiblog/blog-archive/assets/publicationmanager.jpg" alt="Publication manager for a research group at ETH Zurich" width="510"></img><br />
 		</a></p>
 <h3>Security</h3>
 <p>
@@ -610,7 +610,7 @@ public class DemoPanel {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img src="/blog-archive/assets/rob_tweed-20100104-162331.jpg" align="right" hspace="10" vspace="5"><em><strong>About the author</strong>: Rob Tweed is the founder and co-director of <a href="http://www.mgateway.com/">M/Gateway Developments Ltd.</a>, which is based in the UK.  He has been working in application development since the early 1980s.  Much of his work has focused around healthcare IT, which is consistently challenging, characterized by large, complex datasets, high security and performance requirements, and limited budgets.  M/Gateway originally developed the Web gateway technology for database vendor InterSystems&#8217; core database product <a href="http://www.intersystems.com/cache/index.html">Cach&eacute;</a>.  M/Gateway&#8217;s current customers are mainly in the healthcare and financial services sectors.  Some run internal intranet applications, but some, such as <a href="http://www.slideshare.net/george.james/missioncritical-ajaxmaking-test-ordering-easier-and-faster-at-quest-diagnostics?type=powerpoint">Quest Diagnostics</a>, run their applications across the open Internet for their customers in the US.</em></p>
+<p><img src="/yuiblog/blog-archive/assets/rob_tweed-20100104-162331.jpg" align="right" hspace="10" vspace="5"><em><strong>About the author</strong>: Rob Tweed is the founder and co-director of <a href="http://www.mgateway.com/">M/Gateway Developments Ltd.</a>, which is based in the UK.  He has been working in application development since the early 1980s.  Much of his work has focused around healthcare IT, which is consistently challenging, characterized by large, complex datasets, high security and performance requirements, and limited budgets.  M/Gateway originally developed the Web gateway technology for database vendor InterSystems&#8217; core database product <a href="http://www.intersystems.com/cache/index.html">Cach&eacute;</a>.  M/Gateway&#8217;s current customers are mainly in the healthcare and financial services sectors.  Some run internal intranet applications, but some, such as <a href="http://www.slideshare.net/george.james/missioncritical-ajaxmaking-test-ordering-easier-and-faster-at-quest-diagnostics?type=powerpoint">Quest Diagnostics</a>, run their applications across the open Internet for their customers in the US.</em></p>
 </div>
 </div>
 <h3><a href="http://www.mgateway.com/ewd.html">Enterprise Web Developer</a> (EWD), a Python/YUI framework</h3>
@@ -661,7 +661,7 @@ public class DemoPanel {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><strong>About the Author:</strong> <em><img src="/blog-archive/assets/real-deprez.jpg" align="right" hspace="10" vspace="5"><a href="http://www.linkedin.com/in/realdeprez">Réal Deprez</a> is the frontend architect at <a href="http://www.edmunds.com/">Edmunds.com</a>, the premier resource for automotive information, based in Santa Monica. A Maine native and Tulane graduate, Réal has been working in frontend engineering professionally for five years.</em></p>
+<p><strong>About the Author:</strong> <em><img src="/yuiblog/blog-archive/assets/real-deprez.jpg" align="right" hspace="10" vspace="5"><a href="http://www.linkedin.com/in/realdeprez">Réal Deprez</a> is the frontend architect at <a href="http://www.edmunds.com/">Edmunds.com</a>, the premier resource for automotive information, based in Santa Monica. A Maine native and Tulane graduate, Réal has been working in frontend engineering professionally for five years.</em></p>
 </div>
 </div>
 <p>Here at <a href="http://www.edmunds.com/">Edmunds</a> (<a href="http://www.edmunds.com/">Edmunds.com</a>) we just launched a redesign of<br />
@@ -682,11 +682,11 @@ public class DemoPanel {
 <p>We chose YUI because of its great documentation, thorough testing, and the scope and depth of its offerings. The library is easy to learn, understand, and implement. The modularity of the system fits in well with our design principles, and the API and custom events make it extremely extensible and easy to integrate. </p>
 <h3>Some Highlights</h3>
 <p>Multimedia Spotlight (tabview, carousel) from <a href="http://www.insideline.com/" title="Inside Line: News, Road Tests, Auto Shows, Car Photos and Videos">InsideLine.com</a>:</p>
-<p><a href="http://www.insideline.com/" title="Inside Line: News, Road Tests, Auto Shows, Car Photos and Videos"><img src="/blog-archive/assets/il-mm-spotlight-20091211-113200.png" alt="InsideLine.com multimedia spotlight."></a></p>
+<p><a href="http://www.insideline.com/" title="Inside Line: News, Road Tests, Auto Shows, Car Photos and Videos"><img src="/yuiblog/blog-archive/assets/il-mm-spotlight-20091211-113200.png" alt="InsideLine.com multimedia spotlight."></a></p>
 <p><a href="http://www.insideline.com/audi/s4/2010/2010-audi-s4-full-test-and-video.html" title="2010 Audi S4 Full Test and Video">Image and Video Galleries</a> (core, JSON and Carousel):</p>
-<p><a href="http://www.insideline.com/audi/s4/2010/2010-audi-s4-full-test-and-video.html" title="2010 Audi S4 Full Test and Video"><img src="/blog-archive/assets/il-gallery-20091211-113030.png" alt="InsideLine.com gallery interface."></a></p>
+<p><a href="http://www.insideline.com/audi/s4/2010/2010-audi-s4-full-test-and-video.html" title="2010 Audi S4 Full Test and Video"><img src="/yuiblog/blog-archive/assets/il-gallery-20091211-113030.png" alt="InsideLine.com gallery interface."></a></p>
 <p><a href="http://www.insideline.com/search/?q=bmw">Ajax Search Widgets</a> (Dom, Event, Connection Manager):</p>
-<p><a href="http://www.insideline.com/search/?q=bmw" title="Search"><img src="/blog-archive/assets/il-search-20091211-112649.png" alt="InsideLine.com search interface."></a></p>
+<p><a href="http://www.insideline.com/search/?q=bmw" title="Search"><img src="/yuiblog/blog-archive/assets/il-search-20091211-112649.png" alt="InsideLine.com search interface."></a></p>
 <p><em><strong>Do you have a YUI Imlementation you&#8217;d like to share on YUIBlog?</strong>  <a href="/yuiblog/blog/contribute/">Check out our contribution guidelines</a> &mdash; we&#8217;d love to hear from you.</em></p>
 						</div>
 
@@ -702,16 +702,16 @@ public class DemoPanel {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><em><a href="http://www.erikhinterbichler.com/" title="Erik Hinterbichler"><img src="/blog-archive/assets/erikhinterbichler-20091204-113045.png" align="right" hspace="10" vspace="5" alt="Erik Hinterbichler of Pattern Insight."></a><a href="http://www.erikhinterbichler.com/" title="Erik Hinterbichler">Erik Hinterbichler</a> (<a href="http://twitter.com/ehinter" title="Follow Erik Hinterbichler on Twitter">@ehinter</a>)is the lead user interface designer/engineer for <a href="http://patterninsight.com/" title="Pattern Insight">Pattern Insight</a>, a technology startup based in Mountain View, CA. Erik is responsible for the UI and the usability of Pattern Insight&#8217;s products. He creates UI mockups and helps develop the web frontend for Pattern Insight&#8217;s flagship products, Code Insight and Log Insight. Erik has a graduate degree in HCI from the University of Illinois at Urbana-Champaign, the university from which Pattern Insight was originally founded. He also holds a B.A. in Computer Science and Math from Dartmouth College.</em></p>
+<p><em><a href="http://www.erikhinterbichler.com/" title="Erik Hinterbichler"><img src="/yuiblog/blog-archive/assets/erikhinterbichler-20091204-113045.png" align="right" hspace="10" vspace="5" alt="Erik Hinterbichler of Pattern Insight."></a><a href="http://www.erikhinterbichler.com/" title="Erik Hinterbichler">Erik Hinterbichler</a> (<a href="http://twitter.com/ehinter" title="Follow Erik Hinterbichler on Twitter">@ehinter</a>)is the lead user interface designer/engineer for <a href="http://patterninsight.com/" title="Pattern Insight">Pattern Insight</a>, a technology startup based in Mountain View, CA. Erik is responsible for the UI and the usability of Pattern Insight&#8217;s products. He creates UI mockups and helps develop the web frontend for Pattern Insight&#8217;s flagship products, Code Insight and Log Insight. Erik has a graduate degree in HCI from the University of Illinois at Urbana-Champaign, the university from which Pattern Insight was originally founded. He also holds a B.A. in Computer Science and Math from Dartmouth College.</em></p>
 </div>
 </div>
-<p><img src="/blog-archive/assets/patterninsight-patchminer-20091204-115202.png"></p>
+<p><img src="/yuiblog/blog-archive/assets/patterninsight-patchminer-20091204-115202.png"></p>
 <h3>About Pattern Insight</h3>
 <p>Pattern Insight provides powerful solutions to index, search, and analyze semi-structured data. By &#8220;semi-structured&#8221; we mean any type of system data &mdash; code, logs, scripts, and more.</p>
 <p>Currently we have two major software suites: &#8220;Code Insight&#8221; and &#8220;Log Insight.&#8221;</p>
-<p><img src="/blog-archive/assets/patterninsight-patchminer-20091204-115410.png"></p>
+<p><img src="/yuiblog/blog-archive/assets/patterninsight-patchminer-20091204-115410.png"></p>
 <p>Code Insight provides several unique capabilities for analyzing source code. At its core is a lightning-fast fuzzy snippet search which scales to billions of lines of code. With snippet search, you can paste in a snippet of code and find all similar snippets across your entire code base, even tolerating variable name changes or line insertions/deletions. Built on top of this fuzzy search capability is Patch Miner, an application for locating buggy code that needs to be fixed. You can input a bug fix and Patch Miner will find all other locations where that bug fix should be applied. Finally, we have Pattern Miner, a copy-paste and duplication detector. Pattern Miner can help you refactor your code base by automatically finding duplicated code, even when variable names have changed. It can also detect IP leaks across different codebases; e.g., if you use both open source and proprietary code and want to prevent code from flowing between them.</p>
-<p><img src="/blog-archive/assets/pattern-insight-patchminer-20091204-114849.png"></p>
+<p><img src="/yuiblog/blog-archive/assets/pattern-insight-patchminer-20091204-114849.png"></p>
 <p>Log Insight is our next-generation log search and analysis product. Log Insight can index TBs of system data and provide sub-second performance for complicated search queries. Furthermore, it enables the creation of persistent signatures that can be used to scan new or archived data for instant matches. Log Insight can also automatically extract common patterns (e.g. for failures) that can then be codified as signatures back to the Pattern Insight engine.</p>
 <h3>The Importance of UI</h3>
 <p>We recognize that possessing great underlying technology is not enough to create a successful product. A good UI is absolutely essential if we want users to be able to see the value of our technology and take full advantage of it. Thus the requirements for our user interfaces drive much of the development of our backend technology.</p>
@@ -743,12 +743,12 @@ public class DemoPanel {
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><img align="right" hspace="10" vspace="5" src="/blog-archive/assets/mohamedfiz.jpg" alt="Mohamed Fiz"><em><a href="http://www.linkedin.com/in/fizix">Fiz Mohamed</a> has worked for OCLC since 2004 where he&#8217;s a senior UI/UX (accessible) designer/developer for a number of high profile products and is responsible for a UI Cookbook/Library. A wealth of commercial freelance experience since 1993 has resulted in a wide range of technical and graphical skills. He lead the UI design for the launch of <a href="http://cinema.com">Cinema.com</a> and also was the UI/UX designer for the US National Archives &#038; Records Administration ARC project.</em></p>
+<p><img align="right" hspace="10" vspace="5" src="/yuiblog/blog-archive/assets/mohamedfiz.jpg" alt="Mohamed Fiz"><em><a href="http://www.linkedin.com/in/fizix">Fiz Mohamed</a> has worked for OCLC since 2004 where he&#8217;s a senior UI/UX (accessible) designer/developer for a number of high profile products and is responsible for a UI Cookbook/Library. A wealth of commercial freelance experience since 1993 has resulted in a wide range of technical and graphical skills. He lead the UI design for the launch of <a href="http://cinema.com">Cinema.com</a> and also was the UI/UX designer for the US National Archives &#038; Records Administration ARC project.</em></p>
 </div>
 </div>
-<p><img src="/blog-archive/assets/yui-tabs-on-worldcat-20091119-102329.png" alt="YUI TabView on Worldcat."></p>
+<p><img src="/yuiblog/blog-archive/assets/yui-tabs-on-worldcat-20091119-102329.png" alt="YUI TabView on Worldcat."></p>
 <p>Here at OCLC &mdash; a worldwide non-profit library cooperative that provides web visibility for library catalogues around the world &mdash; we initially came across <a href="http://developer.yahoo.com/yui/">YUI</a> while discussing <a href="http://developer.yahoo.com/yui/grids/">grid</a> frameworks early in 2008.  Later that year the subject of JavaScript toolkits arose, and we recalled YUI as part of the investigation for one of our products.  We looked at a number of other popular toolkits, and we tried to approach the toolkits from the point of view of both a developer and designer.  While it was a close call between some, I was very impressed with the YUI, especially with the <a href="http://developer.yahoo.com/yui/3/">YUI 3</a> intro at that time which showed that Yahoo’s developers weren’t afraid to make big changes for the better, and had borrowed ideas from other mature toolkits and improved upon them.  Even using <a href="http://developer.yahoo.com/yui/2/">YUI 2</a> would save us time with its fully-featured set of interactive widgets.  On top of that, YUI was supported both by Yahoo and an active developer community.</p>
-<p><img src="/blog-archive/assets/yui-carousel-on-worldcat-20091119-103137.png" alt="YUI Carousel on WorldCat.org"></p>
+<p><img src="/yuiblog/blog-archive/assets/yui-carousel-on-worldcat-20091119-103137.png" alt="YUI Carousel on WorldCat.org"></p>
 <p>YUI components have since found their way onto OCLC&#8217;s <a href="http://worldcat.org">WorldCat.org</a>, a site that allows users to search for an item of interest and discover which libraries near them own that item. <a href="http://worldcat.org">WorldCat.org</a> has become the Web destination for cross-library searching and uses YUI components in several locations:</p>
 <ul>
 <li><strong>TabView</strong>: One the homepage, tabs built on <a href="http://developer.yahoo.com/yui/tabview/">YUI TabView</a> let a user click between a default search of all formats and one of several narrowed, format-specific searches, including books, DVDs and articles. TabView is also used on library profile pages (such as <a href="http://www.worldcat.org/libraries/14229">http://www.worldcat.org/libraries/14229</a>), where users can tab through recently-catalogued items by genre.</li>

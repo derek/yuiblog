@@ -151,7 +151,7 @@
 				<h2 id="post-261"><a href="/yuiblog/blog/2008/10/17/loading-yui/" rel="bookmark" title="Permanent Link to Loading YUI: Seeds, Core, and Combo-handling">Loading YUI: Seeds, Core, and Combo-handling</a></h2>
 				<small>October 17, 2008 at 1:14 pm by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/yuiblog/blog/2008/10/17/loading-yui/#comments" title="Comment on Loading YUI: Seeds, Core, and Combo-handling">7 Comments</a></small>
 						
-			<p><img src="/blog-archive/assets/loading/core.png" alt="Kweight of common YUI baseline assets." width="510" height="340" /></p>
+			<p><img src="/yuiblog/blog-archive/assets/loading/core.png" alt="Kweight of common YUI baseline assets." width="510" height="340" /></p>
 <p>With <a href="/yuiblog/blog/2008/10/01/yui-260/">the 2.6.0 release of YUI</a>, the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> now supports combo-handling for both JavaScript and CSS files coming off of Yahoo&#8217;s CDN. YUI Loader is the utility that understands the YUI module structure and dependency list and can load any YUI component on the page on-demand. The addition of combo-handling makes YUI Loader an even more viable option for many implementations, because you&#8217;re never more than two HTTP requests (one for JS, one for CSS) away from downloading the requirements for any YUI component(s) to your page (not including image assets).</p>
 
 <p>In this short article, I&#8217;ll take you through three common approaches to loading YUI on the page and review the filesize breakdown and benefits of each approach. All filesizes discussed here are minified and gzipped KB.</p>
@@ -193,7 +193,7 @@ loader.insert();</pre>
 
 <p>Loader is the smallest available YUI seed file; from this 9.4KB base, you can bootstrap anything else in the library with a single HTTP request for JavaScript. Let&#8217;s look at the K-weight profile for this request in which we use YUI Loader as a seed file to bootstrap your JavaScript dependencies for the TabView Control.</p>
 
-<p><img src="/blog-archive/assets/loading/loader-tabview.png" alt="Loading TabView with YUI Loader" width="306" height="384" /></p>
+<p><img src="/yuiblog/blog-archive/assets/loading/loader-tabview.png" alt="Loading TabView with YUI Loader" width="306" height="384" /></p>
 
 <p>So, our initial baseline K-weight was 9.4KB; YUI Loader then downloaded the rest of YUI Core (<a href="http://developer.yahoo.com/yui/dom/">Dom</a> and <a href="http://developer.yahoo.com/yui/event/">Event</a>) along with <a href="http://developer.yahoo.com/yui/element/">Element</a> and <a href="http://developer.yahoo.com/yui/tabview/">TabView</a>, all a single 13.3KB download.</p>
 <h2>2. Using YUI Loader Plus Core as a Seed File</h2>
@@ -238,7 +238,7 @@ src=&quot;http://yui.yahooapis.com/combo?2.6.0/build/yuiloader-dom-event/yuiload
   </ul>
 <p>Because most pages in a YUI-driven application are going to use both Event and Dom, this is often a good universal foundation from which to bootstrap YUI-dependent modules.</p>
 <p>In the scenario where we&#8217;re loading TabView, here&#8217;s how the JavaScript flow breaks down with YUI Loader + YUI Core as our foundation:</p>
-<p><img src="/blog-archive/assets/loading/loadercore-tabview.png" alt="Loading TabView with YUI Loader + YUI Core as a foundation." width="300" height="389" /></p>
+<p><img src="/yuiblog/blog-archive/assets/loading/loadercore-tabview.png" alt="Loading TabView with YUI Loader + YUI Core as a foundation." width="300" height="389" /></p>
 <p>The overall K-weight is about the same as with the simple YUI Loader seed; we have a heavier initial load, but immediate access to the goodness of YUI&#8217;s Core.  And our subsequent HTTP request to complete TabView&#8217;s JS requirements drops to a small 5.4KB.</p>
 <h2>3. Combining All Requests in a Single File</h2>
 <p>Where loading scripts on-demand doesn&#8217;t make sense for your application (for example, if some of the core interactions on the page have script-driven enhancements that you want to render as quickly as possible), you can still take advantage of combo-handling on the Yahoo CDN by configuring your request on the <a href="http://developer.yahoo.com/yui/articles/hosting/">Dependency Configurator</a>. (<a href="http://developer.yahoo.com/yui/articles/hosting/?tabview&amp;MIN&amp;norollup">Here&#8217;s a configuration for TabView using combo-handling</a>.) </p>
@@ -262,7 +262,7 @@ YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
 <p>The takeaway here is that there are several ways to leverage combo-handling, and YUI Loader&#8217;s support for combo-handling, to bring the power of YUI into your application with minimal HTTP requests.
 </p>
 <p>Here are some common implementations of YUI components using the combo-handler; this visualization is, again, of minified and gzipped K-weight for the JS dependencies:</p>
-<p><img src="/blog-archive/assets/loading/kweight.png" alt="K-weight for common YUI components." width="510" height="479" /></p>
+<p><img src="/yuiblog/blog-archive/assets/loading/kweight.png" alt="K-weight for common YUI components." width="510" height="479" /></p>
 <p>Any of these single HTTP requests weighs less on the wire than the image above. <a href="/yuiblog/blog/2006/10/16/pageweight-yui0114/">As I&#8217;ve discussed elsewhere</a>, the <em>a la carte</em> design of YUI means that you can add components to any of these payloads at a big discount because you&#8217;ll be adding only incremental dependencies. For example, the DataTable payload in the image above could have TabView added to it with just a 3.5KB additional cost.  Using YUI Loader and its new combo-handling functionality makes this process even more performant and responsive in your applications.</p>			
 			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=/yuiblog/blog/2008/10/17/loading-yui/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=/yuiblog/blog/2008/10/17/loading-yui/" title="find related discusion on technorati">technorati</a></p>
 			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=/yuiblog/blog/2008/10/17/loading-yui/&amp;title=Loading YUI: Seeds, Core, and Combo-handling" title="bookmark Loading YUI: Seeds, Core, and Combo-handling in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=/yuiblog/blog/2008/10/17/loading-yui/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=/yuiblog/blog/2008/10/17/loading-yui/&amp;title=Loading YUI: Seeds, Core, and Combo-handling" title="post Loading YUI: Seeds, Core, and Combo-handling to reddit">reddit!</a></p>
@@ -292,7 +292,7 @@ YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
 				<h2 id="post-260"><a href="/yuiblog/blog/2008/10/17/video-crockford-webforward/" rel="bookmark" title="Permanent Link to YUI Theater: Douglas Crockford, &#8220;Web Forward&#8221;">YUI Theater: Douglas Crockford, &#8220;Web Forward&#8221;</a></h2>
 				<small>October 17, 2008 at 8:52 am by Eric Miraglia | In <a href="/yuiblog/blog/category/yui-theater/" title="View all posts in YUI Theater" rel="category tag">YUI Theater</a> | <a href="/yuiblog/blog/2008/10/17/video-crockford-webforward/#comments" title="Comment on YUI Theater: Douglas Crockford, &#8220;Web Forward&#8221;">6 Comments</a></small>
 						
-			<p><a href="http://video.yahoo.com/watch/3730137/10250950"><img src="/blog-archive/assets/crockford-webforward.png" alt="Douglas Crockford speaks at Yahoo on October 9, 2008." width="510" height="340"></a></p>
+			<p><a href="http://video.yahoo.com/watch/3730137/10250950"><img src="/yuiblog/blog-archive/assets/crockford-webforward.png" alt="Douglas Crockford speaks at Yahoo on October 9, 2008." width="510" height="340"></a></p>
 
 <p>Douglas keynoted our 2008 Frontend Engineering Summit here at Yahoo last week. In this talk, &quot;Web Forward,&quot; he proposes that the standards processes have stagnated, leaving us with an inadequate platform and no orderly mechanism for improving it. The solution, he suggests, is a disorderly mechanism: another browser war. In a new browser war, the web engineering community will face short-term pain but the Web&#8217;s larger user community, upwards of a billion people, will ultimately benefit as new ideas bubble to the top. The best of the new ideas can then be incorporated into a new generation of standards once they&#8217;ve been vetted by the community and proven in practice.</p>
 
@@ -352,7 +352,7 @@ YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
 			    <div class="interview">
       <div class="intro">
         <p>
-          <img src="/blog-archive/assets/satyam.jpg" alt=
+          <img src="/yuiblog/blog-archive/assets/satyam.jpg" alt=
           "Daniel Barreiro (Satyam)" width="160" height="206" align=
           "right"/><strong>About the Author:</strong> Daniel Barreiro (screen
           name Satyam) has been around for quite some time. The ENIAC was
@@ -495,7 +495,7 @@ YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
 				<h2 id="post-257"><a href="/yuiblog/blog/2008/10/14/video-yui3/" rel="bookmark" title="Permanent Link to YUI Theater: Eric Miraglia and Matt Sweeney &mdash; &#8220;YUI 3: A Look Ahead&#8221;">YUI Theater: Eric Miraglia and Matt Sweeney &mdash; &#8220;YUI 3: A Look Ahead&#8221;</a></h2>
 				<small>October 14, 2008 at 7:52 pm by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a>, <a href="/yuiblog/blog/category/yui-theater/" title="View all posts in YUI Theater" rel="category tag">YUI Theater</a> | <a href="/yuiblog/blog/2008/10/14/video-yui3/#comments" title="Comment on YUI Theater: Eric Miraglia and Matt Sweeney &mdash; &#8220;YUI 3: A Look Ahead&#8221;">3 Comments</a></small>
 						
-			<p><a href="http://video.yahoo.com/watch/3711767/10207432"><img src="/blog-archive/assets/matteric.png" alt="Matt Sweeney and Eric Miraglia of the YUI Team at Yahoo." width="510" height="186"></a></p>
+			<p><a href="http://video.yahoo.com/watch/3711767/10207432"><img src="/yuiblog/blog-archive/assets/matteric.png" alt="Matt Sweeney and Eric Miraglia of the YUI Team at Yahoo." width="510" height="186"></a></p>
 
 <p>Matt and I got together at Yahoo&#8217;s internal Frontend Engineering Summit (an annual gathering of our frontend engineering community) to talk about YUI 3.  We&#8217;re pleased to share video of that talk with you here.</p>
 
@@ -581,7 +581,7 @@ YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
 				<h2 id="post-255"><a href="/yuiblog/blog/2008/10/05/london-meetup/" rel="bookmark" title="Permanent Link to YUI London Meetup on October 16">YUI London Meetup on October 16</a></h2>
 				<small>October 5, 2008 at 7:07 pm by Eric Miraglia | In <a href="/yuiblog/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/yuiblog/blog/2008/10/05/london-meetup/#comments" title="Comment on YUI London Meetup on October 16">4 Comments</a></small>
 						
-			<p><a href="http://upcoming.yahoo.com/event/1154778/"><img src="/blog-archive/assets/londonmeetup.gif" alt="YUI London Meetup on Upcoming" width="230" height="410" hspace="10" align="left" /></a>If you&#8217;re in London, please join us for <a href="http://upcoming.yahoo.com/event/1154778/">a YUI meetup on October 16 at 6:15 p.m. at the Yahoo! UK office on Shaftesbury Avenue</a>.</p>
+			<p><a href="http://upcoming.yahoo.com/event/1154778/"><img src="/yuiblog/blog-archive/assets/londonmeetup.gif" alt="YUI London Meetup on Upcoming" width="230" height="410" hspace="10" align="left" /></a>If you&#8217;re in London, please join us for <a href="http://upcoming.yahoo.com/event/1154778/">a YUI meetup on October 16 at 6:15 p.m. at the Yahoo! UK office on Shaftesbury Avenue</a>.</p>
 
 <p>Sophie Major and Christian Heilmann from the Yahoo Developer Network will be the hosts on the London side, and YUI engineers Matt Sweeney, Adam Moore and Satyen Desai will be participating by videoconference to give you a tour of (and progress report on) <a href="http://developer.yahoo.com/yui/3/">YUI&#8217;s upcoming 3.0 release</a>. </p>
 

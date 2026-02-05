@@ -347,17 +347,17 @@
 <p>Strategies such as combining scripts, stylesheets, or images reduce the number of HTTP requests for <i>both</i> an empty and a full cache page view. Configuring components to have an Expires header with a date in the future reduces the number of HTTP requests for only the full cache page view.</p>
 <p>Previously, we observed where the time is spent when a user requests <a href="http://www.yahoo.com">http://www.yahoo.com</a> with an empty cache. When a user loads the page, the browser downloads approximately 30 components (see Figure 1). Figure 2 is a graphical view of where the time is spent loading <a href="http://www.yahoo.com">http://www.yahoo.com</a> with a full cache. Each bar represents a specific component requested by the browser. Since components are already in the cache on a full cache page view, and the Expires header has a date in the future, the browser only has to download three components including the HTML document</p>
 <div>
-	<img src="/blog-archive/assets/performance/pageload-empty.gif" alt="Figure 1. Loading http://www.yahoo.com with an empty cache" width="500" height="355" longdesc="Chart in picture shows linear loading of approximately 30 components required by yahoo.com homepage."></p>
+	<img src="/yuiblog/blog-archive/assets/performance/pageload-empty.gif" alt="Figure 1. Loading http://www.yahoo.com with an empty cache" width="500" height="355" longdesc="Chart in picture shows linear loading of approximately 30 components required by yahoo.com homepage."></p>
 <h4>Figure 1. Loading http://www.yahoo.com with an empty cache</h4>
 </div>
 <div>
-	<img src="/blog-archive/assets/performance/pageload-full.gif" alt="Figure 2. Loading http://www.yahoo.com with a full cache" width="500" height="90" longdesc="This chart shows that only 3 components are necessary when the user has the other resources in cache."></p>
+	<img src="/yuiblog/blog-archive/assets/performance/pageload-full.gif" alt="Figure 2. Loading http://www.yahoo.com with a full cache" width="500" height="90" longdesc="This chart shows that only 3 components are necessary when the user has the other resources in cache."></p>
 <h4>Figure 2. Loading http://www.yahoo.com with a full cache</h4>
 </div>
 <p>Table 1 shows a summary of the total size and number of requests for each type of component to load <a href="http://www.yahoo.com">http://www.yahoo.com</a>. How much does a full cache benefit the user? Loading the page over my cable modem at home, it took 2.4 seconds with an empty cache and only 0.9 seconds with a full cache. The full cache page view had 90% fewer HTTP requests and 83% fewer bytes to download than the empty cache page view.</p>
 <div>
 <h4>Table 1. Empty and Full Cache Summary to load http://www.yahoo.com</h4>
-<p>	<img src="/blog-archive/assets/performance/empty-full.gif" alt="Table 1. Empty and Full Cache Summary to load http://www.yahoo.com" width="485" height="157"></p>
+<p>	<img src="/yuiblog/blog-archive/assets/performance/empty-full.gif" alt="Table 1. Empty and Full Cache Summary to load http://www.yahoo.com" width="485" height="157"></p>
 <p>* Times were measured over cable modem (~2.5 mbps).</p>
 </div>
 <h3>How many users view Yahoo! pages with a full cache?</h3>
@@ -391,7 +391,7 @@ Last-Modified: Wed, 28 Sep 2006 23:49:57 GMT
 </pre>
 <p>Figure 3 shows the percentage of users and page views with an empty cache plotted over each day of the experiment. On the first day of the experiment, no one had these images cached so the empty cache percentage was 100%. As the days passed more users had the images cached, so the percentages dropped until at some point it reached a constant steady state.</p>
 <div>
-	<img src="/blog-archive/assets/performance/cache-expt.gif" alt="Figure 3. Percentage of Users and Page Views with an Empty Cache"></p>
+	<img src="/yuiblog/blog-archive/assets/performance/cache-expt.gif" alt="Figure 3. Percentage of Users and Page Views with an Empty Cache"></p>
 <h4>Figure 3. Percentage of Users and Page Views with an Empty Cache</h4>
 </div>
 <h3>Suprising Results</h3>
@@ -420,7 +420,7 @@ Last-Modified: Wed, 28 Sep 2006 23:49:57 GMT
 <p id="figure1">Using a packet sniffer, we discover what takes place in that other 80%.  Figure 1 is a graphical view of where the time is spent loading http://www.yahoo.com with an empty cache.  Each bar represents a specific component and is shown in the order started by the browser.  The first bar is the time spent for the browser to retrieve just the HTML document.  Notice only 10% of the time is spent here for the browser to request the HTML page, and for apache to stitch together the HTML and return the response back to the browser.  The other 90% of the time is spent fetching other components in the page including images, scripts and stylesheets. </p>
 <div class="figure">
 <h4 class="caption">Figure 1. Loading http://www.yahoo.com</h4>
-<p>	<img class="figure" src="/blog-archive/assets/performance/pageload.gif" alt="Figure 1. Loading http://www.yahoo.com" width="500" height="355" id="pageload" longdesc="This image is a chart showing the sequential loading of the 29 components that make up the yahoo.com homepage. The first component is the html itself, and which only takes 0.24 seconds. The remaining 28 items are images, scripts, and stylesheets. The takeaway from the graphic is that nearly all the time is on subsequent requests, not the initial server response.">
+<p>	<img class="figure" src="/yuiblog/blog-archive/assets/performance/pageload.gif" alt="Figure 1. Loading http://www.yahoo.com" width="500" height="355" id="pageload" longdesc="This image is a chart showing the sequential loading of the 29 components that make up the yahoo.com homepage. The first component is the html itself, and which only takes 0.24 seconds. The remaining 28 items are images, scripts, and stylesheets. The takeaway from the graphic is that nearly all the time is on subsequent requests, not the initial server response.">
 </div>
 <p id="table1">Table 1 shows popular web sites spending between 5% and 38% of the time downloading the HTML document. The other 62% to 95% of the time is spent making HTTP requests to fetch all the components in that HTML document (i.e. images, scripts, and stylesheets).  The impact of having many components in the page is exacerbated by the fact that browsers download only two or four components in parallel per hostname, depending on the HTTP version of the response and the user&#8217;s browser.  Our experience shows that reducing the number of HTTP requests has the biggest impact on reducing response time and is often the easiest performance improvement to make.</p>
 <div class="figure" id="loading-popular-web-sites">

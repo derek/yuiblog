@@ -626,10 +626,10 @@ border: 5px solid teal;
 						<div class="entry">
 							<div class="interview">
 <div class="intro"><em></p>
-<p><img src="/blog-archive/assets/mrpurple/murray.jpg" width="150" height="150" hspace="10" vspace="5" align="right" alt="Murray Macchio">Murray Macchio is a Senior Software Developer with over 7 years of web development experience located in Kingston, Ontario in Canada.  He is currently working with a company called SMT Plus to help streamline their e-learning development process.  He will soon be starting as a web developer at a company called Front Runner Pro.
+<p><img src="/yuiblog/blog-archive/assets/mrpurple/murray.jpg" width="150" height="150" hspace="10" vspace="5" align="right" alt="Murray Macchio">Murray Macchio is a Senior Software Developer with over 7 years of web development experience located in Kingston, Ontario in Canada.  He is currently working with a company called SMT Plus to help streamline their e-learning development process.  He will soon be starting as a web developer at a company called Front Runner Pro.
 </p>
 <p></em></div>
-<p><img src="/blog-archive/assets/mrpurple/screenshot.gif" width="510" height="398" alt="Screenshot of Mr. Purple's Movies and More web site"></p>
+<p><img src="/yuiblog/blog-archive/assets/mrpurple/screenshot.gif" width="510" height="398" alt="Screenshot of Mr. Purple's Movies and More web site"></p>
 <p class="q"><strong>Tell us a little about your project.</strong></p>
 <p>I had been putting off a website for my uncle&#8217;s company for some time, but with the help of YUI, I built his entire site from scratch in just 3 days.</p>
 <p class="q"><strong>What is your background with YUI? Why did you choose YUI for this project?</strong></p>
@@ -638,7 +638,7 @@ border: 5px solid teal;
 <p>I used the <a href="http://developer.yahoo.com/yui/carousel/">Carousel</a>, <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete</a> and my absolute favorite, the <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>.</p>
 <p class="q"><strong>What have been the challenges of using YUI in this project?</strong></p>
 <p>The main challenges were with a couple of Carousel bugs.  These were issues I did expect, as it is still in beta.  The only really major issue I had was figuring out why 2 carousels on the same page didn&#8217;t play nicely together.  Then I realized that their items shared the same IDs.</p>
-<p><img src="/blog-archive/assets/mrpurple/catalogue.gif" width="510" height="372" alt="Screenshot of catalogue page"></p>
+<p><img src="/yuiblog/blog-archive/assets/mrpurple/catalogue.gif" width="510" height="372" alt="Screenshot of catalogue page"></p>
 <p class="q"><strong>What are the things you&#8217;re most proud of in this project?</strong></p>
 <p>I am proud of the fact that I was able to provide a rich user experience very quickly.  Specifically, the catalog page that uses the AutoComplete widget with the DataTable allows users to easily browse a movie catalogue of over 4000 movies and games.</p>
 <p class="q"><strong>What are some upcoming features/projects you are tackling with YUI?</strong></p>
@@ -714,7 +714,7 @@ border: 5px solid teal;
 I wanted to get my feet wet with the finalized <a href="http://developer.yahoo.com/yui/3/widget/">widget infrastructure</a> presented in YUI 3.1.0, and I&#8217;ve always felt the best way to do that is to write some code. I wanted something easy, and I found that in a CSS ratings implementation I found on <a href="http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/">Komodo Media</a>. The resulting widget is the <a href="http://yuilibrary.com/gallery/show/ratings">YUI3 Ratings Widget</a> (<a href="http://peterpeterson.net/gallery-ratings/">demo</a>). The bulk of the work of the widget is handled by CSS and is described well in the Komodo Media article. The only trouble with that widget, was once a rating was chosen, nothing really happened unless the page was reloaded, and when the widget lost focus, it lost its rating. This is where the YUI 3 Gallery Ratings widget comes in.
 </p>
 <p>
-  <a href="http://peterpeterson.net/gallery-ratings/" title="Ratings Widget Tester"><img src="/blog-archive/assets/ratings/ratings1.png" /></a>
+  <a href="http://peterpeterson.net/gallery-ratings/" title="Ratings Widget Tester"><img src="/yuiblog/blog-archive/assets/ratings/ratings1.png" /></a>
 </p>
 <p>
 My goals for the project were:
@@ -752,7 +752,7 @@ var myRating = new Y.Ratings({ srcNode: "#myWidget" });
 myRating.render();
 </pre>
 <p>
-I felt that it was important to make this widget easy to customize and so I added some configuration to the constructor. <code>inline</code> when set to true will display the rating inline with text on the page (defaults to false). <code>skin</code> can be set to &#8220;small&#8221; to decrease the size of the widget ( Example: <img src="/blog-archive/assets/ratings/ratings2.png" /> )
+I felt that it was important to make this widget easy to customize and so I added some configuration to the constructor. <code>inline</code> when set to true will display the rating inline with text on the page (defaults to false). <code>skin</code> can be set to &#8220;small&#8221; to decrease the size of the widget ( Example: <img src="/yuiblog/blog-archive/assets/ratings/ratings2.png" /> )
 </p>
 <p>
 On its own, the ratings widget does little more that set up the rating interaction for the user. A little more work needs to be done to actually use the value. I&#8217;m leaving that up to the implementer to consider; whether to add a callback to the event fired when the rating changes, or to supply a plugin to the widget to handle it automatically. To get you started, whenever a rating is changed the <code>ratingChange</code> event fires. It is easy to set up an event listener to catch the <code>ratingChange</code> event for all the widgets on the page. In this example, I log the Rating Widget <code>srcNode</code>&#8216;s id, the previous rating, and the new rating for any rating widget on the page when the rating changes:
@@ -785,7 +785,7 @@ Future ideas for the project:<br />
 					
 
 						<div class="entry">
-							<p><a href="http://www.meetup.com/BayJax/calendar/13308905/?from=list&#038;offset=0"><img src="/blog-archive/assets/nodejs-sombrero.png"></a></p>
+							<p><a href="http://www.meetup.com/BayJax/calendar/13308905/?from=list&#038;offset=0"><img src="/yuiblog/blog-archive/assets/nodejs-sombrero.png"></a></p>
 <p>BayJax organizer <a href="http://twitter.com/goonieiam">Gonzalo Cordero</a> has announced that it&#8217;s time for another <a href="http://www.meetup.com/BayJax/" title="BayJax - The Bay Area Ajax and JavaScript Meetup (Palo Alto, CA) - Meetup.com">BayJax</a>, and this time we&#8217;ll be celebrating the explosion of server-side JavaScript with Cinco de Node.js at Yahoo!.  We have three fantastic speakers: Ryan Dahl, creator of Node.js; Elijah Insua, creator of one of the major DOM abstractions for Node; and Dav Glass, a YUI engineer who has been blogging about his work getting YUI 3 running under Node.</p>
 <p>Please join us on May 5th @Yahoo! HQ from 5:30pm to 9:00 p.m. As Gonzalo puts it: &#8220;Sombreros, ponchos and luchador outfits are encouraged.&#8221;  <a href="http://www.meetup.com/BayJax/calendar/13308905/?from=list&#038;offset=0">RSVP on the BayJax Meetup page</a>.</p>
 <p>Ryan describes his talk this way:</p>
