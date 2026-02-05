@@ -379,7 +379,42 @@ It&#8217;s interesting to note that the filter doesn&#8217;t change the image; r
 <p>First, let&#8217;s have a baseline page &mdash; one that has a hundred &lt;div&gt;s with the same non-filtered background image. Then let&#8217;s have a second page with a filter applied to the divs (all 100 divs use the same). A hundred elements with filtered backgrounds is unlikely to be found in a normal page, but a little exaggeration will help with the measurements.</p>
 <p>The time is measured from the start of the page to the onload event of the page, after the images have been cached, thus eliminating the time required to download the page and the images. The memory consumption is measured with the help of the <a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx">ProcessExplorer</a> tool and given as the before/after delta of the private bytes measurement, showing the &#8220;price&#8221; of rendering the page.
 <p>Here are the median results from 10 runs in IE6 on a PC with a dual 2GHz CPU and 500M RAM. On a less powerful computer, the load times are likely to be even worse.</p>
-<style type="text/css">td.number{text-align:right}</style>
+<style type="text/css">td.number{text-align:right}
+        /* Site Header */
+        #hd {
+            padding: 25px 20px 20px;
+        }
+        #hd .site-header {
+            display: flex;
+            align-items: center;
+        }
+        #hd .site-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        #hd .site-logo img {
+            height: 52px;
+            width: auto;
+        }
+        #hd .site-title {
+            margin: 0;
+            font-size: 32px;
+            color: #30418C;
+            line-height: 1.2;
+            letter-spacing: normal;
+        }
+        #hd .site-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        #hd .site-tagline {
+            margin: 5px 0 0;
+            font-size: 15px;
+            color: #666;
+            letter-spacing: normal;
+        }
+    </style>
 <table border="1">
 <caption>AlphaImageLoader test results</caption>
 <tbody>
@@ -671,24 +706,7 @@ href=&quot;http://yui.yahooapis.com/2.6.0/build/yuitest/assets/testlogger.css&qu
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
-					<li>
-				<a href="/yuiblog/blog/2013/04/26/yui-weekly-for-april-26th-2013/" title="YUI Weekly for April 26th, 2013">YUI Weekly for April 26th, 2013</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2013/04/26/yui-target-environments-update/" title="YUI Target Environments Update">YUI Target Environments Update</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2013/04/24/yui-3-10-0-released/" title="YUI 3.10.0 Released">YUI 3.10.0 Released</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2013/04/23/yui3-and-alloyui-at-jax-de/" title="YUI 3 and AlloyUI at JAX.de">YUI 3 and AlloyUI at JAX.de</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2013/04/21/yui-weekly-for-april-19th-2013/" title="YUI Weekly for April 19th, 2013">YUI Weekly for April 19th, 2013</a>
-						</li>
-				</ul>
-		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
 	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
 	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
 	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>

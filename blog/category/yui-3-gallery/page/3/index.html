@@ -328,7 +328,42 @@
 			background-color:#232554;
 			color:white;
 		}</p>
-</style>
+
+        /* Site Header */
+        #hd {
+            padding: 25px 20px 20px;
+        }
+        #hd .site-header {
+            display: flex;
+            align-items: center;
+        }
+        #hd .site-brand {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        #hd .site-logo img {
+            height: 52px;
+            width: auto;
+        }
+        #hd .site-title {
+            margin: 0;
+            font-size: 32px;
+            color: #30418C;
+            line-height: 1.2;
+            letter-spacing: normal;
+        }
+        #hd .site-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        #hd .site-tagline {
+            margin: 5px 0 0;
+            font-size: 15px;
+            color: #666;
+            letter-spacing: normal;
+        }
+    </style>
 <p>The <a href="http://developer.yahoo.com/yui/" title="YUI Library">YUI 2 JavaScript and CSS library</a> has been an enormously successful product in the four-plus years since we released it in 2006. YUI 2 distributions have been downloaded more than 2 million times, and thousands of developers today use YUI without ever downloading the files, pulling instead from either the Yahoo! or Google CDN.<sup><a href="#configurator">1</a></sup>  YUI traffic on the Yahoo! CDN has grown steadily over the years since we made it public, and today we estimate that <code>yui.yahooapis.com</code> is serving about 15 billion files monthly.</p>
 <p>It&#8217;s no secret, though, that YUI engineers at Yahoo! are spending most of their energy today working on <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a>, the successor project to YUI 2, and one that applies many of the lessons learned by YUI engineers in the years we spent building YUI 2.  YUI 3 today is robust and feature-rich. At the utility level (animation, XHR, drag and drop, etc.), it exceeds the functional level of YUI 2.  At the widget level, where YUI 2 has been popular with its wide portfolio, YUI 3 is still catching up.  YUI 2&#8242;s DataTable, Editor, Menu, Button and Calendar are still the standard, and YUI 3 users looking for equivalent functionality today are guided to the <a href="/yuiblog/blog/2010/03/11/yui-2-in-3-coming-soon/" title="YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules &raquo; Yahoo! User Interface Blog (YUIBlog)">YUI 2-in-3 project</a>, which allows you to easily include and utilize YUI 2 from within YUI 3 implementations.  This is easy and safe, but it&#8217;s also not optimal: We&#8217;d prefer not to switch between the two APIs, and we&#8217;d prefer not to incur the runtime overhead of loading two library cores.</p>
 <p>As we prepare for next week&#8217;s <a href="http://yuilibrary.com/yuiconf2010/">YUIConf 2010</a>, it seemed like a good time to review the status of the YUI 2-to-YUI 3 transition.  We&#8217;re a little over a year into the YUI 3 era, and not quite a year out from the <a href="http://yuilibrary.com/gallery/" title="YUI Library :: Gallery">YUI 3 Gallery</a>&#8216;s launch.  Between the YUI team at Yahoo! and those of you in the YUI community contributing components (nearly 100 contribitors in total), how are we doing?</p>
@@ -2229,24 +2264,7 @@ Future ideas for the project:<br />
 <li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
 <li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
-		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
-					<li>
-				<a href="/yuiblog/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
-						</li>
-					<li>
-				<a href="/yuiblog/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
-						</li>
-				</ul>
-		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
+		</div></div>		<div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
 	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
 	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
 	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
