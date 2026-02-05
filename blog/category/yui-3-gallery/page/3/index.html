@@ -19,7 +19,7 @@
 	<title>
 		     YUI 3 Gallery Archive - YUI Blog - page 3	</title>
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 
 	<!-- IMPORT: yuilibrary.com -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
@@ -30,18 +30,18 @@
 	<!-- /IMPORT -->
 
 
-	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+	<link rel="stylesheet" href="/yuiblog/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
 
-	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<link rel="pingback" href="/yuiblog/blog/xmlrpc.php" />
 
 	
         <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
 
         <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 
-	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; YUI 3 Gallery Category Feed" href="/blog/category/yui-3-gallery/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/yuiblog/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/yuiblog/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; YUI 3 Gallery Category Feed" href="/yuiblog/blog/category/yui-3-gallery/feed/" />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.8.2'></script>
 
     <!-- GOOGLE ANALYTICS SCRIPT.
@@ -154,7 +154,7 @@
 
                             <li class="nav-child ">
 
-                                    <a href="/" title="YUI Blog">Blog</a>
+                                    <a href="/yuiblog/" title="YUI Blog">Blog</a>
 
                             </li>
 
@@ -282,15 +282,15 @@
 
 			
 							<div class="navigation yui3-g">
-	<div class="next-posts yui3-u"><a href="/blog/category/yui-3-gallery/page/4/" >&laquo; Older Entries</a></div>
+	<div class="next-posts yui3-u"><a href="/yuiblog/blog/category/yui-3-gallery/page/4/" >&laquo; Older Entries</a></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/category/yui-3-gallery/page/2/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/category/yui-3-gallery/page/2/" >Newer Entries &raquo;</a>    </div>
 </div>			
 									
 								<div class="post-2839 post type-post status-publish format-standard hentry category-development category-yui-3-gallery first-post">
 				
-						<h2 id="post-2839"><a href="/blog/2010/11/05/a-status-check-on-the-yui-2-to-3-transition/">A Status Check on the YUI 2-to-3 Transition</a></h2>
+						<h2 id="post-2839"><a href="/yuiblog/blog/2010/11/05/a-status-check-on-the-yui-2-to-3-transition/">A Status Check on the YUI 2-to-3 Transition</a></h2>
 					
 
 						<div class="entry">
@@ -330,7 +330,7 @@
 		}</p>
 </style>
 <p>The <a href="http://developer.yahoo.com/yui/" title="YUI Library">YUI 2 JavaScript and CSS library</a> has been an enormously successful product in the four-plus years since we released it in 2006. YUI 2 distributions have been downloaded more than 2 million times, and thousands of developers today use YUI without ever downloading the files, pulling instead from either the Yahoo! or Google CDN.<sup><a href="#configurator">1</a></sup>  YUI traffic on the Yahoo! CDN has grown steadily over the years since we made it public, and today we estimate that <code>yui.yahooapis.com</code> is serving about 15 billion files monthly.</p>
-<p>It&#8217;s no secret, though, that YUI engineers at Yahoo! are spending most of their energy today working on <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a>, the successor project to YUI 2, and one that applies many of the lessons learned by YUI engineers in the years we spent building YUI 2.  YUI 3 today is robust and feature-rich. At the utility level (animation, XHR, drag and drop, etc.), it exceeds the functional level of YUI 2.  At the widget level, where YUI 2 has been popular with its wide portfolio, YUI 3 is still catching up.  YUI 2&#8242;s DataTable, Editor, Menu, Button and Calendar are still the standard, and YUI 3 users looking for equivalent functionality today are guided to the <a href="/blog/2010/03/11/yui-2-in-3-coming-soon/" title="YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules &raquo; Yahoo! User Interface Blog (YUIBlog)">YUI 2-in-3 project</a>, which allows you to easily include and utilize YUI 2 from within YUI 3 implementations.  This is easy and safe, but it&#8217;s also not optimal: We&#8217;d prefer not to switch between the two APIs, and we&#8217;d prefer not to incur the runtime overhead of loading two library cores.</p>
+<p>It&#8217;s no secret, though, that YUI engineers at Yahoo! are spending most of their energy today working on <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a>, the successor project to YUI 2, and one that applies many of the lessons learned by YUI engineers in the years we spent building YUI 2.  YUI 3 today is robust and feature-rich. At the utility level (animation, XHR, drag and drop, etc.), it exceeds the functional level of YUI 2.  At the widget level, where YUI 2 has been popular with its wide portfolio, YUI 3 is still catching up.  YUI 2&#8242;s DataTable, Editor, Menu, Button and Calendar are still the standard, and YUI 3 users looking for equivalent functionality today are guided to the <a href="/yuiblog/blog/2010/03/11/yui-2-in-3-coming-soon/" title="YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules &raquo; Yahoo! User Interface Blog (YUIBlog)">YUI 2-in-3 project</a>, which allows you to easily include and utilize YUI 2 from within YUI 3 implementations.  This is easy and safe, but it&#8217;s also not optimal: We&#8217;d prefer not to switch between the two APIs, and we&#8217;d prefer not to incur the runtime overhead of loading two library cores.</p>
 <p>As we prepare for next week&#8217;s <a href="http://yuilibrary.com/yuiconf2010/">YUIConf 2010</a>, it seemed like a good time to review the status of the YUI 2-to-YUI 3 transition.  We&#8217;re a little over a year into the YUI 3 era, and not quite a year out from the <a href="http://yuilibrary.com/gallery/" title="YUI Library :: Gallery">YUI 3 Gallery</a>&#8216;s launch.  Between the YUI team at Yahoo! and those of you in the YUI community contributing components (nearly 100 contribitors in total), how are we doing?</p>
 <p>The answer may surprise you.</p>
 <p>With projects like <a href="http://alloy.liferay.com/" title="Alloy UI - A project of Liferay">LifeRay&#8217;s AlloyUI</a> and dozens of independent contributors populating the Gallery, we now have more options available even at the widget level in YUI 3 than we shipped with YUI 2.  The table below matches functionality between the two libraries and gives a sense of how the two libraries compare in terms of functional categories.  Caveats:</p>
@@ -622,7 +622,7 @@
 <td class="component">Accordion</td>
 <td class="yui2 gallery">
 <ul>
-<li><a href="/blog/2008/07/25/accordionview/">Marco van Hylckama Vlieg&#8217;s AccordionView</a></li>
+<li><a href="/yuiblog/blog/2008/07/25/accordionview/">Marco van Hylckama Vlieg&#8217;s AccordionView</a></li>
 <li><a href="http://www.bubbling-library.com/eng/api/docs/widgets/accordion/examples">Caridy Patiño Mayea&#8217;s Accordion Manager</a></li>
 </td>
 <td class="yui3 gallery">
@@ -868,7 +868,7 @@
 										
 								<div class="post-2651 post type-post status-publish format-standard hentry category-development category-yui-3-gallery">
 				
-						<h2 id="post-2651"><a href="/blog/2010/10/18/gallery-svg/">In the YUI 3 Gallery: Extensions for SVG, Created for SVG Wow!</a></h2>
+						<h2 id="post-2651"><a href="/yuiblog/blog/2010/10/18/gallery-svg/">In the YUI 3 Gallery: Extensions for SVG, Created for SVG Wow!</a></h2>
 					
 
 						<div class="entry">
@@ -1569,7 +1569,7 @@ anim.run(2);
 										
 								<div class="post-2640 post type-post status-publish format-standard hentry category-development category-yui-3-gallery">
 				
-						<h2 id="post-2640"><a href="/blog/2010/09/27/gallery-raphaeljs/">In the YUI 3 Gallery: Matt Taylor&#8217;s RaphaelJS Module</a></h2>
+						<h2 id="post-2640"><a href="/yuiblog/blog/2010/09/27/gallery-raphaeljs/">In the YUI 3 Gallery: Matt Taylor&#8217;s RaphaelJS Module</a></h2>
 					
 
 						<div class="entry">
@@ -1734,7 +1734,7 @@ Y.Array.each(rectangles, function(rect, index) {
 										
 								<div class="post-2279 post type-post status-publish format-standard hentry category-development category-yui-3-gallery tag-dom-events tag-event-binding tag-yui-3 tag-yui-3-gallery">
 				
-						<h2 id="post-2279"><a href="/blog/2010/06/23/event-binder/">In the YUI 3 Gallery: Caridy Patiño Mayea&#8217;s Event Binder Module Provides Support for Early Event Binding and Event-driven Module Loading</a></h2>
+						<h2 id="post-2279"><a href="/yuiblog/blog/2010/06/23/event-binder/">In the YUI 3 Gallery: Caridy Patiño Mayea&#8217;s Event Binder Module Provides Support for Early Event Binding and Event-driven Module Loading</a></h2>
 					
 
 						<div class="entry">
@@ -1979,7 +1979,7 @@ YUI_config.eventbinder.listenFor('click');
 										
 								<div class="post-2273 post type-post status-publish format-standard hentry category-development category-yui-3-gallery tag-alloy tag-calendar tag-yui-3 tag-yui-3-gallery">
 				
-						<h2 id="post-2273"><a href="/blog/2010/06/18/alloy-date-selector/">Using the YUI 3 Calendar Date Selector from Alloy</a></h2>
+						<h2 id="post-2273"><a href="/yuiblog/blog/2010/06/18/alloy-date-selector/">Using the YUI 3 Calendar Date Selector from Alloy</a></h2>
 					
 
 						<div class="entry">
@@ -2067,7 +2067,7 @@ YUI({
 										
 								<div class="post-2243 post type-post status-publish format-standard hentry category-development category-yui-3-gallery">
 				
-						<h2 id="post-2243"><a href="/blog/2010/06/10/gallery-preload/">In the YUI 3 Gallery: The Preload Module</a></h2>
+						<h2 id="post-2243"><a href="/yuiblog/blog/2010/06/10/gallery-preload/">In the YUI 3 Gallery: The Preload Module</a></h2>
 					
 
 						<div class="entry">
@@ -2132,7 +2132,7 @@ YUI({
 										
 								<div class="post-2026 post type-post status-publish format-standard hentry category-development category-yui-3-gallery tag-ratings tag-yui-3 tag-yui-3-gallery">
 				
-						<h2 id="post-2026"><a href="/blog/2010/04/28/gallery-ratings/">In the YUI 3 Gallery: Peter Peterson&#8217;s Ratings Widget</a></h2>
+						<h2 id="post-2026"><a href="/yuiblog/blog/2010/04/28/gallery-ratings/">In the YUI 3 Gallery: Peter Peterson&#8217;s Ratings Widget</a></h2>
 					
 
 						<div class="entry">
@@ -2212,10 +2212,10 @@ Future ideas for the project:<br />
 							
 							<div class="bottom-nav">
 					<div class="navigation yui3-g">
-	<div class="next-posts yui3-u"><a href="/blog/category/yui-3-gallery/page/4/" >&laquo; Older Entries</a></div>
+	<div class="next-posts yui3-u"><a href="/yuiblog/blog/category/yui-3-gallery/page/4/" >&laquo; Older Entries</a></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/category/yui-3-gallery/page/2/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/category/yui-3-gallery/page/2/" >Newer Entries &raquo;</a>    </div>
 </div>				</div>
 						
 	
@@ -2225,25 +2225,25 @@ Future ideas for the project:<br />
 <div id="sidebar" class="yui3-u-1-4"><div class="liner">
 
     <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
-			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
-<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
-<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+			<li class="page_item page-item-2"><a href="/yuiblog/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
 		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
 					<li>
-				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+				<a href="/yuiblog/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
 						</li>
 					<li>
-				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+				<a href="/yuiblog/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+				<a href="/yuiblog/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+				<a href="/yuiblog/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
+				<a href="/yuiblog/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
 						</li>
 				</ul>
 		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
@@ -2349,49 +2349,49 @@ Future ideas for the project:<br />
 	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
-	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
 </li>
-	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
+	<li class="cat-item cat-item-524"><a href="/yuiblog/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
 </li>
-	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+	<li class="cat-item cat-item-1"><a href="/yuiblog/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
 </li>
-	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
+	<li class="cat-item cat-item-2"><a href="/yuiblog/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
 </li>
-	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+	<li class="cat-item cat-item-219"><a href="/yuiblog/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
 </li>
-	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
+	<li class="cat-item cat-item-96"><a href="/yuiblog/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
 </li>
-	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+	<li class="cat-item cat-item-11"><a href="/yuiblog/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
 </li>
-	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
+	<li class="cat-item cat-item-403"><a href="/yuiblog/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
 </li>
-	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+	<li class="cat-item cat-item-483"><a href="/yuiblog/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
 </li>
-	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+	<li class="cat-item cat-item-13"><a href="/yuiblog/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
 </li>
-	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
+	<li class="cat-item cat-item-598"><a href="/yuiblog/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
 </li>
-	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
+	<li class="cat-item cat-item-592"><a href="/yuiblog/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
 </li>
-	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
+	<li class="cat-item cat-item-599"><a href="/yuiblog/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
 </li>
-	<li class="cat-item cat-item-292 current-cat"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
+	<li class="cat-item cat-item-292 current-cat"><a href="/yuiblog/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
 </li>
-	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
+	<li class="cat-item cat-item-286"><a href="/yuiblog/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
 </li>
-	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+	<li class="cat-item cat-item-8"><a href="/yuiblog/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
 </li>
-	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
+	<li class="cat-item cat-item-9"><a href="/yuiblog/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
 </li>
-	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
+	<li class="cat-item cat-item-595"><a href="/yuiblog/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
 </li>
-	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+	<li class="cat-item cat-item-602"><a href="/yuiblog/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
 </li>
 		</ul>
 </div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
-						<li><a href="/blog/wp-login.php">Log in</a></li>
-			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/yuiblog/blog/wp-login.php">Log in</a></li>
+			<li><a href="/yuiblog/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/yuiblog/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
 </div></div>
 </div></div>

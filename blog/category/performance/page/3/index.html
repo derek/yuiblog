@@ -19,7 +19,7 @@
 	<title>
 		     Performance Archive - YUI Blog - page 3	</title>
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 
 	<!-- IMPORT: yuilibrary.com -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
@@ -30,18 +30,18 @@
 	<!-- /IMPORT -->
 
 
-	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+	<link rel="stylesheet" href="/yuiblog/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
 
-	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<link rel="pingback" href="/yuiblog/blog/xmlrpc.php" />
 
 	
         <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
 
         <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 
-	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Performance Category Feed" href="/blog/category/performance/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/yuiblog/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/yuiblog/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Performance Category Feed" href="/yuiblog/blog/category/performance/feed/" />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.8.2'></script>
 
     <!-- GOOGLE ANALYTICS SCRIPT.
@@ -154,7 +154,7 @@
 
                             <li class="nav-child ">
 
-                                    <a href="/" title="YUI Blog">Blog</a>
+                                    <a href="/yuiblog/" title="YUI Blog">Blog</a>
 
                             </li>
 
@@ -282,24 +282,24 @@
 
 			
 							<div class="navigation yui3-g">
-	<div class="next-posts yui3-u"><a href="/blog/category/performance/page/4/" >&laquo; Older Entries</a></div>
+	<div class="next-posts yui3-u"><a href="/yuiblog/blog/category/performance/page/4/" >&laquo; Older Entries</a></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/category/performance/page/2/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/category/performance/page/2/" >Newer Entries &raquo;</a>    </div>
 </div>			
 									
 								<div class="post-232 post type-post status-publish format-standard hentry category-performance first-post">
 				
-						<h2 id="post-232"><a href="/blog/2008/07/21/performance-research-part-6/">Performance Research, Part 6: Less is More — Serving Files Faster by Combining Them</a></h2>
+						<h2 id="post-232"><a href="/yuiblog/blog/2008/07/21/performance-research-part-6/">Performance Research, Part 6: Less is More — Serving Files Faster by Combining Them</a></h2>
 					
 
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p><em>This article is the sixth in a series of YUIBlog articles describing experiments conducted to learn more about optimizing web page performance (<a href="/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/blog/2007/03/01/performance-research-part-3/">Part 3</a>, <a href="/blog/2007/04/11/performance-research-part-4/">Part 4</a>, <a href="/blog/2008/02/06/iphone-cacheability/">Part 5</a>).</em></p>
+<p><em>This article is the sixth in a series of YUIBlog articles describing experiments conducted to learn more about optimizing web page performance (<a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/yuiblog/blog/2007/03/01/performance-research-part-3/">Part 3</a>, <a href="/yuiblog/blog/2007/04/11/performance-research-part-4/">Part 4</a>, <a href="/yuiblog/blog/2008/02/06/iphone-cacheability/">Part 5</a>).</em></p>
 </p></div>
 </div>
-<p>In <a href="/blog/2006/11/28/performance-research-part-1/">Performance Research Part 1</a>, we discussed how reducing the number of HTTP requests has the biggest impact on improving the response time and is often the easiest performance improvement to make. One technique without having to simplify the page design is to combine multiple scripts into a single script, and similarly combine multiple stylesheets into a single stylesheet.</p>
+<p>In <a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">Performance Research Part 1</a>, we discussed how reducing the number of HTTP requests has the biggest impact on improving the response time and is often the easiest performance improvement to make. One technique without having to simplify the page design is to combine multiple scripts into a single script, and similarly combine multiple stylesheets into a single stylesheet.</p>
 <blockquote><p>Combining multiple files reduces the extra bytes from HTTP headers as well as potential transfer latency caused by TCP slow starts, packet losses, etc.</p></blockquote>
 <p>Figure 1 shows a graphical view of how time is spent loading a page with six separate scripts. Notice that for every file, the browser makes a separate HTTP request to retrieve the file. The gaps between the scripts indicate the time the browser takes to parse and render each script. Figure 2 shows the how time is spent loading a page with the same six scripts combined into a single script.</p>
 <div class="figure">
@@ -314,7 +314,7 @@
 <h3>Serve Files Faster using Combo Handler</h3>
 <p>Combo Handler, built in collaboration by <a href="http://developer.yahoo.com/performance/">Yahoo!&#8217;s Exceptional Performance team</a> and the groups that support our CDN, is one solution to combine multiple files into a single, larger file.</p>
 <p>Combo Handler provides a way to allow developers to maintain the logical organization of their code in separate files, while achieving the advantages of combining those into a single file as part of the final user experience. It alleviates the need for the time-consuming re-build and re-push processes. In addition, Combo Handler integrates seamlessly into a content delivery network, taking full advantage of the <a href="http://developer.yahoo.com/performance/rules.html#cdn">benefits of a CDN</a> while reducing the drawbacks of dynamically combining separate files.</p>
-<p>We&#8217;ve been using this service across many Yahoo! properties for some time now to help improve end users&#8217; response times. Thanks to the YUI team, it is <a href="/blog/2008/07/16/combohandler/">now available</a> to all of you that are using the Yahoo!-hosted YUI JavaScript files. (Note: Combo-handling of CSS files is not supported at this time.) <a href="http://developer.yahoo.com/yui/articles/hosting/#configure">Head over to the YUI Configurator</a> to generate combo-ready filepaths customized for your specific YUI implementation.</p>
+<p>We&#8217;ve been using this service across many Yahoo! properties for some time now to help improve end users&#8217; response times. Thanks to the YUI team, it is <a href="/yuiblog/blog/2008/07/16/combohandler/">now available</a> to all of you that are using the Yahoo!-hosted YUI JavaScript files. (Note: Combo-handling of CSS files is not supported at this time.) <a href="http://developer.yahoo.com/yui/articles/hosting/#configure">Head over to the YUI Configurator</a> to generate combo-ready filepaths customized for your specific YUI implementation.</p>
 <h3>Combo Handler Best Practices</h3>
 <p>When using Combo Handler to combine files, pay special attention to the order in which the files are specified. Not only could there be file dependencies, browsers will only use the cached version of a file if the filename extracted from the URL is identical. For example, suppose the following smaller files (<code>dom.js</code> and <code>event.js</code>) are combined into a single larger file using Combo Handler:</p>
 <pre>
@@ -332,7 +332,7 @@ http://yui.yahooapis.com/combo?dom.js&#038;event.js
 <blockquote><p>Combining six JavaScript files into one single JavaScript file improved performance by almost 8% on average for Yahoo! HotJobs&#8217; users on broadband bandwidth speeds and 5% for users on lan. No design or feature changes required!</p></blockquote>
 <p>Keep in mind that the page we tested was already highly optimized for performance and had a <a href="http://developer.yahoo.com/yslow">YSlow</a> &#8220;A&#8221; grade. The response time savings depend on a number of factors including number of files combined, browser caching patterns, etc. This experiment supported our previous research, which indicated that reducing HTTP requests is an effective way to improve response times for our end users.</p>
 <h3>Takeaways</h3>
-<p>Improve response times by combining multiple JavaScript and CSS files. Yahoo!&#8217;s <a href="/blog/2008/07/16/combohandler/">Combo Handler</a> Service is one solution that provides a way to make fewer HTTP requests for Yahoo!-hosted JavaScript files, and also leverages the benefits of a Content Delivery Network.</p>
+<p>Improve response times by combining multiple JavaScript and CSS files. Yahoo!&#8217;s <a href="/yuiblog/blog/2008/07/16/combohandler/">Combo Handler</a> Service is one solution that provides a way to make fewer HTTP requests for Yahoo!-hosted JavaScript files, and also leverages the benefits of a Content Delivery Network.</p>
 <ul>
 <li>Combine scripts and stylesheets to reduce HTTP requests.</li>
 <li>Look at different types of file combinations.</li>
@@ -347,11 +347,11 @@ http://yui.yahooapis.com/combo?dom.js&#038;event.js
 										
 								<div class="post-230 post type-post status-publish format-standard hentry category-development category-performance">
 				
-						<h2 id="post-230"><a href="/blog/2008/07/16/combohandler/">Combo Handler Service Available for Yahoo-hosted JS</a></h2>
+						<h2 id="post-230"><a href="/yuiblog/blog/2008/07/16/combohandler/">Combo Handler Service Available for Yahoo-hosted JS</a></h2>
 					
 
 						<div class="entry">
-							<p>We&#8217;ve been talking for a long time at Yahoo about <a href="/blog/2006/11/28/performance-research-part-1">the importance of minimizing HTTP requests to improve performance</a>. One important technique for YUI users has long been to use the pre-built &quot;rollup&quot; files (like <code><a href="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js">yahoo-dom-event.js</a></code>, which combines the YUI Core in a single minified HTTP request) and to create custom rollups that aggregate all of your YUI JS content in a single file.  You&#8217;ll notice that we do a lot of this on our core Yahoo properties.  For example, if you go to <a href="http://sports.yahoo.com/sc">check on the Tour de France on Yahoo! Sports</a>, you&#8217;ll find that numerous YUI components are aggregated with custom Sports-specific JS resources in a single HTTP request (<a href="http://l.yimg.com/img.sports.yahoo.com/static/versioned_asset/v3/minify/js/editorial/js/yui/yuiloader-beta-min_2.5.1.r1.4.js;editorial/js/yui/dom-min_2.5.1.r1.4.js;editorial/js/yui/event-min_2.5.1.r1.4.js;editorial/js/yui/connection-min_2.5.1.r1.4.js;editorial/js/yui/animation-min_2.5.1.r1.4.js;editorial/js/yui/json-min.r1.3.js;editorial/js/constants.r1.15.js;editorial/js/globalsearch.r1.3.js;editorial/js/sports.r1.16.js;editorial/js/tabs.r1.20.js;editorial/js/cookie.r1.3.js;editorial/js/home_modules.r1.4.js;editorial/js/ticker.r1.3.js;editorial/js/window.r1.16.js;editorial/js/scorethin.r1.15.js;editorial/js/manager.r1.3.js;editorial/js/carousel.r1.11.js;editorial/js/player_search.r1.3.js;editorial/js/countdown.r1.5.js;editorial/js/oly.r1.13.js;editorial/js/mlbtv.r1.5.js;editorial/js/flyout_test.r1.20.js;editorial/js/ult.r1.3.js">here&#8217;s the aggregate file</a>).</p>
+							<p>We&#8217;ve been talking for a long time at Yahoo about <a href="/yuiblog/blog/2006/11/28/performance-research-part-1">the importance of minimizing HTTP requests to improve performance</a>. One important technique for YUI users has long been to use the pre-built &quot;rollup&quot; files (like <code><a href="http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js">yahoo-dom-event.js</a></code>, which combines the YUI Core in a single minified HTTP request) and to create custom rollups that aggregate all of your YUI JS content in a single file.  You&#8217;ll notice that we do a lot of this on our core Yahoo properties.  For example, if you go to <a href="http://sports.yahoo.com/sc">check on the Tour de France on Yahoo! Sports</a>, you&#8217;ll find that numerous YUI components are aggregated with custom Sports-specific JS resources in a single HTTP request (<a href="http://l.yimg.com/img.sports.yahoo.com/static/versioned_asset/v3/minify/js/editorial/js/yui/yuiloader-beta-min_2.5.1.r1.4.js;editorial/js/yui/dom-min_2.5.1.r1.4.js;editorial/js/yui/event-min_2.5.1.r1.4.js;editorial/js/yui/connection-min_2.5.1.r1.4.js;editorial/js/yui/animation-min_2.5.1.r1.4.js;editorial/js/yui/json-min.r1.3.js;editorial/js/constants.r1.15.js;editorial/js/globalsearch.r1.3.js;editorial/js/sports.r1.16.js;editorial/js/tabs.r1.20.js;editorial/js/cookie.r1.3.js;editorial/js/home_modules.r1.4.js;editorial/js/ticker.r1.3.js;editorial/js/window.r1.16.js;editorial/js/scorethin.r1.15.js;editorial/js/manager.r1.3.js;editorial/js/carousel.r1.11.js;editorial/js/player_search.r1.3.js;editorial/js/countdown.r1.5.js;editorial/js/oly.r1.13.js;editorial/js/mlbtv.r1.5.js;editorial/js/flyout_test.r1.20.js;editorial/js/ult.r1.3.js">here&#8217;s the aggregate file</a>).</p>
 <p>Thanks to the hard work of the <a href="http://developer.yahoo.com/performance/">Yahoo Exceptional Performance team</a> and the groups that support our CDN, we&#8217;re now able to offer ad-hoc file aggregation &mdash; &quot;combo handling&quot; &mdash; to file served from <code>yui.yahooapis.com</code>. So, a request for the full <a href="http://developer.yahoo.com/yui/examples/editor/cal_editor.html">YUI Rich Text Editor</a>, which previously looked like this&#8230;</p>
 <pre>&lt;script type=&quot;text/javascript&quot; 
    src=&quot;http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js&quot;&gt;&lt;/script&gt;
@@ -388,14 +388,14 @@ src=&quot;http://yui.yahooapis.com/combo?2.5.2/build/yahoo-dom-event/yahoo-dom-e
 										
 								<div class="post-167 post type-post status-publish format-standard hentry category-development category-performance">
 				
-						<h2 id="post-167"><a href="/blog/2008/02/11/helping-the-yui-compressor/">Helping the YUI Compressor</a></h2>
+						<h2 id="post-167"><a href="/yuiblog/blog/2008/02/11/helping-the-yui-compressor/">Helping the YUI Compressor</a></h2>
 					
 
 						<div class="entry">
 							<div class="interview">
 <p>							<!-- optional introduction inset --></p>
 <div class="intro">
-<p><a href="http://www.nczonline.net/">Nicholas Zakas</a> joined Yahoo! in 2006. He is the author of <cite><a href="http://www.amazon.com/Professional-Ajax-2nd-Programmer/dp/0470109491">Professional Ajax</a></cite> and <cite><a href="http://www.amazon.com/Professional-JavaScript-Developers-Wrox-Guides/dp/0764579088/ref=sr_1_2/103-9749654-9772648?ie=UTF8&#038;s=books&#038;qid=1180057873&#038;sr=1-2">Professional JavaScript for Web Developers</a></cite>. He&#8217;s a contributor to our <a href="/blog/2007/12/06/juku/">Yahoo! Juku</a>. His <a href="/blog/2007/05/25/video-zakas/">Maintainable JavaScript</a> presentation is available on <a href="http://developer.yahoo.com/yui/theater/">YUI Theater</a>.</p>
+<p><a href="http://www.nczonline.net/">Nicholas Zakas</a> joined Yahoo! in 2006. He is the author of <cite><a href="http://www.amazon.com/Professional-Ajax-2nd-Programmer/dp/0470109491">Professional Ajax</a></cite> and <cite><a href="http://www.amazon.com/Professional-JavaScript-Developers-Wrox-Guides/dp/0764579088/ref=sr_1_2/103-9749654-9772648?ie=UTF8&#038;s=books&#038;qid=1180057873&#038;sr=1-2">Professional JavaScript for Web Developers</a></cite>. He&#8217;s a contributor to our <a href="/yuiblog/blog/2007/12/06/juku/">Yahoo! Juku</a>. His <a href="/yuiblog/blog/2007/05/25/video-zakas/">Maintainable JavaScript</a> presentation is available on <a href="http://developer.yahoo.com/yui/theater/">YUI Theater</a>.</p>
 </p></div>
 <p>							<!-- / optional introduction inset --></p>
 <p>Julien’s <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> is an incredibly useful tool for decreasing the size of your JavaScript files. Since it uses <a href="http://www.mozilla.org/rhino/" title="Rhino: JavaScript for Java">Rhino</a> to parse your JavaScript code, it can perform all kinds of smart operations to save bytes in a completely safe way:</p>
@@ -407,7 +407,7 @@ src=&quot;http://yui.yahooapis.com/combo?2.5.2/build/yahoo-dom-event/yahoo-dom-e
 </ul>
 <p>Running your JavaScript code through YUI Compressor results in tremendous savings by default, but there are things you can do to increase the byte savings even further.</p>
 <h3 id="use-constants-for-repeated-values">Use Constants for Repeated Values</h3>
-<p>In my talk, <a href="/blog/2007/05/25/video-zakas/">Maintainable JavaScript</a>, I talk about using constants (really, just variables that you have no intention of changing) to store repeating values. The idea is that your code is more maintainable because you have a single place to change a value instead of multiple places. As it turns out, this technique also helps YUI Compressor to remove more bytes. Consider the following function:</p>
+<p>In my talk, <a href="/yuiblog/blog/2007/05/25/video-zakas/">Maintainable JavaScript</a>, I talk about using constants (really, just variables that you have no intention of changing) to store repeating values. The idea is that your code is more maintainable because you have a single place to change a value instead of multiple places. As it turns out, this technique also helps YUI Compressor to remove more bytes. Consider the following function:</p>
 <pre><code>function toggle(element){
     if (YAHOO.util.Dom.hasClass(element, "selected")){
         YAHOO.util.Dom.removeClass(element, "selected");
@@ -488,7 +488,7 @@ function doSomething(code){
 }</code></pre>
 <p>In this code, the call to <code>eval()</code> is isolated away from the main body of the <code>doSomething()</code> function. Now, YUI Compressor is free to replace variables in <code>doSomething()</code>.</p>
 <h3 id="avoid-width">Avoid <code>with</code></h3>
-<p>The <code>with</code> statement is another that is often <a href="/blog/2006/04/11/with-statement-considered-harmful/">recommended to avoid in JavaScript</a>. For YUI Compressor, the reason is the same for <code>eval()</code>: just the presence of <code>with</code> in a function causes variable renaming to be skipped for the entire function. There is just no way to keep track of variables versus object properties in the context of a <code>with</code> statement, so YUI Compressor rightly leaves the code as-is to avoid breaking the functionality. The best advice here is to avoid using <code>with</code> altogether. If you follow the advice of <a href="#store-local-references-to-objects-and-values">storing local copies of objects/properties</a>, you should have no use for <code>with</code>.</p>
+<p>The <code>with</code> statement is another that is often <a href="/yuiblog/blog/2006/04/11/with-statement-considered-harmful/">recommended to avoid in JavaScript</a>. For YUI Compressor, the reason is the same for <code>eval()</code>: just the presence of <code>with</code> in a function causes variable renaming to be skipped for the entire function. There is just no way to keep track of variables versus object properties in the context of a <code>with</code> statement, so YUI Compressor rightly leaves the code as-is to avoid breaking the functionality. The best advice here is to avoid using <code>with</code> altogether. If you follow the advice of <a href="#store-local-references-to-objects-and-values">storing local copies of objects/properties</a>, you should have no use for <code>with</code>.</p>
 <h3 id="use-the-verbose-option">Use the Verbose Option</h3>
 <p>YUI Compressor has a “verbose” option (activated by the <code>–v</code> command line switch) that can help in the identification of some of these issues as well as a few others. The verbose option prints out warnings to the console indicating things that are preventing the YUI Compressor from fully doing its job. It will, for instance, tell you that a function contains <code>eval()</code> or the <code>with</code> statement, and therefore cannot be properly compressed. It also does analysis of variables, telling you if a variable was never defined (in which case it becomes global and cannot have its name replaced), if a variable was defined and never used (which just wastes space), and if a variable has been declared multiple times (also a waste of space).</p>
 <h3 id="conclusion">Conclusion</h3>
@@ -502,17 +502,17 @@ function doSomething(code){
 										
 								<div class="post-166 post type-post status-publish format-standard hentry category-development category-performance tag-tenni-theurer-wayne-shea-performance-iphone-cacheing-op">
 				
-						<h2 id="post-166"><a href="/blog/2008/02/06/iphone-cacheability/">Performance Research, Part 5: iPhone Cacheability &#8211; Making it Stick</a></h2>
+						<h2 id="post-166"><a href="/yuiblog/blog/2008/02/06/iphone-cacheability/">Performance Research, Part 5: iPhone Cacheability &#8211; Making it Stick</a></h2>
 					
 
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p>This article, co-written by Wayne Shea, is the fifth in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/blog/2007/03/01/performance-research-part-3/">Part 3</a>, <a href="/blog/2007/04/11/performance-research-part-4/">Part 4</a>). You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.</p>
+<p>This article, co-written by Wayne Shea, is the fifth in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/yuiblog/blog/2007/03/01/performance-research-part-3/">Part 3</a>, <a href="/yuiblog/blog/2007/04/11/performance-research-part-4/">Part 4</a>). You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.</p>
 </p></div>
 </div>
 <p>At <a href="http://www.macworldexpo.com/">MacWorld 2008</a>, Steve Jobs announced that Apple sold 4 million iPhones to date, that&#8217;s 20,000 iPhones sold every day. <a href="http://marketshare.hitslink.com/report.aspx?sample=4&amp;qprid=10&amp;qpmr=14&amp;qpdt=1&amp;qpct=0&amp;qptimeframe=M&amp;qpsp=107">Net Applications</a> reports that total web browsing on iPhone is up at 0.12% for December 2007, topping the web browsing on all Windows Mobile devices combined. Apple&#8217;s iPhone has changed the game for many users browsing the web on a mobile device. Web developers can now create functionally rich and visually appealing applications that run within the iPhone&#8217;s version of the Safari Mobile web browser. While the iPhone presents new and exciting opportunities for mobile web application developers, it also provides a unique set of performance challenges.</p>
-<p>Limited information is available on this device and understanding the cache properties of the browser is essential to creating a high performance web site. In earlier posts, we described how <a href="/blog/2006/11/28/performance-research-part-1/">80% or more</a> of the end-user response time is spent on the front-end, and <a href="/blog/2007/01/04/performance-research-part-2/">why the cache matters</a>. In this research, Yahoo!&#8217;s Exceptional Performance team investigated the iPhone cache properties and looked at how the performance rules are affected. We were particularly interested in the following cache properties on the iPhone:</p>
+<p>Limited information is available on this device and understanding the cache properties of the browser is essential to creating a high performance web site. In earlier posts, we described how <a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">80% or more</a> of the end-user response time is spent on the front-end, and <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">why the cache matters</a>. In this research, Yahoo!&#8217;s Exceptional Performance team investigated the iPhone cache properties and looked at how the performance rules are affected. We were particularly interested in the following cache properties on the iPhone:</p>
 <ul>
 <li>The maximum cache limit for an individual component.</li>
 <li>The maximum cache limit for multiple components.</li>
@@ -521,7 +521,7 @@ function doSomething(code){
 </ul>
 <p>We conducted our cache experiments with both Apple&#8217;s iPhone and iPod Touch, and came to the same conclusions.</p>
 <h3>Cache Hit or Miss?</h3>
-<p>In <a href="/blog/2007/01/04/performance-research-part-2/">Part 2</a>, we discussed the importance to differentiate between end user experiences for an empty versus a primed cache page view.</p>
+<p>In <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">Part 2</a>, we discussed the importance to differentiate between end user experiences for an empty versus a primed cache page view.</p>
 <p>When an external component (scripts, stylesheets, and images) is referenced in an HTML page, the browser makes an HTTP request and stores the component in memory while the HTML page is rendered. Though components are stored in the browser&#8217;s memory during rendering, they may or may not be stored in the browser&#8217;s cache. A &#8220;cache miss&#8221; refers to when the browser bypasses the cache and requests the component over the network. A &#8220;cache hit&#8221; refers to when the component is found in the cache and the corresponding HTTP requests are avoided.</p>
 <p>Components are cacheable when they include either the expires or cache-control header. </p>
 <pre>
@@ -636,7 +636,7 @@ function doSomething(code){
 										
 								<div class="post-161 post type-post status-publish format-standard hentry category-development category-performance tag-china tag-hosting tag-yui">
 				
-						<h2 id="post-161"><a href="/blog/2008/01/15/hosting-yui-in-china/">Hosting YUI Files for Implementations in Mainland China</a></h2>
+						<h2 id="post-161"><a href="/yuiblog/blog/2008/01/15/hosting-yui-in-china/">Hosting YUI Files for Implementations in Mainland China</a></h2>
 					
 
 						<div class="entry">
@@ -657,13 +657,13 @@ function doSomething(code){
 										
 								<div class="post-93 post type-post status-publish format-standard hentry category-development category-performance">
 				
-						<h2 id="post-93"><a href="/blog/2007/04/11/performance-research-part-4/">Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane</a></h2>
+						<h2 id="post-93"><a href="/yuiblog/blog/2007/04/11/performance-research-part-4/">Performance Research, Part 4: Maximizing Parallel Downloads in the Carpool Lane</a></h2>
 					
 
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p>This article, co-written by <a href="http://stevesouders.com/bio.html">Steve Souders</a>, is the fourth in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/blog/2007/03/01/performance-research-part-3/">Part 3</a>). You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.</p>
+<p>This article, co-written by <a href="http://stevesouders.com/bio.html">Steve Souders</a>, is the fourth in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/yuiblog/blog/2007/03/01/performance-research-part-3/">Part 3</a>). You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.</p>
 </p></div>
 </div>
 <h3 id="parallel-downloads">Parallel Downloads</h3>
@@ -711,13 +711,13 @@ function doSomething(code){
 										
 								<div class="post-84 post type-post status-publish format-standard hentry category-development category-performance">
 				
-						<h2 id="post-84"><a href="/blog/2007/03/01/performance-research-part-3/">Performance Research, Part 3: When the Cookie Crumbles</a></h2>
+						<h2 id="post-84"><a href="/yuiblog/blog/2007/03/01/performance-research-part-3/">Performance Research, Part 3: When the Cookie Crumbles</a></h2>
 					
 
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
-<p>This article, co-written by Patty Chi, is the third in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/blog/2007/01/04/performance-research-part-2/">Part 2</a>). You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering &mdash; that is, the user interface design and development.</p>
+<p>This article, co-written by Patty Chi, is the third in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">Part 2</a>). You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering &mdash; that is, the user interface design and development.</p>
 </p></div>
 </p></div>
 <p>HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. This article discusses the impact of cookies on the overall user response time.</p>
@@ -786,7 +786,7 @@ function doSomething(code){
 <p><img src="http://www.yuiblog.com/assets/performance/cookies.gif" alt="Figure 1. Percentage of Page Views with Various Cookie Sizes" width="505" height="304" id="cookies"/></p>
 </div>
 <p>About 80% of page views have fewer than 1000 bytes of cookies, which correlates to about a 5 to 15 ms delay for users on DSL bandwidth speeds. While the data shows that the majority of page views aren&#8217;t impacted by a significant delay, it also shows that about 2% of page views have over 1500 bytes of cookies set at the <code>.yahoo.com</code> domain. Although 2% sounds insignificant, at Yahoo! this translates to millions of page views per day, a compelling motivation for us to investigate this 2% and eliminate unnecessary cookies, reduce cookie sizes, and set cookies at more granualar domain levels.</p>
-<p>In an earlier post about browser cache usage, one user made a <a href="/blog/2007/01/04/performance-research-part-2/#comment-29021">comment</a> about the side-effects of different browsers. Since Internet Explorer and Firefox have different implementations for the maximum size and number of cookies supported, we also analyzed the data by browser type and found no significant difference between the cookie sizes. It would be interesting to further investigate whether there is a difference in performance across browsers.</p>
+<p>In an earlier post about browser cache usage, one user made a <a href="/yuiblog/blog/2007/01/04/performance-research-part-2/#comment-29021">comment</a> about the side-effects of different browsers. Since Internet Explorer and Firefox have different implementations for the maximum size and number of cookies supported, we also analyzed the data by browser type and found no significant difference between the cookie sizes. It would be interesting to further investigate whether there is a difference in performance across browsers.</p>
 <h3 id="how-big-across-the-web">Analysis of Cookie Sizes across the Web</h3>
 <p id="table2">To show how Yahoo!&#8217;s cookie usage relates to those of other companies, we analyzed the cookies set by other popular web sites. For this experiment, we cleared all our cookies and visited only the home pages of these web sites. Table 2 shows between 60 and 500 bytes of cookie information included in the HTTP headers.</p>
 <div class="figure" id="total-cookie-sizes-figure">
@@ -848,10 +848,10 @@ function doSomething(code){
 							
 							<div class="bottom-nav">
 					<div class="navigation yui3-g">
-	<div class="next-posts yui3-u"><a href="/blog/category/performance/page/4/" >&laquo; Older Entries</a></div>
+	<div class="next-posts yui3-u"><a href="/yuiblog/blog/category/performance/page/4/" >&laquo; Older Entries</a></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/category/performance/page/2/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/category/performance/page/2/" >Newer Entries &raquo;</a>    </div>
 </div>				</div>
 						
 	
@@ -861,25 +861,25 @@ function doSomething(code){
 <div id="sidebar" class="yui3-u-1-4"><div class="liner">
 
     <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
-			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
-<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
-<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+			<li class="page_item page-item-2"><a href="/yuiblog/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
 		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
 					<li>
-				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+				<a href="/yuiblog/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
 						</li>
 					<li>
-				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+				<a href="/yuiblog/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+				<a href="/yuiblog/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+				<a href="/yuiblog/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
+				<a href="/yuiblog/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
 						</li>
 				</ul>
 		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
@@ -985,49 +985,49 @@ function doSomething(code){
 	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
-	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
 </li>
-	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
+	<li class="cat-item cat-item-524"><a href="/yuiblog/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
 </li>
-	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+	<li class="cat-item cat-item-1"><a href="/yuiblog/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
 </li>
-	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
+	<li class="cat-item cat-item-2"><a href="/yuiblog/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
 </li>
-	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+	<li class="cat-item cat-item-219"><a href="/yuiblog/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
 </li>
-	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
+	<li class="cat-item cat-item-96"><a href="/yuiblog/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
 </li>
-	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+	<li class="cat-item cat-item-11"><a href="/yuiblog/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
 </li>
-	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
+	<li class="cat-item cat-item-403"><a href="/yuiblog/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
 </li>
-	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+	<li class="cat-item cat-item-483"><a href="/yuiblog/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
 </li>
-	<li class="cat-item cat-item-13 current-cat"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+	<li class="cat-item cat-item-13 current-cat"><a href="/yuiblog/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
 </li>
-	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
+	<li class="cat-item cat-item-598"><a href="/yuiblog/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
 </li>
-	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
+	<li class="cat-item cat-item-592"><a href="/yuiblog/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
 </li>
-	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
+	<li class="cat-item cat-item-599"><a href="/yuiblog/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
 </li>
-	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
+	<li class="cat-item cat-item-292"><a href="/yuiblog/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
 </li>
-	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
+	<li class="cat-item cat-item-286"><a href="/yuiblog/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
 </li>
-	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+	<li class="cat-item cat-item-8"><a href="/yuiblog/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
 </li>
-	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
+	<li class="cat-item cat-item-9"><a href="/yuiblog/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
 </li>
-	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
+	<li class="cat-item cat-item-595"><a href="/yuiblog/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
 </li>
-	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+	<li class="cat-item cat-item-602"><a href="/yuiblog/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
 </li>
 		</ul>
 </div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
-						<li><a href="/blog/wp-login.php">Log in</a></li>
-			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/yuiblog/blog/wp-login.php">Log in</a></li>
+			<li><a href="/yuiblog/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/yuiblog/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
 </div></div>
 </div></div>

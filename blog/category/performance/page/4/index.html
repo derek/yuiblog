@@ -19,7 +19,7 @@
 	<title>
 		     Performance Archive - YUI Blog - page 4	</title>
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 
 	<!-- IMPORT: yuilibrary.com -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
@@ -30,18 +30,18 @@
 	<!-- /IMPORT -->
 
 
-	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+	<link rel="stylesheet" href="/yuiblog/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
 
-	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<link rel="pingback" href="/yuiblog/blog/xmlrpc.php" />
 
 	
         <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
 
         <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 
-	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Performance Category Feed" href="/blog/category/performance/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/yuiblog/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/yuiblog/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Performance Category Feed" href="/yuiblog/blog/category/performance/feed/" />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.5.1'></script>
 
     <!-- GOOGLE ANALYTICS SCRIPT.
@@ -154,7 +154,7 @@
 
                             <li class="nav-child ">
 
-                                    <a href="/" title="YUI Blog">Blog</a>
+                                    <a href="/yuiblog/" title="YUI Blog">Blog</a>
 
                             </li>
 
@@ -285,12 +285,12 @@
 	<div class="next-posts yui3-u"></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/category/performance/page/3/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/category/performance/page/3/" >Newer Entries &raquo;</a>    </div>
 </div>			
 									
 								<div class="post-71 post type-post status-publish format-standard hentry category-development category-performance first-post">
 				
-						<h2 id="post-71"><a href="/blog/2007/01/04/performance-research-part-2/">Performance Research, Part 2: Browser Cache Usage &#8211; Exposed!</a></h2>
+						<h2 id="post-71"><a href="/yuiblog/blog/2007/01/04/performance-research-part-2/">Performance Research, Part 2: Browser Cache Usage &#8211; Exposed!</a></h2>
 					
 
 						<div class="entry">
@@ -299,7 +299,7 @@
 <p>This is the second in a series of articles describing experiments conducted to learn more about optimizing web page performance. You may be wondering why you&#8217;re reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.</p>
 </p></div>
 </div>
-<p>In an earlier post, I described <a href="/blog/2006/11/28/performance-research-part-1/">What the 80/20 Rule Tells Us about Reducing HTTP Requests</a>. Since browsers spend 80% of the time fetching external components including scripts, stylesheets and images, reducing the number of HTTP requests has the biggest impact on reducing response time. But shouldn&#8217;t everything be saved in the browser&#8217;s cache anyway?</p>
+<p>In an earlier post, I described <a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">What the 80/20 Rule Tells Us about Reducing HTTP Requests</a>. Since browsers spend 80% of the time fetching external components including scripts, stylesheets and images, reducing the number of HTTP requests has the biggest impact on reducing response time. But shouldn&#8217;t everything be saved in the browser&#8217;s cache anyway?</p>
 <h3>Why does cache matter?</h3>
 <p>It&#8217;s important to differentiate between end user experiences for an empty versus a full cache page view. An &#8220;empty cache&#8221; means the browser bypasses the disk cache and has to request all the components to load the page. A &#8220;full cache&#8221; means all (or at least most) of the components are found in the disk cache and the corresponding HTTP requests are avoided.</p>
 <p>The main reason for an empty cache page view is because the user is visiting the page for the first time and the browser has to download all the components to load the page. Other reasons include:</p>
@@ -369,7 +369,7 @@ Last-Modified: Wed, 28 Sep 2006 23:49:57 GMT
 										
 								<div class="post-62 post type-post status-publish format-standard hentry category-development category-performance">
 				
-						<h2 id="post-62"><a href="/blog/2006/11/28/performance-research-part-1/">Performance Research, Part 1:  What the 80/20 Rule Tells Us about Reducing HTTP Requests</a></h2>
+						<h2 id="post-62"><a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">Performance Research, Part 1:  What the 80/20 Rule Tells Us about Reducing HTTP Requests</a></h2>
 					
 
 						<div class="entry">
@@ -452,7 +452,7 @@ Last-Modified: Wed, 28 Sep 2006 23:49:57 GMT
 	<div class="next-posts yui3-u"></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/category/performance/page/3/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/category/performance/page/3/" >Newer Entries &raquo;</a>    </div>
 </div>				</div>
 						
 	
@@ -462,25 +462,25 @@ Last-Modified: Wed, 28 Sep 2006 23:49:57 GMT
 <div id="sidebar" class="yui3-u-1-4"><div class="liner">
 
     <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
-			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
-<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
-<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+			<li class="page_item page-item-2"><a href="/yuiblog/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
 		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
 					<li>
-				<a href="/blog/2013/06/21/yui-weekly-for-june-21st-2013/" title="YUI Weekly for June 21st, 2013">YUI Weekly for June 21st, 2013</a>
+				<a href="/yuiblog/blog/2013/06/21/yui-weekly-for-june-21st-2013/" title="YUI Weekly for June 21st, 2013">YUI Weekly for June 21st, 2013</a>
 						</li>
 					<li>
-				<a href="/blog/2013/06/19/3-11pr1-released/" title="3.11pr1 Released">3.11pr1 Released</a>
+				<a href="/yuiblog/blog/2013/06/19/3-11pr1-released/" title="3.11pr1 Released">3.11pr1 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2013/06/14/yui-weekly-for-june-14th-2013/" title="YUI Weekly for June 14th, 2013">YUI Weekly for June 14th, 2013</a>
+				<a href="/yuiblog/blog/2013/06/14/yui-weekly-for-june-14th-2013/" title="YUI Weekly for June 14th, 2013">YUI Weekly for June 14th, 2013</a>
 						</li>
 					<li>
-				<a href="/blog/2013/06/12/pure-0-2-0/" title="Pure 0.2.0 Released">Pure 0.2.0 Released</a>
+				<a href="/yuiblog/blog/2013/06/12/pure-0-2-0/" title="Pure 0.2.0 Released">Pure 0.2.0 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2013/06/07/yui-weekly-for-june-7th-2013/" title="YUI Weekly for June 7th, 2013">YUI Weekly for June 7th, 2013</a>
+				<a href="/yuiblog/blog/2013/06/07/yui-weekly-for-june-7th-2013/" title="YUI Weekly for June 7th, 2013">YUI Weekly for June 7th, 2013</a>
 						</li>
 				</ul>
 		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
@@ -574,47 +574,47 @@ Last-Modified: Wed, 28 Sep 2006 23:49:57 GMT
 	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
  </select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
-	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
 </li>
-	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
+	<li class="cat-item cat-item-524"><a href="/yuiblog/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
 </li>
-	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+	<li class="cat-item cat-item-1"><a href="/yuiblog/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
 </li>
-	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (595)
+	<li class="cat-item cat-item-2"><a href="/yuiblog/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (595)
 </li>
-	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+	<li class="cat-item cat-item-219"><a href="/yuiblog/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
 </li>
-	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
+	<li class="cat-item cat-item-96"><a href="/yuiblog/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
 </li>
-	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+	<li class="cat-item cat-item-11"><a href="/yuiblog/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
 </li>
-	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (11)
+	<li class="cat-item cat-item-403"><a href="/yuiblog/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (11)
 </li>
-	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+	<li class="cat-item cat-item-483"><a href="/yuiblog/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
 </li>
-	<li class="cat-item cat-item-13 current-cat"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+	<li class="cat-item cat-item-13 current-cat"><a href="/yuiblog/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
 </li>
-	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (26)
+	<li class="cat-item cat-item-598"><a href="/yuiblog/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (26)
 </li>
-	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
+	<li class="cat-item cat-item-592"><a href="/yuiblog/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
 </li>
-	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (4)
+	<li class="cat-item cat-item-599"><a href="/yuiblog/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (4)
 </li>
-	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (29)
+	<li class="cat-item cat-item-292"><a href="/yuiblog/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (29)
 </li>
-	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (45)
+	<li class="cat-item cat-item-286"><a href="/yuiblog/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (45)
 </li>
-	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+	<li class="cat-item cat-item-8"><a href="/yuiblog/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
 </li>
-	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (146)
+	<li class="cat-item cat-item-9"><a href="/yuiblog/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (146)
 </li>
-	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (42)
+	<li class="cat-item cat-item-595"><a href="/yuiblog/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (42)
 </li>
 		</ul>
 </div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
-						<li><a href="/blog/wp-login.php">Log in</a></li>
-			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/yuiblog/blog/wp-login.php">Log in</a></li>
+			<li><a href="/yuiblog/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/yuiblog/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
 						</ul>
 </div></div>

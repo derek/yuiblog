@@ -19,7 +19,7 @@
 	<title>
 		     2010  April Archive - YUI Blog - page 3	</title>
 
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
 
 	<!-- IMPORT: yuilibrary.com -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
@@ -30,17 +30,17 @@
 	<!-- /IMPORT -->
 
 
-	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+	<link rel="stylesheet" href="/yuiblog/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
 
-	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<link rel="pingback" href="/yuiblog/blog/xmlrpc.php" />
 
 	
         <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
 
         <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
 
-	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
-<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/yuiblog/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/yuiblog/blog/comments/feed/" />
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=4.0'></script>
 
     <!-- GOOGLE ANALYTICS SCRIPT.
@@ -153,7 +153,7 @@
 
                             <li class="nav-child ">
 
-                                    <a href="/" title="YUI Blog">Blog</a>
+                                    <a href="/yuiblog/" title="YUI Blog">Blog</a>
 
                             </li>
 
@@ -281,15 +281,15 @@
 
 			
 							<div class="navigation yui3-g">
-	<div class="next-posts yui3-u"><a href="/blog/2010/04/page/4/" >&laquo; Older Entries</a></div>
+	<div class="next-posts yui3-u"><a href="/yuiblog/blog/2010/04/page/4/" >&laquo; Older Entries</a></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/2010/04/page/2/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/2010/04/page/2/" >Newer Entries &raquo;</a>    </div>
 </div>			
 									
 								<div class="post-1841 post type-post status-publish format-standard hentry category-development tag-bandwidth tag-latency first-post">
 				
-						<h2 id="post-1841"><a href="/blog/2010/04/08/analyzing-bandwidth-and-latency/">Analyzing Bandwidth and Latency on YUIBlog.com</a></h2>
+						<h2 id="post-1841"><a href="/yuiblog/blog/2010/04/08/analyzing-bandwidth-and-latency/">Analyzing Bandwidth and Latency on YUIBlog.com</a></h2>
 					
 
 						<div class="entry">
@@ -297,7 +297,7 @@
 <p><img align="right" src="http://yuiblog.com/assets/philip.jpg" height="75" width="75" hspace="10" vspace="5"><em><strong>About the author</strong>: Philip Tellis (<a href="http://twitter.com/bluesmoon">@bluesmoon</a>) is a geek working with Yahoo!&#8217;s Exceptional Performance team where he analyses the impact of various design decisions on web application performance.  He also maintains YUI&#8217;s date formatter and the <a href="http://github.com/bluesmoon/yui-flot" title="bluesmoon's yui-flot at master - GitHub">YUI port of the flot charting library</a>.  You can find him on the web at <a href="http://bluesmoon.info/" title="Welcome to the moon">http://bluesmoon.info/</a>.</em></p>
 </div>
 <p>
-A few months ago, Eric helped me run some analysis on the types of network connections that were coming in to <a href="/" title="Yahoo! User Interface Blog (YUIBlog)">YUIBlog</a>. In this article, I&#8217;ll analyze the data we collected and look for insights about the tools and infrastructure the YUIBlog readership uses to browse the web.  Being the performance guy at Yahoo!, my interest focuses how fast our readers connections are.  In particular, with what kind of network bandwidth and latency do YUI geeks experience the web?  Although your mileage will vary, YUIBlog is likely to be representative of US  tech blogs read by people in the software industry, and the data here may prove useful for those of you catering to a similar audience.
+A few months ago, Eric helped me run some analysis on the types of network connections that were coming in to <a href="/yuiblog/" title="Yahoo! User Interface Blog (YUIBlog)">YUIBlog</a>. In this article, I&#8217;ll analyze the data we collected and look for insights about the tools and infrastructure the YUIBlog readership uses to browse the web.  Being the performance guy at Yahoo!, my interest focuses how fast our readers connections are.  In particular, with what kind of network bandwidth and latency do YUI geeks experience the web?  Although your mileage will vary, YUIBlog is likely to be representative of US  tech blogs read by people in the software industry, and the data here may prove useful for those of you catering to a similar audience.
 </p>
 <h3>Caveats</h3>
 <p>
@@ -795,7 +795,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 										
 								<div class="post-1832 post type-post status-publish format-standard hentry category-development tag-books tag-high-performance-javascript tag-javascript tag-nicholas-zakas tag-performance">
 				
-						<h2 id="post-1832"><a href="/blog/2010/04/07/high-performance-javascript-sample-chapter/">High Performance JavaScript from O&#8217;Reilly and Yahoo! Press: Free Chapter on Data Access</a></h2>
+						<h2 id="post-1832"><a href="/yuiblog/blog/2010/04/07/high-performance-javascript-sample-chapter/">High Performance JavaScript from O&#8217;Reilly and Yahoo! Press: Free Chapter on Data Access</a></h2>
 					
 
 						<div class="entry">
@@ -811,7 +811,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 </ul>
 <p>Each of these data storage locations has a particular cost associated with reading and writing operations involving the data. In most cases, the performance difference be- tween accessing information from a literal value versus a local variable is trivial. Ac- cessing information from array items and object members is more expensive, though exactly which is more expensive depends heavily on the browser.</p>
 </blockquote>
-<p>You can meet Nicholas and his fellow authors on Tuesday, April 13, when they will be <a href="/blog/2010/04/07/bayjax-april-2010/">presenting some of their work at a BayJax meetup here at Yahoo!</a>.</p>
+<p>You can meet Nicholas and his fellow authors on Tuesday, April 13, when they will be <a href="/yuiblog/blog/2010/04/07/bayjax-april-2010/">presenting some of their work at a BayJax meetup here at Yahoo!</a>.</p>
 						</div>
 
 						<div class="meta">
@@ -820,7 +820,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 										
 								<div class="post-1826 post type-post status-publish format-standard hentry category-development category-yui-events tag-bayjax tag-javascript tag-julien-lecomte tag-matt-sweeney tag-nicholas-zakas tag-performance tag-ross-harmes tag-stoyan-stefanov">
 				
-						<h2 id="post-1826"><a href="/blog/2010/04/07/bayjax-april-2010/">April 13 BayJax Meetup on High Performance JavaScript</a></h2>
+						<h2 id="post-1826"><a href="/yuiblog/blog/2010/04/07/bayjax-april-2010/">April 13 BayJax Meetup on High Performance JavaScript</a></h2>
 					
 
 						<div class="entry">
@@ -863,7 +863,7 @@ The iPhone&#8217;s latency is close to other mobile phones.  All other browsers 
 										
 								<div class="post-1564 post type-post status-publish format-standard hentry category-design category-development tag-skins tag-slider tag-yui-3">
 				
-						<h2 id="post-1564"><a href="/blog/2010/04/06/alternative-slider-skins/">Alternative Skins for YUI 3.1.0 Slider</a></h2>
+						<h2 id="post-1564"><a href="/yuiblog/blog/2010/04/06/alternative-slider-skins/">Alternative Skins for YUI 3.1.0 Slider</a></h2>
 					
 
 						<div class="entry">
@@ -904,7 +904,7 @@ We decided to take the <a href="http://developer.yahoo.com/yui/3/slider/">YUI 3 
 <p><img src="http://yuiblog.com/assets/shadow_compare2.jpg"/></p>
 <p>We will be providing original photoshop files containing each of the rail and thumb images. This will provide developers the source from which to easily customize the images so that they look their best when placed on whatever color background your site has.</p>
 <p><img src="http://yuiblog.com/assets/slider_blue_3.jpg"/></p>
-<p>YUI 3&#8217;s widget foundation reached GA status last week <a href="/blog/2010/03/31/announcing-yui-3-1-0/">with the release of YUI 3.1.0</a>.  We don&#8217;t yet have a full slate of native YUI 3 widgets, and we haven&#8217;t yet defined a set of global skins.  However, the work we did on visual assets for the beta Slider Component should make it more useful in the short term, and we&#8217;ll carry all of these visual options on as alternative themes or examples once YUI 3&#8217;s baseline themes are in place.</p>
+<p>YUI 3&#8217;s widget foundation reached GA status last week <a href="/yuiblog/blog/2010/03/31/announcing-yui-3-1-0/">with the release of YUI 3.1.0</a>.  We don&#8217;t yet have a full slate of native YUI 3 widgets, and we haven&#8217;t yet defined a set of global skins.  However, the work we did on visual assets for the beta Slider Component should make it more useful in the short term, and we&#8217;ll carry all of these visual options on as alternative themes or examples once YUI 3&#8217;s baseline themes are in place.</p>
 <p>Have a look at these <a href="http://developer.yahoo.com/yui/3/examples/slider/slider_skin.html">working code examples</a> of the new sliders. Checkout the behind the scenes <a href="http://developer.yahoo.com/yui/3/slider/#skinning">detailed workings</a> of the skin images and CSS.</p>
 <p>We hope these new sliders will be a nice visual addition to your bag of tricks.</p>
 						</div>
@@ -915,7 +915,7 @@ We decided to take the <a href="http://developer.yahoo.com/yui/3/slider/">YUI 3 
 										
 								<div class="post-1767 post type-post status-publish format-standard hentry category-development category-yui-events">
 				
-						<h2 id="post-1767"><a href="/blog/2010/04/05/yui-3-workshop-washingtondc/">YUI 3 Workshop in Washington, DC, April 16, 2010</a></h2>
+						<h2 id="post-1767"><a href="/yuiblog/blog/2010/04/05/yui-3-workshop-washingtondc/">YUI 3 Workshop in Washington, DC, April 16, 2010</a></h2>
 					
 
 						<div class="entry">
@@ -931,14 +931,14 @@ We decided to take the <a href="http://developer.yahoo.com/yui/3/slider/">YUI 3 
 										
 								<div class="post-1784 post type-post status-publish format-standard hentry category-frontend-engineering-jobs-at-yahoo tag-f2e tag-jobs tag-julien-lecomte tag-yahoo-search">
 				
-						<h2 id="post-1784"><a href="/blog/2010/04/05/work-with-yui-3-on-the-yahoo-search-engineering-team/">Work with YUI 3 on the Yahoo! Search Engineering Team</a></h2>
+						<h2 id="post-1784"><a href="/yuiblog/blog/2010/04/05/work-with-yui-3-on-the-yahoo-search-engineering-team/">Work with YUI 3 on the Yahoo! Search Engineering Team</a></h2>
 					
 
 						<div class="entry">
 							<div class="interview">
 <div class="intro">
 <p><em><strong>About the Author:</strong> Julien Lecomte is a <a href="http://search.yahoo.com/" title="Yahoo! Search - Web Search">Yahoo! Search</a> frontend engineer and the author of <a href="http://developer.yahoo.com/yui/compressor/" title="YUI Compressor">YUI Compressor</a> and <a href="http://developer.yahoo.com/yui/history/" title="YUI 2: Browser History Manager">YUI Browser History Manager</a>.  Julien <a href="http://oreilly.com/catalog/9780596802806/" title="High Performance JavaScript<br />
-           - O'Reilly Media">writes</a> and <a href="/blog/2007/12/20/video-lecomte/" title="YDN Theater &mdash; Julien Lecomte: &#8220;High Performance Ajax Applications&#8221; &raquo; Yahoo! User Interface Blog (YUIBlog)">speaks</a> about issues of web application performance.</em></p>
+           - O'Reilly Media">writes</a> and <a href="/yuiblog/blog/2007/12/20/video-lecomte/" title="YDN Theater &mdash; Julien Lecomte: &#8220;High Performance Ajax Applications&#8221; &raquo; Yahoo! User Interface Blog (YUIBlog)">speaks</a> about issues of web application performance.</em></p>
 </div>
 </div>
 <p>Next generation search engines are not just about serving plain search results anymore. At Yahoo!, we are striving to provide the most compelling search experience for a given query by taking into account many dynamic parameters including user intent, geolocation and user-agent capabilities. We are also a technology provider, developing the engine behind many Yahoo! services.</p>
@@ -952,7 +952,7 @@ We decided to take the <a href="http://developer.yahoo.com/yui/3/slider/">YUI 3 
 										
 								<div class="post-1790 post type-post status-publish format-standard hentry category-development tag-node-js tag-ssjs tag-yui-3">
 				
-						<h2 id="post-1790"><a href="/blog/2010/04/05/running-yui-3-server-side-with-node-js/">Running YUI 3 Server-Side with Node.js</a></h2>
+						<h2 id="post-1790"><a href="/yuiblog/blog/2010/04/05/running-yui-3-server-side-with-node-js/">Running YUI 3 Server-Side with Node.js</a></h2>
 					
 
 						<div class="entry">
@@ -1075,10 +1075,10 @@ YUI().use('json', 'base', 'io-nodejs', function(Y) {
 							
 							<div class="bottom-nav">
 					<div class="navigation yui3-g">
-	<div class="next-posts yui3-u"><a href="/blog/2010/04/page/4/" >&laquo; Older Entries</a></div>
+	<div class="next-posts yui3-u"><a href="/yuiblog/blog/2010/04/page/4/" >&laquo; Older Entries</a></div>
             <span class="greyed nav-separator">|</span> 
     	<div class="prev-posts yui3-u-1-2">
-        <a href="/blog/2010/04/page/2/" >Newer Entries &raquo;</a>    </div>
+        <a href="/yuiblog/blog/2010/04/page/2/" >Newer Entries &raquo;</a>    </div>
 </div>				</div>
 						
 	
@@ -1088,25 +1088,25 @@ YUI().use('json', 'base', 'io-nodejs', function(Y) {
 <div id="sidebar" class="yui3-u-1-4"><div class="liner">
 
     <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
-			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
-<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
-<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+			<li class="page_item page-item-2"><a href="/yuiblog/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/yuiblog/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/yuiblog/blog/yui-team-positions/">YUI Jobs</a></li>
 		</ul>
 		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
 					<li>
-				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+				<a href="/yuiblog/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
 						</li>
 					<li>
-				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+				<a href="/yuiblog/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
 						</li>
 					<li>
-				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+				<a href="/yuiblog/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+				<a href="/yuiblog/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
 						</li>
 					<li>
-				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+				<a href="/yuiblog/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
 						</li>
 				</ul>
 		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
@@ -1216,49 +1216,49 @@ YUI().use('json', 'base', 'io-nodejs', function(Y) {
 	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
 		</select>
 </div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
-	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" >Accessibility</a> (25)
 </li>
-	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+	<li class="cat-item cat-item-524"><a href="/yuiblog/blog/category/css-101/" >CSS 101</a> (8)
 </li>
-	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+	<li class="cat-item cat-item-1"><a href="/yuiblog/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
 </li>
-	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+	<li class="cat-item cat-item-2"><a href="/yuiblog/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
 </li>
-	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+	<li class="cat-item cat-item-219"><a href="/yuiblog/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
 </li>
-	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+	<li class="cat-item cat-item-96"><a href="/yuiblog/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
 </li>
-	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+	<li class="cat-item cat-item-11"><a href="/yuiblog/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
 </li>
-	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+	<li class="cat-item cat-item-403"><a href="/yuiblog/blog/category/miscellany/" >Miscellany</a> (13)
 </li>
-	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+	<li class="cat-item cat-item-483"><a href="/yuiblog/blog/category/open-hours/" >Open Hours</a> (44)
 </li>
-	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+	<li class="cat-item cat-item-13"><a href="/yuiblog/blog/category/performance/" >Performance</a> (23)
 </li>
-	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+	<li class="cat-item cat-item-598"><a href="/yuiblog/blog/category/releases/" >Releases</a> (50)
 </li>
-	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+	<li class="cat-item cat-item-592"><a href="/yuiblog/blog/category/target-environments/" >Target Environments</a> (11)
 </li>
-	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" >Yeti</a> (5)
+	<li class="cat-item cat-item-599"><a href="/yuiblog/blog/category/development/yeti-development/" >Yeti</a> (5)
 </li>
-	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+	<li class="cat-item cat-item-292"><a href="/yuiblog/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
 </li>
-	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+	<li class="cat-item cat-item-286"><a href="/yuiblog/blog/category/yui-events/" >YUI Events</a> (48)
 </li>
-	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+	<li class="cat-item cat-item-8"><a href="/yuiblog/blog/category/yui-implementations/" >YUI Implementations</a> (55)
 </li>
-	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+	<li class="cat-item cat-item-9"><a href="/yuiblog/blog/category/yui-theater/" >YUI Theater</a> (164)
 </li>
-	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+	<li class="cat-item cat-item-595"><a href="/yuiblog/blog/category/yui-weekly/" >YUI Weekly</a> (76)
 </li>
-	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+	<li class="cat-item cat-item-602"><a href="/yuiblog/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
 </li>
 		</ul>
 </div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
-						<li><a href="/blog/wp-login.php">Log in</a></li>
-			<li><a href="/blog/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
-			<li><a href="/blog/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+						<li><a href="/yuiblog/blog/wp-login.php">Log in</a></li>
+			<li><a href="/yuiblog/blog/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/yuiblog/blog/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
 <li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
 </div></div>
 </div></div>
