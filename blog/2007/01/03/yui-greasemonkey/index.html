@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Using YUI in Greasemonkey Scripts</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Using YUI in Greasemonkey Scripts</li></ul>
+				<h1 class="yui3-u-7-8">Using YUI in Greasemonkey Scripts</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">January 3, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview" id="gmarticle">
+		<style>#gmarticle span {line-height:inherit; font-size:11px;} .intro img {float:right; margin:0 0 .5em .5em; border:1px solid #666;}</style>
+		<div class="intro">
+			<p><img align="right" height="154" hspace="5" src="/blog-archive/assets/zottmann.jpg" vspace="5" width="175" /><strong>About the Author:</strong> Carlo Zottmann is a Market Engineer who works for Yahoo! in Munich, Germany. He spends his days integrating feeds from Yahoo!'s European content partners, helping develop new features for <a href="http://de.yahoo.com/">de.yahoo.com</a> and fixing things. He's usually employing Perl, PHP, Python or Javascript, or whatever the job requires.<p>Carlo has been blogging since 2001 and he blogs (mostly in English) at <a href="http://carlo.zottmann.org/">http://carlo.zottmann.org/</a>; his blog is called "tail -f carlo.log".</div>
+		<p>I love <a href="http://greasemonkey.mozdev.org/">Greasemonkey</a>. I like how much power it gives me when it comes to bending other peoples' websites to my will, how I can add features to or or ditch them from a website, how I can use Greasemonkey scripts to pull data from all over the net to spice up the very page I am looking at. It makes my daily life as Yahoo! engineer easier. <p>Also, I love the <a href="http://developer.yahoo.com/yui/">Yahoo! UI library</a>. YUI contains JavaScript and CSS components that allow anyone to quickly build <a href="http://gallery.yahoo.com/yui">some pretty</a> <a href="http://tech.groups.yahoo.com/group/ydn-javascript/links/YUI_Implementations_001149002597/">amazing things</a>.<p>Wouldn't it be great if we could bring Greasemonkey and YUI together? How nice would it be to use YUI components <i>anywhere</i>, to have Greasemonkey dynamically load the libraries when needed and to attach YUI-powered thingamajigs to any page we like? For example to add <a href="http://developer.yahoo.com/yui/autocomplete/">autocompletion</a> to form fields, or to make use of the advanced <a href="http://developer.yahoo.com/yui/event/">event management</a> in your Greasemonkey scripts! The mind boggles.<p>In this brief article, I'll share with you my own effort to reach that goal &mdash; a Greasemonkey script that adds calls to external JavaScript libraries and CSS files to a given page and, once they are loaded, passes the <a href="http://developer.yahoo.com/yui/yahoo/">YAHOO global object</a> to the code inside the Greasemonkey script. (All YUI components reside within this single single global variable, YAHOO &mdash; so, for example, you access the YUI Event Utility by referencing <code>YAHOO.util.Event</code>.) I'm sure that this approach is neither the perfect nor the only solution to achieving YUI/Greasemonkey integration, so suggestions and ideas are welcome! Please sound off in the comments and let me know what approaches you've taken to this problem in your own projects.<h3 id="example">An Example Greasemonkey Script Implementing a YUI Loader and Using YUI Components</h3>
+		<p>What I am interested in sharing with you here, primarily, is the mechanism by which you can include and invoke YUI from within a Greasemonkey script while reusing (and not disturbing) existing YUI components already present in the document. I'll do that by exploring a simple Greasemonkey sample script that translates selected text on <a href="/blog-archive/">YUIBlog.com</a>, <a href="http://news.yahoo.com/">Yahoo! News</a>, or <a href="http://carlo.zottmann.org/">my personal blog</a> using <a href="http://babelfish.yahoo.com/">Yahoo! Babelfish</a>; with the script installed, you can highlight any passage of text on one of those sites and, if you hold down the shift key while releasing the mouse, a <a href="http://developer.yahoo.com/yui/container/panel/">YUI Panel</a> with a German Babelfish translation will pop up. (If you want to install and test the script, you can download it from <a href="http://carlo.zottmann.org/code/yuigm_example_yuiblog_babelfish.user.js">http://carlo.zottmann.org/code/yuigm_example_yuiblog_babelfish.user.js</a>; the script is configured to operate only on <code>http://*yuiblog.com/*</code>, <code>http://news.yahoo.com/*</code>, and <code>http://carlo.zottmann.org/*</code> URIs).<p>In case you're not using Firefox, here's a quick example of the script in action. Click the screencapture below to see a 10-second QuickTime movie of the interaction:<p><a href="/blog-archive/assets/yui-gm-babelfish.mov"><img alt="The example script in action: The Greasemonkey script loads YUI components, sends selected text to Yahoo! Babelfish for translation, then displays the results in a YUI Panel Control." border="0" height="340" src="/blog-archive/assets/yui-gm-babelfish.png" width="500" /></a><h3 id="keyobjects">Key Objects in the Script</h3>
+		<p>We have four key objects in the script: <code>GM_YUILOADER</code>, <code>GM_YUILOADER_CONFIG</code>, <code>YBFLOOKUP</code>, and of course the <code>YAHOO</code> global object.<ol>
+				<li><code>GM_YUILOADER</code> holds all the logic to inject the necessary JavaScript and CSS files, makes sure they are loaded and triggers execution of the main part of the script (the "payload").<li><code>GM_YUILOADER_CONFIG</code> contains the configuration parameters for our YUI usage, including the list of YUI JavaScript libraries and/or CSS files we want to load, the maximum time to wait for for said files to complete loading, the frequency with which to check for completion, and information about which callback function to fire once everything is loaded.<li><code>YBFLOOKUP</code> is the "payload", containing the code where we use YUI to achieve our goals. In our example this is the <a href="http://babelfish.yahoo.com">Babelfish</a> YUI Panel (hence the name of the object) which will display a German translation for the English text on the page that was marked by the user.<li><code>YAHOO</code> is what you would expect &mdash; the <code>YAHOO</code> global object. It is avaible once <code>GM_YUILOADER</code> has triggered execution of the main part of the script.</ol> <h3 id="loader">The Loader</h3>
+		<p>The loader is the most critical component of the script, and it's the part that you are most likely to want to adapt in creating your own YUI-based Greasemonkey implementations. Here is the general workflow of the <code>GM_YUILOADER</code> technique.<ol>
+				<li>Greasemonkey triggers script execution.<li><code>GM_YUILOADER.loader()</code> is called and... <ul>
+						<li>adds a <code>GM_YUILOADER_DOC</code> property to Greasemonkey's <code>unsafeWindow.document</code> which (among other things) holds a counter, a so-called trigger variable and a function (which increments aformentioned counter; if the counter reaches the number of included <code>&lt;script/&gt;</code> tags, the trigger variable is set to true)<li>adds new <code>&lt;script src="..."/&gt;</code> and/or <code>&lt;link rel="stylesheet" type="text/css" href="..."/&gt;</code> tags to the page (unless that YUI component is already included in the page, which is determined using object detection)<li>adds <code>onLoad</code> event handlers to above <code>&lt;script/&gt;</code> tags (which call the<br /> function inside <code>unsafeWindow.document.GM_YUILOADER_DOC</code>)</ul> <li><code>GM_YUILOADER.loaderCheck()</code> is run periodically, checking the status of the trigger variable, until one of two things happens: either the variable is true, in which case the payload logic is invoked (i.e. <code>YBFLOOKUP.run()</code>) after making the <code>YAHOO</code> global object available to the Greasemonkey script, or the maximum loading time is reached, which will cause the script to abort.</ol> <p>Let's take a look at some of the loader-specific code in the sample script. First, you specify the YUI components on which your Greasemonkey script will rely. You do so in an structured object &mdash; the <code>assets</code> member of the <code>GM_YUILOADER_CONFIG</code> object: <div class="codeblock"><pre>// Settings used by the loader "engine"
+var GM_YUILOADER_CONFIG = {
+    // List of JS libraries and CSS files to load. obj is used for the object
+    // detection used in the loader. Basically, if the object already exists,
+    // the script is not injected in the page.
+    assets: [
+        { type: 'css', url: 'http://developer.yahoo.com/yui/build/container/assets/container.css' },
+        { type: 'js', obj: 'YAHOO', url: 'http://us.js2.yimg.com/us.js.yimg.com/lib/common/utils/2/yahoo_2.1.0.js' },
+        { type: 'js', obj: 'YAHOO.util.Event', url: 'http://us.js2.yimg.com/us.js.yimg.com/lib/common/utils/2/event_2.1.0.js' },
+        { type: 'js', obj: 'YAHOO.util.Dom', url: 'http://us.js2.yimg.com/us.js.yimg.com/lib/common/utils/2/dom_2.1.0.js' },
+        { type: 'js', obj: 'YAHOO.util.Anim', url: 'http://us.js2.yimg.com/us.js.yimg.com/lib/common/utils/2/animation_2.1.0.js' },
+        { type: 'js', obj: 'YAHOO.widget.Panel', url: 'http://us.js2.yimg.com/us.js.yimg.com/lib/common/widgets/2/container/container_2.1.0.js' }
+    ],</pre></div> <p>By comparing this list with the YUI objects that may already be present in the <code>YAHOO</code> global object, the script creates a "to-do" list of needed-but-missing components. It can then loop through the needed assets and include them on the page. Here's the underlying code for that part of the loader:<div class="codeblock"><pre>// Now let's add the extra tags to the page that'll load the libraries and
+    // CSS files.
+
+    var numAssets = GM_YUILOADER_CONFIG.assets.length;
+
+    for (var a = 0; a < numAssets; a++) {
+        var tag;
+        var asset = GM_YUILOADER_CONFIG.assets[a];
+
+	switch (asset.type) {
+		// CSS file
+		case 'css':
+			tag = document.createElement('link');
+			tag.href = asset.url;
+			tag.type = 'text/css';
+			tag.rel = 'stylesheet';
+			break;
+
+		// Javascript library.
+		case 'js':
+			var injectScript = true;
+
+			// Object detection
+			try {
+				injectScript = eval('window.' + asset.obj + ' === undefined');
+			}
+			catch (e) {}
+
+			if (injectScript) {
+				tag = document.createElement('script');
+				tag.src = asset.url;
+
+				// The crucial part: triggering document.GM_YUILOADER.countLoaded()
+				// means keeping track whether all scripts are loaded yet.
+
+				tag.setAttribute('onload', 'document.GM_YUILOADER_DOC.countLoaded();');
+
+				// How many JS libraries are we dealing with again? Let's keep
+				// track.
+
+				ud.GM_YUILOADER_DOC.numberTotal++;
+			}
+			break;
+	}
+
+	document.body.appendChild(tag);
+}
+</pre></div> <p>There are other details taken care of in the loader portion of the script, but this is the heart of the logic &amp; and the code above captures the essence of this approach to marrying YUI with Greasemonkey.<h3 id="payload">The Payload</h3>
+		<p>The practical part of the script (a.k.a. the "payload") is pretty straightforward: a simple, invisible <a href="http://developer.yahoo.com/yui/container/panel/">YUI Panel</a> is built, a <code>mouseup</code> event handler is attached to the document body. Once triggered, it'll check if text was selected and if the shift key is still pressed; if so, it'll grab the German translation for the text from <a href="http://babelfish.yahoo.com">Babelfish</a>, put it in the body of the Panel and invoke the Panel's <code>show()</code> method.<p>At the heart of the payload is an event listener listening for the mouseup event on the window object. Here's the beginning of that event handler:<div class="codeblock"><pre>// Event handler for mouseUp events<br />
+YBFLOOKUP.subscriberSelect = function(e) {<br />
+var selection = window.getSelection();<br />
+var selectionText = selection.toString();<br /><br />
+// Shift key pressed? Anything selected?<br />
+if (!e.shiftKey || selectionText == '') { return; }<br />
+	YBFLOOKUP.panel.setBody('Loading Babelfish EN-DE translation, just a second...');<br />
+	YBFLOOKUP.panel.cfg.setProperty('x', e.clientX + 20);<br />
+	YBFLOOKUP.panel.cfg.setProperty('y', e.pageY + 20);<br />
+	YBFLOOKUP.panel.show();</pre></div> <p>From there, the script proceeds to make a call to Greasemonkey's built in facility for loading external pages (<code>GM_xmlhttpRequest</code>), loads the translation from Yahoo! Babelfish, and shows the result in the Panel.<h3 id="closingworkds">Closing Words</h3>
+		<p>The ability to use YUI in Greasemonkey scripts can be quite beneficial to Greasemonkey developers. I know from personal experience that YUI brings a lot of new options and tools to the Greasemonkey playing field that, without a library, you would have to build on your own. Also I like the idea of playing with new YUI-powered gimmicks on a live site; for instance, it is rather easy now for me to to inject autocompletion into a form field on a live Yahoo! page just to see what it would look and how it would behave &mdash; without running the risk of destroying things and without having to set up a dedicated development environment, do exhaustive QA testing, or ask anyone for permission. Greasemonkey captures <a href="http://www.hackday.org/">the essence of hacking</a> and it opens up wonderful creative opportunities.<p>For me personally, YUI and Greasemonkey are a perfect fit, and I'd like to use this opportunity to thank both the Greasemonkey developers and the YUI crew for their ingenuity and willingness to share the love with us.</div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

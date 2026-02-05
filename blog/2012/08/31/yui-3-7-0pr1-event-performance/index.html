@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI 3.7.0pr1 - Event Performance</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/releases/">Releases</a></li>
+                    <li class="current">YUI 3.7.0pr1 - Event Performance</li></ul>
+				<h1 class="yui3-u-7-8">YUI 3.7.0pr1 - Event Performance</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By Eric Ferraiuolo</a><span class="date">August 31, 2012<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>We've previously mentioned our plans to move to a more rapid release cycle for YUI, and now the work we put into automating our unit and functional testing in 3.6.0 is making that possible. YUI 3.7.0pr1 is now available to the developer community for feedback and testing on the <a href="http://yui.yahooapis.com/3.7.0pr1/build/yui/yui-min.js" title="YUI 3.7.0pr1 seed file">Yahoo! CDN</a> (and as a <a href="http://yui.zenfs.com/releases/yui3/yui_3.7.0pr1.zip" title="YUI 3.7.0pr1 Zip distribution">download</a>), and our <a href="http://stage.yuilibrary.com/">Staging website</a> has the updated documentation.<p>With our new release cycle, we plan to release a production-ready version of YUI at the end of each development sprint (which usually lasts one month.) The version number of a release will depend on its contents. 3.7.0pr1 is a preview release which was cut from our <a href="https://github.com/yui/yui3/tree/3.x" title="YUI's 3.x branch on GitHub">3.x branch</a>, and we rely on your feedback and testing to help us determine if 3.7.0 will be the next production-ready release of YUI. Otherwise, we'll end up cutting 3.6.1 from our master branch and releasing it at the end of the current development sprint.<h3>Event Performance</h3>
+	<p>The main focus for this preview release is to get our low level custom event performance work in your hands so it can be rigorously tested in real world applications. Based on our benchmarks, we are seeing up to a <strong>3x improvement in custom event performance!</strong><p>To stay up to date with ongoing event performance work, <strong>CC yourself on <a href="http://yuilibrary.com/projects/yui3/ticket/2532411" title="YUI Ticket with details of ongoing event performance work">Ticket #2532411</a></strong>.<h4>Results</h4>
+	<p>Some of the benchmark numbers on Chrome 21/MacOS, are shown below:<table style="margin:1em auto;">
+			<thead>
+				<tr>
+					<th>Benchmark Description</th>
+					<th>YUI 3.6.0</th>
+					<th>YUI 3.7.0pr1</th> </tr> </thead>
+			<tbody>
+				<tr>
+					<td>Fire with Payload - no listeners</td>
+					<td><strong>34,412</strong> ops/sec</td>
+					<td><strong>66,432</strong> ops/sec</td> </tr>
+				<tr>
+					<td>Fire with Payload - 2 listeners</td>
+					<td><strong>30,030</strong> ops/sec</td>
+					<td><strong>62,484</strong> ops/sec</td> </tr>
+				<tr>
+					<td>Publish (with attribute event config)</td>
+					<td><strong>129,728</strong> ops/sec</td>
+					<td><strong>371,997</strong> ops/sec</td> </tr> </tbody> </table> <p>The benchmark tests can be found in <a href="https://github.com/yui/yui3/tree/3.x/src/event-custom/tests/benchmark"><code>src/event-custom/tests/benchmark/</code></a> on the 3.x branch.<p>In addition to the above benchmark tests, we've also created a <a href="http://jsperf.com/yui-basecore-vs-base/2">jsPerf benchmark</a> to compare the initialization of BaseCore, Base, and Model in YUI 3.6.0 vs. 3.7.0pr1. The results show a noticeable improvement and that we have room to make the initialization of these classes even faster.<h4>Runtime Optimizations</h4>
+	<ul>
+		<li>
+			<p>Event subscribers are now stored in arrays, as opposed to hashes. The <code>subscribers</code> and <code>afters</code> <code>Y.CustomEvent</code> instance properties have been deprecated, and replaced with private arrays.<p>If you're referring to the <code>subscribers</code> or <code>afters</code> properties directly, you can set the <code>Y.CustomEvent.keepDeprecatedSubs</code> to <code>true</code>, to restore them, but you will incur a performance hit in doing so. The rest of the CustomEvent API is driven by the new private arrays.<p>If you are using the above properties directly, please <a href="http://yuilibrary.com/projects/yui3/newticket/">file an enhancement request</a> and we'll provide a public way to achieve the same results, without the performance hit, before we remove the properties permanently.<li>
+			<p>Avoid creating a new EventTarget during fire, if <code>stoppedFn</code> is not used.<li>
+			<p>Optimized mixing during the creation of a <code>CustomEvent</code> object.<li>
+			<p>Optimized mixing done on the facade, during a <code>fire()</code> with a payload.</ul>
+	<p>The following commits have more details on the specific changes in their commit messages:<ul>
+			<li><a href="https://github.com/yui/yui3/commit/e7415e71de">e7415e71de</a> - subscribers/afters fix.<li><a href="https://github.com/yui/yui3/commit/29f63996f8">29f63996f8</a> - optimized payload mix fix.</ul> <h4>Memory Optimizations</h4>
+	<p>Fixed <code>_facade</code> and <code>firedWith</code> which were holding onto a reference to the last fired event facade. Now <code>_facade</code> is reset to <code>null</code> after the fire sequence, and <code>firedWith</code> is only maintained for <code>fireOnce</code> CustomEvents.<p>This allows the facade from the last fired event to be garbage collected whereas prior to this change it wasn't.<h4>Ongoing Work</h4>
+	<p>This is just the beginning of our event performance work; you can expect more performance tweaks for events as we continue this development sprint. The next area we wanted to focus on is to reduce the amount of code we execute for the non-bubbling, non-broadcasting, no-subscribers use case. To stay up to date with the ongoing event performance changes and benchmark numbers, <strong>CC yourself on <a href="http://yuilibrary.com/projects/yui3/ticket/2532411" title="YUI Ticket with details of ongoing event performance work">Ticket #2532411</a></strong>.<h3>ScrollView Improvements</h3>
+	<p>ScrollView has undergone a major refactoring, and this release introduces a number of new features and bug fixes.<h4>Forced-Axis and Dual-Axis Support</h4>
+	<p>ScrollView now has an optional <code>axis</code> property that can be declared with values: <code>"x"</code>, <code>"y"</code>, or <code>"xy"</code>. If unspecified, ScrollView will attempt to auto-detect which axis is intended to be scrolled based on the overflow of its content (as it previously did.) By specifying <code>"xy"</code>, ScrollView is now able to scroll on both axes (though not at the same time.) This eliminates most needs for nested ScrollViews to accomplish dual-axis capability, thus improving performance and maintainability.<h4>Right-To-Left (RTL) Support</h4>
+	<p>Initial support has been added for RTL layouts, which is detected from the <code>direction</code> attribute of the page's <code>&lt;html&gt;</code> element. We are continuing to work on RTL support, so please <a href="http://yuilibrary.com/projects/yui3/newticket">report any bugs</a> you encounter.<h4>Bug Fixes</h4>
+	<ul>
+		<li>
+			<p>Improved reliability of the <code>scrollEnd</code> event. It now only fires once per scrolling sequence, instead of multiple times. This is useful to know when ScrollView's state is steady so you can perform any post-interaction tasks (e.g. DOM updates) without affecting the scrolling performance.<li>
+			<p>Fixed the multiple listeners were added for <code>drag</code> and <code>flick</code> events.<li>
+			<p>The <code>mousewheel</code> event now properly update the <code>scrollY</code> attribute.<li>
+			<p>ScrollView Paginator's <code>scrollTo()</code> method has been deprecated, use the new <code>scrollToIndex()</code> method which properly updates the paginator's <code>index</code> attribute.<li>
+			<p>Fixed ScrollView Paginator bug where the <code>scrollview.pages.scrollTo()</code> method may not actually scroll to the desired "page", or may cause the widget to lock-up.</ul>
+	<p>Please refer to <a href="https://gist.github.com/3522590">ScrollView's full release notes</a> for more specific details.<h3>App Framework Additions</h3>
+	<p>For the first part of the current development sprint, a couple of new, related features added to <a href="http://yuilibrary.com/yui/docs/app/">YUI's App Framework</a> suite of components:<h4>Server Rendered Views Support</h4>
+	<p>There are certain situations where an app needs to show a view which is not rendered in the browser, instead the content is rendered server side. The <a href="http://yuilibrary.com/yui/docs/pjax/">Pjax component</a> in YUI was created for this specific use case, but the problem was these pjax content-fetching features were not available to people using <code>Y.App</code>. To make these feature available, they were extracted out to the <code>Y.PjaxContent</code> class extension, which is used by the new <a href="http://stage.yuilibrary.com/yui/docs/api/classes/App.Content.html"><code>Y.App.Content</code></a> extension which provide the follow features for working with pre-rendered views:<dl>
+			<dt><code>showContent()</code><dd>
+				<p> Method which provides an easy way to view-ify HTML content which should be shown as an app's active/visible view. <dt><code>loadContent()</code><dd>
+				<p> Route middleware which loads content from a server. This makes an Ajax request for the requested URL, parses the returned content and puts it on the route's response object. <dt><code>Y.App.Content.route</code><dd>
+				<p> A stack of middleware which forms a pjax-style content route. This provides a standard convention which uses <code>loadContent()</code> and <code>showContent()</code> to load and show server rendered content as views for an app. </dl> <p>For more information, refer to the <a href="http://stage.yuilibrary.com/yui/docs/app/#server-rendered-views">Server Rendered Views</a> section of App's user guide on our Staging website.<h4>Route-specific Middleware</h4>
+	<p>In order to support the API we wanted for server-rendered/progressively-enhanced views in <code>Y.App</code>, we added support for route-specific middleware to <a href="http://stage.yuilibrary.com/yui/docs/router/">Router</a>. The <code>route()</code> method now accepts an arbitrary number of callbacks enabling more reuse of routing code. For people familiar with <a href="http://expressjs.com/api.html#app.VERB">Express.js' route middleware</a>, this behaves the same.<p>For more information, refer to the <a href="http://stage.yuilibrary.com/yui/docs/router/#chaining-routes-and-middleware">Chaining Routes and Middleware</a> section of Router's user guide on our Staging website.<h4>Planned Changes to App Framework Components</h4>
+	<p>Beyond these changes to the App Framework components, more are slated for the final 3.7.0 release. The items in the <a href="http://yuilibrary.com/projects/yui3/report/132">list of high priority App Framework changes</a> have a similar theme: breaking features out into class extensions which have a single responsibility. The reasons being to help promote code reuse between components and on the server (in Node.js), which in turn allows more of YUI's App Framework components to be used by and within <a href="http://developer.yahoo.com/cocktails/mojito/">Mojito</a>. <h3>Happy Testing!</h3>
+	<p>For a complete list of changes in 3.7.0pr1, please refer to the <a href="https://github.com/yui/yui3/wiki/YUI-3.7.0-Change-History-Rollup">change history rollup</a> for this release.<p>We do these preview releases so you can test them in your applications and give us your feedback. If you find a bug, or want to suggest an enhancement, please don't hesitate to <a href="http://yuilibrary.com/projects/yui3/newticket/">file a ticket</a>. <strong>Thanks, and happy testing!</strong></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

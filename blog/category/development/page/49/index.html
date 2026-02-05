@@ -1,0 +1,1481 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     Development Archive - YUI Blog - page 49	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Development Category Feed" href="/blog/category/development/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.8.2'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive paged category category-development category-2 paged-49 category-paged-49 yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		<ul class="breadcrumbs"><li class="front_page"><a href="//yuilibrary.com/">YUI</a></li><li><a href="/blog">Blog</a></li>Development<li></li></ul>
+
+		
+ 			
+							<h1>Blog: Category &#8216;Development&#8217;</h1>
+
+			
+							<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/50/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/48/" >Newer Entries &raquo;</a>    </div>
+</div>			
+									
+								<div class="post-2336 post type-post status-publish format-standard hentry category-development tag-books tag-dan-wellman tag-daniel-barreiro tag-packt tag-satyam tag-yui-2 first-post">
+				
+						<h2 id="post-2336"><a href="/blog/2010/07/20/yui-2-8-learning-the-library/">Author Notes: Writing <em>YUI 2.8: Learning the Library</em>, the New YUI 2 Book from Packt</a></h2>
+					
+
+						<div class="entry">
+							<div class="interview">
+<div class="intro">
+<p> <img src="http://yuiblog.com/assets/satyam.jpg" alt= "Daniel Barreiro (Satyam)" width="160" height="206" align= "right"><em><strong>About the Author:</strong> Daniel Barreiro (screen name Satyam) has been around for quite some time. The ENIAC was turned off the day before he was born, so he missed that but he hasn&#8217;t missed much since. He&#8217;s had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere. When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic. Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;&#8217;s and &gt;&#8217;s, he ended up learning quite a lot about the world of frontend engineering. It&#8217;s been a long journey since COBOL and Fortran. Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain. When he&#8217;s not basking in the Mediterranean sun, Satyam can be found among the most prolific and knowledgable participants in the YUI community on the <a href="http://yuilibrary.com/forum/">YUI Forums</a>. </em></p>
+</div>
+</div>
+<p><a href="http://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book"><img src="http://yuiblog.com/assets/satyam-book-20100719-093003.jpg"></a></p>
+<p><P>In December 2009, editors at <A HREF="http://www.packtpub.com/">Packt Publishing</A> asked me if I&#8217;d like to write the second edition of their book on the <A HREF="http://www.packtpub.com/yahoo!-user-interface-library-yui/book">YUI Library</A>. The original author, Dan Wellman, was engaged in other business at the time, and they needed an author who was broadly familiar with <a href="http://developer.yahoo.com/yui/2/" title="YUI 2 &mdash; Yahoo! User Interface Library">YUI 2</a>. The first thing I thought was: aren&#8217;t you a little bit late? Much of <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a> was already out in GA and more was coming with every release. But the Packt team wanted to proceed, and I agreed to take on the challenge.</p>
+<p>On July 16<SUP>th</SUP>, the new volume came out, <A HREF="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book">YUI 2.8: Learning the Library</A>, not as a second edition but as a new title. In the end, it wasn&#8217;t such a bad decision. While the book was going through the editing process, <a href="/blog/2010/03/11/yui-2-in-3-coming-soon/" title="YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules &raquo; Yahoo! User Interface Blog (YUIBlog)">YUI 3 gained the ability to load YUI 2 components from the <code>use()</code> statement</a>. This extends the usefulness of the extensive YUI 2 catalog while taking the pressure off developers to produce YUI 3 versions of all YUI 2 components.</P></p>
+<ul>
+<li><strong>Sample Chapter:</strong> <a href="http://www.packtpub.com/article/yui-2-8-rich-text-editor">Packt has released a sample chapter from the new volume, covering YUI 2.8 Rich Text Editor, on their website, giving you a flavor of what the new book contains</a>.</li>
+</ul>
+<p><P>The goal with this new volume was to cover all non-beta YUI 2 components. This broad vision forced me to take a deeper look at components I had barely used in their most basic forms as well as others I&#8217;d not used at all. However, in contrast to the first edition, a project that began not long after the library had been made public, I had a few years of cumulative experience with YUI — my own experience paired with that of the many users who share their experiences and advice on the forums and the blog. I was also spared from many blunders by an excellent team of reviewers, two of whom, Caridy Patiño and Iliyan Peichev, are also well known YUI contributors.</p>
+<p>To keep the book to a manageable length, I eliminated some images, long examples, and reference material that could be found at <a href="http://developer.yahoo.com/yui/" title="YUI Library">the YUI website</a>. While the first edition had at most two components per chapter, the new one has up to four and has a couple of new chapters. Even so, some components didn&#8217;t make the cut.</P></p>
+<h3>The Evolution of YUI 2</h3>
+<p>I learned a lot about the YUI Library while writing this book, and the changes I made to Dan&#8217;s text were instructive about the library&#8217;s evolution since its release in 2006.</p>
+<p><P>The programming style for example code has changed in these years. Instead of creating a namespace (or using <CODE>YAHOO.example</CODE>, which is always available as a placeholder), we now tend to fit everything within an anonymous function created when the DOM becomes available. (This style is closer to what we see in YUI 3.) We now use namespaces when we absolutely need to create globally accessible variables (including objects) such as when we create a custom library component. Sandboxing saves us some typing, since we can define functionally-scoped aliases for the objects we use more often from YUI (Dom, Event, Lang are common shortcuts) or variables of our own. This approach also lets <a href="http://developer.yahoo.com/yui/compressor/" title="YUI Compressor">YUI Compressor</a> do a far better job.</P></p>
+<p><P>Having a panoramic view of the whole of the library allowed me to notice how it developed over time. The architecture of the components changed and it is clear how everything has converged into what is now YUI 3.</P></p>
+<p><P>Early components, like TreeView, had few dependencies. As certain patterns started to become obvious, some basic component infrastructure started to develop. The Container family had a <code>Config</code> object which allowed for getter and setter methods, and so have all the components that inherit from it. It also uses the Custom Event object, which is one of the two ways to work with custom events we have available in YUI 2.</P></p>
+<p><P>With the release of TabView came the <a href="http://developer.yahoo.com/yui/element/" title="YUI 2: Element Utility">YUI 2 Element Utility</a>, which provided improved getters and setters (via AttributeProvider) as well as better custom events (via EventProvider). Seventeen other YUI 2 components inherit from Element. Looking at the evolution the library, it&#8217;s easy to see how the ideas behind Element, as a DOM element wrapper, came to inform YUI 3&#8242;s Node. Element&#8217;s role as a basis for other components was broken out in YUI 3&#8242;s Base and Widget, though the new components are all far more powerful and complete, each in its own area.  For example, Node&#8217;s <code>all</code> and <code>one</code> methods return Node instances while Element&#8217;s <code>getXxxx</code> methods return plain DOM element references, not completely abstracting the DOM.</p>
+<p>The two models, Config and CustomEvents on the one hand and AttributeProvider and EventProvider on the other are not totally incompatible.  In Menu and Split Buttons both models coexist, as Button inherits from Element and it hosts a regular Menu that inherits from Container.</P></p>
+<p><P>Undoubtedly, YUI 3 benefited from all of this experience; but YUI 2 also benefitted from YUI3. Cool stuff came from YUI 3 to enrich YUI 2, such as <code>event-delegate</code> and <code>element-delegate</code> and other new events we can listen to (<code>focusin</code> and <code>focusout</code>, <code>mouseenter</code> and <code>mouseleave</code>). This also became possible because of <a href="/blog/2008/10/17/loading-yui/" title="Loading YUI: Seeds, Core, and Combo-handling &raquo; Yahoo! User Interface Blog (YUIBlog)">the way we load components</a>, which changed during YUI 2&#8242;s lifespan — most importantly with the introduction of the <a href="http://developer.yahoo.com/yui/yuiloader/" title="YUI 2: YUI Loader Utility">YUI 2 Loader</a> — and became formalized as intrinsic support for client-side loading in YUI 3.</P></p>
+<p><P>Loading affected how the components got designed and how the final component files are built. In YUI 2, to minimize the number of outstanding server requests, the components had to have as much of what they needed packed together. Thus, some components got loosely related objects in them just to have them handy when and if needed, others got a bunch of objects with a whole range of features packed in one file because loading the separate parts was too costly. Then came aggregates such as <CODE>yahoo-dom-events.js</CODE> or <CODE>reset-fonts-grids.css</CODE> since they are almost invariably used together or <CODE>utilities.js</CODE> which gathers all the often used components in the <CODE>YAHOO.util</CODE> branch. But the real change came with combo-handled requests, which allowed us to pull any number of script and css files each in just one http request. That makes it less necessary to optimize the packaging of the objects in the library into component files and those into aggregates based on a hypothetical &#8216;average user&#8217;.</P></p>
+<p><P>In YUI 3 we no longer need to load the &#8216;container family&#8217; all at once. We can load the separate <CODE>widget-</CODE><CODE><I>xxxx</I></CODE> files on top of the basic <CODE>widget</CODE> according to the features we need. That approach is the standard in YUI 3, but it came as one of the steps in the evolution of YUI 2. Hence, more recent YUI 2 components like <code>event-delegate</code> and <code>element-delegate</code> are packaged separately from from their base components and so is Event&#8217;s <code>mouseenter</code> and <code>mouseleave</code>. We might see further splits in library components in future releases, allowing you to choose more specifically the feature set you want and leave unneeded code off the page.</P></p>
+<p><P>This is a story of progress, a process that necessarily went though some failed efforts. Why doesn&#8217;t TreeView inherit from Element or why hasn&#8217;t Container, and thus Menu, switched to Element or, at least, to AttributeProvider and EventProvider? Technically, the answer is &#8216;backward compatibility&#8217;, but in more general terms it is &#8216;respect&#8217;. There are thousands of websites (and tens of thousands of developers) using the the published public interface of the YUI 2 components. Making those changes would break many applications or would cut them off the upgrade path, should they want to benefit from a code fix or a new feature. Being so respectful of the installed code base is a library feature in itself. Being respectful to us, who create that code, is a feature of the people in the YUI team, and I&#8217;m very grateful it is so.</P></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/83f0dfaa266dff4c90e90b451e988ccd?s=32"> <div class="cont"><a href="http://www.satyam.com.ar/" class="name">By Satyam</a><span class="date">July 20th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2316 post type-post status-publish format-standard hentry category-development category-performance">
+				
+						<h2 id="post-2316"><a href="/blog/2010/07/12/mobile-browser-cache-limits-revisited/">Mobile Browser Cache Limits, Revisited</a></h2>
+					
+
+						<div class="entry">
+							<p>
+In <a href="/blog/2010/06/28/mobile-browser-cache-limits/">Mobile Browser Cache Limits: Android, iOS, and webOS</a>, I shared the results of my attempts to determine browser cache limits on Android, iOS, and webOS devices. At the end of the article, I wrote:
+</p>
+<blockquote cite="http://www.yuiblog.com/blog/2010/06/28/mobile-browser-cache-limits/"><p style="margin:0">Use these results as a starting point, but verify them yourself before you make major decisions based on assumptions about mobile cache limitations. The mobile browser world changes at a lightning pace, so this research will have a very short shelf life.</p>
+</blockquote>
+<p>
+As it turns out, that was good advice: the day after the article was posted, <a href="http://stevesouders.com/">Steve Souders</a> commented that he had run tests using a different methodology that was more representative of a real-world web workflow and had gotten different results.
+</p>
+<h2>New Methodology</h2>
+<p>
+My original methodology involved navigating directly to a randomly generated page of a certain size, served with a <code>text/html</code> content type. The results using this methodology were reliably reproducible (except on webOS), but as Steve pointed out, users don&#8217;t navigate directly to CSS and JavaScript files. My assumption that the limits for direct navigation to an HTML resource were the same as the limits for external CSS and JavaScript was incorrect, so even though the results of my tests were valid, they weren&#8217;t widely applicable.
+</p>
+<p>
+Over the course of many IM sessions, several emails, and a couple of phone calls, Steve and I worked out a new testing methodology. I implemented a version of it on top of my <a href="http://github.com/rgrove/cachetest">cache testing framework</a>, then Steve <a href="http://stevesouders.com/tests/cachesize/">implemented a version</a> capable of publishing results to <a href="http://www.browserscope.org/">Browserscope</a>.
+</p>
+<p>
+In the new tests, we load an HTML page that refers to a randomly-generated CSS or JavaScript component of a certain size. Then we navigate to a second HTML page that loads the same component and checks whether or not it was loaded from the cache. To determine whether a component was loaded from the cache, we store a timestamp in a cookie on each request; if the timestamp is updated the second time we load the component, we know the request hit the server, which means the component was not loaded from the cache.
+</p>
+<h2>New Results</h2>
+<p>
+We found that <strong>all the mobile browsers we tested had significantly higher cache limits for external resources loaded by a page than they did for an HTML page itself</strong>. This is excellent news for mobile web developers.
+</p>
+<p>
+The table below illustrates our findings:
+</p>
+<style>
+.cachestats { font-size: 12px; }</p>
+<p>.cachestats td,
+.cachestats th {
+  margin: 2px;
+  padding: 2px;
+  text-align: center;
+  font-size:12px !important;
+}</p>
+<p>.cachestats th {
+  background: #efefef;
+  font-weight: bold;
+  padding: 4px;
+}</p>
+<p>.cachestats .browser { text-align: left; }
+.cachestats .doubtful { background-color: #fff0db; }
+.cachestats .no { background-color: #ff5f5f; }
+.cachestats .yes { background-color: #b3ffaf; }
+</style>
+<table class="cachestats">
+<caption>
+    Table: Mobile browser external resource cache characteristics<br />
+  </caption>
+<thead>
+<tr>
+<th>Browser/OS/Device</th>
+<th>Single Component Limit</th>
+<th>Survives Power Cycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="browser">Android 2.2 (Nexus One)</td>
+<td>2MB</td>
+<td class="yes">Yes</td>
+</tr>
+<tr>
+<td class="browser">Mobile Safari, iOS 3.1.3 (1st-gen iPhone)</td>
+<td>4MB+</td>
+<td class="no">No</td>
+</tr>
+<tr>
+<td class="browser">Mobile Safari, iOS 3.2 (iPad)</td>
+<td>4MB+</td>
+<td class="no">No</td>
+</tr>
+<tr>
+<td class="browser">Mobile Safari, iOS 4.0 (iPhone 3GS)</td>
+<td>4MB+</td>
+<td class="no">No</td>
+</tr>
+<tr>
+<td class="browser">Mobile Safari, iOS 4.0 (iPhone 4)</td>
+<td>4MB+</td>
+<td class="no">No</td>
+</tr>
+<tr>
+<td class="browser">webOS 1.4.1 (Palm Pre Plus)</td>
+<td><span style="font-size:16px;line-height:12px">~</span>0.99MB (1,023KB)</td>
+<td class="yes">Yes</td>
+</tr>
+</tbody>
+</table>
+<p>
+Note that 4MB was the largest size we tested, and all the iOS devices cached 4MB components. The actual cache limit for those devices may be larger than 4MB. Also, webOS on the Palm Pre Plus gave consistent results in this test, whereas it had some problems in the previous test.
+</p>
+<p>
+It&#8217;s possible that the much lower limits my previous test showed for HTML components on iOS may indicate the use of a RAM cache for those components, while the much higher limits for CSS/JS components in this test may indicate the use of a disk cache, but this is just conjecture. Android, at least, does appear to use a disk cache in both cases, since its cache survives power cycles.
+</p>
+<h2>New Recommendations</h2>
+<p>
+Based on these new results, coupled with the results from my previous tests, I offer the following updated set of recommendations:
+</p>
+<ul>
+<li><strong>Use far-future cache expiration headers.</strong> This will prevent the browser from having to send a conditional GET request.</li>
+<li><strong>Try to limit HTML pages to 25.6KB or less</strong> if you want them to be cached, since the previous tests showed that this limit&mdash;imposed by iOS 3.2 on the iPad&mdash;was the lowest HTML resource limit of the devices tested.</li>
+<li><strong>Keep CSS and JS components under 1MB.</strong> Of course, 1MB is enormous and your components should be much smaller than this, but don&#8217;t bother splitting a component into separate requests for the sake of cacheability unless its size approaches 1MB.</li>
+<li><strong>Consider using the HTML5 application cache</strong> if it&#8217;s important that your components persist in the cache for a long time, or across power cycles.</li>
+<li><strong>Do your own testing.</strong> I stressed the importance of this in my previous article and I&#8217;ll stress it again here. Use these results as a starting point, but verify them yourself before you make important decisions based on them.</li>
+</ul>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/683e9380d7cc0724a35dadfb4eeb142b?s=32"> <div class="cont"><a href="http://wonko.com/" class="name">By Ryan Grove</a><span class="date">July 12th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2261 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-2261"><a href="/blog/2010/07/06/in-the-yui-3-gallery-base64-and-y64-encoding/">In the YUI 3 Gallery: Base64 and Y64 encoding</a></h2>
+					
+
+						<div class="entry">
+							<div class="interview">
+<div class="intro">
+<p><em><a href="http://www.nczonline.net/">Nicholas C. Zakas</a> (<a href="http://twitter.com/slicknet">@slicknet</a> on Twitter) is the lead frontend engineer on the <a href="http://yahoo.com">Yahoo! homepage</a>, a <a href="http://developer.yahoo.com/yui/">YUI</a> contributor, and author of <a href="http://www.amazon.com/Professional-JavaScript-Developers-Wrox-Programmer/dp/047022780X/">Professional JavaScript for Web Developers</a> and the newly-released, <a href="http://www.amazon.com/High-Performance-JavaScript-Nicholas-Zakas/dp/059680279X/">High Performance JavaScript</a>. </em></p>
+</div>
+</div>
+<p><a href="http://en.wikipedia.org/wiki/Base64">Base64</a> encoding was originally designed to allow lossless data passing between 8-bit and 7-bit systems. The primary example of its usage is in email, which traditionally used 7-bit systems to transfer the email while those of us at home on our computers were using 8-bit systems. This became especially important with non-text email attachments, which would be encoded into MIME base64 and sent along to the destination.</p>
+<p>More recently, base64 encoding has gained popularity for its usage in data URIs. For those unaware, data URIs are a way of embedding files inside of HTML and CSS. One of the supported data URI formats is base64.</p>
+<p>Base64 encoding is still used frequently in programming, primarily for obfuscation but also for safe data transport. While some browsers have native base64 encoding and decoding, this functionality isn&#8217;t defined in any standard nor commonly available in all browsers. The <a href="http://yuilibrary.com/gallery/show/base64">YUI 3 Gallery Base64 module</a> provides a common implementation of base64 encoding that can be used across all A-grade browsers. To use the Base64 module, include the following on your page:</p>
+<pre><code>&lt;script src="http://yui.yahooapis.com/3.1.0/build/yui/yui-min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+YUI({
+    gallery: 'gallery-2010.06.16-19-51'
+}).use('gallery-base64', function(Y) {
+
+    //your code here 
+});
+&lt;/script&gt;</code></pre>
+<p>The Base64 module exposes a <code>Base64</code> object with two methods: <code>encode()</code> and <code>decode()</code>. The methods are used as follows:</p>
+<pre><code>var decodedText = Y.Base64.decode(encodedText);
+var encodedText2 = Y.Base64.encode(rawText);</code></pre>
+<p>Along with the Base64 module, I also wrote a <a href="http://yuilibrary.com/gallery/show/y64">Y64 module</a>. Y64 is a base64 variant used at Yahoo! when base64 information needs to be transmitted as part of a GET request. Regular base64 has three characters that aren&#8217;t URL-safe: plus (+), slash (/), and equals (=). Y64 encoding replaces these with dot (.), underscore (_), and dash (-), respectively. This allows Y64-encoded strings to be placed in URLs without worrying about URL escaping of the characters.</p>
+<p>The Y64 module requires the Base64 module, which is automatically pulled in when you include the following code:</p>
+<pre><code>YUI({
+    gallery: 'gallery-2010.06.16-19-51'
+}).use('gallery-y64', function(Y) {
+    //your code here
+});</code></pre>
+<p>The Y64 module exposes a <code>Y64</code> object with <code>encode()</code> and <code>decode()</code> methods, so it usage is the same as with the <code>Base64</code> object:</p>
+<pre><code>var decodedText = Y.Y64.decode(encodedText);
+var encodedText2 = Y.Y64.encode(rawText);</code></pre>
+<p>If you&#8217;re planning on passing base64-encoded data in a URL string, you may want to consider Y64 as an alternative.</p>
+<p>Please keep in mind that base64 and Y64 are <em>not</em> encryption algorithms. Encryption algorithms are designed to secure data from prying eyes. Base64 and Y64 are <code>encoding</code> algorithms designed to transmit data without the risk of data corruption &#8211; the type of corruption that happens when data is transferred from one system to the next and may be encoded and decoded in many different formats before arriving at the final destination.</p>
+<p>A good example of this is link-sharing functionality. Suppose that you&#8217;re sharing a link by passing it to an entrypoint, such as <code>http://www.example.com?share=&lt;url&gt;</code>. The <code>url</code> needs to be URL-encoded for safe transmission, but that URL itself may also contain URL-encoded data. And believe it or not, sometimes browsers can mis-encoded URLs before transmission (it&#8217;s rare, but not unheard of). For a higher level of confidence that the data will arrive in good shape, you can use Y64 encoding:</p>
+<pre><code>var destination = "http://www.example.com?share=" + Y.Y64.encode(url);</code></pre>
+<p>The destination would then decode the URL value. Because this value won&#8217;t require URL-encoding, the chances of the data becoming corrupted during transmission are lessened.</p>
+<p>Not everyone will need to use base64 or Y64 encoding in their web applications, but these can be very powerful tools to keep in your back pocket.</p>
+<h3>Further Reading:</h3>
+<ul>
+<li><a href="http://www.nczonline.net/blog/2009/12/08/computer-science-in-javascript-base64-encoding/">Computer Science in JavaScript: Base64 encoding</a></li>
+<li><a href="http://www.nczonline.net/blog/2009/10/27/data-uris-explained/">Data URIs explained</a></li>
+</ul>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/f071cb9c72c08020c83a0838b192145a?s=32"> <div class="cont"><a href="http://nczonline.net" class="name">By Nicholas C. Zakas</a><span class="date">July 6th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2295 post type-post status-publish format-standard hentry category-development category-performance">
+				
+						<h2 id="post-2295"><a href="/blog/2010/06/28/mobile-browser-cache-limits/">Mobile Browser Cache Limits: Android, iOS, and webOS</a></h2>
+					
+
+						<div class="entry">
+							<style> 
+.cachenotes,
+.cachestats { font-size: 12px; }</p>
+<p>.cachenotes { margin: 0.5em auto 1.5em; }
+.cachenotes p { margin: 0 auto 0.4em; }</p>
+<p>.cachestats td,
+.cachestats th {
+  padding: 2px;
+  text-align: center;
+  font-size:12px !important;
+}</p>
+<p>.cachestats th {
+  background: #efefef;
+  font-weight: bold;
+}</p>
+<p>.cachestats .browser { text-align: left; }
+.cachestats .doubtful { background-color: #fff0db; }
+.cachestats .no { background-color: #ff5f5f; }
+.cachestats .yes { background-color: #b3ffaf; }
+</style>
+<p style="border:1px solid #cfcfcf;padding:6px;background:#f5f5f5;">
+<strong>Update (July 12, 2010):</strong> While the results described in this article are accurate for HTML pages, new tests have revealed very different cache limits for CSS and JS resources. The updated results are described in <a href="/blog/2010/07/12/mobile-browser-cache-limits-revisited/">Mobile Browser Cache Limits, Revisited</a>.
+</p>
+<p>
+	In early 2008, Wayne Shea and Tenni Theurer wrote a YUI Blog post on <a href="/blog/2008/02/06/iphone-cacheability/">iPhone Cacheability</a> in which they shared the results of research into various characteristics and limitations of Mobile Safari&#8217;s cache in iPhone OS 1.x. Among other things, they found that individual components larger than 25KB were not cached, and that there was a maximum total cache size of between 475KB and 500KB.
+</p>
+<p>
+	Much has changed since then. We&#8217;ve seen two new major releases and many minor releases of the iPhone OS (now iOS), and several other mobile devices with highly capable browsers have appeared to challenge the iPhone. Stoyan Stefanov found, in late 2009, that <a href="http://www.phpied.com/iphone-caching/">the iPhone&#8217;s cache limits had changed</a> (sadly, for the worse). But where do things stand now? And what about those non-iOS browsers?
+</p>
+<h2 id="cache-background">
+	Background<br />
+</h2>
+<p>
+	Browsers have two types of caches that we&#8217;re concerned with for the purposes of these tests:
+</p>
+<ul>
+<li>The <strong>component cache</strong>, or object cache, stores individual files. HTML, CSS, JavaScript, and images all go into the component cache. Whenever it needs one of these components, the browser first checks the cache before making a network request.
+	</li>
+<li>The <strong>page cache</strong>, also known as the back/forward cache, stores an entire page and all of its components, as well as their current state. When you use the back or forward button, the browser will load the page from the page cache if possible.
+	</li>
+</ul>
+<p>
+	The <a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/offline.html">HTML5 application cache</a> is another type of cache that&#8217;s widely supported by mobile browsers. Browser makers already do a good job of documenting the limits of the application cache, so I didn&#8217;t include it in my testing. More on the application cache later.
+</p>
+<h2 id="cache-devices-tested">
+	Devices Tested<br />
+</h2>
+<p>
+	I tested the following mobile browser/platform combinations:
+</p>
+<ul>
+<li>Android 2.1 (Nexus One)
+	</li>
+<li>Mobile Safari on iOS 3.1.3 (1st-gen iPhone)
+	</li>
+<li>Mobile Safari on iOS 3.2 (iPad)
+	</li>
+<li>Mobile Safari on iOS 4.0 (iPhone 3GS)
+	</li>
+<li>Mobile Safari on iOS 4.0 (iPhone 4)
+	</li>
+<li>webOS 1.4.1 (Palm Pre Plus)
+	</li>
+</ul>
+<p>
+	<strong>Note:</strong> With the exception of Mobile Safari on iOS 4.0, I tested only one device in each category. If there are variations between individual devices or differences based on installed software beyond the OS, my tests would not detect those variations. These particular devices were tested because they&#8217;re the ones I had access to, not because I consider them to be more important than other devices.
+</p>
+<h2 id="cache-methodology">
+	Methodology<br />
+</h2>
+<p>
+	Cache testing is tedious, but relatively simple.
+</p>
+<p>
+	I wrote a tiny Sinatra app (<a href="http://github.com/rgrove/cachetest">fork it on GitHub!</a>) that generates a response consisting of a requested number of pseudorandom alphanumeric and whitespace bytes. The responses can be served either gzipped or uncompressed. The following far-future expiration response headers are sent to ensure that all responses are considered cacheable:
+</p>
+<pre>
+Cache-Control: max-age=315360000
+Expires: Fri, 01 May 2020 03:47:24 GMT
+</pre>
+<p>
+	Over my local network, I then manually performed the following steps on each device to test the component cache:
+</p>
+<ol>
+<li>Load the cache test index page.
+	</li>
+<li>Tap on a link to a component of a particular size, ranging from 5KB to 20MB, and wait for it to finish loading.
+	</li>
+<li>Tap the back button.
+	</li>
+<li>Tap the same link again. Observe whether the random characters are the same, and whether the server console prints a log entry for a request, to determine whether the component was cached in step 2.
+	</li>
+<li>Repeat and adjust component sizes as necessary to determine the maximum component size that will be cached.
+	</li>
+</ol>
+<p>
+	To test the page cache, I performed essentially the same steps except that instead of tapping the link again in step 4, I tapped the browser&#8217;s forward button, causing it to use the page cache rather than the component cache.
+</p>
+<p>
+	Support for <code>ETag</code> and <code>Last-Modified</code> was determined by tweaking the server to send the appropriate <code>ETag</code> or <code>Last-Modified</code> response headers (in separate tests) and to omit the far-future expiration headers. I then inspected the request headers received by the server to verify that the browser sent the expected <code>If-None-Match</code> or <code>If-Modified-Since</code> headers on step 4.
+</p>
+<h2 id="cache-results">
+	Results<br />
+</h2>
+<p>
+	I tested with gzip both enabled and disabled, but I found that <strong>gzip had no effect on cacheability on any device</strong>. The uncompressed component size is what matters in all cases, regardless of whether or not that component is served gzipped. As such, all component sizes mentioned here are uncompressed sizes.
+</p>
+<p>
+	The table below illustrates my overall findings.
+</p>
+<table class="cachestats">
+<caption>
+		Table: Mobile browser cache characteristics<br />
+	</caption>
+<thead>
+<tr>
+<th>
+				Browser/OS/Device
+			</th>
+<th>
+				Single Component Limit
+			</th>
+<th>
+				Total Component Limit
+			</th>
+<th>
+				Page Cache Size Limit
+			</th>
+<th>
+				Supports Last-Modified
+			</th>
+<th>
+				Supports ETag
+			</th>
+<th>
+				Survives Power Cycle
+			</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="browser">
+				Android 2.1 (Nexus One)
+			</td>
+<td>
+				~2MB (~2,048,000b)
+			</td>
+<td>
+				~2MB (~2,048,000b)
+			</td>
+<td>
+				∞ <sup>2</sup>
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="yes">
+				Yes
+			</td>
+</tr>
+<tr>
+<td class="browser">
+				Mobile Safari, iOS 3.1.3 (1st-gen iPhone)
+			</td>
+<td>
+				0b <sup>1</sup>
+			</td>
+<td>
+				0b <sup>1</sup>
+			</td>
+<td>
+				∞ <sup>2</sup>
+			</td>
+<td class="no">
+				No
+			</td>
+<td class="no">
+				No
+			</td>
+<td class="no">
+				No
+			</td>
+</tr>
+<tr>
+<td class="browser">
+				Mobile Safari, iOS 3.2 (iPad)
+			</td>
+<td>
+				25.6KB (26,214b)
+			</td>
+<td>
+				~281.6KB (~288,354b)
+			</td>
+<td>
+				25.6KB (26,214b)
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="no">
+				No
+			</td>
+</tr>
+<tr>
+<td class="browser">
+				Mobile Safari, iOS 4.0 (iPhone 3GS)
+			</td>
+<td>
+				51.199KB (52,428b)
+			</td>
+<td>
+				~1.05MB (~1,100,988b)
+			</td>
+<td>
+				∞ <sup>2</sup>
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="no">
+				No
+			</td>
+</tr>
+<tr>
+<td class="browser">
+				Mobile Safari, iOS 4.0 (iPhone 4)
+			</td>
+<td>
+				102.399KB (104,857b)
+			</td>
+<td>
+				~1.9MB (~1,992,283b)
+			</td>
+<td>
+				∞ <sup>2</sup>
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="yes">
+				Yes
+			</td>
+<td class="no">
+				No
+			</td>
+</tr>
+<tr class="doubtful">
+<td class="browser">
+				webOS 1.4.1 (Palm Pre Plus) <sup>3</sup>
+			</td>
+<td>
+				~1MB (~1,048,576)
+			</td>
+<td>
+				?
+			</td>
+<td>
+				~1MB (~1,048,576)
+			</td>
+<td class="no">
+				No
+			</td>
+<td class="no">
+				No
+			</td>
+<td class="yes">
+				Yes
+			</td>
+</tr>
+</tbody>
+</table>
+<div class="cachenotes">
+<p>
+		<strong>Notes:</strong>
+	</p>
+<p>
+		<sup>1</sup> Mobile Safari on iOS 3.1.3 doesn&#8217;t appear to cache <em>any</em> components, regardless of size, except for the page cache. It&#8217;s unclear whether this is intentional or a bug.
+	</p>
+<p>
+		<sup>2</sup> The page caches in Android 2.1, iOS 3.1.3, and iOS 4.0 (but not iOS 3.2) appear to be limited only by available RAM when it comes to individual page size. I didn&#8217;t attempt to determine exactly how many separate pages could coexist in the page cache at once.
+	</p>
+<p>
+		<sup>3</sup> webOS test results were inconsistent and at various points the cache seemed to stop working altogether until the phone was power-cycled. I don&#8217;t consider these results conclusive, or even trustworthy, but they&#8217;re listed here for the sake of comparison.
+	</p>
+</div>
+<h3>
+	Android<br />
+</h3>
+<p>
+	The Android browser exhibited the best cache behavior of all devices tested. While it appears to impose no limit on the size of individual components, the total cache size seems to be limited to approximately 2MB, which means that individual components are effectively limited to 2MB as well.
+</p>
+<p>
+	The page cache appeared to impose no limit on the size of individual pages, happily caching every byte I threw at it until the available RAM was exhausted and the browser crashed.
+</p>
+<p>
+	I was pleasantly surprised to find that Android&#8217;s component cache survived both browser restarts and power cycles, a feat none of the iOS devices was able to match.
+</p>
+<p>
+	<strong>Possible caveat:</strong> A review of <a href="http://android.git.kernel.org/?p=platform/external/webkit.git;a=summary">Android&#8217;s WebKit source tree</a> leads me to believe that its cache limits may adapt based on the amount of RAM and/or flash memory available on the particular device on which it&#8217;s running. If true, these numbers may only be applicable to the Nexus One. In fact, if the cache size adapts based on unused memory rather than total memory, these numbers may only be applicable to <em>my</em> Nexus One.
+</p>
+<p>
+	I could be mistaken, but the differences in the iOS 4.0 test results on the iPhone 3GS and iPhone 4 support this theory. (Android and Mobile Safari are both WebKit-based browsers, so they may have this behavior in common.) If you&#8217;re familiar with the WebKit source and can shed more light on this, please get in touch with me.
+</p>
+<h3>
+	iOS<br />
+</h3>
+<p>
+	Results varied wildly across the three most recent versions of iOS. Astonishingly, <strong>Mobile Safari on iOS 3.1.3 did not cache components of any size</strong>, despite having an apparently unlimited page cache size. This is troubling since it means iOS 3.1.3 users are likely getting a suboptimal browsing experience, especially if they aren&#8217;t using wifi. The unlimited page cache size does little good here, since it only comes into play for back/forward navigations. This behavior is a significant change from what others observed in previous iOS releases and I can&#8217;t imagine any good reason for it, so I suspect this may be a bug.
+</p>
+<p>
+	Mobile Safari on iOS 3.2 (which is only available on the iPad) does not exhibit this bug. Its 25.6KB component limit and ~281.6KB total cache limit are better than nothing, but they still seem paltry compared to the other devices tested. Uniquely among iOS devices, the iPad appears to limit the size of pages in the page cache to 25.6KB, the same as its component size limit.
+</p>
+<p>
+	Mobile Safari on iOS 4.0 exhibited different limits on the iPhone 3GS and on the iPhone 4, which implies that the limits adapt based on available RAM (the iPhone 3GS has 256MB while the iPhone 4 has 512MB; both devices tested had 32GB of flash memory). On the iPhone 3GS, iOS 4.0 has a 51.199KB component size limit and a ~1.05MB total component cache size.
+</p>
+<p>
+	On the iPhone 4, the component size limit was almost exactly two times the limit on the iPhone 3GS, at 102.399KB. The total component cache size was approximately 1.9MB. Perhaps because iOS 3.2 and iOS 4.0 were developed separately but branched from a common ancestor, the iOS 4.0 page cache size appears to be limited only by available RAM on both devices tested, just like iOS 3.1.3.
+</p>
+<p>
+	None of the iOS devices preserved the contents of the cache across forced browser restarts or device power cycles, although they did preserve the cache when merely switching applications without actually killing the browser.
+</p>
+<h3>
+	webOS<br />
+</h3>
+<p>
+	My test results on webOS were so inconsistent that I have little confidence in them. I&#8217;ve included what little data I managed to gather purely for the sake of completeness. Please take it with a hefty grain of salt.
+</p>
+<p>
+	As near as I was able to determine, webOS <em>might</em> have an individual component size limit of about 1MB, with a matching page size limit in the page cache. I was unable to coax <code>If-None-Match</code> or <code>If-Modified-Since</code> request headers from webOS, which implies that it does not support <code>ETag</code> and <code>Last-Modified</code>.
+</p>
+<p>
+	On some tests, it appeared that webOS&#8217;s maximum component size was greater than 1MB, but this was inconsistent. As far as I can tell, webOS appears to have a nasty bug where, after a certain point—possibly when the maximum total cache size is reached—the cache just completely stops working altogether until the phone is power-cycled. In some cases even power cycling didn&#8217;t fix the cache breakage, so I eventually gave up trying to establish the exact cause of the problem and the exact limits of the webOS cache.
+</p>
+<h2>
+	Recommendations<br />
+</h2>
+<p>
+	Based on these results, I offer the following recommendations to anyone developing web applications for the tested devices:
+</p>
+<ul>
+<li>
+		<strong>Use far-future cache expiration headers.</strong> This will prevent the browser from having to send a conditional GET request and will improve cacheability in webOS, which doesn&#8217;t support <code>ETag</code> or <code>Last-Modified</code>.
+	</li>
+<li>At least until iOS 4.0 arrives on the iPad, try to <strong>limit individual component sizes to 25.6KB or less</strong>, uncompressed. And urge your iPhone users to upgrade to iOS 4.0 as soon as possible.
+	</li>
+<li>If your website must support iOS 3.1.3 users (which is likely), if it requires components larger than 25.6KB, or if the total size of all your components is larger than 281.6KB, <strong>consider using the HTML5 application cache</strong>, <a href="http://www.w3.org/TR/webstorage/">localStorage</a>, or <a href="http://www.w3.org/TR/offline-webapps/#sql">database storage</a> to store your components. Alex Kessinger&#8217;s recent YUI Blog post, <a href="/blog/2010/05/27/yui3-intro-to-offline/">An Introduction to Using YUI 3 in Offline Applications</a>, might be of interest for YUI 3 developers considering this approach.
+	</li>
+<li>
+		<strong>Do your own testing.</strong> Don&#8217;t assume that these results apply to any future version of any of the tested browsers or devices. Use these results as a starting point, but verify them yourself before you make major decisions based on assumptions about mobile cache limitations. The mobile browser world changes at a lightning pace, so this research will have a very short shelf life.
+	</li>
+</ul>
+<p>
+	I&#8217;ve <a href="http://github.com/rgrove/cachetest">made my test code available on GitHub</a> and I encourage you to use it, fork it, and share what you learn.
+</p>
+<h2 id="cache-documentation">
+	Call for Documentation<br />
+</h2>
+<p>
+	Browser makers, please consider documenting and publishing your browser&#8217;s cache limits. In the desktop world where these limits are typically so high as to be a non-issue, documentation wasn&#8217;t needed. In the mobile world, browser cache limits are vital information that web developers must have in order to create performant websites with compelling features.
+</p>
+<p>
+	The limits of new features like localStorage and the application cache are typically well-documented. Please extend this level of documentation to the component cache as well.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/683e9380d7cc0724a35dadfb4eeb142b?s=32"> <div class="cont"><a href="http://wonko.com/" class="name">By Ryan Grove</a><span class="date">June 28th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2282 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-2282"><a href="/blog/2010/06/23/yui-open-hours-friday-june-25th/">YUI: Open Hours Friday June 25th</a></h2>
+					
+
+						<div class="entry">
+							<p>The latest installment of <a href="/blog/2010/04/08/introducing-yui-open-hours/">YUI: Open Hours</a> will be this Friday, June 25th.</p>
+<p>Last week, <a href="http://twitter.com/eduardolundgren">Eduardo Lundgren</a> introduced us to some of the great <a href="http://alloy.liferay.com/">AlloyUI</a> modules recently added to the Gallery.  The discussion covered instantiation, configuration, development decisions, and some history of their <a href="http://yuilibrary.com/gallery/show/aui-tree-view">TreeView</a> module.  But that was just the beginning.  We also explored their <a href="http://yuilibrary.com/gallery/show/aui-io">IO</a>, <a href="http://yuilibrary.com/gallery/show/aui-node">Node</a>, and <a href="http://yuilibrary.com/gallery/show/aui-form-validator">form validation</a> modules and spent some time on some of the visual styles available.  Eduardo even gave us a sneak preview of the new <a href="http://liferay.com/">Liferay, Inc.</a> portal, powered by all this hard work.  Really top notch work.</p>
+<p> All that said, it&#8217;s hard to say if the show-and-tell or the conversation was the real headliner.  Great code related content aside, there was a lot of <a href="http://yuilibrary.com/forum/viewtopic.php?f=18&#038;t=3976&#038;hilit=open+hours">good feedback</a> and discussion about community collaboration, the nature of the Gallery, and how we can make it and YUI better.  So a big thanks to everybody on the call!</p>
+<p>This week, we&#8217;re going to dabble a bit in both the raw developer world as well as the designer world.  <a href="http://twitter.com/caridy">Caridy Patiño</a> is back with us to talk about his <a href="http://yuilibrary.com/gallery/show/event-binder">Event Binder</a> module that was featured here <a href="/blog/2010/06/23/event-binder/">just this morning</a>.  We&#8217;ll do a code review and discuss the configuration step that has to be done before YUI is even loaded.  That&#8217;s right: pure, unadulterated DOM scripting.  You might want to wear a helmet.</p>
+<p>Then we&#8217;ll move on to the equally nuanced skin design process with Jeff Conniff, the yahoo responsible for <a href="http://developer.yahoo.com/yui/3/examples/slider/slider_skin.html">the current variety</a> of Slider look-and-feels.  He&#8217;ll walk us through his process of building the visual assets and show how you can take the same PSDs and easily create color themed assets that fit in your site palette.  Here are the <a href="/sandbox/yui/openhours/slider_assets.zip">Photoshop files</a> if you want to play along.  I&#8217;ll also talk about some of the decisions made in constructing the CSS and DOM structure of Slider.</p>
+<p>We&#8217;re back to the usual day and time this week: Friday from 10am to 12pm PDT.  There&#8217;s a <strong>new attendee code</strong> for the conference call, but otherwise, the connection details are the same as usual.</p>
+<ol>
+<li>Dial in to 1-888-371-8922 (non-US participants, email me for a local number)</li>
+<li>Enter the attendee code 47188953#</li>
+<li><a href="https://www.meeting.corp.yahoo.com/r82701271/">Join the screen sharing session</a> (this will prompt you to install the Adobe Connect plugin if this is your first time using it)</li>
+</ol>
+<p>I&#8217;ve also created a <a href="http://yuilibrary.com/forum/viewtopic.php?f=18&#038;t=4053">forum thread</a> for this Open Hours so we can start the discussion early!</p>
+<p>Also, as always, you can keep up to date with the upcoming schedule and topics by following <a href="http://twitter.com/yuilibrary">@yuilibrary</a> on Twitter or subscribing to the <a href="http://yuilibrary.com/gallery/calendar/#calendar">YUI Event Calendar</a>.</p>
+<p>Hope to see you there!</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">June 23rd, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2279 post type-post status-publish format-standard hentry category-development category-yui-3-gallery tag-dom-events tag-event-binding tag-yui-3 tag-yui-3-gallery">
+				
+						<h2 id="post-2279"><a href="/blog/2010/06/23/event-binder/">In the YUI 3 Gallery: Caridy Patiño Mayea&#8217;s Event Binder Module Provides Support for Early Event Binding and Event-driven Module Loading</a></h2>
+					
+
+						<div class="entry">
+							<p><em>This article introduces my <a href="http://yuilibrary.com/gallery/show/event-binder">Event Binder module</a>, recently released in the YUI 3 Gallery.</em></p>
+<p><a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a> is getting good traction in the developer community, with significant adoption of the latest 3.1.1 release and a huge infusion of new, innovative projects in the <a href="http://yuilibrary.com/gallery/show" title="YUI Library :: Gallery">YUI 3 Gallery</a>. Many developers are getting their heads around the on-demand nature of YUI 3 and starting to leverage those capabilities in their designs. This approach has big advantages, but it also can present some challenges.</p>
+<p>One of these challenges is to catch user interactions early. Even as the browser starts rendering the page, we want the user to be able to start interacting with page elements. In many cases, those interactions might happen before the JavaScript initialization process (including the attachment of event listeners) has completed.</p>
+<p>In many cases you can streamline your initialization code by setting only your event listeners and then adding the logic for loading the pieces that you need for every user interaction. Recently, engineers at Facebook talked about a similar approach to improve the loading process — <a href="http://blog.reybango.com/2010/04/21/jsconf-2010-video-interviews-with-top-javascript-developers/">see the interview from Rey Bango</a> at JSConf. Here is an example of how this technique might work in YUI 3:</p>
+<pre> &lt;script src=&quot;http://yui.yahooapis.com/combo?3.1.1/build/yui/yui-min.js&amp;
+ 
+	3.1.1/build/oop/oop-min.js&amp;3.1.1/build/event-custom/event-custom-base-min.js&amp;
+	3.1.1/build/event/event-base-min.js&amp;3.1.1/build/dom/dom-base-min.js&amp;
+	3.1.1/build/dom/selector-native-min.js&amp;3.1.1/build/dom/selector-css2-min.js&amp;
+	3.1.1/build/node/node-base-min.js&quot;&gt;&lt;/script&gt;
+ 
+YUI().use('event-base', function(Y) {
+    // wait until the user focuses on an input element to start loading assets
+    Y.on("click", function(e) {
+ 
+      Y.use ('anim', 'io', function() {
+          // load a remote content and display it using an animation here
+      });
+ 
+      e.halt(); // stop the propagation
+    }, "#demo");
+});</pre>
+<p>This introduces some complexity in your code because listeners not only have to deal with the user interaction but also with some loading logic. Another downside to this approach is that you still have to load some JavaScript code at the top (in this case YUI seed, the Event Utility, and some dependencies) in order to define at least the listener and the loading logic to catch early actions. So, let’s consider this as two separate use-cases:</p>
+<ul>
+<li><a href="#early-interactions">Capturing early user interactions</a></li>
+<li><a href="#on-demand-interactions">Facilitating the on-demand nature of some user interactions</a></li>
+</ul>
+<p>To address these needs I&#8217;ve created a new module for <a href="http://developer.yahoo.com/yui/3/">YUI 3</a>. My main focus has been to create a component that works without affecting your application logic. This new module is called &quot;<a href="http://yuilibrary.com/gallery/show/event-binder">gallery-event-binder</a>&quot; and is now available through the YUI Loader. </p>
+<h3 id="early-interactions">Capturing early user interactions</h3>
+<p>The main goal of this feature is to guarantee that user interactions are queuing until event listeners are initialized.</p>
+<p>Let’s see an <a href="http://caridy.github.com/examples/gallery-event-binder/simple.html">event binder example</a>:</p>
+<pre>YUI({
+    //Last Gallery Build of this module
+    gallery: 'gallery-2010.06.07-17-52'
+}).use('gallery-event-binder', 'event', function(Y) {
+ 
+    Y.on('click', function(e) {
+ 
+        // do your stuff here
+        e.halt(); // stop the event propagation if you want...
+ 
+    }, '#demo');
+ 
+    // flush early user interactions
+    Y.EventBinder.flush('click');
+ 
+});</pre>
+<p>In this example, YUI Loader will try to load the <code>gallery-event-binder</code> and <code>event</code> modules on-demand, and once they&#8217;re both ready along with their dependencies, the code within the callback function (third argument) will be executed. During  execution, a listener is set for an element with <code>id=demo</code>. The trick here is that once <code>Y.EventBinder.flush('click')</code> gets called, the system will flush some of the click events that might have happened before this initialization code gets executed.</p>
+<h4>The configuration</h4>
+<p>This technique requires some extra configuration, specifically the definition of <code>YUI_config</code> as a global variable to tweak the YUI execution. Don&#8217;t worry, it&#8217;s very simple. Let&#8217;s see an example in details:</p>
+<pre> 
+YUI_config = {
+    // standard YUI_config configuration
+    combine: true,
+    filter: 'min',
+ 
+    // event binder configuration starts here
+    eventbinder: {
+        // Event handler to store events that you want to redispatch.
+        fn: function(e) {
+            var binder = YUI_config.eventbinder,
+                filter = /yui3-event-binder/,
+                container = (e.target || e.srcElement),
+                info = {
+                    target: container,
+                    type : e.type
+                };
+ 
+            // look for an element with the class yui3-event-binder
+            while (container &#038;&#038; !filter.test(container.className)) {
+                container = container.parentNode;
+            }
+ 
+            if (container) {
+                (binder.q = binder.q || []).push(info);
+ 
+                // prevent the default browser action for this event
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                return (e.returnValue = false);
+            }
+        },
+        // interface to listen for specific events
+        listenFor: function(type) {
+            var d = document;
+            // Before the library loads, we have to deal with browser inconsistencies
+            if (d.addEventListener) {
+                d.addEventListener(type, this.fn, false);
+            } else {
+                d.attachEvent('on' + type, this.fn);
+            }
+ 
+            return this;
+        }
+    }
+};
+// add events to the monitoring process
+YUI_config.eventbinder.listenFor('click');
+</pre>
+<p>This code should be included at the very top of the page. It will be just a few bites once you <a href="http://yui.2clics.net/" title="Online YUI Compressor">minify</a> this configuration object. I recommend using a cacheable (external) file for production and including it in the head section in your pages. You can read more about <code>YUI_config</code> and the different configurations that you can tweak through this object in the <a href="http://developer.yahoo.com/yui/3/api/config.html">official API documentation</a>.</p>
+<p>You can modify this configuration to suit you best, and define events that you care about as well. In the above example, we added &#8216;click&#8217; to the monitoring list (last line). You can add multiple events to the monitoring list using chaining: </p>
+<pre>YUI_config.eventbinder.listenFor('click').listenFor('keyup').listenFor('mouseover');</pre>
+<p><strong>How does this feature work?</strong></p>
+<p>Once the configuration (i.e., <code>YUI_config</code>) logic is executed, along with the call to <code>YUI_config.eventbinder.listenFor</code>, a listener for a specific event type will be defined. Only events that bubble up will be monitored as the listener will be defined for the <code>document</code> element. When a user interaction is caught at this level, it will be analyzed, specifically checking if the target element or any of its ancestors has classname <code>yui3-event-binder</code>. If so, the event will be added to a queue and the default behavior for that event will be prevented. This technique provides an easy way to monitor specific types of interaction in specific areas of the page.</p>
+<p>When this code is executed, listeners for events of the specified type or types are added to the <code>document</code>, so when those events occur and bubble up (this only monitors events that bubble), they will be stopped and their information stored in a processing queue.  Later, in your <code>use()</code> callback when your initialization is finished, simply call <code>Y.EventBinder.flush</code> to redispatch all the stored click events as if they happened just then—courtesy of the event-simulate module. </p>
+<h3 id="on-demand-interactions">Facilitating the on-demand nature of some user interactions</h3>
+<p>The main goal of this feature is to help developers to define loading logic based on user interactions.</p>
+<p>Here’s <a href="http://caridy.github.com/examples/gallery-event-binder/modules-on-demand.html">another event binder example</a>:</p>
+<pre> 
+YUI({
+  modules: {
+    'my-custom-module': {
+      fullpath: './my-custom-module.js'
+    }
+  }
+}).use('gallery-event-binder', 'node', function(Y) {
+ 
+  // set a listener for '#demo a' and rely on 'my-custom-module' 
+  // to handle that particular event.
+  Y.EventBinder.on('click', 'my-custom-module', '#demo a');
+ 
+  // set a delegate listener for all the anchors in a list and rely  
+  // on 'my-custom-module' and 'my-another-module' to handle those particular events
+  Y.EventBinder.delegate('click', ['my-another-module'], '#mylist', 'li a');
+ 
+});
+</pre>
+<p>Here we use <code>Y.EventBinder.on</code> and <code>Y.EventBinder.delegate</code> to define some listeners. These two methods wrap <code>Y.on</code> and <code>Y.delegate</code> to drive loading logic through a user interaction. This lets us defer loading of specific functionality on a page until the user tries to use a particular feature.</p>
+<p>In this case, when a user clicks on one of the elements, we load one or more custom YUI modules that implement all the features associated with that particular click. Once those modules become available (and new listeners are set), the binder will flush the event that was on hold during the loading process to preserve the state of the action.</p>
+<p>This feature doesn&#8217;t require any initial configuration. Both of Event Binder&#8217;s features can be used at the same time to cover early and on-demand user-interactions. In this case, you need to define the configuration, then set the on-demand listeners, and finally flush the early events.</p>
+<p>Here’s <a href="http://caridy.github.com/examples/gallery-event-binder/end2end.html">an end-to-end event binder example</a>:</p>
+<pre> 
+// configuration
+YUI_config = { /* your custom event-binder configuration here */ };
+YUI_config.eventbinder.listenFor('click')
+ 
+// initialization
+YUI({
+  modules: {
+    'my-custom-module': {
+      fullpath: './my-custom-module.js'
+    }
+  }
+}).use('gallery-event-binder', function(Y) {
+  
+  Y.EventBinder.delegate('click', ['my-custom-module'], '#doc', '.yui3-event-binder a');
+  Y.EventBinder.flush('click');
+ 
+});
+</pre>
+<h3>A more advanced configuration </h3>
+<p>You can modify the <code>fn</code> function in your configuration to be more selective about which events to queue and you can store more information about the events. Additionally adds a <code>yui3-waiting</code> class to the click target which we style in CSS to display a loading spinner:</p>
+<pre> 
+YUI_config = {
+    // standard YUI_config configuration
+    combine: true,
+    filter: 'min',
+ 
+    // event binder configuration starts here
+    eventbinder: {
+        // set of options that should be preserved for every event (all optional)
+        eventProperties: [
+            "ctrlKey", "altKey",
+            "shiftKey", "metaKey",
+            "keyCode", "charCode",
+            "screenX", "screenY",
+            "clientX", "clientY",
+            "button",
+            "relatedTarget"
+        ],
+ 
+        // listener callback function
+        fn: function(e) {
+            var binder = YUI_config.eventbinder,
+                props = binder.eventProperties,
+                filter = /yui3-event-binder/,
+                target = (e.target || e.srcElement),
+                container = target,
+                info = {
+                    target: target,
+                    type : e.type
+                },
+                i;
+ 
+            if (target.nodeType === 3) {
+                // target is a text node, so use its parent element
+                target = target.parentNode;
+            }
+ 
+            // look for an element with the class yui3-event-binder
+            while (container &#038;&#038; !filter.test(container.className)) {
+                container = container.parentNode;
+            }
+ 
+            if (container) {
+                target.className += ' yui3-waiting';
+ 
+                // back up the event properties to simulate the event later on
+                for (i = props.length - 1; i >= 0; --i) {
+                    info[props[i]] = e[props[i]];
+                }
+ 
+                (binder.q = binder.q || []).push(info);
+ 
+                // prevent the default browser action for this event
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                return (e.returnValue = false);
+            }
+        },
+ 
+        listenFor: function(type) {
+            var d = document;
+ 
+            if (d.addEventListener) {
+                d.addEventListener(type, this.fn, false);
+            } else {
+                d.attachEvent('on' + type, this.fn);
+            }
+ 
+            return this;
+        }
+    }
+};
+// add events to the monitoring process
+YUI_config.eventbinder.listenFor('click');
+</pre>
+<p>Check out this <a href="http://caridy.github.com/examples/gallery-event-binder/end2end.html">event binder example</a> to see this advanced configuration in action.</p>
+<p><strong>Conclusion:</strong></p>
+<p>For high performance web applications, it&#8217;s important for pages to load and become responsive quickly. To accomplish this, we have to rely on on-demand loading techniques. Once you start using them, it&#8217;s equally important to control user interactions that can happen before the corresponding code for an action become available.</p>
+<p><a href="http://yuilibrary.com/gallery/show/event-binder">Event Binder (gallery-event-binder)</a> provides friendly APIs to deal with both use-cases without you having to change your application logic. It can be applied to any <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a> application without introducing extra complexity to your code.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/fef48709416e18e4ccb263b248fd88e1?s=32"> <div class="cont"><a href="http://caridy.name/" class="name">By Caridy Patino</a><span class="date">June 23rd, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2273 post type-post status-publish format-standard hentry category-development category-yui-3-gallery tag-alloy tag-calendar tag-yui-3 tag-yui-3-gallery">
+				
+						<h2 id="post-2273"><a href="/blog/2010/06/18/alloy-date-selector/">Using the YUI 3 Calendar Date Selector from Alloy</a></h2>
+					
+
+						<div class="entry">
+							<p><a href="http://ericmiraglia.com/yui/demos/alloycalendar.php"><img src="http://yuiblog.com/assets/alloycalendar-20100618-113307.jpg"></a></p>
+<p>The <a href="http://alloy.liferay.com/" title="Alloy UI - A project of Liferay">Alloy</a> components (contributed by Nate Cavanaugh and Eduardo Lundgren from Liferay) in the <a href="http://yuilibrary.com/gallery/" title="YUI Library :: Gallery">YUI 3 Gallery</a> are simple to use.  <a href="http://ericmiraglia.com/yui/demos/alloycalendar.php">This example</a> illustrates the use of the Alloy calendar to progressively enhance a set of <code>select</code> elements for date selection.</p>
+<p>Let&#8217;s start with the markup — the HTML that will be on the page and functioning regardless of whether JavaScript is enabled.  Alloy&#8217;s Calendar module does not require this markup; you can feed it an empty element and it will create the <code>select</code> elements for you in the event that your use case would not benefit from progressive enhancement.</p>
+<pre>&lt;div id=&quot;calendar&quot;&gt;
+	&lt;select class=&quot;yui3-datepicker-month&quot; name=&quot;month&quot; id=&quot;monthselect&quot;&gt;
+		&lt;option value=&quot;0&quot;&gt;
+			January
+		&lt;/option&gt;
+		&lt;option value=&quot;1&quot;&gt;
+			February
+		&lt;/option&gt;
+
+...
+
+	&lt;/select&gt;
+
+        &lt;select class=&quot;yui3-datepicker-day&quot; name=&quot;day&quot; id=&quot;dayselect&quot;&gt;
+		&lt;option value=&quot;1&quot;&gt;
+			1
+		&lt;/option&gt;
+		&lt;option value=&quot;2&quot;&gt;
+			2
+		&lt;/option&gt;
+
+...
+
+	&lt;/select&gt;
+
+        &lt;select class=&quot;yui3-datepicker-year&quot; name=&quot;year&quot; id=&quot;yearselect&quot;&gt;
+		&lt;option value=&quot;2009&quot;&gt;
+			2009
+		&lt;/option&gt;
+
+...
+
+	&lt;/select&gt;
+&lt;/div&gt;</pre>
+<p>With this markup in place (or with just an empty root element if we aren&#8217;t progressively enhancing existing form fields), we bring in the <a href="http://yuilibrary.com/gallery/show/aui-calendar-datepicker-select" title="YUI Library :: Gallery :: AlloyUI Calendar Datepicker Select">Alloy Calendar module with datepicker selection support</a> from the <a href="http://yuilibrary.com/gallery/" title="YUI Library :: Gallery">YUI 3 Gallery</a>.  This requires us to have YUI 3 on the page and then to follow the configuration step outlined on <a href="http://yuilibrary.com/gallery/show/aui-calendar-datepicker-select" title="YUI Library :: Gallery :: AlloyUI Calendar Datepicker Select">the module&#8217;s Gallery page</a>.</p>
+<pre>&lt;script src=&quot;http://yui.yahooapis.com/3.1.1/build/yui/yui-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+YUI({
+	// All of this configuration information can be cut-and-pasted from the Gallery entry for
+	// this module: http://yuilibrary.com/gallery/show/aui-calendar-datepicker-select
+    gallery: &#x27;gallery-2010.06.07-17-52&#x27;,
+    modules: {
+        &#x27;gallery-aui-skin-base&#x27;: {
+            fullpath: &#x27;http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/gallery-aui-skin-base/css/
+							gallery-aui-skin-base-min.css&#x27;,
+            type: &#x27;css&#x27;
+        },
+        &#x27;gallery-aui-skin-classic&#x27;: {
+            fullpath: &#x27;http://yui.yahooapis.com/gallery-2010.06.07-17-52/build/
+							gallery-aui-skin-classic/css/
+							gallery-aui-skin-classic-min.css&#x27;,
+            type: &#x27;css&#x27;,
+            requires: [&#x27;gallery-aui-skin-base&#x27;]
+        }
+    }
+}).use(&#x27;gallery-aui-calendar-datepicker-select&#x27;, function(Y) {
+    var datePickerSelect = new Y.DatePickerSelect({
+		displayBoundingBox: &#x27;#calendar&#x27;,
+		dateFormat: &#x27;%m/%d/%y&#x27;,
+		yearRange: [ 2009, 2012 ],
+		dayField: Y.one(&quot;#dayselect&quot;),
+		dayFieldName: &quot;day&quot;,
+		monthField: Y.one(&quot;#monthselect&quot;),
+		monthFieldName: &quot;month&quot;,
+		yearField: Y.one(&quot;#yearselect&quot;),
+		yearFieldName: &quot;year&quot;
+	}).render();
+});
+
+&lt;/script&gt;</pre>
+<p><a href="http://ericmiraglia.com/yui/demos/alloycalendar.php">Here&#8217;s a live version of this simple example</a>.</p>
+<p>It&#8217;s as simple as that.  The configuration properties for <code>datePickerSelect</code> are <a href="http://alloy.liferay.com/deploy/api/DatePickerSelect.html" title="API: aui-calendar  DatePickerSelect   (YUI Library)">lucidly defined in the Alloy documentation</a>.  In this example, the properties are used to set the root element, format the date, set the date range, and then wire up our existing <code>select</code> elements to the widget instance so that it knows which form fields to use for progressive enhancement.  In practice, only the root element (<code>displayBondingBox</code>) is a required property.</p>
+<p><a href="http://yuilibrary.com/gallery/show">Check out the YUI 3 Gallery roster for a full list of the Alloy UI contributions</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://ericmiraglia.com" class="name">By Eric Miraglia</a><span class="date">June 18th, 2010<span></div></div>
+				</div>
+							
+							<div class="bottom-nav">
+					<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/50/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/48/" >Newer Entries &raquo;</a>    </div>
+</div>				</div>
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+ </select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2 current-cat"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1405548373" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

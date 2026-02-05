@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Developing a JavaScript Library for Yahoo!</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Developing a JavaScript Library for Yahoo!</li></ul>
+				<h1 class="yui3-u-7-8">Developing a JavaScript Library for Yahoo!</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">February 17, 2006<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>When we set out about a year ago to build the <a href="http://developer.yahoo.net/yui/">Yahoo! User Interface Library</a>, we had a specific set of challenges to address. First and foremost, we wanted to enable our front-end engineers to spend more time working on advanced, product-specific features and less time doing cross-browser tuning of generic interactions like drag and drop. We have a deep, talented, and creative pool of developers across the company, but we hadn't done enough to develop shared libraries that normalize differences across relevant browsers. As a community, we agreed that we needed better toolkits for those rich interactions that can enhance users' experiences of Yahoo! products.<p>Creating the library represented a significant undertaking, and we spent a lot of time talking among the larger front-end engineering community here about how to go about doing this. Having now made the library publicly available as an open-source, open-use resource, we wanted to share with you some of the thought processes driving our engineering agenda. <h3>Heterogeneity</h3>
+	<p>We talk a lot at Yahoo! about <em>heterogeneity</em>, a word that describes an essential part of our company's challenge across numerous disciplines. With respect to improving our shared JavaScript libraries at Yahoo!, heterogeneity defines the problem in two important ways:<ol>
+			<li><strong>Heterogeneity of the Yahoo! Product Family: </strong>Yahoo! products are diverse in terms of their size, the technologies we use, our development methodologies, and our locations geographically. More importantly, perhaps, our users and their needs vary significantly from product to product. As a result, some properties have been able to implement very rich feature sets, whereas others have proceeded more conservatively in defying the page-granular interaction paradigm that came to define the first decade of the mainstream web. Given this context, the library needed to facilitate application enhancement without dictating too much about how architecture, methodology, or coding style.<li><strong>Heterogeneity of client configurations: </strong>Yahoo! has, by some internal estimates, more than 10,000 different client configurations accessing its products on a regular basis. While we can distill that into more manageable groupings (like "IE 5," "Safari 1.3," "Netscape 8+," "Mac FireFox 1.5+," and so on), there remain dozens of viable browser/platform combinations in use by millions of people each. Writing JavaScript for dozens of run-time engines and accessing dozens of implementations of DOM methods can be a recipe for paralysis &mdash; it naturally leads to conservatism with respect to making commitments for advanced features. A library that serves the needs of developers facing this degree of client-side heterogeneity must first and foremost build upon a coherent philosophy of browser support. Nate Koechley has been working on this effort for several years at Yahoo!, and <a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">he shared our philosophy publicly</a> for the first time in conjunction with the release of the library earlier this week. Growing out of that important work, our library had to provide normalized access to advanced functionality while supporting all of what we're calling the "A-grade" browsers. </ol> <p>In these two important ways, the creation of a JavaScript library with maximum usefulness for Yahoo! developers involved being sensitive to the heterogeneity that's at the core of the front-end engineering discipline. This led us in the direction of modular components and an <em>&agrave; la carte</em> implementation style, one that could be used in a lightweight, unobtrusive way as properties began to add specific rich interactions to existing pages. By the same token, the library in the aggregate should provide broad support for properties whose design ambitions were more transformative, who wanted to create extremely rich and fundamentally event-granular applications. And that support had to be relatively unconstrained in terms of development methodology and programming style. While we love Rails creator <a href="http://www.itconversations.com/shows/detail658.html"> David Heinemeier Hansson's description</a> of how "constraints will set you free," we couldn't serve well our developer population if we didn't acknowledge in the library's design that their environments were already large, complex, and not susceptible to radical change. The library had to impose few constraints and live happily in a lot of different ecosystems.<h3>The Browser as a GUI Platform</h3>
+	<p>If heterogeneity drove our decisions about how to architect the library, it was an old picture of an upside-down triangle that influenced us most in creating a roadmap and an organizational structure for our work.<p>The browser environment today shares significant common ground with where the desktop GUI industry was ten or fifteen years ago: Toolkits are comparatively new, platforms are awkward, and it's too hard to bridge the gap between a great interactive design and real-world, cross-platform engineering implementation. While part of the problem lies in the fundamental protocols of the web, which was never meant to be a platform for deploying desktop-like applications (at least, not without the help of a Java plugin), a significant part of it lies in the browser itself. Modern browsers are tantalizingly close to making rich application development realizable and robust, but the work is still too hard and the foundation too wobbly. Early Macintosh and Windows developers often felt just this way in the early days of the desktop.<p>In 1995, <a href="http://en.wikipedia.org/wiki/Alan_Cooper">Alan Cooper</a> (in <em><a href="http://shopping.yahoo.com/search;_ylt=Aj3NVSqtxxgh_SEBjFO7ldobFt0A;_ylu=X3oDMTBtNTA5a3RqBF9zAzE0NDg5MTE1BHNlYwNzZWFyY2g-?p=alan+cooper+about+face&did=">About Face: The Essentials of Interaction Design</a></em>) created a model for how to think about the GUI ecosystem, and that model &mdash; he wrote about the desktop, but it's enormously relevant to today's browser &mdash; provides a wonderful picture of how an in-browser toolkit serves the larger goal of creating exceptional user interfaces:<p><img alt="Cooper's GUI canon" border="0" height="286" src="/blog-archive/i/cooper.gif" width="500" /><p>For Cooper, the basic granules of interaction were called "primitives" &mdash; the mouse click is a primitive unit of input; combinations of primitives that took on more coherent units of interaction or intent were considered "compounds"; from compounds, application-specific "idioms" could be authored.<p>We took Cooper's model and re-cast it in terms of the browser and specifically in terms of the challenge of creating a toolkit to enable effective GUI development for web applications. Components that dealt with Cooper's "primitives," the most granular elements of interaction, we called utilities. Among our utilities, some (like <a href="http://developer.yahoo.net/yui/connection/index.html">Connection Manager</a>, encapsulating XMLHttpRequest transactions) don't have any intrinsic visual characteristics and so would be, in Cooper's model, perhaps something like a "sub-primitive." But that's how we thought of that bucket. <p>Having built five utility components targeting the rich interactions most in demand among Yahoo! user-experience teams, we've turned our attention more recently to the level Cooper calls "compounds," to a class of components we call "controls." We consider controls to be highly recognizable visual presentations that allow users to interact with information quickly and intuitively. Controls, like <a href="http://developer.yahoo.net/yui/calendar/index.html">Calendar</a>, <a href="http://developer.yahoo.net/yui/slider/index.html">Slider</a> and <a href="http://developer.yahoo.net/yui/treeview/index.html">TreeView</a> in our initial library release, should be familiar to users from the desktop world, should require virtually no discovery or learning in terms of their basic interaction, and should be easily invoked on the web page with just a few lines of code. The desktop paradigm, of course, has dozens of widgets; we don't aim to be that comprehensive, and yet it's clear that a lot of work remains for us to more fully populate our collection.<p><img alt="An interpretation of that canon, applied to web application design" height="286" src="/blog-archive/i/yahoo.gif" width="437" /><p>As this foundation of utilities and widgets grows in depth and breadth, we hope that application designers will be more free to create what Cooper calls the "idiom" of the application &mdash; that set of interactions, workflows, shortcuts, and visual treatments that allow a user to get into a highly productive sense of oneness with her underlying data. Great idioms, not great libraries, toolkits or frameworks, are the essence of great applications.<h3>Going Forward</h3>
+	<p>We are early in the process of building the Yahoo! User Interface Library. Fundamentally, we see this as a body of components that maps to Cooper's inverted pyramid &mdash; utilities that normalize and add power to basic interactions in the browser and controls that provide a rich, familiar set of interactions within the interface. There is no magic pixie dust here: Good application idioms emerge only from diligent research, inspired design, and a committed engineering process that draws on all available tools at hand. This library is just one of those tools, and ultimately a small (though, we hope, useful) part of the much larger process.<p>Going forward, our goal is to improve the existing utilities and add new ones where we see good opportunities. At the same time, we'll work hard to diversify and improve the family of controls from which designers and developers can draw. We won't be publishing a detailed roadmap for the library, although we'll try to provide clear guidance when new work is imminent; we'll try to strike a rational balance, giving you a sense of what you can expect only when we're on really solid ground from which to do so. Stay tuned to the blog for ongoing progress updates, and if you're a developer interested in using the library please consider <a href="http://groups.yahoo.com/group/ydn-javascript/">joining the Yahoo! Group</a> on which we're discussing the components and their use. </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

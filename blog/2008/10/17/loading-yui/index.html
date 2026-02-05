@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Loading YUI: Seeds, Core, and Combo-handling</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Loading YUI: Seeds, Core, and Combo-handling</li></ul>
+				<h1 class="yui3-u-7-8">Loading YUI: Seeds, Core, and Combo-handling</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">October 17, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><img alt="Kweight of common YUI baseline assets." height="340" src="/blog-archive/assets/loading/core.png" width="510" /><p>With <a href="/blog-archive/blog/2008/10/01/yui-260/">the 2.6.0 release of YUI</a>, the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> now supports combo-handling for both JavaScript and CSS files coming off of Yahoo's CDN. YUI Loader is the utility that understands the YUI module structure and dependency list and can load any YUI component on the page on-demand. The addition of combo-handling makes YUI Loader an even more viable option for many implementations, because you're never more than two HTTP requests (one for JS, one for CSS) away from downloading the requirements for any YUI component(s) to your page (not including image assets).<p>In this short article, I'll take you through three common approaches to loading YUI on the page and review the filesize breakdown and benefits of each approach. All filesizes discussed here are minified and gzipped KB.<h2>1. Using YUI Loader as a Seed File</h2>
+	<p>YUI Loader is a 9.4KB file. It packages the <a href="http://developer.yahoo.com/yui/yahoo/">Yahoo Global Object</a>, the <a href="http://developer.yahoo.com/yui/get/">Get Utility</a>, and the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> engine, including all the dependency metadata required to load additional YUI components on demand. With just YUI Loader on the page, you can load, say, the <a href="http://developer.yahoo.com/yui/tabview/">TabView Control</a> as follows:<pre>// Instantiate and configure Loader:
+var loader = new YAHOO.util.YUILoader({
+
+    // Identify the components you want to load.  
+    // Loader will automatically identify
+    // any additional dependencies required for 
+    // the specified components.  We could specify
+    // as many components here as we wish:
+    require: ["tabview"],
+
+    // The function to call when all script/css resources
+    // have been loaded
+    onSuccess: function() {
+        //This is your callback function; you can use
+        //this space to call all of your instantiation
+        //logic for the components you just loaded.
+        //In this example, we'd instantiate a TabView 
+        //Control here:
+        var myTabs = new YAHOO.widget.TabView();
+    },
+
+    // Combine YUI files into a single request (per file type)
+    // by using the Yahoo! CDN's combo-handler.
+    combine: true
+});
+
+// Load the files using the insert() method.
+loader.insert();</pre><p>(<a href="http://ericmiraglia.com/yui/demos/tabyuiloader.php">Live demo</a>.)<p>Loader is the smallest available YUI seed file; from this 9.4KB base, you can bootstrap anything else in the library with a single HTTP request for JavaScript. Let's look at the K-weight profile for this request in which we use YUI Loader as a seed file to bootstrap your JavaScript dependencies for the TabView Control.<p><img alt="Loading TabView with YUI Loader" height="384" src="/blog-archive/assets/loading/loader-tabview.png" width="306" /><p>So, our initial baseline K-weight was 9.4KB; YUI Loader then downloaded the rest of YUI Core (<a href="http://developer.yahoo.com/yui/dom/">Dom</a> and <a href="http://developer.yahoo.com/yui/event/">Event</a>) along with <a href="http://developer.yahoo.com/yui/element/">Element</a> and <a href="http://developer.yahoo.com/yui/tabview/">TabView</a>, all a single 13.3KB download.<h2>2. Using YUI Loader Plus Core as a Seed File</h2>
+	<p>A second common approach to loading YUI is to use the YUI Core (Yahoo, Dom and Event) plus YUI Loader to serve as your seed file. Here's what that might look like on the page:<pre>&lt;!-- Combo-handled YUI CSS files: --&gt; 
+&lt;link rel=&quot;stylesheet&quot; 
+type=&quot;text/css&quot; 
+href=&quot;http://yui.yahooapis.com/combo?2.6.0/build/tabview/assets/skins/sam/tabview.css&quot;&gt;
+&lt;!-- Combo-handled YUI JS files: --&gt; 
+&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/combo?2.6.0/build/yuiloader-dom-event/yuiloader-dom-event.js&quot;&gt;&lt;/script&gt; 
+&lt;script&gt;
+
+(function() {
+	//create Loader instance:
+    var loader = new YAHOO.util.YUILoader({
+        require: [&quot;tabview&quot;],
+        onSuccess: function() {
+        	//when TabView is loaded, instantiate Tabs:
+        	var tabView = new YAHOO.widget.TabView('demo');
+        },
+        combine: true
+    });
+    
+    //When our target element is ready, bring
+    //in the non-blocking, combo-handled script
+    //download.  We can use Event here because
+    //we've loaded YUI Core at the top of the page:
+    YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
+    	loader.insert();
+    });
+
+})();
+&lt;/script&gt;</pre><p>(<a href="http://ericmiraglia.com/yui/demos/tabcoreloader.php">Live demo</a>.)<p>This seed file is bigger than YUI Loader alone &mdash; 17.4KB versus 9.4KB. But it confers some big advantages:<ul>
+			<li>You have access to Event Utility's event listener methods and its crucial page-timing methods (<a href="http://developer.yahoo.com/yui/examples/event/event-timing.html">like <code>onDOMReady</code> and <code>onContentReady</code></a>) right away;<li>You have access to the Dom Collection's swiss-army knife of DOM convenience methods right away.</ul> <p>Because most pages in a YUI-driven application are going to use both Event and Dom, this is often a good universal foundation from which to bootstrap YUI-dependent modules.<p>In the scenario where we're loading TabView, here's how the JavaScript flow breaks down with YUI Loader + YUI Core as our foundation:<p><img alt="Loading TabView with YUI Loader + YUI Core as a foundation." height="389" src="/blog-archive/assets/loading/loadercore-tabview.png" width="300" /><p>The overall K-weight is about the same as with the simple YUI Loader seed; we have a heavier initial load, but immediate access to the goodness of YUI's Core. And our subsequent HTTP request to complete TabView's JS requirements drops to a small 5.4KB.<h2>3. Combining All Requests in a Single File</h2>
+	<p>Where loading scripts on-demand doesn't make sense for your application (for example, if some of the core interactions on the page have script-driven enhancements that you want to render as quickly as possible), you can still take advantage of combo-handling on the Yahoo CDN by configuring your request on the <a href="http://developer.yahoo.com/yui/articles/hosting/">Dependency Configurator</a>. (<a href="http://developer.yahoo.com/yui/articles/hosting/?tabview&MIN&norollup">Here's a configuration for TabView using combo-handling</a>.) <p>Here's what that might look like on the page:<pre>&lt;!-- Combo-handled YUI JS files: --&gt;
+&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&amp;2.6.0/build/element/element-beta-min.js&amp;2.6.0/build/tabview/tabview-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+YAHOO.util.Event.onContentReady(&quot;demo&quot;, function() {
+	var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);
+});
+&lt;/script&gt;</pre><p>(<a href="http://ericmiraglia.com/yui/demos/tabsimple.php">Live demo</a>.)<p>Best practice according to <a href="http://developer.yahoo.com/performance/">Yahoo's Exceptional Performance guidelines</a> would be to put this single file as close to the bottom of the page as possible, allowing the content and design to be processed before the browser hits your JS files. (<strong>Note:</strong> this is one reason why you might find approaches 1 and 2 useful &mdash; putting the 17.4KB YUI Loader + YUI Core file at the top of your file has minimal performance impact, and it allows you to load other JavaScript-dependent modules <code>onDOMReady</code> where appropriate.)<h2>Summary</h2>
+	<p>The takeaway here is that there are several ways to leverage combo-handling, and YUI Loader's support for combo-handling, to bring the power of YUI into your application with minimal HTTP requests. <p>Here are some common implementations of YUI components using the combo-handler; this visualization is, again, of minified and gzipped K-weight for the JS dependencies:<p><img alt="K-weight for common YUI components." height="479" src="/blog-archive/assets/loading/kweight.png" width="510" /><p>Any of these single HTTP requests weighs less on the wire than the image above. <a href="/blog-archive/blog/2006/10/16/pageweight-yui0114/">As I've discussed elsewhere</a>, the <em>a la carte</em> design of YUI means that you can add components to any of these payloads at a big discount because you'll be adding only incremental dependencies. For example, the DataTable payload in the image above could have TabView added to it with just a 3.5KB additional cost. Using YUI Loader and its new combo-handling functionality makes this process even more performant and responsive in your applications.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI In the Wild #2</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">YUI In the Wild #2</li></ul>
+				<h1 class="yui3-u-7-8">YUI In the Wild #2</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">May 23, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>Based on positive feedback to last week's post (thanks!), I'm going to keep writing these <em>In the Wild</em> columns. There's tons of great YUI content created by the community but it can be time consuming to find, and so I hope this roundup continues to be useful. (Also new this week is a <a href="/blog-archive/#featured-jobs">Features Job Opening</a> sidebar module on this blog. We hope it's unobtrusive over there, while still getting the word out about a few of our key opportunities.)<ul>
+			<li>
+				<p><a href="http://simonwillison.net/2007/May/16/libraries/">JavaScript Libraries: The Big Picture</a> was presented at XTech in Paris last week by Simon Willison. Simon is the rare person who has real experience with multiple leading JavaScript libraries. Because of this he's able to compare and contrast them with insight. He also gives great presentations, and this is no exception: the 52 slides provide an overview of leading libraries, their design choices, and his thoughts on the state of things.<li>
+				<p><a href="http://www.nodetraveller.com/blog/javascript/another-tabbed-interface/">Another Tabbed Interface</a>, a new post from Yahoo! London's Lawrence Carvalho's personal blog, shares how he built <a href="http://www.nodetraveller.com/sandbox/moduleTabs/draggable.php">Draggable/Reorderable Tabs</a> and <a href="http://www.nodetraveller.com/sandbox/moduleTabs/closeable.php">Closable Tabs</a> by extending YUI Tabs and Aspect Oriented Programming (AOP) concepts.<li>
+				<p><a href="http://20bits.com/2007/03/28/creating-a-fancy-slider-with-yui/">Creating a fancy slider in JavaScript using YUI</a> on 20bits.com has some helpful tips for understanding, creating, and extending sliders. In my <em>personal</em> opinion, sliders--in all their varied visual manifestations--can be powerful interface widgets but are too often underused.<li>
+				<p><a href="http://www.devarticles.com/c/a/JavaScript/Using-the-YUI-Menu-Control/">Using the YUI Menu Control</a> by Dan Wellman is a tutorial covering how to create a basic menu, how to render and display the menu, and how to change the menu's styling. Thanks Dan!<li>
+				<p><a href="http://wonko.com/article/513">Remote JavaScript includes without the performance penalty</a> is a two-part series by Ryan Grove. Fast is good, so take a look.<li>
+				<p><a href="http://www-03.ibm.com/developerworks/blogs/page/pmuellr?entry=etags_are_not_a_panacea">ETags are not a panacea</a> -- Speaking of speed, <del>IMB</del>
+					<ins>IBM</ins> Senior Technical Staff member Patrick Mueller writes on their developerWorks site about the role and impact of ETags and explores ways to make your sites and apps faster. In addition to the insights about ETags, he takes a look at <a href="http://developer.yahoo.com/yui/articles/hosting/">YUI's free hosting</a> and has this to say (my emphasis):<blockquote>Good stuff! The Expires and Cache-Control headers render this file pretty much immutable, as it should be. When Yahoo! releases the next version of the toolkit, it'll be hosted at a different url base, and so will be unaffected by the headers of this particular file; they will be different urls. <strong>This sort of behaviour is highly optimal</strong> for web 2.0-ey apps, which are wont to download a lot of static html, css and javascript files, which, for some particular version of the app, will never change. And thus, by having the files cached on the client in such a way that it never asks the server for them again, the app will come up all the quicker.</blockquote> <li>
+				<p><a href="http://www.evotech.net/blog/2007/05/beginning-ajax-using-the-yui-library/">Beginning AJAX using the YUI Library</a> is the perfect little-step-by-little-step guide to getting started with Ajax and YUI from Estelle Weyl on the <em>CSS, JavaScript and XHTML Explained</em> blog.<li>
+				<p><a href="http://yazaar.org/">Planet Yazaar</a> creates and maintains community-supported additions to YUI (Yahoo + Bazaar = Yazaar). One contribution to that site so far is a <a href="http://blog.jc21.com/2007-02-05/yui-unobstrusive-javascript-validation/">YUI Unobstrusive Javascript Validation</a> from Jamie Curnow.<li>
+				<p><a href="http://www.codeproject.com/aspnet/YahooInterfaceLibWebCtrls.asp">ASP.NET Web Controls for the Yahoo! User Interface Library</a> by Luke <del>Frost</del>
+					<ins>Foust</ins> looks to be a very promising effort. He writes:<blockquote>
+						<p>In order to make these controls work well in an ASP.NET environment, it is a useful exercise to create custom web controls which can make it easy to drop these controls onto any ASP.NET page. Currently, the following YUI controls are supported: Button, Calendar, Panel, Tooltip, Logger, Menu, and TabView.</blockquote> <li>
+				<p>When we put together this year's internal front-end engineering summit at Yahoo! back in March &#8212; an annual event bringing together hundreds of our front-end specialists from across the globe &#8212; we invited Brad Neuberg to give the keynote. His speech was titled "<a href="http://codinginparadise.org/weblog/2007/05/yahoo-frontend-summit-inventing-future.html">Inventing the Future</a>" and he blogged about the experience this week.<li>
+				<p><a href="http://www.barcamp.org/beCamp">BarCamp in Charlottesville on June 15/16</a> lists YUI prominently on their agenda, so if you're in the Virgina area you might want to check it out.<li>
+				<p><a href="http://www.themolu.com/">Molu - The Search Spider</a> is a new search engine (in beta) that uses YUI extensively.<li>
+				<p>Scott Jungling, Web Apps developer at California State University at Chico, <a href="http://blogs.csuchico.edu/ik/2007/05/15/attack-of-the-yui/">has been upgrading their templates</a> with a nice dose of <a href="http://developer.yahoo.com/yui/grids/">YUI CSS Grids</a> (and Reset and Fonts).<li><a href="http://weblogs.java.net/blog/arungupta/archive/2007/05/jmaki_on_rails.html">Detailed steps to read data from a MySQL database and display it in a jMaki-wrapped Yahoo DataTable widget</a> from Arun Gupta's Blog.</ul> <p>OK, that's it for now. If you have links for me to cover in the next installment (or feedback on the format) please add them to the comments, send them to me directly (natek at yahoo dash inc dot com) or tag them <a href="http://del.icio.us/tag/yui.blog">yui.blog on del.icio.us</a>.<p>(Update: Note that I corrected two errors above: it's Luke <em>Foust</em> not <del>Frost</del>, and Patrick Mueller works at <em>IBM</em> not <del>IMB</del>.)</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

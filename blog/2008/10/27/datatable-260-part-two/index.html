@@ -1,0 +1,580 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Working with the YUI DataTable (Updated for v2.6.0), Part 2: Changing the Contents of the DataTable </title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Working with the YUI DataTable (Updated for v2.6.0), Part 2: Changing the Contents of the DataTable </li></ul>
+				<h1 class="yui3-u-7-8">Working with the YUI DataTable (Updated for v2.6.0), Part 2: Changing the Contents of the DataTable </h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">October 27, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><strong>Don't miss <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">Part One of this series</a>, in which Satyam explores practical steps on getting started with the <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable Control</a>.</strong><div class="interview">
+			<div class="intro">
+				<p><img align="right" alt="Daniel Barreiro (Satyam)" height="206" src="/blog-archive/assets/satyam.jpg" width="160" /><strong>About the Author:</strong> Daniel Barreiro (screen name Satyam) has been around for quite some time. The ENIAC was turned off the day before he was born, so he missed that but he hasn't missed much since. He's had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere. When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic. Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;'s and &gt;'s, he ended up learning quite a lot about the world of frontend engineering. It's been a long journey since COBOL and Fortran. Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain. When he's not basking in the Mediterranean sun, Satyam can be found among the most prolific and knowledgable participants in the YUI community on the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YDN-JavaScript developer forum</a>. </div> </div> <p> In a <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">previous article</a> I wrote about how to get started with your own implementation of the <code>DataTable</code> component. In this article I will cover how to change the contents of the <code>DataTable</code>, especially how to communicate with your database server to make changes and, if successful, show those changes to the user, since in many applications, the contents of the <code>DataTable</code> should be a reflection of the information in a database. <h2 id="deleting_records"> Deleting records </h2>
+	<p> We will start with the easiest transaction: deleting a single record. First let's make a column containing a delete icon which, when clicked, will delete the row. To do that, we declare that extra column in the column definitions for the <code>DataTable</code> in this way: <pre>
+var myColumnDefs = [
+    ....,
+    ....,
+    {key:'delete', label:' ', className:'delete-button'}, 
+    ....
+];
+</pre><hr /><pre>
+    
+// where delete-button can be declared as:
+.delete-button {
+    cursor: pointer;
+    background: transparent url(images/delete.png) no-repeat center center;
+    width: 16px;  height: 16px;
+}
+</pre><p> We are declaring an extra column with <code>key</code> equal to <code>'delete'</code>, with a blank column header (if <code>label</code> is not declared the header will default to the <code>key</code> value so we have to explicitly say we don't want one) and with a <code>className</code> with the CSS attributes that you can see declared right below. We don't need to add any actual contents to the cell nor assign it any <code>onClick</code> or <code>id</code> attributes We couldn't care less for the contents of that cell, meaning it can be an <code>&lt;img&gt;</code>, <code>&lt;button&gt;</code>, a simple text or nothing. The best option, though, is leave the graphics design completely open as we have done. <p> We are going to be able to detect a click on the cell by subscribing to the <code>cellClickEvent</code>. If we also want to have in-line cell editing, as is often the case, we would have the following somewhere in our code: <pre>
+myDataTable.subscribe('cellClickEvent',myDataTable.onEventShowCellEditor);
+</pre><p> This is telling the <code>DataTable</code> that when it receives a cell click event it should activate the cell editor, but that is not the only option, our 'delete' button can also be clicked and we want to respond to each event accordingly. We would then have: <pre>
+myDataTable.subscribe('cellClickEvent',function(oArgs) {
+    var target = oArgs.target;
+    var column = myDataTable.getColumn(target);
+    if (column.key == 'delete') {
+        if (confirm('Are you sure?')) {
+            myDataTable.deleteRow(target);
+        }
+    } else {
+        myDataTable.onEventShowCellEditor(oArgs);
+    }
+});
+</pre><p> Instead of simply showing the cell editor, first we check whether the click came from a cell in the new column, the one named 'delete'. We use the target cell received in the argument to get the column via <code>getColumn()</code> and then check for its <code>key</code> value. If the <code>key</code> of the clicked column is <code>'delete'</code> and if the user confirms the action we call <code>deleteRow()</code> and pass in the target cell as an argument, otherwise, we leave the cell editor pop up. <p> The event listener is executed in the scope of the table, so <code>this</code> and <code>myDataTable</code> within the function are the same, we used the latter for clarity. <p> Code similar to the above can be used at any time when we might want to edit some cells and not others. Here, we have selected by column but we can also read the record where the click happened and decide whether to edit or not based on the value on an associated column for that same record. <p> We have one problem with this code: the server knows nothing of this change and we want to keep the server always in sync, so we will have to insert some code in between the user confirmation and the actual row deletion: <pre>
+myDataTable.subscribe('cellClickEvent',function(oArgs) {
+    var target = oArgs.target;
+    var column = this.getColumn(target);
+    if (column.key == 'delete') {
+        if (confirm('Are you sure?')) {
+            var record = this.getRecord(target);
+            YAHOO.util.Connect.asyncRequest(
+                'GET',
+                'myServer.php?deleteRow=' + record.getData('id'),
+                {
+                    success: function (o) {
+                        if (o.responseText == 'Ok') {
+                            this.deleteRow(target);
+                        } else {
+                            alert(o.responseText);
+                        }
+                    },
+                    failure: function (o) {
+                        alert(o.statusText);
+                    },
+                    scope:this
+                }
+            );
+        }
+    } else {
+        this.onEventShowCellEditor(oArgs);
+    }
+});
+</pre><p> After confirming the user intention, we call <code>asyncRequest()</code> of the <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>. We make a <code>GET</code> request to the server, passing it the value of the database primary key, here called <code>id</code>, for the current record which we get through a call to <code>getData()</code>. Upon a successful reply from the server, if it sends an <code>'Ok'</code> message, we delete the row as before. If there is any other reply from the server, we assume it to be an error message and we show it to the user, just as we do if we are unable to connect the server in the <code>failure</code> callback option. <p> In this example I changed the references from <code>myDataTable</code> to <code>this</code>, since the event listener is called within the scope of the <code>DataTable</code>, but beware, the callback to the <code>asyncRequest()</code> method has a different scope unless you explicitly force it and so we need to add <code>scope:this</code> for the <code>this.deleteRow()</code> inside the callback to work. Thanks to closure, the variable <code>target</code> within the <code>success</code> callback function refers to the one in the enclosing function. We are not really concerned with aesthetics here, but in your own code you might prefer to use <code>YAHOO.widget.SimpleDialog</code> instead of <code>confirm()</code> and <code>alert()</code>. <p> If you analyze this function you may notice that all the information it needs comes from the event <code>target</code> except for two hard coded values: the column key and the database's primary key for the record. This forces us to rewrite this very same function for each and every table. We can, though, provide this information from elsewhere so that we could put this function into our own handy personal library. In the <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">previous article</a> I mentioned that the column definitions were extensible, and you can add your own properties to them as long as their names don't collide with those the YUI library uses. We can add a couple of such properties. One we will call <code>action</code> and in this case we will set <code>action:'delete'</code>. The other property we will call <code>isPrimaryKey</code> and it will either be <code>true</code> or simply not be there, hence <code>false</code>. We will set it to <code>true</code> only in the column or columns which are the primary keys in the database. Our generic <code>onCellClick</code> function might then look like this: <pre>
+var onCellClick = function(oArgs) {
+    var target = oArgs.target,
+        column = this.getColumn(target),
+        record = this.getRecord(target);
+    switch (column.action) {
+        case 'delete':
+            if (confirm('Are you sure?')) {
+                
+                YAHOO.util.Connect.asyncRequest(
+                    'GET',
+                    'myServer.php?action=delete' + myBuildUrl(this,record),
+                    {
+                        success: function (o) {
+                            if (o.responseText == 'Ok') {
+                                this.deleteRow(target);
+                            } else {
+                                alert(o.responseText);
+                            }
+                        },
+                        failure: function (o) {
+                            alert(o.statusText);
+                        },
+                        scope:this
+                    }
+                );
+            }
+            break;
+        default:
+            this.onEventShowCellEditor(oArgs);
+            break;
+    }
+};
+
+// which we would use like this:
+myDataTable.subscribe('cellClickEvent',onCellClick);
+
+</pre><p> We intentionally left the door open to accept other actions within the same function, the default always being editing cells. This does not mean that all cells will be editable, <code>onEventShowCellEditor</code> first checks whether the column has the <code>editor</code> attribute set. The <code>myBuildUrl()</code> function is: <pre>
+var myBuildUrl = function(datatable,record) {
+    var url = '';
+    var cols = datatable.getColumnSet().keys;
+    for (var i = 0; i &lt; cols.length; i++) {
+        if (cols[i].isPrimaryKey) {
+            url += '&amp;' + cols[i].key + '=' + escape(record.getData(cols[i].key));
+        }
+    }
+    return url;
+};
+</pre><p> This function goes through all the column definitions looking for the <code>isPrimaryKey</code> property and, if set, it will concatenate into the variable <code>url</code> the column's <code>key</code> name, which we assume to be URL-safe, and the current value for that column taken from <code>record</code> all in proper and escaped URL-encoded format. The value returned will even have the leading <code>'&amp;'</code> since, most of the time, we will be appending it to a partially built URL. Most of the transactions we do with the server will require us to identify the record by its primary keys so we will use this function quite often. <h2><a id="inserting_rows" name="inserting_rows"></a>Inserting rows </h2>
+	<p> It is quite easy to insert a blank row into the <code>DataTable</code>. Let's assume that we have added another column that has buttons to insert a row. The following code will insert a blank row above the row where the button was clicked. Since we have left the switch on <code>column.action</code> open for expansion we now add: <pre>
+case 'insert':
+    this.addRow( {} , this.getRecordIndex(target));
+    break;
+    ....
+</pre><p> The <code>addRow()</code> method takes an object literal whose property names are those of the <code>column.key</code> properties and the values for each property are the ones to be inserted. Those fields not explicitly set (none in this example) will be set to <code>undefined</code>. In normal circumstances the object literal should be filled with suitable defaults. The second argument to <code>addRow()</code> is the position where the record is to be inserted, in this case taken from the position of the click via <code>getRecordIndex()</code>. <p> The user will still need to input data for the new row and the new data will need to be sent to the server as we will see later on. Since there is no built-in row-editing functionality in the DataTable, the best option is to pop up a <code>Dialog</code> from the Container component. The <a href="http://developer.yahoo.com/yui/container/dialog/">documentation for the Dialog component</a> shows how to assemble a form and submit the information collected to the server, so I won't cover that here. <p> Another idea for row insertion is to trigger it via a context menu, where you would have to insert the new row in relation to the row that triggered the context menu. Or an 'Add New Record' button or link directly outside the table could cause a row to be inserted at position 0, which would be the top of the table. This is a case where we can fully appreciate the difference in between row numbers and record id numbers that we mentioned in the <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">previous article</a>. The record we have just created will get a new record id number, one higher than the highest record ever assigned. Nevertheless, it would get row number 0, because that's where we placed it with the <code>addRow()</code> method. They are different concepts and they are also different from the primary key(s) of the database record on the server. <p> Once we decide how we want to allow the user to insert a row, we need to send the request to the server and handle its reply. We should not fully count on the information the user entered into the <code>Dialog</code> form -- the database might assign default values for empty fields, it might have timestamp values inserted into date fields or it might have an auto-incremented integer as its primary key so we need to know what that primary key value turned out to be. In the <a href="http://developer.yahoo.com/yui/container/dialog/#submit">Submitting Form Data</a> section in the <code>Dialog</code> documentation we have the <code>onSuccess</code> callback function which simply pops up a message alert to the user. We will use that callback to insert the record with the values returned from the server. <p> In the <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">previous article</a> I mentioned the benefits of using a standard message response. We didn't use that standard message format in the previous section in order to focus on the new information presented there. Let's take a moment and review it since we now have a more complex reply from the server and we can't just get by with a plain 'Ok'. I use JSON as the basis for my server replies; I don't recommend plain text because it lacks any structure (i.e. you could not make an envelope); and though XML is a good choice, I find it too verbose and harder to parse. Three possible messages in my message format are: <pre>
+// Plain Ok response
+{   "replyCode":200, "replyText":"Ok" }
+
+// Ok with extra data
+{
+    "replyCode":201, "replyText":"Data Follows", 
+    "data":[{ ... } , ... ] 
+}
+
+// Something went wrong
+{ "replyCode":500, "replyText":"Something really bad happened" }
+</pre><p> All messages will be enclosed in an envelope carrying status information which reports in numeric and textual form the result of the transaction requested. Reply codes in the 2xx range mean no error. A 200 is an Ok reply when there is no extra information to be provided, a 201 is a variation meaning that there is extra data in the reply. Codes in the 5xx range and above mean some sort of error. The numerical values for the <code>replyCode</code> are modeled after the standard HTTP reply codes but they should not be confused with them and no attempt should be made to send those reply codes in the HTTP headers. Browsers, proxy servers and other intermediaries may act on standard HTTP reply codes and they might get confused if we send our application-level codes at the communication level, where they do not belong. <p> In the row delete case there would either be a successful <code>200 'Ok'</code> reply or it would get some 5xx <code>replyCode</code> and an error message in <code>replyText</code>. For a data fetch (i.e.:when filling a DataTable) the reply would have a 201 code and the <code>data</code> property would contain the data requested. In our row insert case, we would receive the reply status envelope plus the full record with all its default values, auto-incremented fields, timestamps and whatnot or, in the case of server error, a 500 <code>replyCode</code> and an error description. Thus, our Dialog submit <code>onSuccess</code> callback function would look like this: <pre>
+var onSuccess = function(o) {
+    var r = YAHOO.lang.JSON.parse(o.responseText, function (k,v) {
+        if (/-date$/.test(k) {
+            return YAHOO.util.DataSource.parseDate(v);
+        }
+        return v;
+    });
+    if (r.replyCode == 201) {
+        myDataTable.addRow(r.data, 0);
+        var tr = myDataTable.getTrEl(0);
+        tr.scrollIntoView();
+        YAHOO.util.Dom.addClass(tr, 'my-highlight-row');
+        setTimeout(function() {
+            YAHOO.util.Dom.removeClass(tr, 'my-highlight-row');
+        }, 2000);
+    } else {
+        alert(r.replyText);
+    }
+}:
+
+</pre><p> We first decode the JSON reply with the YUI <a href="http://developer.yahoo.com/yui/json/">JSON utility</a>. Since we presumably have agreed that all date fields will end with the <code>-date</code> suffix we use the <em>reviver</em>, a function passed as the second argument to the parser, to detect them, via a suitable regular expression and convert then to JavaScript dates. The converter we use is the very same parser the DataSource uses so we should get the same results as the DataTable gets. If <code>replyCode</code> is <code>201</code>, indicating success plus data, we add the row just as it comes from the server in the first table position, row number 0. Though YUI's JSON parser offers the alternative to parse values on the fly, other parsers for other message formats might not include such a facility and it might be cumbersome to specify a <em>reviver</em> for all possible data types, so it is more likely we wouldn't use it and instead the call to <code>addRow()</code> in a real case would look like this: <pre>
+myDataTable.addRow({
+    someNumericField: YAHOO.util.DataSource.parseNumber(r.data.someNumericField),
+    someDateField: YAHOO.util.DataSource.parseDate(r.data.someDateField),
+    someTextField: r.date.someTextField,
+    someBooleanField: !!r.date.someBooleanField  // yes, those are two 'not' operators put together
+},0);
+</pre><p> The lines after the call to <code>addRow()</code> simply use the Dom Utility's <code>addClass()</code> and <code>removeClass()</code> to highlight the row for 2 seconds in order to call attention to the newly inserted row, which is brought into view by the HTML DOM function <code>scrollIntoView</code>. <p> All along we've been assuming the column <code>key</code> names are the same as the database table column names, a practice I recommend. SQL names are valid JavaScript variable names and are URL-safe so there is no reason not to use the same names all through, but of course, if you inherit a system with funny column names (some databases allow names in national language character sets which might cause encoding problems or JavaScript errors) you might have to change those names, preferably on the server side, if that is where the culprit lies. <h2><a id="inline_cell_editing" name="inline_cell_editing"></a>In-line cell editing </h2>
+	<p> One of the most attractive features of the <code>DataTable</code> is that you can edit cells as if in a spreadsheet. The <a href="http://developer.yahoo.com/yui/datatable/#edit">documentation</a> covers the basics and a working example can be found <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">here</a>. Besides setting the <code>editor</code> property in the column definitions to a suitable editor for that column, you have to remember to pass the <code>cellClickEvent</code> to the <code>onEventShowCellEditor()</code> method just as is shown in the documentation or how we did when we captured the <code>cellClickEvent</code> for our own use. <p> There have been several important changes for 2.6.0. In previous versions, the <code>editor</code> property of a column definition would take a short-name such as <code>'textbox'</code> or the full reference to the plug-in for that type of field such as <code>YAHOO.widget.DataTable.editCheckbox</code>. Though these two ways are still supported for backward compatibility, each type of editor is now a separate class, all inheriting from <code>BaseCellEditor</code> so this is how it looked like and how you would do it now (taken from the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">cell editing example</a>): <pre>
+// Sample of old style
+{key: "amount", editor: "textbox", editorOptions: {validator: YAHOO.widget.DataTable.validateNumber}},
+{key: "active", editor: "radio", editorOptions: {radioOptions: ["yes", "no", "maybe"], disableBtns: true}},
+{key: "colors", editor: "checkbox", editorOptions: {checkboxOptions: ["red", "yellow", "blue"]}},
+                        
+// Sample of new style:
+{key: "amount", editor: new YAHOO.widget.TextboxCellEditor({validator: YAHOO.widget.DataTable.validateNumber})},
+{key: "active", editor: new YAHOO.widget.RadioCellEditor({radioOptions: ["yes", "no", "maybe"], disableBtns: true})},
+{key: "colors", editor: new YAHOO.widget.CheckboxCellEditor({checkboxOptions: ["red", "yellow", "blue"]})},
+</pre><p> In the current version you create an instance of each kind of editor for each column that is to be edited and provide the editor options as arguments to the constructor. The options are mostly the same ones as before. Back then you placed them in a separate <code>editorOptions</code> property, now they are part of the object instantiation. There is one difference in the options. For radio buttons, checkboxes and dropdowns you could specify the options via an array with simple textual options, as in the example above or an array of sets of texts to be shown to the user and values to be stored internally. In previous versions there was no agreement in the property names for those options, now it has been standardized across all those controls in <code>value</code> and <code>label</code> (it used to be <code>value</code> and <code>text</code> for dropdowns), <p> A second major change is the possibility to confirm asynchronously the changes against the server. Once the user accepted the change in the cell editor, there were several ways to get notified that a change was taking place, even to validate it and rejected, but all these happened synchronously, with no break to be able to get an Ok from the server before showing it to the user. We might be able to revert it afterwards, but the user would have seen the change in the screen and would be entitled to assume the change is valid. By the time a rejection from the server arrived, the user might well be looking elsewhere or even navigated away from the page. This issue occupied a big part of the previous version of this same article, with many lines of code devoted to it. <p> This has changed thanks to the <code>asyncSubmitter</code> setting of the cell editors. The <code>asyncSubmitter</code> is a function that receives two arguments, the first one a callback function it should call when it gets the confirmation back from the server, the second, the new value for that cell. The <code>asyncSubmitter</code> is called in the scope of the editor so it can retrieve any other information it might require from there, such as the Record instance, the value belongs to or the original value of the cell. The DataTable will be blocked prior to calling the <code>asyncSubmitter</code> and will be unblocked by the callback so there is not chance for the user to go away. The cell editor is not dismissed until the callback is called. The callback should receive one or two arguments. The first one a boolean value to indicate success, the second, the value that will actually end up stored in the <code>Record</code>, thus allowing the server to change it. Here is a sample of a possible submitter: <pre>
+{key:'name', editor: new YAHOO.widget.TextboxCellEditor({
+    asyncSubmitter: function (callback, newValue) {
+        var record = this.getRecord(),
+            column = this.getColumn(),
+            oldValue = this.value,
+            datatable = this.getDataTable();
+        YAHOO.util.Connect.asyncRequest(
+            'POST',
+            'People.php', 
+            {
+                success:function(o) {
+                    var r = YAHOO.lang.JSON.parse(o.responseText);
+                    if (r.replyCode == 201) {
+                        callback(true, r.data);
+                    } else {
+                        alert(r.replyText);
+                        callback();
+                    }
+                },
+                failure:function(o) {
+                    alert(o.statusText);
+                    callback();
+                },
+                scope:this
+            },
+            'action=cellEdit&amp;column=' + column.key + '&amp;newValue=' + 
+                escape(newValue) + '&amp;oldValue=' + escape(oldValue) + 
+                myBuildUrl(datatable,record)
+        );                                              
+    }
+})},
+</pre><p> Here we have a column definition for an editable field via a plain <code>TextboxCellEditor</code> which has a single argument for its constructor, an <code>asyncSubmitter</code>. The submitter function receives two arguments, the <code>callback</code> function and the <code>newValue</code> just entered and possibly modified by the <code>validator</code> (none in this case). To start with, the submitter reads several important pieces to be able to do its job. The <code>record</code> and <code>column</code> the cell being edited belongs to, the original value for the field and a reference to the datatable. Notice that the scope of the submitter is not the DataTable but the cell editor so <code>this</code> is not the DataTable instance, as we are used to from the event listeners we've used so far. <p> We then use <code>asyncRequest</code> to connect to the server via POST using a very long url-encoded post document containing all of the data, the action requested from the server, the column the cell belongs to, the new and old values and through <code>myBuildUrl</code> the primary key of the record in the server database table. When the server replies, if the code is a 201 it means the server gave an Ok and it is sending the possibly fixed value back, we then call the callback function signaling the acceptance and what the value actually stored should be. For any other reply, we show an alert and call the callback with no arguments (the first one will equate to false when missing and the second argument is irrelevant in this case). Placing a breakpoint with a debugger in this code anywhere before it calls back the cell editor will show the DataTable greyed out and completely blocked. <p> A detail often overlooked is that the <code>validator</code> function is also the place to do data conversion for the data just entered before it is sent to the server. The value finally saved into the table is not the one initially read into the variable <code>newData</code> but that returned by the <code>validator</code> function. This is not optional for some data types. Digits entered into an HTML textbox do not make a number but a string of digits. If we allow that string to get into the <code>RecordSet</code>, we will find, later on, that sorting columns doesn't work as expected. Other cell editors don't give trouble: the calendar editor will already return a native JavaScript <code>Date</code> object. A dropdown will return the option value, not the description but, once again, as a string not a number. <code>DataTable</code> has the static function <code>YAHOO.widget.DataTable.validateNumber</code> which can be assigned to the <code>validator</code> function for any numeric column to do such conversion, as seen in the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">example</a> (see the column definition for column <code>'amount'</code>). <h3><a id="Checkboxes_and_radio_buttons" name="Checkboxes_and_radio_buttons">Checkbox and radio button editors</a></h3>
+	<p> We have already seen how to use the formatters for these two types of input elements. The corresponding editors allow multiple checkboxes or radio buttons in the same cell. Their functionality is no different than having a dropdown with multiple or single selection respectively, they are not meant to edit a single boolean value per cell, though they could, but it is cumbersome for the user to have to click once to bring the editor up, a second time for the choice and then a third click on the Ok (unless you used the <code>disableBtns</code> option). The use of similar names is somewhat misleading in that you might associate <code>formatCheckbox</code> with <code>editCheckbox</code> and <code>formatRadio</code> with <code>editRadio</code> but they are not at all related, the data they represent is completely different, the formatters represent booleans, the editors single or multiple choices within enumerations. <p> In the <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">previous article</a> we have seen how to respond to click events in checkboxes and radio buttons but we have not used them to update the Recordset. Besides, we have always gone by the principle that the server should be notified of the intended change and upon approval we would update what the user sees. The following code shows how we can do it: <pre>
+myDataTable.subscribe('checkboxClickEvent', function(oArgs){
+    // hold the change for now
+    YAHOO.util.Event.preventDefault(oArgs.event);
+    // block the user from doing anything
+    this.disable();
+
+    // Read all we need
+    var elCheckbox = oArgs.target,
+        newValue = elCheckbox.checked,
+        record = this.getRecord(elCheckbox),
+        column = this.getColumn(elCheckbox),
+        oldValue = record.getData(column.key),
+        recordIndex = this.getRecordIndex(record),
+        recordKey = record.getData('recordKey');
+
+    // check against server
+    YAHOO.util.Connect.asyncRequest(
+        'POST',
+        'People.php', 
+        {
+            success:function(o) {
+                var r = YAHOO.lang.JSON.parse(o.responseText);
+                if (r.replyCode == 200) {
+                    // If Ok, do the change
+                    var data = record.getData();
+                    data[column.key] = newValue;
+                    this.updateRow(recordIndex,data);
+                } else {
+                    alert(r.replyText);
+                }
+                // unblock the interface
+                this.undisable();
+            },
+            failure:function(o) {
+                alert(o.statusText);
+                this.undisable();
+            },
+            scope:this
+        },
+        // data to be sent to the server
+        'action=cellEdit&amp;column=' + column.key + '&amp;newValue=' + 
+            escape(newValue) + '&amp;oldValue=' + escape(oldValue) + 
+            myBuildUrl(this,record)
+    );                                              
+});
+</pre><p> In this case we first prevent the checkbox from changing state because we don't want that to happen until we get an Ok from the server, thus we call <code>preventDefault</code>. The DataTable now has the ability to disable itself so the user won't be able to continue while the request to the server is processed. This is done automatically by the cell editors, but we have to handle it ourselves in this case so we call method <code>disable</code> before submitting the information to the server and call <code>undisable</code> after the reply has arrived. <p> We then read a bunch of values and objects that we need to report to the server or to confirm the update. As with the previous example, we assemble a big URL with all this information and send it to the server. Upon receiving the server reply, if it is a 200 code we use <code>updateRow</code> to have both the UI and the recordset updated at once. <h2><a id="adding_editors" name="adding_editors"></a>Adding editors </h2>
+	<p> If you try the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">example</a> you might notice that if you try to edit the cells in the amount column you are allowed to enter anything at all. It is when you click the 'Ok' button that the <code>validateNumber</code> function rejects the entry and leaves the cell contents unmodified but, until you do so, you can quite happily fill the textbox with all sorts of nonsense. I prefer my editor to let me know when I am doing something wrong instead of waiting until I thoroughly made a fool of myself. Fortunately, we are not limited to the available editors. <p> Let's take the standard <code>TextboxCellEditor</code> method and make an <code>RegExpCellEditor</code> one where you can specify a regular expression to validate the entry. Actually, we will handle two separate regular expressions, one to be used while the value is being entered and might not be yet complete. This will accept or reject keystrokes as they are being pressed. The other regular expression is that for the final value and it will highlight the entry by adding a className to the entry box so the graphics designer can choose how to signal the user that the value is not yet complete. For example to validate a US Social Security Number, this is how we would specify the editor in the column definition: <pre>
+editor:new YAHOO.widget.RegExpCellEditor({
+    regExp:'^\\d{0,3}-?\\d{0,2}-?\\d{0,4}$',
+    finalRegExp:'^\\d{3}-\\d{2}-\\d{4}$',
+    failedRegExpClassName:'warning'
+})
+</pre><p> While the <code>regExp</code> property is full of conditionals so that it won't mind while the values are being entered, the <code>finalRegExp</code> has no conditionals whatsoever, you have to put 3 digits, a dash, 2 digits, another dash and the final 4 digits and the whole entry from beginning (^) to end ($) is validated. While the entry doesn't match <code>finalRegExp</code> it will be shown with whatever CSS styles the style called <code>.warning</code> says, on the other hand, if what you enter doesn't match the <code>regExp</code> pattern, the character will simply be rejected so, in this case, nothing but digits and dashes can go, and those in the right places. The editor does not replace the normal <code>validator</code> which is an all-or-nothing validation once you have pressed Ok button, the editor does not prevent an invalid value from being accepted. A <code>validator</code> function might have to verify check-digits, check consistency with other values in the same record or a number of other things and the <code>asyncSubmitter</code> has the final say from the server itself. The <code>RegExpCellEditor</code> only gives feedback on the proper format of the entry, nothing more. <pre>
+YAHOO.widget.RegExpCellEditor = function (oConfigs) {
+    this._sId = "yui-regexptextboxceditor" + YAHOO.widget.BaseCellEditor._nCount++;
+    oConfigs = oConfigs || {};
+    oConfigs.type = 'regexptextbox';
+    YAHOO.widget.RegExpCellEditor.superclass.constructor.call(this, oConfigs); 
+    
+};
+</pre><p> First, the constructor for the cell editor. We first assemble an Id which the cell editor will use, based on the type of editor (so it makes it easy to find in the debugger) and a unique global index. We make sure the <code>oConfigs</code> is an object and add a <code>type</code> property to it. Then we call the constructor of the object we will inherit from, a regular textbox editor, all the previous being a preparation for that superclass constructor. <p> Next, as can be seen below, we extend the closest type of editor, the <code>TextboxCellEditor</code> which we will use as the model for our own editor. In fact, we will only add validation for the keys being typed into the textbox. The <code>YAHOO.lang.extend</code> function accepts a third argument which is an object containing the properties and methods we mean to add or override. We add the three properties for our editor and override the <code>render</code> method. This method normally draws the actual HTML elements that will take the user input. We won't actually draw anything different so the first thing we do is to call the same method of the superclass. What we are interested in is in setting up the listeners for the keystrokes. <pre>
+YAHOO.lang.extend(YAHOO.widget.RegExpCellEditor, YAHOO.widget.TextboxCellEditor, {
+    regExp: null,
+    finalRegExp: null,
+    failedRegExpClassName : '',
+    
+    render: function () {
+        YAHOO.widget.RegExpCellEditor.superclass.render.call(this);
+
+        if (this.regExp &amp;&amp; YAHOO.lang.isString(this.regExp)) { 
+            this.regExp = new RegExp(this.regExp); 
+        }
+        if (this.finalRegExp &amp;&amp; YAHOO.lang.isString(this.finalRegExp)) {
+            this.finalRegExp = new RegExp(this.finalRegExp); 
+        }
+
+        YAHOO.util.Event.on(this.textbox,'keypress', function(ev) {
+            if (YAHOO.lang.isNull(this.regExp)) { return; }
+            var textbox = this.textbox;
+            if (YAHOO.env.ua.gecko &gt; 0 &amp;&amp; ev.keyCode) { 
+                return;
+            }
+            var ch = ev.keyCode || ev.charCode, 
+                val = textbox.value, 
+                start, 
+                end; 
+            if (document.selection &amp;&amp; document.selection.createRange) {
+                //undocumented IE trick to get the selection box.
+                start = Math.abs(document.selection.createRange().moveStart("character", -1000000));
+                end = Math.abs(document.selection.createRange().moveEnd("character", -1000000)); 
+            } else {
+                start = textbox.selectionStart;
+                end = textbox.selectionEnd;
+            }
+            val = val.substr(0,start) + String.fromCharCode(ch) + val.substr(end);
+            if (!this.regExp.test(val)) {
+                YAHOO.util.Event.stopEvent(ev);
+            }
+        },this,true);
+        YAHOO.util.Event.on(this.textbox,'keyup',function(ev) {
+            if (YAHOO.lang.isNull(this.finalRegExp)) { return; }
+            if (this.finalRegExp.test(this.textbox.value)) {
+                YAHOO.util.Dom.removeClass(this.textbox,this.failedRegExpClassName);
+            } else {
+                YAHOO.util.Dom.addClass(this.textbox,this.failedRegExpClassName);
+            }
+        },this,true);
+    }
+
+});
+// Just to copy static members, not really needed.
+YAHOO.lang.augmentObject(YAHOO.widget.RegExpCellEditor, YAHOO.widget.TextboxCellEditor);
+</pre><p> The listeners for the keystrokes are somewhat complicated and in the end say little about the DataTable itself. The problem is that, while the <code>keyup</code> listener allows the data to be read directly from the input element, the character just entered can't be rejected. The only way to reject a character is to listen to the <code>keypress</code> event, which can be cancelled. The problem there is that since the character has not yet been inserted into the textbox, this process needs to be emulated. Thus, we need to find out where the insertion point is to get the character would go and that varies in between browsers. Once the would-be entry is assembled, it is compared against the regular expression and the character accepted (the default) or rejected via <code>stopEvent</code>. We do use the <code>keyup</code> event to compare against the <code>finalRegExp</code> and set or remove the given className accordingly. <h2> Extending the standard objects </h2>
+	<p> The new version of the DataTable has brought many new classes. The DataSource has been broken into several specific classes, the ScrollableDataTable is now a separate thing from the simple DataTable, the Paginator is not distributed along the DataTable and the editors are now true objects. Extending them has become a little more complicated. <p> Why would you trouble yourself with extending them? If you have adopted some sort of standard envelope for data transmission as has been suggested, you might want to avoid specifying the <code>resultsList</code> every time since it is always the same and, if you override either <code>doBeforeParseData</code> or <code>doBeforeCallback</code> you might want that to be taken care of as well. And it you later change from, say, JSON to XML, you change your own DataSource object and the applications hardly needs to learn about it. <p> To start with, the <code>DataSource</code> object cannot be extended because it is not really a true object. What seems to be the constructor is actually a <em>factory</em> which, depending on the <code>responseType</code> declared returns instances of the specific sub-classes derived from <code>DataSourceBase</code> so, extending <code>DataSource</code> will, in the end, fail. When you need to extend a <code>DataSource</code>, you have to extend the specific class you will be using <code>XHRDataSource</code>, <code>LocalDataSource</code> or any such sub-class. <p> If you extend the <code>DataTable</code> it will fail if you set the <code>scrollable</code> configuration attribute. The regular DataTable can be extended but when the <code>scrollable</code> is set it acts as a factory for a <code>ScrollableDataTable</code> and will fail just as extending <code>DataSource</code> or any such factory fails. Both the plain <code>DataSource</code> object and the <code>DataTable</code> when producing a scrollable data table are only entry points to provide backward compatibility. <p> As for the <code>Paginator</code> object, the only difference now is that it has to be explicitly loaded so it is more of a dependency issue. <p> The architecture of the cell editors has changed in important ways but migrating the prior versions to 2.6 is not much of a headache as we have already seen and the old style still works. Extending them is quite something else. Actually, in prior versions what you did is changing the plug-ins at the end of the core editor code, now you do really extend the editors since they are real objects. Examples of such migrations from the old plug-ins to the new objects can be found in the <a href="http://www.satyam.com.ar/yui/#DataGrid">DataGrid</a> and <a href="http://www.satyam.com.ar/yui/#invoice">Invoice</a> examples in my YUI examples, both available for 2.5 and 2.6 (in fact, the <code>RegExpCellEditor</code> above was taken from the later example). <h2> Conclusion </h2>
+	<p> In this and the <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">previous article</a>, we have seen how to create a <code>DataTable</code>, how to make changes to the <code>DataTable</code>, how to report those changes to the server and how, once accepted by the server, show those changes to the user. We have always maintained the database server as the primary source of our data, ensuring the <code>DataTable</code> does not show any changes until they have been confirmed by the server. We have also seen how to validate data input both at the row entry level and on a field-by-field basis. <p>Many of these techniques have been put together in the following <a href="http://satyam.com.ar/yui/2.6.0/myDataTable/myClient.html">example</a>, which is available for <a href="http://satyam.com.ar/yui/2.6.0/myDataTable/satyamdatatable.zip">download</a>. </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

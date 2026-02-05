@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI 3.0.0: First GA Release of YUI&#x27;s Next-Generation Codeline</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">YUI 3.0.0: First GA Release of YUI&#x27;s Next-Generation Codeline</li></ul>
+				<h1 class="yui3-u-7-8">YUI 3.0.0: First GA Release of YUI&#x27;s Next-Generation Codeline</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 29, 2009<span></div></div>
+
+<div class="blog" id="blog-content"><pre>
+YUI().use("node", function(Y) {
+    Y.one("#message").setContent("Hello, World!");
+});
+</pre><p><a href="http://developer.yahoo.com/yui/3/download/"><img align="right" alt="Download YUI 3.0.0" src="/blog-archive/assets/downloadyui3.0.0-20090929-092617.png" /></a>We're pleased to announce today the general-availability release of <a href="http://developer.yahoo.com/yui/3/">YUI 3.0.0</a>. YUI 3's core infrastructure (<a href="http://developer.yahoo.com/yui/3/yui/">YUI</a>, <a href="http://developer.yahoo.com/yui/3/node/">Node</a> and <a href="http://developer.yahoo.com/yui/3/event/">Event</a>) and its utility suite (including <a href="http://developer.yahoo.com/yui/3/anim/">Animation</a>, <a href="http://developer.yahoo.com/yui/3/io/">IO</a>, <a href="http://developer.yahoo.com/yui/3/dd/">Drag &amp; Drop</a> and more) are all considered production-ready with today's release.<p>YUI 3 is the first ground-up redesign of YUI since 2005, and it brings with it a host of modernizations:<ol>
+			<li><strong>Selector-driven:</strong> YUI 3 is built around one of the lightest, fastest selector engines available, bringing the expressive power of the CSS selector specification into actions that target DOM nodes.<li><strong>Syntactically terse:</strong> Without polluting the global namespace, YUI 3 supports a more terse coding style in which more can be accomplished with less code.<li><strong>Self-completing:</strong> YUI 3's light (6.2KB gzipped) seed file can serve as the starting point for any implementation. As long as this seed file is present on the page, you can load any module in the library on the fly. And all modules brought into the page via the built-in loader are done so via combo-handled, non-blocking HTTP requests. This makes loading the library safe, easy and fast.<li><strong>Sandboxed:</strong> YUI modules are bound to YUI instances when you <code>use()</code> them; this protects you against changes that might happen later in the page's lifecycle. (In other words, if someone blows away a module you're using after you've created your YUI instance, your code won't be affected.)</ol> <p>The code we're shipping today in 3.0.0 is the same code that drives the new Yahoo! Home Page, and it goes out with confidence that it has been exercised vigorously and at scale. The team is thrilled to be sharing it with you today for the first time in a production-ready release.<h3 id="yui3-easy-steps">Writing Your First YUI 3 App in 3 Easy Steps:</h3>
+	<p>One of the goals of the YUI 3 redesign was to make it easy to use without sacrificing power, performance and configurability. You can have your first YUI 3 app running in less than a minute following three simple steps.<p><strong>Step 1:</strong> Put the YUI seed file on the page, pulling down a slim 6.2KB script file off of the Yahoo CDN:<pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js&quot;&gt;&lt;/script&gt;
+</pre><p><strong>Step 2:</strong> Make use of any YUI module or submodule. The seed file will take care of calculating your dependencies and loading any additional scripts you need in (usually) a single combo-handled, non-blocking HTTP request. So, you can use the Drag &amp; Drop plugin to make an element draggable like this:<pre>
+&lt;div id=&quot;demo&quot;&gt;I'm draggable.&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+YUI().use('dd-plugin', function(Y) {
+    Y.one('#demo').plug(Y.Plugin.Drag);
+});
+&lt;/script&gt;
+</pre><p><strong>Step 3:</strong> There is no step 3. Relax, grab a soda. Work on your short game. Life is good.<h3 id="yui3-use-anything">YUI 3: <code>use()</code> Anything, But Not Everything</h3>
+	<p>YUI 3's simplicity of use (particularly in its ability to <code>use()</code> any module with intrinsic, efficient loading) is paired with new levels of power and control.<p>For example, one of the characteristics you'll find throughout the YUI 3 project is an emphasis on granularity. We've worked hard to take structures that were monolithic in YUI 2 and break them down into smaller packages in YUI 3. As a result, you'll find that many modules &mdash; component-level packages like IO or Animation &mdash; are comprised of various submodules. Usually, all you'll need is the base submodule.<p>Charting the evolution of components from YUI 2 to YUI 3 tends to yield visualizations like this one for <a href="http://developer.yahoo.com/yui/3/datasource/">DataSource</a> (comparing gzipped filesizes):<p><img alt="YUI DataSource package comparison between YUI 2 and YUI 3." height="434" src="/blog-archive/assets/datasource-granularity-20090929-100104.png" width="510" /><p>Because any given DataSource implementation is likely to need only one slender submodule from the DataSource family, the savings in terms of performance and K-weight &mdash; especially for complex implementations &mdash; are often substantial.<p>Take the time to explore the <a href="http://developer.yahoo.com/yui/3/configurator/">Dependency Configurator</a> as you're setting up your <code>YUI().use()</code> statements. Instead of picking top-level modules, explore the submodule structures and see if the featureset you need is encompassed in a submodule. You may find yourself using modules like <code>io-base</code> instead of <code>io</code> and <code>anim-base</code> instead of <code>anim</code> &mdash; and saving yourself a lot of K-weight in the process.<p><a href="http://developer.yahoo.com/yui/3/configurator"><img alt="Check out Satyen Desai's excellent YUI 3 Dependency Configurator." height="116" src="/blog-archive/assets/configurator-20090929-103355.png" width="510" /></a><h3 id="yui3-website-updates">YUI Website Updates</h3>
+	<p>Along with the promotion of YUI 3 to general availability with today's release, we've updated <a href="http://developer.yahoo.com/yui/">the YUI website</a> to better support the growing communities using both <a href="http://developer.yahoo.com/yui/2/">YUI 2</a> and <a href="http://developer.yahoo.com/yui/3/">YUI 3</a>. Today, when you visit YUI on the Yahoo! Developer Network you'll find a meta-page with project-wide links along with direct links into the YUI 2 and YUI 3 areas of the site.<p><a href="http://developer.yahoo.com/yui/"><img alt="Visit the new YUI homepage on the Yahoo! Developer Network." height="309" src="/blog-archive/assets/yui-homepage-20090929-105915.png" width="510" /></a><p>Meanwhile, we continue to build out our project-tracking and <a href="http://yuilibrary.com/forum/">forums</a> platform on <a href="http://yuilibrary.com">YUILibrary.com</a> and host the <a href="http://github.com/yui">YUI project source code for forking and contributions on GitHub</a> You can also find a lot of YUI folks hanging out in #YUI on <a href="http://freenode.net">Freenode</a>; feel free to drop in and join the conversation as you explore YUI 3.0.0.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

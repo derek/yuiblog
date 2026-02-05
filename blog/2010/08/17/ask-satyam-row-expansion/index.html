@@ -1,0 +1,286 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Ask Satyam: Row Expansion and Nested DataTables</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Ask Satyam: Row Expansion and Nested DataTables</li></ul>
+				<h1 class="yui3-u-7-8">Ask Satyam: Row Expansion and Nested DataTables</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 17, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<blockquote>
+		<p><a href="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book"><img align="right" height="132" hspace="20" src="/blog-archive/assets/satyam-book-small-20100809-120823.jpg" width="106" /></a>Satyam (a.k.a Daniel Barreiro) is a long-time YUI contributor and one of the most prolific, generous experts in the <a href="http://yuilibrary.com/forum/" title="YUI Library :: Forums :: Index page">YUI forums</a>. He is also <a href="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book">the author of a new book on YUI 2.8.0, <em>YUI 2.8.0: Learning the Library</em></a>. This article in the "Ask Satyam" series <a href="/blog-archive/blog/2010/07/29/ask-satyam/#comment-593036" title="Ask Satyam — and Be Eligible for a Free Copy of the New YUI 2.8 Book from Packt » Yahoo! User Interface Blog (YUIBlog)">was suggested by Alberto Santini</a> and <a href="/blog-archive/blog/2010/07/29/ask-satyam/#comment-593069">Bryan Kane</a>. Satyam will be answering several additional questions in the coming weeks here on YUIBlog as part of the series.</blockquote>
+	<p>It's a common problem in information architecture: You have tabular data, and you have the need to display additional information about the entity represented by each table row. Usually, this is accomplished by "expanding" the row on click or selection and showing the data directly below the chosen row. Sometimes this additional data comes in the way of a further DataTable which might also have its rows expandable into more nested levels. We call the basic use case of drilling down into a single row <em>row expansion</em>; when the use case involves further tabular data associated with each row, the feature is described as a <em>nested DataTable.</em><p>So far there have been several serious attempts to support these features with the <a href="http://developer.yahoo.com/yui/datatable/" title="YUI 2: DataTable">YUI 2 DataTable</a>. DataTable's own list of examples includes a <a href="http://developer.yahoo.com/yui/examples/datatable/dt_rowexp_basic.html">Row Expansion</a> example by Eric Gelinas. John Lindal presented his <a href="http://jafl.github.com/yui2/treeble/">Treeble</a> in a <a href="/blog-archive/blog/2010/04/14/treeble-using-nested-yui-2-datasources-for-row-expansion/">YUI Blog article</a> some time ago with a <a href="http://yuilibrary.com/gallery/show/treeble">version for YUI 3</a> in the Gallery. I also tried with my <a href="http://www.satyam.com.ar/yui/#NestedDataTables">NestedDataTable</a> project.<p>None of these solutions is completely satisfactory and the question tends to recur; in fact, two people asked for it as part of the <a href="/blog-archive/blog/2010/07/29/ask-satyam/">Ask Satyam</a> series. In this article, I'll dive in again and explore strategies and options for dealing with row expansion and nested DataTables.<h3>A few issues to consider</h3>
+	<p>DataTable makes a couple of very basic assumptions. One is that the ordinal position of a Record corresponds to the same ordinal position of a row within the <code>&lt;tbody&gt;</code> of the markup. I count 17 occurrences of property <code>sectionRowIndex</code> which returns the ordinal number of a <code>&lt;tr&gt;</code> element within its section (that is, within the <code>&lt;tbody&gt;</code>, <code>&lt;thead&gt;</code> or <code>&lt;tfoot&gt;</code> where it is contained). There are also many occurrences where the ordinal position of the Record is used as an index into the array of rows. For example, in the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_rowexp_basic_clean.html">Row Expansion</a> example, let it run to the end, expand any row about half-way to the table and then execute the following two statements in the debugging console:<pre>YAHOO.example.Basic.oDT.getTrEl(YAHOO.example.Basic.oDT.getRecord(17)).id 
+YAHOO.example.Basic.oDT.get<b>Next</b>TrEl(YAHOO.example.Basic.oDT.getRecord(17)).id </pre><p> Both will show <code>yui-rec17</code> as the answer, which is not correct since the second statement should return the id of the next row. If you do the same with no rows expanded or using a low number, before the expanded row, the second statement will correctly return <code>yui-rec18</code>.<p>Obviously, all examples listed work in their basic form; the "bug" demonstrated above amounts to a trick. If your application stays within safe boundaries, you are fine. However, a feature added to your application at a later time, one that makes deeper assumptions about how the DataTable's internals are operating, may lead to some problems. (For what it's worth, DataTable is very robust. Its built-in functionality is pretty safe, it sorts columns, edits cells, selects and highlights fine, as far as I tested it. I wasn't able to break its most popular built-in features.)<p>Nesting structures within the DataTable also invites some other complications: Clicking somewhere in an expanded custom row might be troublesome, since the click on the nested element would bubble up to the containing DataTable where it can mess things up. You must remember this point when listening to events such as <code>cellClickEvent</code> on the parent table since the target cell reported might not belong to the parent table but to a nested one — so fetching the Record or Column for that cell may fail.<p>Finally, there are some conceptual issues. What does <code>getNextTrEl</code> mean? Does it include only DataTable's own rows (let's call them <em>data rows</em>), or should it include custom rows added later, as it does now? I would say it should only include data rows since the custom rows, being nested, are not siblings to the data rows but children and, though the HTML markup forces us to use plain <code>&lt;TR&gt;</code> elements, conceptually, they are not siblings. Then, if you somehow reach a <code>&lt;TR&gt;</code> element and ask for its corresponding Record in the containing DataTable using method <code>getRecord()</code>, if that <code>&lt;TR&gt;</code> is a custom row, what would be its corresponding Record: <code>null</code> (since it doesn't belong to the containing DataTable but to the nested one) or the Record of the data row it is a child of? <p>How do you want the stripes on the rows? Currently, the striping logic takes even and odd rows indiscriminately, whether data rows or custom rows but perhaps you would like the custom rows to carry on the same background color as the data row to which they belong.<p>These are some of the aspects of row-expansion functionality that require definition; any decision on them, as long as it is consistent and predictable, would likely accommodate most use cases.<h3>Nesting without DataTable</h3>
+	<p><a href="http://jafl.github.com/yui3-gallery/treeble/"><img align="right" hspace="20" src="/blog-archive/assets/treebleexample-20100817-095427.jpg" vspace="5" /></a>Of course, we might live with these restrictions, but then what is the point of bothering with the DataTable at all? If all you want is to display some nested information in a tabular form, you could simply use a regular <code>&lt;table&gt;</code> element or something like it. In fact, <a href="http://yuilibrary.com/gallery/show/treeble" title="YUI Library :: Gallery :: Treeble">the YUI 3 version of Treeble</a> (<a href="http://jafl.github.com/yui3-gallery/treeble/" title="YUI 3 Treeble Example">example</a>) does exactly that; since there is not yet a YUI 3 version of DataTable to be used, it uses none at all. You might as well do the very same thing with YUI 2, like in <a href="http://satyam.com.ar/yui/2.8.0/RowExpansionPlainHTML.html">this example</a>, where no DataTable nor HTML <code>&lt;table&gt;</code> was used at all. Admittedly, the example is very simple and visually ugly (I've never claimed to be artistic); but, if that is all you care for, at least you know it won't fail you. Just an idea you might want to evaluate when you decide on what to do.<h3>Row Expansion with DataTable</h3>
+	<p><a href="http://developer.yahoo.com/yui/examples/datatable/dt_rowexp_basic.html"><img align="right" hspace="20" src="/blog-archive/assets/rowexpansion-20100817-100641.jpg" vspace="5" /></a>Finally, you might really want to use a DataTable. If so, how do we go about that? Both Treeble and my own <a href="http://satyam.com.ar/yui/2.8.0/nested1.html">NestedDataTable</a> nest two DataTables. Eric Gelinas, in contrast, has used another approach, which I find more flexible. He does not make any assumptions on what is going to be in the expansion. It uses a <code>rowExpansionTemplate</code> configuration attribute that can take either a string template or a reference to a function. The string template is processed via <code><a href="http://developer.yahoo.com/yui/docs/YAHOO.lang.html#method_substitute" title="API: yahoo  YAHOO.lang   (YUI Library)">YAHOO.lang.substitute</a></code> along with the data from the Record object for the row about to be expanded. We already know that we don't need to define in the column definitions array all the fields we have read with the DataSource; we can keep extra DataSource fields in reserve for later use. The template mechanism lets us display in the expansion row those other fields for which we didn't have space in the regular row. The <a href="http://developer.yahoo.com/yui/examples/datatable/dt_rowexp_basic.html">example</a> lists picture names from Flickr, images which might be too big to show in the main DataTable. The fields to assemble the URL pointing to those pictures are loaded from the start. Upon row expansion, those bits are put together to built an <code>&lt;img&gt;</code> tag and the thumbnail for the picture is shown in the expansion row.<p>Now, if we set <code>rowExpansionTemplate</code> to a function reference, then we get all the flexibility we might possibly want. I used that idea in <a href="http://satyam.com.ar/yui/2.8.0/nestedRowExpansion.html">this example</a>, but with a somewhat different <a href="http://www.satyam.com.ar/yui/2.8.0/rowexpansion.js">rowexpansion.js</a> file. The original was more focused on using the string template and it assumed that the expansion row could be destroyed and rebuilt at any time at no cost. That is not the case when the expansion is something more complex, such as a DataTable with further DataTables nested within. Every time a column is sorted, DataTable will delete all rows and start anew, which would be tremendously expensive with complex content if it was to be deleted and reconstructed as well. Instead, what I do is to keep a reference to the expansion row in the expansion state object (see description in method <code><a href="http://www.satyam.com.ar/yui/2.8.0/rowExpansionDocs/YAHOO.widget.RowExpansionDataTable.html#method_getExpansionState">getExpansionState</a></code>), which is stored in the Record of the parent table. This data is not deleted, and as a result it's much more efficient to restore that same row whenever the parent row is re-rendered. <p><a href="http://satyam.com.ar/yui/2.8.0/nestedRowExpansion.html" title="Nested DataTables using RowExpansionDataTable"><img src="/blog-archive/assets/nesteddatatables-20100817-101227.jpg" /></a><p>Sometimes, however, the parent rows will be deleted on purpose or the parent DataTable reloaded from the server with, possibly, different data which requires the children to be refreshed. I need to explicitly delete the child rows in such cases because otherwise they would remain in memory as zombies. Thus, I override several methods (<code>deleteRow</code>, <code>deleteRows</code>, <code>initializeTable</code>, <code>destroy</code>) and delete the nested content before its parent Record is deleted. Deleting, however, is not enough, since the content might need some more elaborate means of disposal. As with many complex components, DataTable has a <code>destroy</code> method which needs to be called to fully clear the instance and its associated events. I added the <code>rowExpansionDestroyEvent</code> event to signal that the nested row is about to be destroyed, thus allowing the developer to handle the content as required. For example:<pre>albumDT.on('rowExpansionDestroyEvent', function (state) {
+    state[NESTED_DT].destroy();
+});</pre><p>All events receive the <code>state</code> object as their single argument. Here, I use the reference to the nested DataTable which I stored under a property name of my own (<code>NESTED_DT</code>) and call its <code>destroy</code> method.<p>RowExpansionDataTable adds the column that triggers row expansion automatically and also listens to clicks on that column. You don't need to do anything for that column to show up and be active. It always adds it on the left hand side by using this simple code in the constructor:<pre>var REDT = function(elContainer,aColumnDefs,oDataSource,oConfigs) {
+
+     aColumnDefs.unshift({
+          key:ROW_EXPANSION,
+          label:'',
+          className:CLASS_TRIGGER
+     });
+     REDT.superclass.constructor.call(this, elContainer,aColumnDefs,oDataSource,oConfigs); 
+};
+
+YAHOO.widget.RowExpansionDataTable = REDT;</pre><p> RowExpansionDataTable also sets a listener for <code>cellClickEvent</code> and checks if the column clicked is the one with its key set to the value stored in constant <code>ROW_EXPANSION</code>; there is no need for us to respond to that event, although we may want to set up further listeners for our own purposes on other columns.<p>Though the basis of my <a href="http://www.satyam.com.ar/yui/2.8.0/rowexpansion.js">rowexpansion.js</a> file is Eric Gelinas's work, there are also many differences. I changed many of the variable, method and property names to conform to the standard naming conventions and fixed plenty of errors flagged by <a href="http://www.jslint.com/">JSLint</a>. In its basics, however, the code is still Eric's.<p>The <a href="http://satyam.com.ar/yui/2.8.0/nestedRowExpansion.html">example</a> is well commented and described after the sample table; the <a href="http://www.satyam.com.ar/yui/2.8.0/rowexpansion.js">rowexpansion.js</a> file is easy to follow and its <a href="http://satyam.com.ar/yui/2.8.0/rowExpansionDocs/YAHOO.widget.RowExpansionDataTable.html">API Docs</a> are also available.<h3>Overlaying children</h3>
+	<p>Another alternative to adding rows is to make the expansion float above the parent row. I have used this in my own <a href="http://satyam.com.ar/yui/2.8.0/nested1.html">NestedDataTable example</a>. This example also uses YQL tables via YQLDataSource and, as I mentioned in the <a href="/blog-archive/blog/2010/08/09/ask-satyam-yql-and-yui/">previous article</a>, the YQL Artists search table is somewhat clumsy to use along with <a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">YUI 2 AutoComplete</a> as it won't bring back partial matches with artist names.<p><a href="http://satyam.com.ar/yui/2.8.0/nested1.html" title="Nested DataTables"><img src="/blog-archive/assets/nesteddatatables-20100817-104246.jpg" /></a><p>Here, when you expand a row, a container <code>&lt;div&gt;</code> is created and appended to the document body. The container uses absolute positioning and is moved to overlap the row right below the one being expanded. The container thus covers the rows next to the one being expanded so, the height of this row is increased to make space for the overlapping container. <p>This mechanism spares us from the two issues I mentioned before: no row is added to the DataTable, the ordinal positions of Records and Rows match at all times and events can't bubble from the containers to the DataTable since they are not descendants of the DataTable. However, maintaining the position of the containers requires paying attention to several events and recalculating their position. Sorting the main table with several children open will move all the containers to their new positions with ease, and so will resizing the browser window. <p>This <a href="http://satyam.com.ar/yui/2.8.0/nested1.html">example</a> uses just two levels of nesting while the RowExpansionDataTable example could be expanded to any limit. I have tried to combine the two and I see no theoretical reason why it would not succeed; however, in trying to do so I found the example got so complex that it was hard to describe in a blog article of any reasonable size. The example, as it is, has complete control over the parent and child tables, knows when they expand or contract, move, get redrawn or change in any other way, and can easily access any of them and adjust their layout. In trying to extend this to any number of levels, I found that communicating all those changes up and down the hierarchy of nested components, not all of them necessarily DataTables, was hard, with changes deep in one branch possibly affecting nested components on other branches. <p>The complexity lies not so much in communicating those changes up and down and acting on them as in trying to provide standard interfaces for generic child elements to participate. If you have full control over the several containers and their content, it should be manageable; however, it would only make sense to do so if the RowExpansionDataTable fails in some particular application, as I admit it may, and cannot be fixed easily.<h3>Conclusion</h3>
+	<p>You don't always need real DataTables to have tables nested inside each other, but if you do, my RowExpansionDataTable is a good choice, besides being a good example on how to extend DataTable. It has some issues, which I described so that if you bump into them, you know where to look as you work around them. DataTable itself is amazingly robust and handles itself quite nicely. Overlapping content in the DataTable is also a possible solution, if signaling the changes in size and position of the children can be solved efficiently, though it is hard to do in a generic component — and I didn't try to do so here. Neither did I try a version inheriting from ScrollingDataTable; it is not that I forgot, but rather that I know it is not a trivial undertaking.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

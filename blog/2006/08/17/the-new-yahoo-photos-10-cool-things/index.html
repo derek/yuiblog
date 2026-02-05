@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>10 Cool Things About The New Yahoo! Photos</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">10 Cool Things About The New Yahoo! Photos</li></ul>
+				<h1 class="yui3-u-7-8">10 Cool Things About The New Yahoo! Photos</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 17, 2006<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="editors-notes">
+		<p>Editor's Note: We understand that Yahoo!'s user interface isn't all about the <a href="http://developer.yahoo.com/yui/">YUI Library</a>, and there are exciting projects happening here that do great work in the browser without much YUI usage. Though almost all development at Yahoo! is now using YUI, the new Yahoo! Photos site was well underway before YUI was released, and is therefore a notable exception as we <a href="/blog-archive/blog/2006/07/18/ten_things/">mentioned earlier</a>. (It does, however, use YUI's <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a>.) This post is guest-written by one of Photos' lead frontend engineers. Enjoy!</div>
+	<p>The New Yahoo! Photos has a lot of cool features not commonly found on the web. Drag and drop and inline editing makes getting things done with your photos fast and easy, and it just feels more like a rich application.<p>To make the new stuff work, we had to make browsers jump through some hoops. This post is the first of a few that will explore some of the big ideas behind the scenes.<p>(Meanwhile, we hope you'll <a href="http://photos.yahoo.com/">take it for a spin</a> to see for yourself.)<h3>1. Drag And Drop/Selection Model</h3>
+	<p>With this new version of Yahoo! Photos, the old way of selecting photos using checkboxes is as out of style as using tables for layout! Let's say you were viewing album A, and wanted to copy some photos from there to album B. Like on a desktop, you must first make a selection.<div><embed flashvars="id=715134&emailUrl=http%3A%2F%2Fvideo.yahoo.com%2Futil%2Fmail%3Fei%3DUTF-8%26vid%3D62bc0ff14cb6d7abddca961a898e6d22.715134%26vback%3DStudio%26vdone%3Dhttp%253A%252F%252Fvideo.yahoo.com%252Fvideo%252Fstudio%253Fei%253DUTF-8&imUrl=http%253A%252F%252Fvideo.yahoo.com%252Fvideo%252Fplay%253F%2526ei%253DUTF-8%2526vid%253D62bc0ff14cb6d7abddca961a898e6d22.715134&imTitle=Yahoo%2521%2BPhotos%2BUI%2BDemo&searchUrl=http://video.yahoo.com/video/search?p=&profileUrl=http://video.yahoo.com/video/profile?yid=&creatorValue=eXBob3Rvc21ldGE%3D" height="350" src="http://us.i1.yimg.com/cosmos.bcst.yahoo.com/player/media/swf/FLVVideoSolo.swf" type="application/x-shockwave-flash" width="425" /></div> <p>You can simply click and draw a selection rectangle around the photos you'd like to copy, or alternately select photos like you would on a desktop using the CTRL or Shift keys. Once selected, you can use CTRL-C to copy or simpler yet, just drag the photos to the album on the list at left; confirm the copy, and you're done!<div class="figure"><img "=""" alt="A " copy="Copy" dialog"="Dialog" photos"="Photos" src="http://us.i1.yimg.com/us.yimg.com/i/us/plus/misc/tutorials/ph/ph_addtowin_yp_1.gif" /><p class="caption">A "Copy Photos" dialog</div> <p>The selection model is a core part of content management for owners on the New Yahoo! Photos, as well as for guests and friends browsing and viewing photos. It is easy with the mouse, and when combined with keyboard shortcuts, a powerful way of selecting a choice number of photos from a large collection to perform operations on such as viewing a slideshow, emailing to friends or ordering prints.<div class="figure"><img alt="Viewing photos in an album" src="http://us.i1.yimg.com/us.yimg.com/i/us/plus/misc/tutorials/ph/ph_albumview2_400_yp_1.gif" /></div> <p>Photos may also be rearranged within albums, similar to the way they can be copied; users may simply select, then drag and drop the photos to their new position within the page, and the new order will be saved.<div class="figure"><img alt="Rearranging photos (red marks for illustration)" src="http://us.i1.yimg.com/us.yimg.com/i/us/plus/misc/tutorials/ph/ph_move2photos_yp_1.gif" /><p class="caption">Rearranging a selection of photos, about to drop in new location (red marks for illustration)</div> <h3>2. Keyboard Shortcuts</h3>
+	<p>Desktop applications implement shortcuts to commonly-used menu items, such as CTRL-A or CTRL-C (Command key instead of CTRL for Mac,) which typically are "Select All" and "Copy", respectively.<p>This applies to the new Photos as well, which uses some keyboard shortcuts to make common tasks more accessible. While in a thumbnail view, you can select all of the photos by using CTRL-A, or copy a selection of photos to an album by using CTRL-C (we'll show you a "copy to.." dialog at that point.)<h3>3. Inline Editing</h3>
+	<p>One common interaction that some may feel has been missing from the web, is inline editing. When viewing your own photos on the New Yahoo! Photos, you can easily edit some of your photo data inline without having to wait for the page to reload. If you don't like the name of a photo, simply click on its name, type a new one and click elsewhere or push Enter - just like you're used to on your desktop. You can also add comments and assign ratings inline when viewing a photo in detail, again without reloading the page.<div class="figure"><img alt="Inline editing in action." src="http://us.i1.yimg.com/us.yimg.com/i/us/plus/misc/tutorials/ph/ph_inlineedit1_yp_1.gif" /><p class="caption">Inline editing in action.</div> <h3>4. New User Tips</h3>
+	<p>Many of the new features such as the selection model and drag and drop in the new Yahoo! Photos may not be new to computer users, but our findings were that people did not expect to find these sort of features on the web. For this reason, we have the "New User Tips" guide which serves as an assistant of sorts, educating first-time users about what they can do with the new site.<p>The first time a new user logs into Yahoo! Photos, the "New User Tips" tutorial begins and explains some of the key new features with visual pointers overlaid on top of the "live" UI. This is similar to the "tour" feature as shown on the recently-redesigned <a href="http://www.yahoo.com">Yahoo! front page</a>.<div class="figure"><img alt="New user tips in action." src="http://us.i1.yimg.com/us.yimg.com/i/us/ph/gr/nut/nut-all.png" /></div> <h3>5. Animation and Eye Candy</h3>
+	<p>The New Yahoo! Photos was designed to both "look good and work well," including some stylistic flourishes and pleasing UI effects such as animation, fading transitions, modal dialogs and drop shadows.<p>In the case of dragging a selection of photos within the UI, an animation effect is used when the user starts dragging; the photos "zoom and shrink" towards the cursor as though it were a vacuum pulling the photos inward, so that they group together as miniature thumbnails underneath the cursor. (This is accomplished using Javascript, which repetitively modifies the position and size of each photo thumbnail until the animation is complete.)<p>The effect, while visually pleasing and even entertaining, has two practical uses:<ol>
+			<li>It prevents a large, full-size replica of content (cloned, "ghosted" thumbnails) from moving around the screen while the user is dragging, and creating "giant scrollbars" that disrupt the experience. On the desktop, moving a full-size replica around is not an issue because of the lack of scrollbars; on the web, we wanted a way to display a potentially-large selection of photos without causing the user's browser to adjust its scrollbars to accommodate the extra content. <li>It's more expensive (i.e. slower) for the browser to redraw larger areas of content at once. </ol> <p>The earliest prototypes of the New Yahoo! Photos UI did not have the animation sequence when beginning a drag operation, but the lack of visual transition between "selected" and "dragging minimized under the cursor" looked awkward. After we added the animation effect, the UI felt more playful and fun, so it stayed.<h3>6. Progressive Loading</h3>
+	<p>People are taking and sharing more and more photos, and our collections are growing into the thousands of photos. To make managing big photo collections as easy as possible, we had to figure out a way to display lots of thumbnails while keeping the site's browser-based UI snappy.<p>The New Yahoo! Photos strikes a balance between scrolling, pagination, browser rendering capabilities, and memory limitations and uses a technique of "progressive loading," effectively copying and inserting an empty "template" for a page of photos, then loading the photo information (metadata and thumbnail images) and adding them to the page on demand. It is truly on-demand in the sense that photos and related data area not loaded until their "containers" are scrolled into view, which keeps the UI feeling responsive. (More on the details of this technique in a forthcoming post.)<h3>7. Upload Tools</h3>
+	<p>Uploading is the first step to take when you're using a photo site to share or print. Since most people want to share many photos at once, it's crucial for a site like Yahoo! Photos to make uploading large batches of photos easy.<p>To do that, the New Yahoo! Photos provides an Easy Upload Tool that comes in two flavors: a Firefox extension (that works on PC and Mac) and an ActiveX control for Internet Explorer on the PC. Both flavors of the tool share the same Javascript client-side code and UI. This approach allowed us to provide a consistent user experience regardless of browser, and reduces the maintenance cost and testing overhead. A standard form-based uploader is provided for other browsers.<p>Third-party developers have started writing upload tools that use the Yahoo! Photos API. Michael Galloway's <a href="http://gallery.yahoo.com/apps/121">cool iPhoto plug-in</a> is one of the first to appear. Documentation for the public API should be posted on <a href="http://developer.yahoo.com/">http://developer.yahoo.com</a> shortly if you're interested in writing something.<h3>8. Messenger Integration</h3>
+	<p>The latest version of <a href="http://messenger.yahoo.com">Yahoo! Messenger</a> pulls in our photo picker tool to allow users to quickly share each others' favorite shots from Yahoo! Photos right within your IM window.<div class="figure"><img alt="IM sharing in action" src="http://us.i1.yimg.com/us.yimg.com/i/us/ph/gr/msgr/im-share.jpg" /></div> <h3>9. Target Store Locator </h3>
+	<p>When ordering <a href="http://new.photos.yahoo.com/shop/prints">prints</a> of your photos in the US, you can choose to pick them up at your local Target store, as well as send them to a Target store close to a friend or family member across the country. Locating the closest Target store is now a lot easier with the draggable <a href="http://maps.yahoo.com/beta/">Yahoo! Maps</a> mashup created by our partners at <a href="http://www.ezprints.com/home/">EZ Prints</a>.<div class="figure"><img alt="Screenshot of Target Store Locator" border="0" height="395" src="http://us.i1.yimg.com/us.yimg.com/i/us/ph/gr/nut/target-store-locator.png" width="458" /></div> <h3>10. ...And All That Ajax: YUI Connection Manager</h3>
+	<p>"What's Ajax?", <a href="http://www.slash7.com/">Amy Hoy</a> asks in her <a href="http://www.slash7.com/cheats/whats_ajax_cheatsheet.pdf">humourous cheatsheet</a> (pdf link) - "Buzzword Bingo," she says: "Everyone's talking about Ajax, and practically nobody actually has a clue as to what it actually is". She summarizes nicely in saying, "No server requests? It Ain't Ajax".<p>If I were to try to answer Amy's question, I'd say the <a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a>, part of the <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface Library</a>, <em>is</em> Ajax. The YUI Connection Manager wraps Javascript's native xmlHttpRequest object and provides a normalised API which allows data to be retrieved asynchronously, including handler hooks for events such as success and failure. The New Yahoo! Photos uses the Connection Manager extensively for retrieving photo data on demand, performing inline editing on photos (e.g., renaming, copying, deleting or assigning a rating,) loading messaging data to be displayed in modal dialogs and other "inline" functionality which is carried out without reloading the page. <p>The adoption of the xmlHttpRequest (XHR) object across major modern web browsers has prompted developers to explore dynamic updates (both sending and receiving,) and as a result there has been a renewed interest in Javascript. Because pages now reload less-often due to XHR calls, Javascript is being used to manage the result of these calls - modifying the Document Object Model (DOM) within the browser, updating or creating new content, creating animation effects and transitions to enhance the UI and overall providing an enhanced experience. These techniques, collectively a part of "DHTML," have been around since the late 1990s, but did not see such wide-spread popularity until the XHR object became a de-facto standard.<p>While technically not Ajax, javascript animation, dynamic updates, effects and other forms of DHTML have become more mainstream due to the adoption of Ajax. While The New Yahoo! Photos was developed before the <a href="http://developer.yahoo.com/yui/">YUI Library</a> was available, utilities are now available in this area including <a href="http://developer.yahoo.com/yui/animation/">animation</a>, <a href="http://developer.yahoo.com/yui/dragdrop/">drag and drop</a>, positioning and <a href="http://developer.yahoo.com/yui/event/">event handling</a>.<h3>Was It Good For You, Too?<sup>*</sup></h3>
+	<p>The New Yahoo! Photos has some powerful new features and desktop-like interactions which are not typically expected on the web; we think you'll like it. If you don't have a Yahoo! ID, you can get one and start uploading photos at <a href="http://photos.yahoo.com/">http://photos.yahoo.com/</a><p>This article is one in a multi-part series on the New Yahoo! Photos; in the next article, we will delve into some technical details, including thoughts about performance, troubleshooting and other points of interest.<p><a href="http://www.schillmania.com/">Scott Schiller</a> is a self-described DHTML + Web Standards Evangelist, Resident DJ and record crate digger. He is one of the Front-end Engineers on Yahoo! Photos, and enjoys combining technical and creative skills in his work.<p><sup>*</sup> Heading inspiration: <a href="http://www.alistapart.com/">alistapart.com</a></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

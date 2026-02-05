@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Enhancing YUI-based Applications With Audio</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Enhancing YUI-based Applications With Audio</li></ul>
+				<h1 class="yui3-u-7-8">Enhancing YUI-based Applications With Audio</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">June 30, 2009<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro alignleft">
+			<p><img align="right" alt="Scott Schiller" hspace="10" src="/blog-archive/assets/schiller-20090629-111332.jpg" vspace="10" /><em><strong>Aboot the author:</strong></em> Scott Schiller (<a href="http://twitter.com/schill">@schill</a>) is a front-end engineer on Flickr who joined Yahoo! in 2005, hailing from Canada. <a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager 2</a> is one of his personal side-projects. As Flickr's self-professed resident DJ, he can be seen playing at the occasional Web 2.0 party between tinkering with time-lapse videos and photographing things for sharing online. Scott's <a href="http://www.schillmania.com/">experimental DHTML site</a> is updated sporadically. In this article, Scott shows you how to use SoundManager to tie sound effects to specific user actions or events in YUI.</div> </div>
+	<p>Sound is one of the major senses and a major part of daily life, and yet is largely ignored on the web. Web developers know that when it comes to HTML, audio is not as easy to add to a web site as it should be. Why is that? The following are some thoughts on the historical problems with embedding sound, a few ideas and some demos of embedding and controlling sound from Javascript with YUI.<h3>Demos</h3>
+	<p>If you're like me, you're probably wanting to see some fun stuff up-front because <i>reading</i> is <i>work</i>, and <i>work</i> is <i>boring</i>! ;) Feel free to play with the demos first and then read on for the details.<ul>
+			<li>Demo 1 (practical): <a href="http://www.schillmania.com/content/demos/yui-sm2/inline-mp3/">Play MP3 Links Inline</a><li>Demo 2 (fun): <a href="http://www.schillmania.com/content/demos/yui-sm2/noisy-events/">A Noisy DOM</a></ul> <h3>A Brief History of HTML and "Multimedia"</h3>
+	<p>The web is pretty good at visual presentation. It is easy to create, design and embed images, text, and links in HTML documents. Of the media formats natively supported today in HTML 4, audio and video - or rather, &lt;audio&gt; and &lt;video&gt; - are conspicuously missing.<p>HTML 5 should bring audio and video embedding closer to the simplicity of &lt;img /&gt; in the not-so-distant future. In the meantime, we have to resort to creative work-arounds to get HTML-5-like audio/video functionality across the gamut of today's common HTML 4-supporting browsers.<h3>The (HTML 4) Problem With Embedding Audio</h3>
+	<p>For audio on web sites today, developers often display a list of HTML links directly to MP3 files. This method is simple, universally-understood and indexable by search engines, but makes for a confusing and inconsistent browsing experience by default.<p>Users are generally prompted to right-click, "save as" and finally open the file from their desktop, or click the link and have their browser download and open the MP3 file. The regular "click" typically opens in a new page with the embedded player or launches an external application like QuickTime or Windows Media Player.<p>Not only are "naked" MP3 links extra work and confusing for the user, the browser's method of handling them is a distraction and takes them away from the experience of your site.<p>Using &lt;object&gt;/&lt;embed&gt; is another generic way to directly embed MP3 or other content, but again suffers from the problem of inconsistency; the developer won't know what may show in that area of the web page, given the user could have any array of applications which may load in order to handle that file type - in this case, likely the same QuickTime or Windows Media Player which would handle direct downloads would be shown in-place in your page. Again, not a great solution.<p>Flash widgets are sometimes used as a solution for embedding MP3 content, but the UI and skins tend to be 100% Flash-based rather than HTML and CSS-based and thus are more difficult for most web developers to customize. HTML 5 should change this with standards-based, CSS-skinnable and scriptable audio/video elements.<p>In the meantime, some creative solutions can be used to get more "web developer-friendly" widgets for audio.<h3>Making MP3 Links "Just Work": YUI + SoundManager 2</h3>
+	<p>To have "progressively-enhanced" links to MP3s that will play in-place when clicked, something must intercept the browser's normal download action and subsequently handle the request; by combining Javascript and Flash to handle the loading and playing of MP3 content, this can be done very effectively.<p>In a personal quest to get cross-browser audio control for a DHTML game back in 2002, I developed a JS + Flash audio API called SoundManager. Having since evolved to include video, <a href="http://www.schillmania.com/projects/soundmanager2/" title="Javascript + Flash sound library">SoundManager 2</a> implements and extends Flash's native sound API and exposes it to Javascript. The result is cross-browser/platform scripted audio functionality which can help to bridge the gap for JS-driven sound until HTML 5 is widely supported.<p>By combining SoundManager 2 with YUI's <a href="http://developer.yahoo.com/yui/dom/" title="YUI DOM documentation">DOM</a> and <a href="http://developer.yahoo.com/yui/event/" title="YUI Event documentation">Event</a> utilities, you have an effective solution for embedding and controlling audio which can gracefully degrade to a browser download or embedded player.<h3>Practical Example: Playable MP3 Links</h3>
+	<p>The following demo uses YUI and SoundManager 2 to enhance MP3 links, making them playable inline. YUI's event utilities intercept clicks on links pointing to MP3 files and then use the SoundManager API to load and play the relevant URL before returning "false", and preventing the browser from loading the link. Subsequent clicks will toggle play/pause state.<p>In the event Javascript/Flash aren't present or if anything else goes wrong, the browser will simply fall through and load the MP3 link as usual.<ul>
+			<li><strong>Demo 1 (practical):</strong> <a href="http://www.schillmania.com/content/demos/yui-sm2/inline-mp3/">Play MP3 Links Inline</a></ul> <h3>Adding Audio To Your UI</h3>
+	<p>Javascript-based animation, transition and motion effects add fluidity to web interface design and are becoming more commonplace. Smartly-applied audio can complement and further enhance the UI, making the experience more meaningful.<p>In certain applications, sound in the form of UI feedback can be appropriate and helpful to the user experience. Sound effects are common for Flash-based sites and web-based games, and in desktop gaming audio is usually a key part of telling the story.<h3>.. But Don't Over-Do It</h3>
+	<p>It's important to know when to stop. Recall animated "under construction" .GIFs? How about the blink tag? Marquee text? Some things are best left alone. Not every HTML page needs to move, blink, slide, flash <i>and</i> be noisy at the same time; even "fun" is best applied in moderation. Annoying your users with auto-playing music or noise can quickly lead to abandonment of your site.<p>There is probably good reason that standard HTML elements such as form controls and the like do not have sound effects or notifications associated with them. Perhaps "silence is golden" and it's best that the web be a quiet place by default, so as not to be annoying and distracting.<p>As one notable exception to the "silent web" theme, Internet Explorer usually makes a "click" sound when page navigation occurs, presumably to notify the user that an action has started. This has become more muted in recent times, but is still present and still seems to annoy some users to this day.<h3>"Fun" Example: A Noisy DOM</h3>
+	<p>Despite the arguments for silence, the following is an example of what it might be like to have "noisy" form elements, buttons and DOM elements which provide audible feedback as they're being used. The novelty is certainly to wear off quickly, but it does add an element of childish fun to the UI.<ul>
+			<li><strong>Demo 2 (fun):</strong> <a href="http://www.schillmania.com/content/demos/yui-sm2/noisy-events/">A Noisy DOM</a></ul> <h3>Looking Forward: HTML 5</h3>
+	<p>Native &lt;audio&gt; and &lt;video&gt; support will mean it will be much easier to embed and control more media formats within the browser without relying on third-party plugins. Furthermore, an extensive Javascript API should encourage developers to create increasingly-innovative experiences.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

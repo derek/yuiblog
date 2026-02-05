@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>NodeConf 2013</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">NodeConf 2013</li></ul>
+				<h1 class="yui3-u-7-8">NodeConf 2013</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 6, 2013<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><a href="http://www.flickr.com/photos/ashusta/9326217062/" title="Evening Sing-along by Î�±lexander, on Flickr"><img alt="Evening Sing-along" height="143" src="http://farm8.staticflickr.com/7427/9326217062_2561c90c0b_z.jpg" width="640" /></a><p>This year's NodeConf was a mix of previous NodeConfs (that were run like most conferences) and the annual NodeConf Summer Camps (that were run like, well, a summer camp). The format differed from most conferences by providing outdoor activities like dodgeball, lake swimming, and campfires with sing-alongs. It emphasized small group sizes for talks and providing only one technical path. Despite some initial concern that summer camp themed activities would impinge upon time available for learning and hacking, by the end of the weekend I was very happy with the format.<p>Most conferences ask presenters to put together and present their content to a single audience that may consist of many hundreds of attendees. NodeConf flipped that around to asking presenters to repeatedly present to many smaller groups. This allowed attendees time to ask for clarification or even for some one-on-one help without worrying about the impact that they might have on (literally) hundreds of other people. I assume that getting presenters who were willing to spend 10 times as much time talking as they would at another conference was a challenge, but <a href="https://twitter.com/mikeal">Mikeal</a> came through and organized a bang-up group of presenters who really know Node.js and who care about building the community around the product.<p>So, what was the process like? We arrived at <a href="http://y.ahoo.it/wQulq1/a">Walker Creek Ranch in North Marin</a> on Thursday, and each person was assigned a schedule of sessions to attend. Because there was only one technical track every developer attended every session, but the order of attendance was randomized so that people would have more opportunity to meet other attendees than might have occurred if they attended the sessions with a static cohort. After schedule pickup we were left to socialize and explore the facilities until the welcome campfire / sing-along started. The actual sessions started on Friday morning and were 55 minutes in length with approximately 30 campers per session.<p>Of course there was <a href="http://en.wikipedia.org/wiki/Four_square">Foursquare</a>:<p><a href="http://www.flickr.com/photos/ashusta/9321244309/" title="Foursquare at NodeConf by Î�±lexander, on Flickr"><img alt="Foursquare at NodeConf" height="361" src="http://farm4.staticflickr.com/3717/9321244309_b81df976eb_z.jpg" width="640" /></a><p><a id="schedule"></a><h2>Schedule</h2>
+	<ul>
+		<li><strong>Thursday</strong> - arrive, setup camp, get schedule and meet other attendees <li><strong>Friday</strong> - sessions 1 through 6, campfire and sing-along <li><strong>Saturday</strong> - sessions 7 and 8, presenter 'office hours', hacks, campfire and sing-along <li><strong>Sunday</strong> - finish up hacks and depart</ul>
+	<p><a id="presentationsummaries"></a><h2>Presentation Summaries</h2>
+	<p><a id="hardware"></a><h3>Hardware</h3>
+	<p>Node.js is mostly used for serving web pages, but it is designed as a general computing platform. The Hardware presentation was based around using Node.js with the <a href="https://github.com/rwldrn/johnny-five">Johnny Five package</a> to control an Arduino development board to demonstrate Node.js interacting with the physical world. Presenters Raquel Velez, Elijah Insua, and Rick Waldron stepped developers through setting up Arduino and writing a simple application for communication between the hardware and a Node.js instance with plenty of time for hands-on help and hacking.<p>The presentation slides are available at <a href="https://speakerdeck.com/rockbot/nodeconf-nodebots-session">https://speakerdeck.com/rockbot/nodeconf-nodebots-session</a>.<p><a id="streammodules"></a><h3>Stream Modules</h3>
+	<p>Streams are "a dependable way to compose large systems out of small components that do one thing well." They're essentially Unix pipes writ large allowing output from one program to be programmatically used as input to another program. Presenters Max Ogden, Substack, and Matt Podwysocki gave an overview of how streams are used in Node.js and then helped attendees work through the <a href="https://github.com/substack/stream-adventure">Stream Adventure</a> game / programming challenge. Substack also wrote a Stream Handbook, available at <a href="https://github.com/substack/stream-handbook">https://github.com/substack/stream-handbook</a>.<p><a id="webservices"></a><h3>Web Services</h3>
+	<p>This was an overview session of web-service stacks on Node.js. Presenters Eran Hammer and Mike Cantelon covered a lot of material relating to <a href="http://spumko.github.io/">Hapi</a> and <a href="http://expressjs.com/">Express</a>. The general pattern for handling and responding to HTTP requests on Node.js has solidified around the following steps:<ol>
+			<li><strong>routing</strong> - figure out what resources the request is trying to load <li><strong>middleware</strong> - apply application-specific rules based on the route <li><strong>authentication</strong> - does the user actually have permission for that resource <li><strong>reply</strong> - send the HTTP response out to the user</ol> <p>A maintainable web service will use this pattern to efficiently marshall and transmit resources to users. A full web site will make use of a framework (like Walmart Labs' Hapi or Yahoo!'s <a href="http://developer.yahoo.com/cocktails/mojito/">Mojito</a>) that extends the pattern to support MVC-like functionality for your content.<p><a id="nodecopter"></a><h3>NodeCopter</h3>
+	<p>Parrot AR drones, controlled by Node.js! Nexxy provided us with a cheat-sheet of the commands provided by the <a href="https://github.com/felixge/node-ar-drone"><code>node-ar-drone</code></a> package, instructions for connecting to the drone, 1 drone for every 2 developers, a few words of encouragement to get started and copious quantities of LiPo batteries while we worked.<p>Using a <a href="http://en.wikipedia.org/wiki/REPL">REPL</a> you can interactively control the drone and verify how each command will be executed. Once you're confident in how the drone will react you can execute Node.js programs normally to send the drone on missions. It was a great example of how the Node.js REPL can be used to dynamically create programs. I was personally too nervous about losing the drone to allow for autonomous execution of my code but if the earlier Hardware session hadn't convinced me that Node.js is useful as a general computation platform this one did.<p><a id="debugging"></a><h3>Debugging &amp; Performance Analysis with DTrace</h3>
+	<p>Debugging Node.js performance issues can be tricky due to the asynchronous nature of the platform and the fact that things are evolving very quickly. <a href="http://en.wikipedia.org/wiki/DTrace">DTrace</a> is a tool that allows you to capture events and state from your code as it is executed in production. Presenter, Max Bruning from Joyent walked us through a series of labs that showed how to instrument code, all the way down to the kernel, for debugging of live systems.<p>What's really impressive about DTrace (well, a lot, but let's say what was most impressive to me) is that you use instrumented code with nearly zero overhead so that it is possible to pull live data off of production hosts with all of the travails that they encounter. If your hosts are experiencing outages due to DDOS or configuration issues that cause a tight loop of execution, this is the best way to get access to information that might otherwise be lost as log files overflow.<p><a id="howtonode"></a><h3>How to Node Core</h3>
+	<p><a href="https://github.com/joyent/node">Node core</a> is the name given to a group of classes that constitute the heart of the Node.js application. Isaac Z. Schlueter, the primary maintainer of node core and <a href="https://npmjs.org/">NPM</a> presented an overview of what it takes to contribute code to this foundational layer of the Node.js stack. Isaac was at pains to show that, with care, most developers can contribute code that will be accepted and merged. His definition of who should contribute to node core is "rockstars and users". Which is to say, everyone who has a stake in the performance and stability of Node.js is encouraged to help make it better.<p>Key take-aways from the session:<ol>
+			<li>tests are absolutely required<li>test names should be descriptive<li>test return values must fit the existing pattern of returning 'ok' for success<li>tests must run in under 100MS<li>contributing changes to node core is not difficult, but it does require attention to detail</ol> <p>Isaac's slides are available at <a href="http://www.slideshare.net/IsaacSchlueter/how-tonodecore?ref=http://blog.izs.me/post/54766250297/nodeconf-2013">http://www.slideshare.net/IsaacSchlueter/how-tonodecore?ref=http://blog.izs.me/post/54766250297/nodeconf-2013</a><p><a id="nodejs"></a><h3>Node.js Domains</h3>
+	<p>Try/catch is slow and doesn't work with asynchronous callbacks. By wrapping Node.js code in a domain you can deal with exceptions that occur during callbacks. These work very much like closures in JS where a developer can control the visibility of their code and handle any internal errors that occur by wrapping the code into a self-contained module / function. Presenters Forrest Norvell and Domenic Denicola explained how to use domains to successfully handle (or at least get meaningful logs from) errors in asynchronous code.<p>Slides are available at <a href="http://othiym23.github.io/nodeconf2013-domains/#/">http://othiym23.github.io/nodeconf2013-domains/#/</a>. Anyone who wants to maintain maximum service availability should really understand how domains are used.<p><a id="distributed"></a><h3>Distributed Apps</h3>
+	<p>Running a distributed application on node is surprisingly easy. Because everything is already set up for asynchronous callbacks it doesn't really matter where code is executed, so long as its output can be routed to the correct place. Presenters Dominic Tarr and Jake Verbaten walked attendees through the creation of a chat client/server application where each user provided both a client and a server. This was a very hands-on session with developers working heads-down to get their systems hooked into the network and chatting away.<p><a id="conclusions"></a><h2>Conclusions</h2>
+	<p>Camping and code don't seem like they'd go together, but in this case they did. Having a steady supply of electricity and a (slowish) Internet connection meant that everyone was able work throughout the weekend without suffering the attention drain that unfettered access to the 'net can induce. Making Node.js accessible to senior and junior developers, with presenters who could talk about any level of the stack, is what really made the conference for me. The sing-alongs and s'mores were a nice add-on, but not really necessary with such a strong lineup of sessions and such a beautiful venue.<p><a href="http://www.flickr.com/photos/ashusta/9324036548/" title="Morning View from the Tent by Alexander, on Flickr"><img alt="Morning View from the Tent" height="361" src="http://farm3.staticflickr.com/2840/9324036548_391f2cd41f_z.jpg" width="640" /></a></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

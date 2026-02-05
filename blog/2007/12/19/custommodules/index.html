@@ -1,0 +1,527 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Creating Custom Modules with YUI Using the YUI Module Control</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Creating Custom Modules with YUI Using the YUI Module Control</li></ul>
+				<h1 class="yui3-u-7-8">Creating Custom Modules with YUI Using the YUI Module Control</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">December 20, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro"><img align="right" alt="Yahoo! frontend engineer Cyril Doussin" height="342" hspace="10" src="/blog-archive/assets/cyril_doussin.jpg" vspace="5" width="250" /><strong>About the Author:</strong> <em><a href="http://cyril.doussin.name">Cyril Doussin</a> is a web developer currently working for Yahoo! London where he has contributed, along with <a href="http://muffinresearch.co.uk/">Stuart Colville</a>, <a href="http://www.ejeliot.com/">Ed Eliot</a> and <a href="http://ben-ward.co.uk/">Ben Ward</a>, to the new front-end code for the price comparison site <a href="http://kelkoo.co.uk">Kelkoo</a>. He enjoys playing with the YUI, microformats, Django, an old classical guitar and coffee machines.</em></div> </div>
+	<h2>Introduction</h2>
+	<p>The <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface Library</a> ships with a few controls such as <a href="http://developer.yahoo.com/yui/calendar/">Calendar</a> or <a href="http://developer.yahoo.com/yui/container/panel/">Panel</a> which allow a Javascript programmer to quickly add highly interactive functionality to a web site. As stated in the documentation:<blockquote> The <a href="http://developer.yahoo.com/yui/container/">Container</a> family of components is designed to enable developers to create different kinds of content-containing modules on the web. <a href="http://developer.yahoo.com/yui/container/module/">Module</a> and <a href="http://developer.yahoo.com/yui/container/overlay/">Overlay</a> are the most basic containers, and they can be used directly or extended to build custom containers. Also part of the Container family are four UI controls that extend Module and Overlay: <a href="http://developer.yahoo.com/yui/container/tooltip/">Tooltip</a>, <a href="http://developer.yahoo.com/yui/container/panel/">Panel</a>, <a href="http://developer.yahoo.com/yui/container/dialog/">Dialog</a>, and <a href="http://developer.yahoo.com/yui/container/simpledialog/">SimpleDialog</a>. </blockquote> <p> These four UI controls actually all extend Overlay, which itself extends Module. The <a href="http://developer.yahoo.com/yui/container/module/">YAHOO.widget.Module</a> object provides a basic framework that you can use to create custom UI controls which follow the common header/body/footer paradigm. This isn't the only pattern you can use in building YUI-based widgets, but it's one I've used to good effect in my own projects. <p> If you would like to build a similar content-containing Control, YAHOO.widget.Module provides you with a good base for several reasons: <ul>
+			<li>the logic of your Control will have a flexible, event-driven, execution flow<li>your code will be structured and easily maintainable<li>you will inherently be able to have multiple, independant instances of your Control on the same page, without any code conflict occuring</ul> <p> This article looks at the process of extending YAHOO.widget.Module in order to build such a Control. Our example will be a potentially long list of contacts, which we will turn into a customisable, paginated list. <div id="cyril">
+			<h2>Structured Markup</h2>
+			<p> The basic markup for our example will be a small contact list: <textarea class="HTML" cols="100" name="code" rows="30">
+<h2>Contacts</h2>
+<ol>
+<li>
+	<dl>
+		<dt>Name</dt>
+		<dd>Ed Eliot</dd>
+		<dt>Web site</dt>
+		<dd><a href="http://www.ejeliot.com/">ejeliot.com</a></dd>
+	</dl>
+</li>
+<li>
+	<dl>
+		<dt>Name</dt>
+		<dd>Stuart Colville</dd>
+		<dt>Web site</dt>
+		<dd><a href="http://muffinresearch.co.uk/">Muffin Research Labs</a></dd>
+	</dl>
+</li>
+<li>
+	<dl>
+		<dt>Name</dt>
+		<dd>Ben Ward</dd>
+		<dt>Web site</dt>
+		<dd><a href="http://ben-ward.co.uk/">ben-ward.co.uk</a></dd>
+	</dl>
+</li>
+</ol>
+</textarea> <p> As detailed in the <a href="http://developer.yahoo.com/yui/container/module/index.html">YAHOO.widget.Module</a> documentation, a <a href="http://developer.yahoo.com/yui/container/module/index.html#html">standard markup structure</a> has been defined for all Modules. So let's apply it to our control: <textarea class="HTML" cols="100" name="code" rows="30">
+<div id="contact-list">
+<div class="hd">
+	<h2>Contacts</h2>
+</div>
+<div class="bd">
+	<ol>
+		<li>
+			<dl>
+				<dt>Name</dt>
+				<dd>Ed Eliot</dd>
+				<dt>Web site</dt>
+				<dd><a href="http://www.ejeliot.com/">ejeliot.com</a></dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>Name</dt>
+				<dd>Stuart Colville</dd>
+				<dt>Web site</dt>
+				<dd><a href="http://muffinresearch.co.uk/">Muffin Research Labs</a></dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>Name</dt>
+				<dd>Ben Ward</dd>
+				<dt>Web site</dt>
+				<dd><a href="http://ben-ward.co.uk/">ben-ward.co.uk</a></dd>
+			</dl>
+		</li>
+	</ol>
+</div>
+<div class="ft"></div>
+</div>
+</textarea> <p>This may at first seem like unnecessary extra markup, but as you develop many controls, you will appreciate the consistency that this markup structure brings to your code (both Javascript and CSS), and the shortcuts YAHOO.widget.Module makes available to you as a result.<a href="/blog-archive/assets/cyril-module/1.html">Example 1</a><h2>Including YUI dependencies</h2>
+			<p>We will be using the <a href="http://developer.yahoo.com/yui/yahoo/">YAHOO</a>, <a href="http://developer.yahoo.com/yui/dom/">YAHOO.util.Dom</a> and <a href="http://developer.yahoo.com/yui/event/">YAHOO.util.Event</a> objects, along with the base code for YAHOO.widget.Module, which is contained in container-min.js:<textarea class="JScript" cols="100" name="code" rows="30">
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.0/build/container/container-min.js"></script>
+</textarea> <h2>Building the Control step by step</h2>
+			<p>YUI offers functionality such as namespacing, extension, configuration objects, and <a href="http://developer.yahoo.com/yui/event/#customevent">Custom Events</a> which you can make use of when creating your own UI controls. After analysing each of these features separately, we will end up with a structured template of code which we will then use for our control.<h3>Namespacing</h3>
+			<p>You should use <code>YAHOO.namespace</code> in order to isolate your code into its own namespace, making sure it does not pollute the global scope or conflicts with any third party code (including YUI itself). Grouping all your code in an object under the global <code>YAHOO</code> object is considered standard practice:<textarea class="JScript" cols="100" name="code" rows="30">
+YAHOO.namespace('Cyril');
+</textarea> <h3>Extending</h3>
+			<p>You then need to define your constructor and specify that your new Object will be inheriting YAHOO.widget.Module:<textarea class="JScript" cols="100" name="code" rows="30">
+YAHOO.Cyril.ContactList = function(el, userConfig) {
+YAHOO.Cyril.ContactList.superclass.constructor.call(this, el, userConfig);
+};
+YAHOO.extend(YAHOO.Cyril.ContactList, YAHOO.widget.Module);
+// make our widget an event provider
+YAHOO.lang.augmentProto(YAHOO.Cyril.ContactList, YAHOO.util.EventProvider);
+</textarea> <p>The two parameters accepted by the constructor are:<dl>
+					<dt>el<dd>A reference to the main HTMLElement for the Control (the "contact-list" element in our example)<dt>userConfig<dd>A configuration object (more on this later)</dl> <p>We are also augmenting at this stage our Control's prototype with EventProvider (see <a href="#custom_events">Custom Events</a>).<p>We are now ready to instantiate our Control:<textarea class="JScript" cols="100" name="code" rows="30">
+YAHOO.util.Event.onDOMReady(function() {
+var contact_list = new YAHOO.Cyril.ContactList('contact-list');
+// store a reference to the instance
+YAHOO.Cyril.contactLists = [ contact_list ];
+});
+</textarea> <p>And start taking advantage of the functionality offered by YAHOO.widget.Module, for example the "element", "header", "body" and "footer" properties:<textarea class="JScript" cols="100" name="code" rows="30">
+YAHOO.util.Event.onDOMReady(function() {
+    var contact_list = new YAHOO.Cyril.ContactList('contact-list');
+    YAHOO.Cyril.contactLists = [ contact_list ]
+    YAHOO.util.Dom.batch([ 	contact_list.element, 
+							contact_list.header, 
+							contact_list.body, 
+							contact_list.footer], 
+	function(el) {
+        el.style.border = '1px solid red';
+    })
+});
+</textarea><a href="/blog-archive/assets/cyril-module/2.html">Example 2</a><h3>Configuration</h3>
+			<p>You can define a default configuration for the properties of your Control. These could for example define how your Control should behave in a particular situation.<p>You can also override this default configuration for each instance of your Control. This is a structured way of implementing customisation.<textarea class="JScript" cols="100" name="code" rows="30">
+/**
+* Initializes the class's configurable properties which can be changed 
+* using the Overlay's Config object (cfg).
+* @method initDefaultConfig
+*/
+YAHOO.Cyril.ContactList.prototype.initDefaultConfig = function () {
+
+	YAHOO.Cyril.ContactList.superclass.initDefaultConfig.call(this);
+
+	/**
+	* Maximum number of contacts to show
+	* @config 
+	* @type Number
+	* @default 2
+	*/
+	this.cfg.addProperty('num_contacts', { 
+		handler: this.configNumContacts, 
+		validator: this.validateNumContacts, 
+		suppressEvent: true, 
+		supercedes: false,
+		value: 2
+});
+
+/**
+* Makes sure that the "num_contacts" config property cannot be set to anything else than 1, 2 or 3.
+* @method initDefaultConfig
+* @param {NUmber} value
+*/
+YAHOO.Cyril.ContactList.prototype.validateNumContacts = function(value) {
+	value = parseInt(value);
+	return !(isNan(value) || (value < 1) || (value > 3));
+};
+</textarea> <p>The optional attributes of a configuration property are:<dl>
+					<dt>handler<dd>Function called whenever the configuration property is set<dt>validator<dd>Function returning a Boolean to validate the new value for the property.<dt>suppressEvent<dd>When adding a new configuration property or setting a property's value, a CustomEvent is normally fired. Setting this option to true prevents the event from being fired.<dt>supercedes<dd>Array of Custom Event keys. When a Custom Event is fired after adding a new property or setting or property's value, it is possible to replace any previous Custom Event of the same type which is currently queued for firing by specifying its type in this Array.</dl> <p>You can then use the setProperty and getProperty functions of your Control's config object to modify and access the values of your properties.<textarea class="JScript" cols="100" name="code" rows="30">
+	contact_list.config.setProperty('num_contacts', 1);
+	alert(contact_list.getProperty('num_contacts));
+</textarea> <h3 id="custom_events">Custom Events</h3>
+			<p>YAHOO.util.Event provides a powerful mechanism for you to define custom events which can be triggered by your Controls and listened to by any other javascript function. This allows you to put in practice <a href="/blog-archive/blog/2007/01/17/event-plan/">Event-Driven Development</a> in a simple, lightweight way.<p>The first thing the YAHOO.widget.Module.prototype.init function does is to call the "initEvents" method. This means you can define any custom event you wish to use for your Control by defining this "initEvents" function as part of your object's prototype:<textarea class="JScript" cols="100" name="code" rows="30">
+/**
+* Initializes the custom events for YAHOO.Cyril.ContactList. This method gets called by YAHOO.widget.Module.prototype.init
+* @method initEvents
+*/
+YAHOO.Cyril.ContactList.prototype.initEvents = function() {
+
+// call the base class method to make sure inherited custom events get set up
+YAHOO.Cyril.ContactList.superclass.initEvents.call(this);
+
+/**
+* CustomEvent fired before showing a different contact
+* @event beforeShowContactEvent
+* @param {HTMLElement} contactElement LI HTMLElement for the contact to show
+*/
+this.createEvent('beforeUpdateContacts');
+
+/**
+* CustomEvent fired after showing a different contact
+* @event updateContactsEvent
+* @param {HTMLElement} contactElement LI HTMLElement for the contact now displayed
+*/
+this.createEvent('updateContacts');
+};
+</textarea> <p>We are using the createEvent function which we made available by previously extending our Control's prototype with YAHOO.util.EventProvider. This is the standard way of creating Custom Events, which you should implement through all your YUI-based Objects (whether they extend YAHOO.widget.Module or not).<p>The code showing a different contact should then look like the following:<p>
+				<textarea class="JScript" cols="100" name="code" rows="30">
+var contactElement = get a reference to the new contact element here;
+if (this.fireEvent('beforeUpdateContacts')) {
+// ... change the contact displayed to contactElement here
+}
+this.fireEvent('updateContacts');
+</textarea> <p>Note the fireEvent function is also part of YAHOO.util.EventProvider.<p>Any javascript function can now be set up as a subscriber (also commonly called "listener") to these events, with the possibility of cancelling the custom event. When a custom event fires, the subscriber functions will be called on a "first subscribed, first called" basis.<textarea class="JScript" cols="100" name="code" rows="30">
+	contact_list.updateContactsEvent.subscribe(function(type, args) {
+		alert(args[0].current_index);
+	});
+</textarea> <h3>Init function</h3>
+			<p>The init method of your Control is called upon instantiation. Although you are theoretically free to do what you want in this function, there are some important things you should make it do:<div>
+					<h4>Call the init function of the superclass (ie. call YAHOO.widget.Module.prototype.init)</h4>
+					<textarea class="JScript" cols="100" name="code" rows="30">
+	YAHOO.Cyril.ContactList.superclass.init.call(this, el/*, userConfig*/);
+</textarea>
+					<h4>Fire "beforeInit" and "init" events when appropriate</h4>
+					<textarea class="JScript" cols="100" name="code" rows="30">
+this.beforeInitEvent.fire(YAHOO.Cyril.ContactList);
+
+// .. rest of the init function
+
+this.initEvent.fire(YAHOO.Cyril.ContactList);
+</textarea>
+					<p>Note there is no need to call this.initEvents(...) to initialise Custom Events as this gets done automatically when calling YAHOO.widget.Module.prototype.init.<h4>Caching DOM references</h4>
+					<p>YAHOO.widgets.Module automatically caches references to the main widget's HTML Element, and its header, body and footer child elements if they exist (class="hd", class="bd" and class="ft").<p>If you often need to manipulate certain HTML Elements in your Control, it is generally recommended to cache references to them as properties of your Control. Accessing a reference is faster than calling document.getElementById every time you wish to access an HTMLElement.<p>Having your main Element cached also means that, should you need to remove your Control from the page and then it it again later on, the state of your Control and all its HTML Elements will be preserved (see <a href="/blog-archive/assets/cyril-module/4.html">example 4</a>).<textarea class="JScript" cols="100" name="code" rows="30">
+	this.some_element = document.getElementById('some_element_id');
+</textarea> </div>
+				<div>
+					<p>I also systematically do a few things before exiting the init function:<h4>initDOMManipulations</h4>
+					<p>I call a function named initDOMManipulations which performs any DOM manipulation/transformation required in order to set up the Control. In our example, this is where the "previous" and "next" pagination links which sit in the footer will be created.<textarea class="JScript" cols="100" name="code" rows="30">
+	// create/modify DOM elements (ie. previous/next links)
+	this.initDOMManipulations();
+</textarea> <h4>initEventListeners</h4>
+					<p>I call a function named initEventListeners sets up any Event listener needed for the control to function. Note this can be regular DOM Events (set up using YAHOO.util.Event.addListener) or YUI Custom Events (using YAHOO.util.CustomEvent.prototype.subscribe).<p>In our example we will use <a href="/blog-archive/blog/2007/01/17/event-plan/">event delegation</a> (<a href="http://developer.yahoo.com/yui/examples/event/event-delegation.html">see this Event Utility example for more on event delegation in YUI</a>) and set up a listener for the "click" event on our Control. The listener function will then perform the appropriate logic if the target of the Event was a pagination link.<textarea class="JScript" cols="100" name="code" rows="30">
+	// initialise event delegation
+	this.initEventListeners();
+</textarea> <h4>Default behaviour</h4>
+					<p>And of course you can call any function of your Control's code that needs to execute when the Control is first instanciated.<p>In our example we will update the display of our contact list to only show contacts meant to be on the first page.<textarea class="JScript" cols="100" name="code" rows="30">
+	// show/hide contact elements
+	this.updateDisplay();
+</textarea> </div> <p>To sum it up, here is the complete code of our init function:<textarea class="JScript" cols="100" name="code" rows="30">
+	YAHOO.Cyril.ContactList.prototype.init = function(el, userConfig) {
+		
+		// Note that we don't pass the user config in here 
+		// yet because we only want it processed once, at the 
+		// lowest subclass level (by calling this.cfg.applyConfig later on)
+		// this also calls this.initEvents
+		YAHOO.Cyril.ContactList.superclass.init.call(this, el/*, userConfig*/);
+		
+		// fire event saying we are about to start the initialisation
+		this.beforeInitEvent.fire(YAHOO.Cyril.ContactList);
+		
+		if (userConfig) {
+			this.cfg.applyConfig(userConfig, true);
+		}
+		
+		this.contact_elements = this.body.getElementsByTagName('li');
+		if (this.contact_elements.length == 0) {
+			return;
+		}
+		this.current_index = 0;
+
+		// create/modify DOM elements (ie. previous/next links)
+		this.initDOMManipulations();
+		// show/hide contact elements
+		this.updateDisplay();
+		// initialise event delegation
+		this.initEventListeners();
+		
+		// fire event saying initialisation of the Control is done
+		this.initEvent.fire(YAHOO.Cyril.ContactList);
+	};
+</textarea> <h3>Multiple Controls on the same page</h3>
+			<p>You may want to have several instances of your Control on the same page (eg. for controls such as calendars). A good way to do this is to simply assign a class attribute to your Control's main container Element, fetch all Elements with this class once the page has loaded and create a new instance for each. You may also want to store references to your Control instances for later manipulations.<textarea class="JScript" cols="100" name="code" rows="30">
+YAHOO.util.Event.onDOMReady(function() {
+    // create an array to hold references to the Control's instances
+    YAHOO.Cyril.contactLists = [ ];
+    // grab all contact lists by their classes and instanciate them.
+    var contact_lists = YAHOO.util.Dom.getElementsByClassName('contact-list');
+    for (var i = 0, contact_list; contact_list = contact_lists[i]; i ++) {
+        var control = new YAHOO.Cyril.ContactList(contact_list);
+        // store a reference to the instance
+        YAHOO.Cyril.contactLists.push(control);
+        // use YAHOO.util.EventProvider's subscribe function to add a listener to a Custom Event.
+        control.subscribe('updateContacts', function(type) {
+            alert('Current index: ' + this.current_index);
+        });
+    }
+});
+        </textarea> <h3>Putting it all together</h3>
+			<p><a href="/blog-archive/assets/cyril-module/3.html">Example 3</a> shows a complete example making use of everything we have seen in this article.<p><a href="/blog-archive/assets/cyril-module/4.html">Example 4</a> is a more comprehensive example and uses the recently released <a href="http://developer.yahoo.com/yui/profiler/">YUI Profiler</a> to demonstrate the speed advantage of caching references and Module instances, as opposed to always destroying your Elements and Objects. You will also notice that the current page is preserved when removing/reading a Control.<h2>Note regarding YAHOO.util.Element</h2>
+			<p> If your control deals mainly with one HTML Element and doesn't have a header/body/footer like structure, you may want to look at extending <a href="http://developer.yahoo.com/yui/element/">YAHOO.util.Element</a>, which by default provides you with a few things: <dl>
+					<dt>EventProvider<dd>allows you to use <a href="http://developer.yahoo.com/yui/event/#customevent">Custom Events</a>, and to attach listeners to CustomEvents before their creation (defined in event.js)<dt>AttributeProvider<dd>allows you to use handle the configuration of all your Element's properties and attributes, including triggering events before and after their values are changed, via a unified API.</dl> YAHOO.util.Element serves as the foundation for the <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and <a href="http://developer.yahoo.com/yui/charts/">Charts</a> controls. </div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

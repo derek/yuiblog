@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>CSS 101: Block Formatting Contexts</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">CSS 101: Block Formatting Contexts</li></ul>
+				<h1 class="yui3-u-7-8">CSS 101: Block Formatting Contexts</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">May 19, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="authorbox gainLayout">
+		<p><em><strong> <img align="right" alt="" src="http://www.gravatar.com/avatar/3f8729572facdeaae72b2d1afa32fb71?&s=90" style="margin-left:10px" />About the author:</strong> Thierry Koblentz is a front-end engineer at Yahoo! <br /> He owns <a href="http://www.tjkdesign.com/" title="TJK Design">TJK Design</a>, <a href="http://www.ez-css.org/" title="Lightweight CSS framework">ez-css.org</a> and <a href="http://www.css-101.org/" title="Interactive CSS tutorial">css-101.org</a>. You can follow Thierry on Twitter at <a href="http://twitter.com/thierrykoblentz" title="Thierry Koblentz on Twitter">@thierrykoblentz</a>. </em></div>
+	<div class="intro" style="margin-top:15px">
+		<p> A block formatting context is a box that satisfies at least one of the following: <ul>
+				<li> the value of "float" is not "none", <li> the used value of "overflow" is not "visible", <li> the value of "display" is "table-cell", "table-caption", or "inline-block", <li> the value of "position" is neither "static" nor "relative". </ul> <p style="margin-top:10px"> When it comes to the <a href="http://www.w3.org/TR/CSS21/visuren.html">visual formatting model</a> (this is how user agents process the <a href="http://www.w3.org/TR/CSS21/conform.html#doctree">document tree</a> for visual <a href="http://www.w3.org/TR/CSS21/media.html">media</a>), block formatting contexts are big players. So it is crucial for CSS authors to have a solid understanding of their relationship with the flow, floats, clear, and margins. </div>
+	<h3>What does the spec say about...</h3>
+	<h4>How block formatting contexts flow</h4>
+	<p>The <a href="http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme">positioning scheme</a> to which block formatting contexts belong is <a href="http://www.w3.org/TR/CSS21/visuren.html#normal-flow">normal flow</a>. Therefore, the "block" of a block formatting context is positioned in the flow of the page as you'd expect with <a href="http://www.w3.org/TR/CSS21/visuren.html#block-box">block</a> boxes, <a href="http://www.w3.org/TR/CSS21/visuren.html#inline-formatting">inline formatting</a> of <a href="http://www.w3.org/TR/CSS21/visuren.html#inline-box">inline</a> boxes, <a href="http://www.w3.org/TR/CSS21/visuren.html#relative-positioning">relative positioning</a> of block or inline boxes, and positioning of <a href="http://www.w3.org/TR/CSS21/visuren.html#run-in">run-in</a> boxes. Simply put, they are part of the page flow.<h4>What triggers block formatting contexts</h4>
+	<p>Section 9.4.1 says that the following will establish new block formatting contexts:<blockquote>
+			<ul>
+				<li>floats, <li>absolutely positioned elements, <li>inline-blocks, <li>table-cells, <li>table-captions, <li>elements styled with "overflow" (any value other than "visible")<li>elements styled with "display:flex" or "inline-flex" (flex boxes) </ul> </blockquote> <p>But according to the <a href="http://www.w3.org/TR/css3-box/#block-level0"> CSS level 3 specification</a>, a block formatting context (a "flow root" in CSS3 speak) is created when the following condition is met:<blockquote cite="http://www.w3.org/TR/css3-box/#block-level0">
+			<ul>
+				<li> The value of " <a href="http://www.w3.org/TR/css3-box/#position">position</a>" is neither "static" nor "relative" (see <a href="http://www.w3.org/TR/css3-box/#CSS3POS" rel="biblioentry">[CSS3POS]</a>). </ul> </blockquote> <p>This definition means that <code>position:fixed</code> establishes a new block formatting context, too. This is not a miss in section 9.4.1, though; fixed positioning is a subcategory of absolute positioning (9.6.1) and <cite>references in the specification to an absolutely positioned element (or its box) imply that the element's " <a href="http://www.w3.org/TR/CSS21/visuren.html#propdef-position">position</a>" property has the value "absolute" or "fixed" </cite>.<p>Note that <code>display:table</code> does not establish block formatting contexts per se. But because it can generate <a href="http://www.w3.org/TR/CSS21/tables.html#anonymous-boxes">anonymous boxes</a>, one of them (with <code>display:table-cell</code>) establishes a new block formatting context. In other words, the trigger is the anonymous box, not <code>display:table</code>. This is something authors should keep in mind, because even if both styles establish new block formatting contexts (implicitly or explicitly), <code>clear</code> does not work the same with <code>display:table</code> as it does with <code>display:table-cell</code>.<p>A final trigger is the <code>fieldset</code> element. Oddly enough, there was no information on www.w3.org about this behavior until the <a href="http://www.w3.org/TR/html5/the-xhtml-syntax.html#the-fieldset-element-0" title="The fieldset element is expected to establish a new block formatting context">HTML5</a> specification. There were browser bugs ( <a href="https://bugs.webkit.org/show_bug.cgi?id=3898#c9">Webkit</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=342531">Mozilla</a>) that mentioned this, but nothing "official". Actually, even if fieldsets establish new block formatting contexts in most browsers, as per section 3.2 (UA conformance), authors were not supposed to take this for granted:<blockquote cite="http://www.w3.org/TR/CSS21/conform.html">
+			<p> CSS 2.1 does not define which properties apply to form controls and frames, or how CSS can be used to style them. User agents may apply CSS properties to these elements. Authors are recommended to treat such support as experimental. A future level of CSS may specify this further. </blockquote> <h4>What block formatting contexts do</h4>
+	<p>Block formatting contexts contain floats because of the way they flow, and per section 9.4.1, they prevent collapsing margins and do not overlap floats:<blockquote cite="http://www.w3.org/TR/CSS21/visuren.html#block-formatting">
+			<p> In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top of a containing block. The vertical distance between two sibling boxes is determined by the <a href="http://www.w3.org/TR/CSS21/box.html#propdef-margin">"margin"</a> properties. Vertical margins between adjacent block boxes in a block formatting context <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">collapse</a>. <p> In a block formatting context, each box's left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch). This is true even in the presence of floats (although a box's line boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself <a href="http://www.w3.org/TR/CSS21/visuren.html#bfc-next-to-float">may become narrower</a> due to the floats). </blockquote> <h3>Enough with the specs, what does this mean in the real world?</h3>
+	<p>Block formatting contexts behave more or less like any block box, apart from these important exceptions:<ul class="topItems">
+			<li>
+				<h4> Block formatting contexts prevent margin collapsing </h4>
+				<p> Vertical margins between adjacent block boxes <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">collapse</a>, but only if they are in the same block formatting context. In other words, if the adjacent boxes do not belong to the same block formatting context, their margin will <em>not </em> collapse. <p style="margin-bottom:-10px"> Example: <div style="background:skyBlue">
+						<p style="margin:20px"> This is a paragraph inside a DIV with a blue background, styled with <code>margin:20px</code>. </div>
+					<div style="background:skyBlue">
+						<p style="margin:20px"> This is a paragraph inside a DIV with a blue background, styled with <code>margin:20px</code>. </div>
+					<div class="gainLayout" style="background:skyBlue;overflow:hidden">
+						<p style="margin:20px"> This is a paragraph inside a DIV with a blue background, it is styled with <code>margin:20px</code>, The parent DIV is styled with <code>overflow:hidden;zoom:1</code>. </div> <p> Between the two first blue boxes above, the bottom and top margin of the paragraphs collapse (the gap equals 20 pixels, not 40 pixels), but because the last DIV creates a new block formatting context, the margins of the third paragraph do not collapse, hence they do not "stick out" of the paragraph's container but instead are part of that block box. <p><strong>Note</strong>: in IE6, without <em>explicit </em> margins the DIV would fail to enclose the margins. <p> When it comes to collapsing margins, creating a new block formatting context acts the same as applying <code>border</code> or <code>padding</code> to the element. <li>
+				<h4> Block formatting contexts contain floats </h4>
+				<p> I am sure you have heard of the sentence " <cite>a float always contains floats </cite>", or maybe heard of the FNE ( <a href="http://orderedlist.com/our-writing/blog/articles/clearing-floats-the-fne-method/">float nearly everything</a>) method. But the basis of this is that floats <strong>are</strong> block formatting contexts, so a better way to formulate this is to say that " <cite><strong>a block formatting context always contains floats</strong> </cite>". <p style="margin-bottom:-10px"> Example: <div style="background:skyBlue">
+						<p style="float:left;margin:20px"> This paragraph is a float inside a DIV with a blue background, it is styled with <code>margin:20px</code></div>
+					<div class="gainLayout" style="background:skyBlue;overflow:hidden;clear:left">
+						<p style="float:left;margin:20px"> This paragraph is a float inside a DIV with a blue background, it is styled with <code>margin:20px</code>. The parent DIV is styled with <code>overflow:hidden;zoom:1</code>. </div> <p> The first paragraph is a float so it is removed from the flow and its container <strong>collapses</strong>, hence the background of this container does not show. <p> The second paragraph is also a float, but it is <em>contained </em> inside a DIV that creates a new block formatting context, hence that container encloses the child's "margin box". You should also note that, unlike with the first paragraph, there is no need to clear the previous box. This is often referred to as "self-clearing", which makes lot of sense considering that block formatting contexts are a normal part of the flow. <p><strong>Note</strong>: <code>clear</code> only clears floats within <i>the same block formatting context</i>. <li>
+				<h4> Block formatting contexts do not overlap floats </h4>
+				<p> This one is <a href="http://www.ez-css.org/" title="A CSS framework based on new block formatting contexts">my favorite</a>. According to the spec, the border-box of a block formatting context must not overlap the margin-box of floats in the same block formatting context as the element itself. What this means is that browsers create <em>implicit </em> margins on block formatting contexts to prevent them from overlapping the margin-box of floats. For this very reason, negative margins should have no effect when applied to a block formatting context next to floats (WebKit and IE6 have a problem with this though - see <a href="http://www.tjkdesign.com/lab/bfc/test.html">test case</a>). <p> Example: <div style="background:skyBlue;float:left;width:180px"><pre>.sideBar { 
+background: skyBlue; 
+float: left; 
+width: 180px; 
+}</pre></div>
+					<div style="background:yellow;float:right;width:180px"><pre>.sideBar { 
+background: yellow; 
+float: right; 
+width: 180px; 
+}</pre></div>
+					<div class="gainLayout" style="background:pink;overflow:hidden;border:5px solid teal"><pre>#main { 
+background: pink; 
+overflow: hidden; 
+zoom: 1; 
+border: 5px solid teal; 
+} </pre></div> <p> Because this behavior is attached to the "border box" (not the "margin box"), to create space (e.g., a 20px gap) between the pink box and its siblings, authors would need to either: <ul>
+						<li> Set a 20px margin on the floats <li> Set margin values on the pink box greater than the width of the floats (i.e., <code>margin:0 220px</code>) </ul> <p> Yes, you'd use <code>220px</code>, <i>not</i> <code>20px</code>. Because it is the <em>border-box </em> that tries to fit between the floats, not the margin-box. And if I say it <em>tries </em> it is because that container would drop if there was not enough room for it between the two floats. <p> In other words, if the pink box was given a 400 pixels width, that box should <strong>drop</strong> when the parent container is narrower than 770 pixels (180px + 180px + 400px + 10px). As a side note, in a few instances, this behavior appears to be broken in Firefox (at least in v.3.5.9) (i.e., when the above construct is the first child of <code>body</code> - see <a href="http://www.tjkdesign.com/lab/bfc/test.html">test case</a>). <p><strong>Note</strong>: the space that shows in IE6 between the pink box and the two floats is due to the <a href="http://www.positioniseverything.net/explorer/threepxtest.html">three pixel jog bug</a>. </ul> <h3>hasLayout versus block formatting context</h3>
+	<p>As you may have noticed, all previous examples are styled using <code>overflow:hidden;zoom:1</code>. The former declaration establishes a new block formatting context in modern browsers while the latter triggers hasLayout in Internet Explorer (IE 5.5/6/7). This is because these renderings are very close ( <a href="http://www.satzansatz.de/cssd/onhavinglayout.html#engineer">similarities with the CSS specs</a>). Like block formatting contexts, elements that are given a layout appear to prevent collapsing margins, to contain floats, and to not overlap floats.<h4><a id="hasKayoutTriggers" name="hasKayoutTriggers"></a>Properties/declarations that give elements a layout</h4>
+	<p>The lists below show that the properties that establish a new block formatting context also trigger hasLayout, at least the ones supported by the browser, with the exception of <code>overflow</code> in IE &lt; 7.<dl>
+			<dt>In Internet Explorer 5 and 6<dd><code>position:absolute</code><dd><code>position:fixed</code><dd><code>float</code> (any value other than " <code>none</code>")<dd><code>display:inline-block</code><dd><code>width</code> (any value other than " <code>auto</code>")<dd><code>height</code> (any value other than " <code>auto</code>")<dd><code>zoom</code> (any value other than " <code>normal</code>")<dd><code>writing-mode:tb-rl</code><dd><code>-ms-writing-mode:tb-rl</code><dt>In Internet Explorer 7<dd><code>min-width</code> (any value)<dd><code>min-height</code> (any value)<dd><code>max-width</code> (any value other than <code>none</code>)<dd><code>max-height</code> (any value other than <code>none</code>)<dd>elements styled with <code>overflow</code> (any value other than <code>visible</code>)<dd><code>overflow-x</code> and <code>overflow-y</code> (any value other than <code>visible</code>)</dl> <h5>Things to consider</h5>
+	<ul>
+		<li><code>zoom</code> and <code>writing-mode</code> are proprietary properties and do not validate. <li>IE 5.0 does not support <code>zoom</code><li><code>width</code> and <code>height</code> trigger hasLayout on inline elements only when these properties apply to these elements (i.e., IE6 in quirks mode). <li><code>overflow-x</code> and <code>overflow-y</code> are part of the CSS3 box model module <li>hasLayout is also triggered when the layout-flow is different from the parent layout flow (i.e., <code>rtl</code> to <code>ltr</code>) </ul>
+	<p>In Quirks Mode and IE7 Mode (All Versions)<ul>
+			<li>When overflow is set to something other than visible, table-cell elements *do not * establish new block formatting contexts. <li>When overflow is set to visible, table-cell elements *establish * a new block formatting context. </ul> <h4>HTML elements that always have a layout:</h4>
+	<p>In Internet Explorer, these elements have - *by default * - a layout. * <code>&lt;body&gt;</code> (as well as <code>&lt;html&gt;</code> in Strict mode) * <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code> * <code>&lt;img&gt;</code> * <code>&lt;hr&gt;</code> * <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code> * <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;applet&gt;</code> * <code>&lt;marquee&gt;</code><h3>Wrap up</h3>
+	<p>To reduce the risk of issues between modern browsers and Internet Explorer ( &lt; 8), authors may choose to give a layout to boxes that establish new block formatting contexts. This way the flow is identical, elements escape floats the same way, <code>clear</code> clears the same floats, and margins collapse where expected. Also, authors must pay attention when styling boxes using <a href="#hasKayoutTriggers">hasLayout triggers</a> (i.e., <code>width</code>) as such styling may require making that element a new block formatting context as well.<h3>Further readings</h3>
+	<h4>Implications</h4>
+	<ul>
+		<li>Page breaks and block-formatting contexts: <a href="http://www.w3.org/TR/CSS21/page.html#allowed-page-breaks">Allowed page breaks (13.3.3)</a>. <li>Clearfix and block formatting contexts: <a href="http://carsonified.com/blog/design/everything-you-know-about-clearfix-is-wrong/">Everything you Know about Clearfix is Wrong</a></ul>
+	<h4>Demos and testcases</h4>
+	<ul>
+		<li><a href="http://dev.l-c-n.com/IEW/simulations.php">Block formating contexts, "hasLayout" – IE Window vs CSS2.1 browsers: simulations.</a><li><a href="http://www.brunildo.org/test/FloatMarginOverflow.html">New block formatting contexts next to floats</a></ul>
+	<h4>hasLayout articles</h4>
+	<ul>
+		<li><a href="http://www.satzansatz.de/cssd/onhavinglayout.html">On having layout</a><li><a href="http://msdn.microsoft.com/en-us/library/bb250481%28VS.85%29.aspx">"HasLayout" Overview</a><li><a href="http://msdn.microsoft.com/en-us/library/ms533776%28VS.85%29.aspx">hasLayout Property</a></ul>
+	<p>Special thanks to <a href="http://l-c-n.com/">Philippe Wittenbergh</a> and <a href="http://www.brunildo.org/test">Bruno Fassino</a> for finding spec references when one needs them and to Ingo Chao for giving us the best resource on <a href="http://www.satzansatz.de/cssd/onhavinglayout.html">having layout</a>.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

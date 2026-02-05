@@ -1,0 +1,627 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Analyzing Bandwidth and Latency on YUIBlog.com</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Analyzing Bandwidth and Latency on YUIBlog.com</li></ul>
+				<h1 class="yui3-u-7-8">Analyzing Bandwidth and Latency on YUIBlog.com</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">April 8, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="authorbox">
+		<p><img align="right" height="75" hspace="10" src="/blog-archive/assets/philip.jpg" vspace="5" width="75" /><em><strong>About the author</strong>: Philip Tellis (<a href="http://twitter.com/bluesmoon">@bluesmoon</a>) is a geek working with Yahoo!'s Exceptional Performance team where he analyses the impact of various design decisions on web application performance. He also maintains YUI's date formatter and the <a href="http://github.com/bluesmoon/yui-flot" title="bluesmoon's yui-flot at master - GitHub">YUI port of the flot charting library</a>. You can find him on the web at <a href="http://bluesmoon.info/" title="Welcome to the moon">http://bluesmoon.info/</a>.</em></div>
+	<p> A few months ago, Eric helped me run some analysis on the types of network connections that were coming in to <a href="/blog-archive/" title="Yahoo! User Interface Blog (YUIBlog)">YUIBlog</a>. In this article, I'll analyze the data we collected and look for insights about the tools and infrastructure the YUIBlog readership uses to browse the web. Being the performance guy at Yahoo!, my interest focuses how fast our readers connections are. In particular, with what kind of network bandwidth and latency do YUI geeks experience the web? Although your mileage will vary, YUIBlog is likely to be representative of US tech blogs read by people in the software industry, and the data here may prove useful for those of you catering to a similar audience. <h3>Caveats</h3>
+	<p> Before I go any further, I have a few caveats to list. The tests and analysis we ran were based in the US (since that's where YUIBlog is hosted), so if you view this site from outside the US, your measured experience will probably be a little slower than what you'd see with local sites. Secondly, while we see traffic from all over the world, I'll only look at countries with a statistically relevant sample size. Lastly, each individual IP was considered only once. If the same IP accessed the site more than once, we consider the arithmetic mean of values from each access. For overall summaries, we use the median. No statistical filtering was applied to the data before analysis. The total sample size was approximately 27,000 points. <h3>The tests</h3>
+	<p> The test measured HTTP bandwidth and HTTP latency between an end user's computer (or a proxy somewhere in between) and YUIBlog. Note that I say HTTP bandwidth and latency because these may be different (i.e., worse) from the actual bandwidth that your ISP provides you, but it's what we, as frontend engineers, care about more. Latency is the time between a request going out and the first byte of the response coming back. It depends on how far you are from the server and the number and quality of hops between you and the server, so if you're far away, you'll have high latency. HTTP latency also depends on the overhead of HTTP headers, but we've tried to keep that down, and on how long it takes for the web server to respond to a request. We think that's fairly fast. <p> Bandwidth depends on the bandwidth at every step between you and the server, and it's somewhat affected by latency as well. The measured bandwidth is also affected by other applications or devices using the network in parallel. If you're streaming movies or loading an image heavy site while a measurement is taken, your bandwidth will appear lower than it actually is. However, this is the effective bandwidth that you browse YUIBlog with, so it's what we care about. <h3>So, what kind of networks do YUI geeks browse through?</h3>
+	<p> Quick summary answer: The bandwidth of YUI geeks is <strong><em>1 Mbps</em></strong> (that's Megabits) and the latency is <strong><em>262 ms</em></strong>. Most of you are either on <em>Broadband</em>, <em>DSL</em> or <em>Cable</em> connections and come in from the <em>US</em>, <em>Canada</em>, <em>Great Britain</em>, <em>Germany</em> and <em>India</em> (ordered by distance from our server). For more detailed results, read on... <h3>Connection types</h3>
+	<p> The type of network connection you have with your ISP determines the primary bandwidth limit and secondary latency limit (the first being distance divided by the 66% speed of light). Not surprisingly most of you are very closely associated with the internet, and use Broadband data connections. Only 2% of you used your mobile phones to reach the site, but that's still more than the number of people on dial-up. <div style="position:absolute;left:-9999em;">
+			<table id="connection-type-table" summary="Distribution, bandwidth and latency for different connection types">
+				<tr>
+					<th scope="row">Connection Type</th>
+					<th scope="col">Broadband</th>
+					<th scope="col">xDSL</th>
+					<th scope="col">Cable</th>
+					<th scope="col">T1</th>
+					<th scope="col">Mobile</th>
+					<th scope="col">Dial-up</th>
+					<th scope="col">Wireless</th>
+					<th scope="col">Satellite</th> </tr>
+				<tr>
+					<th scope="row">Count</th>
+					<td>14155</td>
+					<td>4874</td>
+					<td>4719</td>
+					<td>880</td>
+					<td>552</td>
+					<td>143</td>
+					<td>86</td>
+					<td>71</td> </tr>
+				<tr>
+					<th scope="row">Bandwidth (kbps)</th>
+					<td>733</td>
+					<td>953</td>
+					<td>3,118</td>
+					<td>3,017</td>
+					<td>407</td>
+					<td>356</td>
+					<td>291</td>
+					<td>287</td> </tr>
+				<tr>
+					<th scope="row">Latency (ms)</th>
+					<td>305</td>
+					<td>278</td>
+					<td>165</td>
+					<td>188</td>
+					<td>430</td>
+					<td>436</td>
+					<td>537</td>
+					<td>859</td> </tr> </table> </div> <p><img alt="Pie chart of data point counts from table #connection-type-table" id="connection-type-chart" src="/blog-archive/assets/tellis-bandwidth/connection-types.png" /><p> Of all the connection types we've seen, Cable and T1 offer the best bandwidth and latency, going over four times as fast as Broadband with half the latency. This could possibly mean that most of these connections were within the US while the others span the globe. The low latency seems to suggest that, but drilling down reduces the sample size too much to make an accurate assessment. From the data we see a clear inverse relationship between bandwidth and latency. <p><img alt="3D Bar chart of bandwidth and latency data from table #connection-type-table" id="connection-type-bw-lat-bar" src="/blog-archive/assets/tellis-bandwidth/bandwidth-latency.png" /><h3>International data</h3>
+	<p> We expected connections from outside the US to appear slower because the test has an intrinsic geographical bias, but what does the data really tell us? <div style="position:absolute;left:-9999em;">
+			<table id="international-bandwidth-table" summary="Bandwidth and latency data by country">
+				<tr>
+					<th scope="row">Countries</th>
+					<th scope="col">CA</th>
+					<th scope="col">US</th>
+					<th scope="col">DK</th>
+					<th scope="col">NL</th>
+					<th scope="col">NO</th>
+					<th scope="col">BE</th>
+					<th scope="col">SE</th>
+					<th scope="col">CH</th>
+					<th scope="col">AT</th>
+					<th scope="col">GB</th>
+					<th scope="col">FI</th>
+					<th scope="col">DE</th>
+					<th scope="col">CZ</th>
+					<th scope="col">FR</th>
+					<th scope="col">RO</th>
+					<th scope="col">PT</th>
+					<th scope="col">BG</th>
+					<th scope="col">HU</th>
+					<th scope="col">ES</th>
+					<th scope="col">IT</th>
+					<th scope="col">PL</th>
+					<th scope="col">GR</th>
+					<th scope="col">JP</th>
+					<th scope="col">UA</th>
+					<th scope="col">AR</th>
+					<th scope="col">TR</th>
+					<th scope="col">KR</th>
+					<th scope="col">RU</th>
+					<th scope="col">BR</th>
+					<th scope="col">TW</th>
+					<th scope="col">HK</th>
+					<th scope="col">AU</th>
+					<th scope="col">SG</th>
+					<th scope="col">IN</th>
+					<th scope="col">PH</th>
+					<th scope="col">TH</th>
+					<th scope="col">CN</th>
+					<th scope="col">ID</th> </tr>
+				<tr>
+					<th scope="row">Numrecs</th>
+					<td>949</td>
+					<td>9071</td>
+					<td>141</td>
+					<td>497</td>
+					<td>238</td>
+					<td>218</td>
+					<td>417</td>
+					<td>212</td>
+					<td>181</td>
+					<td>1833</td>
+					<td>157</td>
+					<td>1503</td>
+					<td>176</td>
+					<td>811</td>
+					<td>232</td>
+					<td>168</td>
+					<td>129</td>
+					<td>151</td>
+					<td>455</td>
+					<td>496</td>
+					<td>405</td>
+					<td>126</td>
+					<td>340</td>
+					<td>251</td>
+					<td>179</td>
+					<td>224</td>
+					<td>154</td>
+					<td>395</td>
+					<td>482</td>
+					<td>174</td>
+					<td>133</td>
+					<td>659</td>
+					<td>146</td>
+					<td>1748</td>
+					<td>200</td>
+					<td>147</td>
+					<td>639</td>
+					<td>206</td> </tr>
+				<tr>
+					<th scope="row">Bandwidth (kbps)</th>
+					<td>3,295</td>
+					<td>3,206</td>
+					<td>2,404</td>
+					<td>2,247</td>
+					<td>2,144</td>
+					<td>1,981</td>
+					<td>1,936</td>
+					<td>1,807</td>
+					<td>1,658</td>
+					<td>1,648</td>
+					<td>1,599</td>
+					<td>1,581</td>
+					<td>1,453</td>
+					<td>1,420</td>
+					<td>1,357</td>
+					<td>1,296</td>
+					<td>1,267</td>
+					<td>1,165</td>
+					<td>893</td>
+					<td>869</td>
+					<td>765</td>
+					<td>560</td>
+					<td>549</td>
+					<td>545</td>
+					<td>498</td>
+					<td>496</td>
+					<td>478</td>
+					<td>477</td>
+					<td>418</td>
+					<td>409</td>
+					<td>405</td>
+					<td>392</td>
+					<td>368</td>
+					<td>238</td>
+					<td>207</td>
+					<td>205</td>
+					<td>181</td>
+					<td>64</td> </tr>
+				<tr>
+					<th scope="row">Latency (ms)</th>
+					<td>108</td>
+					<td>133</td>
+					<td>247</td>
+					<td>230</td>
+					<td>263</td>
+					<td>233</td>
+					<td>264</td>
+					<td>256</td>
+					<td>278</td>
+					<td>242</td>
+					<td>276</td>
+					<td>269</td>
+					<td>256</td>
+					<td>254</td>
+					<td>274</td>
+					<td>297</td>
+					<td>285</td>
+					<td>270</td>
+					<td>335</td>
+					<td>309</td>
+					<td>284</td>
+					<td>363</td>
+					<td>416</td>
+					<td>340</td>
+					<td>387</td>
+					<td>353</td>
+					<td>462</td>
+					<td>359</td>
+					<td>409</td>
+					<td>506</td>
+					<td>516</td>
+					<td>555</td>
+					<td>595</td>
+					<td>588</td>
+					<td>595</td>
+					<td>688</td>
+					<td>649</td>
+					<td>867</td> </tr> </table> </div> <p><img alt="Bar chart of bandwidth data for top 18 countries (CA to HU) in table #international-bandwidth-table" src="/blog-archive/assets/tellis-bandwidth/high-bw.png" /><p> The US and Canada top the list as expected. All other countries with a bandwidth over 1 Mbps are from Europe. Looking at the other end of the spectrum, we see a few surprises. <p><img alt="Bar chart of bandwidth data for bottom 17 countries (GR to ID) in table #international-bandwidth-table" src="/blog-archive/assets/tellis-bandwidth/low-bw.png" /><p> I know from recent experience that Korea and Hong Kong have really high bandwidth network connections. Faster than most of the US in fact. The data puts them at less than one sixth the bandwidth of the US. A possible explanation is the latency. As we already know, there's a correlation between bandwidth and latency. Looking at the latency numbers for these countries gives us a possible answer. <p><img alt="Bar chart of latency data for bottom 17 countries (GR to ID) in table #international-bandwidth-table" src="/blog-archive/assets/tellis-bandwidth/low-bw-latency.png" /><p> We get hits from many more countries (147 in all). They either fell between these two blocks or had too few data points to be a statistically sound sample. <h3>ISPs</h3>
+	<p> As the final piece of analysis, I looked at ISP information. I only looked at a few countries since there were too many ISPs world-wide to put on a bar chart. Presented in the chart below is data for US and Canadian ISPs. <div style="position:absolute; left:-9999em;">
+			<table id="isp-bandwidth-table" summary="Bandwidth and latency by ISP for US, Canada, UK, Germany and India">
+				<thead>
+					<tr>
+						<th scope="col">Country</th>
+						<th scope="col">ISP</th>
+						<th scope="col">Latency (ms)</th>
+						<th scope="col">Bandwidth (kbps)</th> </tr> </thead>
+				<tbody style="vertical-align:top;">
+					<tr>
+						<td rowspan="3">Germany</td>
+						<td>hansenet telekommunikation gmbh</td>
+						<td>282</td>
+						<td>1,849</td> </tr>
+					<tr>
+						<td>international ip-backbone of vodafone</td>
+						<td>263</td>
+						<td>1,282</td> </tr>
+					<tr>
+						<td>deutsche telekom ag</td>
+						<td>311</td>
+						<td>1,149</td> </tr>
+					<tr>
+						<td rowspan="3">Great Britain</td>
+						<td>avatar broadband limited</td>
+						<td>229</td>
+						<td>2,200</td> </tr>
+					<tr>
+						<td>btnet uk regional network</td>
+						<td>256</td>
+						<td>1,769</td> </tr>
+					<tr>
+						<td>ntl group limited</td>
+						<td>253</td>
+						<td>1,581</td> </tr>
+					<tr>
+						<td rowspan="5">India</td>
+						<td>videsh sanchar nigam ltd. aut</td>
+						<td>508</td>
+						<td>355</td> </tr>
+					<tr>
+						<td>reliance infocom ltd internet</td>
+						<td>615</td>
+						<td>260</td> </tr>
+					<tr>
+						<td>bharti airtel ltd. telemedia services</td>
+						<td>601</td>
+						<td>226</td> </tr>
+					<tr>
+						<td>tata communications</td>
+						<td>569</td>
+						<td>195</td> </tr>
+					<tr>
+						<td>national internet backbone</td>
+						<td>609</td>
+						<td>167</td> </tr>
+					<tr>
+						<td rowspan="12">USA</td>
+						<td>cablevision systems corp.</td>
+						<td>78</td>
+						<td>4,752</td> </tr>
+					<tr>
+						<td>verizon global networks</td>
+						<td>101</td>
+						<td>4,218</td> </tr>
+					<tr>
+						<td>road runner holdco llc</td>
+						<td>108</td>
+						<td>4,093</td> </tr>
+					<tr>
+						<td>charter communications</td>
+						<td>114</td>
+						<td>3,945</td> </tr>
+					<tr>
+						<td>comcast cable communications inc.</td>
+						<td>123</td>
+						<td>3,816</td> </tr>
+					<tr>
+						<td>att worldnet services</td>
+						<td>117</td>
+						<td>3,328</td> </tr>
+					<tr>
+						<td>time warner telecom</td>
+						<td>95</td>
+						<td>3,304</td> </tr>
+					<tr>
+						<td>cox communications inc.</td>
+						<td>166</td>
+						<td>3,224</td> </tr>
+					<tr>
+						<td>xo communications</td>
+						<td>140</td>
+						<td>2,986</td> </tr>
+					<tr>
+						<td>qwest</td>
+						<td>203</td>
+						<td>1,892</td> </tr>
+					<tr>
+						<td>att internet services</td>
+						<td>204</td>
+						<td>1,502</td> </tr>
+					<tr>
+						<td>bellsouth.net inc.</td>
+						<td>121</td>
+						<td>1,446</td> </tr>
+					<tr>
+						<td rowspan="3">Canada</td>
+						<td>rogers cable communications inc.</td>
+						<td>96</td>
+						<td>4,386</td> </tr>
+					<tr>
+						<td>bell canada</td>
+						<td>103</td>
+						<td>3,161</td> </tr>
+					<tr>
+						<td>shaw communications inc.</td>
+						<td>203</td>
+						<td>3,007</td> </tr> </tbody> </table> </div> <p><img "="" "bar="" #isp-bandwidth-table"="#isp-bandwidth-table" and="and" bandwidth="bandwidth" bar"="Bar" canadian="Canadian" chart="chart" data="data" for="for" from="from" isps="ISPs" of="of" src="/blog-archive/assets/tellis-bandwidth/isp-bw.png" table="table" us="US" /><p> I'm not sure what the difference between AT&amp;T Worldnet and AT&amp;T Internet is, but I'll leave that for you to figure out. We saw more hits from Comcast than from any other ISP on the planet. <h3>Users of different browsers</h3>
+	<p> The browser you use doesn't affect your bandwidth (at least hasn't in lab tests) and has a very negligible effect on latency, so I didn't expect to see any differences here. I was curious though, to see what the data said, and this is what I found. I've included iPhones and iPods as well as they made up a sizeable fraction of all data points. Opera's mobile browsers are included under Opera. The "other" category only included 22 data points. <div style="position:absolute; left:-9999em;">
+			<table id="useragent-table" summary="Bandwidth and latency distribution across user agents">
+				<thead>
+					<tr>
+						<th>Browser</th>
+						<th>Latency</th>
+						<th>Bandwidth</th> </tr> </thead>
+				<tbody>
+					<tr>
+						<td>Gecko</td>
+						<td>267</td>
+						<td>1,105</td> </tr>
+					<tr>
+						<td>Webkit</td>
+						<td>238</td>
+						<td>1,591</td> </tr>
+					<tr>
+						<td>MSIE</td>
+						<td>285</td>
+						<td>759</td> </tr>
+					<tr>
+						<td>Opera</td>
+						<td>271</td>
+						<td>1,174</td> </tr>
+					<tr>
+						<td>iPod/iPhone</td>
+						<td>399</td>
+						<td>477</td> </tr>
+					<tr>
+						<td>other</td>
+						<td>274</td>
+						<td>1,289</td> </tr> </tbody> </table> </div> <p><img alt="Radar chart of bandwidth and latency data across user agents from table #useragent-table" src="/blog-archive/assets/tellis-bandwidth/user-agent-profile.png" /><p> The iPhone's latency is close to other mobile phones. All other browsers have the same latency. This is as expected. Bandwidth tells a different story though. It appears that those of you with the fastest internet connections use a Webkit based browser like Safari, Chrome or Konqueror, while users with the slowest internet connections use Internet Explorer. <h3>Summary</h3>
+	<ul>
+		<li>The overall bandwidth of YUIBlog readers is 1 Mbps and the overall latency is 262ms<li>We see a definite correlation between latency and bandwidth, so it would be interesting to see what the measured bandwidth is after eliminating delays caused by latency. Perhaps in a future test I'll do that.<li>Putting a mirror in Asia probably makes sense for a US-based engineering blog like this one. Putting one in Europe probably doesn't.<li>Mobile users have terrible latency, so a site optimised for mobile should really reduce the number of HTTP requests it makes. Note that mobile users that surf the web over wifi experience far lower latency.</ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

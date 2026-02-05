@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Coupling YUI and YQL to Build Dynamic Widgets</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Coupling YUI and YQL to Build Dynamic Widgets</li></ul>
+				<h1 class="yui3-u-7-8">Coupling YUI and YQL to Build Dynamic Widgets</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">June 17, 2009<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Yahoo! Developer Network evangelist Jonathan LeBlanc" height="129" hspace="10" src="/blog-archive/assets/leblanc.jpg" vspace="5" width="126" /><strong>About the Author:</strong> <em>Jonathan LeBlanc (twitter: <a href="http://www.twitter.com/jcleblanc">jcleblanc</a>) works with the partner integration group in the <a href="http://developer.yahoo.com/">Yahoo! Developer Network</a> as a senior software engineer / technology evangelist. Focusing on partner relationships and training, as well as external developer integration, Jonathan works with and promotes emerging technologies to aid in the adoption and utilization of new social development techniques. As a software engineer, Jonathan works extensively with social interaction development on the web, developing new methods for linking social networks to drive the ideal of an open web. Prior to Yahoo!, Jonathan worked within both the media production and fantasy product development teams at CBSSports.com, where he developed on products such as the Emmy award-winning march madness on demand video player. Born and raised in Canada, Jonathan graduated from Algonquin College of Applied Arts and Technology with a degree in computer science and currently lives in Dublin, CA with his wife.</em></div> </div>
+	<p>YUI has a wonderfully rich list of data manipulation and UI utilities in its library, but coming up with equally rich and interesting data is generally your responsibility as an implementer. By the same token, <a href="http://developer.yahoo.com/yql/">YQL</a> has rich data fetching and interaction abilities, but it lacks YUI's visualization tools. Taking the visualization and control features of YUI and coupling them with the raw data pipe of YQL, we can build incredibly rich, interactive widgets without the need to create any of the visualizations or data storage mechanisms ourselves.<p>I'll give you a tour of two widgets built with YUI and YQL in this post. One displays publicly available content and the other builds upon that original widget with a server-side PHP component to display private user data by authenticating with OAuth.<h3>Accessing Public Data</h3> Using the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a>, we are able to make requests to the public <a href="http://developer.yahoo.com/yql/">YQL</a> query URL without having the pain of dealing with the same-origin policy issue that would normally prevent us from making XHR-based requests to a server that is not on the same domain as the originating request. Below is a small code sample which showcases how you would call <a href="http://developer.yahoo.com/yql/">YQL</a> using the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a>: <pre>
+&lt;script type="text/javascript"&gt;
+var getYQLData = function(query){
+    //prepare the URL for the YUI GET request:
+    var yqlPublicQueryURL = "http://query.yahooapis.com/v1/yql?";
+    var sURL = yqlPublicQueryURL + "q=" + query
+        + "&format=json&callback=yqlWidget.getYQLDataCallback";
+        
+    //make GET request to YQL with provided query
+    var transactionObj = YAHOO.util.Get.script(sURL, {
+        onSuccess : onYQLReqSuccess,
+        onFailure : onYQLReqFailure,
+        scope     : this
+    });
+
+    return transactionObj;
+}
+&lt;/script&gt;
+</pre><p>The query URL (<code>sURL</code>) is composed of several different parts to make up the request. The <code>yqlPublicQueryURL</code> variable contains the public URI for making requests to YQL. There are also three query parameters that we are passing along to this URI. The <code>q</code> parameter is the YQL query that we use in our request (e.g. <code>select * from flickr.photos.search where text="YDN"</code>), <code>format</code> is the format we want returned (JSON or XML) from the request, and if we want to wrap the JSON returned data in a function (a la <a href="http://en.wikipedia.org/wiki/JSON#JSONP">JSONP</a>) we can define a callback function using the <code>callback</code> parameter. When this function runs, the Get Utility will make a request to <code>query.yahooapis.com</code> with the specified query. On success, a debug message will be displayed in the <code>onSuccess</code> callback for the Get Utility then the callback defined in the YQL query will be called to parse the returned JSON results.<p>Setting up this widget on your own site or blog is as simple as downloading the code from the <code>js-yql-display</code> folder on github at <a href="http://github.com/jonleblanc/yql-utilities/tree/master">http://github.com/jonleblanc/yql-utilities/tree/master</a> and instantiating the widget like this:<pre>
+&lt;!-- widget file include --&gt;
+&lt;script type="text/javascript" src="yql_js_widget.js"&gt;&lt;/script&gt;
+
+&lt;!-- widget styles --&gt;
+&lt;style&gt;
+div.imgCnt{ border: 1px solid rgb(96, 96, 96); 
+    margin: 5px 5px 5px 0pt; float: left;
+	background-color: rgb(241, 241, 241); width:100px;
+	height:140px; }
+div.imgCnt img{ border:0; margin:5px; }
+div.imgCnt div.imgTitle{ padding: 5px; font-size: 11px;
+    text-align:center; }
+&lt;/style&gt;
+
+&lt;script type="text/javascript"&gt;
+var config = {'debug' : true};
+var format = '&lt;div class="imgCnt" align="center"&gt;'
+    + '&lt;a href="http://www.flickr.com/photos/{owner}/{id}/"'
+    + 'target="_blank"&gt;&lt;img src="http://farm3.static.'
+    + 'flickr.com/{server}/{id}_{secret}.jpg?v=0"'
+    + 'width="80" height="80" /&gt;&lt;/a&gt;'
+    + '&lt;div class="imgTitle"&gt;'
+    + '&lt;a href="http://www.flickr.com/photos/{owner}/'
+    + '{id}/"&gt;{title}&lt;/a&gt;'
+    + '&lt;/div&gt;&lt;/div&gt;';
+var yqlQuery =
+    'select * from flickr.photos.search where text="YDN"';
+var insertEl = 'widgetContainer';
+yqlWidget.push(yqlQuery, config, format, insertEl);
+&lt;/script&gt;
+</pre><p>Any number of public YQL queries can be made using the above example &mdash; all documentation for how the configuration script works can be found on <a href="http://github.com/jonleblanc/yql-utilities/tree/master">github</a>. If we run the above code we can easily display our most recent flickr photos: <p><a href="/blog-archive/assets/js_widget_public/yql_js_widget.html"><img alt="flickr photo display" border="0" height="68" src="/blog-archive/assets/public_flickr.jpg" width="500" /></a><p>So, why all the fuss over using YQL and YUI together like this? Well, for me these utilities bring me quite close to a traditional MVC (Model View Controller) type of design pattern. YQL is a wonderful data aggregation and manipulation tool, but at the end of the day it's just data. We insert the controller functionality using YUI utilities such as <a href="http://developer.yahoo.com/yui/get/">the Get Utility</a> or <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>, then we can build our presentation layer on top of that using widgets like <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and <a href="http://developer.yahoo.com/yui/charts/">Charts</a>.<p><a href="http://www.nakedtechnologist.com/php_widget_oauth/yql_php_widget.html"><img alt="private update stream" border="0" height="399" src="/blog-archive/assets/private_updates.jpg" style="margin:5px 8px 5px 0;" width="300" /></a><h3>Accessing Private User Data</h3>
+	<p>Let's explore the pairing of YUI and YQL a little further by taking the foundation built in the public JavaScript query widget and attaching a server-side component to authenticate and store an oAuth session. Using the Y!OS <a href="http://developer.yahoo.com/social/sdk/#php">PHP SDK</a>, we are able to extend the JavaScript widget to display the update stream and personal badge details of the user who originally authenticated the widget. Since we're using the PHP SDK on the same domain as our widget to make our authenticated calls to YQL, we no longer need to worry about the same-origin policy issues. This means that we can exchange the use of the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a> with the <a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a>. The benefit to using the <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> here is that we can use a standard ajax request and the event handlers of the utility instead of a callback within the YQL query. Our new request function would look something like this:<pre>
+&lt;script type="text/javascript"&gt;
+var getYQLData = function(query){
+    //prepare URL & post data for YUI Connection Manager POST:
+    var sURL = "private_data_fetch.php";
+    var postData = "q=" + query;
+
+    //define Connection Manager event callbacks
+    var callback = {
+        success:parseYQLResults,
+        failure:onYQLReqFailure
+    };
+		
+    //make POST request to YQL with provided query
+    var transactionObj = YAHOO.util.Connect.asyncRequest('POST',
+	    sURL, callback, postData);
+		
+    return transactionObj;
+}
+&lt;/script&gt;
+</pre><p>The Connection Manager is used to make AJAX requests to the PHP SDK (whose references are housed in <code>private_data_fetch.php</code> within the above code) with the query as a POST parameter. The SDK in turn makes an authenticated request for the user's personal data and dumps out a JSON string as the return of the request. Then all you need to do is parse the JSON string using the <a href="http://developer.yahoo.com/yui/json/">YUI JSON Utility</a>; after you've called <code>YAHOO.util.JSON.parse()</code> on the transaction results, your data can be treated in the same manner as the data in the first example.<p>Since YQL generates results when the request is called, there is no need to house this data for yourself. YQL can pull data from any available source so you can build widgets such as these to display dynamic results with each refresh.<p>Both of the widgets showcased in this post are freely available for download and contribution on github at <a href="http://github.com/jonleblanc/yql-utilities/tree/master">http://github.com/jonleblanc/yql-utilities/tree/master</a>. These widgets are:<ul>
+			<li><code>js-yql-display</code>: JavaScript widget to display public YQL data<li><code>php-yql-display</code>: JavaScript / PHP widget to display private YQL data</ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

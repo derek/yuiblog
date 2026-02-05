@@ -1,0 +1,831 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>YUI Implementations &raquo; Yahoo! User Interface Blog (YUIBlog)</title>
+<!-- 	<title>Yahoo! User Interface Blog (YUIBlog) &raquo; YUI Implementations</title> -->
+	 <meta http-equiv="Content-Encoding" content="gzip" />
+<meta http-equiv="Accept-Encoding" content="gzip, deflate" />
+	<meta name="generator" content="WordPress 3.0.4" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+  
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.2r1/build/yuiloader-dom-event/yuiloader-dom-event.js&3.3.0/build/yui/yui-min.js"></script> 
+    
+    	<link rel='archives' title='December 2011' href='/blog/2011/12/' />
+	<link rel='archives' title='November 2011' href='/blog/2011/11/' />
+	<link rel='archives' title='October 2011' href='/blog/2011/10/' />
+	<link rel='archives' title='September 2011' href='/blog/2011/09/' />
+	<link rel='archives' title='August 2011' href='/blog/2011/08/' />
+	<link rel='archives' title='July 2011' href='/blog/2011/07/' />
+	<link rel='archives' title='June 2011' href='/blog/2011/06/' />
+	<link rel='archives' title='May 2011' href='/blog/2011/05/' />
+	<link rel='archives' title='April 2011' href='/blog/2011/04/' />
+	<link rel='archives' title='March 2011' href='/blog/2011/03/' />
+	<link rel='archives' title='February 2011' href='/blog/2011/02/' />
+	<link rel='archives' title='January 2011' href='/blog/2011/01/' />
+	<link rel='archives' title='December 2010' href='/blog/2010/12/' />
+	<link rel='archives' title='November 2010' href='/blog/2010/11/' />
+	<link rel='archives' title='October 2010' href='/blog/2010/10/' />
+	<link rel='archives' title='September 2010' href='/blog/2010/09/' />
+	<link rel='archives' title='August 2010' href='/blog/2010/08/' />
+	<link rel='archives' title='July 2010' href='/blog/2010/07/' />
+	<link rel='archives' title='June 2010' href='/blog/2010/06/' />
+	<link rel='archives' title='May 2010' href='/blog/2010/05/' />
+	<link rel='archives' title='April 2010' href='/blog/2010/04/' />
+	<link rel='archives' title='March 2010' href='/blog/2010/03/' />
+	<link rel='archives' title='February 2010' href='/blog/2010/02/' />
+	<link rel='archives' title='January 2010' href='/blog/2010/01/' />
+	<link rel='archives' title='December 2009' href='/blog/2009/12/' />
+	<link rel='archives' title='November 2009' href='/blog/2009/11/' />
+	<link rel='archives' title='October 2009' href='/blog/2009/10/' />
+	<link rel='archives' title='September 2009' href='/blog/2009/09/' />
+	<link rel='archives' title='August 2009' href='/blog/2009/08/' />
+	<link rel='archives' title='July 2009' href='/blog/2009/07/' />
+	<link rel='archives' title='June 2009' href='/blog/2009/06/' />
+	<link rel='archives' title='May 2009' href='/blog/2009/05/' />
+	<link rel='archives' title='April 2009' href='/blog/2009/04/' />
+	<link rel='archives' title='March 2009' href='/blog/2009/03/' />
+	<link rel='archives' title='February 2009' href='/blog/2009/02/' />
+	<link rel='archives' title='January 2009' href='/blog/2009/01/' />
+	<link rel='archives' title='December 2008' href='/blog/2008/12/' />
+	<link rel='archives' title='November 2008' href='/blog/2008/11/' />
+	<link rel='archives' title='October 2008' href='/blog/2008/10/' />
+	<link rel='archives' title='September 2008' href='/blog/2008/09/' />
+	<link rel='archives' title='August 2008' href='/blog/2008/08/' />
+	<link rel='archives' title='July 2008' href='/blog/2008/07/' />
+	<link rel='archives' title='June 2008' href='/blog/2008/06/' />
+	<link rel='archives' title='May 2008' href='/blog/2008/05/' />
+	<link rel='archives' title='April 2008' href='/blog/2008/04/' />
+	<link rel='archives' title='March 2008' href='/blog/2008/03/' />
+	<link rel='archives' title='February 2008' href='/blog/2008/02/' />
+	<link rel='archives' title='January 2008' href='/blog/2008/01/' />
+	<link rel='archives' title='December 2007' href='/blog/2007/12/' />
+	<link rel='archives' title='November 2007' href='/blog/2007/11/' />
+	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+		<link rel="alternate" type="application/rss+xml" title="Yahoo! User Interface Blog (YUIBlog) &raquo; YUI Implementations Category Feed" href="/blog/category/yui-implementations/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/blog/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Yahoo! User Interface Blog (YUIBlog)' href='/blog/' />
+<meta name="generator" content="WordPress 3.0.4" />
+</head>
+
+<body>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog (YUIBlog)</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item page-item-2"><a href="/blog/about/" title="About">About</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/" title="YUI Jobs">YUI Jobs</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/" title="Contribute">Contribute</a></li>
+				</ul>
+			</div>
+		
+			<!--<div id="search">
+				<form id="searchform" method="get" action="http://www.yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>-->
+            
+            <div id="search">
+            <form action="http://search.yahoo.com/search" id="sitesearchform">
+            <input name="vs" type="hidden" value="yuiblog.com">
+            <div id="sitesearch">
+                <label for="searchinput">Site Search: </label>
+                <input type="text" id="searchinput" name="p">
+                <input type="submit" value="Search" id="searchsubmit" class="ygbt">    
+                <div id="searchcontainer"></div>
+            </div>
+            </form>
+            </div>
+	</div>
+	
+<!-- end header -->			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-289"><a href="/blog/2008/12/17/pulptunes/" rel="bookmark" title="Permanent Link to Implementation Focus: pulpTunes">Implementation Focus: pulpTunes</a></h2>
+				<small>December 17, 2008 at 1:41 pm by Eric Miraglia | In <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <a href="/blog/2008/12/17/pulptunes/#comments" title="Comment on Implementation Focus: pulpTunes">1 Comment</a></small>
+						
+			<div class="interview"> <div class="intro"> <p><img src="http://yuiblog.com/assets/alejandropedraza-20081217-133640.png" align="right" hspace="10" vspace="5" /><em><strong>Alejandro Pedraza</strong> got his degree in Economics and was quickly bored to death in a regular office job for a couple of months. He realized he should follow his true life&#8217;s calling and turn night-and-weekend programming into something that would pay the bills, too. A failed startup and a couple of jobs later as lead developer, he&#8217;s been concentrating on building apps on the LAMP stack and Java and contributing to many open source projects during his free time.  He is the author of <a href="http://www.pulptunes.com/">pulpTunes</a>, a new way of accessing your iTunes library via a Web browser. pulpTunes makes extensive use of YUI.</em></p> </div>  <p class="q">What got you interested in building a web interface to iTunes?  Or is that a dumb question?</p>  <p>(No, not a dumb question :))  I&#8217;ve got a sizable song collection in my iTunes. An app for providing myself with web access seemed like a nice thing to have, and it would give me the opportunity to play with web and desktop technologies in the same application.</p>  <p class="q">You chose YUI for many of the UI elements in your app.  What specific YUI components are you using, and for what purposes?</p>  <p>YUI&#8217;s consistency and reusage of components accross the whole ecosystem lets you easily pick up on any new component you might need as the project advances. So I&#8217;ve been trying to stick with YUI-only, and I had to look elsewhere just for the flash song player, for obvious reasons.</p>  <p><img src="http://yuiblog.com/assets/pulptunes-20081203-175406.jpg" width="510" height="308" /></p>  <p>pulpTunes produces a single web page, whose layout is declared through the <a href="http://developer.yahoo.com/yui/grids/">Grids CSS</a> lib. No need of nasty CSS hacks, and you can guarantee your page will look the same in all major browsers. This is one of my favorite YUI libraries, because of the huge time savings and peace of mind it provides.</p>  <p>The songs list is a <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> accompained by a <a href="http://developer.yahoo.com/yui/paginator/">Paginator</a>, fed through an XHR connection. Customizing the table and pagination looks was really easy by just overriding some CSS rules from the Sam skin, which is very well commented. The custom formatter for the Rating column is a 3-liner javascript code. The table (and the playlist section to the left) make use of the menu component to show a context menu to perform operations on a song or playlist.</p>  <p>I&#8217;m using a <a href="http://developer.yahoo.com/yui/slider/">Slider</a> component to adjust the player&#8217;s buffer. With it you point at which point in download progress you want the song to start playing.</p>  <p>There are few popup messages and dialogs in the app, that are rendered using the <a href="http://developer.yahoo.com/yui/container/">Container</a> component.</p>  <p>Most of  the YUI components I used (there are 12) are fetched from <code>yui.yahooapis.com</code> in a single request through the very convenient <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a>. And of course, I&#8217;m using the YUI compressor to compress to 15k the one javascript file that holds all the app&#8217;s logic.</p>  <p class="q">You&#8217;re using <a href="http://github.com/davglass/yui-effects/tree/master">Dav Glass&#8217;s Effects Package</a> in addition to YUI.  What functionality are you drawing from Dav&#8217;s collection specifically?</p>  <p>Coming from a Prototype+Scriptaculous world, I was very relieved to find that somebody had already ported to YUI all the great effects from Scriptaculous. And [because Dav is a member of the] YUI team, I could rest assured about its quality. I&#8217;m using the BlindDown and BlindUp effects to show and hide the songs cover art.</p>  <p class="q">One of the main elements of your app is the DataTable that you use to display the songlists.  What was your experience like building an XHR-fed DataTable with JSON data?  What lessons did you learn that are worth sharing with other developers?</p>  <p>The XHR feeding part was pretty straightforward. Although I remembered trying to return some HTML in the JSON response which didn&#8217;t work, but that looked like a browser bug.</p>   <p>Pagination and sorting was easy as well, but I had to provide a custom generateRequest function because, if I recall correctly, YUI assumes the records should be sorted since the first request to the server, and in my case I wanted to wait till the user actually clicked on a column header to start returning sorted records.</p>   <p>I also had some trouble at first when trying to retrieve specific records in the table, but then I realized the existance of a whole bunch of helper methods just for that, like <code>getTrEl()</code> and <code>getRecord()</code> that are not mentioned in the general docs. So my obvious advice is that your read the entire API for any component you&#8217;ll be doing heavy work on.</p>    <p class="q"><a href="https://sourceforge.net/projects/pulptunes/">pulpTunes is a SourceForge project</a>.  Are you looking to build a community of developers to work on the project with you?</p>   <p>Yes, that&#8217;s the idea. I&#8217;m also using SourceForge to track bugs and feature requests, so any kind of feedback from users is also welcomed. Graphical designers are invited as well, if they want to provide additional skins for the app.</p>      <p class="q">What&#8217;s next for pulpTunes?</p>   <p>It&#8217;s been just a few days since the first stable release is out, and the response has been tremendous. I think I have already a pretty good idea of the major features for the next version: user authentication, search, shuffle and repeat buttons, and ability to rate songs.</p></div>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/12/17/pulptunes/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/12/17/pulptunes/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/12/17/pulptunes/&amp;title=Implementation Focus: pulpTunes" title="bookmark Implementation Focus: pulpTunes in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/12/17/pulptunes/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/12/17/pulptunes/&amp;title=Implementation Focus: pulpTunes" title="post Implementation Focus: pulpTunes to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F12%2F17%2Fpulptunes%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/12/17/pulptunes/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/12/17/pulptunes/"
+    dc:title="Implementation Focus: pulpTunes"
+    trackback:ping="http://www.yuiblog.com/blog/2008/12/17/pulptunes/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-273"><a href="/blog/2008/11/13/notifu/" rel="bookmark" title="Permanent Link to Implementation Focus: Notifu">Implementation Focus: Notifu</a></h2>
+				<small>November 13, 2008 at 9:32 am by Eric Miraglia | In <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <span>Comments Off</span></small>
+						
+			<div class="interview"> 	<div class="intro"> 		<p><img align="right" hspace="10" vspace="5" src="http://yuiblog.com/assets/kentjohnson.jpg"><em>Kent Johnson is an engineer at <a href="http://www.notifu.com">Notifu</a>, a startup that launched on October 29 with a group messaging service aimed at improving the routing and notification of personal messaging among individuals and groups.  Notifu uses YUI for its interface, and Kent was kind enough to share his thoughts with us on building out the product using YUI.</em></p> 	</div>  <p class="q"><strong><a href="http://www.notifu.com">Notifu</a> is a &#8220;group messaging service.&#8221; How does Notifu go beyond traditional messaging services like email, IM, and SMS?</strong></p>  <p>There are four key differences from traditional email, IM, and SMS&#8230;</p>  <ul><li><strong>Integration</strong>: Notifu allows you to send the same message to multiple recipients via email, IM, and SMS.  So, you might send a message like &#8220;Let&#8217;s move the meeting from 3pm to 4pm today&#8221; to Bob via email, Jim via Yahoo IM, Sarah via SMS, and Mark via voice phone.</li>  <li><strong>Delivery Confirmation</strong>: Notifu can ask the users to acknowledge receipt of the message so the sender can know exactly who did and who did not receive the message.</li>  <li><strong>Escalations</strong>: Notifu allows you to define alternative means to deliver a message to an individual.  So, you might send a message &#8220;Please call me ASAP. 1 &#8211; Got it&#8221; to Mark first by email, then by IM, then by SMS, and then by home phone.  The escalation automatically stops trying alternative addresses when Mark acknowledges receiving the message.</li>  <li><strong>Polling</strong>: Notifu allows you to optionally define a response menu when you send a message allowing you to make quick group decisions.  So, you might send a message like &#8220;Which live chat solution did you want to choose? 1 &#8211; Boldchat or 2 &#8211; Liveperson&#8221; and Notifu will tally the responses instantly to make your group decisions.</li></ul>  <p><a href="http://www.notifu.com"><img src="http://yuiblog.com/assets/notifu.png" alt="Notifu screenshot -- sending new messages."></a></p>  <p class="q"><strong>The registration path and some of the core interactions happen within a small canvas that employs lateral animations to move from pane to pane, similar to the way a typical iPhone application works.  What was the inspiration for this design?  What made you choose it for the app you deploy to big-screen browsers?</strong></p>  <p>Notifu has been designed as a widget that we plan to release across popular social and mobile platforms.  As a widget, we designed Notifu to work within a limited amount of space.</p>  <p>Notifu does also leverage a side scrolling paradigm which we think is both a unique look and feel for a widget and an effective means to navigate pages.  There is an obvious similarity to the iPhone user interface.  What can we say&#8230;we love the iPhone user interface as well.</p>  <p class="q"><strong>You&#8217;ve employed <a href="http://developer.yahoo.com/yui/animation/">YUI Animation</a> to handle the transitions, <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> to do your Ajax data transport, and other YUI components in other parts of your app.  Tell us a little bit more about the role YUI plays in the Notifu frontend.</strong></p>  <p>YUI plays a critical role in the Notifu UI where we leverage&#8230;</p>  <ul><li><a href="http://developer.yahoo.com/yui/animation/">YUI Animation</a> to do the side scrolling page transitions, the fade-in inserts as you add more To recipients to the Send New Message page, and the animated expand/collapse of messages within the View Messages page.</li>  <li><a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a> is used to make all the asynchronous calls to the Notifu server to send messages, add/edit/delete contacts, mark replies as read, etc.</li>  <li><a href="http://developer.yahoo.com/yui/dom/">YUI Dom Collection</a> and <a href="http://developer.yahoo.com/yui/selector/">YUI Selector</a> are used extensively in the plumbing to retrieve and manipulate elements on each page.</li> </ul>   <p class="q"><strong>What aspects of your YUI implementation are you most proud of?</strong></p>  <p>I scanned our client code for a snippet that I thought would be the most interesting to share.  This snippet inserts a new item in a list by doing a chained animation (first making the vertical space for the item and then fading in the item).</p>
+
+<pre>
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;!-- Combo-handled YUI JS files: --&gt; 
+&lt;script type="text/javascript" src="http://yui.yahooapis.com/combo?
+2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&#038;2.6.0/build/animation/
+animation-min.js"&gt;&lt;/script&gt; 
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;ul id='my-list'&gt;
+&lt;li&gt;Existing Item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br/&gt;
+
+&lt;a href="#" onClick="return addItem(event);"&gt;Add Item&lt;/a&gt;
+
+&lt;script&gt;
+function addItem(event) {
+	// Get the list element
+	var ulElement = YAHOO.util.Dom.get('my-list');
+
+	// Create and append an li element
+	var liElement = document.createElement('li');
+	YAHOO.util.Dom.setStyle(liElement, 'overflow', 'hidden');
+	YAHOO.util.Dom.setStyle(liElement, 'height', '0px');
+	YAHOO.util.Dom.setStyle(liElement, 'opacity', '0.0');
+	ulElement.appendChild(liElement);
+
+	// Create and append a div element
+	var divElement = document.createElement('div');
+	divElement.innerHTML = 'Hello World';
+	liElement.appendChild(divElement);
+
+	// Determine size of div
+	var region = YAHOO.util.Dom.getRegion(divElement);
+	var height = region.bottom - region.top;
+
+	// Setup animations
+	var animInsert = new YAHOO.util.Anim(liElement, {
+		height: {
+			from: 0,
+			to: height
+		}
+	}, 0.4);
+
+	var animFadeIn = new YAHOO.util.Anim(liElement, {
+		opacity: {
+			from: 0.0,
+			to: 1.0
+		}
+	}, 0.8);
+
+	animInsert.onComplete.subscribe(function() {
+		YAHOO.util.Dom.setStyle(liElement, 'height', '');
+		YAHOO.util.Dom.setStyle(liElement, 'overflow', '');
+		animFadeIn.animate();
+	});
+	animFadeIn.onComplete.subscribe(function() {
+		YAHOO.util.Dom.setStyle(liElement, 'filter', '');
+	});
+
+	// Do it
+	animInsert.animate();
+}
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+
+<p class="q"><strong>What were the best and worst aspects of working with YUI on this project? Any frustrations?</strong></p>  <p>The best part is that YUI always works well across all major browsers saving us a lot of potential time tweaking javascript across browsers.  It was important to us to be able to support all the major browsers IE 6/7, FF 2/3, Safari, Chrome, and Opera.</p>  <p>After writing javascript code and using JSLint to verify it, there is normally very little time needed to tweak functionality across the major browsers using YUI (wish the same could be said though for layout/CSS issues which does often involve significant tweaking across browsers).</p>  <p>The long YUI namespaces still trip me up from time to time.  I refer back to the YUI documentation frequently just to get the right YUI namespace (is it <code>YUI.lang.Dom.get() </code>or <code>YUI.util.Dom.get()</code>?).  I realize we could create aliases for the long YUI namespaces but this seems like clutter to me.</p>  <p class="q"><strong>What are the next challenges you intend to tackle as you evolve Notifu?</strong></p>  <p>We just launched Notifu on 10/29/2008 as a public beta and have big plans going forward including&#8230;</p>  <ul> <li>Implementing Notifu as a widget across popular social and mobile platforms (like OpenSocial for example)</li>  <li>Adding the ability to receive message updates (replies, delivery failures, votes) via email, IM, SMS and phone.</li>  <li>Integrating with popular sources of contacts to avoid re-entering contacts in Notifu.</li> </ul>  </div>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/11/13/notifu/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/11/13/notifu/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/11/13/notifu/&amp;title=Implementation Focus: Notifu" title="bookmark Implementation Focus: Notifu in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/11/13/notifu/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/11/13/notifu/&amp;title=Implementation Focus: Notifu" title="post Implementation Focus: Notifu to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F11%2F13%2Fnotifu%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/11/13/notifu/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/11/13/notifu/"
+    dc:title="Implementation Focus: Notifu"
+    trackback:ping="http://www.yuiblog.com/blog/2008/11/13/notifu/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-271"><a href="/blog/2008/11/11/frontpage-and-yui3/" rel="bookmark" title="Permanent Link to The New Yahoo! Front Page and YUI 3.0">The New Yahoo! Front Page and YUI 3.0</a></h2>
+				<small>November 11, 2008 at 8:15 am by Nicholas C. Zakas | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a>, <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <a href="/blog/2008/11/11/frontpage-and-yui3/#comments" title="Comment on The New Yahoo! Front Page and YUI 3.0">33 Comments</a></small>
+						
+			<p><img src="http://ycorpblog.com/wp-content/uploads/2008/09/metro.jpg" alt="The new Yahoo! Front Page."></p>
+
+<p>At the beginning of this year, the <a href="http://yahoo.com/">Yahoo! Front Page</a> team embarked on an ambitious project to completely remake the face of the company. The goal was to make the Front Page into the most important starting point on the web while also showcasing Yahoo!&#8217;s commitment to openness. From the engineering team&#8217;s perspective, this meant turning the Front Page into a framework upon which Yahoo! and its partners could build new functionality and experiences rapidly.</p>
+
+<p>Thinking of the Front Page as an application framework led us down some very creative paths. On the front end, we quickly came to the conclusion that a JavaScript framework would have to be developed to run the page. Steve Carlson, my colleague and partner-in-crime on Front Page, and I then spent weeks hashing through use cases, developer needs, and design patterns. Instead of starting from scratch, we decided to start with the YUI 2.x-based framework we had used on <a href="http://my.yahoo.com/">My Yahoo!</a> and evolve it into a more complete solution. After reviews with various architects and stakeholders, we had a working design that we could implement. The only question left was which library to build the new framework on.</p>
+
+<p>The natural approach for building new JavaScript frameworks at Yahoo! is to start with YUI as a base, and that has typically meant the 2.x version. As an adjunct member of the YUI team, however, I was privy to some information surrounding the development of YUI 3. It turned out that YUI 3 was going to be developed simultaneous to our development of the new Front Page. I sat in on several reviews with YUI 3&#8242;s principal architects Adam Moore and Matt Sweeney, talking through some of their plans for the library. Their departure from the approach used for the 1.x and 2.x releases of the library made a lot of sense to me and seemed like a natural fit for what we were doing on the Front Page. Steve and I both felt that building on YUI 3 would make implementing our design much easier based on several goals that we had for the framework:</p>
+
+<ol><li><strong>Eliminate global dependencies.</strong> We wanted each part of the page to operate separately from all of the others. Each part should have no knowledge of what else is on the page and therefore can&#8217;t depend on objects to be globally available. The 2.x library is based on the global YAHOO object, which we would have had to abstract away; the 3.x concept of YUI instances that could be individually manipulated worked perfectly to achieve this goal.</li>
+<li><strong>Make it small, make it fast.</strong> The Front Page can&#8217;t afford to be slow, so we needed to have as little code as possible to get everything up and running. YUI 3 impressed us with its organization into small, atomic units that allowed us to specifically include parts of the library that we wanted while eliminating parts that were unnecessary. Further, one of the goals of YUI 3 was to optimize for runtime execution and make it faster than the 2.x version. Once again, YUI 3&#8242;s approach was directly in line with the Front Page&#8217;s goals.</li>
+<li><strong>Create version independence.</strong> From the start, we didn&#8217;t want to have dependencies on specific versions of YUI components as this can lead to maintenance issues. What we really wanted was for each part of the page to be able to use whatever version of the components that they wanted. The sandboxing feature of YUI 3 opened up the possibility of having two (or more) YUI instances each loading different versions of various components while not interfering with each other.</li> 
+<li><strong>Allow code portability.</strong> Having worked at Yahoo! for a combined five years, Steve and I knew that anything we put on a Yahoo! property could be a candidate for porting to someplace else. We knew that this possibility meant the code had to stand on its own and not make assumptions about the environment in which it was placed. We thought about the most difficult environment possible: a locked-down browser environment where the JavaScript code has no direct access to the DOM. Since YUI 3 can abstract away the DOM through its Node interface, we had the entrypoint necessary to make this requirement a reality.</li>
+<li><strong>Be forward compatible.</strong> The project to create a new Front Page is an incredibly long one and we wanted to be as forward-looking as possible. We knew that if we created the framework on YUI 2.x that we&#8217;d be hard pressed to get time to upgrade later on. By building on YUI 3 from the start, we eliminated the need for developing an upgrade path later on.</li></ol>
+
+<p>The YUI 3 story was incredibly compelling to us and was clearly inline with all that we had hoped to achieve in developing the new Front Page. Our recommendation wasn&#8217;t without controversy, however, as YUI 3 was just beginning development. This meant not only was there very little usable code but there was also no documentation. Further, our developers were already familiar with the 2.x version of the library and not at all with the 3.x version. Both teams knew that the only way to make this process work was full cooperation with each other.</p>
+
+<p>We setup weekly check-ins between the Front Page and YUI teams to track progress, bugs, and determine which features from 2.x to port next. In essence, the new Front Page and YUI 3 were developed hand-in-hand in a mutually beneficial relationship. The YUI team provided regular drops of code completely out of their planned release cycle and the Front Page team, in turn, provided feedback on what was and wasn&#8217;t working with developers. There were some growing pains for both teams as that feedback sometimes resulted in interface changes, but ultimately we all knew that this was making both products better.</p>
+
+<p>What began in January 2008 as two separate projects, the new Front Page and YUI 3, has turned into a joint effort to create the best start experience on the web and the best front end library for web developers. With each project informing the other, we&#8217;ve seen <a href="http://ycorpblog.com/2008/09/17/testing-testing-a-new-yahoo-com/">the new Front Page go into testing</a> and <a href="/blog/2008/08/13/yui3pr1/">the YUI team publish its first preview release of YUI 3.0</a> in the past couple of months. Both represent major steps forward in their respective parts of the company and neither would have been possible without the other.</p>
+
+<p>The Front Page team is proud to have the first site running completely on YUI 3; if it works for us and our strict requirements and scale, we think there&#8217;s a good chance it will work for you.</p>
+
+<p><em><strong>Note:</strong> The new Yahoo! Front Page is in bucket testing right now and there&#8217;s no way to self-select into the bucket test.</em></p>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/&amp;title=The New Yahoo! Front Page and YUI 3.0" title="bookmark The New Yahoo! Front Page and YUI 3.0 in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/&amp;title=The New Yahoo! Front Page and YUI 3.0" title="post The New Yahoo! Front Page and YUI 3.0 to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F11%2F11%2Ffrontpage-and-yui3%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/"
+    dc:title="The New Yahoo! Front Page and YUI 3.0"
+    trackback:ping="http://www.yuiblog.com/blog/2008/11/11/frontpage-and-yui3/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-254"><a href="/blog/2008/11/10/sdl/" rel="bookmark" title="Permanent Link to Implementation Focus: SDL">Implementation Focus: SDL</a></h2>
+				<small>November 10, 2008 at 12:57 pm by Eric Miraglia | In <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <span>Comments Off</span></small>
+						
+			<div class="interview"> 	<div class="intro"> 		<p>Stuart Grimshaw, Martin Smyllie and Liam Jolly of <a href="http://www.sdl.com/en/">SDL</a> have been integrating YUI into the framework that underlies their enterprise-level Global Information Management products.  As they prepare for the first production deployment of this framework, known internally as the &#8220;Common Enterprise Application Framework&#8221; (CEAF), they took some time to discuss with us how the project is going and how their work with YUI has turned out so far.</p> 		 	</div>  <p class="q"><strong>Tell us a little bit about SDL.  What are your core lines of business?</strong></p>  <p>SDL is the world leader in Global Information Management. We provide desktop and enterprise software and  localization services to help corporations create and maintain all multilingual content.  </p>    <p class="q"><strong>What kinds of web applications do you develop at SDL?  What JavaScript frameworks do you use across the spectrum of your projects?</strong></p>  <p>The web applications we develop are for corporate customers who are looking to manage multilingual assets such as terminology, previously translated content, and dictionaries. Most of our enterprise applications have a web front end. For example, <a href="http://www.sdl.com/en/products/global-ams/Global_ams.asp">Global AMS</a> enables a system administrator to manage users and the profiles and rules available to those users. Global AMS is the first SDL application to use CEAF and YUI.</p>  <p>Historically, our other web applications have used our own bespoke JS frameworks written for each application. We haven&#8217;t really used any of the other frameworks.</p>    <p class="q"><strong>YUI is used in your framework (CEAF), which is part of your recently-released <a href="http://www.sdl.com/en/products/global-ams/Global_ams.asp">Global AMS</a> product.  How are you using YUI in these applications?</strong></p>  <p>We are trying to give all our products a similar look and feel so that the user experience is consistent across the whole range of products. YUI helps us by providing a common set of widgets for developers to use.</p>  <p>CEAF allows the developers to specify in the configuration of an application what elements should be available on each page. For example, that a page will have a toolbar with buttons that add new objects to the system and a table with a list of languages which must have a context menu so that users can interact with the data being shown. YUI allows us to easily turn that configuration in to UI that users can interact with. Even the forms that don&#8217;t fit this model are easier because the YUI widgets and the widgets we build on top of them mean the developer can concentrate on what the form is doing rather than how it looks.</p>  <p><img src="http://yuiblog.com/assets/sdl-dialog.png" alt="Dialog, Tabs and other YUI controls in use on SDL's Global AMS."></p>  <p>We use the <a href="http://developer.yahoo.com/yui/container/dialog">Dialog widget</a> the most. Each object within the system is represented at some point on a YUI-based <a href="http://developer.yahoo.com/yui/container/dialog/">Dialog</a>, either when it&#8217;s being created or edited. It might sound insignificant in that one sentence but most objects can be represented using the default dialog class and very few require anything more than that.</p>  <p>We send the bare minimum HTML to the client until more is requested. Dialog boxes are all loaded on the fly using the <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a> before being cached if the data would be useful later on.</p>  <p>We use the <a href="http://developer.yahoo.com/yui/layout/">Layut Manager</a> to build the basic page layout and to give the application a known starting point for all its styles. The page is split into three and we use <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> to load the main page element with data from the server.</p>  <p><img src="http://yuiblog.com/assets/sdl-menu.png" alt="The YUI Context Menu in use on SDL's Global AMS."></p>  <p class="q"><strong>Why YUI?  There are lots of good options out there &mdash; what was it about YUI that made it a good fit for these applications?</strong></p>  <p>We also looked quite seriously at Dojo, but in the end YUI ticked more boxes. YUI had better documentation, the weight of Yahoo! behind it and a massive community.</p>  <p>We like the mix of <a href="http://developer.yahoo.com/yui/docs/">API documentation</a>, <a href="http://developer.yahoo.com/yui/examples/calendar/quickstart.html">getting-started tutorials</a> and more <a href="http://developer.yahoo.com/yui/examples/get/get-script-basic.html">advanced examples</a>. So much so that we&#8217;ve adopted the same model for our developer documentation we do for CEAF.</p>  <p class="q"><strong>What&#8217;s next for you and your web team at SDL?</strong></p>  <p>The release of Global AMS was just the first of our products to use CEAF and we&#8217;re continuing to build other applications on CEAF.</p>  <p>We&#8217;ve just finished integrating 2.5.2 of the YUI framework, upgrading from version 2.3.1. We can&#8217;t just upgrade to the latest and greatest version of YUI as soon as it&#8217;s available, so this means we&#8217;re a couple of versions out of step. This is why we keep pestering about adding version numbers to the API docs, so we know the method is available in a specific version. This work will also let us switch versions of YUI more easily in the future; we had to customise some of the early widgets (the table in particular) but that&#8217;s no longer the case in 2.5.2.</p>  <p>We&#8217;re adding new widgets of our own to the CEAF framework such as a file upload widget, an implementation of the drag and drop control for personalising data tables and multi-select boxes.</p>   </div>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/11/10/sdl/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/11/10/sdl/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/11/10/sdl/&amp;title=Implementation Focus: SDL" title="bookmark Implementation Focus: SDL in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/11/10/sdl/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/11/10/sdl/&amp;title=Implementation Focus: SDL" title="post Implementation Focus: SDL to reddit">reddit!</a></p>
+			<!--<p class="tags">Tags: <a href="http://technorati.com/tag/sdl" title="See the Technorati tag page for 'sdl'." rel="tag">sdl</a>, <a href="http://technorati.com/tag/yui" title="See the Technorati tag page for 'yui'." rel="tag">yui</a>, <a href="http://technorati.com/tag/implmentations" title="See the Technorati tag page for 'implmentations'." rel="tag">implmentations</a>, <a href="http://technorati.com/tag/globalams" title="See the Technorati tag page for 'globalams'." rel="tag">globalams</a></p>-->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F11%2F10%2Fsdl%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/11/10/sdl/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/11/10/sdl/"
+    dc:title="Implementation Focus: SDL"
+    trackback:ping="http://www.yuiblog.com/blog/2008/11/10/sdl/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-265"><a href="/blog/2008/10/28/ylastic/" rel="bookmark" title="Permanent Link to Implementation Focus: Ylastic">Implementation Focus: Ylastic</a></h2>
+				<small>October 28, 2008 at 12:12 pm by Eric Miraglia | In <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <a href="/blog/2008/10/28/ylastic/#comments" title="Comment on Implementation Focus: Ylastic">1 Comment</a></small>
+						
+			<div class="interview">
+<div class="intro">
+<em><p><img src="http://yuiblog.com/assets/ylastic_pchaganti.png" alt="Prabhakar Chaganti of Ylastic." width="200"  hspace="10" vspace="5" align="right" />Prabhakar Chaganti is the founder and CTO of  the Atlanta based start-up <a href="http://ylastic.com/">Ylastic</a>.</p><p>He is a tech entrepreneur with a wide variety of interests, especially projects involving Ruby and Erlang. He won the community choice award in the 2006 VMware Global Ultimate Virtual Appliance Challenge.</p>
+<p>Prabhakar is the author of two recent books &mdash; GWT Java AJAX Programming and Xen Virtualization, and he is currently authoring an introductory series of articles on <a href="http://www.ibm.com/developerworks/architecture/library/ar-cloudaws1/">Cloud Computing with AWS</a> for IBM Developerworks.</p>
+</em>
+</div>
+
+<p><strong>1.  What is Ylastic, and what interested you in creating a unified interface into Amazon&#8217;s cloud computing services?</strong></p>
+
+<p>Ylastic is a single unified user interface to the the AWS cloud computing environment &mdash; S3, EC2, SQS and SimpleDB. We were initially working on a video creation startup and trying to use AWS as our platform and used a bunch of free tools and home brewed scripts to manage the environment. It quickly became a mess as we were spending way too much time trying to see where we were each day. We needed to track our instances, manage videos being uploaded to buckets, view the messages in queues for debugging and use SDB for metadata. We also needed a way to monitor the AWS status dashboard so we could be proactive if one of the services was having any issues, and also to track what each one of was doing so we didn&#8217;t step on each other&#8217;s toes. The existing tools were able to give us some of this info, but there was no simple way to do this without tying ourselves into knots and wasting valuable time with these issues which could be put to better use working on our own app. That&#8217;s when a light bulb went off in our heads that maybe we were building the wrong product. We decided to scratch our own itch and build something that would be useful for managing an user&#8217;s interactions with AWS.</p>
+
+<p><strong>2.  You&#8217;ve made extensive use of YUI throughout the Ylastic user interface.  Tell us a little bit about your design goals for the UI and how you took advantage of YUI to achieve those goals.</strong></p>
+<p>Our main design goals for the UI were:</p>
+  <ul>
+    <li><em>Easy to build:</em> This was very important as we wanted to build it fast and get to market. YUI is a  large and comprehensive framework, but once you &quot;get it&quot; and understand the patterns of usage, it is very easy to use.</li>
+    <li>
+      <em>Readily available components:</em> Access to a readily available, well tested and reliable component library. We early on decided that the main component that we would need for showing the various pieces of AWS information would be a table control. YUI provides a bunch of reliable and tested components out of the box and the <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> is one of them. This is a very versatile component and has handled everything we have thrown at it with ease. We use DataTables on pretty much every page of the app. We use AJAX everywhere via the <a href="http://developer.yahoo.com/yui/datasource/">DataSource</a>/<a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>, <a href="http://developer.yahoo.com/yui/logger/">Logger</a> for debugging, <a href="http://developer.yahoo.com/yui/container/">Container</a> with <a href="http://developer.yahoo.com/yui/container/panel/">Panels</a> and <a href="http://developer.yahoo.com/yui/container/dialog/">Dialogs</a> for messages and forms, <a href="http://developer.yahoo.com/yui/reset/">Reset</a>/<a href="http://developer.yahoo.com/yui/fonts/">Fonts</a>/<a href="http://developer.yahoo.com/yui/base/">Base</a>/<a href="http://developer.yahoo.com/yui/grids/">Grids CSS</a> for page layout, <a href="http://developer.yahoo.com/yui/tabview/">TabView</a> for preferences, <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete</a> for search filtering, <a href="http://developer.yahoo.com/yui/animation/">Animation</a> for effects and <a href="http://developer.yahoo.com/yui/dom/">Dom</a> and <a href="http://developer.yahoo.com/yui/selector/">Selector</a> for DOM manipulation.</li>
+    <li>
+      <em>Work in Firefox and Safari:</em> We wanted to support these two browsers out of the box as a lot of the people that use AWS seem to be using one of them. Support for Internet Explorer was not a requirement initially, but we intend to fully support it for future versions. YUI has worked pretty well for us in both the browsers with no issues.</li>
+    <li>
+      <em>Look good:</em> The UI needed to have a nice clean look which was unified across all the components. We did not want a mix and match look and feel. The default Sam Skin for YUI is used for our application.</li>
+    <li>
+      <em>Support:</em> We also needed some support for the framework. It did not have to be commercial but we wanted a framework that had an enthusiastic community and active development. The <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YUI forum</a> has been a fantastic resource for us and very helpful. </li>
+    </ul>
+  <p>You can see the Ylastic in action using YUI on our <a href="http://ylastic.com/screencasts.html">screencasts</a>.</p>
+  <p><strong>3.  What implementation piece with YUI are you most proud of from a code/engineering perspective?</strong> </p>
+<p>Ylastic provides a dashboard which is the first page that our users see when they login. This page displays the current state of your entire AWS environment along with the service health status. There are four custom panels, one each for EC2, S3, SQS and SimpleDB displaying the relevant info for each service, and a datatable that displays the current service health, as you can see in the screenshot below. There is a lot of stuff going on in the background of this page including multiple datasources for retrieving the information asynchronously, a loading modal dialog, a monitor that knows when all the info has been retrieved, animation to fade in the panels as data arrives, and dom manipulation. Last but not the least, the page layout had to work correctly in both Safari and FF. YUI provided all the right tools and we were able to tie everything together and get it all to work.</p>
+
+<p><a href="http://ylastic.com/"><img src="http://yuiblog.com/assets/ylastic_dashboard.png" alt="The YUI DataTable and other components on the Ylastic Dashboard." width="510" height="420" /></a></p>
+
+<p><strong>4.  What lessons did you learn about working with YUI on a challenging project that might be of interest/use to other YUI developers?</strong></p>
+<p>Spend some time up front prototyping and playing with the various components before doing any serious development work. This will really help you get familiar with the framework. Don&#8217;t be afraid to dig in to the source code for YUI, which is well commented. The code is of a very high quality and you can learn a lot about using JavaScript efficiently by looking at the patterns used by the YUI team.</p>
+
+<p><strong>5.  As YUI veterans at this point, what advice or wish list do you have for the YUI development team?</strong></p>
+<p>The YUI team has done a great job of listening to the users and constantly improving the various components. </p>
+<p>We would like to see more complex samples/examples for the various components. It would also be nice to have a cookbook for YUI, which shows off code snippets for common functionality.</p>
+<p> In case of the datatable, this would provide a single place where you can quickly determine how to update a cell, delete a row, and so on. This will really help both new users and experienced users by providing all the important information in one place, may be even a wiki? The forums are a good resource but the volume of questions and usage is beginning to make it a little difficult to sort and search for things. </p>
+<p><strong>6.  What&#8217;s next for the Ylastic frontend&#8217;s evolution?</strong></p>
+<p>We are already working on supporting the iPhone for Ylastic and just posted a <a href="http://blog.ylastic.com/?p=63">sneak preview</a> on our blog. We intend to work on supporting other moble platforms next, and we are planning on experimenting with the YUI for this. We are currently running on YUI 2.5.2, and intend to move over to the 3.x when it is released.</p>
+</div>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/10/28/ylastic/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/10/28/ylastic/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/10/28/ylastic/&amp;title=Implementation Focus: Ylastic" title="bookmark Implementation Focus: Ylastic in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/10/28/ylastic/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/10/28/ylastic/&amp;title=Implementation Focus: Ylastic" title="post Implementation Focus: Ylastic to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F10%2F28%2Fylastic%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/10/28/ylastic/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/10/28/ylastic/"
+    dc:title="Implementation Focus: Ylastic"
+    trackback:ping="http://www.yuiblog.com/blog/2008/10/28/ylastic/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-262"><a href="/blog/2008/10/21/buzillions/" rel="bookmark" title="Permanent Link to Implementation Focus Update: Buzillions.com/PowerReviews">Implementation Focus Update: Buzillions.com/PowerReviews</a></h2>
+				<small>October 21, 2008 at 4:19 am by Eric Miraglia | In <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <span>Comments Off</span></small>
+						
+			<p><a href="http://www.buzzillions.com/4294811225_4294811422_nz_vegan_product_reviews"><img src="http://yuiblog.com/assets/buzillions-panel.png" alt="The YUI Overlay on Buzillions.com; click through to check out their redesign using YUI 2.6.0." width="510" height="276" /></a></p>
+
+<p>Jim Morris, VP for the Buzillions Platform at PowerReviews, wrote in to tell us that Buzillions launched a major redesign recently, including a comprehensive update to YUI 2.6.0. A dozen YUI components are exercised throughout the site.  We first wrote about Jim&#8217;s team and their work <a href="/blog/2006/10/13/powerreviews/">more than two years ago</a> &mdash; it&#8217;s great to see how their product, and its use of YUI, has evolved over time.</p>
+
+<p>Here&#8217;s a <a href="http://www.buzzillions.com/4294811225_4294811422_nz_vegan_product_reviews">Vegan Product Reviews section</a> Jim set up for me.  Note the smooth use of YUI Animation and Overlays when you hover over a product image.</p>
+
+<p>Buzillions.com is a consumer reviews portal; its underlying platform is used by online vendors around the world.</p>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/10/21/buzillions/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/10/21/buzillions/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/10/21/buzillions/&amp;title=Implementation Focus Update: Buzillions.com/PowerReviews" title="bookmark Implementation Focus Update: Buzillions.com/PowerReviews in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/10/21/buzillions/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/10/21/buzillions/&amp;title=Implementation Focus Update: Buzillions.com/PowerReviews" title="post Implementation Focus Update: Buzillions.com/PowerReviews to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F10%2F21%2Fbuzillions%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/10/21/buzillions/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/10/21/buzillions/"
+    dc:title="Implementation Focus Update: Buzillions.com/PowerReviews"
+    trackback:ping="http://www.yuiblog.com/blog/2008/10/21/buzillions/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-234"><a href="/blog/2008/07/25/accordionview/" rel="bookmark" title="Permanent Link to AccordionView Widget for YUI from Marco van Hylckama Vlieg">AccordionView Widget for YUI from Marco van Hylckama Vlieg</a></h2>
+				<small>July 25, 2008 at 6:08 am by Eric Miraglia | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a>, <a href="/blog/category/yui-implementations/" title="View all posts in YUI Implementations" rel="category tag">YUI Implementations</a> | <a href="/blog/2008/07/25/accordionview/#comments" title="Comment on AccordionView Widget for YUI from Marco van Hylckama Vlieg">27 Comments</a></small>
+						
+			<p><a href="http://www.i-marco.nl/weblog/yui-accordion/"><img src="http://yuiblog.com/assets/accordionview.png" alt="The AccordionView Widget based on YUI, by Marco van Hylckama Vlieg" width="280" height="202" align="right" hspace="10"></a><a href="http://www.i-marco.nl/weblog/">Marco van Hylckama Vlieg</a>, author of the YUI-based Dark Matter theme for Pixelpost (<a href="http://www.pixelpost.org/extend/templates/dark-matter/">free version</a> | <a href="http://darkmatter-template.com/">pro version</a>), is back with another outstanding contribution to the YUI ecosystem: The new <a href="http://www.i-marco.nl/weblog/yui-accordion/">AccordionView Widget</a>.</p>
+
+<p>We&#8217;ve written about a number of YUI-based accordions over the years, but this may be the most complete and the most consistent with YUI&#8217;s own widget style. Visually and syntactically, Marco&#8217;s accordion feels part and parcel with other YUI widgets you may be using.</p>
+
+<p>Markup for the widget begins with an unordered list:</p>
+
+<pre>&lt;ul id="mymenu" class="yui-accordionview"&gt;
+    &lt;li class="yui-accordion-panel"&gt;
+        &lt;a class="yui-accordion-toggle" href="#"&gt;Item 1&lt;/a&gt;
+            &lt;div  class="yui-accordion-content"&gt;
+                &lt;!--content goes here--&gt;
+            &lt;/div&gt;
+     &lt;/li&gt;
+
+    &lt;li class="yui-accordion-panel"&gt;
+        &lt;a class="yui-accordion-toggle" href="#"&gt;Item 2&lt;/a&gt;
+            &lt;div  class="yui-accordion-content"&gt;
+                &lt;!--content goes here--&gt;
+            &lt;/div&gt;
+     &lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+<p>Once markup is in place, you can instantiate the widget:</p>
+
+<pre>var accordion = new YAHOO.widget.AccordionView('mymenu', options);</pre>
+
+<p>According to Marco&#8217;s documentation page, AccordionView supports the following options:</p>
+
+<ul>
+    <li><strong>width</strong>: css value for width including unit (example: &#8217;400px&#8217;, &#8217;15em&#8217;, etc.)</li>
+    <li><strong>expandItem</strong>: index of item to expand at initialization, default is none. 0 is the first, 1 the second, etc.</li>
+    <li><strong>animationSpeed</strong>: speed in seconds for animation. The default is 0.7</li>
+    <li><strong>animate</strong>: true or false, default is true</li>
+
+    <li><strong>effect</strong>: YUI Animation effect to use on animation. See <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Easing.html">the documentation on YAHOO.util.Easing</a>. Default is YAHOO.util.Easing.easeBoth</li>
+    <li><strong>collapsible</strong>: true or false, whether the whole thing can be collapsed or not, default is true</li>
+    <li><strong>expandable</strong>: true or false, whether the whole thing can expand (true) or act as an accordion where only one item can be open (false). default is false</li>
+    <li><strong>hoverActivated</strong>: true or false, when set to true, the items are activated on hover. Note that this activates on click ALSO in order to keep keyboard navigation working.</li>
+</ul>
+
+<p>Marco calls AccordionView a &#8220;work in progress&#8221;; you can give him feedback on how it&#8217;s working for you and what features you&#8217;d like to see added or refined <a href="http://www.i-marco.nl/weblog/archive/2008/07/20/yui_powered_javascript_accordi">on his blog</a>.</p>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2008/07/25/accordionview/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2008/07/25/accordionview/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2008/07/25/accordionview/&amp;title=AccordionView Widget for YUI from Marco van Hylckama Vlieg" title="bookmark AccordionView Widget for YUI from Marco van Hylckama Vlieg in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2008/07/25/accordionview/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2008/07/25/accordionview/&amp;title=AccordionView Widget for YUI from Marco van Hylckama Vlieg" title="post AccordionView Widget for YUI from Marco van Hylckama Vlieg to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2008%2F07%2F25%2Faccordionview%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2008/07/25/accordionview/"
+    dc:identifier="http://www.yuiblog.com/blog/2008/07/25/accordionview/"
+    dc:title="AccordionView Widget for YUI from Marco van Hylckama Vlieg"
+    trackback:ping="http://www.yuiblog.com/blog/2008/07/25/accordionview/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		
+		<a href="/blog/category/yui-implementations/page/4/" >&laquo; Previous Page</a> &#8212; <a href="/blog/category/yui-implementations/page/6/" >Next Page &raquo;</a>		</div>
+
+<!-- begin footer -->
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+		  <div id="twitter">
+			<h3>YUI Library on Twitter</h3>
+				<ul class="twitter">
+                	<li><a href="http://twitter.com/yuilibrary">@yuilibrary Twitter feed</a></li>
+                    <li><a href="https://twitter.com/yuilibrary/yui-team/members">YUI Devs on Twitter</a></li>
+                </ul>
+          </div>
+
+ 							<div class="translation">
+					<h3>Translate</h3>
+						
+<!--FLAG_BAR_BEGIN--><div id="translation_bar"><map id="gltr_flags_map" name="gltr_flags_map"><area shape='rect' coords='0,0,16,11' href='/blog/index.php/category/yui-implementations/page/5' id='flag_en'   title='English'/><area shape='rect' coords='20,0,36,11' href='/blog/index.php/it/category/yui-implementations/page/5' id='flag_it'   title='Italian'/><area shape='rect' coords='40,0,56,11' href='/blog/index.php/ko/category/yui-implementations/page/5' id='flag_ko'   title='Korean'/><area shape='rect' coords='60,0,76,11' href='/blog/index.php/zh-CN/category/yui-implementations/page/5' id='flag_zh-CN'   title='Chinese (Simplified)'/><area shape='rect' coords='80,0,96,11' href='/blog/index.php/zh-TW/category/yui-implementations/page/5' id='flag_zh-TW'   title='Chinese (Traditional)'/><area shape='rect' coords='100,0,116,11' href='/blog/index.php/pt/category/yui-implementations/page/5' id='flag_pt'   title='Portuguese'/><area shape='rect' coords='120,0,136,11' href='/blog/index.php/de/category/yui-implementations/page/5' id='flag_de'   title='German'/><area shape='rect' coords='140,0,156,11' href='/blog/index.php/fr/category/yui-implementations/page/5' id='flag_fr'   title='French'/><area shape='rect' coords='0,15,16,26' href='/blog/index.php/es/category/yui-implementations/page/5' id='flag_es'   title='Spanish'/><area shape='rect' coords='20,15,36,26' href='/blog/index.php/ja/category/yui-implementations/page/5' id='flag_ja'   title='Japanese'/><area shape='rect' coords='40,15,56,26' href='/blog/index.php/ar/category/yui-implementations/page/5' id='flag_ar'   title='Arabic'/><area shape='rect' coords='60,15,76,26' href='/blog/index.php/ru/category/yui-implementations/page/5' id='flag_ru'   title='Russian'/><area shape='rect' coords='80,15,96,26' href='/blog/index.php/el/category/yui-implementations/page/5' id='flag_el'   title='Greek'/><area shape='rect' coords='100,15,116,26' href='/blog/index.php/nl/category/yui-implementations/page/5' id='flag_nl'   title='Dutch'/><area shape='rect' coords='120,15,136,26' href='/blog/index.php/bg/category/yui-implementations/page/5' id='flag_bg'   title='Bulgarian'/><area shape='rect' coords='140,15,156,26' href='/blog/index.php/cs/category/yui-implementations/page/5' id='flag_cs'   title='Czech'/><area shape='rect' coords='0,30,16,41' href='/blog/index.php/hr/category/yui-implementations/page/5' id='flag_hr'   title='Croatian'/><area shape='rect' coords='20,30,36,41' href='/blog/index.php/da/category/yui-implementations/page/5' id='flag_da'   title='Danish'/><area shape='rect' coords='40,30,56,41' href='/blog/index.php/fi/category/yui-implementations/page/5' id='flag_fi'   title='Finnish'/><area shape='rect' coords='60,30,76,41' href='/blog/index.php/hi/category/yui-implementations/page/5' id='flag_hi'   title='Hindi'/><area shape='rect' coords='80,30,96,41' href='/blog/index.php/pl/category/yui-implementations/page/5' id='flag_pl'   title='Polish'/><area shape='rect' coords='100,30,116,41' href='/blog/index.php/ro/category/yui-implementations/page/5' id='flag_ro'   title='Romanian'/><area shape='rect' coords='120,30,136,41' href='/blog/index.php/sv/category/yui-implementations/page/5' id='flag_sv'   title='Swedish'/><area shape='rect' coords='140,30,156,41' href='/blog/index.php/no/category/yui-implementations/page/5' id='flag_no'   title='Norwegian'/><area shape='rect' coords='0,45,16,56' href='/blog/index.php/tl/category/yui-implementations/page/5' id='flag_tl'   title='Filipino'/><area shape='rect' coords='20,45,36,56' href='/blog/index.php/iw/category/yui-implementations/page/5' id='flag_iw'   title='Hebrew'/><area shape='rect' coords='40,45,56,56' href='/blog/index.php/id/category/yui-implementations/page/5' id='flag_id'   title='Indonesian'/><area shape='rect' coords='60,45,76,56' href='/blog/index.php/lv/category/yui-implementations/page/5' id='flag_lv'   title='Latvian'/><area shape='rect' coords='80,45,96,56' href='/blog/index.php/lt/category/yui-implementations/page/5' id='flag_lt'   title='Lithuanian'/><area shape='rect' coords='100,45,116,56' href='/blog/index.php/sr/category/yui-implementations/page/5' id='flag_sr'   title='Serbian'/><area shape='rect' coords='120,45,136,56' href='/blog/index.php/sl/category/yui-implementations/page/5' id='flag_sl'   title='Slovenian'/><area shape='rect' coords='140,45,156,56' href='/blog/index.php/uk/category/yui-implementations/page/5' id='flag_uk'   title='Ukrainian'/><area shape='rect' coords='0,60,16,71' href='/blog/index.php/vi/category/yui-implementations/page/5' id='flag_vi'   title='Vietnamese'/><area shape='rect' coords='20,60,36,71' href='/blog/index.php/th/category/yui-implementations/page/5' id='flag_th'   title='Thai'/><area shape='rect' coords='40,60,56,71' href='/blog/index.php/tr/category/yui-implementations/page/5' id='flag_tr'   title='Turkish'/><area shape='rect' coords='60,60,76,71' href='/blog/index.php/hu/category/yui-implementations/page/5' id='flag_hu'   title='Hungarian'/><area shape='rect' coords='80,60,96,71' href='/blog/index.php/is/category/yui-implementations/page/5' id='flag_is'   title='Icelandic'/><area shape='rect' coords='100,60,116,71' href='/blog/index.php/ms/category/yui-implementations/page/5' id='flag_ms'   title='Malay'/><area shape='rect' coords='120,60,136,71' href='/blog/index.php/fa/category/yui-implementations/page/5' id='flag_fa'   title='Persian'/></map><img style='border:0px;' src='http://www.yuiblog.com/blog/wp-content/plugins/global-translator/gltr_image_map.png' usemap='#gltr_flags_map'/></div><div id="transl_sign"></div><!--FLAG_BAR_END-->
+				</div>    
+             
+            
+		  <div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>	
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+						
+					<li>
+						<a href="/blog/category/accessibility" title="Posts and articles about accessibility">Accessibility Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/accessibility">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/accessibility">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2011/12/16/video-yuiconf2011-jeffcraig/">YUI Theater &#8212; Jeff Craig: &#8220;Demystifying Loader: Advanced Module Configuration&#8221; (31 min.)</a></li>
+					    		<li class="recent"><a href="/blog/2011/12/13/yui-open-hours-thurs-dec-15th/">YUI: Open Hours Thurs Dec 15th</a></li>
+					    		<li class="recent"><a href="/blog/2011/12/12/app-framework-350/">App Framework Changes in YUI 3.5.0</a></li>
+					    		<li class="recent"><a href="/blog/2011/12/12/yui-3-5-0-pr1-is-now-available-on-cdn/">YUI 3.5.0 PR1 Is Now Available</a></li>
+					    		<li class="recent"><a href="/blog/2011/12/08/video-yuiconf2011-allen/">YUI Theater &#8212; Allen Rabinovich: &#8220;YUI Calendar &#8211; A Case Study of Building Modules with Style&#8221; (47 min.)</a></li>
+					    		<li class="recent"><a href="/blog/2011/12/06/video-yuiconf2011-tivac/">YUI Theater &#8212; Pat Cavit: &#8220;Automating Website Optimizations&#8221; (32 min.)</a></li>
+					    		<li class="recent"><a href="/blog/2011/12/05/bulk-edi/">In the YUI 3 Gallery:  Bulk Editor Widget</a></li>
+					    		<li class="recent"><a href="/blog/2011/11/29/video-agileschools/">YUI Theater — Steve Peha: &#8220;Agile Schools &#8211; How Technology Saves Education&#8221; (44 min.)</a></li>
+					    		<li class="recent"><a href="/blog/2011/11/28/yui-open-hours-thurs-dec-1st/">YUI: Open Hours Thurs Dec 1st</a></li>
+					    		<li class="recent"><a href="/blog/2011/11/28/video-yuiconf2011-sdesai/">YUI Theater — Satyen Desai: &#8220;Livestand Learnings&#8221; (63 min.)</a></li>
+							</ul>
+			</div>
+			
+			<div id="ydn">
+			<h3>YUI Library</h3>
+				<ul>
+					<li><a href="http://yuilibrary.com/yui/docs/guides/">YUI Documentation</a></li>
+					<li><a href="http://yuilibrary.com/">YUI Project Resources</a></li>
+					<li><a href="http://yuilibrary.com/forum/">YUI Discussion Forums</a></li>
+                                        <li><a href="http://yuilibrary.com/theater/">YUI Theater</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2011/12/' title='December 2011'>December 2011</a>&nbsp;(7)</li>
+	<li><a href='/blog/2011/11/' title='November 2011'>November 2011</a>&nbsp;(12)</li>
+	<li><a href='/blog/2011/10/' title='October 2011'>October 2011</a>&nbsp;(4)</li>
+	<li><a href='/blog/2011/09/' title='September 2011'>September 2011</a>&nbsp;(9)</li>
+	<li><a href='/blog/2011/08/' title='August 2011'>August 2011</a>&nbsp;(6)</li>
+	<li><a href='/blog/2011/07/' title='July 2011'>July 2011</a>&nbsp;(7)</li>
+	<li><a href='/blog/2011/06/' title='June 2011'>June 2011</a>&nbsp;(8)</li>
+	<li><a href='/blog/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='/blog/2011/04/' title='April 2011'>April 2011</a>&nbsp;(10)</li>
+	<li><a href='/blog/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+	<li><a href='/blog/2011/02/' title='February 2011'>February 2011</a>&nbsp;(5)</li>
+	<li><a href='/blog/2011/01/' title='January 2011'>January 2011</a>&nbsp;(10)</li>
+	<li><a href='/blog/2010/12/' title='December 2010'>December 2010</a>&nbsp;(24)</li>
+	<li><a href='/blog/2010/11/' title='November 2010'>November 2010</a>&nbsp;(21)</li>
+	<li><a href='/blog/2010/10/' title='October 2010'>October 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/09/' title='September 2010'>September 2010</a>&nbsp;(17)</li>
+	<li><a href='/blog/2010/08/' title='August 2010'>August 2010</a>&nbsp;(18)</li>
+	<li><a href='/blog/2010/07/' title='July 2010'>July 2010</a>&nbsp;(8)</li>
+	<li><a href='/blog/2010/06/' title='June 2010'>June 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/05/' title='May 2010'>May 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/04/' title='April 2010'>April 2010</a>&nbsp;(22)</li>
+	<li><a href='/blog/2010/03/' title='March 2010'>March 2010</a>&nbsp;(22)</li>
+	<li><a href='/blog/2010/02/' title='February 2010'>February 2010</a>&nbsp;(16)</li>
+	<li><a href='/blog/2010/01/' title='January 2010'>January 2010</a>&nbsp;(8)</li>
+	<li><a href='/blog/2009/12/' title='December 2009'>December 2009</a>&nbsp;(9)</li>
+	<li><a href='/blog/2009/11/' title='November 2009'>November 2009</a>&nbsp;(29)</li>
+	<li><a href='/blog/2009/10/' title='October 2009'>October 2009</a>&nbsp;(14)</li>
+	<li><a href='/blog/2009/09/' title='September 2009'>September 2009</a>&nbsp;(12)</li>
+	<li><a href='/blog/2009/08/' title='August 2009'>August 2009</a>&nbsp;(4)</li>
+	<li><a href='/blog/2009/07/' title='July 2009'>July 2009</a>&nbsp;(5)</li>
+	<li><a href='/blog/2009/06/' title='June 2009'>June 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/05/' title='May 2009'>May 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/04/' title='April 2009'>April 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/03/' title='March 2009'>March 2009</a>&nbsp;(15)</li>
+	<li><a href='/blog/2009/02/' title='February 2009'>February 2009</a>&nbsp;(10)</li>
+	<li><a href='/blog/2009/01/' title='January 2009'>January 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2008/12/' title='December 2008'>December 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/11/' title='November 2008'>November 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/10/' title='October 2008'>October 2008</a>&nbsp;(16)</li>
+	<li><a href='/blog/2008/09/' title='September 2008'>September 2008</a>&nbsp;(4)</li>
+	<li><a href='/blog/2008/08/' title='August 2008'>August 2008</a>&nbsp;(9)</li>
+	<li><a href='/blog/2008/07/' title='July 2008'>July 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/06/' title='June 2008'>June 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/05/' title='May 2008'>May 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/04/' title='April 2008'>April 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/03/' title='March 2008'>March 2008</a>&nbsp;(7)</li>
+	<li><a href='/blog/2008/02/' title='February 2008'>February 2008</a>&nbsp;(10)</li>
+	<li><a href='/blog/2008/01/' title='January 2008'>January 2008</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/12/' title='December 2007'>December 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/11/' title='November 2007'>November 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+                    <li><a href="http://xianlandia.com">Christian Crumlish</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://ericmiraglia.com/">Eric Miraglia</a></li>
+					<li><a href="http://www.julienlecomte.net/blog/">Julien Lecomte</a></li>
+					<li><a href="http://lucassmith.name/">Luke Smith</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://techfoolery.com">Ross Harmes</a></li>
+                    <li><a href="http://wonko.com/">Ryan Grove</a></li>
+					<li><a href="http://schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://www.phpied.com/">Stoyan Stefanov</a></li>
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments that contribute toward the conversations on the blog. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://careers.yahoo.com/">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Log in</a></li>
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2006-2011 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+
+	<p><!-- 19 queries. 0.613 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1324303172" border="0" width="1" height="1" alt="visit" /></noscript>
+<script>
+YUI().use("get", function(Y) {
+	Y.Get.script("http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462");
+});
+</script>
+<!-- Yahoo! Web Analytics - All rights reserved -->
+<script type="text/javascript" src="http://d.yimg.com/mi/ywa.js"></script>
+<script type="text/javascript">
+/*globals YWA*/
+var YWATracker = YWA.getTracker("10001638119858");
+/*
+YWATracker.setDocumentName("");
+YWATracker.setDocumentGroup("");
+*/
+YWATracker.submit();
+</script>
+<noscript>
+<div><img src="http://a.analytics.yahoo.com/p.pl?a=10001638119858&amp;js=no"
+width="1" height="1" alt="" /></div>
+</noscript>
+
+</body>
+</html>

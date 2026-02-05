@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Automatic conversion from simple, accessible data tables to YUI Charts</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Automatic conversion from simple, accessible data tables to YUI Charts</li></ul>
+				<h1 class="yui3-u-7-8">Automatic conversion from simple, accessible data tables to YUI Charts</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">January 17, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" height="225" hspace="5" src="/blog-archive/assets/heilmann.jpg" vspace="5" width="300" /><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/blog-archive/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>. He has worked in web development for almost 9 years for several agencies and .coms and is currently a lead developer at Yahoo! in England. Christian is a frequent speaker on the conference circuit in the UK and Europe; you can find some of his writing <a href="/blog-archive/blog/2007/01/17/event-plan/">here on YUIBlog</a> as well as on his personal blog at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</div>
+		<p>Charts are a great idea to make rows and rows of boring numbers easier to understand and to take in &mdash; for people that can see them. However, not all of your site's visitors can see and you'll also want to keep information you offer available for search engines. There are a lot of libraries on the web that allow you to create charts, but not many take this use case into consideration.<h2>In praise of data tables</h2>
+		<p>This is where data tables come into play. (<strong>Note:</strong> For the purposes of this article, I'm referring to pure HTML tables &mdash; not to rich UI controls like Jenny Han Donnelly's <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable Control</a>.) They are the perfect data construct in HTML as they are available both for people that can see and those who can't. Assistive technologies like screen readers offer a way to navigate tables and to read their information row-by-row and cell-by-cell. All you need to do to please everyone is to use the correct markup (including a few attributes you might not have used yet):<pre><code>&lt;table summary=&quot;Results of a survey of which animals people would like to see more on YDN&quot;&gt;
+  &lt;caption&gt;What animals would you like to see more?&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Animal&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Requests&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Kittens&lt;/td&gt;
+      &lt;td&gt;45331&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Puppies&lt;/td&gt;
+      &lt;td&gt;32323&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Elephants&lt;/td&gt;
+      &lt;td&gt;12345&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Badgers&lt;/td&gt;
+      &lt;td&gt;6546&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sharks (without lasers)&lt;/td&gt;
+      &lt;td&gt;223&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sharks (with lasers)&lt;/td&gt;
+      &lt;td&gt;2323&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre><p>The <code>summary</code> attribute tells assistive technology what this table is about and the <code>caption</code> shows up for all users. The <code>th</code> elements define what cells are headers and the <code>scope</code> attribute applies them to all the data cells they are connected to. In this case it means that "animal" gets read out before each animal and "requests" before each number. This means that even a visitor who cannot see will still know in row five what the information is about. All in all the table renders as:<table summary="Results of a survey of which animals people would like to see more on YDN">
+				<caption>What animals would you like to see more?</caption>
+				<thead>
+					<tr>
+						<th scope="col">Animal</th>
+						<th scope="col">Requests</th> </tr> </thead>
+				<tbody>
+					<tr>
+						<td>Kittens</td>
+						<td>45331</td> </tr>
+					<tr>
+						<td>Puppies</td>
+						<td>32323</td> </tr>
+					<tr>
+						<td>Elephants</td>
+						<td>12345</td> </tr>
+					<tr>
+						<td>Badgers</td>
+						<td>6546</td> </tr>
+					<tr>
+						<td>Sharks (without lasers)</td>
+						<td>223</td> </tr>
+					<tr>
+						<td>Sharks (with lasers)</td>
+						<td>2323</td> </tr> </tbody> </table> <p>Easy to understand, but not too pretty. And it can get boring. How about we use this information and create a tasty pie chart like the following (click on the image below to see the working example in action)?<p><a href="/blog-archive/assets/charttable/chartsexample.html"><img alt="The accessible table enhanced with a pie chart (image; click through to see working example)" border="0" height="536" src="/blog-archive/assets/charttable/chart-table.png" width="414" /></a><h2>Using table data to automatically generate charts</h2>
+		<p>In order to have the table be preceeded by a pie chart like this all you need is to add two scripts at the end of the document body and a class called <code>yui-table</code> to the table itself. For example:<pre><code>&lt;table class=&quot;yui-table&quot; summary=&quot;Results of a survey of what browser people love&quot;&gt;
+  &lt;caption&gt;What browser do you love?&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Browser&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Lovers&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MSIE&lt;/td&gt;
+      &lt;td&gt;221&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Firefox&lt;/td&gt;
+      &lt;td&gt;516&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Opera&lt;/td&gt;
+      &lt;td&gt;312&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Safari&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Omniweb&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lynx&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;script src=&quot;http://yui.yahooapis.com/2.4.1/build/yuiloader/yuiloader-beta-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;tablestoyuicharts.js&quot;&gt;&lt;/script&gt;</code></pre><p>This will show in a browser with the latest Flash plugin like this:<p><a href="/blog-archive/assets/charttable/chartsexample.html"><img alt="The accessible table enhanced with a pie chart (image; click through to see working example)" border="0" height="527" src="/blog-archive/assets/charttable/chart-table2.png" width="414" /></a><p>You can define the size of the chart in CSS by defining a width and height for each div element with a class of <code>yuichartfromtable</code>:<pre><code>div.yuichartfromtable{
+  width:300px;
+  height:300px;
+  margin:0 auto;
+}
+</code></pre><p>As for the scripts: the first script is the <a href="http://developer.yahoo.com/yui/loader">YUI Loader Utility</a> which allows you to pull in YUI components on-demand. This is great, as you don't need to add lots and lots of <code>script</code> elements but let the YUI Loader figure out what it needs. You can <a href="/blog-archive/assets/charttable/tablestoyuicharts.js">download the second script here</a>; if you care to know what is going on with it, check the following section. If you just want to use the script, then you're done :-).<h2>How does this work?</h2>
+		<p>The script to turn all tables with the class <code>yui-table</code> into charts is quite short, as it uses the newer YUI components that take a lot of the heavy lifting off you, especially the table-to-dataset conversion which is done by the <a href="http://developer.yahoo.com/yui/datasource">YUI DataSource Utility</a>. The full script is this:<pre><code>
+var tablestoYUIchartsplease = new YAHOO.util.YUILoader({
+  require: ['charts'],
+  onSuccess: function(){
+    var tables = YAHOO.util.Dom.getElementsByClassName('yui-table','table');
+    YAHOO.util.Dom.batch(tables,function(o){
+      var chartcontainer = document.createElement('div');
+      YAHOO.util.Dom.addClass(chartcontainer,'yuichartfromtable');
+      YAHOO.util.Dom.insertBefore(chartcontainer,o);
+      var data = new YAHOO.util.DataSource(o);
+      data.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
+      data.responseSchema = {fields:['response','count']};
+      YAHOO.widget.Chart.SWFURL = 'http://developer.yahoo.com/yui/build/charts/assets/charts.swf?_yuiversion=2.4.1';
+      var chart = new YAHOO.widget.PieChart(chartcontainer,data,{
+        categoryField:'response',
+        dataField:'count',
+        expressInstall:'http://developer.yahoo.com/yui/build/charts/assets/expressinstall.swf'
+      });
+    });
+  }
+});
+if(document.location.toString().indexOf('http')!==-1){
+  tablestoYUIchartsplease.insert();
+}</code></pre><p>Let's chunk it up and see what each section does:<pre><code>var tablestoYUIchartsplease = new YAHOO.util.YUILoader({
+  require: ['charts'],
+  onSuccess: function(){
+</code></pre><p>First up, we let the <a href="http://developer.yahoo.com/yui/loader">YUI Loader</a> do its magic: We instantiate a new loader, tell it we need the <a href="http://developer.yahoo.com/yui/charts">YUI Charts Control</a> and wait for the different script nodes to be generated and the components to be loaded before we continue. The loader tells us all is OK by firing the <code>onSuccess</code> event, which we use to execute an anonymous function that does all the other work.<pre><code>    var tables = YAHOO.util.Dom.getElementsByClassName('yui-table','table');
+    YAHOO.util.Dom.batch(tables,function(o){
+</code></pre><p>We use <a href="http://developer.yahoo.com/yui/dom">the YUI Dom Collection</a> to get all tables with the correct class and apply a function to each of these tables using the <code>batch</code> method. The method sends the current table as the parameter <code>o</code> to this function.<pre><code>      var chartcontainer = document.createElement('div');
+      YAHOO.util.Dom.addClass(chartcontainer,'yuichartfromtable');
+      YAHOO.util.Dom.insertBefore(chartcontainer,o);
+</code></pre><p>We create a new <code>div</code> element, give it a class of <code>yuichartfromtable</code> (to allow for styling) and insert the new element into the document before the table.<pre><code>      var data = new YAHOO.util.DataSource(o);
+      data.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
+      data.responseSchema = {fields:['response','count']};
+</code></pre><p>Then we allow the rather new <a href="http://developer.yahoo.com/yui/datasource">YUI DataSource Utility</a> to flex its binary muscles. While this is meant to wade through external data sources and JavaScript arrays for you, it also allows for a <code>responseType</code> of HTML table, which means it converts a table to a JavaScript object you can work with. As we're dealing here with a really simple table, all we need to do in terms of <code>responseSchema</code> is to define two fields: a <code>response</code> (what) and a <code>count</code> (how many). These three lines are all you need to convert the table to a dataset that both the <a href="http://developer.yahoo.com/yui/charts">YUI Charts Control</a> and the <a href="http://developer.yahoo.com/yui/datatable">YUI DataTable Control</a> can use.<pre><code>      YAHOO.widget.Chart.SWFURL = 'http://developer.yahoo.com/yui/build/charts/assets/charts.swf?_yuiversion=2.4.1';
+      var chart = new YAHOO.widget.PieChart(chartcontainer,data,{
+        categoryField:'response',
+        dataField:'count',
+        expressInstall:'http://developer.yahoo.com/yui/build/charts/assets/expressinstall.swf'
+      });
+</code></pre><p>Time for pie: we define the URL of the Flash movie that draws the pie and instantiate a new pie chart. We send the <code>div</code> we created earlier as the container, the <code>data</code> we retrieved from the table as the data to display and define a configuration object. This object has the <code>response</code> field as the categories and the <code>count</code> field as the data. The <code>expressinstall</code> defines what Flash movie to show if the visitor doesn't have the right Flash version.<pre><code>    });
+  }
+});
+if(document.location.toString().indexOf('http')!==-1){
+  tablestoYUIchartsplease.insert();
+}</code></pre><p>Almost done. All the script now needs to do is to call the <code>insert()</code> method of the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> &mdash; that gets the ball rolling. I've enclosed the method in an <code>if</code> statement that checks if the HTML is called up via HTTP or not as the Charts Control needs HTTP to work.<h2>Summary</h2>
+		<p>That's all you need to do to progressively enhance an accessible data table to turn them into a pie chart using the YUI Charts Control. We can extend this example to allow for several types of charts and to turn the tables into sortable data tables quite easily. If there is interest, drop us a comment.</div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

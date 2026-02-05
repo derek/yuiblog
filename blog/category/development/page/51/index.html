@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     Development Archive - YUI Blog - page 51	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Development Category Feed" href="/blog/category/development/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.8.2'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive paged category category-development category-2 paged-51 category-paged-51 yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		<ul class="breadcrumbs"><li class="front_page"><a href="//yuilibrary.com/">YUI</a></li><li><a href="/blog">Blog</a></li>Development<li></li></ul>
+
+		
+ 			
+							<h1>Blog: Category &#8216;Development&#8217;</h1>
+
+			
+							<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/52/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/50/" >Newer Entries &raquo;</a>    </div>
+</div>			
+									
+								<div class="post-2075 post type-post status-publish format-standard hentry category-css-101 category-development tag-block-formatting-contexts tag-css first-post">
+				
+						<h2 id="post-2075"><a href="/blog/2010/05/19/css-101-block-formatting-contexts/">CSS 101: Block Formatting Contexts</a></h2>
+					
+
+						<div class="entry">
+							<div class="authorbox gainLayout">
+<p>
+    <em><strong> <img style="margin-left:10px" align="right" alt="" src="http://www.gravatar.com/avatar/3f8729572facdeaae72b2d1afa32fb71?&#038;s=90" />About the author:</strong> Thierry Koblentz is a front-end engineer at Yahoo! <br /> He owns <a title="TJK Design" href="http://www.tjkdesign.com/">TJK Design</a>, <a title="Lightweight CSS framework" href="http://www.ez-css.org/">ez-css.org</a> and <a title="Interactive CSS tutorial" href="http://www.css-101.org/">css-101.org</a>. You can follow Thierry on Twitter at <a title="Thierry Koblentz on Twitter" href="http://twitter.com/thierrykoblentz">@thierrykoblentz</a>. </em>
+  </p>
+</div>
+<div class="intro" style="margin-top:15px">
+<p>
+    A block formatting context is a box that satisfies at least one of the following:
+  </p>
+<ul>
+<li>
+      the value of &#8220;float&#8221; is not &#8220;none&#8221;,
+    </li>
+<li>
+      the used value of &#8220;overflow&#8221; is not &#8220;visible&#8221;,
+    </li>
+<li>
+      the value of &#8220;display&#8221; is &#8220;table-cell&#8221;, &#8220;table-caption&#8221;, or &#8220;inline-block&#8221;,
+    </li>
+<li>
+      the value of &#8220;position&#8221; is neither &#8220;static&#8221; nor &#8220;relative&#8221;.
+    </li>
+</ul>
+<p style="margin-top:10px">
+    When it comes to the <a href="http://www.w3.org/TR/CSS21/visuren.html">visual formatting model</a> (this is how user agents process the <a href="http://www.w3.org/TR/CSS21/conform.html#doctree">document tree</a> for visual <a href="http://www.w3.org/TR/CSS21/media.html">media</a>), block formatting contexts are big players. So it is crucial for CSS authors to have a solid understanding of their relationship with the flow, floats, clear, and margins.
+  </p>
+</div>
+<h3>What does the spec say about&#8230;</h3>
+<h4>How block formatting contexts flow</h4>
+<p>The <a href="http://www.w3.org/TR/CSS21/visuren.html#positioning-scheme">positioning scheme</a> to which block formatting contexts belong is <a href="http://www.w3.org/TR/CSS21/visuren.html#normal-flow">normal flow</a>. Therefore, the &#8220;block&#8221; of a block formatting context is positioned in the flow of the page as you&#8217;d expect with <a href="http://www.w3.org/TR/CSS21/visuren.html#block-box">block</a> boxes, <a href="http://www.w3.org/TR/CSS21/visuren.html#inline-formatting">inline formatting</a> of <a href="http://www.w3.org/TR/CSS21/visuren.html#inline-box">inline</a> boxes, <a href="http://www.w3.org/TR/CSS21/visuren.html#relative-positioning">relative positioning</a> of block or inline boxes, and positioning of <a href="http://www.w3.org/TR/CSS21/visuren.html#run-in">run-in</a> boxes. Simply put, they are part of the page flow.</p>
+<h4>What triggers block formatting contexts</h4>
+<p>Section 9.4.1 says that the following will establish new block formatting contexts:</p>
+<blockquote>
+<ul>
+<li>floats, </li>
+<li>absolutely positioned elements, </li>
+<li>inline-blocks, </li>
+<li>table-cells, </li>
+<li>table-captions, </li>
+<li>elements styled with &#8220;overflow&#8221; (any value other than &#8220;visible&#8221;)</li>
+<li>elements styled with &#8220;display:flex&#8221; or &#8220;inline-flex&#8221; (flex boxes) </li>
+</ul>
+</blockquote>
+<p>But according to the <a href="http://www.w3.org/TR/css3-box/#block-level0"> CSS level 3 specification</a>, a block formatting context (a &#8220;flow root&#8221; in CSS3 speak) is created when the following condition is met:</p>
+<blockquote cite="http://www.w3.org/TR/css3-box/#block-level0">
+<ul>
+<li>
+      The value of &#8221; <a href="http://www.w3.org/TR/css3-box/#position">position</a>&#8221; is neither &#8220;static&#8221; nor &#8220;relative&#8221; (see <a href="http://www.w3.org/TR/css3-box/#CSS3POS" rel="biblioentry">[CSS3POS]</a>).
+    </li>
+</ul>
+</blockquote>
+<p>This definition means that <code>position:fixed</code> establishes a new block formatting context, too. This is not a miss in section 9.4.1, though; fixed positioning is a subcategory of absolute positioning (9.6.1) and <cite>references in the specification to an absolutely positioned element (or its box) imply that the element&#8217;s &#8221; <a href="http://www.w3.org/TR/CSS21/visuren.html#propdef-position">position</a>&#8221; property has the value &#8220;absolute&#8221; or &#8220;fixed&#8221; </cite>.</p>
+<p>Note that <code>display:table</code> does not establish block formatting contexts per se. But because it can generate <a href="http://www.w3.org/TR/CSS21/tables.html#anonymous-boxes">anonymous boxes</a>, one of them (with <code>display:table-cell</code>) establishes a new block formatting context. In other words, the trigger is the anonymous box, not <code>display:table</code>. This is something authors should keep in mind, because even if both styles establish new block formatting contexts (implicitly or explicitly), <code>clear</code> does not work the same with <code>display:table</code> as it does with <code>display:table-cell</code>.</p>
+<p>A final trigger is the <code>fieldset</code> element. Oddly enough, there was no information on www.w3.org about this behavior until the <a href="http://www.w3.org/TR/html5/the-xhtml-syntax.html#the-fieldset-element-0" title="The fieldset element is expected to establish a new block formatting context">HTML5</a> specification. There were browser bugs ( <a href="https://bugs.webkit.org/show_bug.cgi?id=3898#c9">Webkit</a>, <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=342531">Mozilla</a>) that mentioned this, but nothing &#8220;official&#8221;. Actually, even if fieldsets establish new block formatting contexts in most browsers, as per section 3.2 (UA conformance), authors were not supposed to take this for granted:</p>
+<blockquote cite="http://www.w3.org/TR/CSS21/conform.html">
+<p>
+    CSS 2.1 does not define which properties apply to form controls and frames, or how CSS can be used to style them. User agents may apply CSS properties to these elements. Authors are recommended to treat such support as experimental. A future level of CSS may specify this further.
+  </p>
+</blockquote>
+<h4>What block formatting contexts do</h4>
+<p>Block formatting contexts contain floats because of the way they flow, and per section 9.4.1, they prevent collapsing margins and do not overlap floats:</p>
+<blockquote cite="http://www.w3.org/TR/CSS21/visuren.html#block-formatting">
+<p>
+    In a block formatting context, boxes are laid out one after the other, vertically, beginning at the top of a containing block. The vertical distance between two sibling boxes is determined by the <a href="http://www.w3.org/TR/CSS21/box.html#propdef-margin">&#8220;margin&#8221;</a> properties. Vertical margins between adjacent block boxes in a block formatting context <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">collapse</a>.
+  </p>
+<p>
+    In a block formatting context, each box&#8217;s left outer edge touches the left edge of the containing block (for right-to-left formatting, right edges touch). This is true even in the presence of floats (although a box&#8217;s line boxes may shrink due to the floats), unless the box establishes a new block formatting context (in which case the box itself <a href="http://www.w3.org/TR/CSS21/visuren.html#bfc-next-to-float">may become narrower</a> due to the floats).
+  </p>
+</blockquote>
+<h3>Enough with the specs, what does this mean in the real world?</h3>
+<p>Block formatting contexts behave more or less like any block box, apart from these important exceptions:</p>
+<ul class="topItems">
+<li>
+<h4>
+      Block formatting contexts prevent margin collapsing<br />
+    </h4>
+<p>
+      Vertical margins between adjacent block boxes <a href="http://www.w3.org/TR/CSS21/box.html#collapsing-margins">collapse</a>, but only if they are in the same block formatting context. In other words, if the adjacent boxes do not belong to the same block formatting context, their margin will <em>not </em> collapse.
+    </p>
+<p style="margin-bottom:-10px">
+      Example:
+    </p>
+<div style="background:skyBlue">
+<p style="margin:20px">
+        This is a paragraph inside a DIV with a blue background, styled with <code>margin:20px</code>.
+      </p>
+</p></div>
+<div style="background:skyBlue">
+<p style="margin:20px">
+        This is a paragraph inside a DIV with a blue background, styled with <code>margin:20px</code>.
+      </p>
+</p></div>
+<div class="gainLayout" style="background:skyBlue;overflow:hidden">
+<p style="margin:20px">
+        This is a paragraph inside a DIV with a blue background, it is styled with <code>margin:20px</code>, The parent DIV is styled with <code>overflow:hidden;zoom:1</code>.
+      </p>
+</p></div>
+<p>
+      Between the two first blue boxes above, the bottom and top margin of the paragraphs collapse (the gap equals 20 pixels, not 40 pixels), but because the last DIV creates a new block formatting context, the margins of the third paragraph do not collapse, hence they do not &#8220;stick out&#8221; of the paragraph&#8217;s container but instead are part of that block box.
+    </p>
+<p>
+      <strong>Note</strong>: in IE6, without <em>explicit </em> margins the DIV would fail to enclose the margins.
+    </p>
+<p>
+      When it comes to collapsing margins, creating a new block formatting context acts the same as applying <code>border</code> or <code>padding</code> to the element.
+    </p>
+</li>
+<li>
+<h4>
+      Block formatting contexts contain floats<br />
+    </h4>
+<p>
+      I am sure you have heard of the sentence &#8221; <cite>a float always contains floats </cite>&#8220;, or maybe heard of the FNE ( <a href="http://orderedlist.com/our-writing/blog/articles/clearing-floats-the-fne-method/">float nearly everything</a>) method. But the basis of this is that floats <strong>are</strong> block formatting contexts, so a better way to formulate this is to say that &#8221; <cite><strong>a block formatting context always contains floats</strong> </cite>&#8220;.
+    </p>
+<p style="margin-bottom:-10px">
+      Example:
+    </p>
+<div style="background:skyBlue">
+<p style="float:left;margin:20px">
+        This paragraph is a float inside a DIV with a blue background, it is styled with <code>margin:20px</code>
+      </p>
+</p></div>
+<p>    <!-- The editor removes "zoom" from the inline styling --></p>
+<div class="gainLayout" style="background:skyBlue;overflow:hidden;clear:left">
+<p style="float:left;margin:20px">
+        This paragraph is a float inside a DIV with a blue background, it is styled with <code>margin:20px</code>. The parent DIV is styled with <code>overflow:hidden;zoom:1</code>.
+      </p>
+</p></div>
+<p>
+      The first paragraph is a float so it is removed from the flow and its container <strong>collapses</strong>, hence the background of this container does not show.
+    </p>
+<p>
+      The second paragraph is also a float, but it is <em>contained </em> inside a DIV that creates a new block formatting context, hence that container encloses the child&#8217;s &#8220;margin box&#8221;. You should also note that, unlike with the first paragraph, there is no need to clear the previous box. This is often referred to as &#8220;self-clearing&#8221;, which makes lot of sense considering that block formatting contexts are a normal part of the flow.
+    </p>
+<p>
+      <strong>Note</strong>: <code>clear</code> only clears floats within <i>the same block formatting context</i>.
+    </p>
+</li>
+<li>
+<h4>
+      Block formatting contexts do not overlap floats<br />
+    </h4>
+<p>
+      This one is <a title="A CSS framework based on new block formatting contexts" href="http://www.ez-css.org/">my favorite</a>. According to the spec, the border-box of a block formatting context must not overlap the margin-box of floats in the same block formatting context as the element itself. What this means is that browsers create <em>implicit </em> margins on block formatting contexts to prevent them from overlapping the margin-box of floats. For this very reason, negative margins should have no effect when applied to a block formatting context next to floats (WebKit and IE6 have a problem with this though &#8211; see <a href="http://www.tjkdesign.com/lab/bfc/test.html">test case</a>).
+    </p>
+<p>
+      Example:
+    </p>
+<div style="background:skyBlue;float:left;width:180px">
+<pre>.sideBar { 
+background: skyBlue; 
+float: left; 
+width: 180px; 
+}</pre>
+</p></div>
+<div style="background:yellow;float:right;width:180px">
+<pre>.sideBar { 
+background: yellow; 
+float: right; 
+width: 180px; 
+}</pre>
+</p></div>
+<div class="gainLayout" style="background:pink;overflow:hidden;border:5px solid teal">
+<pre>#main { 
+background: pink; 
+overflow: hidden; 
+zoom: 1; 
+border: 5px solid teal; 
+} </pre>
+</p></div>
+<p>
+      Because this behavior is attached to the &#8220;border box&#8221; (not the &#8220;margin box&#8221;), to create space (e.g., a 20px gap) between the pink box and its siblings, authors would need to either:
+    </p>
+<ul>
+<li>
+        Set a 20px margin on the floats
+      </li>
+<li>
+        Set margin values on the pink box greater than the width of the floats (i.e., <code>margin:0 220px</code>)
+      </li>
+</ul>
+<p>
+      Yes, you&#8217;d use <code>220px</code>, <i>not</i> <code>20px</code>. Because it is the <em>border-box </em> that tries to fit between the floats, not the margin-box. And if I say it <em>tries </em> it is because that container would drop if there was not enough room for it between the two floats.
+    </p>
+<p>
+      In other words, if the pink box was given a 400 pixels width, that box should <strong>drop</strong> when the parent container is narrower than 770 pixels (180px + 180px + 400px + 10px). As a side note, in a few instances, this behavior appears to be broken in Firefox (at least in v.3.5.9) (i.e., when the above construct is the first child of <code>body</code> &#8211; see <a href="http://www.tjkdesign.com/lab/bfc/test.html">test case</a>).
+    </p>
+<p>
+      <strong>Note</strong>: the space that shows in IE6 between the pink box and the two floats is due to the <a href="http://www.positioniseverything.net/explorer/threepxtest.html">three pixel jog bug</a>.
+    </p>
+</li>
+</ul>
+<h3>hasLayout versus block formatting context</h3>
+<p>As you may have noticed, all previous examples are styled using <code>overflow:hidden;zoom:1</code>. The former declaration establishes a new block formatting context in modern browsers while the latter triggers hasLayout in Internet Explorer (IE 5.5/6/7). This is because these renderings are very close ( <a href="http://www.satzansatz.de/cssd/onhavinglayout.html#engineer">similarities with the CSS specs</a>). Like block formatting contexts, elements that are given a layout appear to prevent collapsing margins, to contain floats, and to not overlap floats.</p>
+<h4><a name="hasKayoutTriggers" id="hasKayoutTriggers"></a>Properties/declarations that give elements a layout</h4>
+<p>The lists below show that the properties that establish a new block formatting context also trigger hasLayout, at least the ones supported by the browser, with the exception of <code>overflow</code> in IE &lt; 7.</p>
+<dl>
+<dt>In Internet Explorer 5 and 6</dt>
+<dd><code>position:absolute</code></dd>
+<dd><code>position:fixed</code></dd>
+<dd><code>float</code> (any value other than &#8221; <code>none</code>&#8220;)</dd>
+<dd><code>display:inline-block</code></dd>
+<dd><code>width</code> (any value other than &#8221; <code>auto</code>&#8220;)</dd>
+<dd><code>height</code> (any value other than &#8221; <code>auto</code>&#8220;)</dd>
+<dd><code>zoom</code> (any value other than &#8221; <code>normal</code>&#8220;)</dd>
+<dd><code>writing-mode:tb-rl</code></dd>
+<dd><code>-ms-writing-mode:tb-rl</code></dd>
+<dt>In Internet Explorer 7</dt>
+<dd><code>min-width</code> (any value)</dd>
+<dd><code>min-height</code> (any value)</dd>
+<dd><code>max-width</code> (any value other than <code>none</code>)</dd>
+<dd><code>max-height</code> (any value other than <code>none</code>)</dd>
+<dd>elements styled with <code>overflow</code> (any value other than <code>visible</code>)</dd>
+<dd><code>overflow-x</code> and <code>overflow-y</code> (any value other than <code>visible</code>)</dd>
+</dl>
+<h5>Things to consider</h5>
+<ul>
+<li><code>zoom</code> and <code>writing-mode</code> are proprietary properties and do not validate. </li>
+<li>IE 5.0 does not support <code>zoom</code> </li>
+<li><code>width</code> and <code>height</code> trigger hasLayout on inline elements only when these properties apply to these elements (i.e., IE6 in quirks mode). </li>
+<li><code>overflow-x</code> and <code>overflow-y</code> are part of the CSS3 box model module </li>
+<li>hasLayout is also triggered when the layout-flow is different from the parent layout flow (i.e., <code>rtl</code> to <code>ltr</code>) </li>
+</ul>
+<p>In Quirks Mode and IE7 Mode (All Versions)</p>
+<ul>
+<li>When overflow is set to something other than visible, table-cell elements *do not * establish new block formatting contexts. </li>
+<li>When overflow is set to visible, table-cell elements *establish * a new block formatting context. </li>
+</ul>
+<h4>HTML elements that always have a layout:</h4>
+<p>In Internet Explorer, these elements have &#8211; *by default * &#8211; a layout. * <code>&lt;body&gt;</code> (as well as <code>&lt;html&gt;</code> in Strict mode) * <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code> * <code>&lt;img&gt;</code> * <code>&lt;hr&gt;</code> * <code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;fieldset&gt;</code>, <code>&lt;legend&gt;</code> * <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;applet&gt;</code> * <code>&lt;marquee&gt;</code></p>
+<h3>Wrap up</h3>
+<p>To reduce the risk of issues between modern browsers and Internet Explorer ( &lt; 8), authors may choose to give a layout to boxes that establish new block formatting contexts. This way the flow is identical, elements escape floats the same way, <code>clear</code> clears the same floats, and margins collapse where expected. Also, authors must pay attention when styling boxes using <a href="#hasKayoutTriggers">hasLayout triggers</a> (i.e., <code>width</code>) as such styling may require making that element a new block formatting context as well.</p>
+<h3>Further readings</h3>
+<h4>Implications</h4>
+<ul>
+<li>Page breaks and block-formatting contexts: <a href="http://www.w3.org/TR/CSS21/page.html#allowed-page-breaks">Allowed page breaks (13.3.3)</a>. </li>
+<li>Clearfix and block formatting contexts: <a href="http://carsonified.com/blog/design/everything-you-know-about-clearfix-is-wrong/">Everything you Know about Clearfix is Wrong</a> </li>
+</ul>
+<h4>Demos and testcases</h4>
+<ul>
+<li><a href="http://dev.l-c-n.com/IEW/simulations.php">Block formating contexts, &#8220;hasLayout&#8221; – IE Window vs CSS2.1 browsers: simulations.</a> </li>
+<li><a href="http://www.brunildo.org/test/FloatMarginOverflow.html">New block formatting contexts next to floats</a> </li>
+</ul>
+<h4>hasLayout articles</h4>
+<ul>
+<li><a href="http://www.satzansatz.de/cssd/onhavinglayout.html">On having layout</a> </li>
+<li><a href="http://msdn.microsoft.com/en-us/library/bb250481%28VS.85%29.aspx">&#8220;HasLayout&#8221; Overview</a> </li>
+<li><a href="http://msdn.microsoft.com/en-us/library/ms533776%28VS.85%29.aspx">hasLayout Property</a> </li>
+</ul>
+<p>Special thanks to <a href="http://l-c-n.com/">Philippe Wittenbergh</a> and <a href="http://www.brunildo.org/test">Bruno Fassino</a> for finding spec references when one needs them and to Ingo Chao for giving us the best resource on <a href="http://www.satzansatz.de/cssd/onhavinglayout.html">having layout</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/fd33d1eeeef7f45bb2bbea428de5a96a?s=32"> <div class="cont"><a href="http://tjkdesign.com" class="name">By Thierry Koblentz</a><span class="date">May 19th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2142 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-2142"><a href="/blog/2010/05/19/yui-open-hours-fri-may-21st/">YUI: Open Hours, Fri May 21st</a></h2>
+					
+
+						<div class="entry">
+							<p>It&#8217;s a new week, and time for another <a href="/blog/2010/04/08/introducing-yui-open-hours/">YUI: Open Hours</a>!</p>
+<p>This week, we&#8217;ll be joined by the inimitable <a href="http://twitter.com/davglass">Dav Glass</a>, author of (among other things) YUI&#8217;s <a href="http://developer.yahoo.com/yui/editor/">Rich Text Editor</a> and <a href="http://developer.yahoo.com/yui/3/dd/">Drag and Drop utility</a>, and the primary architect behind <a href="http://yuilibrary.com">yuilibrary.com</a> and the <a href="http://yuilibrary.com/gallery">Gallery</a> itself.  He&#8217;ll be discussing the YUI 3 Gallery project &mdash; where it&#8217;s going, how to contribute &mdash; and answer any questions about it, about the site, or really about anything else while we have him on the line.</p>
+<p>After that, we&#8217;ll jump into our main event, which will be a &#8220;Gallery widget sampler&#8221;.  We have a number of module authors joining us this week, including</p>
+<ul>
+<li>Iliyan Peychev (<a href="http://yuilibrary.com/gallery/show/accordion">Accordion</a>)</li>
+<li><a href="http://twitter.com/abialecki">Andrew Bialecki</a> (<a href="http://yuilibrary.com/gallery/show/lightbox">Lightbox</a>)</li>
+<li><a href="http://www.mattsnider.com/">Matt Snider</a> (<a href="http://yuilibrary.com/gallery/show/radialmenu">Radial Menu</a>)</li>
+<li><a href="http://twitter.com/jacobfogg">Jacob Fogg</a> (<a href="http://yuilibrary.com/gallery/show/sliding-sidebar">Sliding Sidebar</a>)</li>
+<li>and hopefully more</li>
+</ul>
+<p>They&#8217;ll introduce their module, give an example or two, go over their API, and discuss their experience creating it.  Besides just being a nice introduction to additional components available to YUI 3 users, it should provide a good platform to talk about widget API best practices and help give a sense of some of the decisions that are made during widget creation.</p>
+<p>Thanks again to <a href="http://twitter.com/caridy">Caridy Patiño</a> for joining us <a href="/blog/2010/05/13/yui-open-hours-friday-may-14th/">last week</a> and reviewing his <a href="http://yuilibrary.com/gallery/show/node-accordion">Accordion Node plugin</a> and <a href="http://yuilibrary.com/gallery/show/dispatcher">Dispatcher</a> modules.  We&#8217;ll have more topics in the future about creating Node plugins and the reasons why the plugin approach or the widget approach might be a better fit for your needs.  And thanks to <a href="http://twitter.com/msweeney">Matt Sweeney</a> (author of YUI&#8217;s <a href="http://developer.yahoo.com/yui/3/node/">Node</a> class and selector engine) for dropping in as a surprise guest as well.</p>
+<p>The time will be the same as before, 10am &#8211; 12pm PDT and the connection details are also the same:</p>
+<ol>
+<li>Dial in to 1-888-371-8922 (non-US participants, email me for a local number)</li>
+<li>Enter the attendee code 4718 8953#</li>
+<li><a href="https://www.meeting.corp.yahoo.com/r82701271/">Join the screen sharing session</a> (this will prompt you to install the Adobe Connect plugin if this is your first time using it)</li>
+</ol>
+<p>And as always, you can keep up to date with the upcoming schedule and topics by following <a href="http://twitter.com/yuilibrary">@yuilibrary</a> on Twitter or subscribing to the <a href="http://yuilibrary.com/gallery/calendar/#calendar">YUI Event Calendar</a>.</p>
+<p>Hope to see you there!</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">May 19th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-1964 post type-post status-publish format-standard hentry category-development category-yui-implementations">
+				
+						<h2 id="post-1964"><a href="/blog/2010/05/19/implementation-focus-mr-purple/">Implementation Focus: Mr Purple&#8217;s Movies and More</a></h2>
+					
+
+						<div class="entry">
+							<div class="interview">
+<div class="intro"><em></p>
+<p><img src="http://yuiblog.com/assets/mrpurple/murray.jpg" width="150" height="150" hspace="10" vspace="5" align="right" alt="Murray Macchio">Murray Macchio is a Senior Software Developer with over 7 years of web development experience located in Kingston, Ontario in Canada.  He is currently working with a company called SMT Plus to help streamline their e-learning development process.  He will soon be starting as a web developer at a company called Front Runner Pro.
+</p>
+<p></em></div>
+<p><img src="http://yuiblog.com/assets/mrpurple/screenshot.gif" width="510" height="398" alt="Screenshot of Mr. Purple's Movies and More web site"></p>
+<p class="q"><strong>Tell us a little about your project.</strong></p>
+<p>I had been putting off a website for my uncle&#8217;s company for some time, but with the help of YUI, I built his entire site from scratch in just 3 days.</p>
+<p class="q"><strong>What is your background with YUI? Why did you choose YUI for this project?</strong></p>
+<p>I have been using YUI for the past 2 years.  In my previous job, I introduced it into every single internal application.  I chose YUI for this project due to my familiarity with it, and because it does ALL of the hard work for you.  In short, YUI makes me look very good on a daily basis.</p>
+<p class="q"><strong>Which YUI components in particular are in use?</strong></p>
+<p>I used the <a href="http://developer.yahoo.com/yui/carousel/">Carousel</a>, <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete</a> and my absolute favorite, the <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>.</p>
+<p class="q"><strong>What have been the challenges of using YUI in this project?</strong></p>
+<p>The main challenges were with a couple of Carousel bugs.  These were issues I did expect, as it is still in beta.  The only really major issue I had was figuring out why 2 carousels on the same page didn&#8217;t play nicely together.  Then I realized that their items shared the same IDs.</p>
+<p><img src="http://yuiblog.com/assets/mrpurple/catalogue.gif" width="510" height="372" alt="Screenshot of catalogue page"></p>
+<p class="q"><strong>What are the things you&#8217;re most proud of in this project?</strong></p>
+<p>I am proud of the fact that I was able to provide a rich user experience very quickly.  Specifically, the catalog page that uses the AutoComplete widget with the DataTable allows users to easily browse a movie catalogue of over 4000 movies and games.</p>
+<p class="q"><strong>What are some upcoming features/projects you are tackling with YUI?</strong></p>
+<p>Next order of business, finish the Form Validation component I have been working on with Luke Smith for YUI 2.  I am excited to see how it&#8217;s received by the YUI community.  I also plan on introducing YUI to companies I will be working with in the near future.</p>
+<p class="q"><strong>How did the YUI components perform?</strong></p>
+<p>They performed excellent.  The DataTable was able to handle 4000 records at a time without an issue.  I have found that the performance of the YUI components has steadily improved with every release.</p>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/796859f5384b2d5e389c23ebd2c30bb6?s=32"> <div class="cont"><a href="http://yuilibrary.com" class="name">By Jenny Donnelly</a><span class="date">May 19th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2085 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-2085"><a href="/blog/2010/05/13/yui-open-hours-friday-may-14th/">YUI: Open Hours, Friday May 14th</a></h2>
+					
+
+						<div class="entry">
+							<p>It&#8217;s time again for the another installment of <a href="/blog/2010/04/08/introducing-yui-open-hours/">YUI: Open Hours</a>!</p>
+<p>This week, we&#8217;ll be joined by <a href="http://twitter.com/caridy">Caridy Patiño</a>, author of the outstanding <a href="http://bubbling-library.com/">YUI Bubbling Library</a> for YUI 2.  We&#8217;ll have a look at some of the work he&#8217;s been doing migrating the Bubbling Library components to YUI 3, other modules and features he has in the Gallery already, and what new stuff he&#8217;s working on these days.</p>
+<p>Thanks again to <a href="http://twitter.com/ericf">Eric Ferraiuolo</a> for joining us last time and reviewing his work on the <a href="http://yuilibrary.com/gallery/show/base-componentmgr">Component Manager utility</a> and talking about some of the more brain melting points of application infrastructure development with YUI 3.  A lot of great info about some of the features of YUI&#8217;s event system and infrastructure pieces came out of the discussion.</p>
+<p>We&#8217;ll try to come back up to the surface a bit this week and address more specific problem spaces and UI patterns.  But before we dive in with Caridy, we&#8217;re going to do a quick run through the <code>YUI.add(...)</code> method and how to create JavaScript classes in a YUI 3 world.  Then it will be all Caridy, showing off a whole lot of flashy YUI 3 goodness.  The conversation will no doubt touch on some points about migrating code from YUI 2 to 3 and some best practices when creating classes and modules.</p>
+<p>The time will be the same as before, 10am &#8211; 12pm PDT and the connection details are also the same.  Here they are for review:</p>
+<ol>
+<li>Dial in to 1-888-371-8922 (non-US participants, email me for a local number)</li>
+<li>Enter the attendee code 47188953</li>
+<li><a href="https://www.meeting.corp.yahoo.com/r82701271/">Join the screen sharing session</a> (this will prompt you to install the Adobe Connect plugin if this is your first time using it)</li>
+</ol>
+<p>And as always, you can keep up to date with the upcoming schedule and topics by following <a href="http://twitter.com/yuilibrary">@yuilibrary</a> on Twitter or subscribing to the <a href="http://yuilibrary.com/gallery/calendar/#calendar">YUI Event Calendar</a>.</p>
+<p>Hope to see you there!  And don&#8217;t be shy about recommending guests or topics or offering suggestions for the OH format in general!</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">May 13th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2063 post type-post status-publish format-standard hentry category-development tag-browser-history-manager tag-history tag-yui-2 tag-yui-3">
+				
+						<h2 id="post-2063"><a href="/blog/2010/05/05/3-1-1-and-2-8-1-released/">YUI 3.1.1 and YUI 2.8.1 Released</a></h2>
+					
+
+						<div class="entry">
+							<p>The YUI team released <a href="http://developer.yahoo.com/yui/2/">YUI 2.8.1</a> and <a href="http://developer.yahoo.com/yui/3/">YUI 3.1.1</a> today.  Each of these minor releases contains a set of targeted bug fixes.  Notably, the History component in both libraries was updated to correct an issue that could result in an XSS vulnerability in some implementations.</p>
+<h3>History Issue</h3>
+<p>Ryan Grove corrected <a href="http://yuilibrary.com/projects/yui3/ticket/2528792">an issue</a> relating to <a href="http://developer.yahoo.com/yui/history/" title="YUI 2: Browser History Manager">YUI 2 Browser History Manager</a> and <a href="http://developer.yahoo.com/yui/3/history/" title="YUI 3: History">YUI 3 History</a>.  Writes Ryan:</p>
+<blockquote><p>In previous YUI versions, HTML markup in history values was not escaped before being written to a hidden iframe in IE6 and IE7, which could result in script execution in certain circumstances. An attacker with the ability to create an unfiltered link on a page that uses YUI 2 Browser History Manager or YUI 3 History (for example, by posting a comment on a blog, where the blog software did not properly filter the comment) could in theory inject arbitrary HTML or script that would be executed when a user then clicked on that link.  YUI 2.8.1 and YUI 3.1.1 address this issue.  To mitigate this in versions of YUI prior to 2.8.1 and 3.1.1, ensure that HTML characters in user input are always escaped (whether on the server or on the client) before being used to construct links or history values.</p>
+</blockquote>
+<p>These updates are strongly recommended for all users of YUI&#8217;s browser history functionality.</p>
+<h3>YUI 3.1.1</h3>
+<p>In addition to the History fix, YUI 3.1.1 contains about 20 minor updates throughout the library.  Refer to the <a href="http://yuilibrary.com/projects/yui3/ticket/2528792" title="#2528792 history manager allows xss injection in ie7 and ie6 :: YUI 3 :: YUI Library">YUI 3.1.1 ticket list</a> for full details.</p>
+<h3>YUI 2.8.1</h3>
+<p><a href="http://yuilibrary.com/projects/yui2/report/31" title="{31 Tickets Assigned to YUI 2.8.1 :: YUI 2 :: YUI Library}">Issues addressed in YUI 2.8.1</a> include the History vulnerability and minor updates to AutoComplete, DataTable, TreeView and Uploader.</p>
+<p>We also updated a number of YUI 2 examples that employ the Flickr API.  These examples were previously using a Flickr API key that was beginning to become overused — probably through inadvertent copy-and-paste into third-party applications.  If you find that this issue is affecting your application — i.e., your Flickr images are no longer appearing or you&#8217;re seeing errors in Flickr-related implementations whose source was derived from a YUI example — you should <a href="http://www.flickr.com/services/apps/create/apply">head over to Flickr and pick up your own API key</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://ericmiraglia.com" class="name">By Eric Miraglia</a><span class="date">May 5th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2026 post type-post status-publish format-standard hentry category-development category-yui-3-gallery tag-ratings tag-yui-3 tag-yui-3-gallery">
+				
+						<h2 id="post-2026"><a href="/blog/2010/04/28/gallery-ratings/">In the YUI 3 Gallery: Peter Peterson&#8217;s Ratings Widget</a></h2>
+					
+
+						<div class="entry">
+							<div class="authorbox">
+<p>
+  <em><strong>About the author:</strong> Peter Peterson is a lead front-end engineer for Yahoo!&#8217;s internal developer tools.</em>
+</p>
+</div>
+<p>
+I wanted to get my feet wet with the finalized <a href="http://developer.yahoo.com/yui/3/widget/">widget infrastructure</a> presented in YUI 3.1.0, and I&#8217;ve always felt the best way to do that is to write some code. I wanted something easy, and I found that in a CSS ratings implementation I found on <a href="http://www.komodomedia.com/blog/2007/01/css-star-rating-redux/">Komodo Media</a>. The resulting widget is the <a href="http://yuilibrary.com/gallery/show/ratings">YUI3 Ratings Widget</a> (<a href="http://peterpeterson.net/gallery-ratings/">demo</a>). The bulk of the work of the widget is handled by CSS and is described well in the Komodo Media article. The only trouble with that widget, was once a rating was chosen, nothing really happened unless the page was reloaded, and when the widget lost focus, it lost its rating. This is where the YUI 3 Gallery Ratings widget comes in.
+</p>
+<p>
+  <a href="http://peterpeterson.net/gallery-ratings/" title="Ratings Widget Tester"><img src="http://yuiblog.com/assets/ratings/ratings1.png" /></a>
+</p>
+<p>
+My goals for the project were:
+</p>
+<ul>
+<li>The code for the widget should be just enough to touch on the basics for how to create a YUI 3 widget</li>
+<li>The widget would progressively enhance the page</li>
+<li>The user&#8217;s interaction with the widget is easily captured</li>
+<li>Add a clear rating button which does not exist in the original design</li>
+<li>The widget should be accessible for people using screen readers</li>
+<li>Make the instantiation and interaction with the widget dead simple with as little code as possible.</li>
+</ul>
+<p>
+It is easy to add the ratings widget to your page using the YUI loader:
+</p>
+<pre>
+YUI({
+    gallery: 'gallery-2010.04.14-19-47'
+}).use('gallery-ratings','event', function(Y) {
+    // Program logic...
+});
+</pre>
+<p>You&#8217;ll also need the image assets and CSS file located located at <a href="http://github.com/yui/yui3-gallery/tree/master/build/gallery-ratings/assets/">github</a> or from your own copy of the gallery.</p>
+<p>
+Simply add a node in your source that contains the current rating (any number between 0 &#8211; 5) or is empty.
+</p>
+<pre>
+&lt;span id="myWidget"&gt;2.5&lt;/span&gt;
+</pre>
+<p>
+You can then instantiate the widget with the following code in your sandbox:
+</p>
+<pre>
+var myRating = new Y.Ratings({ srcNode: "#myWidget" });
+myRating.render();
+</pre>
+<p>
+I felt that it was important to make this widget easy to customize and so I added some configuration to the constructor. <code>inline</code> when set to true will display the rating inline with text on the page (defaults to false). <code>skin</code> can be set to &#8220;small&#8221; to decrease the size of the widget ( Example: <img src="http://yuiblog.com/assets/ratings/ratings2.png" /> )
+</p>
+<p>
+On its own, the ratings widget does little more that set up the rating interaction for the user. A little more work needs to be done to actually use the value. I&#8217;m leaving that up to the implementer to consider; whether to add a callback to the event fired when the rating changes, or to supply a plugin to the widget to handle it automatically. To get you started, whenever a rating is changed the <code>ratingChange</code> event fires. It is easy to set up an event listener to catch the <code>ratingChange</code> event for all the widgets on the page. In this example, I log the Rating Widget <code>srcNode</code>&#8216;s id, the previous rating, and the new rating for any rating widget on the page when the rating changes:
+</p>
+<pre>
+Y.on("ratings:ratingChange",function(e){
+  var id = e.target.get("contentBox").get("id");
+  Y.log(id+" New Value: "+e.newVal+" was: "+e.prevVal);
+});  
+</pre>
+<h3>
+Future ideas for the project:<br />
+</h3>
+<ul>
+<li>Progressively enhance form elements</li>
+<li>Make the clear rating button optional</li>
+<li>Make the rating range configurable</li>
+<li>More skins, and combination of the CSS sprites</li>
+<li>Internationalization</li>
+</ul>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/29083e06f02b04830cc79d38cba7f1ce?s=32"> <div class="cont"><span class="name">By Peter Peterson</span><span class="date">April 28th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2016 post type-post status-publish format-standard hentry category-development category-yui-events tag-dav-glass tag-elijah-insua tag-jsdom tag-nodejs tag-ryan-dahl">
+				
+						<h2 id="post-2016"><a href="/blog/2010/04/27/cinco-de-nodejs/">Cinco de NodeJS &mdash; May&#8217;s BayJax Celebrates Server-Side JavaScript with Ryan Dahl, Elijah Insua, and Dav Glass</a></h2>
+					
+
+						<div class="entry">
+							<p><a href="http://www.meetup.com/BayJax/calendar/13308905/?from=list&#038;offset=0"><img src="http://yuiblog.com/assets/nodejs-sombrero.png"></a></p>
+<p>BayJax organizer <a href="http://twitter.com/goonieiam">Gonzalo Cordero</a> has announced that it&#8217;s time for another <a href="http://www.meetup.com/BayJax/" title="BayJax - The Bay Area Ajax and JavaScript Meetup (Palo Alto, CA) - Meetup.com">BayJax</a>, and this time we&#8217;ll be celebrating the explosion of server-side JavaScript with Cinco de Node.js at Yahoo!.  We have three fantastic speakers: Ryan Dahl, creator of Node.js; Elijah Insua, creator of one of the major DOM abstractions for Node; and Dav Glass, a YUI engineer who has been blogging about his work getting YUI 3 running under Node.</p>
+<p>Please join us on May 5th @Yahoo! HQ from 5:30pm to 9:00 p.m. As Gonzalo puts it: &#8220;Sombreros, ponchos and luchador outfits are encouraged.&#8221;  <a href="http://www.meetup.com/BayJax/calendar/13308905/?from=list&#038;offset=0">RSVP on the BayJax Meetup page</a>.</p>
+<p>Ryan describes his talk this way:</p>
+<blockquote><p>It is well known that event loops rather than threads are required for high-performance servers. Javascript is a language unencumbered of threads and designed specifically to be used with asynchronous evented I/O, making it an attractive means of programming server software. Node.js ties together the V8 Javascript compiler with an event loop, a thread pool for making blocking system calls, and a carefully designed HTTP parser to provide a browser-like interface to creating fast server-side software. This talk will explain Node&#8217;s design and how to get started with it.&#8221;</p>
+</blockquote>
+<p>Elijah, who will be Skyping in from New York, will talk about his project, <a href="http://github.com/tmpvar/jsdom" title="tmpvar's jsdom at master - GitHub">jsdom</a>, which provides the essential DOM abstractions that allow client-side, DOM-dependent JavaScript to run under Node.js.  This is an important part of the paradigm shift, enabling levels of server- and client-side code reuse never possible before and allowing progressive enhancement to be a natural, efficient outgrowth of our development environment.</p>
+<p>Dav will carry this theme forward, showing in practical terms how the foundation of Node.js, the abstractions in jsdom, and Dav&#8217;s own work to add BOM features to jsdom enable a full implementation like YUI to illustrate some of the enormous promise of this kind of development.  You can read about Dav&#8217;s work here on YUIBlog (<a href="/blog/2010/04/05/running-yui-3-server-side-with-node-js/" title="Running YUI 3 Server-Side with Node.js &raquo; Yahoo! User Interface Blog (YUIBlog)">Part 1</a>; <a href="/blog/2010/04/09/node-js-yui-3-dom-manipulation-oh-my/" title="Node.js, YUI 3 &#038; Dom Manipulation&#8230; Oh My! &raquo; Yahoo! User Interface Blog (YUIBlog)">Part 2</a>).</p>
+<h3>Catch Up On Past BayJax Meetups</h3>
+<p>Gonzalo has organized a great series of BayJax events of late.  Did you miss any?  Here are the <a href="http://developer.yahoo.com/yui/theater/" title="YUI Theater">YUI Theater</a> links for the latest in the series:</p>
+<ul>
+<li><a href='http://developer.yahoo.com/yui/theater/video.php?v=zakas-hpjs'><strong>Nicholas Zakas, Stoyan Stefanov, Ross Harmes, Julien Lecomte, Matt Sweeney:</strong> High Performance JavaScript</a> &mdash; Five contributors to O&#8217;Reilly&#8217;s <em>High Performance JavaScript</em> discuss advanced JavaScript and DOM scripting optimizations at the April 2010 BayJax meetup at Yahoo.</li>
+<li><a href='http://developer.yahoo.com/yui/theater/video.php?v=resig-testing'><strong>John Resig:</strong> Testing, Performance Analysis, and jQuery 1.4</a> &mdash; John Resig of Mozilla, creator of the popular jQuery JavaScript library, reviews options for testing and performance analysis in JavaScript and previews the significant changes coming soon in jQuery 1.4.</li>
+<li><a href='http://developer.yahoo.com/yui/theater/video.php?v=neuberg-html5'><strong>Brad Neuberg:</strong> Introduction to HTML5</a> &mdash; Brad Neuberg of Google provides a wide-ranging introduction to HTML5 as it&#8217;s being implemented in modern browsers, including features such as SVG/Canvas, the video tag, database storage, app-cache, and more.</li>
+</ul>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://ericmiraglia.com" class="name">By Eric Miraglia</a><span class="date">April 27th, 2010<span></div></div>
+				</div>
+							
+							<div class="bottom-nav">
+					<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/52/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/50/" >Newer Entries &raquo;</a>    </div>
+</div>				</div>
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+ </select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2 current-cat"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1405547614" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

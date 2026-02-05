@@ -1,0 +1,906 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     2008  January  23 Archive - YUI Blog	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.5.1'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive date yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		
+
+		
+ 			
+							<h1>Blog: Archive for January 23rd, 2008</h1>
+
+			
+			
+									
+								<div class="post-164 post type-post status-publish format-standard hentry category-accessibility category-development tag-accessibility tag-links first-post">
+				
+						<h2 id="post-164"><a href="/blog/2008/01/23/empty-links/">Empty Links and Screen Readers</a></h2>
+					
+
+						<div class="entry">
+							<style type="text/css">
+TABLE {
+	width: 49%;
+	border: 1px solid Black;
+	border-collapse: collapse;
+	margin: 0 0 2em 0;
+}</p>
+<p>CAPTION {
+	background-color: #ccc;
+	border-bottom: none;
+	padding: 0.5em 1em;
+}</p>
+<p>TD, TH {
+	border: 1px solid #999;
+}</p>
+<p>TH {
+	text-align: left;
+	background-color: #eee;
+}</p>
+<p>TD.bad {
+	background-color: #c00;
+	color: White;
+}</p>
+<p>TD.ugly {
+	background-color: #FFBF00;
+}</p>
+<p>TD.good {
+	background-color: #0c0;
+}</p>
+<p>TD.iffy {
+	background-color: #f60;
+}</p>
+<p>TD.almost {
+	background-color: #cc0;
+}
+</style>
+<div class="interview">
+<div class="intro">
+<p><img src="http://yuiblog.com/assets/mikedavies.jpg" width="250" height="188" hspace="5" vspace="5" align="right" alt=""><strong>About the Author:</strong> Mike Davies is a web developer for Yahoo! Europe focusing on web accessibility. He was the Technical Lead Developer of a website redesign which became a PAS 78 case study into the business benefits of accessible websites. Mike writes about web accessibility, Atom and web standards on his personal blog at <a href="http://www.isolani.co.uk/">isolani.co.uk</a>. (<a href="http://www.flickr.com/photos/thevoicewithin/374414594/">Photograph courtesy of Neil Crosby</a>)</p>
+</div>
+<p>With the help of other members of the Yahoo! Accessibility Stakeholders group, I ran a screen reader test to establish whether links that contain no link text were an accessibility barrier. We tested a number of approaches to hiding links across a typical range of screen reader and browsers.</p>
+<p>The conclusion is that the most accessible link is one that contains link text. Different techniques of hiding links, from no link text, through to hiding by <abbr title="Cascading Stylesheets">CSS</abbr> can cause an accessibility barrier to screen reader users. Each screen reader presented its user with a different set of problems and barriers.</p>
+<p>What follows is a detail description of the test, tabulated results, summary of techniques that passed, failed or came close, and a list of web development recommendations.</p>
+<h3>The Microformats include pattern</h3>
+<p>The Microformats group have created an <a href="http://microformats.org/wiki/include-pattern">include pattern</a> which is a mechanism for including a portion of data from one area of a page into another area on the same page. Essentially, it&#8217;s a means of preventing the duplication of data.</p>
+<p>A good example of this is a page that lists all the reviews done by one person. Instead of every review having to duplicate the reviewer details, we can use the include pattern to define the reviewer once, and include it into each review. No needless duplication.</p>
+<p>The main technique being advocated as an include is the humble link, but in an effort to minimise duplication of content, the example is an empty link; a link with no link text:</p>
+<pre title="Example markup of an include pattern">
+<code>
+&lt;a class="include" href="#author" title="James Levine"&gt;&lt;/a&gt;
+</code>
+</pre>
+<p>The current accessibility understanding is that empty links can present a barrier to screen reader users. The Microformats group have attempted to solve this problem by using the title attribute to offer something a screen reader can use to announce a link.</p>
+<p>The issue here is to find a way of marking up a microformat include pattern that&#8217;s accessible to screen reader users.</p>
+<h3>Test cases</h3>
+<p>I produced 18 test cases covering a wide range of techniques to hide a link from being displayed. These tests covered:</p>
+<ul>
+<li>Normal links with proper link text</li>
+<li>Links with no link text or title attribute</li>
+<li>Links with a title, but no link text</li>
+<li>Links containing just whitespace for text</li>
+</ul>
+<p>Each type of link was styled in the following ways:</p>
+<ul>
+<li>Displayed in a default manner</li>
+<li>Positioned off-screen</li>
+<li>Visibility of hidden</li>
+<li>Display set to none</li>
+</ul>
+<p>The tests were carried out by three screen reader users. Two of them are super-users of screen readers, so consequently have a great deal of experience and knowledge that can allow them to work around many difficult accessibility issues. Interestingly, neither of them had their main screen reader set up to read out both the link text and the title. Both of them have multiple screen readers installed. The third tester was a web developer with a deep understanding of using screen readers.</p>
+<p>Ideally, we&#8217;d need more screen reader users to create a decent sample, including non-power users, but the results we saw are fairly consistent.</p>
+<h3>Success criteria</h3>
+<p>There are two screen reader behaviours that form a successful test case. The first was that a link was read out normally, as if it were an inline link within a paragraph of text. The second successful behaviour was that the screen reader does not announce the presence of a link and just skips over it.</p>
+<h3>The test results</h3>
+<p>We covered four major screen reader versions over three different browsers. The results for each combination can be seen in the following table. The result cells are colour coded to quickly highlight techniques that are safe to use:</p>
+<ul>
+<li>Red-coloured cells indicates buggy behaviour or the output was likely to frustrate the screen reader user.</li>
+<li>Amber-coloured cells indicate that the technique did work, but relies on stylesheets to hide the link from screen readers.</li>
+<li>Light green-coloured cells indicate the technique did work, but relies on particular configurations of a screen reader.</li>
+<li>Green-coloured cells indicate that the technique did work, and did not rely on stylesheets or a particular screen reader configuration.</li>
+</ul>
+<p>All the information conveyed in colour is also available in the table footnotes and the notes below.</p>
+<h4>Tables for each browser combination</h4>
+<table>
+<caption>Link results for JAWS 8.0 and JAWS 7.10 with Internet Explorer 6<sup>4</sup></caption>
+<thead>
+<tr>
+<th scope="col">type of link</th>
+<th scope="col">default</th>
+<th scope="col">offscreen</th>
+<th scope="col"><code>visibility: hidden<code></th>
+<th scope="col"><code>display: none</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Normal</th>
+<td class="good">text</td>
+<td class="good">text</td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty</th>
+<td class="bad"><code>href</code></td>
+<td class="bad"><code>href</code></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace</th>
+<td class="bad"><code>href</code></td>
+<td class="bad"><code>href</code></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Link results for JAWS 8.0 and Firefox 2</caption>
+<thead>
+<tr>
+<th scope="col">type of link</th>
+<th scope="col">default</th>
+<th scope="col">offscreen</th>
+<th scope="col"><code>visibility: hidden<code></th>
+<th scope="col"><code>display: none</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Normal</th>
+<td class="good">text</td>
+<td class="good">text</td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty</th>
+<td class="bad">absolute <code>href</code></td>
+<td class="bad">absolute <code>href</code></td>
+<td class="bad">absolute <code>href</code></td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="bad">absolute <code>href</code>, <code>title</code></td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace</th>
+<td class="bad"><code>href</code></td>
+<td class="bad">buggy<sup>1</sup></td>
+<td class="bad">absolute <code>href</code></td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="bad">buggy<sup>1</sup></td>
+<td class="bad">absolute <code>href</code>, <code>title</code></td>
+<td class="ugly">nothing</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Link results for JAWS 9.0 with Internet Explorer 6</caption>
+<thead>
+<tr>
+<th scope="col">type of link</th>
+<th scope="col">default</th>
+<th scope="col">offscreen</th>
+<th scope="col"><code>visibility: hidden<code></th>
+<th scope="col"><code>display: none</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Normal</th>
+<td class="good">text</td>
+<td class="good">text</td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty</th>
+<td class="bad"><code>href</code></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace</th>
+<td class="iffy">nothing<sup>2</sup></td>
+<td class="iffy">nothing<sup>2</sup></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Link results for Window-Eyes 6.1 with Internet Explorer 6</caption>
+<thead>
+<tr>
+<th scope="col">type of link</th>
+<th scope="col">default</th>
+<th scope="col">offscreen</th>
+<th scope="col"><code>visibility: hidden<code></th>
+<th scope="col"><code>display: none</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Normal</th>
+<td class="good">text</td>
+<td class="good">text</td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty</th>
+<td class="bad"><code>href</code></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+<td class="bad"><code>href</code></td>
+</tr>
+<tr>
+<th scope="row">empty with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace</th>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="bad"><code>href</code></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace with <code>title</code></th>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption>Link results for Window-Eyes 6.1 with Internet Explorer 7</caption>
+<thead>
+<tr>
+<th scope="col">type of link</th>
+<th scope="col">default</th>
+<th scope="col">offscreen</th>
+<th scope="col"><code>visibility: hidden<code></th>
+<th scope="col"><code>display: none</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">Normal</th>
+<td class="good">text</td>
+<td class="good">text</td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">empty</th>
+<td class="bad">"empty", <code>href</code><sup>3</sup></td>
+<td class="bad">"empty", <code>href</code><sup>3</sup></td>
+<td class="ugly">nothing</td>
+<td class="bad">"empty", <code>href</code><sup>3</sup></td>
+</tr>
+<tr>
+<th scope="row">empty with <code>title</code></th>
+<td class="almost"><code>title</code></td>
+<td class="almost"><code>title</code></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace</th>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+<tr>
+<th scope="row">whitespace with <code>title</code></th>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="almost">nothing<sup>2</sup></td>
+<td class="ugly">nothing</td>
+<td class="ugly">nothing</td>
+</tr>
+</tbody>
+</table>
+<h4>Footnotes to the tables</h4>
+<ul>
+<li>1.<br />
+<samp>buggy</samp>
+<p> means the screen reader reacted as if there were two separate links instead of just an empty link.</li>
+<li>2.<br />
+<samp>nothing</samp>
+<p> means that the screen reader announces there's a link, but there's no link text read out.</li>
+<li>3.<br />
+<samp>"empty", href</samp>
+<p> means the screen reader reads out the word "empty" followed by the contents of the <code>href</code> attribute</li>
+<li>4. In JAWS 8.0 with Internet Explorer when a list of links was displayed, the links could not be reordered alphabetically. We tried both a different page, and with JAWS 7.10, and that worked fine. Empty links breaks JAWS 8.10 ability to sort links when listed.</li>
+</ul>
+<h3>Test case failures (code red)</h3>
+<p>The following is a list of failures and buggy behaviour:</p>
+<ul>
+<li>An empty linked styled with <code>display none</code> caused the <code>href</code> attribute of the link to be read out in Window Eyes 6.1</li>
+<li>An empty link styled to <code>visibility: hidden</code> caused the <code>href</code> attribute to be read out in JAWS 7.10 and JAWS 8.0 in Internet Explorer and Firefox 2. With Firefox, JAWS 8.0 read out the absolute <abbr title="Uniform Resource Locator">URL</abbr> of the link.</li>
+<li>An empty link regardless of styling (apart from <code>display: none</code>) caused the <code>href</code> attribute to be read out in JAWS 7.10 and JAWS 8.0 on both Internet Explorer and Firefox. Again, JAWS 8.0 with Firefox read out the absolute URL of the link.</li>
+<li>A link containing whitespace as link text caused the <code>href</code> attribute to be read out in JAWS 7.10 and JAWS 8.0 in Internet Explorer and Firefox.</li>
+<li>With JAWS 8.0 and Firefox we saw a buggy behaviour where a link containing just whitespace as link text was actually read out as two separate links.</li>
+<li>With Window Eyes 6.1 and Internet Explorer 6 we saw buggy behaviour where a link containing just whitespace and a <code>title</code> attribute, but styled to appear offscreen, the <code>href</code> attribute was read out even though there was a <code>title</code> attribute present.</p>
+</ul>
+<h3>Test cases relying on stylesheets (code amber)</h3>
+<p>All of the test cases that relied either on the <code>display</code> or <code>visibility</code> styles to hide the link from the screen reader did succeed (except for the failures noted above, for example the handling of <code>visibility</code> is exceptionally buggy in JAWS).</p>
+<p>When CSS is not enabled, or the styles are ignored by the screen reader, the behaviour falls back to the default case.</p>
+<h3>Test cases relying on screen reader configuration (code light green)</h3>
+<p>Test cases using the <code>title</code> attribute worked when the screen reader was configured to read out <code>title</code> attributes. Both our experienced screen reader users had changed their screen reader configuration to read out <code>title</code>s on links when there was no actual link text. Unfortunately, this is not sufficient to conclude that this is a majority preference.</p>
+<p>Thus, techniques using the <code>title</code> attribute are reliant on a specific screen reader configuration to work as expected. This configuration cannot be assured, and cannot be relied on.</p>
+<p>Test cases designed to hide the link from a screen reader by not supplying any link text fail when the screen reader configuration is set to announce links. Announcing links gets the screen reader to preface all link text with the word 'Link'. Empty links that successfully dodge screen reader heuristics and produce no link text still run into the frustrating problem of a link being announced, but no text associated with that link.</p>
+<h3>Passed test cases (code green)</h3>
+<p>Only two of the eighteen test cases resulted in an unqualified pass:</p>
+<ul>
+<li>A normal text link with default styling</li>
+<li>A normal text link displayed offscreen. (Links displayed offscreen are still announced by the screen reader)</li>
+</ul>
+<h3>Conclusion</h3>
+<p>Not using proper link text forces the browser and screen reader to fallback to heuristics in an attempt to determine what the link text should be. Internet Explorer decides to offer the <code>title</code> attribute, and failing that, it tries to extract something readable from the <code>href</code> attribute. JAWS 8 with Firefox 2 on the other hand reads out the absolute URL of the page, followed by, if available, the <code>title</code> attribute; or if the <code>title</code> attribute is not available, it extracts something readable from the <code>href</code> attribute.</p>
+<p>There are breakages in JAWS 8.0/IE6 and Windows Eyes with IE6, when the link text is empty. We observed that a screen reader user could not alphabetically sort a list of links in JAWS 8.0, and so this creates a barrier to quickly finding a link, a barrier that wasn't there before, and it's the markup that provokes/uncovers this bug.</p>
+<p>Windows Eyes also has problems with empty text links, falling back to reading out the <code>href</code> attribute, and uniquely reads out the link <code>href</code> when the link is styled with <code>display: none</code>.</p>
+<p>An empty link with a <code>title</code> attribute, styled with <code>display: none</code> looks to be a feasible option, but flounders because of two ungrounded assumptions:</p>
+<ul>
+<li>CSS will always be enabled on browsers communicating with screen readers</li>
+<li>The <code>title</code> attribute is configured to be read out by screen readers.</li>
+</ul>
+<p>Neither of these assumptions realistically hold, nor can be relied on.</p>
+<h3>Web Developer Recommendations</h3>
+<ul>
+<li>Always have proper link text for a link, and assure that the link text makes sense in context. At that point the link can then be hidden by positioning it offscreen. If the link is styled with <code>display</code> set to <code>none</code>, ensure that the content makes sense with and without the link text in place.</li>
+<li>Never have an anchor with jusst an <code>href</code> attribute. The screen reader fallback is to read out the entire URL or try to extrapolate something readable from it, or a combination of both. This can lead to unpredictable results. How a browser or screen reader translates a URL into text that is read out requires more extensive testing.</li>
+<li>Never use <code>visibility: hidden</code> to hide an empty link from view. This leads to the <code>title</code> attribute being ignored in both JAWS/IE6 set-ups, and the absolute URL of the link being read out with Firefox. It also introduces a dependency on CSS to prevent an accessibility barrier.</li>
+<li>Never use just white space as the link text, the choice of link text between the setups tested differ significantly, with all combinations creating an accessibility barrier - either of reading an entire absolute URL, or guessing the link text based on URL extrapolation, or as in Window Eyes announcing a link, but with no link text read out.</li>
+<li>Never use <code>display: none</code> as a means of hiding this link. This creates a dependency on CSS, since the rendering of the page in screen readers is degraded.</li>
+<li>Never rely on the <code>title</code> attribute as the sole means of providing a form of link text since it's inconclusive whether <code>title</code> attributes are enabled for all screen reader users.</li>
+</ul>
+<h3>Resources</h3>
+<ul>
+<li><a href="/assets/emptylinks.html">Test cases</a>: The 18 test cases that we used for this experiment. This will allow interested parties to re-run these tests and confirm the findings.</li>
+</ul>
+<p>Thank you to Artur Ortega and Victor Tsaran (both of the Yahoo! Accessibility Stakeholders Group) for volunteering time to run these test cases and talk through the issues they encountered - that process was enlightening and informative. Thanks to Ben Hawkes Lewis for his insight and guidance on screen reader usage, also for volunteering to run these tests through his screen readers, and his support of running this experiment. Finally, thanks to Ben Ward for taking the initiative to understand and resolve the accessibility implications of certain markup techniques, and for providing me with an interesting problem to tackle.</p>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/95d0fde572fb37c9c7382e9743a56f68?s=32"> <div class="cont"><a href="http://isolani.co.uk" class="name">By Mike Davies</a><span class="date">January 23rd, 2008<span></div></div>
+				</div>
+							
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2013/04/23/yui3-and-alloyui-at-jax-de/" title="YUI3 and AlloyUI at JAX.de">YUI3 and AlloyUI at JAX.de</a>
+						</li>
+					<li>
+				<a href="/blog/2013/04/21/yui-weekly-for-april-19th-2013/" title="YUI Weekly for April 19th, 2013">YUI Weekly for April 19th, 2013</a>
+						</li>
+					<li>
+				<a href="/blog/2013/04/15/yui-after-hours/" title="YUI After Hours">YUI After Hours</a>
+						</li>
+					<li>
+				<a href="/blog/2013/04/12/yui-weekly-for-april-12th-2013/" title="YUI Weekly for April 12th, 2013">YUI Weekly for April 12th, 2013</a>
+						</li>
+					<li>
+				<a href="/blog/2013/04/11/yeti-0-2-21-released/" title="Yeti 0.2.21 Released">Yeti 0.2.21 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+ </select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (6)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (584)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (5)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (10)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (22)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (2)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (2)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (29)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (45)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (146)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (33)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2013 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1366749704" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html>

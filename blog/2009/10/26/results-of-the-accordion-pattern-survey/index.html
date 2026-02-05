@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Results of the Accordion Pattern survey</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Results of the Accordion Pattern survey</li></ul>
+				<h1 class="yui3-u-7-8">Results of the Accordion Pattern survey</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">October 26, 2009<span></div></div>
+
+<div class="blog" id="blog-content"><img alt="accordion-yahoo-sports" class="alignright size-full wp-image-588" height="363" src="/blog-archive/blog/wp-content/uploads/2009/10/accordion-yahoo-sports.png" title="accordion-yahoo-sports" width="345" />A few months back <a href="/blog-archive/blog/2009/03/23/survey-when-is-an-accordion-not-an-accordion/">we shared our current thinking on the "accordion" navigation component</a>, and asked the community of web developers and designers who read this blog to take a survey to help us determine defaults, current practices, and other guidelines to incorporate into an Accordion pattern and provide input into an Accordion YUI component. I've had some time now to review and study the results and I wanted to share them with the community as we write up a "beta" version of the pattern and get ready to share it, so without further adieu, here are the results (note that this survey should not be considered strictly scientific). <strong>Who Responded</strong> Respondents identified themselves the following ways: <img alt="accordion-respondents" class="alignright size-full wp-image-437" height="157" src="/blog-archive/blog/wp-content/uploads/2009/08/accordion-respondents.png" title="accordion-respondents" width="327" /><ul>
+		<li>Designer 21.4%<li>Developer 32.1%<li>Hybrid (Both designer and developer) 42.3%<li>None of the Above 4.2%</ul><strong>Terminology Distinctions</strong> Overwhelming majorities across all respondents agreed that <ul>
+		<li>Accordion and Accordion Menu mean the same thing (73%)<li>Accordions and Tree Controls are two different things (89%)</ul> Many commenters described the difference between accordions and trees along these lines: "Tree Control generally implies a depth of hierarchy that is not generally present with an accordion." A smaller majority said that Accordion and Collapsible Panels refer to the same thing (60%). These majorities were consistent across roles. <strong>Presentation of Accordions</strong> A solid majority (68%), said that accordions can be laid out horizontally as well as vertically (and in fact the pattern is well attested on the web). People suggested that the labels on a horizontal accordion should be written vertically and/or rotated. An even larger majority (72%) said that accordions can have only two levels (this aligns with the distinction between accordions and trees): <img alt="accordion-2-levels" class="alignnone size-full wp-image-431" height="142" src="/blog-archive/blog/wp-content/uploads/2009/08/accordion-2-levels.png" title="accordion-2-levels" width="500" /> A slight majority (53%) said that accordions may be nested within other accordions. The written comments suggested that the wording of the question led some to answer that it's certainly possible but not necessarily desirable, making suggestions such as, "If you adequately gutter them, this would be possible, but generally a terrible idea - kind of like using too many tabs and having them wrap into multiple rows." <img alt="accordion-nested" class="alignnone size-full wp-image-433" height="246" src="/blog-archive/blog/wp-content/uploads/2009/08/accordion-nested.png" title="accordion-nested" width="500" /> This was one of the questions where self-described designers and developers took opposing sides. 57% of Developers and Hybrids agreed that accordions may be nested, whereas 64% of Designers said they may not be. (None of the Aboves split 50/50!) If I had to guess, I'd say that developers (and hybrids), more intimately connected with the how than the why may have been expressing more of a "you could do it..." perspective, whereas designers may have been expressing more of a "...but you shouldn't" point of view. <strong>How Accordions Should Behave</strong> A small majority (54%) believes that accordions should allow for more than one panel to be open at a time. Both behaviors can be found online, so our impression is that this behavior may depend more on the constraints of the design space and the purpose of the accordion than on a blanket rule one way or the other. This question also split along identity lines, but in an ambiguous way. Hybrids preferred the one panel-at-a-time rule by a tiny majority, while Designers and Developers and None of the Aboves agreed that multiple panels are okay by slightly larger majorities. <img alt="accordion-multi-open" class="alignnone size-full wp-image-436" height="203" src="/blog-archive/blog/wp-content/uploads/2009/08/accordion-multi-open.png" title="accordion-multi-open" width="527" /> A much larger majority (73%) believes that an accordion can have a completely closed state (that is, that it's not necessary that there always be one panel open). The only outlier is that the None of the Aboves broke 60% for the position that there must always be one panel open. <img alt="accordion-panels-closed" class="alignnone size-full wp-image-430" height="235" src="/blog-archive/blog/wp-content/uploads/2009/08/accordion-panels-closed.png" title="accordion-panels-closed" width="500" /> Several commenters suggested that it is a good practice to have one panel open by default, and for that panel to be either the first one, the one most recently used. Another large majority (76%) believes an accordion's overall size can change as needed, rather than being constrained to a consistent size. (Of course, there are contexts, such as the screen of a mobile device, in which it may be a valid choice or even a design constraint that an accordion maintain a consistent size.) A very slight majority (51%) suggested that accordions should open on click (as opposed to on hover) and a nearly as large minority (45%) said that it depends. Interestingly, fewer than 4% were willing to state the accordions should open on hover as a rule. <img alt="accordion-onclick" class="alignnone size-full wp-image-432" height="247" src="/blog-archive/blog/wp-content/uploads/2009/08/accordion-onclick.png" title="accordion-onclick" width="500" /> Written comments on this question offered plenty of good food for thought, such as: <blockquote>Opening a panel should require explicit action. If an accordion has multiple panels, opening on hover could be a jarring experience. Rather, use a tooltip to convey summary details of what is in the panel, and have the user explicitly "click" to open that panel.</blockquote>
+	<blockquote>Depends on the configuration of each accordion. I put these examples together [<a href="http://bubbling-library.com/sandbox/accordion/multiple.html">multiple</a>, <a href="http://bubbling-library.com/sandbox/accordion/rollover.html">rollover</a>], so the developer can actually use the "best fit" for each use case. Also, there should be the option to use rollover with different rules: (one most be open) or (elements should be opened on mouseover only).</blockquote>
+	<blockquote>For advanced usages, an accordion should open on hover during drag and drop operations. In any other circumstance, you can't trust that the hover is intentional.</blockquote><strong>Accessibility</strong> Finally, we asked an open-ended question fishing for any known accessibility issues with accordions and got a lot of great answers. (For our example issue, most people agreed that making the entire label clickable and not just a small icon is important.) Here is a sampling of other insight about accessibility with accordions: <blockquote>I think it's safe to assume that an Accordion interaction is an advanced interaction. Lots of accessibility problems can arise. <ol>
+			<li>Content is hidden behind panels so people may not find it.<li>Depending on the size of the clickable area or the trigger to open/close the panels there could be issues with the manual dexterity needed.</ol> </blockquote>
+	<blockquote>Accordions should open all panels if javascript is unavailable (though that may produce a "flicker" for those with javascript).</blockquote>
+	<blockquote>It depends on whether content in the hidden panels is present in the DOM or is retrieved upon opening the panel. If it is being retrieved, focus needs to be placed on the newly opened panel.</blockquote>
+	<blockquote>Well, I really believe the title should be clickable, specially if the content of the element will be loaded using AJAX (just like a tabview approach), but the reality is that sometimes the developer (should have)/(want) the control to customize that behavior. Here is <a href="http://bubbling-library.com/sandbox/accordion/index.html">the list of examples</a> that I created for an accordion widget implementation based on YUI 2.x, it's probably one of the most used components from the bubbling YUI extension.</blockquote>
+	<blockquote>We've had a case where the 'label' of the accordion was a link to a full blog post, and so could not be accordion-clickable. In that case, we wrote an icon into the source with js to do the job. Provided the icon is sufficiently large and/or comes with an accesskey, I don't see a major difficulty...</blockquote>
+	<blockquote>Accordion controls server the purpose of fitting lots of content into less space. Since this is a visual concern, it would be fine for a screen reader to simply read all of the content and ignore the fact that it is displayed as an accordion visually. It is sufficient for an icon to be clickable to expand a panel. There could be a configuration option to allow the entire label to expand a panel, or it can be left up to the implementing developer to attach a listener to the label that calls a public "open" or "expand" function to add that functionality.</blockquote>
+	<blockquote>Just think of an accordion as a tabbed view. The entire panel label area should be clickable, but if it contains other controls (e.g. a "dismiss" or "close" button) I suggest only the label (text) be clickable, or at least the clikable area only expand up to the interactive controls (i.e. for a caption containing a button, the area above, below and "after" the button should be clickable).</blockquote><strong>Releasing the Draft Pattern</strong> One commenter questioned the artificial constraints of the survey (a fair cop, if you ask me): <blockquote>I didn't like this survey. The questions were not flexible enough. As a designer/developer, I believe all interface elements need to be tailored to particular site or web application. Asking black and white questions does not leave room for the obvious differences between projects. Some projects need a hard and fast rule, while the same rule might be totally inappropriate for another application. For the most part, I could of answered every question with a "it depends" result.</blockquote> Rest assured that the pattern will only gently recommend and the YUI code will be flexible and powerful. The survey wasn't designed to limit people's choices but rather to gather opinions and preferences, so even feedback about not having hard-and-fast rules is useful. We've published a beta version of the <a href="http://developer.yahoo.com/ypatterns/navigation/accordion.html">Accordion pattern</a> in the Yahoo! Design Pattern Library. If you'd like to give further feedback on the pattern, in a free-form manner, please drop by or visit the related <a href="http://developer.yahoo.net/forum/index.php?showtopic=2980">forum</a> discussion.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,233 @@
+/*
+  Theme Name: yuilibrary-v2
+  Author: Tilo Mitra, Anthony Pipkin and Allen Rabinovich
+  Version: 1.0
+*/
+
+h1 {
+  margin: .75em 0 .1em; /* make them the same or it looks weird with the breadcrumb */
+}
+h2 a, h2 a:visited {
+  color: inherit;
+}
+.display-links li {
+    list-style-type: none;
+}
+
+.post h2{
+  margin: 2em 0 0.1em;
+  padding-top: 0.25em;
+  color: #30418C;
+  border-top: solid 1px #DBDFEA;
+}
+
+.post .entry h2 {
+  border-top: none;
+}
+
+.first-post h2 {
+  border-top: none;
+  margin-top: 1em;
+}
+
+h6 {
+  display:inline;
+  color: inherit;
+}
+
+.navigation {
+  margin-top:5px;
+}
+
+/*The bottom navigation on the page should have a higher margin to separate it from the posts*/
+.bottom-nav {
+  margin-top:3em;
+}
+.prev-posts {
+  padding-left:5px;
+}
+
+.nav-separator {
+  width:15px;
+  text-align:center;
+  display:inline-block;
+}
+
+.breadcrumbs li {
+    list-style-type: none;
+
+    float: left;
+    margin: 0 0.5em 0 0;
+}
+.breadcrumbs li:before {
+    content: "> ";
+    color: #ccc;
+}
+.breadcrumbs .front_page:before {
+    content: none;
+}
+
+.button:hover {
+  border-color: #466899;
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-decoration: none;
+  -moz-text-shadow: 1px 1px 0 #222;
+  -webkit-text-shadow: 1px 1px 0 #222;
+  text-shadow: 1px 1px 0 #222;
+  background: #6396D8;
+}
+
+#respond {
+  margin: 2em 0 0.1em;
+  border-top: solid 1px #DBDFEA;
+  padding-top: 0.25em;
+}
+.meta {
+  overflow: hidden;
+  margin: .5em 0 1em;
+}
+
+.greyed {
+  color: #ccc;
+}
+
+.meta img, .authorbox img {
+  float: left;
+  border: 1px solid hsl(0,0%,95%);
+  padding: 2px;
+  vertical-align: middle;
+  margin-right: 12px;
+}
+.meta .date {
+  display: block;
+}
+.meta .cont {
+  overflow: hidden;
+}
+.author img {
+}
+.author .name {
+  vertical-align: middle;
+  font-weight: 500;
+}
+
+.tags .subtitle, .posted-in .subtitle {
+  display: inline-block;
+  zoom: 1;
+  *display: inline;
+  width: 5em;
+}
+
+.tags {
+  margin-bottom: 7px;
+}
+
+.tags > a {
+  padding-left: 20px;
+  background: url('images/tag.png') left center no-repeat;
+}
+.tags > a, .posted-in > a {
+  white-space: nowrap;
+}
+.posted-in .place-comment {
+  white-space: nowrap;
+}
+
+iframe.twitter-share-button {
+  position: relative;
+  top: -6px;
+}
+
+#sidebar {
+  margin-top: 79px;
+}
+#sidebar .liner {
+  padding: 0 15px 0 10px;
+}
+
+span.date {
+  color:#666;
+  font-size:85%;
+}
+
+
+/*COMMENTS STYLES*/
+ol.commentlist, ol.commentlist .children {
+  list-style-type:none;
+}
+
+ol.commentlist .children {
+  padding-top: 15px;
+}
+
+ol.commentlist .children li {
+  border-left: 1px solid #E5E6F1;
+  padding-left:10px;
+}
+.comment {
+  padding-bottom:10px;
+  margin-bottom:20px;
+}
+
+.commentlist .avatar {
+  background: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+a.comment-reply-link {
+
+  background: #EEE;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #666;
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 8px;
+  text-decoration: none;
+}
+cite.fn {
+  font-weight:bold;
+  text-transform: none;
+}
+
+#commentform div {
+  padding: 5px 0;
+}
+#commentform div input[type=text] {
+  padding: 3px;
+}
+#commentform #submit:hover {
+  cursor:pointer;
+}
+
+.authorbox {
+  padding:15px;
+  background: #E8EFF5;
+  font-size: 95%;
+}
+/* Guest Author Box Styles */
+.authorbox em {
+  display:block;
+  font-style: normal;
+}
+
+.authorbox img {
+  width:32px;
+  height:auto;
+}
+
+#ft {
+  margin-bottom: -20px;
+}
+
+
+
+
+
+
+

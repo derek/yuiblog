@@ -1,0 +1,1172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>A JavaScript Module Pattern &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; A JavaScript Module Pattern</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.3" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-114"><a href="/blog/2007/06/12/module-pattern/" rel="bookmark" title="Permanent Link to A JavaScript Module Pattern">A JavaScript Module Pattern</a></h2>
+				<small>June 12, 2007 at 12:28 pm by Eric Miraglia | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<p><a href="/blog/2006/06/01/global-domination/">Global variables are evil</a>.  Within <a href="http://developer.yahoo.com/yui/">YUI</a>, we use only two globals: <code>YAHOO</code> and <code>YAHOO_config</code>.  Everthing in YUI makes use of members within the <code>YAHOO</code> object hierarchy or variables that are scoped to such a member.  We advise that you exercise similar discipline in your own applications, too.</p>
+<p>Douglas Crockford has been teaching a useful singleton pattern for achieving this discipline, and I thought his pattern might be of interest to those of you building on top of YUI.  Douglas calls this the &#8220;module pattern.&#8221; Here&#8217;s how it works:</p>
+<p>1. <strong>Create a namespace object: </strong>If you&#8217;re using YUI, you can use the <code>YAHOO.namespace()</code> method: </p>
+<pre>YAHOO.namespace("myProject");</pre>
+<p>This assigns an empty object <code>myProject</code> as a member of <code>YAHOO</code> (but doesn&#8217;t overwrite <code>myProject</code> if it already exists).  Now we can begin adding members to <code>YAHOO.myProject</code>.</p>
+<p><strong>2. Assign the return value of an anonymous function to your namespace object:</strong></p>
+<pre>YAHOO.myProject.myModule = function () {
+
+	return  {
+		myPublicProperty: "I'm accessible as YAHOO.myProject.myModule.myPublicProperty.";
+		myPublicMethod: function () {
+			YAHOO.log("I'm accessible as YAHOO.myProject.myModule.myPublicMethod.");
+		}
+	};
+
+}(); // the parens here cause the anonymous function to execute and return</pre>
+<p>Note the very last line with the closing curly brace and then the parentheses <code>()</code> &mdash; this notation causes the anonymous function to execute immediately, <code>return</code>ing the object containing <code>myPublicProperty</code> and <code>myPublicMethod</code>. As soon as the anonymous function returns, that returned object is addressable as <code>YAHOO.myProject.myModule</code>. </p>
+<p><strong>3.  Add &#8220;private&#8221; methods and variables in the anonymous function prior to the <code>return</code> statement.</strong>  So far, the above code hasn&#8217;t bought us any more than we could have gotten by assigning <code>myPublicProperty</code>  and <code>myPublicMethod</code> directly to  <code>YAHOO.myProject.myModule</code>.  But the pattern does provide added utility when we place code before the <code>return</code> statement:</p>
+<pre>YAHOO.myProject.myModule = function () {
+
+	//"private" variables:
+	var myPrivateVar = "I can be accessed only from within YAHOO.myProject.myModule.";
+
+	//"private" method:
+	var myPrivateMethod = function () {
+		YAHOO.log("I can be accessed only from within YAHOO.myProject.myModule");
+	}
+
+	return  {
+		myPublicProperty: "I'm accessible as YAHOO.myProject.myModule.myPublicProperty."
+		myPublicMethod: function () {
+			YAHOO.log("I'm accessible as YAHOO.myProject.myModule.myPublicMethod.");
+
+			//Within myProject, I can access "private" vars and methods:
+			YAHOO.log(myPrivateVar);
+			YAHOO.log(myPrivateMethod());
+
+			//The native scope of myPublicMethod is myProject; we can
+			//access public members using "this":
+			YAHOO.log(this.myPublicProperty);
+		}
+	};
+
+}(); // the parens here cause the anonymous function to execute and return</pre>
+<p>In the codeblock above, we&#8217;re <code>return</code>ing from an anonymous function an object with two members.  These members are addressable from within <code>YAHOO.myProject.myModule</code> as <code>this.myPublicProperty</code> and <code>this.myPublicMethod</code> respectively.  From outside of <code>YAHOO.myProject.myModule</code>, these public members are addressable as <code>YAHOO.myProject.myModule.myPublicProperty</code> and <code>YAHOO.myProject.myModule.myPublicMethod</code>.</p>
+<p>The private variables <code>myPrivateProperty</code> and <code>myPrivateMethod</code> can only be accessed from within the anonymous function itself or from within a member of the <code>return</code>ed object. They are preserved, despite the immediate execution and termination of the anonymous function, through the power of closure &mdash; the principle by which variables local to a function are retained after the function has returned.  As long as <code>YAHOO.myProject.myModule</code> needs them, our two private variables will not be destroyed.</p>
+<p><strong>4.  Do something useful with the pattern.</strong>  Let&#8217;s look at a common use case for the module pattern.  Suppose you have a list, some of whose list items should be draggable.  The draggable items have the CSS class <code>draggable</code> applied to them.</p>
+<pre>&lt;!--This script file includes all of the YUI utilities:--&gt;
+&lt;script type="text/javascript" src="http://yui.yahooapis.com/2.2.2/build/utilities/utilities.js"&gt;&lt;/script&gt;
+
+&lt;ul id="myList"&gt;
+	&lt;li class="draggable"&gt;Item one.&lt;/li&gt;
+	&lt;li&gt;Item two.&lt;/li&gt; &lt;!--item two won't be draggable--&gt;
+	&lt;li class="draggable"&gt;Item three.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script&gt;
+YAHOO.namespace("myProject");
+YAHOO.myProject.myModule = function () {
+
+	//private shorthand references to YUI utilities:
+	var yue = YAHOO.util.Event,
+		yud = YAHOO.util.Dom;
+
+	//private method:
+	var getListItems = function () {
+
+		//note that we can use other private variables here, including
+		//our &quot;yud&quot; shorthand to YAHOO.util.Dom:
+		var elList = yud.get("myList");
+		var aListItems = yud.getElementsByClassName(
+			"draggable", //get only items with css class "draggable"
+			"li", //only return list items
+			elList //restrict search to children of this element
+		);
+		return aListItems;
+	};
+
+	//the returned object here will become YAHOO.myProject.myModule:
+	return  {
+
+		aDragObjects: [], //a publicly accessible place to store our DD objects
+
+		init: function () {
+			//we'll defer making list items draggable until the DOM is fully loaded:
+			yue.onDOMReady(this.makeLIsDraggable, this, true);
+		},
+
+		makeLIsDraggable: function () {
+			var aListItems = getListItems(); //these are the elements we'll make draggable
+			for (var i=0, j=aListItems.length; i&lt;j; i++) {
+				this.aDragObjects.push(new YAHOO.util.DD(aListItems[i]));
+			}
+		}
+
+	};
+}(); // the parens here cause the anonymous function to execute and return
+
+//The above code has already executed, so we can access the init
+//method immediately:
+YAHOO.myProject.myModule.init();
+&lt;/script&gt;</pre>
+<p>This example is a simple one, and it&#8217;s deliberately verbose &mdash; if this was all we were doing, we could doubtless write it in a more compact way.  However, this pattern scales well as the project becomes more complex and as its API grows.  It stays out of the global namespace, provides publicly addressable API methods, and supports protected or &#8220;private&#8221; data and methods along the way.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2007/06/12/module-pattern/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2007/06/12/module-pattern/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=A JavaScript Module Pattern&u=http://yuiblog.com/blog/2007/06/12/module-pattern/" title="bookmark A JavaScript Module Pattern on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2007/06/12/module-pattern/&amp;title=A JavaScript Module Pattern" title="bookmark A JavaScript Module Pattern in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2007/06/12/module-pattern/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2007/06/12/module-pattern/&amp;title=A JavaScript Module Pattern" title="post A JavaScript Module Pattern to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2007/06/12/module-pattern/"
+    dc:identifier="http://yuiblog.com/blog/2007/06/12/module-pattern/"
+    dc:title="A JavaScript Module Pattern"
+    trackback:ping="http://yuiblog.com/blog/2007/06/12/module-pattern/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">53 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2007/06/12/module-pattern/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2007/06/12/module-pattern/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-139729" class="class_comment1">
+	<p>This is such a great article.  Especially all of the hullabaloo (sp?) over $ and the conflicts that can be easily created with global objects.</p>
+	<p class="alignright"><small>Comment by Ryan &#8212; June 12, 2007 <a href="#comment-139729">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139743" class="class_comment2">
+	<p>Eric,</p>
+<p>Finally someone explains this pattern in a clear, intelligible way! Thank you, thank you, thank you.</p>
+<p>By the way, this looks like the beginning of a book on YUI. When is the rest of the book coming? :-)</p>
+<p>Thanks again,<br />
+Louis</p>
+	<p class="alignright"><small>Comment by louis &#8212; June 12, 2007 <a href="#comment-139743">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139752" class="class_comment1">
+	<p>@Louis &#8212; You&#8217;re most welcome.  As for a book on YUI, I think you&#8217;ll get your wish, maybe a few times over&#8230;there&#8217;s certainly publisher and author interest out there in doing YUI titles.  For more articles like this one, check out <a href="http://crockford.com" rel="nofollow">http://crockford.com</a> &#8212; Douglas has a lot of great material up on his site.  Regards, -Eric</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.360.yahoo.com/ericmiraglia' rel='external nofollow'>Eric Miraglia</a> &#8212; June 12, 2007 <a href="#comment-139752">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139756" class="class_comment2">
+	<p>Eric,</p>
+<p>I have read most articles from Doug, I have watched his videos.<br />
+I have read through Flanagan&#8217;s Definitive Guide&#8230;</p>
+<p>I really think your explanations are much better: I read your article and understood everything immediately, and I was not left with many unanswered questions.</p>
+	<p class="alignright"><small>Comment by louis &#8212; June 12, 2007 <a href="#comment-139756">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139759" class="class_comment1">
+	<p>I&#8217;m with Louis. This is very well written for someone to understand and enjoy the benefits this provides.</p>
+<p>Thanks for the article</p>
+	<p class="alignright"><small>Comment by <a href='http://www.youtilize.com' rel='external nofollow'>Dimitry</a> &#8212; June 12, 2007 <a href="#comment-139759">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139771" class="class_comment2">
+	<p>I&#8217;ll echo everyone&#8217;s sentiments so far.<br />
+Great article!<br />
+Loved the explanations!</p>
+	<p class="alignright"><small>Comment by <a href='http://www.skypoet.net' rel='external nofollow'>Oliver Tse</a> &#8212; June 12, 2007 <a href="#comment-139771">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139804" class="class_comment1">
+	<p>A similar pattern is the &#8220;shared singleton&#8221; &#8212; create a singleton object for an application that can be used to share properties or methods between pages or inline frames. </p>
+<p>Here&#8217;s the start of a &#8220;my.js&#8221; script that every page or frame in an application could share:</p>
+<p>if (typeof parent.my != &#8220;undefined&#8221;) {<br />
+var my = parent.my; // shared singleton<br />
+} else {</p>
+<p>var my = {};</p>
+<p>my.something &#8230;</p>
+<p>}</p>
+<p>The &#8220;parent&#8221; bit is so that the script can be used with iframes and still<br />
+retain a reference to the same &#8220;my&#8221; instance. If a page is at the top, then parent points to itself. </p>
+<p>Every page or frame that imports &#8220;my.js&#8221; can share properties or methods with any other page. </p>
+<p>-Ted.</p>
+	<p class="alignright"><small>Comment by Ted Husted &#8212; June 12, 2007 <a href="#comment-139804">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139846" class="class_comment2">
+	<p>[&#8230;] A JavaScript Module Pattern &raquo; Yahoo! User Interface Blog [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://alvinwoon.com/blog/2007/06/12/links-for-6122007/' rel='external nofollow'>Daily misery &raquo; Blog Archive &raquo; Links for 6.12.2007</a> &#8212; June 12, 2007 <a href="#comment-139846">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139852" class="class_comment1">
+	<p>Eric - Just what I needed.  Thank you!</p>
+	<p class="alignright"><small>Comment by <a href='http://www.valueaverager.com' rel='external nofollow'>jaymuntz</a> &#8212; June 12, 2007 <a href="#comment-139852">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139893" class="class_comment2">
+	<p>I&#8217;m going to echo the statements by the rest of the commenters. I never really understood this pattern, merely copied it over and over for it&#8217;s elegant design.</p>
+<p>After reading this article, the pattern makes much more sense. Thanks again Eric!</p>
+	<p class="alignright"><small>Comment by Wayne Pan &#8212; June 12, 2007 <a href="#comment-139893">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139971" class="class_comment1">
+	<p>I&#8217;ve added a tweak to this pattern from time to time, though it might be gratuitous:</p>
+<p><code><br />
+module = function() {<br />
+  // ... module privates and aliases<br />
+  return {<br />
+    // ... module constants<br />
+    init: function() {<br />
+        return this;<br />
+    },<br />
+    // ... module methods<br />
+    EOF:null<br />
+  };<br />
+}().init();<br />
+</code></p>
+<p>This constructs the module, and after construction calls an init() method that has access to the module via this.  I use that method to register onload and onavailable handlers for the module, among other things.</p>
+<p>Oh, and the EOF:null has saved me from stray extra commas after the last method on a few occasions.  Those seem to get a pass in Firefox, but throw errors in MSIE.</p>
+	<p class="alignright"><small>Comment by <a href='http://decafbad.com/' rel='external nofollow'>l.m.orchard</a> &#8212; June 12, 2007 <a href="#comment-139971">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139991" class="class_comment2">
+	<p>Of course, after having posted that comment, I see that your examples call an init() method too - but maybe with a bit less one-liner obscurity than mine.  :)</p>
+	<p class="alignright"><small>Comment by <a href='http://decafbad.com/' rel='external nofollow'>l.m.orchard</a> &#8212; June 12, 2007 <a href="#comment-139991">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140050" class="class_comment1">
+	<p>Ah so we call it the module pattern&#8230;I used to call it &#8220;that technique I have seen in many of Dustin Diaz&#8217; screencast&#8221;.</p>
+<p>I think that &#8216;module pattern&#8217; will go down much better in an interview situation.</p>
+<p>Thanks for this Eric, the news of a possible book is great news!</p>
+	<p class="alignright"><small>Comment by <a href='http://www.carltondickson.co.uk' rel='external nofollow'>Carlton</a> &#8212; June 13, 2007 <a href="#comment-140050">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140071" class="class_comment2">
+	<p>I&#8217;ve been looking for a good way to explain this to my work colleagues, it&#8217;s the pattern we use extensively in our application, and up until now the best explanation I could give them was &#8220;It&#8217;s kind of like a singleton&#8221; which has always met with rather blank looks, and while I think they understand what I was trying to get across, I can now link them to this instead.</p>
+	<p class="alignright"><small>Comment by <a href='http://stubblog.wordpress.com' rel='external nofollow'>Stuart Grimshaw</a> &#8212; June 13, 2007 <a href="#comment-140071">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140102" class="class_comment1">
+	<p>[&#8230;] Eric Miraglia, of Yahoo!, has documented his explanation of what Douglas Crockford calls the JavaScript Module pattern. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.ajaxgirl.com/2007/06/13/a-javascript-module-pattern/' rel='external nofollow'>Ajax Girl &raquo; Blog Archive &raquo; A JavaScript Module Pattern</a> &#8212; June 13, 2007 <a href="#comment-140102">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140109" class="class_comment2">
+	<p>The start of a great series.  I have a few talented java coders who are sort of on standby regarding upgrading their Javascript knowledge.  Stuff like this is perfect for me to send to them because it speaks their vocabulary and is presented from a central respected authority.</p>
+<p>Can&#8217;t wait to see more.</p>
+	<p class="alignright"><small>Comment by Ivan &#8212; June 13, 2007 <a href="#comment-140109">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140111" class="class_comment1">
+	<p>One quick request.  This is effectively a singleton, but it would be helpful to see a similar implementation that describes it as an instance.   Thanks again!</p>
+	<p class="alignright"><small>Comment by Ivan &#8212; June 13, 2007 <a href="#comment-140111">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140135" class="class_comment2">
+	<p>[&#8230;] A JavaScript Module Pattern » Yahoo! User Interface Blog (tags: javascript yui namespace programming oop pattern) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.ryanj.org/2007/06/13/links-for-2007-06-13/' rel='external nofollow'>Web Site Design, Internet Marketing, Ecommerce - ryanj - links for 2007-06-13</a> &#8212; June 13, 2007 <a href="#comment-140135">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140136" class="class_comment1">
+	<p>I have been using this pattern ever since I had heard about it from Doug&#8217;s lectures last year, and just have an addition that you may find usefull.</p>
+<p>Private methods can access other private methods and variables, but not public methods unless it is a singltoon then you call the full name of the singleton and get those methods, that is more of a hack.  Public methods can call private methods and other public methods but you must include this.public method name in order to call other public methods.  </p>
+<p>This is from my experience with using this pattern and a few others that he had mentioned.</p>
+	<p class="alignright"><small>Comment by Don Pavlik &#8212; June 13, 2007 <a href="#comment-140136">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140146" class="class_comment2">
+	<p>Brilliant article Eric.  This is by far the best explaination of this pattern I have ever read, leaving the reader with no question as to what is happening.  Very nice.</p>
+<p>My only complaint is the name.  I would call this a JavaScript Singleton Pattern.  &#8220;Module Pattern&#8221; is too generic sounding.  What is a &#8220;module&#8221; anyway?  You can&#8217;t derive from the name that this is really a Singleton.</p>
+<p>But I&#8217;m certainly willing to forgive the name considering the quality of this article.  :-)</p>
+	<p class="alignright"><small>Comment by <a href='http://www.fotiweb.com' rel='external nofollow'>Peter Foti</a> &#8212; June 13, 2007 <a href="#comment-140146">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140148" class="class_comment1">
+	<p>Why an instance? If you really must. It&#8217;ll probably be something like:</p>
+<p><code></p>
+<p>function Module() {<br />
+  //private stuff</p>
+<p>  function myprivmethod() {}</p>
+<p>  //public stuff<br />
+  this.init() { }</p>
+<p>  // etc<br />
+}</p>
+<p>YAHOOO.MyProject.MyModule = new Module();<br />
+</code></p>
+	<p class="alignright"><small>Comment by jchoe &#8212; June 13, 2007 <a href="#comment-140148">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140166" class="class_comment2">
+	<p>[&#8230;] Miraglia officially promotes one of the YUI library&#8217;s unofficial object creation [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://geoffreymoller.com/2007/06/13/preach-the-word-crockfords-module-pattern/' rel='external nofollow'>geoffreymoller.com &raquo; Blog Archive &raquo; Preach the Word - Crockford&#8217;s Module Pattern</a> &#8212; June 13, 2007 <a href="#comment-140166">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140167" class="class_comment1">
+	<p>[&#8230;] Miraglia officially promotes YUI&#8217;s unofficial object creation [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://geoffreymoller.com/2007/06/13/preach-the-word-crockfords-module-pattern-2/' rel='external nofollow'>geoffreymoller.com &raquo; Blog Archive &raquo; Preach the Word - Crockford&#8217;s Module Pattern</a> &#8212; June 13, 2007 <a href="#comment-140167">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140208" class="class_comment2">
+	<p>Instances in this pattern have to be created without <b>new</b> keyword.<br />
+I recommend to everyone here to view video by Douglas Crockford - Advanced Javascript.</p>
+<p>But I personally like pattern from YUI - Element.<br />
+<code><br />
+(function() {<br />
+// private functions<br />
+....</p>
+<p>// Constructor<br />
+MyGlobalObject.MyClass = function() {</p>
+<p>}<br />
+// assigning fields and method to global object<br />
+MyGlobalObject.MyClass.prototype = {<br />
+   function1 : function() {},<br />
+   function2 : function() {}<br />
+}<br />
+})();</code><br />
+and then you can use new keyword for instances.<br />
+I use singleton pattern for static classes and pattern above for all other classes. So in my eyes code looks better.</p>
+	<p class="alignright"><small>Comment by Monin Dmitry &#8212; June 13, 2007 <a href="#comment-140208">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140222" class="class_comment1">
+	<p>@l.m.orchard</p>
+<p>Your code puts the return value of the init function into the module variable.</p>
+<p>The object that was returned from the anonymous function is lost.</p>
+<p>This is OK if you are doing what most people do which is just copy and paste this with ONE function: init. And just use it as a way to run that function.</p>
+<p>But if you are actually using it to produce a useful singleton object, you&#8217;d be knackered.</p>
+	<p class="alignright"><small>Comment by Animal &#8212; June 13, 2007 <a href="#comment-140222">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140255" class="class_comment2">
+	<p>[&#8230;] Crockford&#8217;s suggestion for how to construct a JavaScript module awhile back. Here is another walk through of the same pattern by Eric Miraglia of Yahoo!. The idea is to provide both public, protected and [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.fishandcross.com/blog/?p=202' rel='external nofollow'>Road Warrior Collaboration &raquo; Javascript Module Pattern</a> &#8212; June 13, 2007 <a href="#comment-140255">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140317" class="class_comment1">
+	<p>[&#8230;] A JavaScript Module Pattern » Yahoo! User Interface Blog (tags: javascript programming yui pattern namespace oop yahoo dom development designpatterns design coding application private prototype tips toread webdesign webdev work learning js patterns **) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://simplyauser.wordpress.com/2007/06/14/links-for-2007-06-14/' rel='external nofollow'>links for 2007-06-14 &laquo; Simply&#8230; A User</a> &#8212; June 13, 2007 <a href="#comment-140317">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140452" class="class_comment2">
+	<p>[&#8230;] sounds a bit peculiar.. it&#8217;s good in C, which i heard.. but here it&#8217;s a diff world &gt;&gt;     No Comments so far  Leave a comment   RSS feed for comments on this post. TrackBack URI    [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://dowhatufear.wordpress.com/2007/06/14/javascript-module-pattern/' rel='external nofollow'>error is the mother of all inventions</a> &#8212; June 13, 2007 <a href="#comment-140452">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140550" class="class_comment1">
+	<p>This is OK if you are doing what most people do which is just copy and paste this with ONE function: init. And just use it as a way to run that function.</p>
+<p>But if you are actually using it to produce a useful singleton object, you’d be knackered.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.tercumehizmeti.com' rel='external nofollow'>tercüme</a> &#8212; June 14, 2007 <a href="#comment-140550">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140784" class="class_comment2">
+	<p>Since I, probably like most readers, don&#8217;t work at YAHOO, I think it would be a very bad idea for me to put my project under the YAHOO namespace. What if YAHOO adds a YAHOO.myProject object to YUI? &#8220;Don&#8217;t modify objects you don&#8217;t own&#8221; is good advice and I don&#8217;t own the YAHOO object. We don&#8217;t want YAHOO to become the new global namespace and then have conflicts under YAHOO instead of under window object. The idea is that YAHOO stays in its space and I stay in my space.</p>
+	<p class="alignright"><small>Comment by <a href='http://peter.michaux.ca' rel='external nofollow'>Peter Michaux</a> &#8212; June 14, 2007 <a href="#comment-140784">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140909" class="class_comment1">
+	<p>Personally, I use this pattern all the time, even when other developers think different, especially when we&#8217;re working with collections of references using this pattern to management of each reference.</p>
+<p>But I use a variation of the module pattern:</p>
+<p><code><br />
+YAHOO.myProject.myModule = function () {<br />
+    var obj = {}; // returnable object...</p>
+<p>	//"private" variables:<br />
+	var myPrivateVar = "I can be accessed only from within YAHOO.myProject.myModule.";</p>
+<p>	//"private" method:<br />
+	var myPrivateMethod = function () {<br />
+		YAHOO.log("I can be accessed only from within YAHOO.myProject.myModule");<br />
+		YAHOO.log("And also have access to the public and privates properties");<br />
+		YAHOO.log(obj.myPublicProperty);<br />
+	}</p>
+<p>	var obj.myPublicProperty = "I'm accessible as YAHOO.myProject.myModule.myPublicProperty.";<br />
+	var obj.myPublicMethod = function () {<br />
+		YAHOO.log("I'm accessible as YAHOO.myProject.myModule.myPublicMethod.");</p>
+<p>		//Within myProject, I can access "private" vars and methods:<br />
+		YAHOO.log(myPrivateVar);<br />
+		YAHOO.log(myPrivateMethod());</p>
+<p>		//The native scope of myPublicMethod is myProject; we can<br />
+		//access public members using "this":<br />
+		YAHOO.log(this.myPublicProperty);<br />
+	};</p>
+<p>	return obj;</p>
+<p>}(); // the parens here cause the anonymous function to execute and return<br />
+</code></p>
+<p>The codeblock above, has exactly the same behavior that the eric code in the article, but also provide an easy way to get access to the public variables and methods within the private block.</p>
+<p>In this case, the private variables myPrivateProperty and myPrivateMethod can operate over the public members using the shorthand &#8220;obj&#8221; instead of the complete name &#8220;YAHOO.myProject.myModule&#8221;, this pattern also can be used to create a object&#8217;s parasites (more information about this pattern in the Douglas Crockford - &#8220;Advanced Javascript&#8221; Presentation).</p>
+<p>@Peter: I&#8217;m 100% agree with you&#8230;</p>
+<p>@Eric: Thanks for everything, keep going ;-)</p>
+	<p class="alignright"><small>Comment by <a href='http://bubbling.comarq.com/' rel='external nofollow'>Caridy Patiño</a> &#8212; June 14, 2007 <a href="#comment-140909">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-141181" class="class_comment2">
+	<p>[&#8230;] A JavaScript Module Pattern » Yahoo! User Interface Blog [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://runion.cc/?p=10' rel='external nofollow'>runion.cc/ &raquo; A JavaScript Module Pattern » Yahoo! User Interface Blog</a> &#8212; June 15, 2007 <a href="#comment-141181">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-141262" class="class_comment1">
+	<p>Caridy Patino&#8217;s <a href="/blog/2007/06/12/module-pattern/#comment-140909" rel="nofollow">comment</a>  above makes a good point. If you use the pattern as explained in the blog entry, public methods can&#8217;t call other public methods!</p>
+<p>Binding each public method to a local var called &#8220;obj&#8221; which is later returned, will work. Even then I think a method definition must be written before its invocation in the JS file.</p>
+<p>Thanks for a useful article.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.geocities.com/pramodbiligiri' rel='external nofollow'>Pramod Biligiri</a> &#8212; June 15, 2007 <a href="#comment-141262">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-141295" class="class_comment2">
+	<p>@all &#8212; Thanks for all the great feedback.</p>
+<p>@Don &#8212; see Caridy&#8217;s comment for a tweak that makes the private&#8217;s access to public easier, and my thoughts below.</p>
+<p>@Ted &#8212; Cool idea, thanks for sharing that!</p>
+<p>@Peter F. &#8212; What if we call it the &#8220;Crockford Module Pattern&#8221;?  Slightly more specific.  I think of it as a modular pattern in the sense that it easily encapsulates all the content for a specific piece of functionality.  It&#8217;s a good generic pattern for developing modular code.</p>
+<p>@Peter M. &#8212; I take your point.  The pattern is independent of the namespacing, though; if you omit the bit about YAHOO.namespace(), you can still leverage the pattern.</p>
+<p>@Monin Dmitry &#8212; I like the anonymous function pattern, too, and it&#8217;s the handiest insulator out there.  For my taste, the module pattern scales a little better, but we use both in YUI as you say.</p>
+<p>@Caridy &#8212; I like it.</p>
+<p>@Pramod &#8212; I think you mean that you can&#8217;t access publics from privates?  It&#8217;s generally as simple thing to either call the private from the scope of &#8220;this&#8221; or to pass &#8220;this&#8221; in as an argument, but you&#8217;re right that Caridy&#8217;s variation makes that unnecessary.</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.360.yahoo.com/ericmiraglia' rel='external nofollow'>Eric Miraglia</a> &#8212; June 15, 2007 <a href="#comment-141295">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-142829" class="class_comment1">
+	<p>There are dozens of ways to make public stuff visible in private scope, a bit simpler one:</p>
+<p>var APP = function(){</p>
+<p>	var that = {};</p>
+<p>	function doPrivateStuff(){<br />
+		that.myMethod();<br />
+	}</p>
+<p>	return {<br />
+		publicMember: true,<br />
+		myMethod: function(){},</p>
+<p>		// make this visible in private scope<br />
+		init(){<br />
+			that = this;<br />
+		}<br />
+	};<br />
+}().init();</p>
+	<p class="alignright"><small>Comment by <a href='http://www.vanthia.com' rel='external nofollow'>nea</a> &#8212; June 18, 2007 <a href="#comment-142829">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-142830" class="class_comment2">
+	<p>ups, forgot &#8216;return this;&#8217; at the end of init() :).</p>
+	<p class="alignright"><small>Comment by <a href='http://www.vanthia.com' rel='external nofollow'>nea</a> &#8212; June 18, 2007 <a href="#comment-142830">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-143513" class="class_comment1">
+	<p>[&#8230;] an addition to the recently named Module Pattern. Let&#8217;s add private static class [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://lucassmith.name/?p=98' rel='external nofollow'>Dr. Prolix &#187; Blog Archive &raquo; Private static class vars in javascript</a> &#8212; June 19, 2007 <a href="#comment-143513">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-143598" class="class_comment2">
+	<p>[&#8230;] A JavaScript Module Pattern [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.maxdesign.com.au/2007/06/20/some-links-129/' rel='external nofollow'>Max Design - standards based web design, development and training &raquo; Some links for light reading (20/6/07)</a> &#8212; June 20, 2007 <a href="#comment-143598">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-144210" class="class_comment1">
+	<p>very nice! Does anybody know an editor with a class browser for this classes an methods notation? I found only Komodo supporting this notation.</p>
+	<p class="alignright"><small>Comment by Thomas H. &#8212; June 21, 2007 <a href="#comment-144210">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-147749" class="class_comment2">
+	<p>I will start with an echo of the above comments that applaud this explanation as &#8220;finally&#8221; explaining something that many of us have known about for a while but did not really &#8220;get&#8221;.  </p>
+<p>For those of us that have been using <a href="http://www.openjsan.org/doc/c/cw/cwest/JSAN/0.10/lib/JSAN.html" rel="nofollow">JSAN</a> for a while the idea of using namespaces for our methods is old hat as it is a requirement in that world. A few months back I made a series of <a href="http://tech.groups.yahoo.com/group/ydn-javascript/msearch?query=jsan" rel="nofollow">posts to ydn-javascript</a> discussing that very topic. Which culminated in a change <a href="http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1703032&amp;group_id=165715&amp;atid=836479" rel="nofollow">request for YUI</a>.</p>
+<p>From working with JSAN the style I had adopted results in js files similar to<br />
+<code><br />
+if(typeof self != 'undefined') {<br />
+    if(typeof com == "undefined" ){com = {};}<br />
+    if(typeof com.myclass == "undefined" ){com.myclass = {};}<br />
+    if(typeof com.myclass.foo == "undefined" ){com.myclass.foo = {<br />
+        func:function(){...}<br />
+    };}<br />
+}<br />
+</code></p>
+<p>I had seen the approach you describe here but never fully wrapped my head around it. Now I get it, thank you, and going forward I will be taking this direction.</p>
+<p>I have one issue though and one question.  The issue is with namespaces.  It seems every JS lib out there expects developers to house all their code under their own namespace.  I do not really follow this logic and since I was doing a lot of work with Java applications when I started with JSAN I adopted a loose version of <a href="http://java.sun.com/docs/books/jls/third_edition/html/packages.html#40169" rel="nofollow">Sun’s package naming convention</a>. I would love to see that approach spread across JS development as it really seems to make much more sense than YAHOO.myProject.myModule particularly if you ever have any intention of passing your module along for someone else to use.</p>
+<p>Going off your example I have no problem using YAHOO.myProject.myModule.myPublicMethod(args) but sometimes there is the desire to use YAHOO.myProject.myModule(args) as well.  My question is how to do this.  I have never been able to quite sort it out.  </p>
+<p>Thanks for posting this!</p>
+	<p class="alignright"><small>Comment by alek &#8212; June 26, 2007 <a href="#comment-147749">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-153523" class="class_comment1">
+	<p>[&#8230;] A JavaScript Module Pattern: explaining how all this is applied at Yahoo! [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.klauskomenda.com/archives/2007/07/07/javascript-programming-patterns/' rel='external nofollow'>klauskomenda.com &raquo; JavaScript Programming Patterns</a> &#8212; July 7, 2007 <a href="#comment-153523">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-154696" class="class_comment2">
+	<p>[&#8230;] not be accessed from outside of the object (if you want to make them truly private, you can use Crockford&#8217;s Module Pattern). The _timeoutId property stores a timeout ID that is used to control how often _process(), the [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2007/07/09/downshift-your-code/' rel='external nofollow'>Downshift Your Code &raquo; Yahoo! User Interface Blog</a> &#8212; July 9, 2007 <a href="#comment-154696">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-155532" class="class_comment1">
+	<p>[&#8230;] this approach lacks a few of the features of more sophisticated alternatives, it&#8217;s simple enough that beginners can grasp it and feel confident writing their own scripts [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.developercast.com/2007/07/10/javascript-how-simple-is-too-simple/' rel='external nofollow'>developercast.com &raquo; JavaScript: How Simple is Too Simple?</a> &#8212; July 10, 2007 <a href="#comment-155532">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-158691" class="class_comment2">
+	<p>[&#8230;] Eric Miraglia, of Yahoo!, has documented his explanation of what Douglas Crockford calls the JavaScript Module pattern. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://fatagnus.com/the-javascript-module-pattern/' rel='external nofollow'>The JavaScript Module Pattern &raquo; Fat Agnus</a> &#8212; July 16, 2007 <a href="#comment-158691">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-161739" class="class_comment1">
+	<p>@Eric, great article, though I prefer using <code>new function (){}</code> instead of the <code>function(){return {/**/};}();</code> approach you describe. Do you have a reason for using one over the other; they both generate an object and allow private and publicly scoped variables?</p>
+<p>@<a href="/blog/2007/06/12/module-pattern/#comment-140784" rel="nofollow">Peter</a>, great point! I completely agree with you.</p>
+<p>@<a href="/blog/2007/06/12/module-pattern/#comment-147749" rel="nofollow">alek</a>, you should take a look at <a href="http://ajile.iskitz.com/" rel="nofollow">Ajile</a>. It&#8217;s a cross-browser solution for JavaScript namespacing I&#8217;ve created. It supports the Sun package naming convention you mentioned with the added flexibility of not needing to store scripts in a matching directory structure. Ajile&#8217;s also unobtrusive in that it allows you to create standalone namespaces and namespace&#8217;d modules that are independent of Ajile&#8217;s own namespace. This differs from the YAHOO.namespace approach that wraps created namespaces and then requires using the YAHOO object to reference them and their contained objects.</p>
+	<p class="alignright"><small>Comment by <a href='http://ajile.iskitz.com/' rel='external nofollow'>Michael Lee</a> &#8212; July 25, 2007 <a href="#comment-161739">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-172605" class="class_comment2">
+	<p>[&#8230;] A JavaScript Module Pattern&nbsp;&raquo; Yahoo&nbsp;! User Interface Blog [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.john-noone.com/2007/08/16/jai-marque-le-16-08-2007/' rel='external nofollow'>John Noone &raquo; J'ai marqué le 16-08-2007</a> &#8212; August 15, 2007 <a href="#comment-172605">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-172652" class="class_comment1">
+	<p>[&#8230;] 和 Crockford 的模块模式来弥补第一种方法的缺陷。使用闭包可以隐藏全局变量t，只有在 [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://realazy.org/blog/2007/08/16/lazy-function-definition-pattern/' rel='external nofollow'>Realazy &raquo; 惰性函数定义模式</a> &#8212; August 15, 2007 <a href="#comment-172652">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-173379" class="class_comment2">
+	<p>Thanks Eric for such a great article, I have been using this technique since YUI release, I borrowed this from YUI definitely but didn&#8217;t know the pattern name but now I know it as &#8220;Module Pattern&#8221;, so from now on I don&#8217;t have to tell my fellow developers that it&#8217;s a &#8220;YUI kinda thing&#8221;. Thanks very much :)</p>
+	<p class="alignright"><small>Comment by <a href='http://www.mangospring.net' rel='external nofollow'>Arnab</a> &#8212; August 17, 2007 <a href="#comment-173379">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-173433" class="class_comment1">
+	<p>@Arnab &#8212; Thanks for the kind words.  You make a good point, and others have pointed out that I should have been more clear about this in the piece: This is a generic pattern, not specific to YUI at all.  It&#8217;s just a pattern, one of several that achieve similar goals, and not related to any particular library.  -Eric</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.360.yahoo.com/ericmiraglia' rel='external nofollow'>Eric Miraglia</a> &#8212; August 17, 2007 <a href="#comment-173433">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-173767" class="class_comment2">
+	<p>[&#8230;] A JavaScript Module Pattern » Yahoo! User Interface Blog A reasonable approach for module-like things (including private variables) in JavaScript (tags: javascript) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.blueskyonmars.com/2007/08/18/links-for-2007-08-18/' rel='external nofollow'>Blue Sky On Mars &raquo; Blog Archive &raquo; links for 2007-08-18</a> &#8212; August 18, 2007 <a href="#comment-173767">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-180678" class="class_comment1">
+	<p>[&#8230;] A JavaScript Module Pattern » Yahoo! User Interface Blog A way of organisng javascript properly (tags: javascript) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.mark-kirby.co.uk/2007/08/28/links-for-2007-08-28/' rel='external nofollow'>Mark Kirby - Brighton &raquo; Blog Archive &raquo; links for 2007-08-28</a> &#8212; August 28, 2007 <a href="#comment-180678">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-182877" class="class_comment2">
+	<p>[&#8230;] has the notion of namespaces and packages (which we usually fake on the web) and class-based objects (eww! well, it supports the prototype stuff as well). So if we [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.phpied.com/make-your-javascript-a-windows-exe/' rel='external nofollow'>phpied.com &raquo; Blog Archive &raquo; Make your javascript a Windows .exe</a> &#8212; August 31, 2007 <a href="#comment-182877">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-183206" class="class_comment1">
+	<p>[&#8230;] 或者我所喜欢的&#8221;model pattern&#8220;: [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://realazy.org/blog/2007/09/02/javascript-documentation-generating-tools/' rel='external nofollow'>Realazy &raquo; JavaScript文档生成工具</a> &#8212; September 1, 2007 <a href="#comment-183206">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="114" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/09/13/bubbling-library-by-caridy/">The Bubbling Technique &amp; Custom Event, YUI&#8217;s Secret Weapon by Caridy Pati&#241;o Mayea</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/12/satyam-datatable/">Working with the YUI DataTable Control</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/05/pattern-vote-to-promote/">New pattern (Vote to Promote), new navigation</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/04/video-souders/">YUI Theater &mdash; Steve Souders: &#8220;High Performance Web Sites: 14 Rules For Faster Pages&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/04/yui-region/">Shift Happens &mdash; Fixing Tricky Layouts with the YUI Dom Collection</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/29/video-smarr/">YUI Theater &mdash; Joseph Smarr: &#8220;High-Performance JavaScript: Why Everything You&#8217;ve Been Taught is Wrong&#8221;</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://www.yswfblog.com/">Yahoo! Flash (R) Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 27 queries. 0.597 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1190022383" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

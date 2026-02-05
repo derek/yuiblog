@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Development &raquo; Yahoo! User Interface Blog (YUIBlog)</title>
+<!-- 	<title>Yahoo! User Interface Blog (YUIBlog) &raquo; Development</title> -->
+	 <meta http-equiv="Content-Encoding" content="gzip" />
+<meta http-equiv="Accept-Encoding" content="gzip, deflate" />
+	<meta name="generator" content="WordPress 3.0.4" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+  
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.2r1/build/yuiloader-dom-event/yuiloader-dom-event.js&3.3.0/build/yui/yui-min.js"></script> 
+    
+    	<link rel='archives' title='April 2011' href='/blog/2011/04/' />
+	<link rel='archives' title='March 2011' href='/blog/2011/03/' />
+	<link rel='archives' title='February 2011' href='/blog/2011/02/' />
+	<link rel='archives' title='January 2011' href='/blog/2011/01/' />
+	<link rel='archives' title='December 2010' href='/blog/2010/12/' />
+	<link rel='archives' title='November 2010' href='/blog/2010/11/' />
+	<link rel='archives' title='October 2010' href='/blog/2010/10/' />
+	<link rel='archives' title='September 2010' href='/blog/2010/09/' />
+	<link rel='archives' title='August 2010' href='/blog/2010/08/' />
+	<link rel='archives' title='July 2010' href='/blog/2010/07/' />
+	<link rel='archives' title='June 2010' href='/blog/2010/06/' />
+	<link rel='archives' title='May 2010' href='/blog/2010/05/' />
+	<link rel='archives' title='April 2010' href='/blog/2010/04/' />
+	<link rel='archives' title='March 2010' href='/blog/2010/03/' />
+	<link rel='archives' title='February 2010' href='/blog/2010/02/' />
+	<link rel='archives' title='January 2010' href='/blog/2010/01/' />
+	<link rel='archives' title='December 2009' href='/blog/2009/12/' />
+	<link rel='archives' title='November 2009' href='/blog/2009/11/' />
+	<link rel='archives' title='October 2009' href='/blog/2009/10/' />
+	<link rel='archives' title='September 2009' href='/blog/2009/09/' />
+	<link rel='archives' title='August 2009' href='/blog/2009/08/' />
+	<link rel='archives' title='July 2009' href='/blog/2009/07/' />
+	<link rel='archives' title='June 2009' href='/blog/2009/06/' />
+	<link rel='archives' title='May 2009' href='/blog/2009/05/' />
+	<link rel='archives' title='April 2009' href='/blog/2009/04/' />
+	<link rel='archives' title='March 2009' href='/blog/2009/03/' />
+	<link rel='archives' title='February 2009' href='/blog/2009/02/' />
+	<link rel='archives' title='January 2009' href='/blog/2009/01/' />
+	<link rel='archives' title='December 2008' href='/blog/2008/12/' />
+	<link rel='archives' title='November 2008' href='/blog/2008/11/' />
+	<link rel='archives' title='October 2008' href='/blog/2008/10/' />
+	<link rel='archives' title='September 2008' href='/blog/2008/09/' />
+	<link rel='archives' title='August 2008' href='/blog/2008/08/' />
+	<link rel='archives' title='July 2008' href='/blog/2008/07/' />
+	<link rel='archives' title='June 2008' href='/blog/2008/06/' />
+	<link rel='archives' title='May 2008' href='/blog/2008/05/' />
+	<link rel='archives' title='April 2008' href='/blog/2008/04/' />
+	<link rel='archives' title='March 2008' href='/blog/2008/03/' />
+	<link rel='archives' title='February 2008' href='/blog/2008/02/' />
+	<link rel='archives' title='January 2008' href='/blog/2008/01/' />
+	<link rel='archives' title='December 2007' href='/blog/2007/12/' />
+	<link rel='archives' title='November 2007' href='/blog/2007/11/' />
+	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+		<link rel="alternate" type="application/rss+xml" title="Yahoo! User Interface Blog (YUIBlog) &raquo; Development Category Feed" href="/blog/category/development/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/blog/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Yahoo! User Interface Blog (YUIBlog)' href='/blog/' />
+<meta name="generator" content="WordPress 3.0.4" />
+</head>
+
+<body>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog (YUIBlog)</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item page-item-2"><a href="/blog/about/" title="About">About</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/" title="YUI Jobs">YUI Jobs</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/" title="Contribute">Contribute</a></li>
+				</ul>
+			</div>
+		
+			<!--<div id="search">
+				<form id="searchform" method="get" action="http://www.yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>-->
+            
+            <div id="search">
+            <form action="http://search.yahoo.com/search" id="sitesearchform">
+            <input name="vs" type="hidden" value="yuiblog.com">
+            <div id="sitesearch">
+                <label for="searchinput">Site Search: </label>
+                <input type="text" id="searchinput" name="p">
+                <input type="submit" value="Search" id="searchsubmit" class="ygbt">    
+                <div id="searchcontainer"></div>
+            </div>
+            </form>
+            </div>
+	</div>
+	
+<!-- end header -->			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+		<!--don't suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-382"><a href="/blog/2009/06/30/yui-soundmanager/" rel="bookmark" title="Permanent Link to Enhancing YUI-based Applications With Audio">Enhancing YUI-based Applications With Audio</a></h2>
+				<small>June 30, 2009 at 8:41 am by Scott Schiller | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/06/30/yui-soundmanager/#comments" title="Comment on Enhancing YUI-based Applications With Audio">4 Comments</a></small>
+						
+			<div class="interview">
+<div class="intro alignleft">
+<p><img src="http://yuiblog.com/assets/schiller-20090629-111332.jpg" align="right" alt="Scott Schiller" hspace="10" vspace="10"><em><strong>Aboot the author:</strong></em> Scott Schiller (<a href="http://twitter.com/schill">@schill</a>) is a front-end engineer on Flickr who joined Yahoo! in 2005, hailing from Canada. <a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager 2</a> is one of his personal side-projects. As Flickr&#8217;s self-professed resident DJ, he can be seen playing at the occasional Web 2.0 party between tinkering with time-lapse videos and photographing things for sharing online. Scott&#8217;s <a href="http://www.schillmania.com/">experimental DHTML site</a> is updated sporadically. In this article, Scott shows you how to use SoundManager to tie sound effects to specific user actions or events in YUI.</p>
+</p></div>
+</div>
+<p>Sound is one of the major senses and a major part of daily life, and yet is largely ignored on the web. Web developers know that when it comes to HTML, audio is not as easy to add to a web site as it should be. Why is that? The following are some thoughts on the historical problems with embedding sound, a few ideas and some demos of embedding and controlling sound from Javascript with YUI.</p>
+<h3>Demos</h3>
+<p>If you&#8217;re like me, you&#8217;re probably wanting to see some fun stuff up-front because <i>reading</i> is <i>work</i>, and <i>work</i> is <i>boring</i>! ;) Feel free to play with the demos first and then read on for the details.</p>
+<ul>
+<li>Demo 1 (practical): <a href="http://www.schillmania.com/content/demos/yui-sm2/inline-mp3/">Play MP3 Links Inline</a></li>
+<li>Demo 2 (fun): <a href="http://www.schillmania.com/content/demos/yui-sm2/noisy-events/">A Noisy DOM</a></li>
+</ul>
+<h3>A Brief History of HTML and &#8220;Multimedia&#8221;</h3>
+<p>The web is pretty good at visual presentation. It is easy to create, design and embed images, text, and links in HTML documents. Of the media formats natively supported today in HTML 4, audio and video &#8211; or rather, &lt;audio&gt; and &lt;video&gt; &#8211; are conspicuously missing.</p>
+<p>HTML 5 should bring audio and video embedding closer to the simplicity of &lt;img /&gt; in the not-so-distant future. In the meantime, we have to resort to creative work-arounds to get HTML-5-like audio/video functionality across the gamut of today&#8217;s common HTML 4-supporting browsers.</p>
+<h3>The (HTML 4) Problem With Embedding Audio</h3>
+<p>For audio on web sites today, developers often display a list of HTML links directly to MP3 files. This method is simple, universally-understood and indexable by search engines, but makes for a confusing and inconsistent browsing experience by default.</p>
+<p>Users are generally prompted to right-click, &#8220;save as&#8221; and finally open the file from their desktop, or click the link and have their browser download and open the MP3 file. The regular &#8220;click&#8221; typically opens in a new page with the embedded player or launches an external application like QuickTime or Windows Media Player.</p>
+<p>Not only are &#8220;naked&#8221; MP3 links extra work and confusing for the user, the browser&#8217;s method of handling them is a distraction and takes them away from the experience of your site.</p>
+<p>Using &lt;object&gt;/&lt;embed&gt; is another generic way to directly embed MP3 or other content, but again suffers from the problem of inconsistency; the developer won&#8217;t know what may show in that area of the web page, given the user could have any array of applications which may load in order to handle that file type &#8211; in this case, likely the same QuickTime or Windows Media Player which would handle direct downloads would be shown in-place in your page. Again, not a great solution.</p>
+<p>Flash widgets are sometimes used as a solution for embedding MP3 content, but the UI and skins tend to be 100% Flash-based rather than HTML and CSS-based and thus are more difficult for most web developers to customize. HTML 5 should change this with standards-based, CSS-skinnable and scriptable audio/video elements.</p>
+<p>In the meantime, some creative solutions can be used to get more &#8220;web developer-friendly&#8221; widgets for audio.</p>
+<h3>Making MP3 Links &#8220;Just Work&#8221;: YUI + SoundManager 2</h3>
+<p>To have &#8220;progressively-enhanced&#8221; links to MP3s that will play in-place when clicked, something must intercept the browser&#8217;s normal download action and subsequently handle the request; by combining Javascript and Flash to handle the loading and playing of MP3 content, this can be done very effectively.</p>
+<p>In a personal quest to get cross-browser audio control for a DHTML game back in 2002, I developed a JS + Flash audio API called SoundManager. Having since evolved to include video, <a href="http://www.schillmania.com/projects/soundmanager2/" title="Javascript + Flash sound library">SoundManager 2</a> implements and extends Flash&#8217;s native sound API and exposes it to Javascript. The result is cross-browser/platform scripted audio functionality which can help to bridge the gap for JS-driven sound until HTML 5 is widely supported.</p>
+<p>By combining SoundManager 2 with YUI&#8217;s <a href="http://developer.yahoo.com/yui/dom/" title="YUI DOM documentation">DOM</a> and <a href="http://developer.yahoo.com/yui/event/" title="YUI Event documentation">Event</a> utilities, you have an effective solution for embedding and controlling audio which can gracefully degrade to a browser download or embedded player.</p>
+<h3>Practical Example: Playable MP3 Links</h3>
+<p>The following demo uses YUI and SoundManager 2 to enhance MP3 links, making them playable inline. YUI&#8217;s event utilities intercept clicks on links pointing to MP3 files and then use the SoundManager API to load and play the relevant URL before returning &#8220;false&#8221;, and preventing the browser from loading the link. Subsequent clicks will toggle play/pause state.</p>
+<p>In the event Javascript/Flash aren&#8217;t present or if anything else goes wrong, the browser will simply fall through and load the MP3 link as usual.</p>
+<ul>
+<li><strong>Demo 1 (practical):</strong> <a href="http://www.schillmania.com/content/demos/yui-sm2/inline-mp3/">Play MP3 Links Inline</a></li>
+</ul>
+<h3>Adding Audio To Your UI</h3>
+<p>Javascript-based animation, transition and motion effects add fluidity to web interface design and are becoming more commonplace. Smartly-applied audio can complement and further enhance the UI, making the experience more meaningful.</p>
+<p>In certain applications, sound in the form of UI feedback can be appropriate and helpful to the user experience. Sound effects are common for Flash-based sites and web-based games, and in desktop gaming audio is usually a key part of telling the story.</p>
+<h3>.. But Don&#8217;t Over-Do It</h3>
+<p>It&#8217;s important to know when to stop. Recall animated &#8220;under construction&#8221; .GIFs? How about the blink tag? Marquee text? Some things are best left alone. Not every HTML page needs to move, blink, slide, flash <i>and</i> be noisy at the same time; even &#8220;fun&#8221; is best applied in moderation. Annoying your users with auto-playing music or noise can quickly lead to abandonment of your site.</p>
+<p>There is probably good reason that standard HTML elements such as form controls and the like do not have sound effects or notifications associated with them. Perhaps &#8220;silence is golden&#8221; and it&#8217;s best that the web be a quiet place by default, so as not to be annoying and distracting.</p>
+<p>As one notable exception to the &#8220;silent web&#8221; theme, Internet Explorer usually makes a &#8220;click&#8221; sound when page navigation occurs, presumably to notify the user that an action has started. This has become more muted in recent times, but is still present and still seems to annoy some users to this day.</p>
+<h3>&#8220;Fun&#8221; Example: A Noisy DOM</h3>
+<p>Despite the arguments for silence, the following is an example of what it might be like to have &#8220;noisy&#8221; form elements, buttons and DOM elements which provide audible feedback as they&#8217;re being used. The novelty is certainly to wear off quickly, but it does add an element of childish fun to the UI.</p>
+<ul>
+<li><strong>Demo 2 (fun):</strong> <a href="http://www.schillmania.com/content/demos/yui-sm2/noisy-events/">A Noisy DOM</a></li>
+</ul>
+<h3>Looking Forward: HTML 5</h3>
+<p>Native &lt;audio&gt; and &lt;video&gt; support will mean it will be much easier to embed and control more media formats within the browser without relying on third-party plugins. Furthermore, an extensive Javascript API should encourage developers to create increasingly-innovative experiences.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/&amp;title=Enhancing YUI-based Applications With Audio" title="bookmark Enhancing YUI-based Applications With Audio in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/&amp;title=Enhancing YUI-based Applications With Audio" title="post Enhancing YUI-based Applications With Audio to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F06%2F30%2Fyui-soundmanager%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/"
+    dc:title="Enhancing YUI-based Applications With Audio"
+    trackback:ping="http://www.yuiblog.com/blog/2009/06/30/yui-soundmanager/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--don't suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-376"><a href="/blog/2009/06/24/yui3b1/" rel="bookmark" title="Permanent Link to YUI 3.0.0 beta 1 Available for Download">YUI 3.0.0 beta 1 Available for Download</a></h2>
+				<small>June 24, 2009 at 2:35 pm by Eric Miraglia | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/06/24/yui3b1/#comments" title="Comment on YUI 3.0.0 beta 1 Available for Download">19 Comments</a></small>
+						
+			<p><a href="http://developer.yahoo.com/yui/3/">YUI 3.0.0 beta 1</a> is now <a href="http://yuilibrary.com/downloads/#yui3">available for download from YUILibrary.com</a>.</p>
+<p>This release takes YUI 3 out of its preview phase and brings its APIs to a near-final state. For those intending to implement YUI 3, the 3.0.0 beta 1 release is a good place to begin the transition. If you&#8217;ve been working with the latest preview release, George Puckett has provided <a href="http://yuilibrary.com/projects/yui3/wiki/ReadMe/RollUp_3.0.0beta1">a comprehensive 3.0.0 beta 1 changelog</a> to guide you. We look forward to <a href="http://yuilibrary.com/forum/viewforum.php?f=15">hearing your feedback</a> as you begin working with 3.0.0 beta 1, and we&#8217;ll work hard to address that feedback as we prepare for a GA release in the coming months.</p>
+<p>We&#8217;ve spent a lot of time in this release cycle refining the core elements of YUI 3 &mdash; <a href="http://developer.yahoo.com/yui/3/yui/">YUI</a>, <a href="http://developer.yahoo.com/yui/3/node/">Node</a>, and <a href="http://developer.yahoo.com/yui/3/event/">Event</a> &mdash; to ensure that we have the right API going forward. Performance is improved, and we&#8217;ve refined our module/submodule structure. In some cases we&#8217;ve added significant new features, including intrinsic support for event delegation in the Event package; however, the focus is on moving the base library to  production quality.</p>
+<p>Several YUI 2.x components make their YUI 3 debut in this release:</p>
+<ol>
+<li><strong><a href="http://developer.yahoo.com/yui/3/datasource/">DataSource</a>:</strong> YUI&#8217;s data abstraction layer provides a standard interface into data sets, regardless of the data&#8217;s origin (local, XHR, XSS, etc.) and format (JSON, XML, CSV, etc.);</li>
+<li><strong><a href="http://developer.yahoo.com/yui/3/imageloader/">ImageLoader</a>: </strong> ImageLoader allows you to defer the loading of images that aren&#8217;t in the viewport when the page paints, throttling bandwidth usage and improving performance;</li>
+<li><strong><a href="http://developer.yahoo.com/yui/3/history/">History</a>:</strong> The  History component gives you control of the brower&#8217;s back button within the context of a single-page web application;</li>
+<li><strong><a href="http://developer.yahoo.com/yui/3/stylesheet/">StyleSheet</a>:</strong>  StyleSheet  makes it easy to create and modify CSS rules on the fly, allowing you to dynamically style page elements with fewer repaints.</li>
+</ol>
+<p>As part of the more granular packaging in the new codeline, we&#8217;ve created separate YUI 3 modules to house functionality that in YUI 2 was bundled with other components. <a href="http://developer.yahoo.com/yui/3/cache/">Cache</a>, <a href="http://developer.yahoo.com/yui/3/datatype/">DataType</a> and <a href="http://developer.yahoo.com/yui/3/dataschema/">DataSchema</a> debut in this release; each of these used to be a part of DataSource.</p>
+<h3>Getting to Know YUI 3</h3>
+<p>The best way to get started with YUI 3 is to dive into the <a href="http://developer.yahoo.com/yui/3/">documentation</a> and <a href="http://developer.yahoo.com/yui/3/examples/">examples</a> &mdash; particularly the examples for the core <a href="http://developer.yahoo.com/yui/3/examples/yui/">YUI</a>, <a href="http://developer.yahoo.com/yui/3/examples/node/">Node</a> and <a href="http://developer.yahoo.com/yui/3/event/">Event</a> components.</p>
+<p>We also recommend spending some time with  Satyen Desai, whose tech talk on YUI 3&#8242;s design goals and architecture provides an excellent overview of the new codeline. The video is embedded below; <a href="http://developer.yahoo.com/yui/theater/desai-yui3.html">an HD version, along with a transcript, is available from the YUI Theater site</a>.</p>
+<p><object width="512" height="322"><param name="movie" value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.40" /><param name="allowFullScreen" value="true" /><param name="AllowScriptAccess" VALUE="always" /><param name="bgcolor" value="#000000" /><param name="flashVars" value="id=13406817&#038;vid=5044557&#038;lang=en-us&#038;intl=us&#038;thumbUrl=http%3A//l.yimg.com/a/p/i/bcst/videosearch/8818/85299985.jpeg&#038;embed=1" /><embed src="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.40" type="application/x-shockwave-flash" width="512" height="322" allowFullScreen="true" AllowScriptAccess="always" bgcolor="#000000" flashVars="id=13406817&#038;vid=5044557&#038;lang=en-us&#038;intl=us&#038;thumbUrl=http%3A//l.yimg.com/a/p/i/bcst/videosearch/8818/85299985.jpeg&#038;embed=1" ></embed></object><br /><a href="http://video.yahoo.com/watch/5044557/13406817">Satyen Desai: &quot;YUI 3: Design Goals and Architecture&quot;</a> @ <a href="http://video.yahoo.com" >Yahoo! Video</a></p>
+<h3>CSS Grids and YUI 3</h3>
+<p>Those of you who use the YUI CSS components may notice that we&#8217;ve removed references to YUI CSS Grids in the 3.0.0 beta 1 documentation, although Grids remains present in the download (and, of course, you can continue using <a href="http://developer.yahoo.com/yui/grids/">the YUI 2.7.0 version of Grids</a>).</p>
+<p>We&#8217;ve deprecated the Grids implementation that was included in the preview releases, and we expect to significantly re-engineer this component before reintroducing it as part of YUI 3.</p>
+<h3>Roadmap</h3>
+<p>The 3.0.0 beta 1 release is an important milestone for YUI. At this point, we are encouraging all YUI implementers to use YUI 3 for new projects, especially projects that don&#8217;t make heavy use of widgets.</p>
+<p>Our attention now turns to bringing YUI 3 to GA status. We expect this to happen in Q3, at which time the following components will be promoted to GA:</p>
+<ul>
+<li><strong>Core:</strong> YUI, Node, Event</li>
+<li><strong>Component foundation:</strong> Attribute, Base, Plugin</li>
+<li><strong>Utilities:</strong> Animation, Cookie, Drag and Drop, Get, History, ImageLoader, IO, JSON, Queue, StyleSheet</li>
+<li><strong>CSS:</strong> Reset, Base, Fonts</li>
+</ul>
+<p>After 3.0.0 GA, the next major release will be 3.1.0, currently scheduled for Q4. The 3.1.0 release will bring the widget foundation to GA, including the following components:</p>
+<ul>
+<li><strong>Widget foundation:</strong> Widget and Widget extensions</li>
+<li><strong>Utilities:</strong> DataSource, DataSchema, DataType, Cache</li>
+</ul>
+<p>During the 3.1.0 release cycle, we&#8217;ll also begin introducing specific widgets built upon the YUI 3 codeline. Note that Widget, its extensions, and the sample widgets shipping with 3.0.0 beta 1 are expected to evolve significantly in the coming months as we begin focusing more attention on that part of the library.</p>
+<p>For full details on the roadmap, refer to the <a href="http://yuilibrary.com/projects/yui3/roadmap">YUI 3.x Roadmap on YUILibrary.com</a>. That page is kept current with the latest information about our plans and progress. The <a href="http://yuilibrary.com/projects/yui3/dashboard">YUI 3.x Dashboard</a> is also a useful resource for those wanting to track our progress toward major YUI 3 releases.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/06/24/yui3b1/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/06/24/yui3b1/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/06/24/yui3b1/&amp;title=YUI 3.0.0 beta 1 Available for Download" title="bookmark YUI 3.0.0 beta 1 Available for Download in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/06/24/yui3b1/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/06/24/yui3b1/&amp;title=YUI 3.0.0 beta 1 Available for Download" title="post YUI 3.0.0 beta 1 Available for Download to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F06%2F24%2Fyui3b1%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/06/24/yui3b1/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/06/24/yui3b1/"
+    dc:title="YUI 3.0.0 beta 1 Available for Download"
+    trackback:ping="http://www.yuiblog.com/blog/2009/06/24/yui3b1/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-372"><a href="/blog/2009/06/23/flash-sol/" rel="bookmark" title="Permanent Link to Flash SOL: Persistent Data with Local SharedObjects">Flash SOL: Persistent Data with Local SharedObjects</a></h2>
+				<small>June 23, 2009 at 1:05 pm by Alaric Cole | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/06/23/flash-sol/#comments" title="Comment on Flash SOL: Persistent Data with Local SharedObjects">5 Comments</a></small>
+						
+			<div class="interview">
+<div class="intro alignleft">
+<img src="http://yuiblog.com/assets/flash-sol/alaric.jpg" width="175" height="200" hspace="10" vspace="5" alt="Alaric Cole, Yahoo! Flash Platform Engineer">
+
+<p><strong>About the Author:</strong> <em><a href="http://greenlike.com/">Alaric Cole</a> has been working in Flash since the advent of ActionScript and is currently a developer on Yahoo!&#8217;s Flash Platform team. You could say he&#8217;s grown with the language. Sure, he&#8217;s had his hand in <a href="https://www.nationalfilmnetwork.com/store/ProductDetails.aspx?ProductID=218">independent film</a>. Yeah, he wrote that one <a href="http://oreilly.com/catalog/9780596517328/">book</a>. But his weekday ritual is still fooling about with Flash.</em></p>
+
+<p><em>When he&#8217;s not crouched over a computer, you might find him riding brakeless in the Mission.</em></p>
+</div>
+</div>
+
+<p>I&#8217;ve been working with <a href="http://mattsnider.com/">Matt Snider</a> of <a href="http://mint.com/">Mint.com</a> to develop a <a href="http://yuilibrary.com/projects/yui2/roadmap">new local storage utility for YUI</a>. The utility will use a cascading storage system to detect the best way to store information through the browser, allowing a developer to store data more efficiently than a typical browser cookie &#8212; and in greater amounts. One of the storage mechanisms employs the <a href="http://www.adobe.com/products/flashplayer/">Adobe Flash Player</a>, and this use case has been the focus of my recent work.</p>
+
+<p>Flash has a built-in persistent storage system called <a href="http://livedocs.adobe.com/flex/3/langref/flash/net/SharedObject.html">SharedObjects</a>, which can be thought of as &#8220;super-cookies&#8221;, allowing the developer to store, by default, 100kb &#8212; or more, if the user allows. One of the benefits of SharedObjects, besides their capacity, is that they can store core ActionScript types, and even entire custom classes, in a binary format on the user&#8217;s hard drive. SharedObjects use the ActionScript Message Format (AMF), making them efficient and compact.</p>
+
+<p>These SharedObjects are not encrypted, so while difficult to read, they are not what you would call secure storage. We&#8217;d never recommend storing important data such as user names, passwords, or other private data via a SharedObject unless you&#8217;ve implemented your own encryption mechanism. Also, SharedObjects are different from a cookie in more ways than capacity &#8212; SharedObjects are generally not attached to a specific browser but are stored independently.</p>
+
+<p>These differences of the Flash storage system provide a number of benefits to the developer and the end user. However, while extremely convenient, they can also be misleading to the average user, many being unaware that such data even exists on their machine. While great lengths have been taken to provide transparency and control over private data to users via their browser (Firefox and Safari in particular providing a nice set of tools to view, edit, and remove cookies for various sites), the Flash storage system, due to its plugin nature, stores information in a separate location. This means that clearing your browser cookies does not clear these SharedObjects.</p>
+
+<p>If you&#8217;re interested in viewing these bits of storage on your machine, you can check out the following locations:</p>
+
+<p>Linux:
+<pre>/.macromedia/Flash_Player/</pre>
+</p>
+
+<p>Mac:
+<pre>/Library/Preferences/Macromedia/Flash Player/</pre>
+</p>
+
+<p>Windows:
+<pre>/Application Data/Macromedia/Flash Player/</pre>
+</p>
+
+<p>SharedObjects are typically stored in separate folders under these locations, in directories with such descriptive names as <code>8GKWKDQM</code> and <code>227MDWL4</code>. Under such folders are subdirectories corresponding to the domain in which the SharedObject came from.</p>
+
+<p>The actual files have the <code>*.sol</code> extension, and there may be more than one for each domain. For instance, I found three separate SharedObject files on my machine under the youtube.com folder. They&#8217;re not human readable, as they are stored in binary.</p>
+
+<p>When developing this storage utility, I wanted to be able to see the actual data stored in its raw form &#8212; but I didn&#8217;t have the time to parse through it all using a ByteArray, so I looked for a tool to do the job. I found a handy AIR application called <a href="http://blog.coursevector.com/minerva">Minerva</a>, which can open a <code>*.sol</code> file and display its information. As of this writing, the current version doesn&#8217;t allow editing of the actual values stored, but there may be some other applications out there that I didn&#8217;t find.</p>
+
+<img src="http://yuiblog.com/assets/flash-sol/minerva.png" width="535" height="384" alt="Screenshot of Minerva application">
+
+<p>If you&#8217;d like to remove some or all of these &#8220;Flash cookies&#8221;, you can simply delete the files or directories as needed. Note, however, that some sites make extensive use of SharedObjects, so removing them may cause unexpected behavior. Financial institutions in particular take advantage of them to aid in the security of their sites. So make sure you know what you&#8217;re doing, or create a backup before wreaking havoc.</p>
+
+<p>An alternative to browsing through directories is to use <a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager07.html">Adobe&#8217;s Settings Manager</a>. This is a Flash-based tool with special privileges that will allow you to view information about the storage on your machine, remove some or all of the stores, and set restrictions on future storage.</p>
+
+<p>So, next time you want a clean slate for your browser, remember that there may be some additional information lurking on your machine that the browser can&#8217;t get to.</p>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/06/23/flash-sol/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/06/23/flash-sol/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/06/23/flash-sol/&amp;title=Flash SOL: Persistent Data with Local SharedObjects" title="bookmark Flash SOL: Persistent Data with Local SharedObjects in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/06/23/flash-sol/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/06/23/flash-sol/&amp;title=Flash SOL: Persistent Data with Local SharedObjects" title="post Flash SOL: Persistent Data with Local SharedObjects to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F06%2F23%2Fflash-sol%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/06/23/flash-sol/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/06/23/flash-sol/"
+    dc:title="Flash SOL: Persistent Data with Local SharedObjects"
+    trackback:ping="http://www.yuiblog.com/blog/2009/06/23/flash-sol/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--don't suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-366"><a href="/blog/2009/06/17/yui-and-yql/" rel="bookmark" title="Permanent Link to Coupling YUI and YQL to Build Dynamic Widgets">Coupling YUI and YQL to Build Dynamic Widgets</a></h2>
+				<small>June 17, 2009 at 11:14 am by Jonathan LeBlanc | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/06/17/yui-and-yql/#comments" title="Comment on Coupling YUI and YQL to Build Dynamic Widgets">14 Comments</a></small>
+						
+			<div class="interview"><div class="intro"><p><img src="http://yuiblog.com/assets/leblanc.jpg" alt="Yahoo! Developer Network evangelist Jonathan LeBlanc" width="126" height="129" hspace="10" vspace="5" align="right"><strong>About the Author:</strong> <em>Jonathan LeBlanc (twitter: <a href="http://www.twitter.com/jcleblanc">jcleblanc</a>) works with the partner integration group in the <a href="http://developer.yahoo.com/">Yahoo! Developer Network</a> as a senior software engineer / technology evangelist.  Focusing on partner relationships and training, as well as external developer integration, Jonathan works with and promotes emerging technologies to aid in the adoption and utilization of new social development techniques.  As a software engineer, Jonathan works extensively with social interaction development on the web, developing new methods for linking social networks to drive the ideal of an open web.  Prior to Yahoo!, Jonathan worked within both the media production and fantasy product development teams at CBSSports.com, where he developed on products such as the Emmy award-winning march madness on demand video player.   Born and raised in Canada, Jonathan graduated from Algonquin College of Applied Arts and Technology with a degree in computer science and currently lives in Dublin, CA with his wife.</em></p>
+</div></div>
+
+<p>YUI has a wonderfully rich list of data manipulation and UI utilities in its library, but coming up with equally rich and interesting data is generally your responsibility as an implementer.  By the same token, <a href="http://developer.yahoo.com/yql/">YQL</a> has rich data fetching and interaction abilities, but it lacks YUI&#8217;s visualization tools. Taking the visualization and control features of YUI and coupling them with the raw data pipe of YQL, we can build incredibly rich, interactive widgets without the need to create any of the  visualizations or data storage mechanisms ourselves.</p>
+
+<p>I&#8217;ll give you a tour of two widgets built with YUI and YQL in this post.  One displays publicly available content and the other builds upon that original widget with a server-side PHP component to display private user data by authenticating with OAuth.</p> 
+
+<h3>Accessing Public Data</h3>
+
+Using the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a>, we are able to make requests to the public <a href="http://developer.yahoo.com/yql/">YQL</a> query URL without having the pain of dealing with the same-origin policy issue that would normally prevent us from making XHR-based requests to a server that is not on the same domain as the originating request.  Below is a small code sample which showcases how you would call <a href="http://developer.yahoo.com/yql/">YQL</a> using the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a>:
+
+<pre>
+&lt;script type="text/javascript"&gt;
+var getYQLData = function(query){
+    //prepare the URL for the YUI GET request:
+    var yqlPublicQueryURL = "http://query.yahooapis.com/v1/yql?";
+    var sURL = yqlPublicQueryURL + "q=" + query
+        + "&#038;format=json&#038;callback=yqlWidget.getYQLDataCallback";
+        
+    //make GET request to YQL with provided query
+    var transactionObj = YAHOO.util.Get.script(sURL, {
+        onSuccess : onYQLReqSuccess,
+        onFailure : onYQLReqFailure,
+        scope     : this
+    });
+
+    return transactionObj;
+}
+&lt;/script&gt;
+</pre>
+
+<p>The query URL (<code>sURL</code>) is composed of several different parts to make up the request.  The <code>yqlPublicQueryURL</code> variable contains the public URI for making requests to YQL.  There are also three query parameters that we are passing along to this URI.  The <code>q</code> parameter is the YQL query that we use in our request (e.g. <code>select * from flickr.photos.search where text="YDN"</code>),  <code>format</code> is the format we want returned (JSON or XML) from the request, and if we want to wrap the JSON returned data in a function (a la <a href="http://en.wikipedia.org/wiki/JSON#JSONP">JSONP</a>) we can define a callback function using the <code>callback</code> parameter.  When this function runs, the Get Utility will make a request to <code>query.yahooapis.com</code> with the specified query.  On success, a debug message will be displayed in the <code>onSuccess</code> callback for the Get Utility then the callback defined in the YQL query will be called to parse the returned JSON results.</p>
+
+<p>Setting up this widget on your own site or blog is as simple as downloading the code from the <code>js-yql-display</code> folder on github at <a href="http://github.com/jonleblanc/yql-utilities/tree/master">http://github.com/jonleblanc/yql-utilities/tree/master</a> and instantiating the widget like this:</p>
+
+<pre>
+&lt;!-- widget file include --&gt;
+&lt;script type="text/javascript" src="yql_js_widget.js"&gt;&lt;/script&gt;
+
+&lt;!-- widget styles --&gt;
+&lt;style&gt;
+div.imgCnt{ border: 1px solid rgb(96, 96, 96); 
+    margin: 5px 5px 5px 0pt; float: left;
+	background-color: rgb(241, 241, 241); width:100px;
+	height:140px; }
+div.imgCnt img{ border:0; margin:5px; }
+div.imgCnt div.imgTitle{ padding: 5px; font-size: 11px;
+    text-align:center; }
+&lt;/style&gt;
+
+&lt;script type="text/javascript"&gt;
+var config = {'debug' : true};
+var format = '&lt;div class="imgCnt" align="center"&gt;'
+    + '&lt;a href="http://www.flickr.com/photos/{owner}/{id}/"'
+    + 'target="_blank"&gt;&lt;img src="http://farm3.static.'
+    + 'flickr.com/{server}/{id}_{secret}.jpg?v=0"'
+    + 'width="80" height="80" /&gt;&lt;/a&gt;'
+    + '&lt;div class="imgTitle"&gt;'
+    + '&lt;a href="http://www.flickr.com/photos/{owner}/'
+    + '{id}/"&gt;{title}&lt;/a&gt;'
+    + '&lt;/div&gt;&lt;/div&gt;';
+var yqlQuery =
+    'select * from flickr.photos.search where text="YDN"';
+var insertEl = 'widgetContainer';
+yqlWidget.push(yqlQuery, config, format, insertEl);
+&lt;/script&gt;
+</pre>
+
+<p>Any number of public YQL queries can be made using the above example &mdash; all documentation for how the configuration script works can be found on <a href="http://github.com/jonleblanc/yql-utilities/tree/master">github</a>.  If we run the above code we can easily display our most recent flickr photos:
+</p>
+
+<p><a href="/assets/js_widget_public/yql_js_widget.html"><img src="http://yuiblog.com/assets/public_flickr.jpg" width="500" height="68" border="0" alt="flickr photo display" /></a></p>
+
+<p>So, why all the fuss over using YQL and YUI together like this?  Well, for me these utilities bring me quite close to a traditional MVC (Model View Controller) type of design pattern.  YQL is a wonderful data aggregation and manipulation tool, but at the end of the day it&#8217;s just data.  We insert the controller functionality using YUI utilities such as <a href="http://developer.yahoo.com/yui/get/">the Get Utility</a> or <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>, then we can build our presentation layer on top of that using widgets like <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and <a href="http://developer.yahoo.com/yui/charts/">Charts</a>.</p>
+
+    <p><a href="http://www.nakedtechnologist.com/php_widget_oauth/yql_php_widget.html"><img src="http://yuiblog.com/assets/private_updates.jpg" width="300" height="399" border="0" alt="private update stream" style="margin:5px 8px 5px 0;" /></a></p>
+
+
+<h3>Accessing Private User Data</h3>
+
+<p>Let&#8217;s explore the pairing of YUI and YQL a little further by taking the foundation built in the public JavaScript query widget and attaching a server-side component to authenticate and store an oAuth session. Using the Y!OS <a href="http://developer.yahoo.com/social/sdk/#php">PHP SDK</a>, we are able to extend the JavaScript widget to display the update stream and personal badge details of the user who originally authenticated the widget.  Since we&#8217;re using the PHP SDK on the same domain as our widget to make our authenticated calls to YQL, we no longer need to worry about the same-origin policy issues. This means that we can exchange the use of the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a> with the <a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a>.  The benefit to using the <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> here is that we can use a standard ajax request and the event handlers of  the utility instead of a callback within the YQL query.  Our new request function would look something like this:</p>
+
+<pre>
+&lt;script type="text/javascript"&gt;
+var getYQLData = function(query){
+    //prepare URL &#038; post data for YUI Connection Manager POST:
+    var sURL = "private_data_fetch.php";
+    var postData = "q=" + query;
+
+    //define Connection Manager event callbacks
+    var callback = {
+        success:parseYQLResults,
+        failure:onYQLReqFailure
+    };
+		
+    //make POST request to YQL with provided query
+    var transactionObj = YAHOO.util.Connect.asyncRequest('POST',
+	    sURL, callback, postData);
+		
+    return transactionObj;
+}
+&lt;/script&gt;
+</pre>
+
+<p>The Connection Manager is used to make AJAX requests to the PHP SDK (whose references are housed in <code>private_data_fetch.php</code> within the above code) with the query as a POST parameter.  The SDK in turn makes an authenticated request for the user&#8217;s personal data and dumps out a JSON string as the return of the request.  Then all you need to do is parse the JSON string using the <a href="http://developer.yahoo.com/yui/json/">YUI JSON Utility</a>; after you&#8217;ve called <code>YAHOO.util.JSON.parse()</code> on the transaction results, your data can be treated in the same manner as the data in the first example.</p>
+
+<p>Since YQL generates results when the request is called, there is no need to house this data for yourself.  YQL can pull data from any available source so you can build widgets such as these to display dynamic results with each refresh.</p>
+
+<p>Both of the widgets showcased in this post are freely available for download and contribution on github at
+<a href="http://github.com/jonleblanc/yql-utilities/tree/master">http://github.com/jonleblanc/yql-utilities/tree/master</a>.  These widgets are:</p>
+<ul>
+    <li><code>js-yql-display</code>: JavaScript widget to display public YQL data</li>
+	<li><code>php-yql-display</code>: JavaScript / PHP widget to display private YQL data</li>
+</ul>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/&amp;title=Coupling YUI and YQL to Build Dynamic Widgets" title="bookmark Coupling YUI and YQL to Build Dynamic Widgets in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/&amp;title=Coupling YUI and YQL to Build Dynamic Widgets" title="post Coupling YUI and YQL to Build Dynamic Widgets to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F06%2F17%2Fyui-and-yql%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/"
+    dc:title="Coupling YUI and YQL to Build Dynamic Widgets"
+    trackback:ping="http://www.yuiblog.com/blog/2009/06/17/yui-and-yql/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-336"><a href="/blog/2009/05/08/draggable-datatable-rows/" rel="bookmark" title="Permanent Link to Draggable DataTable Rows">Draggable DataTable Rows</a></h2>
+				<small>May 8, 2009 at 2:50 pm by Gonzalo Cordero | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/05/08/draggable-datatable-rows/#comments" title="Comment on Draggable DataTable Rows">4 Comments</a></small>
+						
+			<div class="interview">
+<div class="intro">
+<p><img src="http://yuiblog.com/assets/draggable-datatable-rows/gonzalo.jpg" width="300" height="231" hspace="10" vspace="5" align="right"><strong>About the Author:</strong> <em>Gonzalo Cordero is a Front-End Engineer on the Yahoo! Flex Force team. He is currently working on the next generation of Yahoo! homepage. He is also a former <a href="/blog/2007/12/06/juku/">Juku</a> graduate, where he recently became an instructor as well. In this article he walks us through the process of adding <a href="http://developer.yahoo.com/yui/dragdrop/">Drag and Drop</a> functionality to a <a href="http://developer.yahoo.com/yui/datatable/">DataTable widget</a>.</em></p>
+</div>
+</div>
+
+<h3 id="intro">Introduction</h3>
+
+<p>A recent project of mine required an implementation of DataTable where rows could be moved around with Drag and Drop functionality. After looking through the <a href="http://developer.yahoo.com/yui/examples/">YUI gallery of examples</a>, I realized that the feature I was trying to implement was a little bit different from the ones I saw. So I decided to implement my own solution. In this article I&#8217;ll explain how I combined YUI&#8217;s <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and <a href="http://developer.yahoo.com/yui/dragdrop/">Drag and Drop</a> components, some workarounds for the challenges I encountered, and how I was able to improve upon my initial solution by using <a href="http://developer.yahoo.com/yui/3/">the new YUI3 codeline</a> (which is currently available in preview mode).</p>
+
+<img src="http://yuiblog.com/assets/draggable-datatable-rows/screenshot.png" width="511" height="244" alt="Screenshot of draggable DataTable rows.">
+
+<h3 id="yui2">Initial considerations and some possible solutions</h3>
+
+<p>The first question that came to my mind was how to make each table row draggable and a drop target at the same time in the most efficient way. I also knew that instantiating a Drag and DDTarget object at the same time on an element wasn&#8217;t going to work. After reading through the <a href="http://developer.yahoo.com/yui/docs/module_dragdrop.html">Drag and Drop API documentation</a> I found out that the property <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.DragDrop.html#property_isTarget"><code>isTarget</code></a> gets set by default to <code>true</code> for every Drag object we create, making that object a drop target as well. So with that, I defined a custom <code>DDRows</code> class to set up the interesting moment handlers and also add some CSS style for the drag proxy object to visually differentiate it from the regular rows. A proxy drag object is just a container that gets displayed once the dragging starts and it serves as a marker/guide for what is being dragged.</p>
+
+<pre>
+YAHOO.example.DDRows = function(id, sGroup, config) {
+    YAHOO.example.DDRows.superclass.constructor.call(this, id, sGroup, config);
+    Dom.addClass(this.getDragEl(),"type-proxydrag");
+};
+
+YAHOO.extend(YAHOO.example.DDRows, YAHOO.util.DDProxy, {
+	// Handlers defined here
+});
+</pre>
+
+<p>After defining the DDRows class, I listen for the DataTable&#8217;s <code>initEvent</code> to set up each row as a DDRows Drag object:</p>
+
+<pre>
+myDataTable.subscribe("initEvent", function() {
+    var i, id,
+    allRows = this.getTbodyEl().rows;
+
+    for(i=0; i&lt;allRows.length; i++) {
+        id = allRows[i].id;
+
+        // Clean up any existing Drag instances
+        if (myDTDrags[id]) {
+            myDTDrags[id].unreg();
+            delete myDTDrags[id];
+        }
+
+        // Create a Drag instance for each row
+        myDTDrags[id] = new YAHOO.example.DDRows(id);
+    }
+});
+</pre>
+
+<p>Then instead of using the DDTarget class, I look for the <code>isTarget</code> property of the Drag object to validate the target element. This way we make sure we only move table rows onto other table rows:</p>
+
+<pre>
+onDragDrop: function(e, id) {
+    var destDD = YAHOO.util.DragDropMgr.getDDById(id);
+    // Only if dropping on a valid target
+    if(destDD &#038;&#038; destDD.isTarget &#038;&#038; this.srcEl) {
+            ...
+    }
+}
+</pre>
+
+<p>An important consideration is that the DOM is repainted each time we move a row, so not only does the Drag object on the original row need to be cleaned up when it is deleted, a new Drag object needs to be created for the row that is created in the new position. Here is the entire <code>onDragDrop</code> function that cleans up and moves a row:</p>
+
+<pre>
+onDragDrop: function(e, id) {
+    var destDD = YAHOO.util.DragDropMgr.getDDById(id);
+    // Only if dropping on a valid target
+    if(destDD &#038;&#038; destDD.isTarget &#038;&#038; this.srcEl) {
+        var	srcEl = this.srcEl,
+            srcIndex = srcEl.sectionRowIndex,
+        	destEl = Dom.get(id),
+        	destIndex = destEl.sectionRowIndex,
+            srcData = myDataTable.getRecord(srcEl).getData();
+
+        this.srcEl = null;
+
+        // Cleanup existing Drag instance
+        myDTDrags[srcEl.id].unreg();
+        delete myDTDrags[srcEl.id];
+
+        // Move the row to its new position
+    	myDataTable.deleteRow(srcIndex);
+        myDataTable.addRow(srcData, destIndex);
+    	YAHOO.util.DragDropMgr.refreshCache();
+    }
+    }
+}
+</pre>
+
+<p>Here is the <a href="/assets/draggable-datatable-rows/example-yui2.html">full working example using YUI 2.7.0</a>.</p>
+
+<h3 id="yui3">Enhancing our example by using YUI 3.0 PR2</h3>
+
+<p>On the Yahoo! homepage, we have been using YUI 3 to develop <a href="/blog/2008/11/11/frontpage-and-yui3/">our next-generation experience</a>, and the more I use it, the more I realize how powerful and extensible it is. So I decided to go ahead and check out the <a href="http://developer.yahoo.com/yui/3/dd/">Drag and Drop</a> component from the latest <a href="http://developer.yahoo.com/yui/3/">YUI 3.0 preview release</a> for this exercise.</p>
+
+<p>It was no surprise when I discovered that with this new version I could take advantage of some of the new properties and methods to make my solution more clean and efficient. For instance, Drag and Drop in YUI 3 provides an efficient way to create the Drag/Target objects we need:</p>
+
+<pre>
+myDTDrags[id] =  new Y.DD.Drag({
+    node: "#"+id,
+    constrain2node: "#datatable",
+    moveOnEnd: false,
+    proxy: true,
+    target: true
+});
+</pre>
+
+<p>We no longer have to define our own subclass or worry about validating the element before swapping rows, as the <code>drophit</code> event will only be triggered when applied to elements we&#8217;ve defined as drop targets.</p>
+
+<p>The other great new feature version 3 brings us is custom-event bubbling (which brings the power of DOM-event bubbling to the custom events that drive the library&#8217;s API). Thanks to this, we can now to listen for all the Drag and Drop events at the document level using the Drag and Drop Manager, rather than having to attach several events to each individual table row. Our custom-event delegation code looks like this:</p>
+
+<pre>
+Y.DD.DDM.on('drag:start',startDrag);
+Y.DD.DDM.on('drag:end',endDrag);
+Y.DD.DDM.on('drag:drophit',dragDrop);
+</pre>
+
+<p>Here is the <a href="/assets/draggable-datatable-rows/example-yui3.html">full working example using YUI 3.0 PR2</a>.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I hope you find these examples a useful resource on how to add Drag and Drop functionality to DataTables and on how you easily you can integrate YUI 2.7.0 and YUI 3 components in the same page. It also serves as a quick preview on all the new and exciting features that are coming with the next generation of YUI.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/&amp;title=Draggable DataTable Rows" title="bookmark Draggable DataTable Rows in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/&amp;title=Draggable DataTable Rows" title="post Draggable DataTable Rows to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F05%2F08%2Fdraggable-datatable-rows%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/"
+    dc:title="Draggable DataTable Rows"
+    trackback:ping="http://www.yuiblog.com/blog/2009/05/08/draggable-datatable-rows/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-333"><a href="/blog/2009/04/13/yui-270-on-taskspeed/" rel="bookmark" title="Permanent Link to YUI 2.7.0 on TaskSpeed">YUI 2.7.0 on TaskSpeed</a></h2>
+				<small>April 13, 2009 at 2:21 pm by Luke Smith | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/04/13/yui-270-on-taskspeed/#comments" title="Comment on YUI 2.7.0 on TaskSpeed">9 Comments</a></small>
+						
+			<p><a href="http://dante.dojotoolkit.org/taskspeed/" class="img"><img src="http://yuiblog.com/assets/taskspeed/screenshot.png" alt="Screenshot of TaskSpeed" width="510" height="362" /></a></p>
+
+<p>A few months ago Peter Higgins, a contributor to the <a href="http://dojotoolkit.org/">Dojo Toolkit</a>, adapted the <a href="http://mootools.net/slickspeed/">SlickSpeed</a> test framework to do higher level comparisons of how various JavaScript libraries perform when doing some &#8220;common&#8221; DHTML tasks.  The new test framework is called <a href="http://dante.dojotoolkit.org/taskspeed/">TaskSpeed</a>.  And thanks to the excellent work done by one of our favorite community members, <a href="http://925html.com/">Eric Ferraiuolo</a>, <a href="http://developer.yahoo.com/yui/">YUI 2.7.0</a> now has representation in the matrix as well.</p>
+
+<h3 id="about-taskspeed">About TaskSpeed</h3>
+
+<p>Whereas SlickSpeed compares the performance of the respective JavaScript CSS selector engines in common libraries, TaskSpeed attempts to qualify a larger set of library functionality with less granularity.  The goal seems to be to predict what a library consumer might expect for aggregate speeds when developing on top of library A vs. library B.</p>
+
+<p>In addition to each of the participating libraries, a &#8220;PureDom&#8221; column represents the performance of the given task with plain old JavaScript and direct DOM interaction, serving as a healthy reminder that the benefits you get from using a JavaScript library don&#8217;t come for free.  Unfortunately, &#8220;PureDom&#8221; might also be incorrectly construed as an argument in favor of not using a library at all, but that is a <a href="http://www.b-list.org/weblog/2007/jan/22/choosing-javascript-library/">separate and lengthy discussion</a>.</p>
+
+<h3 id="taskspeed-results">The results</h3>
+
+<p>Though YUI 2.7.0 was only added to the matrix on April 10th, the results submitted so far suggest that YUI performs the given tasks with comparable efficiency in the newer browsers, and better than most in Internet Explorer 6, 7, and 8.</p>
+
+<h4>IE 8 results from Apr 10 – Apr 13</h4>
+
+<p><img src="http://yuiblog.com/assets/taskspeed/chart.png" alt="Chart of IE8 performance comparisons" width="335" height="253" /></p>
+
+<h3 id="taskspeed-take-aways">Take-aways</h3>
+
+<p>Though YUI performs ably, it&#8217;s my opinion that the numbers seen in TaskSpeed should be taken with a hefty grain of salt.  The tests are designed to exercise library abstraction logic against DOM-intensive operations.  The issue here is twofold:</p>
+
+<ol>
+<li>Not all libraries (YUI included) have abstraction logic for all of the specific tasks, which breaks the apples-to-apples comparison.</li>
+<li>And in order to get meaningful numbers, the test operations are iterated up to 500 times or performed against excessive numbers of nodes.  In real-world cases, these conditions are not the norm, meaning the differences are exaggerated, perhaps even grossly.</li>
+</ol>
+
+<p>By and large, TaskSpeed may be more of a distraction than a source of information useful to the consumer.  My greatest concern is that people will make a decision to choose one library over another based on which one can add a ridiculous number of event subscribers in 25 milliseconds vs. 30, ignoring more important issues like cross-browser stability, code maintainability, documentation quality, and community support.</p>
+
+<p>This is not to say that TaskSpeed is without value.  Here are the interesting take-aways I&#8217;ve found:</p>
+
+<ol>
+<li>Accounting for the lengthy iterations TaskSpeed needs to make the numbers substantial, all libraries perform common tasks pretty quickly.</li>
+<li>Libraries are getting faster, as seen by comparing version to version of the same library where available.</li>
+<li>There is a performance price to pay for the stability and consistency any library offers.</li>
+<li>For the library authors and contributors, an <em>apples-to-apples</em> comparison of task execution can highlight potential areas where we may each be able to evolve to use best-of-breed techniques for everyone&#8217;s benefit!</li>
+</ol>
+
+<p>I&#8217;d like to personally extend a big &#8220;thank you&#8221; to Eric Ferraiuolo for having done the fantastic legwork on this.  Another great example of the importance of community contributions to the YUI library!</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/&amp;title=YUI 2.7.0 on TaskSpeed" title="bookmark YUI 2.7.0 on TaskSpeed in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/&amp;title=YUI 2.7.0 on TaskSpeed" title="post YUI 2.7.0 on TaskSpeed to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F04%2F13%2Fyui-270-on-taskspeed%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/"
+    dc:title="YUI 2.7.0 on TaskSpeed"
+    trackback:ping="http://www.yuiblog.com/blog/2009/04/13/yui-270-on-taskspeed/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-332"><a href="/blog/2009/04/09/wild-20090409/" rel="bookmark" title="Permanent Link to In the Wild for April 9, 2009">In the Wild for April 9, 2009</a></h2>
+				<small>April 9, 2009 at 9:34 am by YUI Team | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2009/04/09/wild-20090409/#comments" title="Comment on In the Wild for April 9, 2009">9 Comments</a></small>
+						
+			<p>News and notes from the YUI community over the past few weeks.  Please let us know what we missed in the comments.</p>
+
+<ul id="releaselist-12"><li id="yuiBlogWild-233"><strong><a href="https://personal.vanguard.com/us/home">Vanguard.com Using YUI Core Plus Animation, Drag and Drop</a>:</strong> <a href="/blog/2009/03/25/wild-20090325/#comment-579648">Samantha wrote in</a> to let us know that <a href="https://personal.vanguard.com/us/home">Vanguard.com</a> is among the financial sites using YUI.&nbsp; The login page uses YUI Core (<a href="http://developer.yahoo.com/yui/yahoo/">Yahoo</a>, <a href="http://developer.yahoo.com/yui/dom/">Dom</a> and <a href="http://developer.yahoo.com/yui/event/">Event</a>) in addition to <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a>.&nbsp; <a href="http://developer.yahoo.com/yui/animation/">Animation</a> and <a href="http://developer.yahoo.com/yui/dragdrop/">Drag and Drop</a> are included on pages beyond the login. (<a href="/blog/2009/03/25/wild-20090325/#comment-579648">Original source.</a>)<br /><a href="https://personal.vanguard.com/us/home"><img src="http://yuiblog.com/assets/vanguard-20090325-122933.jpg" vspace="10"></a></li><li id="yuiBlogWild-248"><strong><a href="http://hunch.com">Caterina Fake&#8217;s New Startup Hunch Using YUI</a>:</strong> YUI Core and <a href="http://developer.yahoo.com/yui/autocomplete/">Jenny Donnelly&#8217;s YUI AutoComplete Control</a> are among the components used on the Hunch beta.&nbsp; Caterina&#8217;s previous startup (Flickr) is also a big YUI user.<br /><a href="http://hunch.com"><img src="http://yuiblog.com/assets/hunch-20090407-170408.jpg" vspace="10"></a></li><li id="yuiBlogWild-249"><strong><a href="http://golf.com">Special Masters-eve YUI Sighting &#8212; YUI on Golf.com</a>:</strong> Not that we are golf fans or anything (<a href="http://www.flickr.com/photos/equanimity/3369274493/">here&#8217;s YUI project manager George Puckett showing off her swing</a>; and here&#8217;s <a href="http://www.flickr.com/photos/equanimity/3370115306/">Jenny Donnelly</a> and <a href="http://www.flickr.com/photos/equanimity/3369286673/">Luke Smith</a>&#8230;), but on Masters&#8217; eve we&#8217;re happy to take note of <a href="http://golf.com">Golf.com</a> using <a href="http://developer.yahoo.com/yui/tabview/">YUI TabView</a>, <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>, and <a href="http://developer.yahoo.com/yui/carousel/">Carousel</a>.&nbsp; Bonus picture: YUI founder <a href="http://www.flickr.com/photos/equanimity/1455719193/">Thomas Sha gripping and ripping</a>.&nbsp; It&#8217;s a travesty none of us were invited to the Masters this year&#8230;<br /><a href="http://golf.com"><img src="http://yuiblog.com/assets/golf.com-20090408-205308.jpg" vspace="10"></a></li><li id="yuiBlogWild-239"><strong><a href="http://www.archivd.com/">YUI-based Archivd Launched, &#8220;Simple Research Tools for Teams&#8221;</a>:</strong> Carlos Bueno wrote in to tell us about his new project <a href="http://www.archivd.com/">Archivd</a>, a collaborative research portal for teams.&nbsp; Archivd uses a wide swath of the YUI utilities and widgets in its interface, including <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>, <a href="http://developer.yahoo.com/yui/button/">Button</a>, <a href="http://developer.yahoo.com/yui/menu/">Menu</a>, <a href="http://developer.yahoo.com/yui/carousel/">Carousel</a> and <a href="http://developer.yahoo.com/yui/panel/">Panel</a>.<br /><a href="http://www.archivd.com/"><img src="http://yuiblog.com/assets/archivd-20090331-133814.jpg" vspace="10"></a></li><li id="yuiBlogWild-241"><strong><a href="http://925html.com/code/smart-polling/">Smart Polling from Eric Ferraiuolo, Built for YUI 3</a>:</strong> Eric Ferraiuolo has launched a <a href="http://925html.com/code/smart-polling/">Smart Polling</a> component based on the YUI 3 preview release.&nbsp; Smart Polling is a strategy for checking the server for fresh content.&nbsp; Here&#8217;s Eric&#8217;s description of how it works:&nbsp; &#8220;Internally the Poller class is using conditional XHR GET requests. When polling is first kicked off (i.e. <code>start()</code> is called) the <strong>Etag and Last-Modified header values are cached</strong>. As subsequent polling requests are sent to the server the cached <strong>Etag</strong> is set for the <strong>If-None-Match</strong> HTTP request header, if no Etag was cached (i.e. the server doesn’t send Etags) then the cached <strong>Last-Modified</strong> date is set as the <strong>If-Modified-Since</strong> header. If a server doesn’t support conditional GET requests at all, sending neither an Etag nor a Last-Modified date, the Poller class will fire the <code>modified</code> event with every response.&#8221;&nbsp; Check out his blog post for more details and to grab the source code. (<a href="/blog/2009/03/25/wild-20090325/#comment-580138">Original source.</a>)</li><li id="yuiBlogWild-238"><strong><a href="http://mockupstogo.net/yui-grids">Balsamiq Mockups for YUI Grids</a>:</strong> We wrote last month about <a href="/blog/2009/03/25/wild-20090325/#yuiBlogWild-229">Balsamiq mockups for a variety of YUI components</a>.&nbsp; Mockups-to-Go now has <a title="Balsamiq mockups for YUI Grids CSS." href="http://mockupstogo.net/yui-grids">an entry for YUI Grids as well</a>.<br /><a href="http://mockupstogo.net/yui-grids"><img src="http://yuiblog.com/assets/balsamiq-yuigrids-20090330-131659.jpg" vspace="10"></a></li><li id="yuiBlogWild-235"><strong><a href="http://grasshopperpebbles.com/ajax/scope-correction-with-yui/">Les Green, &#8220;Scope Correction and YUI&#8221;</a>:</strong> <a href="http://grasshopperpebbles.com/ajax/scope-correction-with-yui/">Writes Les</a>: &#8220;The more I use the <a href="http://developer.yahoo.com/yui/">Yahoo User Interface Library (YUI)</a>, the more I am impressed with it. I have been converting my JQuery imValidateForm plugin to a YUI widget for a project that I am working on. I ran into a scope issue when a button was clicked. I have dealt with Javascript scope issues in the past, but I did not know how to fix it using YUI.&#8221;&nbsp; <a href="http://grasshopperpebbles.com/ajax/scope-correction-with-yui/">He documents his learnings in a new blog post</a>. (<a href="http://twitter.com/lesgreen/statuses/1395710528">Original source.</a>)</li><li id="yuiBlogWild-236"><strong><a href="http://grasshopperpebbles.com/ajax/yui-selector-utility-css3-attribute-selectors-and-pseudo-classes/">Les Green, &#8220;YUI Selector Utility: CSS3 Attribute Selectors and Pseudo-classes&#8221;</a>:</strong> <a href="http://grasshopperpebbles.com/ajax/yui-selector-utility-css3-attribute-selectors-and-pseudo-classes/">Les has another article out</a> in which he demonstrates how he baked 8 lines of code down to a single line using the pseudo-class support in Matt Sweeney&#8217;s <a href="http://developer.yahoo.com/yui/selector/">YUI Selector</a>.</li><li id="yuiBlogWild-237"><strong><a href="http://www.experienceinternet.co.uk/resources/details/yui-compressor-textmate-bundle/">YUI Compressor TextMate Bundle</a>:</strong> According to its author, &#8220;The YUI Compressor Bundle enables easy compression of JavaScript and CSS files using the YUI Compressor, right from within TextMate.&#8221;&nbsp; Nice. (<a href="http://twitter.com/textmator/statuses/1411965787">Original source.</a>)</li><li id="yuiBlogWild-242"><strong><a href="http://www.yuicoder.com/2009/03/creating-a-fixed-element-with-re-size-and-scroll-detection-using-yui-dom-and-event/">Jeffrey Cobb, &#8220;Creating a FIXED Element with Re-size and Scroll Detection Using YUI Dom and Event&#8221;</a>:</strong> Jeffrey <a href="http://www.yuicoder.com/2009/03/creating-a-fixed-element-with-re-size-and-scroll-detection-using-yui-dom-and-event/">writes</a> on his YUICoder blog: &#8220;We have all see them and some of us love them. It’s those elements that seem to float on the page like hovering little angels. Ok enough with the sappy crap…down to business. So you need to create a browser independent simple script to position an element on a page. I put together a simple script that will handle such a task and is flexible enough for even a newbie to configure.&#8221;&nbsp; Check out <a href="http://www.yuicoder.com/2009/03/creating-a-fixed-element-with-re-size-and-scroll-detection-using-yui-dom-and-event/">his post</a> for full details.</li><li id="yuiBlogWild-244"><strong><a href="http://www.graffletopia.com/stencils/tags/yui?page=1">Graffletopia — OmniGraffle Design Stencils for YUI</a>:</strong> <a href="http://www.graffletopia.com/stencils/tags/yui?page=1">Graffletopia has a bunch of design stencils up for YUI controls</a> — fantastic for rapid prototyping.&nbsp; See also the <a href="/blog/2009/03/25/wild-20090325/#yuiBlogWild-229">versions for Balsamiq on MockupsToGo</a>. (<a href="http://twitter.com/erikburns/statuses/1449270945">Original source.</a>)<br /><a href="http://www.graffletopia.com/stencils/tags/yui?page=1"><img src="http://yuiblog.com/assets/graffletopia-20090403-225055.jpg" vspace="10"></a></li><li id="yuiBlogWild-234"><strong><a href="http://blog.brianflove.com/articles/2009/03/25/yui-and-the-dom/">Brian Love, &#8220;YUI and the DOM&#8221;</a>:</strong> Brian Love has <a href="http://blog.brianflove.com/articles/2009/03/25/yui-and-the-dom/">a new blog post up</a> about using YUI&#8217;s <a href="http://developer.yahoo.com/yui/dom/">Dom</a> and <a href="http://developer.yahoo.com/yui/element/">Element</a> components to interact with the DOM. (<a href="http://twitter.com/brian_love/statuses/1390094994">Original source.</a>)</li><li id="yuiBlogWild-240"><strong><a href="http://power-one.com/">YUI Sighting — Power-One.com Using Menu, Animation, and More</a>:</strong> Reader Brad Bauer <a href="/blog/2009/03/25/wild-20090325/#comment-580100">wrote in</a> to tell us about <a href="http://power-one.com/">Power One</a>, whose website makes use of YUI <a href="http://developer.yahoo.com/yui/reset/">Reset</a>, <a href="http://developer.yahoo.com/yui/fonts/">Fonts</a>, <a href="http://developer.yahoo.com/yui/animation/">Animation</a> and <a href="http://developer.yahoo.com/yui/menu/">Menu</a>. (<a href="/blog/2009/03/25/wild-20090325/#comment-580100">Original source.</a>)<br /><a href="http://power-one.com/"><img src="http://yuiblog.com/assets/power-one-20090331-134759.jpg" vspace="10"></a></li><li id="yuiBlogWild-243"><strong><a href="http://developer.yahoo.com/yui/tabview/">YUI TabView on ChartBeat.com</a>:</strong> <a href="http://chartbeat.com">ChartBeat</a> is a new realtime web analytics solution that employes a very active user interface to keep you abreast of what&#8217;s happening on your site and around the web.&nbsp; One of those active pieces is a prominent use of <a href="http://developer.yahoo.com/yui/tabview/">Matt Sweeney&#8217;s YUI TabView Control</a>, used to toggle between realtime and historical data views.<br /><a href="http://developer.yahoo.com/yui/tabview/"><img src="http://yuiblog.com/assets/chartbeat-tabview-20090402-165651.jpg" vspace="10"></a></li><li id="yuiBlogWild-245"><strong><a href="http://www.milotimbol.com/">Milo Timbol Combins 3D Flash with YUI Elements</a>:</strong> Milo Timbol&#8217;s site combines the use of 15 YUI modules with extensive use of 3D elements in Flash.&nbsp; It&#8217;s a personal/portfolio site, and it definitely stands out from the crowd.<br /><a href="http://www.milotimbol.com/"><img src="http://yuiblog.com/assets/milotimbol-20090403-230851.jpg" vspace="10"></a></li><li id="yuiBlogWild-246"><strong><a href="http://hubpages.com/hub/PHP-MySql-and-Yahoo-Flash-Charts--yahoo-dev-network">PHP, MySql and the YUI Charts Control</a>:</strong> Hubpages has a new tutorial out that brings together <a href="http://hubpages.com/hub/PHP-MySql-and-Yahoo-Flash-Charts--yahoo-dev-network">PHP, MySQL and the YUI Charts Control</a>.</li><li id="yuiBlogWild-247"><strong><a href="http://sanjayginde.squarespace.com/journal/2009/3/25/lazy-load-datasource-for-yui.html">Sanjay Ginde&#8217;s LazyLoadDataSource</a>:</strong> Sanjay Ginde <a href="http://sanjayginde.squarespace.com/journal/2009/3/25/lazy-load-datasource-for-yui.html">published his variation on YUI DataSource&#8217;s XHRDataSource class</a>.&nbsp; Writes Sanjay: &#8220;While working on some auto-completing features for a project I realized that there was a remote retrieval mechanism missing. I had small datasets that I wanted to retrieve on demand in a single request. I thought to use the XHRDataSource at first, but there would continue to be multiple requests with each letter I typed.&nbsp; To solve my requirement for a lazy, single-request data source, I created the (obviously named) LazyLoadDataSource. It&#8217;s much like the XHRDataSource, except it expects to retrieve all the data in a single request. Now I can create more efficient auto-completes that can retrieve data on demand while keeping requests to the server at an absolute minimum.&#8221;&nbsp; The core use case here is that you have a small dataset, but you don&#8217;t want to load that data into the page until it&#8217;s needed; however, the dataset is small enough that, once it&#8217;s needed, you want to load it all at once. (<a href="http://twitter.com/sanjayginde/statuses/1453780969">Original source.</a>)</li></ul>			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2009/04/09/wild-20090409/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2009/04/09/wild-20090409/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2009/04/09/wild-20090409/&amp;title=In the Wild for April 9, 2009" title="bookmark In the Wild for April 9, 2009 in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2009/04/09/wild-20090409/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2009/04/09/wild-20090409/&amp;title=In the Wild for April 9, 2009" title="post In the Wild for April 9, 2009 to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2009%2F04%2F09%2Fwild-20090409%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2009/04/09/wild-20090409/"
+    dc:identifier="http://www.yuiblog.com/blog/2009/04/09/wild-20090409/"
+    dc:title="In the Wild for April 9, 2009"
+    trackback:ping="http://www.yuiblog.com/blog/2009/04/09/wild-20090409/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+					
+		
+		<a href="/blog/category/development/page/26/" >&laquo; Previous Page</a> &#8212; <a href="/blog/category/development/page/28/" >Next Page &raquo;</a>		</div>
+
+<!-- begin footer -->
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+		  <div id="twitter">
+			<h3>YUI Library on Twitter</h3>
+				<ul class="twitter">
+                	<li><a href="http://twitter.com/yuilibrary">YUILibrary Twitter feed</a></li>
+                    <li><a href="http://twitter.com/miraglia/yui/members">YUI Devs on Twitter</a></li>
+                </ul>
+          </div>
+
+		  <div id="crockford">
+			<h3>Crockford on JavaScript Video Series</h3>
+				<a href="/crockford/"><img width="160" height="130" style="padding-top:7px" src="http://yuiblog.com/assets/crockford-on-js.jpg" alt="Crockford on JavaScript video series."></a>
+          </div>
+
+ 							<div class="translation">
+					<h3>Translate</h3>
+						
+<!--FLAG_BAR_BEGIN--><div id="translation_bar"><map id="gltr_flags_map" name="gltr_flags_map"><area shape='rect' coords='0,0,16,11' href='/blog/index.php/' id='flag_en'   title='English'/><area shape='rect' coords='20,0,36,11' href='/blog/index.php/it/' id='flag_it'   title='Italian'/><area shape='rect' coords='40,0,56,11' href='/blog/index.php/ko/' id='flag_ko'   title='Korean'/><area shape='rect' coords='60,0,76,11' href='/blog/index.php/zh-CN/' id='flag_zh-CN'   title='Chinese (Simplified)'/><area shape='rect' coords='80,0,96,11' href='/blog/index.php/zh-TW/' id='flag_zh-TW'   title='Chinese (Traditional)'/><area shape='rect' coords='100,0,116,11' href='/blog/index.php/pt/' id='flag_pt'   title='Portuguese'/><area shape='rect' coords='120,0,136,11' href='/blog/index.php/de/' id='flag_de'   title='German'/><area shape='rect' coords='140,0,156,11' href='/blog/index.php/fr/' id='flag_fr'   title='French'/><area shape='rect' coords='0,15,16,26' href='/blog/index.php/es/' id='flag_es'   title='Spanish'/><area shape='rect' coords='20,15,36,26' href='/blog/index.php/ja/' id='flag_ja'   title='Japanese'/><area shape='rect' coords='40,15,56,26' href='/blog/index.php/ar/' id='flag_ar'   title='Arabic'/><area shape='rect' coords='60,15,76,26' href='/blog/index.php/ru/' id='flag_ru'   title='Russian'/><area shape='rect' coords='80,15,96,26' href='/blog/index.php/el/' id='flag_el'   title='Greek'/><area shape='rect' coords='100,15,116,26' href='/blog/index.php/nl/' id='flag_nl'   title='Dutch'/><area shape='rect' coords='120,15,136,26' href='/blog/index.php/bg/' id='flag_bg'   title='Bulgarian'/><area shape='rect' coords='140,15,156,26' href='/blog/index.php/cs/' id='flag_cs'   title='Czech'/><area shape='rect' coords='0,30,16,41' href='/blog/index.php/hr/' id='flag_hr'   title='Croatian'/><area shape='rect' coords='20,30,36,41' href='/blog/index.php/da/' id='flag_da'   title='Danish'/><area shape='rect' coords='40,30,56,41' href='/blog/index.php/fi/' id='flag_fi'   title='Finnish'/><area shape='rect' coords='60,30,76,41' href='/blog/index.php/hi/' id='flag_hi'   title='Hindi'/><area shape='rect' coords='80,30,96,41' href='/blog/index.php/pl/' id='flag_pl'   title='Polish'/><area shape='rect' coords='100,30,116,41' href='/blog/index.php/ro/' id='flag_ro'   title='Romanian'/><area shape='rect' coords='120,30,136,41' href='/blog/index.php/sv/' id='flag_sv'   title='Swedish'/><area shape='rect' coords='140,30,156,41' href='/blog/index.php/no/' id='flag_no'   title='Norwegian'/><area shape='rect' coords='0,45,16,56' href='/blog/index.php/tl/' id='flag_tl'   title='Filipino'/><area shape='rect' coords='20,45,36,56' href='/blog/index.php/iw/' id='flag_iw'   title='Hebrew'/><area shape='rect' coords='40,45,56,56' href='/blog/index.php/id/' id='flag_id'   title='Indonesian'/><area shape='rect' coords='60,45,76,56' href='/blog/index.php/lv/' id='flag_lv'   title='Latvian'/><area shape='rect' coords='80,45,96,56' href='/blog/index.php/lt/' id='flag_lt'   title='Lithuanian'/><area shape='rect' coords='100,45,116,56' href='/blog/index.php/sr/' id='flag_sr'   title='Serbian'/><area shape='rect' coords='120,45,136,56' href='/blog/index.php/sl/' id='flag_sl'   title='Slovenian'/><area shape='rect' coords='140,45,156,56' href='/blog/index.php/uk/' id='flag_uk'   title='Ukrainian'/><area shape='rect' coords='0,60,16,71' href='/blog/index.php/vi/' id='flag_vi'   title='Vietnamese'/><area shape='rect' coords='20,60,36,71' href='/blog/index.php/th/' id='flag_th'   title='Thai'/><area shape='rect' coords='40,60,56,71' href='/blog/index.php/tr/' id='flag_tr'   title='Turkish'/><area shape='rect' coords='60,60,76,71' href='/blog/index.php/hu/' id='flag_hu'   title='Hungarian'/><area shape='rect' coords='80,60,96,71' href='/blog/index.php/is/' id='flag_is'   title='Icelandic'/><area shape='rect' coords='100,60,116,71' href='/blog/index.php/ms/' id='flag_ms'   title='Malay'/><area shape='rect' coords='120,60,136,71' href='/blog/index.php/fa/' id='flag_fa'   title='Persian'/></map><img style='border:0px;' src='http://www.yuiblog.com/blog/wp-content/plugins/global-translator/gltr_image_map.png' usemap='#gltr_flags_map'/></div><div id="transl_sign"></div><!--FLAG_BAR_END-->
+				</div>    
+             
+            
+		  <div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>	
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+						
+					<li>
+						<a href="/blog/category/accessibility" title="Posts and articles about accessibility">Accessibility Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/accessibility">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/accessibility">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2011/04/29/yui-is-hiring/">YUI Is Hiring</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/26/yui-compressor-2-4-6/">Announcing YUI Compressor 2.4.6</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/25/direction-friendly-navigation-bar/">Direction-friendly Navigation Bar</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/19/yui-3-building-blocks-modules-and-applications-workshop-coming-to-portland-and-free/">YUI 3 &#8220;Building Blocks, Modules, and Applications&#8221; Workshop Coming to Portland, and Free!</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/19/quickedit-datatable-yui3/">Quick Edit mode for YUI 3 DataTable</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/19/yui-open-hours-thurs-apr-21st/">YUI: Open Hours Thurs Apr 21st</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/13/announcing-yui-2-9-0/">Announcing YUI 2.9.0</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/13/announcing-yui-test-1-0-0-beta-2/">Announcing YUI Test 1.0.0 Beta 2</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/05/yui-open-hours-thurs-apr-7th/">YUI: Open Hours Thurs Apr 7th</a></li>
+					    		<li class="recent"><a href="/blog/2011/04/01/a-recipe-for-a-yui-3-application/">A Recipe for a YUI 3 Application</a></li>
+							</ul>
+			</div>
+			
+			<div id="ydn">
+			<h3>YUI Library</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.com/yui/">YUI Documentation</a></li>
+					<li><a href="http://yuilibrary.com/">YUI Project Resources</a></li>
+					<li><a href="http://yuilibrary.com/forum/">YUI Discussion Forums</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2011/04/' title='April 2011'>April 2011</a>&nbsp;(10)</li>
+	<li><a href='/blog/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+	<li><a href='/blog/2011/02/' title='February 2011'>February 2011</a>&nbsp;(5)</li>
+	<li><a href='/blog/2011/01/' title='January 2011'>January 2011</a>&nbsp;(10)</li>
+	<li><a href='/blog/2010/12/' title='December 2010'>December 2010</a>&nbsp;(24)</li>
+	<li><a href='/blog/2010/11/' title='November 2010'>November 2010</a>&nbsp;(21)</li>
+	<li><a href='/blog/2010/10/' title='October 2010'>October 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/09/' title='September 2010'>September 2010</a>&nbsp;(17)</li>
+	<li><a href='/blog/2010/08/' title='August 2010'>August 2010</a>&nbsp;(18)</li>
+	<li><a href='/blog/2010/07/' title='July 2010'>July 2010</a>&nbsp;(8)</li>
+	<li><a href='/blog/2010/06/' title='June 2010'>June 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/05/' title='May 2010'>May 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/04/' title='April 2010'>April 2010</a>&nbsp;(22)</li>
+	<li><a href='/blog/2010/03/' title='March 2010'>March 2010</a>&nbsp;(22)</li>
+	<li><a href='/blog/2010/02/' title='February 2010'>February 2010</a>&nbsp;(16)</li>
+	<li><a href='/blog/2010/01/' title='January 2010'>January 2010</a>&nbsp;(8)</li>
+	<li><a href='/blog/2009/12/' title='December 2009'>December 2009</a>&nbsp;(9)</li>
+	<li><a href='/blog/2009/11/' title='November 2009'>November 2009</a>&nbsp;(29)</li>
+	<li><a href='/blog/2009/10/' title='October 2009'>October 2009</a>&nbsp;(14)</li>
+	<li><a href='/blog/2009/09/' title='September 2009'>September 2009</a>&nbsp;(12)</li>
+	<li><a href='/blog/2009/08/' title='August 2009'>August 2009</a>&nbsp;(4)</li>
+	<li><a href='/blog/2009/07/' title='July 2009'>July 2009</a>&nbsp;(5)</li>
+	<li><a href='/blog/2009/06/' title='June 2009'>June 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/05/' title='May 2009'>May 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/04/' title='April 2009'>April 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/03/' title='March 2009'>March 2009</a>&nbsp;(15)</li>
+	<li><a href='/blog/2009/02/' title='February 2009'>February 2009</a>&nbsp;(10)</li>
+	<li><a href='/blog/2009/01/' title='January 2009'>January 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2008/12/' title='December 2008'>December 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/11/' title='November 2008'>November 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/10/' title='October 2008'>October 2008</a>&nbsp;(16)</li>
+	<li><a href='/blog/2008/09/' title='September 2008'>September 2008</a>&nbsp;(4)</li>
+	<li><a href='/blog/2008/08/' title='August 2008'>August 2008</a>&nbsp;(9)</li>
+	<li><a href='/blog/2008/07/' title='July 2008'>July 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/06/' title='June 2008'>June 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/05/' title='May 2008'>May 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/04/' title='April 2008'>April 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/03/' title='March 2008'>March 2008</a>&nbsp;(7)</li>
+	<li><a href='/blog/2008/02/' title='February 2008'>February 2008</a>&nbsp;(10)</li>
+	<li><a href='/blog/2008/01/' title='January 2008'>January 2008</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/12/' title='December 2007'>December 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/11/' title='November 2007'>November 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+                    <li><a href="http://xianlandia.com">Christian Crumlish</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://ericmiraglia.com/">Eric Miraglia</a></li>
+					<li><a href="http://www.julienlecomte.net/blog/">Julien Lecomte</a></li>
+					<li><a href="http://lucassmith.name/">Luke Smith</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://techfoolery.com">Ross Harmes</a></li>
+                    <li><a href="http://wonko.com/">Ryan Grove</a></li>
+					<li><a href="http://schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://www.phpied.com/">Stoyan Stefanov</a></li>
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments that contribute toward the conversations on the blog. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://careers.yahoo.com/">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Log in</a></li>
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2006-2011 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+
+	<p><!-- 29 queries. 1.669 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1304703246" border="0" width="1" height="1" alt="visit" /></noscript>
+<script>
+YUI().use("get", function(Y) {
+	Y.Get.script("http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462");
+});
+</script>
+<!-- Yahoo! Web Analytics - All rights reserved -->
+<script type="text/javascript" src="http://d.yimg.com/mi/ywa.js"></script>
+<script type="text/javascript">
+/*globals YWA*/
+var YWATracker = YWA.getTracker("10001638119858");
+/*
+YWATracker.setDocumentName("");
+YWATracker.setDocumentGroup("");
+*/
+YWATracker.submit();
+</script>
+<noscript>
+<div><img src="http://a.analytics.yahoo.com/p.pl?a=10001638119858&amp;js=no"
+width="1" height="1" alt="" /></div>
+</noscript>
+
+</body>
+</html>

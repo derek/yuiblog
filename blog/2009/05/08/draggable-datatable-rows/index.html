@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Draggable DataTable Rows </title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Draggable DataTable Rows </li></ul>
+				<h1 class="yui3-u-7-8">Draggable DataTable Rows </h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">May 8, 2009<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" height="231" hspace="10" src="/blog-archive/assets/draggable-datatable-rows/gonzalo.jpg" vspace="5" width="300" /><strong>About the Author:</strong> <em>Gonzalo Cordero is a Front-End Engineer on the Yahoo! Flex Force team. He is currently working on the next generation of Yahoo! homepage. He is also a former <a href="/blog-archive/blog/2007/12/06/juku/">Juku</a> graduate, where he recently became an instructor as well. In this article he walks us through the process of adding <a href="http://developer.yahoo.com/yui/dragdrop/">Drag and Drop</a> functionality to a <a href="http://developer.yahoo.com/yui/datatable/">DataTable widget</a>.</em></div> </div>
+	<h3 id="intro">Introduction</h3>
+	<p>A recent project of mine required an implementation of DataTable where rows could be moved around with Drag and Drop functionality. After looking through the <a href="http://developer.yahoo.com/yui/examples/">YUI gallery of examples</a>, I realized that the feature I was trying to implement was a little bit different from the ones I saw. So I decided to implement my own solution. In this article I'll explain how I combined YUI's <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and <a href="http://developer.yahoo.com/yui/dragdrop/">Drag and Drop</a> components, some workarounds for the challenges I encountered, and how I was able to improve upon my initial solution by using <a href="http://developer.yahoo.com/yui/3/">the new YUI3 codeline</a> (which is currently available in preview mode).<img alt="Screenshot of draggable DataTable rows." height="244" src="/blog-archive/assets/draggable-datatable-rows/screenshot.png" width="511" /><h3 id="yui2">Initial considerations and some possible solutions</h3>
+	<p>The first question that came to my mind was how to make each table row draggable and a drop target at the same time in the most efficient way. I also knew that instantiating a Drag and DDTarget object at the same time on an element wasn't going to work. After reading through the <a href="http://developer.yahoo.com/yui/docs/module_dragdrop.html">Drag and Drop API documentation</a> I found out that the property <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.DragDrop.html#property_isTarget"><code>isTarget</code></a> gets set by default to <code>true</code> for every Drag object we create, making that object a drop target as well. So with that, I defined a custom <code>DDRows</code> class to set up the interesting moment handlers and also add some CSS style for the drag proxy object to visually differentiate it from the regular rows. A proxy drag object is just a container that gets displayed once the dragging starts and it serves as a marker/guide for what is being dragged.<pre>
+YAHOO.example.DDRows = function(id, sGroup, config) {
+    YAHOO.example.DDRows.superclass.constructor.call(this, id, sGroup, config);
+    Dom.addClass(this.getDragEl(),"type-proxydrag");
+};
+
+YAHOO.extend(YAHOO.example.DDRows, YAHOO.util.DDProxy, {
+	// Handlers defined here
+});
+</pre><p>After defining the DDRows class, I listen for the DataTable's <code>initEvent</code> to set up each row as a DDRows Drag object:<pre>
+myDataTable.subscribe("initEvent", function() {
+    var i, id,
+    allRows = this.getTbodyEl().rows;
+
+    for(i=0; i&lt;allRows.length; i++) {
+        id = allRows[i].id;
+
+        // Clean up any existing Drag instances
+        if (myDTDrags[id]) {
+            myDTDrags[id].unreg();
+            delete myDTDrags[id];
+        }
+
+        // Create a Drag instance for each row
+        myDTDrags[id] = new YAHOO.example.DDRows(id);
+    }
+});
+</pre><p>Then instead of using the DDTarget class, I look for the <code>isTarget</code> property of the Drag object to validate the target element. This way we make sure we only move table rows onto other table rows:<pre>
+onDragDrop: function(e, id) {
+    var destDD = YAHOO.util.DragDropMgr.getDDById(id);
+    // Only if dropping on a valid target
+    if(destDD && destDD.isTarget && this.srcEl) {
+            ...
+    }
+}
+</pre><p>An important consideration is that the DOM is repainted each time we move a row, so not only does the Drag object on the original row need to be cleaned up when it is deleted, a new Drag object needs to be created for the row that is created in the new position. Here is the entire <code>onDragDrop</code> function that cleans up and moves a row:<pre>
+onDragDrop: function(e, id) {
+    var destDD = YAHOO.util.DragDropMgr.getDDById(id);
+    // Only if dropping on a valid target
+    if(destDD && destDD.isTarget && this.srcEl) {
+        var	srcEl = this.srcEl,
+            srcIndex = srcEl.sectionRowIndex,
+        	destEl = Dom.get(id),
+        	destIndex = destEl.sectionRowIndex,
+            srcData = myDataTable.getRecord(srcEl).getData();
+
+        this.srcEl = null;
+
+        // Cleanup existing Drag instance
+        myDTDrags[srcEl.id].unreg();
+        delete myDTDrags[srcEl.id];
+
+        // Move the row to its new position
+    	myDataTable.deleteRow(srcIndex);
+        myDataTable.addRow(srcData, destIndex);
+    	YAHOO.util.DragDropMgr.refreshCache();
+    }
+    }
+}
+</pre><p>Here is the <a href="/blog-archive/assets/draggable-datatable-rows/example-yui2.html">full working example using YUI 2.7.0</a>.<h3 id="yui3">Enhancing our example by using YUI 3.0 PR2</h3>
+	<p>On the Yahoo! homepage, we have been using YUI 3 to develop <a href="/blog-archive/blog/2008/11/11/frontpage-and-yui3/">our next-generation experience</a>, and the more I use it, the more I realize how powerful and extensible it is. So I decided to go ahead and check out the <a href="http://developer.yahoo.com/yui/3/dd/">Drag and Drop</a> component from the latest <a href="http://developer.yahoo.com/yui/3/">YUI 3.0 preview release</a> for this exercise.<p>It was no surprise when I discovered that with this new version I could take advantage of some of the new properties and methods to make my solution more clean and efficient. For instance, Drag and Drop in YUI 3 provides an efficient way to create the Drag/Target objects we need:<pre>
+myDTDrags[id] =  new Y.DD.Drag({
+    node: "#"+id,
+    constrain2node: "#datatable",
+    moveOnEnd: false,
+    proxy: true,
+    target: true
+});
+</pre><p>We no longer have to define our own subclass or worry about validating the element before swapping rows, as the <code>drophit</code> event will only be triggered when applied to elements we've defined as drop targets.<p>The other great new feature version 3 brings us is custom-event bubbling (which brings the power of DOM-event bubbling to the custom events that drive the library's API). Thanks to this, we can now to listen for all the Drag and Drop events at the document level using the Drag and Drop Manager, rather than having to attach several events to each individual table row. Our custom-event delegation code looks like this:<pre>
+Y.DD.DDM.on('drag:start',startDrag);
+Y.DD.DDM.on('drag:end',endDrag);
+Y.DD.DDM.on('drag:drophit',dragDrop);
+</pre><p>Here is the <a href="/blog-archive/assets/draggable-datatable-rows/example-yui3.html">full working example using YUI 3.0 PR2</a>.<h3 id="conclusion">Conclusion</h3>
+	<p>I hope you find these examples a useful resource on how to add Drag and Drop functionality to DataTables and on how you easily you can integrate YUI 2.7.0 and YUI 3 components in the same page. It also serves as a quick preview on all the new and exciting features that are coming with the next generation of YUI.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

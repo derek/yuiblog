@@ -1,0 +1,1046 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Creating Custom Modules with YUI Using the YUI Module Control &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; Creating Custom Modules with YUI Using the YUI Module Control</title> -->
+	
+	<meta name="generator" content="WordPress 2.3.2" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='January 2008' href='/blog/2008/01/' />
+	<link rel='archives' title='December 2007' href='/blog/2007/12/' />
+	<link rel='archives' title='November 2007' href='/blog/2007/11/' />
+	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+ <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/blog/wp-includes/wlwmanifest.xml" /> <meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item page-item-2"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+		<!--suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-155"><a href="/blog/2007/12/19/custommodules/" rel="bookmark" title="Permanent Link to Creating Custom Modules with YUI Using the YUI Module Control">Creating Custom Modules with YUI Using the YUI Module Control</a></h2>
+				<small>December 19, 2007 at 4:44 pm by Cyril Doussin | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<link rel="stylesheet" type="text/css" href="http://us.js2.yimg.com/us.js.yimg.com/i/ydn/yuiweb/css/dpsyntax-min-11.css">
+<style type="text/css">
+#cyril .dp-highlighter td span {font-size:10px !important;}
+</style>
+<div class="interview">
+	<div class="intro">
+		<img align="right" hspace="10" vspace="5" src="http://yuiblog.com/assets/cyril_doussin.jpg" alt="Yahoo! frontend engineer Cyril Doussin" width="250" height="342"><strong>About the Author:</strong> <em><a href="http://cyril.doussin.name">Cyril Doussin</a> is a web developer currently working for Yahoo! London where he has contributed, along with <a href="http://muffinresearch.co.uk/">Stuart Colville</a>, <a href="http://www.ejeliot.com/">Ed Eliot</a> and <a href="http://ben-ward.co.uk/">Ben Ward</a>, to the new front-end code for the price comparison site <a href="http://kelkoo.co.uk">Kelkoo</a>. He enjoys playing with the YUI, microformats, Django, an old classical guitar and coffee machines.</em></div></div>
+
+
+    <h2>Introduction</h2>
+    <p>The <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface Library</a> ships with a few controls such as <a href="http://developer.yahoo.com/yui/calendar/">Calendar</a> or <a href="http://developer.yahoo.com/yui/container/panel/">Panel</a> which allow a Javascript programmer to quickly add highly interactive functionality to a web site. As stated in the documentation:</p>
+<blockquote>
+The <a href="http://developer.yahoo.com/yui/container/">Container</a> family of components is designed to enable developers to create different kinds of content-containing modules on the web. <a href="http://developer.yahoo.com/yui/container/module/">Module</a> and <a href="http://developer.yahoo.com/yui/container/overlay/">Overlay</a> are the most basic containers, and they can be used directly or extended to build custom containers. Also part of the Container family are four UI controls that extend Module and Overlay: <a href="http://developer.yahoo.com/yui/container/tooltip/">Tooltip</a>, <a href="http://developer.yahoo.com/yui/container/panel/">Panel</a>, <a href="http://developer.yahoo.com/yui/container/dialog/">Dialog</a>, and <a href="http://developer.yahoo.com/yui/container/simpledialog/">SimpleDialog</a>.
+</blockquote>
+      <p> These four UI controls actually all extend Overlay, which itself extends Module. The <a href="http://developer.yahoo.com/yui/container/module/">YAHOO.widget.Module</a> object provides a basic framework that you can use to create custom UI controls which follow the common header/body/footer paradigm.  This isn&#8217;t the only pattern you can use in building YUI-based widgets, but it&#8217;s one I&#8217;ve used to good effect in my own projects.
+    </p>
+    <p>
+        If you would like to build a similar content-containing Control, YAHOO.widget.Module provides you with a good base for several reasons:
+<ul>
+            <li>the logic of your Control will have a flexible, event-driven, execution flow</li>
+            <li>your code will be structured and easily maintainable</li>
+            <li>you will inherently be able to have multiple, independant instances of your Control on the same page, without any code conflict occuring</li>
+</ul>
+    </p>
+    <p>
+        This article looks at the process of extending YAHOO.widget.Module in order to build such a Control.  Our example will be a potentially long list of contacts, which we will turn into a customisable, paginated list.
+    </p>
+	<span id="more-155"></span>
+<div id="cyril">    
+    <h2>Structured Markup</h2>
+    <p>
+        The basic markup for our example will be a small contact list:
+    </p>
+<textarea name="code" class="HTML" cols="100" rows="30">
+<h2>Contacts</h2>
+<ol>
+<li>
+	<dl>
+		<dt>Name</dt>
+		<dd>Ed Eliot</dd>
+		<dt>Web site</dt>
+		<dd><a href="http://www.ejeliot.com/">ejeliot.com</a></dd>
+	</dl>
+</li>
+<li>
+	<dl>
+		<dt>Name</dt>
+		<dd>Stuart Colville</dd>
+		<dt>Web site</dt>
+		<dd><a href="http://muffinresearch.co.uk/">Muffin Research Labs</a></dd>
+	</dl>
+</li>
+<li>
+	<dl>
+		<dt>Name</dt>
+		<dd>Ben Ward</dd>
+		<dt>Web site</dt>
+		<dd><a href="http://ben-ward.co.uk/">ben-ward.co.uk</a></dd>
+	</dl>
+</li>
+</ol>
+</textarea>
+    <p>
+        As detailed in the <a href="http://developer.yahoo.com/yui/container/module/index.html">YAHOO.widget.Module</a> documentation, a <a href="http://developer.yahoo.com/yui/container/module/index.html#html">standard markup structure</a> has been defined for all Modules. So let&#8217;s apply it to our control:
+    </p>
+<textarea name="code" class="HTML" cols="100" rows="30">
+<div id="contact-list">
+<div class="hd">
+	<h2>Contacts</h2>
+</div>
+<div class="bd">
+	<ol>
+		<li>
+			<dl>
+				<dt>Name</dt>
+				<dd>Ed Eliot</dd>
+				<dt>Web site</dt>
+				<dd><a href="http://www.ejeliot.com/">ejeliot.com</a></dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>Name</dt>
+				<dd>Stuart Colville</dd>
+				<dt>Web site</dt>
+				<dd><a href="http://muffinresearch.co.uk/">Muffin Research Labs</a></dd>
+			</dl>
+		</li>
+		<li>
+			<dl>
+				<dt>Name</dt>
+				<dd>Ben Ward</dd>
+				<dt>Web site</dt>
+				<dd><a href="http://ben-ward.co.uk/">ben-ward.co.uk</a></dd>
+			</dl>
+		</li>
+	</ol>
+</div>
+<div class="ft"></div>
+</div>
+</textarea>
+    <p>This may at first seem like unnecessary extra markup, but as you develop many controls, you will appreciate the consistency that this markup structure brings to your code (both Javascript and CSS), and the shortcuts YAHOO.widget.Module makes available to you as a result.</p>
+    
+<a href="/assets/cyril-module/1.html">Example 1</a>
+
+
+    <h2>Including YUI dependencies</h2>
+
+    <p>We will be using the <a href="http://developer.yahoo.com/yui/yahoo/">YAHOO</a>, <a href="http://developer.yahoo.com/yui/dom/">YAHOO.util.Dom</a> and <a href="http://developer.yahoo.com/yui/event/">YAHOO.util.Event</a> objects, along with the base code for YAHOO.widget.Module, which is contained in container-min.js:</p>
+
+<textarea name="code" class="JScript" cols="100" rows="30">
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.4.0/build/container/container-min.js"></script>
+</textarea>
+    
+        
+
+    <h2>Building the Control step by step</h2>
+
+    <p>YUI offers functionality such as namespacing, extension, configuration objects, and <a href="http://developer.yahoo.com/yui/event/#customevent">Custom Events</a> which you can make use of when creating your own UI controls. After analysing each of these features separately, we will end up with a structured template of code which we will then use for our control.</p>
+    
+
+    <h3>Namespacing</h3>
+    
+    <p>You should use <code>YAHOO.namespace</code> in order to isolate your code into its own namespace, making sure it does not pollute the global scope or conflicts with any third party code (including YUI itself). Grouping all your code in an object under the global <code>YAHOO</code> object is considered standard practice:</p>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+YAHOO.namespace(&#8217;Cyril&#8217;);
+</textarea>
+    
+
+    <h3>Extending</h3>
+    
+    <p>You then need to define your constructor and specify that your new Object will be inheriting YAHOO.widget.Module:</p>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+YAHOO.Cyril.ContactList = function(el, userConfig) {
+YAHOO.Cyril.ContactList.superclass.constructor.call(this, el, userConfig);
+};
+YAHOO.extend(YAHOO.Cyril.ContactList, YAHOO.widget.Module);
+// make our widget an event provider
+YAHOO.lang.augmentProto(YAHOO.Cyril.ContactList, YAHOO.util.EventProvider);
+</textarea>
+
+    <p>The two parameters accepted by the constructor are:</p>
+    <dl>
+        <dt>el</dt>
+            <dd>A reference to the main HTMLElement for the Control (the &#8220;contact-list&#8221; element in our example)</dd>
+        <dt>userConfig</dt>
+            <dd>A configuration object (more on this later)</dd>
+    </dl>
+
+    <p>We are also augmenting at this stage our Control&#8217;s prototype with EventProvider (see <a href="#custom_events">Custom Events</a>).</p>
+
+    <p>We are now ready to instantiate our Control:</p>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+YAHOO.util.Event.onDOMReady(function() {
+var contact_list = new YAHOO.Cyril.ContactList(&#8217;contact-list&#8217;);
+// store a reference to the instance
+YAHOO.Cyril.contactLists = [ contact_list ];
+});
+</textarea>
+    
+    <p>And start taking advantage of the functionality offered by YAHOO.widget.Module, for example the &#8220;element&#8221;, &#8220;header&#8221;, &#8220;body&#8221; and &#8220;footer&#8221; properties:</p>
+
+<textarea name="code" class="JScript" cols="100" rows="30">
+YAHOO.util.Event.onDOMReady(function() {
+    var contact_list = new YAHOO.Cyril.ContactList(&#8217;contact-list&#8217;);
+    YAHOO.Cyril.contactLists = [ contact_list ]
+    YAHOO.util.Dom.batch([ 	contact_list.element, 
+							contact_list.header, 
+							contact_list.body, 
+							contact_list.footer], 
+	function(el) {
+        el.style.border = &#8216;1px solid red&#8217;;
+    })
+});
+</textarea>
+
+    <a href="/assets/cyril-module/2.html">Example 2</a>
+    
+
+
+        <h3>Configuration</h3>
+
+        <p>You can define a default configuration for the properties of your Control. These could for example define how your Control should behave in a particular situation.</p>
+        <p>You can also override this default configuration for each instance of your Control. This is a structured way of implementing customisation.</p>
+
+
+<textarea name="code" class="JScript" cols="100" rows="30">
+/**
+* Initializes the class&#8217;s configurable properties which can be changed 
+* using the Overlay&#8217;s Config object (cfg).
+* @method initDefaultConfig
+*/
+YAHOO.Cyril.ContactList.prototype.initDefaultConfig = function () {
+
+	YAHOO.Cyril.ContactList.superclass.initDefaultConfig.call(this);
+
+	/**
+	* Maximum number of contacts to show
+	* @config 
+	* @type Number
+	* @default 2
+	*/
+	this.cfg.addProperty(&#8217;num_contacts&#8217;, { 
+		handler: this.configNumContacts, 
+		validator: this.validateNumContacts, 
+		suppressEvent: true, 
+		supercedes: false,
+		value: 2
+});
+
+/**
+* Makes sure that the &#8220;num_contacts&#8221; config property cannot be set to anything else than 1, 2 or 3.
+* @method initDefaultConfig
+* @param {NUmber} value
+*/
+YAHOO.Cyril.ContactList.prototype.validateNumContacts = function(value) {
+	value = parseInt(value);
+	return !(isNan(value) || (value < 1) || (value > 3));
+};
+</textarea>
+
+
+        <p>The optional attributes of a configuration property are:</p>
+        <dl>
+            <dt>handler</dt>
+                <dd>Function called whenever the configuration property is set</dd>
+            <dt>validator</dt>
+                <dd>Function returning a Boolean to validate the new value for the property.</dd>
+            <dt>suppressEvent</dt>
+                <dd>When adding a new configuration property or setting a property&#8217;s value, a CustomEvent is normally fired. Setting this option to true prevents the event from being fired.</dd>
+            <dt>supercedes</dt>
+                <dd>Array of Custom Event keys. When a Custom Event is fired after adding a new property or setting or property&#8217;s value, it is possible to replace any previous Custom Event of the same type which is currently queued for firing by specifying its type in this Array.</dd>
+        </dl>
+
+
+        <p>You can then use the setProperty and getProperty functions of your Control&#8217;s config object to modify and access the values of your properties.</p>
+
+<textarea name="code" class="JScript" cols="100" rows="30">
+	contact_list.config.setProperty(&#8217;num_contacts&#8217;, 1);
+	alert(contact_list.getProperty(&#8217;num_contacts));
+</textarea>
+
+
+    <h3 id="custom_events">Custom Events</h3>
+
+    <p>YAHOO.util.Event provides a powerful  mechanism for you to define custom events which can be triggered by your Controls and listened to by any other javascript function. This allows you to put in practice <a href="/blog/2007/01/17/event-plan/">Event-Driven Development</a> in a simple, lightweight way.</p>
+
+    <p>The first thing the YAHOO.widget.Module.prototype.init function does is to call the &#8220;initEvents&#8221; method. This means you can define any custom event you wish to use for your Control by defining this &#8220;initEvents&#8221; function as part of your object&#8217;s prototype:</p>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+/**
+* Initializes the custom events for YAHOO.Cyril.ContactList. This method gets called by YAHOO.widget.Module.prototype.init
+* @method initEvents
+*/
+YAHOO.Cyril.ContactList.prototype.initEvents = function() {
+
+// call the base class method to make sure inherited custom events get set up
+YAHOO.Cyril.ContactList.superclass.initEvents.call(this);
+
+/**
+* CustomEvent fired before showing a different contact
+* @event beforeShowContactEvent
+* @param {HTMLElement} contactElement LI HTMLElement for the contact to show
+*/
+this.createEvent(&#8217;beforeUpdateContacts&#8217;);
+
+/**
+* CustomEvent fired after showing a different contact
+* @event updateContactsEvent
+* @param {HTMLElement} contactElement LI HTMLElement for the contact now displayed
+*/
+this.createEvent(&#8217;updateContacts&#8217;);
+};
+</textarea>
+
+    <p>We are using the createEvent function which we made available by previously extending our Control&#8217;s prototype with YAHOO.util.EventProvider. This is the standard way of creating Custom Events, which you should implement through all your YUI-based Objects (whether they extend YAHOO.widget.Module or not).</p>
+
+    <p>The code showing a different contact should then look like the following:<p>
+        
+<textarea name="code" class="JScript" cols="100" rows="30">
+var contactElement = get a reference to the new contact element here;
+if (this.fireEvent(&#8217;beforeUpdateContacts&#8217;)) {
+// &#8230; change the contact displayed to contactElement here
+}
+this.fireEvent(&#8217;updateContacts&#8217;);
+</textarea>
+    
+    <p>Note the fireEvent function is also part of YAHOO.util.EventProvider.</p>
+
+    <p>Any javascript function can now be set up as a subscriber (also commonly called &#8220;listener&#8221;) to these events, with the possibility of cancelling the custom event. When a custom event fires, the subscriber functions will be called on a &#8220;first subscribed, first called&#8221; basis.</p>
+
+<textarea name="code" class="JScript" cols="100" rows="30">
+	contact_list.updateContactsEvent.subscribe(function(type, args) {
+		alert(args[0].current_index);
+	});
+</textarea>
+
+
+
+    <h3>Init function</h3>
+
+    <p>The init method of your Control is called upon instantiation. Although you are theoretically free to do what you want in this function, there are some important things you should make it do:</p>
+
+    <div>
+        <h4>Call the init function of the superclass (ie. call YAHOO.widget.Module.prototype.init)</h4>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+	YAHOO.Cyril.ContactList.superclass.init.call(this, el/*, userConfig*/);
+</textarea>
+
+
+        <h4>Fire &#8220;beforeInit&#8221; and &#8220;init&#8221; events when appropriate</h4>
+
+<textarea name="code" class="JScript" cols="100" rows="30">
+this.beforeInitEvent.fire(YAHOO.Cyril.ContactList);
+
+// .. rest of the init function
+
+this.initEvent.fire(YAHOO.Cyril.ContactList);
+</textarea>
+        
+        <p>Note there is no need to call this.initEvents(&#8230;) to initialise Custom Events as this gets done automatically when calling YAHOO.widget.Module.prototype.init.</p>
+
+        <h4>Caching DOM references</h4>
+
+        <p>YAHOO.widgets.Module automatically caches references to the main widget&#8217;s HTML Element, and its header, body and footer child elements if they exist (class=&#8221;hd&#8221;, class=&#8221;bd&#8221; and class=&#8221;ft&#8221;).</p>
+        <p>If you often need to manipulate certain HTML Elements in your Control, it is generally recommended to cache references to them as properties of your Control. Accessing a reference is faster than calling document.getElementById every time you wish to access an HTMLElement.</p>
+        <p>Having your main Element cached also means that, should you need to remove your Control from the page and then it it again later on, the state of your Control and all its HTML Elements will be preserved (see <a href="/assets/cyril-module/4.html">example 4</a>).</p>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+	this.some_element = document.getElementById(&#8217;some_element_id&#8217;);
+</textarea>
+
+    </div>
+
+    <div>
+        <p>I also systematically do a few things before exiting the init function:</p>
+        
+        
+        <h4>initDOMManipulations</h4>
+        
+        <p>I call a function named initDOMManipulations which performs any DOM manipulation/transformation required in order to set up the Control. In our example, this is where the &#8220;previous&#8221; and &#8220;next&#8221; pagination links which sit in the footer will be created.</p>
+        
+<textarea name="code" class="JScript" cols="100" rows="30">
+	// create/modify DOM elements (ie. previous/next links)
+	this.initDOMManipulations();
+</textarea>
+
+        <h4>initEventListeners</h4>
+        
+        <p>I call a function named initEventListeners sets up any Event listener needed for the control to function. Note this can be regular DOM Events (set up using YAHOO.util.Event.addListener) or YUI Custom Events (using YAHOO.util.CustomEvent.prototype.subscribe).</p>
+        <p>In our example we will use <a href="/blog/2007/01/17/event-plan/">event delegation</a> (<a href="http://developer.yahoo.com/yui/examples/event/event-delegation.html">see this Event Utility example for more on event delegation in YUI</a>) and set up a listener for the &#8220;click&#8221; event on our Control. The listener function will then perform the appropriate logic if the target of the Event was a pagination link.</p>
+        
+<textarea name="code" class="JScript" cols="100" rows="30">
+	// initialise event delegation
+	this.initEventListeners();
+</textarea>
+        
+        
+        <h4>Default behaviour</h4>
+        
+        <p>And of course you can call any function of your Control&#8217;s code that needs to execute when the Control is first instanciated.</p>
+        
+        <p>In our example we will update the display of our contact list to only show contacts meant to be on the first page.</p>
+        
+<textarea name="code" class="JScript" cols="100" rows="30">
+	// show/hide contact elements
+	this.updateDisplay();
+</textarea>        
+    </div>
+    
+    <p>To sum it up, here is the complete code of our init function:</p>
+    
+<textarea name="code" class="JScript" cols="100" rows="30">
+	YAHOO.Cyril.ContactList.prototype.init = function(el, userConfig) {
+		
+		// Note that we don&#8217;t pass the user config in here 
+		// yet because we only want it processed once, at the 
+		// lowest subclass level (by calling this.cfg.applyConfig later on)
+		// this also calls this.initEvents
+		YAHOO.Cyril.ContactList.superclass.init.call(this, el/*, userConfig*/);
+		
+		// fire event saying we are about to start the initialisation
+		this.beforeInitEvent.fire(YAHOO.Cyril.ContactList);
+		
+		if (userConfig) {
+			this.cfg.applyConfig(userConfig, true);
+		}
+		
+		this.contact_elements = this.body.getElementsByTagName(&#8217;li&#8217;);
+		if (this.contact_elements.length == 0) {
+			return;
+		}
+		this.current_index = 0;
+
+		// create/modify DOM elements (ie. previous/next links)
+		this.initDOMManipulations();
+		// show/hide contact elements
+		this.updateDisplay();
+		// initialise event delegation
+		this.initEventListeners();
+		
+		// fire event saying initialisation of the Control is done
+		this.initEvent.fire(YAHOO.Cyril.ContactList);
+	};
+</textarea>
+    
+
+    <h3>Multiple Controls on the same page</h3>
+
+        <p>You may want to have several instances of your Control on the same page (eg. for controls such as calendars). A good way to do this is to simply assign a class attribute to your Control&#8217;s main container Element, fetch all Elements with this class once the page has loaded and create a new instance for each. You may also want to store references to your Control instances for later manipulations.</p>
+
+        <textarea name="code" class="JScript" cols="100" rows="30">
+YAHOO.util.Event.onDOMReady(function() {
+    // create an array to hold references to the Control&#8217;s instances
+    YAHOO.Cyril.contactLists = [ ];
+    // grab all contact lists by their classes and instanciate them.
+    var contact_lists = YAHOO.util.Dom.getElementsByClassName(&#8217;contact-list&#8217;);
+    for (var i = 0, contact_list; contact_list = contact_lists[i]; i ++) {
+        var control = new YAHOO.Cyril.ContactList(contact_list);
+        // store a reference to the instance
+        YAHOO.Cyril.contactLists.push(control);
+        // use YAHOO.util.EventProvider&#8217;s subscribe function to add a listener to a Custom Event.
+        control.subscribe(&#8217;updateContacts&#8217;, function(type) {
+            alert(&#8217;Current index: &#8216; + this.current_index);
+        });
+    }
+});
+        </textarea>
+
+
+    <h3>Putting it all together</h3>
+
+    <p><a href="/assets/cyril-module/3.html">Example 3</a> shows a complete example making use of everything we have seen in this article.</p>
+    <p><a href="/assets/cyril-module/4.html">Example 4</a> is a more comprehensive example and uses the recently released <a href="http://developer.yahoo.com/yui/profiler/">YUI Profiler</a> to demonstrate the speed advantage of caching references and Module instances, as opposed to always destroying your Elements and Objects. You will also notice that the current page is preserved when removing/reading a Control.</p>
+
+
+    <h2>Note regarding YAHOO.util.Element</h2>
+    <p>
+        If your control deals mainly with one HTML Element and doesn&#8217;t have a header/body/footer like structure, you may want to look at extending <a href="http://developer.yahoo.com/yui/element/">YAHOO.util.Element</a>, which by default provides you with a few things:
+<dl>
+            <dt>EventProvider</dt>
+            <dd>allows you to use <a href="http://developer.yahoo.com/yui/event/#customevent">Custom Events</a>, and to attach listeners to CustomEvents before their creation (defined in event.js)</dd>
+            <dt>AttributeProvider</dt>
+            <dd>allows you to use handle the configuration of all your Element&#8217;s properties and attributes, including triggering events before and after their values are changed, via a unified API.</dd>
+</dl>
+        YAHOO.util.Element serves as the foundation for the <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> and <a href="http://developer.yahoo.com/yui/charts/">Charts</a> controls.
+    </p>
+
+
+<!-- use dpSyntaxHighlighter for all code examples --> 
+<script src="http://us.js2.yimg.com/us.js.yimg.com/i/ydn/yuiweb/js/dpsyntax-min-2.js"></script><script language="javascript">dp.SyntaxHighlighter.HighlightAll('code');</script>
+</div>
+
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2007/12/19/custommodules/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2007/12/19/custommodules/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Creating Custom Modules with YUI Using the YUI Module Control&u=http://yuiblog.com/blog/2007/12/19/custommodules/" title="bookmark Creating Custom Modules with YUI Using the YUI Module Control on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2007/12/19/custommodules/&amp;title=Creating Custom Modules with YUI Using the YUI Module Control" title="bookmark Creating Custom Modules with YUI Using the YUI Module Control in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2007/12/19/custommodules/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2007/12/19/custommodules/&amp;title=Creating Custom Modules with YUI Using the YUI Module Control" title="post Creating Custom Modules with YUI Using the YUI Module Control to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2007/12/19/custommodules/"
+    dc:identifier="http://yuiblog.com/blog/2007/12/19/custommodules/"
+    dc:title="Creating Custom Modules with YUI Using the YUI Module Control"
+    trackback:ping="http://yuiblog.com/blog/2007/12/19/custommodules/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">13 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2007/12/19/custommodules/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2007/12/19/custommodules/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-262232" class="class_comment1">
+	<p>example links are broken</p>
+	<p class="alignright"><small>Comment by joel carranza &#8212; December 19, 2007 <a href="#comment-262232">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262238" class="class_comment2">
+	<p>This looks great, but none of the examples (assets) are found.</p>
+	<p class="alignright"><small>Comment by Andy Miller &#8212; December 19, 2007 <a href="#comment-262238">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262287" class="class_comment1">
+	<p>This is really cool, but I&#8217;m getting a 404 on the examples.</p>
+	<p class="alignright"><small>Comment by Scott &#8212; December 19, 2007 <a href="#comment-262287">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262298" class="class_comment2">
+	<p>Nice article, but the examples are all 404-ing.</p>
+	<p class="alignright"><small>Comment by KG &#8212; December 19, 2007 <a href="#comment-262298">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262309" class="class_comment1">
+	<p>None of the example links are working for me :( They are all just 404&#8242;ing me.</p>
+	<p class="alignright"><small>Comment by <a href='http://blogtogether.com' rel='external nofollow'>Brian</a> &#8212; December 19, 2007 <a href="#comment-262309">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262330" class="class_comment2">
+	<p>@joel, andy, scott, kg, brian &#8212; Sorry.  Entirely my fault.  Fixed now. -Eric</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.360.yahoo.com/ericmiraglia' rel='external nofollow'>Eric Miraglia</a> &#8212; December 19, 2007 <a href="#comment-262330">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262371" class="class_comment1">
+	<p>This is very useful- I&#8217;ve been hoping for better documentation on how to write your own widgets for awhile.  But it doesn&#8217;t really explain what the benefits of doing all this are, especially in comparison to just extending Element.  The most useful feature to me seems to be that you get pseudo getters/setters for configuration properties (using the myObject.cfg.setProperty(&#8217;foo&#8217;, &#8216;bar&#8217;) syntax).  But that&#8217;s available via Element too, right?  Looking through the source, the main distinctive features you get are custom events for when you show/hide/render the module, and for text resize and browser resize (though it seems kinda odd that these two would be accessed here instead of from Event).  Plus you get some functions to help in rendering the HTML (setHeader, appendToBody, etc).  I&#8217;m working on some custom YUI widgets for work (can&#8217;t publish the code, sorry), and am doing the HTML generation via the TrimPath js template library, which a much simpler approach.</p>
+	<p class="alignright"><small>Comment by Greg &#8212; December 19, 2007 <a href="#comment-262371">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262478" class="class_comment2">
+	<p>Thanks for the positive comments.</p>
+<p>@Greg:</p>
+<p>Extending Module and extending Element are two different ways of creating your own custom &#8220;widgets&#8221;.</p>
+<p>Module as its name states is more appropriate to create &#8220;content-containing&#8221; widgets, potentially with a header/body/footer structure, and many other elements in its body part.</p>
+<p>You would extend Element to create widgets more based on one HTMLElement, which is more self-sufficient. Element is used as the base for DataTable and </p>
+<p>Both provide you with different functionality and you should go with one or the other depending on the type </p>
+<p>Please also note that, even though it is used internally, Element is officially in beta, so parts of its API may change in future releases.</p>
+<p>If you need to create an independent piece of logic code, which doesn&#8217;t necessarily have a representation in the DOM, you could still use AttributeProvider, which is part of Element.js, to handle all its properties in a very structured and powerful way.<br />
+Look out for more on this topic in the future :)</p>
+	<p class="alignright"><small>Comment by <a href='http://cyril.doussin.name' rel='external nofollow'>Cyril Doussin</a> &#8212; December 20, 2007 <a href="#comment-262478">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262481" class="class_comment1">
+	<p>Sorry, my comment was partly truncated. I meant:</p>
+<p>&#8220;You would extend Element to create widgets more based on one HTMLElement, which is more self-sufficient. Element is used as the base for DataTable and Charts.</p>
+<p>Both provide you with different functionality and you should go with one or the other depending on the type of widget you wish to create.&#8221;</p>
+	<p class="alignright"><small>Comment by <a href='http://cyril.doussin.name' rel='external nofollow'>Cyril Doussin</a> &#8212; December 20, 2007 <a href="#comment-262481">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262644" class="class_comment2">
+	<p>I am wondering why resizeable overlay is not as part of standard containers shipped by YUI?</p>
+<p>How difficult is to add one more config option like &#8220;resizeable:true&#8221; as part of Overlay family?</p>
+<p>I know that in panel-resize.html in examples, but is that better to put this one in overlay as standard feature?</p>
+<p>Thanks<br />
+&#8211;<br />
+Reza</p>
+	<p class="alignright"><small>Comment by <a href='http://www.bract.us' rel='external nofollow'>reza</a> &#8212; December 20, 2007 <a href="#comment-262644">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-262764" class="class_comment1">
+	<p>[&#8230;] Creating Custom Modules with YUI Using the YUI Module Control » Yahoo! User Interface Blog This article looks at the process of extending YAHOO.widget.Module in order to build such a Control. Our example will be a potentially long list of contacts, which we will turn into a customisable, paginated list. (tags: javascript yui module howto tutorial library)     Share and Enjoy: These icons link to social bookmarking sites where readers can share and discover new web pages. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.pixzone.com/blog/351/links-for-2007-12-20/' rel='external nofollow'>Federico Feroldi&#8217;s blog &raquo; Blog Archive &raquo; links for 2007-12-20</a> &#8212; December 20, 2007 <a href="#comment-262764">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-265551" class="class_comment2">
+	<p>I just wrote a Login Module for YUI at <a href="http://lamp.techbirbal.com/2007/12/24/yui-login-box/" rel="nofollow">http://lamp.techbirbal.com/2007/12/24/yui-login-box/</a></p>
+<p>What code highlighter are you using on ur blog ??</p>
+	<p class="alignright"><small>Comment by <a href='http://lamp.techbirbal.com' rel='external nofollow'>BirBal</a> &#8212; December 24, 2007 <a href="#comment-265551">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-265610" class="class_comment1">
+	<p>@BirBal &#8212; For this article, we used Alex Gorbatchev&#8217;s SyntaxHighlighter (http://code.google.com/p/syntaxhighlighter/).  You may also be interested in checking out <a href="http://duartes.org/iris/highlight.html." rel="nofollow">http://duartes.org/iris/highlight.html.</a>  Regards, Eric</p>
+	<p class="alignright"><small>Comment by <a href='http://ericmiraglia.com' rel='external nofollow'>Eric Miraglia</a> &#8212; December 24, 2007 <a href="#comment-265610">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="155" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2008/01/23/empty-links/">Empty Links and Screen Readers</a></li>
+					    		<li class="recent"><a href="/blog/2008/01/18/in-the-wild-20080118/">In the Wild for January 18</a></li>
+					    		<li class="recent"><a href="/blog/2008/01/17/tables-and-charts/">Automatic conversion from simple, accessible data tables to YUI Charts</a></li>
+					    		<li class="recent"><a href="/blog/2008/01/15/carousel-pattern/">Carousel Design Pattern</a></li>
+					    		<li class="recent"><a href="/blog/2008/01/15/hosting-yui-in-china/">Hosting YUI Files for Implementations in Mainland China</a></li>
+					    		<li class="recent"><a href="/blog/2007/12/25/happy-holidays/">Happy Holidays from the YUI Team</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+<!--	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>-->
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2008/01/' title='January 2008'>January 2008</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/12/' title='December 2007'>December 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/11/' title='November 2007'>November 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://www.yswfblog.com/">Yahoo! Flash (R) Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 26 queries. 0.595 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1201151580" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

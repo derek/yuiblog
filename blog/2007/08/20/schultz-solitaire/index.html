@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Implementation Focus: World of Solitaire by Robert Schultz</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/yui-implementations/">YUI Implementations</a></li>
+                    <li class="current">Implementation Focus: World of Solitaire by Robert Schultz</li></ul>
+				<h1 class="yui3-u-7-8">Implementation Focus: World of Solitaire by Robert Schultz</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 20, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Robert Schultz" height="187" hspace="10" src="/blog-archive/assets/robertschultz.jpg" vspace="5" width="153" />A YUI-based application debuted up on Yahoo! Gallery the other day that was really impressive: <a href="http://worldofsolitaire.com">A full in-browser Solitaire game</a> built on top of <a href="http://developer.yahoo.com/yui/">YUI</a> and providing a genuinely satisfying playing experience. I got in touch recently with the author of that app to ask him some questions about his experience building it and about what he's planning to do next.<p>Robert Schultz has been programming for almost 20 years. His favorite programming languages are C and JavaScript, although he is also fluent in and enjoys working with PHP, XSLT, various flavors of SQL and other languages and technologies. He has been published in CPU magazine for his creation of <a href="http://csourcesearch.net">csourcesearch.net</a> in early 2005. What currently excites him is pushing the boundaries of web page development by utilizing technologies such as JavaScript, CSS and server-side capabilities. Building clean, useful, cross-platform web pages while continuing to enhance his capabilities as a programmer while producing elegant code gives him great feelings of satisfaction and joy in life. <em>&mdash;Eric</em></div>
+		<p><a href="http://worldofsolitaire.com"><img alt="World of Solitaire by Robert Schultz" height="290" src="/blog-archive/assets/solitaire-gameplay.jpg" width="510" /></a><p class="q"><strong>Tell us a little bit about your background in frontend engineering. When did you get started? What kinds of projects have you been involved with?</strong><p>My Dad brought home a Commodore 128D when I was about 9 years old. He showed me how to write BASIC programs for it and shortly thereafter I found myself writing text adventure games at 2 in the morning when I was supposed to be sleeping for school the next day. I knew then what I wanted to be when I grew up. In the early to mid 1990's I created my first web pages and coded some MacOS 8/9 applications using Pascal and C. Shortly after graduating high school, I got my first programming job in 1999 which lasted for 7 years. In that time my capabilities grew immensely and I learned a very wide variety of technologies and languages.<p>However, what truly stuck with me and matured was my love of coding for the web. This was especially true after experimenting with IE4 DHTML and JavaScript Remote Scripting, an early precursor to modern AJAX. I moved to Boston in early 2006 for my second job where creating a rich AJAX front end was my first task. I examined a large number of JavaScript toolkits and ended up choosing the newly released <a href="http://developer.yahoo.com/yui/">YUI Library</a>. I've been working with it ever since then.<p class="q"><strong> You've developed a slick Solitaire implementation using YUI. What got you started down that path &mdash; what made you want to build a great Solitaire experience for the browser?</strong><p>Well I had been trying to come up with a project I could work on in my spare time for several months. I was browsing the web one day and saw that someone had implemented a JavaScript version of Solitaire. I had not thought of the idea before then. I searched the web for more implementations of Solitaire with JavaScript and was fairly disappointed by all of them. They were all basically just unpolished prototypes with various bugs and glitches. I was fairly certain that I could produce a very nice looking version that was truly a game rather than just a proof of concept. After a few more weeks of tossing the idea around my head I finally decided to do it. <p><a href="http://worldofsolitaire.com"><img alt="Choosing a deck style in World of Solitaire." height="321" src="/blog-archive/assets/solitaire-cards.jpg" width="510" /></a><p class="q"><strong>What was the hardest part about building the game? </strong><p>I had thought about the parts of the game I anticipated would be difficult long before I started writing any code. Things like card flipping, making a "solitaire engine" instead of a single type of solitaire, board layout and resizing of cards based on window size, etc. I felt pretty confident when coding started that I had "worked out" the tough parts in my head and on my 2-page design document.<p>For the most part that was true. However, one part of the game proved to be a constant thorn in my side throughout most of the development. This part was ensuring that cards were positioned above or below other cards correctly. <p>You wouldn't think it would be that difficult a task: set a CSS z-index and that's that. However with animation, card dragging, auto play, and the possibility to enable or disable these features there is a lot to keep track of. I ended up writing this part of the code at least four or five times. Each implementation either had hard-to-track-down bugs, used too much CPU or ran too often. When I finally nailed down this piece in a way that met the level of code elegance that I strive to maintain, I was quite relieved :)<br /> <p class="q"><strong>What are your goals with the game and site? Do you plan to commercialize it or sell it to an online gaming site, or to build up traffic on your own site?</strong><p> Goals I set for the game when I started included creating a nice looking game, one with a lot of features and different game types, and one that works in the big 5 web browsers: IE, Firefox, Safari, Opera and Konqueror. I believe for the most part that I've accomplished those goals. My current goals include adding more game types, more features and to continue to keep things as clean and as bug-free as feasible. I've thought about maybe creating some forums or a blog or something to build a community around the game. However, I'm not so sure that's something I'm really interested in doing as that would require time to manage in order to do well and I'm not sure I want to devote my time to that.<p>I have no plans at all to commercialize it in any way. I do not wish to ever charge for it as that would reduce the number of people who might enjoy it. I also don't intend to add any advertisements as that I feel would pollute the game experience. <p>I've only been working on it for about 2 months so far, and my primary goal is that people enjoy playing. My motivation to create it was not financial, but rather social. To bring happiness to people who play and because I love receiving thank you e-mails from people who enjoy playing. <br /> <p class="q"><strong>What role did YUI play in the building of your Solitaire game? Which YUI components are you employing, and how are you using them?</strong><br /> <p>YUI played a very key role in creation of the game. It's at the heart of the game and would have taken a SIGNIFICANT amount of extra time had I chosen not to use it. <p>The YUI components that are used in the game include:<ul>
+				<li><a href="http://developer.yahoo.com/yui/event/">Event Utility</a> &mdash; Handles clicks and mouse overs on the cards and menus<li><a href="http://developer.yahoo.com/yui/animation/">Animation Utility</a> &mdash; Animates all the flying, flipping and exploding cards<li><a href="http://developer.yahoo.com/yui/dragdrop/">Drag &amp; Drop Utility</a> &mdash; Enables the cards to be dragged dragged around and dropped <li><a href="http://developer.yahoo.com/yui/container/">Container Family</a> &mdash; Powers the various dialogs in the game<li><a href="http://developer.yahoo.com/yui/dom/">Dom Collection</a> &mdash; Retrieves height, width and XY coordinates for various elements<li><a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> &mdash; Stores and retrieves game stats to and from the server<li><a href="http://developer.yahoo.com/yui/slider/">Slider Control</a> &mdash; Responsible for the 'Animation Speed' slider <li><a href="http://developer.yahoo.com/yui/treeview/">TreeView Control</a> &mdash; Used for the game selection<li><a href="http://developer.yahoo.com/yui/tabview/">TabView Control</a> &mdash; Different types of statistics are on different tabs<li><a href="http://developer.yahoo.com/yui/reset/">Reset</a> &amp; <a href="http://developer.yahoo.com/yui/fonts/">Fonts CSS</a> &mdash; I sure do like a clean, cross-browser CSS base<li><a href="http://www.julienlecomte.net/blog/2007/08/13/introducing-the-yui-compressor/">YUI Compressor</a> &mdash; Before a new version is put live on the server I run a bash script which parses the index page, concatenates all the JavaScript, runs the YUI Compressor and then updates a new index page with the concatenated compressed version. The difference in loading speed between 1 compressed JavaScript file and almost 60 uncompressed ones is quite substantial. </ul> <p>None of the components' core behavior needed to be modified in any significant way except for a slight change to the Drag &amp; Drop code dealing with how it handles locked objects.<br /> <p class="q"><strong>What led you to choose YUI as a foundation library for this project?</strong><p>I chose it for many reasons.<p> First, it has great browser support and that was a key goal of the game. Second, YUI has a very clean, stable and modular API. The API has stellar documentation <a href="http://developer.yahoo.com/yui/examples/">wonderful examples</a> as well. Lastly I had been using YUI since it was first released as open source, and so I was very comfortable using it and was confident it could get the job done.<br /> <p class="q"><strong> What projects are you taking on next?</strong><p>I'm not really sure. Perhaps another JavaScript game. Maybe something with multiple players or maybe one that is a bit more original than Solitaire. I have a big document full of ideas that I've had over the past few years. Maybe I'll take a peek through those. Maybe the release of this game will open up some new opportunities or spin up some new ideas. I haven't really thought too much about what might be next.<p>For the time being I plan on continuing to enhance and support Solitaire until such a point where I feel it is complete enough for me to start working on something new. </div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

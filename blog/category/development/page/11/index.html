@@ -1,0 +1,739 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     Development Archive - YUI Blog - page 11	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Development Category Feed" href="/blog/category/development/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.4.1'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive paged category category-development category-2 paged-11 category-paged-11 yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		<ul class="breadcrumbs"><li class="front_page"><a href="//yuilibrary.com/">YUI</a></li><li><a href="/blog">Blog</a></li>Development<li></li></ul>
+
+		
+ 			
+							<h1>Blog: Category &#8216;Development&#8217;</h1>
+
+			
+							<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/12/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/10/" >Newer Entries &raquo;</a>    </div>
+</div>			
+									
+								<div class="post-4776 post type-post status-publish format-standard hentry category-development tag-functional tag-jafl tag-yui-3 first-post">
+				
+						<h2 id="post-4776"><a href="/blog/2012/04/09/dr-strangeloop-or-how-i-learned-to-stop-worrying-and-love-functional-programming/">Dr. Strangeloop or: How I Learned to Stop Worrying and Love Functional Programming</a></h2>
+					
+
+						<div class="entry">
+							<p>Disclaimer #1:  You&rsquo;re already doing functional programming: everytime you pass a callback to <code>Y.on</code>.  This article is about digging a bit deeper.</p>
+<p>Disclaimer #2:  Replacing for loops with function calls does add execution overhead.  However, this is usually negligible, unless you are trying to compute the last digit of &pi;.  Remember Donald Knuth&rsquo;s advice that <q>premature optimization is the root of all evil,</q> and the two rules of optimization:  (1) Don&rsquo;t do it.  (2) Don&rsquo;t do it yet.</p>
+<p>Disclaimer #3:  To run all the examples in this article, you will need to use the <a href="http://yuilibrary.com/gallery/show/funcprog">Functional Programming</a> module in the YUI 3 Gallery.</p>
+<p>OK, now on to the main event&#8230;</p>
+<h3>List Processing</h3>
+<p>Any time you have a set of items that you need to process, you can use a for loop.  However, it&rsquo;s a bit ugly:</p>
+<pre>for (var i=0; i&lt;list.length; i++) { var item = list[i]; ... }</pre>
+<p>When you need to iterate over an object, it gets worse, because you have to check <code>hasOwnProperty</code>:</p>
+<pre>
+for (var key in obj)
+	if (obj.hasOwnProperty(key)) { var item = obj[key]; ... }
+</pre>
+<p>If you use <code>Y.each</code> instead, then you don&rsquo;t have to do any of this:</p>
+<pre>Y.each(collection, function(item) { ... });</pre>
+<p>This works equally well for both lists and objects.  It even works for instances of <code>Y.NodeList</code> and any class that mixes in <a href="http://yuilibrary.com/gallery/show/iterable-extras">gallery-iterable-extras</a>, e.g, <a href="http://yuilibrary.com/gallery/show/linkedlist">gallery-linkedlist</a>.</p>
+<h3>Beyond <code>Y.each</code></h3>
+<p>As nice as <code>Y.each</code> is, we can do much better in many cases.  If you want to stop part way through the collection, you can use <code>Y.some</code>, which stops when your function returns <code>true</code>, or <code>Y.every</code>, which stops when your function returns <code>false</code>.</p>
+<p>If all you want to do is find one particular item, then <code>Y.find</code> is much clearer than using <code>Y.some</code>.  To find all the items that match a criterion, you can use <code>Y.filter</code>.  To invert the matching, use <code>Y.reject</code>.  If you need both sets, use <code>Y.partition</code> to get both <code>matches</code> and <code>rejects</code>.</p>
+<h3>Map/Reduce</h3>
+<p>If you need to transform the collection, then it is much cleaner to use <code>Y.map</code> or <code>Y.reduce</code> rather than using <code>Y.each</code> with a closure to accumulate the desired result.</p>
+<p><code>Y.map</code> applies a transformation function to each element and returns the result as a collection.  For example, you could map a list of strings to a list of their lengths:</p>
+<pre>var lengths = Y.map(strings, function(s) { return s.length; });</pre>
+<p><code>Y.reduce</code> accumulates the result of a computation applied to each element.  For example, you could reduce a list of strings to get the total length of all of them:</p>
+<pre>var total = Y.reduce(strings, function(sum, s) { return sum + s.length; });</pre>
+<p>Choosing between map and reduce can get tricky when the result will be a collection.  The best guideline I have found so far is that, if the operation could be done in parallel, use map.  It doesn&rsquo;t matter in which order the items are processed, because the result is guaranteed to be in the same order as the original collection.  If the operation must be done serially, use reduce.  For example, if you want to flatten a tree, then you normally want to control the order of the items in the resulting list.</p>
+<h3>The Big Payoff:  Code Reuse</h3>
+<p>As nice as it is to simplify your code and iterate over many different types of collections, the real improvement comes when you start to reuse the functions passed to the iterators.</p>
+<p>But, you ask, how can I reuse my big, complicated function which concatentes the contents of some of the nodes in a list into a string and also builds an array from the CSS classes of some other nodes in the list?  The answer is: decompose this into simpler operations.  First filter the list, then reduce the result to a string.  Then filter the list again and map the nodes to CSS classes.  (If you worry that this is slower because it iterates four times instead of once, then you&rsquo;re right, but see Disclaimer #2 above.)</p>
+<p>Once you begin decomposing your complicated logic into simple units usable with filter, map, and reduce, it is very likely that you will start to reuse the simple units.  The simpler the operation, the more likely that it can be reused.</p>
+<h3>Recursion</h3>
+<p>Another benefit of the above approach to iteration is that recursion becomes simpler.  Instead of writing a function which loops over a collection and then calls itself, you can write a function which operates on a single item and then invokes map, reduce, etc. to recurse.  By focusing on a single item, the problem and the resulting code become simpler.</p>
+<h3>Conclusion</h3>
+<p>This article only touches on a few aspects of switching from a procedural (for loops) to a functional (iterator) way of building code, but hopefully the value of doing so is already clear.  To dig even deeper, I recommend studying the Haskell programming language.  The syntax is often very different from procedural languages, but the concepts are powerful and very applicable in JavaScript.</p>
+<p class="authorbox"><em><strong>About the author:</strong> <a href="http://jjlindal.net/jafl/blog/">John Lindal</a> (<a href="http://twitter.com/jafl5272/">@jafl5272</a> on Twitter) is one of the lead engineers constructing the foundation on which <a href="http://apt.yahoo.com/">Yahoo! APT</a> is built.  Previously, he worked on the Yahoo! Publisher Network.</em></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/38f9e2bde80f6645036885d233609d69?s=32"> <div class="cont"><a href="http://jafl.my.speedingbits.com/blog/" class="name">By John Lindal</a><span class="date">April 9th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4732 post type-post status-publish format-standard hentry category-development category-yui-events">
+				
+						<h2 id="post-4732"><a href="/blog/2012/04/03/yui-talk-at-pernambuco-js-by-eduardo-lundgren-of-alloyui/">YUI Talk at Pernambuco.JS by Eduardo Lundgren of AlloyUI</a></h2>
+					
+
+						<div class="entry">
+							<p><img src="http://yuiblog.com/assets/eduardo-lundgren.jpg" class="alignleft">Eduardo Lundgren of Liferay will be presenting a YUI talk at <a href="http://pernambucojs.com/">Pernambuco.JS</a> in Brazil April 21. This will be the first edition of the tech conference dedicated to Javascript developers of Brazil&#8217;s Pernambuco state.</p>
+<p>Eduardo, a Senior Software Engineer at Liferay, Inc., is one of the creators of the <a href="http://alloy.liferay.com/">AlloyUI</a> project built on top of the YUI Library. Mainly focused on Java and JavaScript development, he has a wealth of experience in building enterprise web applications across multiple languages and platforms and is always seeking to participate in innovative open source Web projects.</p>
+<p>Eduardo&#8217;s talk, <em>Building Applications with YUI3 and Alloy</em>, will introduce the YUI 3 framework, especially APIs such as Widget, discuss YUI&#8217;s approach to supporting the new set of web-enabled devices on the market today, and discuss how to think of these devices in terms of features and constraints as opposed to an isolated problem space.</p>
+<p>Tickets are available at <a href="http://pernambucojs.com/">http://pernambucojs.com/</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/796859f5384b2d5e389c23ebd2c30bb6?s=32"> <div class="cont"><a href="http://yuilibrary.com" class="name">By Jenny Donnelly</a><span class="date">April 3rd, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4745 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-4745"><a href="/blog/2012/03/30/what-is-the-meaning-of-this/">What is the meaning of this?</a></h2>
+					
+
+						<div class="entry">
+							<p>
+JavaScript is an amalgam of good parts and bad parts. Its best parts came from Self (prototypes) and Scheme (lexically scoped nested functions). But the interaction of those two very good parts produced some bad parts.
+</p>
+<p>
+When a function is called with the function invocation pattern, its <code>this</code> is not bound to the outer function&#8217;s <code>this</code> as we would hope, but is instead bound to the global object, which is horrible. (ES5/strict binds the inner function&#8217;s <code>this</code> to <code>undefined</code>, which is much less wrong than binding the global object, but is still not right.) The workarounds for this include the use of <code>bind</code> functions and riddles like
+</p>
+<blockquote><p> <code>var that = this;</code></p></blockquote>
+<p>
+Most functions are not intended to be used as constructors, yet every function has a <code>prototype</code> object just in case it turns out to be one of the rare functions that is a constructor. This is an obvious source of inefficiency.
+</p>
+<p>
+Function objects are mutable like other objects. This will make the securing of JavaScript more difficult because every function object can be used as a channel to facilitate unwanted collusion between widgets. ES5 provides tools to freeze functions, making them immutable, but the tools are really difficult to use for that purpose.
+</p>
+<p>
+The Sixth Edition of ECMAScript may correct all of these problems.
+</p>
+<p>
+<em>The Sixth Edition is still being debated and drafted. We won&#8217;t know for certain what will be in the next edition until it is approved by the ECMA General Assembly, a milestone that will not occur this year. It is impossible to speak with certainty about future editions. The following prediction is based on my understanding of current developments, but it could ultimately prove to be wrong in every detail.</em>
+</p>
+<p>
+The next edition may have a more compact alternative to the <code>function</code> operator: the <code>=&gt;</code> operator. It takes a parameter list on the left, and on the right it takes either a function body wrapped in braces, or an expression. If the thing on the right is an expression, then a function body that returns the value of the expression is made for you. So instead of writing
+</p>
+<blockquote><p><code>function (x) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return x * x;<br />
+}</code></p></blockquote>
+<p>
+you can instead write
+</p>
+<blockquote><p><code>(x) =&gt; x * x</code></p></blockquote>
+<p>
+Functions written in this new <strong>fat arrow</strong> form always use the <code>this</code> of the outer function, even when invoked as a method. That means that it is no longer necessary to use <code>bind</code> or resort to <code>that</code> tricks.
+</p>
+<p>
+If you want a method that receives a dynamic binding to the method&#8217;s object, then you must include <code>this</code> as the first pseudo parameter.
+</p>
+<blockquote><p><code>(this, x) =&gt; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;this.property = x;<br />
+}</code></p></blockquote>
+<p>
+This gives us a way to easily distinguish functions from methods. Functions use the outer function&#8217;s <code>this</code>, and methods explicitly name <code>this</code> in their parameters. Using the function invocation form on a method throws a type error.
+</p>
+<p>
+Fat arrow functions do not have <code>prototype</code> properties, which makes them cheaper to make. They are immutable.
+</p>
+<p>
+I am looking forward to using these new functions. They are lighter in appearance and implementation, and they correct a lot of the problems of conventional functions. As aways, there are tradeoffs. Adding new kinds of functions makes living with the language more complicated. The language will be a little more difficult to talk about.
+</p>
+<p>
+If you are creating a simple factory function, you cannot put an object literal on the right of the <code>=&gt;</code> because a brace will be interpreted as a function body. So instead you must write either
+</p>
+<blockquote><p><code>() =&gt; ({})</code> // wrap the object literal in parens</p></blockquote>
+<p>
+or
+</p>
+<blockquote><p><code>() =&gt; {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return {}; </code>  // wrap the object literal in a function body<br />
+<code>}</code></p></blockquote>
+<p>
+Fortunately, JSLint will be able detect these sorts of ambiguities.
+</p>
+<p>
+I am looking forward to using the new functions. But there is still a role for the old style functions. The new functions do not have names, so you will need to use the old functions to write self-recursive functions. You need the old functions for constructors, although I don&#8217;t recommend use of constructors. You will need the old functions to make mutable functions, although I don&#8217;t recommend those either. You will need the old functions if you want access to <code>arguments</code>, which you shouldn&#8217;t because we will have a new <code>...</code> operator. And you will need the old functions to make generators that use the new <code>yield</code> operator.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/b871de839c31ddb1d9db8e33e0cb88a6?s=32"> <div class="cont"><a href="http://www.crockford.com/" class="name">By Douglas Crockford</a><span class="date">March 30th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4738 post type-post status-publish format-standard hentry category-development category-open-hours">
+				
+						<h2 id="post-4738"><a href="/blog/2012/03/27/yui-open-hours-thurs-march-29nd/">YUI: Open Hours Thurs March 29nd</a></h2>
+					
+
+						<div class="entry">
+							<h3>3.5.0 Examples update</h3>
+<p>We got our ducks in a row last week and launched 3.5.0 PR4 (yay!).  So this week we&#8217;ll focus on the documentation; particularly, the new and revitalized examples that will be included with 3.5.0.</p>
+<p>Jeff Conniff, our mild mannered designer, will walk us through the example updates and additions, and we&#8217;ll open the floor to suggestions for specific examples you&#8217;d like to see, as well as the types, locations, and formats for examples that you find most useful.</p>
+<p><!--h3>Time &amp; Details</h3>
+<link rel="stylesheet" href="http://sandbox.ericf.me/button/button.css" />
+<p>We&#8217;ll be online on <strong>Thursday from 10am to 11am PDT</strong>.</a></p>
+<p>
+    <a class="button" aria-role="button" id="join_oh-3-22" target="_blank" style="margin: 0; font-size: 20px" href="https://www.meeting.corp.yahoo.com/r82701271/">Join the Meeting</a>
+</p-->
+<h3>Recording</h3>
+<p>The recording is <a href="http://www.youtube.com/watch?v=Gta53x24UyU&#038;hd=1&#038;list=PL29854C3883AA8170">available in the YUILibrary YouTube channel</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">March 27th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4646 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-4646"><a href="/blog/2012/03/21/yui-3-5-0-pr4/">YUI 3.5.0 PR4 Is Now Available</a></h2>
+					
+
+						<div class="entry">
+							<p><img src="http://www.yuiblog.com/blog/wp-content/uploads/2012/03/350pr41.jpg" alt="YUI 3.5.0 PR4" title="YUI 3.5.0 PR4" width="551" height="300" class="alignnone size-full wp-image-4686" /><br />
+<span style="font-size:10px;color:#aaaaaa;">Illustration is adapted from <a href="http://www.flickr.com/photos/fristle/4503812795/" style="color:#aaaaaa;text-decoration:underline;">a photo by Michael Myers (@Fristle on Flickr)</a></span></p>
+<p>YUI 3.5.0 Preview Release 4, the last preview before the official release, is now available to the developer community for feedback and testing on the Yahoo! CDN at <a href="http://yui.yahooapis.com/3.5.0pr4/build/yui/yui-min.js">yui.yahooapis.com/3.5.0pr4/build/yui/yui-min.js</a>, or <a href="http://yui.zenfs.com/releases/yui3/yui_3.5.0pr4.zip">as a download</a> if you plan to test it locally. As <a href="/blog/2012/03/12/update-on-3-5-0-release-schedule/">previously noted</a>, we are simultaneously releasing PR3 and PR4 and actively seeking community feedback against PR4 now.</p>
+<p>The <a href="https://github.com/yui/yui3/wiki/YUI-3.5.0-Change-History-Rollup">rollup of 3.5.0 changes introduced up through PR4</a> is available on our GitHub Wiki. You can also take a look at the lists of resolved tickets for <a href="http://yuilibrary.com/projects/yui3/report/118">PR3</a> and <a href="http://yuilibrary.com/projects/yui3/report/119">PR4</a>.</p>
+<p>
+Work-in-progress <a href="http://stage.yuilibrary.com/yui/docs/guides/">user guides</a> and <a href="http://stage.yuilibrary.com/yui/docs/api/">API docs</a> for 3.5.0 can be found on our <a href="http://stage.yuilibrary.com">staging site</a>, but beware that these docs may be incomplete or even broken until the official release. Official docs for the latest stable release can always be found on our production site, <a href="http://yuilibrary.com/">yuilibrary.com</a>.
+</p>
+<p>A few items of note in this release:</p>
+<ul>
+<li>The old (3.4.1) <strong>Uploader</strong> and <strong>DataTable</strong> modules have been deprecated in lieu of new replacements and are now available as <strong>uploader-deprecated</strong> and <strong>datatable-*-deprecated</strong>, respectively.</li>
+<li><strong>Button</strong> underwent a significant refactoring. Please take a moment to check out the new API and file any issues in our <a href="http://yuilibrary.com/projects/yui3/newticket/">bug tracking system</a>.</li>
+<li><strong>WidgetButtons</strong>, which adds support for buttons in a <strong>Panel</strong> has been significantly improved.</li>
+<li>A new event submodule, <strong>event-contextmenu</strong> has been introduced.</li>
+<li><strong>Calendar</strong> has been made keyboard-navigable and accessible, and calendar navigation now supports disabled button states.</li>
+<li><strong>Uploader</strong>&#39;s queue management has been refined, and <strong>UploaderFlash</strong> now supports keyboard navigation.</li>
+<li><strong>App.Transitions</strong> has added cross-fade and slide transitions to <strong>Y.App</strong>s.</li>
+<li><strong>Y.Handlebars</strong> has been fully and thoroughly documented.</li>
+</ul>
+<p>To file bugs against this release, please visit our <a href="http://yuilibrary.com/projects/yui3/newticket/">bug tracking system</a>. If you&#8217;d like to provide input on these and future modules, the ongoing discussions on various topics relating to the 3.5.0 release are happening on our <a href="https://github.com/yui/yui3/wiki/Ongoing-development-discussions">GitHub wiki.</a></p>
+<p>We plan to release 3.5.0 final in mid-April. Happy testing!</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/4e49b8ac07e8a2541ce9efcc1bb269bc?s=32"> <div class="cont"><span class="name">By Allen Rabinovich</span><span class="date">March 21st, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4689 post type-post status-publish format-standard hentry category-development category-open-hours">
+				
+						<h2 id="post-4689"><a href="/blog/2012/03/19/yui-open-hours-thurs-march-22nd/">YUI: Open Hours Thurs March 22nd</a></h2>
+					
+
+						<div class="entry">
+							<h3>3.5.0 Preview Release 4</h3>
+<p>If all goes well with the final steps in the deployment process upgrade, 3.5.0 PR4 will be available on the CDN this Wednesday the 21st.  With PR3 having been stalled, PR4 will be a big release, seeing lots of progress from PR2 in DataTable, Panel, Calendar, the App framework, and other components.  There is also a lot of new documentation, and some major improvements and additions to the example suite.</p>
+<p>Join us for a quick overview of some of the high points of the release, and remember, <strong>this is the last preview before the 3.5.0 final release</strong>, so what you see is very likely what you&#8217;ll get in 3.5.0.</p>
+<h3>Plan B</h3>
+<p>In the unlikely event of a water landing (aka, the deployment upgrade isn&#8217;t finalized yet), we will jump ahead to next week&#8217;s Open Hours topic&mdash;spoiler alert!&mdash;and review all the awesome example updates Jeff Conniff and <a href="http://twitter.com/ericf">Eric F</a> have packed into the release so far.</p>
+<p><!--h3>Time &amp; Details</h3>
+<link rel="stylesheet" href="http://sandbox.ericf.me/button/button.css" />
+<p>We&#8217;ll be online on <strong>Thursday from 10am to 11am PDT</strong>.</a></p>
+<p>
+    <a class="button" aria-role="button" id="join_oh-3-22" target="_blank" style="margin: 0; font-size: 20px" href="https://www.meeting.corp.yahoo.com/r82701271/">Join the Meeting</a>
+</p-->
+<h3>Recording</h3>
+<p>The recording is <a href="http://www.youtube.com/watch?v=Sv5iw2vaw5s&#038;hd=1&#038;list=PL29854C3883AA8170">available in the YUILibrary YouTube channel</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">March 19th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4695 post type-post status-publish format-standard hentry category-development category-yui-theater">
+				
+						<h2 id="post-4695"><a href="/blog/2012/03/19/video-zakas-progressive-enhancement/">YUI Theater &#8212; Nicholas Zakas: &#8220;Progressive Enhancement 2.0&#8243; (50 min.)</a></h2>
+					
+
+						<div class="entry">
+							<p>
+Nicholas Zakas (<a href="http://twitter.com/slicknet">@slicknet</a>), former Yahoo! engineer and author of several <a href="http://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691/ref=sr_1_13">books</a> <a href="http://www.amazon.com/gp/product/059680279X">about</a> <a href="http://www.amazon.com/Maintainable-JavaScript-Nicholas-C-Zakas/dp/1449327680">JavaScript</a>, joined us at the March 5th, 2012 <a href="http://www.meetup.com/BayJax/">BayJax</a> event to share his vision of progressive enhancement and how web pages don&#8217;t have to look the same in every browser. What does Nicholas&#8217;s mother (<a href="http://twitter.com/slicknetsmom">@slicknetsmom</a>) have to do with this? Watch the video to find out!
+</p>
+<p><iframe width="560" height="315" src="http://www.youtube.com/embed/hdTxeR90_1E?hd=1" frameborder="0" allowfullscreen></iframe></p>
+<h3>Links</h3>
+<ul>
+<li><a href="http://www.youtube.com/watch?v=hdTxeR90_1E&#038;hd=1">View in HD on YouTube</a></li>
+</ul>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/683e9380d7cc0724a35dadfb4eeb142b?s=32"> <div class="cont"><a href="http://wonko.com/" class="name">By Ryan Grove</a><span class="date">March 19th, 2012<span></div></div>
+				</div>
+							
+							<div class="bottom-nav">
+					<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/12/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/10/" >Newer Entries &raquo;</a>    </div>
+</div>				</div>
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+				<li><a href="/blog/2013/01/02/yuiconf-2012-talks-triple-play-today/" title="YUIConf 2012 Talks: Triple Play Today">YUIConf 2012 Talks: Triple Play Today</a></li>
+				<li><a href="/blog/2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/" title="YUIConf 2012 Talk: Gamaiel Zavala on Adopting YUI App Framework on Yahoo! Media Sites">YUIConf 2012 Talk: Gamaiel Zavala on Adopting YUI App Framework on Yahoo! Media Sites</a></li>
+				<li><a href="/blog/2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/" title="YUIConf 2012 Talk: Bishan Kochar on Secure Coding with YUI">YUIConf 2012 Talk: Bishan Kochar on Secure Coding with YUI</a></li>
+				<li><a href="/blog/2012/12/21/yui-weekly-for-december-21st-2012/" title="YUI Weekly for December 21st, 2012">YUI Weekly for December 21st, 2012</a></li>
+				<li><a href="/blog/2012/12/21/introducing-the-grid-builder/" title="Introducing the Grid Builder">Introducing the Grid Builder</a></li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+ </select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (6)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2 current-cat"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (555)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (5)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (10)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (13)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (2)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (29)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (45)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (146)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (19)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2013 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1357459531" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html>

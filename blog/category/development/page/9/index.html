@@ -1,0 +1,892 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     Development Archive - YUI Blog - page 9	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Development Category Feed" href="/blog/category/development/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.4.1'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive paged category category-development category-2 paged-9 category-paged-9 yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		<ul class="breadcrumbs"><li class="front_page"><a href="//yuilibrary.com/">YUI</a></li><li><a href="/blog">Blog</a></li>Development<li></li></ul>
+
+		
+ 			
+							<h1>Blog: Category &#8216;Development&#8217;</h1>
+
+			
+							<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/10/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/8/" >Newer Entries &raquo;</a>    </div>
+</div>			
+									
+								<div class="post-4978 post type-post status-publish format-standard hentry category-development first-post">
+				
+						<h2 id="post-4978"><a href="/blog/2012/05/09/yuidoc-0-3-0-is-official/">YUIDoc 0.3.0 is Official!</a></h2>
+					
+
+						<div class="entry">
+							<p>Today we are pleased to announce the official release of the new <a href="http://yui.github.com/yuidoc/">YUIDoc</a>, our JavaScript documentation generator. YUIDoc is a <a href="http://nodejs.org/">Node.js</a> application that generates API documentation from comments in source, using a syntax similar to tools like Javadoc and Doxygen. YUIDoc is currently powering the <a href="http://yuilibrary.com/yui/docs/api/">API documentation for YUI</a> and has been <a href="https://github.com/yui/yuidoc/graphs/commit-activity">actively updated over the last year</a>.</p>
+<p><center><br />
+<a href="http://img.skitch.com/20120509-c29b9x4yg1119ibypuug3sc5st.jpg"><img src="https://img.skitch.com/20120509-t3hxuyb4bi1rj7j47y5n9xh8w6.jpg" border="0" alt="Click for a larger image"></a><br />
+<br />
+<a href="http://img.skitch.com/20120509-c29b9x4yg1119ibypuug3sc5st.jpg">[View Larger Image]</a><br />
+</center></p>
+<h3>YUIDoc provides:</h3>
+<ul>
+<li><strong>Live previews.</strong> YUIDoc includes a standalone doc server, making it trivial to preview your docs as you write.</li>
+<li><strong>Modern markup.</strong> YUIDoc&#8217;s generated documentation is an attractive, functional web application with real URLs and graceful fallbacks for spiders and other agents that can&#8217;t run JavaScript.</li>
+<li><strong>Wide language support.</strong> YUIDoc was originally designed for the YUI project, but it is not tied to any particular library or programming language. You can use it with any language that supports <code>/* */</code> comment blocks.</li>
+</ul>
+<p>Some of the new features added to this version are:</p>
+<ul>
+<li>Markdown support in code comments</li>
+<li>Support for many more tags out of the box</li>
+<li>Logic separated to allow for easy extensibility</li>
+<li>Better theming support</li>
+<li>Server mode for development time previews</li>
+<li>External data mixing</li>
+<li>Easy cross platform installation</li>
+<li>Cross-linking inside and out of current project</li>
+<li>JSON based configuration</li>
+</ul>
+<p>Let&#8217;s get into a little more detail on some of these:</p>
+<h3>Simple Installation</h3>
+<p>If you have Node.js and NPM installed, installation is easy:</p>
+<blockquote><pre>npm -g install yuidocjs</pre>
+</blockquote>
+<h3>Markdown support in code comments</h3>
+<p>YUIDoc will parse your comment with <a href="http://daringfireball.net/projects/markdown/">Markdown</a> before it applies the Handlebars template giving you great flexibility when writing your docs.</p>
+<h3>Logic separated to allow for easy extensibility</h3>
+<p>YUIDoc uses YUI&#8217;s class infrastructure internally and exports all of these modules when you <code>require</code> the <code>yuidocjs</code> module. This allows end users to hook into YUIDoc&#8217;s internals and change the way it does things. You can extend classes, augment them or just flat out change methods to suite your needs.</p>
+<h3>Better theming support</h3>
+<p>In this release we use the built-in <a href="http://yuilibrary.com/yui/docs/handlebars/"><code>Y.Handlebars</code></a> helper to handle all template generation. We have also taken development into consideration when building this feature. YUIDoc will first search it&#8217;s built in theme directory for partials, then it will search your local theme directory. This allows you to only have to maintain the files you wish to change in your theme and not have to copy every partial even if you are not modifying it.</p>
+<h3>Server mode for development time previews</h3>
+<p>This is my favorite new feature! You can fire up YUIDoc in server mode and it will give you live previews of your documentation as you edit it. Simply save your file and reload the page from the built in server and see your changes live. Including external data and cross-linking. You no longer have to generate the docs for your entire project just to see a documentation change!</p>
+<h3>External data mixing</h3>
+<p>YUIDoc now allows you to link your documentation to the rendered output from another YUIDoc instance. For example, if your project is using YUI and extending some of our core classes, you can link to our exported <code>data.json</code> file (from our YUIDoc build) and when YUIDoc parses your documentation it will fetch our data and cross-link all of your extended classes back to ours. This way you don&#8217;t have to document another projects code, you simply point over to their docs like it was part of yours. </p>
+<h3>Project Changes</h3>
+<p>All future YUIDoc development will be fully conducted on Github. We will be tracking the project on their wiki and using their issues to manage our tickets. It will be run like a native Node.js project completely in the open. We will also be using a Google Group for support requests, so <a href="https://groups.google.com/forum/#!forum/yuidoc">sign up today</a>!</p>
+<p>We are also happy to report that YUIDoc&#8217;s unit tests are hosted on <a href="http://travis-ci.org/#!/yui/yuidoc">Travis-CI</a> and will run per Github push!</p>
+<ul>
+<li><a href="https://github.com/yui/yuidoc">Source</a></li>
+<li><a href="http://yui.github.com/yuidoc">Documentation</a></li>
+<li><a href="http://yui.github.com/yuidoc/api/">API Docs</a></li>
+<li><a href="https://groups.google.com/forum/#!forum/yuidoc">Google Group</a></li>
+<li><a href="http://travis-ci.org/#!/yui/yuidoc">Travis-CI</a></li>
+</ul>
+<h3>What about the old version of YUIDoc?</h3>
+<p>The old Python source for YUIDoc is in a <a href="https://github.com/yui/yuidoc/tree/python">branch</a> on the current Github repo where it will remain indefinately. There are no plans on accepting any pull requests or making any updates to that code base.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/05243ae612fb4dcfb151e08489f334b0?s=32"> <div class="cont"><a href="http://blog.davglass.com/" class="name">By Dav Glass</a><span class="date">May 9th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4972 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-4972"><a href="/blog/2012/05/09/yui-open-hours-thurs-may-10th/">YUI: Open Hours Thurs May 10th</a></h2>
+					
+
+						<div class="entry">
+							<h3>YUI 3.5.0 Uploader</h3>
+<p>
+    <a href="http://yuilibrary.com/yui/docs/uploader/">Uploader</a> was another component that saw a major upgrade in 3.5.0.  Of the many changes, one big one was the addition of support for native features in browsers supporting HTML5.
+</p>
+<p>
+    Join us for a discussion with its author, <a href="https://twitter.com/#!/allenr">Allen Rabinovich</a>, in which we&#8217;ll talk about how Uploader is structured, some of the challenges with modern techniques that needed to be addressed, and what&#8217;s on the roadmap for upcoming versions.
+</p>
+<h3>Time &amp; Details</h3>
+<link rel="stylesheet" href="http://sandbox.ericf.me/button/button.css" />
+<p>We&#8217;ll be online on <strong>Thursday from 10am to 11am PDT</strong>.</a></p>
+<p>This week, we&#8217;ll be trying out Google Plus Hangouts on Air, so the audio and video feed will be through G+, and we&#8217;ll be monitoring chat in <a href="http://webchat.freenode.net">the #yui IRC channel on freenode</a>.</p>
+<p>
+    <a class="button" aria-role="button" id="join_oh-4-19" target="_blank" style="margin: 0; font-size: 20px" href="http://youtu.be/UKEfVOm7UU4">View the Recording</a>
+</p>
+<p><!--h3>Recording</h3>
+<p>The recording is <a href="http://www.youtube.com/watch?v=cEqFv1xHkP4">available in the YUILibrary YouTube channel</a>.</p-->
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">May 9th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4959 post type-post status-publish format-standard hentry category-development tag-datatable tag-inline-editing tag-jafl tag-yui-3">
+				
+						<h2 id="post-4959"><a href="/blog/2012/05/07/displaying-controls-in-a-datatable-an-overview/">Displaying Controls in a DataTable: An Overview</a></h2>
+					
+
+						<div class="entry">
+							<p>Recently, there was a question in the forums about using input fields in a DataTable.  With the ongoing push to build ever more complex applications in the browser, I decided that an overview of the available options for editing tabular data might be useful.</p>
+<p>The most straightforward way to edit data would be to use inline editing, but this is not yet available in YUI 3 DataTable.  In the mean time, one option is to roll your own input fields directly in the table cells, similar to <a href="http://www.satyam.com.ar/yui/2.6.0/assortedControls.html">this example</a>.</p>
+<p>If you do not want to save each change when it happens, you could use the <a href="/blog/2011/04/19/quickedit-datatable-yui3/">QuickEdit</a> gallery module instead.  This lets you edit all the visible cells and then save the changes in a single operation.</p>
+<p>The above solutions are modal.  If you prefer a non-modal way to edit all the cells, you could use the <a href="/blog/2011/12/05/bulk-edi/">Bulk Editor</a> widget.  This works with pagination, so you can save all the changes across all the pages of your table in a single operation.  It even lets you easily add and remove rows &#8212; and even when you are using a remote DataSource!</p>
+<p>Bulk Editor is not built on top of YUI DataTable, however.  If you need other features from YUI DataTable, you could use the <a href="http://yuilibrary.com/gallery/show/datatable-state">state preservation plugin</a> for YUI 3 DataTable.  This also works with pagination, so you can save all the values on all the pages in a single operation, but it is not designed to let you easily add or remove rows.</p>
+<p>The <a href="http://yuilibrary.com/gallery/show/datatable-state">state preservation plugin</a> is also useful if you want to do something simpler like displaying checkboxes for selecting rows in a table.</p>
+<p>The reason for all these different solutions is that the engineering trade-offs are quite complex, so it is not advisable to build a single <q>kitchen sink</q> solution to support all the above features.  Hopefully, this overview will help you choose the appropriate module for tackling your next big table-based application.</p>
+<p class="authorbox"><em><strong>About the author:</strong> <a href="http://jjlindal.net/jafl/blog/">John Lindal</a> (<a href="http://twitter.com/jafl5272/">@jafl5272</a> on Twitter) is one of the lead engineers constructing the foundation on which <a href="http://apt.yahoo.com/">Yahoo! APT</a> is built.  Previously, he worked on the Yahoo! Publisher Network.</em></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/38f9e2bde80f6645036885d233609d69?s=32"> <div class="cont"><a href="http://jafl.my.speedingbits.com/blog/" class="name">By John Lindal</a><span class="date">May 7th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4929 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-4929"><a href="/blog/2012/05/01/dissecting-3-5-0-datatable-part-1/">Dissecting 3.5.0 DataTable, Part 1</a></h2>
+					
+
+						<div class="entry">
+							<p><!--div style="width: 40%; float: right; margin: 1em 0 0 1em;" class="yui3-skin-sam">
+<div id="table"></div>
+</div>
+<p><script src="http://yui.yahooapis.com/3.5.0/build/yui/yui-min.js"></script><script>
+YUI().use('datatable', 'datatable-scroll', function (Y) {
+    new Y.DataTable({
+        columns: ['Item', { key: 'caloz', label: 'cal/oz' }],
+        recordType: { Item: {}, Calories: {},
+            caloz: { getter: function () {
+                return (this.get('Calories') / this.get('size')).toFixed(2);
+            } }
+        },
+        data: [
+            { Item: 'Almond Joy', size: 1.76, Calories: 234.7 },
+            { Item: 'Butterfinger', size: 2.1, Calories: 275 },
+            { Item: 'Caramello', size: 1.6, Calories: 207.9 },
+            { Item: '5th Avenue', size: 2, Calories: 269.9 },
+            { Item: 'Kit Kat', size: 1.5, Calories: 217.6 },
+            { Item: 'Krackle', size: 2, Calories: 286.7 },
+            { Item: 'Baby Ruth', size: 2.1, Calories: 275.4 },
+            { Item: 'Mars', size: 1.76, Calories: 233.5 },
+            { Item: 'Oh Henry!', size: 2, Calories: 263.3 },
+            { Item: 'Chunky', size: 1.4, Calories: 190 },
+            { Item: 'Skor', size: 1.4, Calories: 208.7 },
+            { Item: 'Mounds', size: 1.9, Calories: 257.6 },
+            { Item: 'Mr. Goodbar', size: 1.75, Calories: 263.6 },
+            { Item: '100 Grand', size: 1.5, Calories: 190.5 },
+            { Item: 'Snickers', size: 2, Calories: 280.3 },
+            { Item: '3 Musketeers', size: 2.13, Calories: 256.8 },
+            { Item: 'Twix', size: 2, Calories: 286.1 },
+            { Item: 'Whatchamacallit', size: 1.7, Calories: 237.1 },
+            { Item: 'Milky Way', size: 2.05, Calories: 262.2 }
+        ],
+        height: '175px',
+        scrollable: 'y',
+        sortable: true
+    }).render('#table');
+});</script--></p>
+<p>DataTable has been one of YUI's most heavily used and relied upon widgets for years.  In 3.5.0, DataTable got a major overhaul, resulting in some small changes to the API and some big changes to the infrastructure.</p>
+<p>In this two part article, we'll talk about these changes, what led up to the decision to revisit the infrastructure rather than focus on features, break down some of the new and experimental concepts being explored, and finish up with a look at the plan for the future of DataTable as we see it today.</p>
+<p>So without further ado, let's address the obvious question:</p>
+<h2>Why Refactor?</h2>
+<p>The short answer is "to make DataTable easier to use and customize".  The 3.4.1 infrastructure was based on a "core" Widget model, with all additional features left to plugins or subclasses.  The data was held in a <code>Y.Recordset</code> instance and the column configuration in a <code>Y.Columnset</code> instance.  The Widget was responsible for creating the entire table markup.  That seemed like a reasonable architecture, but there were a few issues with this:</p>
+<ol>
+<li>DataTables are defined by their features, which means there could be a lot of <code>plug()</code>ing to get the DataTable that fits your application.  This made working with DataTable too complicated and verbose.</li>
+<li>The contract of the Plugin API hindered DataTable's multiple features from interacting properly.  In fact, certain DataTable features in 3.4.1 had already started breaking this contract.</li>
+<li>DataTable was hard coded to use <code>Y.Record</code>, <code>Y.Recordset</code>, <code>Y.Column</code>, and <code>Y.Columnset</code>.  This coupling limited the ability to customize DataTable or integrate it with other components in your application.</li>
+<li>The rendering algorithm was flexible, but its hooks for customization were fixed.  There was an opportunity to make rendering more customizable (and a whole lot faster) without requiring implementers to do major surgery on their instances.</li>
+</ol>
+<p>The new architecture aims to address these and other issues uncovered during its production life prior to 3.5.0, and take advantage of the <a href="http://yuilibrary.com/yui/docs/app/">App Framework</a> components that weren't around when DataTable was initially created in 3.3.0.</p>
+<p>DataTable is incredibly important to a lot of people, and it's important to us that it not only be built right, but also that it be <em>as easy to use as possible</em>.  These changes aim to move DataTable in the right direction.</p>
+<h2>Big Changes</h2>
+<p>The major changes from 3.4.1 to 3.5.0 are mostly under the hood, and with any luck, <a href="http://yuilibrary.com/yui/docs/datatable/migration.html">migrating to 3.5.0 DataTable</a> should be painless.</p>
+<p>Most of the outward changes to the API make it much easier to add and use DataTable features.  Compare a 3.4.1 sortable DataTable to its 3.5.0 equivalent:</p>
+<p><script src="https://gist.github.com/eba3064a27264c4d54ee.js"></script></p>
+<h3>What's in a Name?</h3>
+<p>The first thing you'll notice is that as of 3.5.0, you create instances of <code>Y.DataTable</code> rather than <code>Y.DataTable.Base</code>.  The base class is still around, but now its primary role is as a superclass for extension (which we'll talk more about in the next article).</p>
+<p><script src="https://gist.github.com/2a50d8328303adcf5929.js"></script></p>
+<p><code>Y.DataTable</code> is now the main class <em>and</em> the namespace for classes that support DataTable, such as <code>Y.DataTable.Base</code>, <code>Y.DataTable.Sortable</code>, and <code>Y.DataTable.BodyView</code>.  The notable exception is <code>Y.Plugin.DataTableDataSource</code>, which hasn't yet been migrated over to the new world order (expect that in 3.6.0).</p>
+<p>You'll see more about this in the next article when we talk about some of DataTable's new concepts.</p>
+<h3>Features as Class Extensions</h3>
+<p>The 3.5.0 architecture marks a shift <em>away</em> from the plugin model for DataTable.  Instead, we're putting features in class extensions, and using the powerful <a href="http://yuilibrary.com/yui/docs/api/classes/Base.html#method_mix"><code>Y.Base.mix()</code></a> method to augment these features into the DataTable class, creating a sort of ad-hoc multiple inheritance model.</p>
+<p>The two primary benefits this approach has are:</p>
+<ol>
+<li>The API for your DataTable and all its features is in one place, your <code>Y.DataTable</code> instance.</li>
+<li>Rather than having to explicitly build up your DataTable from the Base, simply including the feature modules in your <code>use()</code> line adds support for those features to the <code>Y.DataTable</code> class.</li>
+</ol>
+<p>But what if you have a couple of DataTables on the page, and you don't want all of them sortable or scrollable, etc.?</p>
+<p>To keep features from leaking between DataTable instances, each feature includes a behavioral trigger, which is responsible for activating the feature for that particular instance.  A feature might look for assigned table attributes, such as "scrollable", or column configurations such as "width".  It might even have multiple triggers, such as <code>datatable-sort</code> looking for either the "sortable" table attribute or "sortable" column configuration property.</p>
+<p><script src="https://gist.github.com/4007803521d58a678d6b.js"></script></p>
+<h3>No More Coupling</h3>
+<p>As of 3.5.0, <code>Y.Columnset</code> and <code>Y.Column</code> are gone, and you're not limited to data storage in <code>Y.Record</code> and <code>Y.Recordset</code>.</p>
+<p>Column definitions are now stored as a simple array of objects, just like what you pass into the DataTable's <code>columns</code> attribute.</p>
+<p>The reason for this change is that many features are column-specific, making the column definitions a natural place to configure them.  But the Column class shouldn't include feature related attributes unless that feature is requested.  However, features implemented as plugins should not directly modify classes.  So how can a column definition include <code>sortable: true</code> if the Column class doesn't have a <code>sortable</code> attribute and the plugin can't add it?  There wasn't a good answer, so we (regrettably) added the feature attributes to the base Column class, allowing them to do nothing unless the plugin was added.  With so many pending DataTable features wanting to be configured in the column definitions, we decided to remove the Column class wrappers in 3.5.0 to allow columns to be defined with whatever properties were needed.  The jury is still out on this change, so we're interested in your feedback.</p>
+<p>On the data side of things, Recordset and Record were technically working fine, but with the advent of <code>Y.Model</code> and <code>Y.ModelList</code> in 3.4.0, there was now a huge opportunity to share classes that were likely to be used elsewhere in the application.  This meant, however, that DataTable would need to be decoupled from its data storage classes because the common use case for the App Framework components is to create subclasses of them with attributes and APIs that specifically encapsulate your business logic.</p>
+<p>So in 3.5.0, rather than being bound to <code>Y.Record</code>, data records are stored in Model subclass instances.  By default, DataTable will create a Model subclass for you, customized to your data, but you now have the option to specify the class to use by setting the DataTable's <code>recordType</code> attribute.  Similarly, you can provide your table's <code>data</code> in a ModelList or ModelList-like object.</p>
+<p><script src="https://gist.github.com/2bdf04b0b5ac0520f30a.js"></script></p>
+<p>Now if you share your ModelList or Models across various parts of your application, modifications to any of them will automatically update the table.</p>
+<h3>Customizable Rendering</h3>
+<p>In 3.5.0, the rendering algorithm was completely rewritten, and is now significantly faster and more configurable than its 3.4.1 counterpart.  The <a href="http://yuilibrary.com/yui/docs/datatable/migration.html">migration guide</a> and <a href="http://yuilibrary.com/yui/docs/datatable/index.html">user guide</a> go into detail about the various cell formatting options, but one important change worth talking about here is that the entire algorithm can be replaced with a simple configuration change.</p>
+<p>In keeping with the move to configurable data storage classes, DataTable now delegates its rendering algorithms to <a href="http://yuilibrary.com/yui/docs/view/"><code>Y.View</code></a> classes.  In 3.5.0, the basic, featureless DataTable has attributes <code>headerView</code>, <code>bodyView</code>, and <code>footerView</code>.  By default, <code>footerView</code> is unset, but <code>headerView</code> is set to <code>Y.DataTable.HeaderView</code>, and <code>bodyView</code> is set to <code>Y.DataTable.BodyView</code>.</p>
+<p>When a DataTable instance is <code>render()</code>ed, the only DOM content the Widget itself is responsible for is the <code>&lt;table></code> and its immediate children.  The rendering of the header content, footer content, and data rows is left to whatever View class is supplied to the respective attribute.</p>
+<p>The default Views provided in 3.5.0 include enough <a href="http://yuilibrary.com/yui/docs/datatable/#column-config">column configuration options</a> to handle most use cases, but if you have special requirements for your table rendering or you want to hyper-optimize your specific implementation, you can supply your own View classes to the attributes noted above, and DataTable will use them instead.</p>
+<p><script src="https://gist.github.com/0e28d17c05564b94ca9e.js"></script></p>
+<h3>More to Come</h3>
+<p>The next article will go into more detail about DataTable's architectural techniques, experimental patterns, and what's coming in the next release.</p>
+<p>In the mean time, be sure to let us know in the <a href="http://yuilibrary.com/forum">yuilibrary.com forum</a>, on <a href="http://twitter.com/yuilibrary">Twitter</a>, and in the #yui IRC channel on freenode, how things are going in your DataTable apps and what features you're most looking forward to.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">May 1st, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4935 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-4935"><a href="/blog/2012/04/30/yui-open-hours-thurs-may-3rd/">YUI: Open Hours Thurs May 3rd</a></h2>
+					
+
+						<div class="entry">
+							<h3>Fiddling Around With DataTable</h3>
+<p>To me, it feels like every other Open Hours is about DataTable, but I guess that&#8217;s not actually true. So let&#8217;s talk about DataTable!</p>
+<p>In particular, I want to talk about two things:</p>
+<ol>
+<li>Tips and tricks with column configurations and cell formatters</li>
+<li>What&#8217;s fast, what&#8217;s slow, and how to maximize DT performance</li>
+</ol>
+<p>It will be a lot of live coding on <a href="http://jsfiddle.net/">jsfiddle</a>, though I&#8217;ll try to have a few examples of things prepped.  If there&#8217;s a particular example you&#8217;d like to see, a formatting question you&#8217;d like answered, or generally any other DT question or feedback, please bring it.</p>
+<p><!--h3>Time &amp; Details</h3>
+<link rel="stylesheet" href="http://sandbox.ericf.me/button/button.css" />
+<p>We&#8217;ll be online on <strong>Thursday from 10am to 11am PDT</strong>.</a></p>
+<p>
+    <a class="button" aria-role="button" id="join_oh-5-3" target="_blank" style="margin: 0; font-size: 20px" href="https://www.meeting.corp.yahoo.com/r82701271/">Join the Meeting</a>
+</p-->
+<h3>Recording</h3>
+<p>The recording is <a href="http://www.youtube.com/yuilibrary/">available in the YUILibrary YouTube channel</a>, though the quality didn&#8217;t come out very well.</p>
+<p><iframe width="420" height="315" src="http://www.youtube.com/embed/GqkOloSJ2qk" frameborder="0" allowfullscreen></iframe></p>
+<h3>Mentioned</h3>
+<ul>
+<li><a href="https://gist.github.com/2494497">Flyweight Proxy ModelList</a></li>
+<li><a href="https://gist.github.com/2295032">More precise DOM updates from data changes</a></li>
+<li><a href="https://gist.github.com/0e28d17c05564b94ca9e">Custom bodyView with simpler rendering logic</a></li>
+</ul>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/3974d5bcfbdb27cc99d10706dc5b85f7?s=32"> <div class="cont"><a href="http://lucassmith.name" class="name">By Luke Smith</a><span class="date">April 30th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4921 post type-post status-publish format-standard hentry category-development tag-functional tag-jafl tag-yui-3">
+				
+						<h2 id="post-4921"><a href="/blog/2012/04/30/generalizing-code-through-functional-programming/">Generalizing Code Through Functional Programming</a></h2>
+					
+
+						<div class="entry">
+							<p><q>Abstraction</q> is a hot buzzword, but many people say <q>abstraction</q> when they really mean <q>generalization.</q>  These two concepts are very different.  In fact, they apply to opposite ends of the coding process.</p>
+<p>A lot has been written about how abstractions simplify the job of constructing software, when <q>programming in the large.</q>  Unfortunately, abstractions leak, as demonstrated by <a href="http://www.joelonsoftware.com/articles/LeakyAbstractions.html">Joel Spolsky</a> and <a href="http://www.codinghorror.com/blog/2009/06/all-abstractions-are-failed-abstractions.html">Jeff Atwood</a>.  This is unsurprising, given the definition of abstraction:  the process of considering something independently of its associations, attributes, or concrete accompaniments.  In other words, abstractions ignore details, and this always comes back to bite us.</p>
+<p><q>Generalization,</q> on the other hand, is useful when focusing on a specific problem, i.e., <q>programming in the small.</q>  The goal of generalization is to make a solution for one problem usable for a larger class of related problems.  This is the ultimate in code reuse:  build it once and use it over and over again.  As long as the generalization is done correctly, there is no danger of it failing, though there is always the possibility of not taking it far enough.</p>
+<p>There are many ways to generalize code.  This article will focus on building higher order functions, a particular strength of functional languages.  Let us start with two obvious examples: <code>map</code> and <code>reduce</code> which apply a function to each element in a collection.  These generalize the concepts of generating a new collection or value, respectively, from an existing collection.</p>
+<p>It should be possible to generalize <code>map</code> and <code>reduce</code> further, to work on a forest, i.e., a collection of trees, instead of only a collection of items.  The problem, however, is that the code that recurses must know how the trees are stored.  Is a tree simply nested arrays, e.g., <code>[1, [2, 3], 4]</code>, or is each node an object from which the array of child nodes must be extracted?  For <code>reduce</code>, one can pass in a function that extracts the children:</p>
+<pre>
+function reduceForest(roots, initial, operation, children)
+{
+	return Y.Array.reduce(roots, initial, function(value, root)
+	{
+		return reduceForest(children(root), operation(value, root), operation, children);
+	});
+}
+</pre>
+<p>For <code>map</code>, however, it is more complicated, because there is also the question of what the result should look like.  A nested array can be mapped to another nested array, and a tree of objects can be mapped to another tree of objects, but supporting both at the same time would make the code quite complicated.  Knowing when to stop generalizing is just as important as knowing when to keep going!</p>
+<p>We can branch out in a different direction, however, because there are many types of collections, but the above code requires the children to be stored in arrays.  We need to generalize the concept of iteration.</p>
+<p>YUI&#8217;s <code>oop.js</code> provides this, in the private function <code>dispatch</code>.  Here is the slightly adjusted version used by <a href="http://yuilibrary.com/gallery/show/funcprog">gallery-funcprog</a>:</p>
+<pre>
+function dispatch(action, o)
+{
+	var args = Y.Array(arguments, 1, true);
+	switch (Y.Array.test(o))
+	{
+		case 1:
+			return Y.Array[action].apply(null, args);
+		case 2:
+			args[0] = Y.Array(o, 0, true);
+			return Y.Array[action].apply(null, args);
+		default:
+			if (o &amp;&amp; o[action] &amp;&amp; o !== Y)
+			{
+				args.shift();
+				return o[action].apply(o, args);
+			}
+			else
+			{
+				return Y.Object[action].apply(null, args);
+			}
+	}
+}
+</pre>
+<p>This is wonderfully general.  It works for any action:  map, reduce, filter, etc.  Arrays are routed to <code>Y.Array</code>.  Objects that implement the action are called directly, allowing individual classes to optimize individual actions.  All other objects are operated on by the generic versions in <code>Y.Object</code> (provided by <a href="http://yuilibrary.com/gallery/show/object-extras">gallery-object-extras</a>).  Sharp readers will note that the order of iteration for object members is undefined, but this doesn&#8217;t matter for <code>map</code>, <code>reduce</code> with commutative operators, <code>filter</code>, etc.  (Use <code>Y.some</code> at your own risk, however.)</p>
+<p>The option for objects to implement custom versions of the actions leads to yet another generalization:  <a href="http://yuilibrary.com/gallery/show/iterable-extras">gallery-iterable-extras</a>.  This mixin implements all the actions for any object that provides the <code>iterator</code> method.  The only requirement is that <code>iterator</code> must return an object that exposes <code>next</code> and <code>atEnd</code>.  This is especially efficient for linked lists, where indexed lookup is O(n), but it could also simplify other classes, e.g., <code>Y.NodeList</code>, because one then does not have to explicitly implement map, reduce, filter, etc.</p>
+<p>Of course, generalization doesn&#8217;t have to be this complicated.  When I was writing <a href="http://yuilibrary.com/gallery/show/sort-extras">gallery-sort-extras</a>, I first built this function:</p>
+<pre>
+Y.Sort.compareKeyAsString = function(key, a,b)
+{
+    return compareAsString(a[key], b[key]);
+};
+</pre>
+<p>But then I realized that I would have to write a separate <code>compareKeyAsNumber</code>, so instead I generalized it to:</p>
+<pre>
+Y.Sort.compareKeyAs = function(f, key, a,b)
+{
+    return f(a[key], b[key]);
+};
+</pre>
+<p>Since <code>sort</code> requires a function that takes only <code>(a,b)</code>, one must use <code>Y.bind</code> to <a href="http://en.wikipedia.org/wiki/Partial_application">fix the first two arguments</a>:</p>
+<pre>sort(Y.bind(Y.Sort.compareAsKey, null, Y.Sort.compareAsString, key))</pre>
+<p>So far, we have only considered functions which operate on functions.  One can also build functions that return functions.  A simple example is a function to reverse the sort order:</p>
+<pre>
+Y.Sort.flip = function(f)
+{
+    return function(a,b)
+    {
+        return f(b,a);
+    };
+};
+</pre>
+<p>Hopefully, these examples of using functional programming to generalize code will inspire you to look for situations where you can do the same in your own code.</p>
+<p class="authorbox"><em><strong>About the author:</strong> <a href="http://jjlindal.net/jafl/blog/">John Lindal</a> (<a href="http://twitter.com/jafl5272/">@jafl5272</a> on Twitter) is one of the lead engineers constructing the foundation on which <a href="http://apt.yahoo.com/">Yahoo! APT</a> is built.  Previously, he worked on the Yahoo! Publisher Network.</em></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/38f9e2bde80f6645036885d233609d69?s=32"> <div class="cont"><a href="http://jafl.my.speedingbits.com/blog/" class="name">By John Lindal</a><span class="date">April 30th, 2012<span></div></div>
+				</div>
+										
+								<div class="post-4891 post type-post status-publish format-standard hentry category-development">
+				
+						<h2 id="post-4891"><a href="/blog/2012/04/25/help-us-help-others/">Help Us Help Others!</a></h2>
+					
+
+						<div class="entry">
+							<p>One of the best things about YUI is our documentation. It&rsquo;s been known in the community for years that documentation is a high priority for our developers. One of our other priorities is exceptional API documentation. We have always had high quality documentation but that comes with a price tag, time.</p>
+<h2>Did you know that you can help us with this?</h2>
+<p>All of our documentation is available in our Github repo and the tools we use to generate this documentation are available for you to use. Yes, that&rsquo;s right, everything we use to make our documentation is available right now. In this article I will show you how you can <strong>fix API documentation</strong> and <strong>update an example</strong> to help other developers just like you.</p>
+<p>This article is about modifying existing examples, landing pages and API documentation. Check out <a href="#new-example-screencast">the screencast at the bottom</a> if you&#8217;re more interested in creating new examples from scratch.</p>
+<h2>What do you need?</h2>
+<p>You need a working install of <a href="http://nodejs.org/#download">Node.js</a> <strong>(0.6.x or higher is recommended)</strong>, <a href="http://npmjs.org/">NPM</a> <strong>(packaged with node)</strong>, <a href="http://rgrove.github.com/selleck">Selleck</a> <strong>our custom documentation tool</strong> and <a href="http://davglass.github.com/yuidocjs">YUIDoc</a> <strong>our api documentation tool</strong>. These tools are freely available and very easy to install. Simply <a href="http://nodejs.org/#download">go here</a> and choose your environment to install Node.js. Once it&rsquo;s installed, you can install our two tools with this command:</p>
+<pre><code>npm -g install selleck yuidocjs</code></pre>
+<p>Once that completes, you&rsquo;re all set!</p>
+<p><strong>** You will, of course, need git installed, have a Github account and have already forked the yui3 repo</strong></p>
+<h2>Where things live</h2>
+<p>All of our examples are kept in our main source tree, this makes it easier to associate an example with the code it belongs to. In this example, I will be working with the <a href="http://yuilibrary.com/yui/docs/dd/">DragDrop</a> examples and API docs.</p>
+<p>The main landing page and example files are located under <a href="https://github.com/yui/yui3/tree/master/src/dd/docs"> <code>yui3/src/dd/docs</code></a>. All of the API docs are parsed from the <a href="https://github.com/yui/yui3/tree/master/src/dd/js">raw source files</a> <strong>(we&rsquo;ll get into that in a bit)</strong>.</p>
+<h2>Seeing a rendered example</h2>
+<p>The hardest part of any example is seeing how it looks once it&rsquo;s ready. This is where <strong>Selleck</strong> comes in to play. <strong>Selleck</strong> has a &ldquo;server mode&rdquo; that you can fire up and see our examples &ldquo;parsed and loaded&rdquo;. Turning on <strong>Selleck&#8217;s</strong>&#8220;server mode&#8221; is very simple:</p>
+<pre><code>cd yui3/src;
+selleck --server
+</code></pre>
+<p>This will print the following to the console:</p>
+<pre><code>[info] Selleck is now giving Ferrari rides at http://localhost:3000</code></pre>
+<p>Now visit <code>http://127.0.0.1:3000</code> in your browser of choice and you should see the main <strong>Selleck</strong> page displaying a list of all the components that it found under the <code>src</code> directory.</p>
+<p><strong>If you don&rsquo;t want Selleck to bind to port 3000, simply add a port to the command above (<code>selleck --server 5000</code>)</strong></p>
+<p>One of the advantages of using <strong>Selleck</strong> in server mode is that you do not need to restart the server <strong>(unless you add new json files for new examples)</strong> to see your changes. Just open a file, edit, save and reload! It&rsquo;s that easy!</p>
+<h2>Fixing API Documentation</h2>
+<p>All of our API documentation is parsed directly from our source files <code>yui3/src/dd/js</code> with<br />
+<a href="http://davglass.github.com/yuidocjs/">YUIDoc</a>. This makes reading them in the source files a little difficult (unless you can parse JSDoc tags and Markdown syntax in your head). Luckily <strong>YUIDoc</strong> also has a server mode to help you with this. Turning on <strong>YUIDoc&rsquo;s</strong> server mode is just as easy as <strong>Selleck&rsquo;s</strong>:</p>
+<pre><code>cd yui3/src;
+yuidoc --server
+</code></pre>
+<p>This will print out some <strong>YUIDoc</strong> debugging info ending with:</p>
+<pre><code>info: (server): Starting server: http://127.0.0.1:3000
+</code></pre>
+<p>Now visit <code>http://127.0.0.1:3000</code> in your browser of choice and you should see the main <strong>YUIDoc</strong> page listing all of the parsed API docs.</p>
+<p><strong>If you don&rsquo;t want YUIDoc to bind to port 3000, simply add a port to the command above (<code>yuidoc --server 5000</code>)</strong></p>
+<p><strong>YUIDoc&rsquo;s</strong> server mode works a lot like <strong>Selleck&rsquo;s</strong> in that you do not need to restart the server to see your changes. <strong>YUIDoc</strong> will reparse all of the source code on each page load and show you the updated API docs. Just open a file, edit, save and reload! It&rsquo;s that easy!</p>
+<h2>Things to remember</h2>
+<p>Some things to remember when you are working on something you want to contribute:</p>
+<ul>
+<li> Always work in a branch <code>git checkout -b mydocpatch</code></li>
+<li> Push to your branch <code>git push origin mydocpatch</code></li>
+<li> Submit the Pull Request from your branch</li>
+<li> (optional) If you&#8217;re comfortable with git, we recommend working against yui/yui3&#8242;s &#8220;live-docs&#8221; branch</li>
+</ul>
+<h2>What to do after I update things?</h2>
+<p>As with anything else in YUI, once you update your files, simply commit them and issue us a <strong>Pull Request</strong> as usual. One of our developers will verify the changes and either merge them in or give you some feedback.</p>
+<h2>How often are things updated on the site?</h2>
+<p>Our current site deployment is very easy, we often deploy to <a href="http://yuilibrary.com/">yuilibrary.com</a> at least once a week. Sometimes we even push daily! So, get your changes in and give back to the community!</p>
+<h2 id="new-example-screencast">More Information</h2>
+<p>YUI Engineer <a href="http://twitter.com/ls_n">Luke Smith</a> put together the following screen cast showing how to create a new example from scratch. Take a look at it and more videos over on our <a href="http://www.youtube.com/yuilibrary">YouTube Channel</a>.</p>
+<p><iframe width="420" height="315" src="http://www.youtube.com/embed/0Ai2q9ioCe4" frameborder="0" allowfullscreen></iframe></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/05243ae612fb4dcfb151e08489f334b0?s=32"> <div class="cont"><a href="http://blog.davglass.com/" class="name">By Dav Glass</a><span class="date">April 25th, 2012<span></div></div>
+				</div>
+							
+							<div class="bottom-nav">
+					<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/development/page/10/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/development/page/8/" >Newer Entries &raquo;</a>    </div>
+</div>				</div>
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+				<li><a href="/blog/2013/01/02/yuiconf-2012-talks-triple-play-today/" title="YUIConf 2012 Talks: Triple Play Today">YUIConf 2012 Talks: Triple Play Today</a></li>
+				<li><a href="/blog/2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/" title="YUIConf 2012 Talk: Gamaiel Zavala on Adopting YUI App Framework on Yahoo! Media Sites">YUIConf 2012 Talk: Gamaiel Zavala on Adopting YUI App Framework on Yahoo! Media Sites</a></li>
+				<li><a href="/blog/2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/" title="YUIConf 2012 Talk: Bishan Kochar on Secure Coding with YUI">YUIConf 2012 Talk: Bishan Kochar on Secure Coding with YUI</a></li>
+				<li><a href="/blog/2012/12/21/yui-weekly-for-december-21st-2012/" title="YUI Weekly for December 21st, 2012">YUI Weekly for December 21st, 2012</a></li>
+				<li><a href="/blog/2012/12/21/introducing-the-grid-builder/" title="Introducing the Grid Builder">Introducing the Grid Builder</a></li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+ </select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (6)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2 current-cat"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (555)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (5)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (10)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (13)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (2)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (29)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (45)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (146)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (19)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>
+						</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2013 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1357459699" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html>

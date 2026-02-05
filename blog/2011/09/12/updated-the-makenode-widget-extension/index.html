@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Updated: The &quot;MakeNode&quot; Widget Extension</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Updated: The &quot;MakeNode&quot; Widget Extension</li></ul>
+				<h1 class="yui3-u-7-8">Updated: The &quot;MakeNode&quot; Widget Extension</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 12, 2011<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p class="authorbox"><strong>Editor's Note:</strong> This article was <a href="/blog-archive/blog/2011/07/08/the-makenode-widget-extension/">originally published earlier this year</a>. Since then, the <a href="http://yuilibrary.com/gallery/show/makenode">MakeNode module has been published to the YUI Gallery</a> and received some enhancements. Today's article reflects all the latest changes to MakeNode.<p>In my previous article, <a href="/blog-archive/blog/2011/04/01/a-recipe-for-a-yui-3-application">A Recipe for a YUI 3 Application</a>, I showed a way to use <code>Y.substitute</code> as a very basic template processor. The idea took life from there, with suggestions from the folks in the #yui IRC channel, and I made it a Widget extension that is available on the YUI Gallery, called <a href="http://yuilibrary.com/gallery/show/makenode">MakeNode</a>. MakeNode is not a generic template processor and it is not meant as one. On the other hand, it is tightly integrated with the YUI <a href="http://developer.yahoo.com/yui/3/widget/">Widget</a> foundation class, including className and event helpers and internationalization. In this article, I will take the <a href="http://developer.yahoo.com/yui/3/examples/widget/widget-extend.html">Spinner</a> example and modify it to follow the guidelines from my previous article and to use MakeNode. <a href="http://yuilibrary.com/gallery/show/makenode">MakeNode</a> is available as a gallery component as well as the modified <a href="http://yuilibrary.com/gallery/show/md-spinner">Spinner</a> component and the <a href="http://satyam.github.com/makenode/sample.html">example</a> that will be used in this article. <h2>Extending your component</h2>
+	<p>To load MakeNode you need to include the module in your <code>YUI().use()</code> statement using the name <code>'gallery-makenode'</code>or, if defining a module via <code>YUI.add()</code>, list it as the <code>requires</code> array. Then, to extend your widget, you list it in the third argument to <code>Y.Base.create()</code>, like this:<pre>Y.Spinner = Y.Base.create(
+     'Spinner',
+     Y.Widget,
+     [Y.MakeNode],
+     {
+        // instance members …
+     },
+     {
+         // static members
+     }
+); </pre><p> You can add MakeNode along any number of suitable extensions for Widget, such as WidgetParent, WidgetChild, WidgetStdMode, etc. MakeNode adds two protected methods to be used by the developer, <code>_makeNode</code> and <code>_locateNodes,</code> and it will read from several static properties, if found.<p>All members of this extension are either protected or private since they are meant to be used by the component developer and not by the implementer using those components, who should not be bothered with them. Remember to check the "Show Protected" option when viewing the <a href="http://satyam.github.com/apiDocsGallery/MakeNode.html">API docs</a>. <h2>Defining the template</h2>
+	<p>The first thing you will normally do is to define the template for your component. For the Spinner, our template will be:<pre>_TEMPLATE: [
+    '&lt;input type=&quot;text&quot; title=&quot;{s input}&quot; class=&quot;{c input}&quot;&gt;',
+    '&lt;button type=&quot;button&quot; title=&quot;{s up}&quot; class=&quot;{c up}&quot;&gt;&lt;/button&gt;',
+    '&lt;button type=&quot;button&quot; title=&quot;{s down}&quot; class=&quot;{c down}&quot;&gt;&lt;/button&gt;'
+].join('\n'),</pre><p> The default template will usually be named <code>_TEMPLATE</code> and declared along the other static properties of the class, such as <code>ATTRS</code>. MakeNode will use this template if none other is explicitly provided. The template is made of plain HTML plus a series of placeholders enclosed in curly brackets, each made of a single character (the processing code) and followed by one or more arguments. The placeholders and what they produce are:<ul>
+			<li>
+				<p><code>{@ attributeName}</code> configuration attribute value <li>
+				<p><code>{p propertyName}</code> instance property value <li>
+				<p><code>{m methodName arg1 arg2 ….}</code> return value of the given method. The processing code is followed by the method name and any number of arguments separated by whitespace. <li>
+				<p><code>{c classNameKey}</code> CSS className generated from the <code>_CLASS_NAMES</code> static property (see <a href="#_CLASS_NAMES">The _CLASS_NAMES property</a> section below)<li>
+				<p><code>{s key}</code> string from the <code>strings</code> attribute, using <code>key</code> as the sub-attribute.<li>
+				<p><code>{? </code><code><i>condition</i></code><code> </code><code><i>valueIfTrue valueIfFalse</i></code><code>}</code> much like the <code>?: </code>operator of JavaScript, evaluates to <code>valueIfTrue</code> if condition is truish, <code>valueIfFalse</code> otherwise.<li>
+				<p><code>{1 </code><code><i>condition valueIfOne valueIfMore</i></code><code>}</code> used to produce singular/plural words based on the value of condition. <li>
+				<p><code>{}</code> any other value will be handled just like <code>Y.substitute</code> does. </ul> <p>For example, <code>{@ value}</code> will translate to <code>this.get('value')</code> while <code>{p value}</code> translates to <code>this['value']</code>. <p>When placeholders have arguments, like <code>{m}</code>, <code>{?}</code> and <code>{1}</code>, strings must be enclosed in double quotation marks. Numbers, booleans and <code>null</code> (all unquoted) will be parsed to their proper data types. Placeholders can be nested. The <code>{?}</code> and <code>{1}</code> placeholders will usually contain a nested placeholder for the condition and quite possibly for their values, for example:<pre>{p qty} {1 {p qty} &quot;unit&quot; &quot;units&quot;} </pre><p> If the property <code>qty</code> is 1, it will evaluate to <code>&quot;1 unit&quot;</code>, for 2 or more it will return <code>&quot;2 units&quot;</code> and so on. A more elaborate version dealing with zero would be:<pre>{? {p qty} &quot;{p qty} {1 {p qty} &quot;unit&quot; &quot;units&quot;}&quot; &quot;none&quot;} </pre><p> Note that the result of processing the inner placeholders, if a string, must be enclosed in its own set of quotes.<p>To include a double quote inside a quoted string, use <code>\\&quot;</code>, the double backslash being required because JavaScript will interpret a single one and discards it before it gets to MakeNode. Only double quotes are allowed; MakeNode does not use <code>eval()</code> so the parser is limited but safe. Anything but numbers, <code>null</code>, booleans and double quoted strings will be ignored.<p>The <code>{?}</code> placeholder is also handy to use with checkboxes and radio buttons. It can be used to produce the string <code>&quot;checked&quot;</code> depending on the truth value of the processing instruction code that follows. Thus, <code>&lt;input type=&quot;checkbox&quot; {? {m getLength} &quot;checked&quot; &quot;&quot;}/&gt;</code> will produce a marked checkbox if the <code>getLength</code> method returns anything but zero.<p>For the <code>{c}</code> placeholder, we need to have a <code>_CLASS_NAMES</code> property defined.<p>Further placeholders can be added to MakeNode by adding them into the <code>_templateHandlers</code> hash.<h2><a name="_CLASS_NAMES"></a>The _CLASS_NAMES property</h2>
+	<p>Along with the <code>ATTRS</code> and <code>_TEMPLATE</code> static properties, we can define a <code>_CLASS_NAMES</code> static property which points to an array of strings. Each of those strings will be used to generate a className. Thus <code>_CLASS_NAMES: ['input']</code> will produce the className <code>&quot;yui3-spinner-input&quot;</code>. Those classNames are stored in an instance property <code>this._classNames</code>. The <code>{c input}</code> placeholder in the template above will be replaced by <code>&quot;yui3-spinner-input&quot;</code>. I call the strings listed in <code>_CLASS_NAMES</code>, such as <code>'input'</code>, the "className <em>keys</em>" since they can be used as a key to refer to the actual className or the elements containing those classNames, as we'll see later.<p>You can use the <code>_CLASS_NAMES</code> property to generate any number of classNames, whether you use them in the template or not. You can still reach those extra classNames from within <code>this._classNames</code>. The className is generated using the <code>yui3</code> prefix followed by the value of the <code>NAME</code> static property turned lowercase, and then the string given in <code>_CLASS_NAMES</code> (this last one will not be turned lowercase), all separated by hyphens. The <code>_classNames</code> hash will also contain the classNames for the <code>boundingBox</code> and the <code>contentBox</code>, the first under the <code>&quot;boundingBox&quot;</code> key and the second under the <code>&quot;content&quot;</code> key. Widget assigns to the <code>boundingBox</code> the classNames derived from the values of the <code>NAME</code> property of each of the classes in the inheritance chain, starting with <code>yui3-widget</code>. MakeNode stores into <code>this._classNames</code> only the top-most className for the <code>boundingBox</code>. <p>If the WidgetStdMod module is loaded, MakeNode will also generate entries for its <code>HEADER</code>, <code>BODY</code> and <code>FOOTER</code> sections with those same keys, which are also the constants defined in that same module.<p>If a component is several levels away from Widget, like <code>SuperSpecialSpinner</code> inheriting from <code>SuperSpinner</code> which inherits from <code>Spinner</code> which inherits from <code>Widget,</code> and if any or all of them have <code>_CLASS_NAMES</code> properties defined, MakeNode will produce classNames for all of them and store them in <code>this._classNames</code>. You don't need to include at each level the names already declared in the previous levels. In fact, it is better that you don't since the classNames produced at each level will use the value of the <code>NAME</code> property of that level. Thus, in <code>SuperSpecialSpinner</code>, <code>{c input}</code> will still result in <code>&quot;yui3-spinner-input&quot;</code> and not <code>&quot;yui3-superspecialspinner-input&quot;</code> and so it will keep your CSS file still valid.<h2>The {s} placeholder</h2>
+	<p>Widget has a <code>strings</code> configuration attribute defined, though it is not initialized with any value. This attribute is meant to hold strings that are visible to (or, via screen readers, read to) the user. It is important that you never include visible strings directly in the template. This is not a requirement of MakeNode — it has never been a good idea at all. All strings that are to be viewed by or read to the user should always be placed in the <code>strings</code> attribute. The <code>strings</code> attribute contains a hash where each individual text is located by its key. The Spinner component has the following strings, which you can see used in the template above.<pre>strings: {
+    value: {
+        input: &quot;Press the arrow up/down keys for minor increments, page up/down for major increments.&quot;,
+        up: &quot;Increment&quot;,
+        down: &quot;Decrement&quot;
+    }
+},</pre><p> The best part of doing this is that your component can be localized to other languages very easily by developers using your component. When creating an instance of Spinner, you might do:<pre>var mySpinner = new Spinner({strings: Y.Intl.get('spinner')});</pre><p> Setting the configuration attribute <code>strings</code> in this way replaces the default <code>strings</code> values with those from the language resource file using the language previously defined. The <code>{s}</code> placeholder accesses the strings stored in the <code>strings</code> attribute, either the default ones or the translated ones, if set. The <code>{s xxxx}</code> placeholder is almost like using <code>{@ strings.xxxx}</code> except that the localized replacement strings can have placeholders which will be further processed. This is important for translations since syntactical order varies from language to language and this allows rephrasing the text, including its placeholders to suit any language. Strings can also be accessed using <code>{@ strings.xxxx.yyyy.zzzz}</code>, which will allow access to strings nested deeper down and will prevent further substitutions. Curly braces can be included in a text by using <code>{LBRACE}</code> and <code>{RBRACE}</code> as placeholders.<h2>Using _makeNode in renderUI</h2>
+	<p>We use the template to create the markup for our component. To do so, we can call MakeNode's <code>_makeNode</code> method, like this:<pre>renderUI : function() {
+    this.get('contentBox').append(this._makeNode());
+},</pre><p> This will fill in the <code>contentBox</code> of our widget with the markup from processing the template. The <code>_makeNode</code> method returns an instance of <code>Y.Node</code> which can be appended or inserted anywhere or just held for later use. It does not return a string, it produces a <code>Node</code> instance. (If you do need a string and not a Node, you can use the <code>_substitute</code> method, which requires that you pass in a template.)<p>The <code>_makeNode</code> method takes two optional arguments: a reference to a template and an object to fill in placeholders, as <code>Y.substitute</code> does. In our simple Spinner example there is a single template for the whole widget but other widgets might require bits and pieces made out of several templates. In that case, you would usually call <code>_makeNode</code> with no arguments for the main part and call it once again with different templates to fill in the extra parts. The <a href="http://satyam.github.com/makenode/sample.html">example</a> contains this <code>renderUI</code> method:<pre>renderUI: function () {
+    var fieldset = this._makeNode();
+    this.each(function (item) {
+        fieldset.appendChild(this._makeNode(MultipleTemplates.RADIO_TEMPLATE, item));
+    }, this);
+    this.get('contentBox').append(fieldset);
+}</pre><p> The first call to <code>_makeNode</code> returns a <code>Node</code> instance stored in the variable <code>fieldset</code>. The sample component is also extended with <code>Y.ArrayList</code> so the <code>RADIO_TEMPLATE</code> will be filled with values taken from the items stored in the array list and the resulting Nodes appended to the <code>fieldset</code> before it is finally appended to the <code>contentBox</code>. The special placeholders such as <code>{@} </code>or <code>{p}</code> will still refer to attributes or properties in the main object. The nested items will be processed just as <code>Y.substitute </code>would.<h2>The _locateNodes method</h2>
+	<p>MakeNode further provides a <code>_locateNodes</code> method which will try to locate all the elements with the classNames declared in <code>_CLASS_NAMES</code>. To locate specific elements you can pass any number of className keys, otherwise, <code>_locateNodes</code> tries them all. For each element found of each className, <code>_locateNodes</code> will produce a private instance property using the underscore prefix followed by the key name and the <code>&quot;Node&quot;</code> suffix. Thus, in our Spinner example, <code>_locateNodes</code> will generate the properties <code>_inputNode</code>, <code>_upNode</code> and <code>_downNode</code>. If several elements have the same className, <code>_locateNodes</code> will return a reference to the first of them. If an element is not found, no variable will be created.<p>In the Spinner component we use <code>_locateNodes</code> after creating the markup:<pre>renderUI : function() {
+    this.get(CBX).append(this._makeNode());
+    this._locateNodes();
+},</pre><h2> The _EVENTS static property</h2>
+	<p>One further property can be defined along the lines of <code>_TEMPLATE</code> and <code>_CLASS_NAMES</code> and that is <code>_EVENTS</code>. <code>_EVENTS</code> will contain a hash made up of class name keys, each containing a hash of event types and methods to handle them. It is better explained with an example:<pre>_EVENTS: {
+    input: 'change',                    // calls this._afterInputChange
+    boundingBox: [
+        {
+            type: 'key',
+            fn:'_onDirectionKey',       // calls this._onDirectionKey
+            args:((!Y.UA.opera) ? &quot;down:&quot; : &quot;press:&quot;) + &quot;38, 40, 33, 34&quot;
+        },
+        'mousedown'                     // calls this._afterBoundingBoxMousedown
+    ],
+    document: 'mouseup',                // calls this._afterDocumentMouseup,
+    Y: 'broadcastingObject:someEvent'   // calls this[&quot;_afterYBroadcastingObject:someEvent&quot;]
+},</pre><p><code>_EVENTS</code> is an object (a hash) with any number of entries. The names of the properties, that is, the keys of the hash, identify the nodes whose events we will listen to. They are the same className keys defined in <code>_CLASS_NAMES</code>. There are several extra special keys:<ul>
+			<li>
+				<p><code>&quot;boundingBox&quot;</code> will refer to the bounding box itself.<li>
+				<p><code>&quot;document&quot;</code> refers to the document containing this widget.<li>
+				<p><code>&quot;THIS&quot;</code> refers to the widget itself<li>
+				<p><code>&quot;Y&quot;</code> refers to the <code>Y</code> instance.</ul> <p>If the Widget has been extended with WidgetStdMod as well, the keys <code>HEADER</code>, <code>BODY</code> and <code>FOOTER</code> will refer to those sections since they will be available in the <code>_classNames</code> hash. JavaScript does not need the keys to be quoted if they are valid identifiers so none of the above need to be quoted.<p>The <code>_EVENTS</code> property is processed after the <code>renderUI</code>, <code>bindUI</code> and <code>syncUI</code> methods have been called so the widget is expected to be already inserted within the document body, otherwise the <code>&quot;document&quot;</code> identifier will fail. <p>For each of those elements there is an event identifier or an array of event identifiers. An event can be identified by the type of event to listen to or an object with further details. By default, MakeNode will use as a listener a method named using the <code>&quot;_after&quot;</code> prefix followed by the element identifier with its first character capitalized followed by the event type with its first character capitalized. The code block above shows the methods called for each event. <p>An event identifier can also be an object with properties <code>type</code>, <code>fn</code> and <code>args</code>. The <code>type</code> is mandatory and indicates the type of event being listened to. The <code>fn</code> property gives the name of the method that will listen to the event thus avoiding the automatic naming. Since <code>_EVENTS</code> is a static property, it has no access to <code>this</code> so it cannot take an actual reference to a method, only its name. The <code>args</code> argument can be used to pass further arguments to the caller such as with the <code>key</code> event which requires a keys specification.<p>MakeNode will use <code>Node.delegate</code> to listen to events on elements within the <code>boundingBox</code>, while it will use <code>Node.after</code> to listen to events from the <code>boundingBox</code> and the document body. It will use <code>this.after</code> to listen to events under the <code>THIS</code> key and <code>Y.after</code> for listeners listed under the <code>Y</code> key. All events are listened to using <i>after</i> event listeners since they are meant to make the widget respond to events, not to filter the behavior of the object that fires them so in no case these events can be prevented or stopped. (Note: listening to the <code>key</code> event on any nested element works only with version 3.4.0pr1 and above, since delegation of the <code>key</code> event was not available before. All the other features work with previous versions as well).<p>The <code>_EVENTS</code> declarations are cumulative when components inherit from one another. Each class in the inheritance chain will have its own <code>_EVENTS</code> declaration processed separately.<h2>The _ATTRS_2_UI static property</h2>
+	<p>Events go both ways, from the UI to the component and from the component to the UI. The first are handled by the <code>_EVENTS</code> property. Then there are the events fired by attribute value changes that need to be reflected in the user interface. As I mentioned in the previous article, when there are any secondary effects from changing a configuration attribute, they should be handled by <i>change</i> event listeners, not by the optional <code>setter</code> method of the attribute, which should only deal with normalizing the value being set. The UI should reflect the state of the configuration attributes, first in <code>syncUI</code>, when being initialized and then on every attribute change event. For the latter, we need to attach an event listener, which we would normally do in <code>bindUI</code>. Widget already provides a mechanism to make that simple, which I described in the comments to the previous article.<p>Widget uses the instance property <code>_UI_ATTRS</code> that contains an object with two further properties, <code>SYNC</code> and <code>BIND</code>. Each of these is an array listing the names of the configuration attributes to be initially synched and then listened to in order to keep the UI reflecting current values. Widget expects each of those entries to have a method associated with it, named after the attribute name prefixed by <code>_uiSet</code> with the first character of the attribute name converted to uppercase to have the method name in proper camel case. Thus, if <code>&quot;value&quot;</code> was listed in any of the <code>_UI_ATTRS</code> arrays (in either <code>SYNC</code> or <code>BIND</code>), Widget would expect to find a <code>_uiSetValue</code> method. This method will receive two arguments, the <code>value</code> being set and the <code>src</code> of the change. This is the code for our Spinner <code>_uiSetValue</code> method:<pre>_uiSetValue : function(value, src) {
+    if (src === UI) {
+        return;
+    }
+    this._inputNode.set(VALUE, this.get(FORMATTER)(value));
+},</pre><p> All the uppercase identifiers you see in this piece of code correspond to string constants declared elsewhere, to allow the YUI compressor to do its job better. The method, basically, sets the <code>value</code> HTML attribute in the <code>&lt;input&gt;</code> box to the new value set, after being formatted. The reference to the textbox was provided by <code>_locateNodes</code>. The <code>src</code> argument is initially checked to see if set to the string value <code>'ui'</code>. If this is so, no action will be taken. This is to avoid endless loops. If the user enters something in the input box, its value would go into the <code>value</code> configuration attribute which then would fire a <code>valueChange</code> event, which would get <code>_uiSetValue</code> called which, if unchecked, would then go and change the value of the input box, which would trigger the whole process again. Thus, in <code>_uiSetValue</code>, if we know the change comes from the UI, we do nothing and so break the loop. However, this requires another piece of code elsewhere. In the listener for the DOM event, when we set the configuration attribute, we use the third optional argument to set, like this:<pre>_afterValueChange : function(ev) {
+    this.set(VALUE, ev.newVal, {src: UI});
+}</pre><p> It is up to us to ensure that changes coming from the UI are flagged thus and then check that same flag to avoid loops. Do use the identifier <code>src</code> when setting the value of the attribute, not <code>source</code> which will not be recognized.<p>With all this said, I haven't yet talked about the static property <code>_ATTRS_2_UI</code> mentioned in the heading of this section. As the comments in my previous article shows (through the blunders I made in them), making sure that all attributes affecting the UI are properly listed is somewhat messy. You should never initialize <code>_UI_ATTRS</code> from scratch since Widget already lists a whole lot of attributes and those would be lost. You have to concatenate new attribute names over the existing ones, which is somewhat hard to remember how to do it right. To make it simple, MakeNode will read from the static property <code>_ATTRS_2_UI</code> and do that concatenation for you. It will concatenate all such lists from each and every class in the inheritance chain so at each level each class can handle its own attributes. In Spinner, we have:<pre>_ATTRS_2_UI: {
+    BIND: VALUE,
+    SYNC: VALUE
+},</pre><p> MakeNode will accept both an array of names or a single attribute name, as in this case. <p>The question naturally arises, why two lists, one for binding the other for syncing? <code>SYNC</code> is used the first time around, after the <code>renderUI</code> and <code>bindUI</code> methods, if they exist, are called and before <code>syncUI</code> while those listed in <code>BIND</code> will be bound to the corresponding attributes for later changes. Quite often the <code>SYNC</code> array has fewer entries than the <code>BIND</code> list and this is because the template for the component might already have the very same default value as the configuration attribute and there is no need to do an initial syncing. So, if the default value for the <code>value</code> configuration attribute is an empty string and the <code>&lt;input&gt;</code> element in the template has no <code>value</code> attribute, then there is no need to sync them on initialization.<p>Attributes listed in <code>BIND</code> will have their <code>_uiSet</code><code><i>Xxxx</i></code> methods called in any order, as attributes can be set in any order. Attributes listed in <code>SYNC</code> will be called once in the order in which they are listed with those of ancestors before their inheritors, so if one is dependent on another (which they shouldn't), the order might be important.<p>MakeNode will check for duplicate entries in any of these arrays. If any appear, it means that a class our component inherits from already handles this attribute and any new declaration would most likely overstep the <code>_uiSet</code><code><i>Xxxx</i></code> handler for it. Incidentally, MakeNode also checks for duplicate entries in <code>_CLASS_NAMES</code>, which can also cause conflict in some, though not all, circumstances. MakeNode will write a message to the log for any such error.<h2>The _PUBLISH property</h2>
+	<p>Finally, the <code>_PUBLISH</code> static property will list those events that have to be published. It contains a hash using the name of the event as its keys and an object literal of configuration attributes as its values. It will publish all the events listed in any such property in all the inheritance chain. The same event name can be published in a class and in any class inheriting from it, which will make the configuration attributes of later ones override the ones in the older ones. For example, you might want to make an existing event broadcast globally. Just as with the <code>_EVENTS</code> property, since <code>_PUBLISH</code> is a static property without access to <code>this</code>, when specifying functions, it is the name of the method, as a string, that needs to be given.<h2>Conclusion</h2>
+	<p>MakeNode provides a very simple template processor, with functionality that is highly integrated with the Widget foundation class. It also provides helper methods to create classNames to be used in the template and to use those names to locate and refer to the nodes created. It also provides the means to hook into the events generated both by the UI and the component itself and associate each with a method. It does all these things, while taking care to respect the inheritance chain straight up to Widget and any level of classes you may define.<p>It does not provide for absolutely all possibilities, but covers a good range of them. Nevertheless, it does not preclude you from adding extra functionality. You might rarely have to write a <code>bindUI</code> or <code>syncUI</code> method if you use the glue provided by MakeNode, but you may do so, since MakeNode does not use them.<p>As a bonus to those who had the patience to read this far, I have also modified Anthony Pipkin's Button set of gallery components and made an Accordion and TimeSpinner components, all available in the <a href="http://yuilibrary.com/gallery/tag/satyam">Gallery</a>.<p class="authorbox"><img alt="Satyam" class="alignright" height="206" src="/blog-archive/assets/makenode/satyam.jpg" width="160" /><em><strong>About the author:</strong> Daniel Barreiro (screen name Satyam) has been around for quite some time. The ENIAC was turned off the day before he was born, so he missed that but he hasn’t missed much since. He’s had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere. When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic. Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of <’s and >’s, he ended up learning quite a lot about the world of frontend engineering. It’s been a long journey since COBOL and Fortran. Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain. </em></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

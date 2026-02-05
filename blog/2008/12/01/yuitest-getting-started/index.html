@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Getting Started with JavaScript Unit Testing and YUI Test</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Getting Started with JavaScript Unit Testing and YUI Test</li></ul>
+				<h1 class="yui3-u-7-8">Getting Started with JavaScript Unit Testing and YUI Test</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">December 1, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>For a long time, the web has been a wild west of technology. It's only been within the past five years that any sort of rigor has been applied to web development and technologies such as HTML, CSS and JavaScript. JavaScript development has been the most affected, bringing discipline from other types of programming into what previously was a free-for-all of copy-paste code. Of the traditional programming techniques, unit testing has just started to make its way into JavaScript.<p>The purpose of unit testing is to test an individual part of a program (a &quot;unit&quot;). Testing the smallest part of a program and ensuring that it works gives some indicating as to the overall correctness/completeness of the entire program. In object oriented programming, this typically means testing each method individually, ensuring that certain inputs result in certain outputs. Having a suite of tests to run whenever you make changes can give you a measure of confidence that the changes didn't unintentionally introduce additional bugs or regressions.<p>YUI Test is our framework for unit testing JavaScript. The goal of YUI Test is to make creating JavaScript unit tests fast and easy. We know from experience that developers' main complaint about unit testing is that it takes too long, so everything about YUI Test is designed to make this process easier. Here's how you can get started:<h2>Step 1: Create an HTML file and include required files</h2>
+	<p>Add in the YUI Test required files. These are outlined in the <a href="http://developer.yahoo.com/yui/yuitest/#start">documentation</a>:<pre>&lt;!--CSS--&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot;
+href=&quot;http://yui.yahooapis.com/2.6.0/build/logger/assets/logger.css
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot;
+href=&quot;http://yui.yahooapis.com/2.6.0/build/yuitest/assets/testlogger.css&quot;&gt;
+
+&lt;!-- Combo-handled YUI JS files: --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&amp;2.6.0/build/logger/logger-min.js&amp;2.6.0/build/yuitest/yuitest-min.js&quot;&gt;&lt;/script&gt;</pre><h2>Step 2: Include your JavaScript</h2>
+	<p>After including the default YUI Test files, you'll need to include the JavaScript that you want to test. The best approach is to include individual JavaScript files that encapsulate the functionality to test. If your JavaScript requires some markup or CSS on the page to work correctly, you may want to include those as well.<h2>Step 3: Create a test case</h2>
+	<p>Test cases are created via the <code>YAHOO.tool.TestCase</code> constructor. The constructor accepts a single argument, which is an object that has at least a <code>name</code> property and one or more methods. If a method begins with the word &quot;test&quot; (all in lowercase), then it is considered a test to be run; all other methods are considered to be helpers. <p>To test your JavaScript, create one or more tests in the test case object. Each test should have at least one assertion. <a href="http://developer.yahoo.com/yui/yuitest/#assertions">Assertions</a> are used to indicate the expected result of an operation and are expressed as methods on <code>YAHOO.util.Assert</code>, <code>YAHOO.util.ArrayAssert</code>, <code>YAHOO.util.DateAssert</code>, and <code>YAHOO.util.ObjectAssert</code>. The most frequently used assertion is <code>YAHOO.util.Assert.areEqual()</code>, which is used to determine if two values are equivalent. The first argument is the expected value and the second is the value you're testing. For example:<pre>var testCase = new YAHOO.tool.TestCase({
+    name: "trim() Tests",
+
+    testTrimWithLeadingWhiteSpace: function(){
+        var result = trim("    Hello world!");
+        YAHOO.util.Assert.areEqual("Hello world!", result);
+    }
+});</pre><p>This code tests a <span ""="""" ;mso-bidi-font-family:"courier"=";mso-bidi-font-family:"Courier"" courier="Courier" new""="New" new";mso-bidi-font-family:"courier="New" style="font-size:10.0pt;mso-bidi-font-size: 12.0pt;font-family:">trim()</span> function be sure that it removes leading white space from a string. A test string is passed through <span ""="""" ;mso-bidi-font-family:"courier"=";mso-bidi-font-family:"Courier"" courier="Courier" new""="New" new";mso-bidi-font-family:"courier="New" style="font-size:10.0pt;mso-bidi-font-size:12.0pt; font-family:">trim()</span> and then the actual result is compared against the expected result. If the two don't match, then an assertion failure is thrown and <span ""="""" "courier="" ;mso-bidi-font-family:"=";mso-bidi-font-family:"" courier="Courier" courier"="Courier"" new""="New" new";mso-bidi-font-family:="New" style="font-size: 10.0pt;mso-bidi-font-size:12.0pt;font-family:">testTrimWithLeadingWhiteSpace()</span> is marked as failed. You can have multiple assertions in a single test if necessary, but it's generally a good idea to keep the number of assertions small so that you're not testing too much in a single test.<p>Each test case must be added to the test runner before it can be executed, so each test case should be added like this:<pre>YAHOO.tool.TestRunner.add(testCase);</pre><p>Test cases are executed in the order in which they are added to the test runner.<h2>Step 4: Execute tests</h2>
+	<p>You can begin running tests once all of the test cases have been added to the test runner. This is generally done once the page has finished loading and so the <code>onload</code> event handler is a good place to begin:<pre>window.onload = function(){
+
+    //create the logger
+    var logger = new YAHOO.tool.TestLogger("testLogger");
+
+    //run the tests
+    YAHOO.tool.TestRunner.run();
+};
+</pre><p>This code creates a new instance of the TestLogger, which outputs the results of the tests, and then runs all of the tests. This snippet of code can be used verbatim in any file to begin execution of the tests. As tests execute, the results are displayed in the TestLogger, which passes displayed in green and fails displayed in red.<p>All of this should be saved in a single HTML file. You need only load the file into your browser to see the results. For more, check out the <a href="http://developer.yahoo.com/yui/examples/yuitest/index.html">examples</a> or take a look in the <code>tests</code> directory of the <a href="http://developer.yahoo.com/yui/download/">YUI zip file</a>.<h2>Wrap-up</h2>
+	<p>That’s all it takes to get started writing unit tests for your JavaScript. Keep in mind that your JavaScript doesn't need to use YUI at all to take advantage of unit testing with YUI Test. The framework can be used to test any JavaScript code. <h2>More information</h2>
+	<ul>
+		<li><a href="http://developer.yahoo.com/yui/yuitest/">YUI Test</a><li><a href="http://video.yahoo.com/watch/3737228/10267335">Test-Driven Development with YUI Test</a><li><a href="http://www.vandamme.com/blog.aspx?id=1978&blogid=194">YUI Test &#8211; The New Kid on the Block</a></ul>
+	<h2>Video: Nicholas C. Zakas on Test-Driven Development and YUI Test:</h2>
+	<br />
+	<div>
+		<object height="322" width="512">
+			<param name="movie" value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.30" />
+			<param name="allowFullScreen" value="true" />
+			<param name="AllowScriptAccess" value="always" />
+			<param name="bgcolor" value="#000000" />
+			<param name="flashVars" value="id=10267335&vid=3737228&lang=en-us&intl=us&thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/5631/73581987.jpeg&embed=1" /><embed allowfullscreen="true" allowscriptaccess="always" bgcolor="#000000" flashvars="id=10267335&vid=3737228&lang=en-us&intl=us&thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/5631/73581987.jpeg&embed=1" height="322" src="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.30" type="application/x-shockwave-flash" width="512" /></object>
+		<p><a href="http://video.yahoo.com/watch/3737228/10267335">Nicholas C. Zakas: &quot;Test-Driven Development with YUI Test&quot;</a> @ <a href="http://video.yahoo.com">Yahoo! Video</a></div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,1009 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Event-Driven Web Application Design &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; Event-Driven Web Application Design</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.3" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-74"><a href="/blog/2007/01/17/event-plan/" rel="bookmark" title="Permanent Link to Event-Driven Web Application Design">Event-Driven Web Application Design</a></h2>
+				<small>January 17, 2007 at 8:55 am by Christian Heilmann | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<style>#eventarticle span {line-height:inherit; font-size:11px;} .intro img {float:right; margin:0 0 .5em .5em; border:1px solid #666;}</style>
+<div id="eventarticle" class="interview">
+<div class="intro">
+<p><img src="http://yuiblog.com/assets/heilmann.jpg" width="300" height="225" hspace="5" vspace="5" align="right"><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>, and he contributed a chapter on accessible JavaScript to <em><a href="http://shopping.yahoo.com/search?p=Web Accessibility—Web Standards and Regulatory Compliance&#038;ei=UTF-8&#038;fr=moz2&#038;cop=mss&#038;fr2=tab-web">Web Accessibility: Web Standards and Regulatory Compliance</a></em>. He has worked in web development for almost 9 years for several agencies and .coms, is currently a lead developer at Yahoo! in England.  Christian blogs at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</p>
+</div>
+<p>Frontend engineering rocks right now.  The era of boring web sites is over and we&#8217;re all into pushing the envelope, erasing boundaries and getting beyond whatever prevents us from building the next killer web application. New companies building quick-turnaround web products spring up like mushrooms and many an old convention of web design is cast aside to make way for quick prototyping and agile development.</p>
+<p>The real confusing part of it &mdash; at least to me &mdash; is that we don&#8217;t try out new ways to approach web application development. Instead, there seem to be two separate schools of development approach:</p>
+<ul>
+<li>You either use a framework (like Ruby on Rails, Spring or Microsoft .NET) to build your web-app or</li>
+<li>You build your web app with best-practices ideas coming from more traditional web design and/or application design.</li>
+</ul>
+<p>The framework approach relies heavily on the quality of the generated code and the accessibility and usability of the out-of-the-box page widgets and components. The pure web design approach relies on what HTML allows you to do and most of the time doesn&#8217;t take scripting-enhanced widgets into consideration.</p>
+<p>As there are not many developers that follow both approaches there is a big divide in skill sets. People tend to become experts in one or another and stay within this comfort zone when talking to other developers. This is a real big waste as both factions could learn a lot from each other. All we need to overcome are the competing notions that (a) web standards and accessibility are show-stoppers for rapid framework-driven development and that (b) frameworks are a source of bad and invalid code. Both approaches are flexible: Frameworks <a href="http://www.ujs4rails.com">can be extended to produce cleaner code</a> and web standards can be seen as an agreed way of working with one another rather than as immutable laws that are never to be broken.</p>
+<h2 id="approach">A Problem of Approach</h2>
+<p>The sad truth now is that both approaches often lead to hard-to-maintain products that don&#8217;t scale gracefully and are a pain to make accessible, localise to different languages or customise to different needs and channels. This is caused by false assumptions made by practitioners of both approaches:</p>
+<ul>
+<li>The framework approach relies on a silver bullet and approaches web development with fat-client application ideals from higher programming languages like Java or C++. This does not take into consideration the fact that web development is a discipline that operates with great uncertainties regarding the nature of client-side hardware and software. Optimization has to be for the user and not for the developer (although these don&#8217;t necessarily have to be mutually exclusive).</li>
+<li>The web standards approach would not be a problem at all if people would follow standards with the goal of making things easier by following an agreed approach and not see following the words of the W3C to the last detail as the only way to do things. Web standards are there to take the randomness out of web development and not to act as a policing tool.</li>
+</ul>
+<p>The crux of the matter is that we don&#8217;t really yet understand how to build a real web application. We take tried and true methodologies that cover other development scenarios and try to shoe-horn them into something that helps us to achieve what we want on-time and within budget (and when was the last time that happened?).</p>
+<p>The other problem is that we approach web application design with browser limitations in mind and plan only for what browsers can do rather than what the application should offer the user.</p>
+<p>When it boils down to it, the main differentiator of a <em>web application</em> and a <em>web site</em> is that an app has much more interaction and is process-focused rather than content-driven. Users come in to achieve a goal: They provide data to the application, they use the application to enhance that data, and then they expect data to come out. They interact with components of the application and expect them to do something that brings them closer to their goal. It is of utmost importance that we plan for how users interact with the product and react accordingly.</p>
+<p>When trying to accomplish this in the browser, there is one core technique at our disposal: Event handling.</p>
+</div>
+<p><span id="more-74"></span></p>
+<div>
+<h2 id="understandingevents">Understanding Events</h2>
+<p>We must try to understand what an event is when it comes to user interaction through the duration of a user session.</p>
+<p>Events as <a href="http://www.w3.org/TR/DOM-Level-2-Events/events.html">defined by the W3C</a> are very complex and can be tough to understand. However, the most common way of thinking about events in JavaScript is:</p>
+<ul>
+<li>Something happens to an element, to the main document, or to the browser window and that <em>event</em> triggers a reaction. For example, the window finishes loading and on that event we start an initialization method; or the user clicks a link and we use that event to trigger another function.</li>
+</ul>
+<p>Most framework-generated code or even handcoded methods use this kind of event handling. We take the window, or a certain element and add handlers defining the event that should trigger a function. This leads to a rigid relationship between the markup and the functionality. As the interface of a web application might change (more links in a component, other buttons, more complex forms) this need to add more cruft begins to cripple our applications. It also means that maintenance must happen in two places — a change to our HTML means that our JavaScript needs to change, too.</p>
+<p>The DOM Event Model however goes a bit further. It has a more granular definition of the workflow: </p>
+<ul>
+<li>Something happens; an event occurs.</li>
+<li>The investigation begins what element was activated and how. This happens by questioning each element from the window to the body to the first child node and so on until the element that was activated, the <em>event target</em>, is reached. This is called event capturing.</li>
+<li>When the element is reached, the process of reporting goes back up through the DOM right back up to the window. This is called event bubbling.</li>
+<li>You can intercept events on both legs of this journey at any time by adding event listeners to either the window or any of the objects that get queried. Event listeners define what event to look out for (click, keypress, load, mousedown&#8230;), the object to which the handler should be applied, and what method to call when it happens.</li>
+<li>You can stop events from going back up to the window by calling a <code>cancelEvent()</code> method and you can retrieve the object the event occurred on, the  <em>event target</em>, with a helper method called <code>getTarget()</code>.</li>
+<li>You can add as many listeners waiting for as many different events and each calling as many methods as you like.</li>
+</ul>
+<p>Understanding and implementing this event model can free your application from the constraints of defined elements. For example, instead of applying an event listener for each link in a menu, you can assign a single listener to the menu item itself and retrieve the event target. That way you don&#8217;t need to change your script when the menu gets larger or when links get removed from it.</p>
+<p>This is a very powerful and flexible approach often referred to as <a href="http://icant.co.uk/sandbox/eventdelegation/">event delegation</a>. Event delegation allows you to react to changes in the document while applying fewer event listeners. You can assign different handlers to different parts of your document (the menu, the main content, a sidebar, a language change menu) and define methods for each event (was it clicked? was a key pressed on it?). These methods then retrieve the element that was affected and react accordingly; for example, you can react differently for links versus buttons.</p>
+<p>When using this idea (waiting for an event, investigating where it happens and acting accordingly) in web applications we mostly confine ourselves to what the browser reports us &mdash; the DOM events. This is not really necessary, and it&#8217;s a big limitation.  Much that happens in an application &mdash; like a user switching between tabs in a <a href="http://developer.yahoo.com/yui/tabview/">TabView Control</a> &mdash; could be thought of as an event and dealt with in the same manner.</p>
+<h2 id="planning">Planning an Event-Driven Application</h2>
+<p>You can apply the same DOM-event style logic to anything that happens within your application itself. You can plan your  application that way from the outset:</p>
+<ul>
+<li>Application is loaded
+<ul>
+<li>Initialize the stage </li>
+<li>Get the locale</li>
+<li>Load extra content </li>
+<li>Load adverts </li>
+<li>Display stage</li>
+</ul>
+</li>
+<li>User changes language by activating a language component
+<ul>
+<li>Load extra content</li>
+<li>Load adverts</li>
+<li>Display Stage </li>
+</ul>
+</li>
+</ul>
+<p>The only thing that&#8217;s missing is turning this event plan (once it is finished for the first phase) into real code, and this is where the browser or JavaScript does not give us the built-in interfaces that we&#8217;d like to have for the purpose.</p>
+<h2 id="beyonddom">Beyond DOM Events: The Custom Event</h2>
+<p>Whenever the browser or JavaScript itself lets us down we turn to JavaScript libraries to solve the problem. In this case we&#8217;ll use the <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface Library (YUI)</a> with its <a href="http://developer.yahoo.com/yui/event/#customevent">Custom Event Object</a>. This object allows you to define any event you like, subscribe listener methods to it, and fire the event whenever you want. It&#8217;s like simulating a click on a button. Internally, the YUI uses Custom Events a lot to trigger different reactions. For example the <a href="http://developer.yahoo.com/yui/animation/">Animation utility</a> allows not only for the animation of elements but makes it easy to create successive animations by providing <code>onStart</code>, <code>onComplete</code> and <code>onTween</code> Custom Events.</p>
+<p>Using these events you can put together a web app that is easy to change, extend and maintain. </p>
+<h2 id="example">A Quick Example of an Event-Plan Driven Application</h2>
+<p>Let&#8217;s take a look at an example how all of this could work. As our application example we have an HTML document with two components: one to change the language, and another to change the layout. The application links DOM events (such as click events when the user clicks on links) to meaningful &quot;interesting moments&quot; in the application, moments that we encapsulate in Custom Events; for example, the user choosing to change the layout of the page is encapsulated in a Custom Event, and when that event is triggered we activate the scripts which perform layout modification. </p>
+<p>All links here point to PHP scripts that would perform similar transformations on the server side to ensure that we are not dependent on JavaScript (for this example, however, we&#8217;ll look only at the client-side code).</p>
+<h4>eventPlanExample.html (excerpt):</h4>
+<div class="codeblock">
+<pre>&lt;ul&gt;
+  &lt;li&gt;Change Language:
+    &lt;ul id=&#34;languages&#34;&gt;
+      &lt;li&gt;&lt;a href=&#34;test.php?lang=en&#34;&gt;English&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;test.php?lang=de&#34;&gt;Deutsch&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;test.php?lang=nl&#34;&gt;Neederlands&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+  &lt;li&gt;Change Layout:
+    &lt;ul id=&#34;layout&#34;&gt;
+      &lt;li&gt;&lt;a href=&#34;test.php?layout=onecolumn&#34;&gt;One Column&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&#34;test.php?layout=threecolumns&#34;&gt;Three Columns&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</pre>
+</div>
+<p>Now for the important bit: we define an event plan with Custom Events and subscribe the necessary tool methods to each custom event:</p>
+<h4>customEvents.js:</h4>
+<div class="codeblock">
+<pre>// Changing the language
+  languageChange = new YAHOO.util.CustomEvent('language change');
+
+  languageChange.subscribe(retrieveData);
+  languageChange.subscribe(renderLayout);
+  languageChange.subscribe(ads);
+  languageChange.subscribe(pageWidgets);
+
+// Changing the layout
+  layoutChange = new YAHOO.util.CustomEvent('layout change');
+
+  layoutChange.subscribe(renderLayout);
+  layoutChange.subscribe(ads);
+  layoutChange.subscribe(pageWidgets);</pre>
+</div>
+<p>Adding or removing tool methods here makes it very easy to extend the application by adding or removing functionality without having to change any of the methods themselves. We can also add and remove whole modules of component logic simply by commenting them out.</p>
+<p>The tool methods used are stubs in this example, and all they do is report that they were activated:</p>
+<h4>pageMethods.js:</h4>
+<div class="codeblock">
+<pre>function retrieveData(type,args){
+  log('retrieving Data for ' + args[0]);
+};
+function renderLayout(type,args){
+  if(type==='layout change'){
+    log('changing layout for ' + args[0]);
+  } else {
+    log('changing language layout for ' + args[0]);
+  }
+};
+function ads(type,args){
+  log('changing ads for ' + args[0]);
+};
+function pageWidgets(type,args){
+  log('changing page widgets for ' + args[0]);
+};
+function log(msg){
+  document.getElementById('output').innerHTML+='&lt;p&gt;'+msg+'&lt;/p&gt;';
+}</pre>
+</div>
+<p>In the main JavaScript, we&#8217;ll apply the normal browser handlers to the components via Event Delegation, get the settings that should be applied from the links and fire the Custom Events. The important parts are in bold:</p>
+<h4>eventTriggers.js:</h4>
+<div class="codeblock">
+<pre>function initLanguages(){
+    YAHOO.util.Event.addListener(this, "click", changeLanguage);
+};
+function initLayout(){
+    YAHOO.util.Event.addListener(this, "click", changeLayout);
+};
+function changeLanguage(e){
+  var t=YAHOO.util.Event.getTarget(e);
+  if(t.nodeName.toLowerCase()==='a'){
+    document.getElementById('output').innerHTML = '';
+    <strong>var lang = t.href.replace(/.*?lang=/,&#8221;);
+    languageChange.fire(lang);</strong>
+
+  }
+  YAHOO.util.Event.preventDefault(e);
+};
+function changeLayout(e){
+  var t=YAHOO.util.Event.getTarget(e);
+  if(t.nodeName.toLowerCase()===&#8217;a'){
+    document.getElementById(&#8217;output&#8217;).innerHTML = &#8221;;
+    <strong>var lang = t.href.replace(/.*?layout=/,&#8221;);
+    layoutChange.fire(lang);</strong>
+  }
+  YAHOO.util.Event.preventDefault(e);
+};
+YAHOO.util.Event.onAvailable(&#8217;languages&#8217;, initLanguages);
+YAHOO.util.Event.onAvailable(&#8217;layout&#8217;, initLayout);</pre>
+</div>
+<p>You can <a href="/assets/eventPlanDemo.zip">download the demo</a> or <a href="/assets/eventPlanDemo/eventPlanExample.html">try it out for yourself</a>.</p>
+<h2 id="differentiator">The Key Differentiator and Where This Can Go</h2>
+<p>You could argue that the same functionality could be achieved without Custom Event handling (by having methods that encapsulate all subsidiary methods to be called for each event). The difference here is that we took the procedural nature of JavaScript out of the equation and we really link the interesting moments of the interaction to the relevant components of our application&#8217;s functionality in a single, centralized repository.</p>
+<p>This also means that we can make a logging component subscribe to each of the events and store the current state of the whole application in a data repository,  allowing for easily implemented &#34;undo&#34; functionality and storage of the application state, something that is a true pain to achieve without an underlying event plan.</p>
+<h2 id="evolution">Event-Driven Web Application Design as an Evolutionary Step</h2>
+<p>If the benefits of this approach are not obvious to you yet, think of the following: The evolution of web design happened mainly via separation of different layers.</p>
+<ul>
+<li>When we created the first web applications connection speeds were slow and being connected to the internet cost us money by the minute.</li>
+<li>Therefore we used frames to only load what has changed in the app. This led to the problem that if one frame didn&#8217;t load properly the app didn&#8217;t work and users were forced to reload the parent page.</li>
+<li>The next problem was that browsers didn&#8217;t support CSS and we used tables and font tags to define the look and feel which made it hard to change them and the documents themselves rather heavy.</li>
+<li>When CSS  support became more consistent and usable, we were able to get rid of the extra HTML, documents got lighter and we could get rid of the frames again. </li>
+<li>The next problem we encountered was that mixing backend logic and HTML output was problematic for maintenance (maintainers needed both skills). As a result, we came up with templating languages that allowed for separation of server-side logic and the structure of the interface.</li>
+<li>Right now we still see the browser or the framework capabilities as the boundary of our applications. This is a pragmatic approach but limits us in our creativity and binds the application planning and documentation to browsers as the means of display.</li>
+<li>However, if we take <em>events</em> — including both DOM events and Custom Events — as the main consideration when planning the application we can free ourselves of these limitations and become a lot more independent of the technology in use.</li>
+<li>An application developed with an underlying Event Plan could be easily shifted to another technology like Flash or become a plug-in for thick clients like instant messengers or even operating systems.</li>
+</ul>
+<p>The other big plus of starting an application with an event plan is that you cut the big application down into manageable chunks and components and you can plan the detailed usability, information architecture and accessibility for each component separately. This allows you to develop in parallel with the design or information architecture team and results in reusable components for other applications.</p>
+</div>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2007/01/17/event-plan/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2007/01/17/event-plan/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Event-Driven Web Application Design&u=http://yuiblog.com/blog/2007/01/17/event-plan/" title="bookmark Event-Driven Web Application Design on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2007/01/17/event-plan/&amp;title=Event-Driven Web Application Design" title="bookmark Event-Driven Web Application Design in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2007/01/17/event-plan/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2007/01/17/event-plan/&amp;title=Event-Driven Web Application Design" title="post Event-Driven Web Application Design to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2007/01/17/event-plan/"
+    dc:identifier="http://yuiblog.com/blog/2007/01/17/event-plan/"
+    dc:title="Event-Driven Web Application Design"
+    trackback:ping="http://yuiblog.com/blog/2007/01/17/event-plan/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">37 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2007/01/17/event-plan/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2007/01/17/event-plan/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-33446" class="class_comment1">
+	<p>Great article.  It&#8217;s unfortunate that it may be missed (or not understood) by many people who are developing &#8220;HTML&#8221; applications.</p>
+<p>I think there&#8217;s a step missing in your evolution, maybe 2 or 3 from the end.  It&#8217;s the shift that occurs when you stop thinking about a web app as HTML decorated by Javascript, and instead realize that the  Javascript IS the app, with HTML as<br />
+1) BODY: a set of pre-created DOM resources, and<br />
+2) HEAD: the wrapper for delivery of those resources along with CSS &amp; JS</p>
+<p>Once you&#8217;ve made this transition, it&#8217;s a lot easier to see compatibility with traditional (or even flash) app development.  And sure, I guess then you can focus on events, just as most traditional programming environments have.</p>
+<p>PS, while I&#8217;m here: Hire Jack Slocum, and pay him a lot of money.  He&#8217;s your best evangelist.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.ihol.org/blog' rel='external nofollow'>Steve</a> &#8212; January 17, 2007 <a href="#comment-33446">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33520" class="class_comment2">
+	<p>[&#8230;] Check out Event Driven Web Application Development over at the YUI blog [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.wait-till-i.com/index.php?p=383' rel='external nofollow'>Event Driven Web Application Design Article on the YUI Blog - Wait till I come!</a> &#8212; January 17, 2007 <a href="#comment-33520">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33547" class="class_comment1">
+	<p>The demo link and download does not work</p>
+	<p class="alignright"><small>Comment by Tom Pester &#8212; January 17, 2007 <a href="#comment-33547">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33582" class="class_comment2">
+	<p>@Tom (and others): Thanks for the note&#8230;my mistake.  Fixed now.  -Eric</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.360.yahoo.com/ericmiraglia' rel='external nofollow'>Eric Miraglia</a> &#8212; January 17, 2007 <a href="#comment-33582">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33639" class="class_comment1">
+	<p>Great article Chris.</p>
+<p>And just-in-time. I was thinking of the best way implement localication to my web app using Unobtrusive Object Oriented JavaScript and DOM.</p>
+<p>Thanks for sharing your knowledge and experience.</p>
+<p>Cheers.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.volkanozcelik.com/cre8/blog/' rel='external nofollow'>volkan.ozcelik</a> &#8212; January 17, 2007 <a href="#comment-33639">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33640" class="class_comment2">
+	<p><strong>Links for January 17 and 18, 2007&#8230;</strong></p>
+<p>I&#8217;ll be adding more links this post throughout the day (erm &#8230; that day would be January 18, 2007).</p>
+<p>Event-Driven Web Application Design<br />
+An overview of what to consider when developing interactive web applications with HTML and DOM scripting&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://tiffanybbrown.com/2007/01/17/links-for-january-17-and-18-2007/' rel='external nofollow'>tiffany b. brown</a> &#8212; January 17, 2007 <a href="#comment-33640">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33681" class="class_comment1">
+	<p>Event driven programming (especially in the only-just-maturing environment of the web) is hard to debug because the events can occur in just about any order. </p>
+<p>Christian&#8217;s suggestion of an Event plan is a good one - anything you can do to assist in minimising bugs and ensuring debugging of event code is easier is advised as they can be a major time-suck.</p>
+<p>I&#8217;ve been following the Narrative Javascript project&#8217;s progress as it addresses these issues:</p>
+<p><a href="http://neilmix.com/narrativejs/doc/" rel="nofollow">http://neilmix.com/narrativejs/doc/</a></p>
+<p>I hope this project leads to future developments in the Javascript language itself (to avoid the compilation step if possible).</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.wioota.com/' rel='external nofollow'>wioota</a> &#8212; January 17, 2007 <a href="#comment-33681">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33705" class="class_comment2">
+	<p>[&#8230;] Christian Heilmann writes an interesting article about Event Driven Web Application Design over Yahoo UI. Christian starts the article with something I totally agree with:  Frontend engineering rocks right now. The era of boring web sites is over and we’re all into pushing the envelope, erasing boundaries and getting beyond whatever prevents us from building the next killer web application. New companies building quick-turnaround web products spring up like mushrooms and many an old convention of web design is cast aside to make way for quick prototyping and agile development. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.hising.net/2007/01/18/article-about-event-driven-web-application-design-at-yui/' rel='external nofollow'>Interaction Design Blog &raquo; Blog Archive &raquo; Article about Event-Driven Web Application Design at YUI</a> &#8212; January 17, 2007 <a href="#comment-33705">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33760" class="class_comment1">
+	<p>A very good article, really helped me to grasp the concept of event driven applications. Too often we limit ourselves and try to &#8216;bodge&#8217; our way through, rather than design and structure our applications in an event driven way. Hopefully developers will cotton on to this sooner rather than later and we will start seeing very powerful web applications that are useful.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.michaeljames.me.uk/blog' rel='external nofollow'>Michael James</a> &#8212; January 18, 2007 <a href="#comment-33760">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33817" class="class_comment2">
+	<p>Well-written, dig(g) it!</p>
+<p>In an ideal design situation, you&#8217;d be able to attach endless numbers of event handlers to DOM elements without cost - but in development of the new Yahoo! Photos and similar to what Christian writes, we found that became very expensive in terms of looping through the number of items involved and assigning handlers, not to mention the memory required for these handlers.</p>
+<p>Using an event delegation approach worked very nicely in our situation. Basically, we&#8217;d watch document.onmousedown and when it fired, would route the event to the object or item which it applied to (eg. a photo thumbnail.) While having many discrete handlers sounds ideal, the real-world implementation in the browser is usually a different story.</p>
+<p>Steve: I like your theory on the shift in mindset - the BODY as pre-created DOM resources is more or less exactly how I look at it (in addition to providing the base data / degraded view)</p>
+	<p class="alignright"><small>Comment by <a href='http://www.schillmania.com/' rel='external nofollow'>Scott Schiller</a> &#8212; January 18, 2007 <a href="#comment-33817">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33826" class="class_comment1">
+	<p>You might be interested in a paper I presented at a W3C event on web applications a few years ago. It&#8217;s called <a href="http://www.w3.org/2004/04/webapps-cdf-ws/papers/webapps-workshop-standards-based-vm.pdf" rel="nofollow">A Standards-based Virtual Machine</a> and argues for creating an application framework based on XHTML, XForms, XML Events, and so on. The main point is that the key to creating flexible &#8216;loosely-coupled&#8217; web applications is defining all interfaces through events&#8211;much the same conclusion you have come to. :)</p>
+<p>My company has been building exactly this framework, and it&#8217;s called <a href="http://www.formsplayer.com/programming-sidewinder" rel="nofollow">Sidewinder</a>. One of the things that we have done which is relevant to the discussion you&#8217;ve started here, is to use DOM 2 Events <strong>everywhere</strong>; not only to communicate <em>within</em> a DOM, but also <em>across</em> DOMs. For example, when multiple windows are created in Sidewinder (which is easy to do), one window can register for events in another. This means that one programming model&#8211;DOM 2 Events&#8211;is used for all <em>application</em> communication, not just that on web pages. (See, for an illustration, <a href="http://www.formsplayer.com/node/404" rel="nofollow">Bubbling events beyond the document boundary</a>.</p>
+<p>The longer-term plan is that this approach of using events to hold everything together should even include system events, such as &#8220;an email has arrived&#8221;. With such an event you could write applications that process email&#8211;perhaps categorising, forwarding, performing some task like putting food in the fish-tank, etc.&#8211;as easily as you can write any other XForms or JavaScript application.</p>
+<p>It&#8217;s a very interesting approach, I feel, and it&#8217;s good to see it getting discussed. Thanks for a very enjoyable article!</p>
+<p>All the best,</p>
+<p>Mark Birbeck<br />
+CEO, x-port.net Ltd.<br />
+<a href="http://www.formsPlayer.com/" rel="nofollow">http://www.formsPlayer.com/</a></p>
+	<p class="alignright"><small>Comment by <a href='http://internet-apps.blogspot.com/' rel='external nofollow'>Mark Birbeck</a> &#8212; January 18, 2007 <a href="#comment-33826">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33887" class="class_comment2">
+	<p>Good article, Chris. I&#8217;ve tended to apply these kinds of principles to web applications by the use of the State Machine model, drawing on my days writing real-time industrial control software and games (which from a programming perspective are, in their fundamentals, the same thing). In my experience, JavaScript as a language (whether in the browser or elsewhere) is ideally suited to an application architecture based on state transitions and delegation, due to its support for such delights as closures and higher-order functions. In fact, JS holds the same appeal to me as Forth, for many of the same reasons.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.nickfitz.co.uk/' rel='external nofollow'>Nick Fitzsimons</a> &#8212; January 18, 2007 <a href="#comment-33887">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33924" class="class_comment1">
+	<p>I think it&#8217;s an interesting article, Yahoo! UI keeps revealing its secret to me on a daily basis now.</p>
+<p>I believe however that you&#8217;re too critic about using frameworks to develop web applications.</p>
+<p>Frameworks are very flexible, as you mentioned. But they don&#8217;t have to be extended, they have to b e better used. (Frameworks that aren&#8217;t extensible at the hand of their users should to be thrown in the garbage bin.)</p>
+<p>The important thing to remember is that we&#8217;re not talking about two different approaches, we&#8217;re talking about PEOPLE that don&#8217;t know how to get more value for their buck.</p>
+<p>I think your article would have been more interesting if it talked about people and not frameworks.</p>
+<p>However, I do believe you&#8217;ve done a very good job at highlighting the problem.</p>
+	<p class="alignright"><small>Comment by <a href='http://devijvers.exblogs.com' rel='external nofollow'>Steven Devijver</a> &#8212; January 18, 2007 <a href="#comment-33924">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-33986" class="class_comment2">
+	<p>[&#8230;] Event-Driven Web Application Design » Yahoo! User Interface Blog (tags: ajax development javascript toread web2.0 web webdev yui yahoo) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://angelo.amphiltech.org/2007/01/19/links-for-2007-01-18/' rel='external nofollow'>The Abarentos Narrative &raquo; links for 2007-01-18</a> &#8212; January 18, 2007 <a href="#comment-33986">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-34053" class="class_comment1">
+	<p>Christian, great article, sometimes you know things which you don&#8217;t realise you know. Minimising event listeners was a real eye opener for example. Indeed, yes, why hadn&#8217;t I seen that before. Will mimimise certain pages a lot.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.pobox.com/~berend/' rel='external nofollow'>Berend de Boer</a> &#8212; January 18, 2007 <a href="#comment-34053">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-34196" class="class_comment2">
+	<p>[&#8230;] Event-Driven Web Application Design &#187; Yahoo! User Interface Blog (tags: ajax blog development programming webdev javascript) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://artlung.com/blog/2007/01/18/daily-links-55/' rel='external nofollow'>ArtLung Blog &raquo; Daily Links</a> &#8212; January 18, 2007 <a href="#comment-34196">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-35287" class="class_comment1">
+	<p>[&#8230;] Event-Driven Web Application Design Web standards are there to take the randomness out of web development and not to act as a policing tool. The main differentiator of a web application and a web site is that an app has much more interaction and is process-focused rather than content-driven (tags: WebDev Frameworks Events) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://billy-girlardo.com/delicious/2007/01/17/links-for-2007-01-18/' rel='external nofollow'>All in a days work&#8230;</a> &#8212; January 20, 2007 <a href="#comment-35287">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-35453" class="class_comment2">
+	<p>[&#8230;] Event-Driven Web Application Design » Yahoo! User Interface Blog (tags: toread javascript programming ajax) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://blog.tijs.org/archives/2007/01/18/links-for-2007-01-18/' rel='external nofollow'>tijs.org &raquo; Blog Archive &raquo; links for 2007-01-18</a> &#8212; January 21, 2007 <a href="#comment-35453">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-36043" class="class_comment1">
+	<p>I wrote about something similar a couple of months ago at. <a href="http://www.frostinnovation.com/Blog.aspx" rel="nofollow">http://www.frostinnovation.com/Blog.aspx</a> (look for LazyHttp)<br />
+I think this will REALLY make it in a couple of years but at the moment I think it&#8217;s too immature and there&#8217;s too many browser isses (the biggeste being the MAX 2 simultanous open HTTP connections towards the same IP)</p>
+	<p class="alignright"><small>Comment by <a href='http://ajaxwidgets.com' rel='external nofollow'>Thomas Hansen</a> &#8212; January 23, 2007 <a href="#comment-36043">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-36066" class="class_comment2">
+	<p>[&#8230;] Event-Driven Web Application Design [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.maxdesign.com.au/2007/01/24/some-links-112/' rel='external nofollow'>Max Design - standards based web design, development and training &raquo; Some links for light reading (24/1/07)</a> &#8212; January 23, 2007 <a href="#comment-36066">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-37280" class="class_comment1">
+	<p>[&#8230;] Event-Driven Web Application Design » Yahoo! User Interface Blog Designing exciting applications with events in mind (tags: design development javascript programming tutorial howto webdesign) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://notes.natbat.net/2007/01/24/links-for-2007-01-24/' rel='external nofollow'>Natalie Downe &raquo; Blog Archive &raquo; links for 2007-01-24</a> &#8212; January 26, 2007 <a href="#comment-37280">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-37310" class="class_comment2">
+	<p>[&#8230;] Interesting article on Web dev here though. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://justmysandbox.com/journal/?p=34' rel='external nofollow'>Occam Development Journal &raquo; Blog Archive &raquo; Another change of emphasis.</a> &#8212; January 26, 2007 <a href="#comment-37310">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-40044" class="class_comment1">
+	<p>[&#8230;] Event-Driven Web Application Design [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.angusf.com/creativerebirth/2007/02/01/best-posts-on-the-web-for-january-2007/' rel='external nofollow'>Creative Rebirth &raquo; Blog Archive &raquo; Best posts on the web for January 2007</a> &#8212; January 31, 2007 <a href="#comment-40044">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-40770" class="class_comment2">
+	<p>Do you see much connection between what you are suggesting and Aspect Oriented Programming?</p>
+	<p class="alignright"><small>Comment by <a href='http://luke.breuer.com' rel='external nofollow'>Luke Breuer</a> &#8212; February 2, 2007 <a href="#comment-40770">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-44987" class="class_comment1">
+	<p>[&#8230;] Another great post on the Yahoo! UI blog by Christian Heilmann, author of Beginning Javascript with DOM Scripting and Ajax. After you&#8217;re done reading the post, go here for a book excerpt.  Bookmark to:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.ajaxmatters.com/blog/2007/01/18/event-driven-web-application-design/' rel='external nofollow'>AJAX Matters Blog &raquo; Blog Archive &raquo; Event-Driven Web Application Design</a> &#8212; February 7, 2007 <a href="#comment-44987">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-54068" class="class_comment2">
+	<p>[&#8230;] Original post by Christian Heilmann and software by Elliott Back [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://confernceingweb.com/event-driven-web-application-design/' rel='external nofollow'>Confernceing Web &raquo; Event-Driven Web Application Design</a> &#8212; February 23, 2007 <a href="#comment-54068">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-54103" class="class_comment1">
+	<p>[&#8230;] Original post by unknown and software by Elliott [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://confernceingweb.com/comment-on-event-driven-web-application-design-by-confernceing-web/' rel='external nofollow'>Confernceing Web &raquo; Comment on Event-Driven Web Application Design by Confernceing Web &#8230;</a> &#8212; February 23, 2007 <a href="#comment-54103">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-57314" class="class_comment2">
+	<p>[&#8230;] Christian Heilmann is talking about Event-Driven Web Application Design on the YUI blog:  The crux of the matter is that we don’t really yet understand how to build a real web application. We take tried and true methodologies that cover other development scenarios and try to shoe-horn them into something that helps us to achieve what we want on-time and within budget (and when was the last time that happened?). [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.ajaxgirl.com/2007/01/18/event-driven-web-application-design/' rel='external nofollow'>Event-Driven Web Application Design</a> &#8212; March 1, 2007 <a href="#comment-57314">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-64613" class="class_comment1">
+	<p><strong>[WQD-139] Daily Journal thru 31-Mar-2007&#8230;</strong></p>
+<p>[2007-03-13] Friday, I started to extend the event handling. Before doing anything else with the PhoneBook, we should create an Event Plan (http://yuiblog.com/blog/2007/01/17/event-plan/) and create a set of Selenium tests. But, today, I&#8217;d like to get&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://zippy/issues/browse/WQD-139' rel='external nofollow'>JIRA: 6 WQD Development</a> &#8212; March 13, 2007 <a href="#comment-64613">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-89652" class="class_comment2">
+	<p>[&#8230;] Christian Heillman makes a convincing case for one of the next evolutionary steps in front-end web programming - Event Driven Development [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://otaqui.com/wp/2007/01/event-driven-app-development/' rel='external nofollow'>Otaqui.Com &raquo; Event Driven Application Development</a> &#8212; April 11, 2007 <a href="#comment-89652">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-107440" class="class_comment1">
+	<p>[&#8230;] More on Event-Driven Web Application Design by Christian Heilmann is talking about    Posted by Muthu on May 08 2007 under Web Technologies, AJAX, DOM, JavaScript [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://muthuonline.com/archives/2007/05/08/event-driven-web-application-design/' rel='external nofollow'>Muthu Online &gt; &raquo; Event Driven Web Application Design</a> &#8212; May 8, 2007 <a href="#comment-107440">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-175105" class="class_comment2">
+	<p>I&#8217;ve just started my career as a web designer and this article is very useful for me I think. Thanks.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.astra-design.com' rel='external nofollow'>Sally</a> &#8212; August 20, 2007 <a href="#comment-175105">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-185131" class="class_comment1">
+	<p>[&#8230;] the list I noticed that many great tutorials were actually published on this Blog, including the Event-Driven Web Application Design and many good screencasts, definitely worth a try, even if you don&#8217;t use YUI! [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://snyke.net/blog/2007/09/04/ajax-css-dom-and-js-related-resources/' rel='external nofollow'>Fading Roses &#38; Raging Viruses &raquo; Blog Archive &raquo; Ajax, CSS, DOM and JS-related resources</a> &#8212; September 4, 2007 <a href="#comment-185131">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-190421" class="class_comment2">
+	<p>[&#8230;] have been many influential articles about event-driven programming within the web browser, and developers are increasingly using this technique. But there is room to push the approach even [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2007/09/13/bubbling-library-by-caridy/' rel='external nofollow'>The Bubbling Technique &amp; Custom Event, YUI&#8217;s Secret Weapon by Caridy Pati&#241;o Mayea &raquo; Yahoo! User Interface Blog</a> &#8212; September 13, 2007 <a href="#comment-190421">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-202420" class="class_comment1">
+	<p>A very good article. Do you have more information/examples for YUI and its Custom Event Object?</p>
+	<p class="alignright"><small>Comment by <a href='http://www.itechart.com/' rel='external nofollow'>Alex, developer</a> &#8212; September 30, 2007 <a href="#comment-202420">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-211483" class="class_comment2">
+	<p>I&#8217;m trying to understand the benefits of creating these Custom Events on parent nodes instead of just dynamically adding events to all the children nodes. So why, for instance, is the above construct better than something like this? (using jquery syntax for my example):</p>
+<p><code><br />
+$('#languages a').click(function(){var lang = t.href.replace(/.*?lang=/,"); changeLanguage(lang);});</p>
+<p>function changeLanguage(lang) {</p>
+<p>	... page methods...</p>
+<p>}</code></p>
+	<p class="alignright"><small>Comment by Erik &#8212; October 16, 2007 <a href="#comment-211483">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-211663" class="class_comment1">
+	<p>ok lesson learned: don&#8217;t post comments until you&#8217;ve done your homework :)</p>
+<p>a few tips for any newbie (like me) reading this article and sort of understanding but not fully grasping the concepts.</p>
+<p>i took away two points from this, but not until I had some more context about each:</p>
+<p><strong>point 1:</strong> YUI custom events allow you to make other events fire when your &#8216;custom&#8217; function is triggered (ie. your functions can be aware of when other functions are executed and act accordingly)<br />
+<strong>context:</strong> YUI&#8217;s custom event example (http://developer.yahoo.com/yui/examples/event/custom-event.html)</p>
+<p><strong>point 2:</strong> using event delegation (ie. only adding listeners to root nodes instead of each child) is much faster (memory-wise) because it doesn&#8217;t have to iterate through every single node. event delegation also allows dynamically created elements to inherit handlers from its parent node, which &#8216;event handling&#8217; can&#8217;t do.<br />
+<strong>context:</strong> the event delegation article linked above (http://icant.co.uk/sandbox/eventdelegation/)</p>
+<p>so read those two articles to help understand the broader concepts here.</p>
+	<p class="alignright"><small>Comment by Erik &#8212; October 16, 2007 <a href="#comment-211663">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="74" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/10/17/rte-fileupload-231/">Adding File Upload to the YUI Rich Text Editor&#8217;s Image Dialog</a></li>
+					    		<li class="recent"><a href="/blog/2007/10/15/video-scott/">YUI Theater &mdash; Bill Scott: &#8220;Designing the Rich Web Experience: Principles and Patterns for Rich Interaction Design on the Web&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/10/02/challenges-of-interface-design-for-mobile-devices/">Challenges of Interface Design for Mobile Devices</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/26/satyam-datatable-2/">Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/25/gaia/">Implementation Focus: Gaia Online</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/19/yui-2-3-1-released/">YUI Version 2.3.1: Bug-Fix Release</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://www.yswfblog.com/">Yahoo! Flash (R) Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 25 queries. 0.582 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1192767743" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

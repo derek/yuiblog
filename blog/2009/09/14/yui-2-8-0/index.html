@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI 2.8.0: Storage Utility, ProgressBar Control, Swf and SwfStore Utilities</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">YUI 2.8.0: Storage Utility, ProgressBar Control, Swf and SwfStore Utilities</li></ul>
+				<h1 class="yui3-u-7-8">YUI 2.8.0: Storage Utility, ProgressBar Control, Swf and SwfStore Utilities</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 14, 2009<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>The YUI team and project contributors are pleased to announce the immediate availability of YUI 2.8.0. This release brings in four new components (<a href="http://developer.yahoo.com/yui/storage/">Storage Utility</a>, <a href="http://developer.yahoo.com/yui/swfstore/">SWFStore Utility</a>, <a href="http://developer.yahoo.com/yui/swf/">SWF Utility</a>, and the <a href="http://developer.yahoo.com/yui/progressbar/">ProgressBar Control</a>) along with hundreds of fixes and enhancements. George Puckett's <a href="http://yuilibrary.com/projects/yui2/wiki/ReadMe/Rollup_2.8.0">release notes for YUI 2.8.0</a> provide a comprehensive overview of the changes.<table border="0" padding="0" valign="top">
+			<tr>
+				<td><a href="http://yui.yahooapis.com/combo?2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"><img alt="Download the Core YUI package; ~13KB." height="58" src="/blog-archive/assets/downloadcore.png" width="130" /></a><br /><a href="http://yui.yahooapis.com/combo?2.8.0r4/build/yuiloader-dom-event/yuiloader-dom-event.js"><img alt="Download the Core YUI package plus the YUI Loader; ~19KB." height="100" src="/blog-archive/assets/downloadcoreandloader.png" width="130" /></a></td>
+				<td><a href="http://yuilibrary.com/downloads/yui2/yui_2.8.0r4.zip"><img alt="Download the full YUI developer package, including source, documentation and more; ~14MB." height="81" src="/blog-archive/assets/downloadfull.png" width="251" /></a><br /><a href="http://github.com/yui"><img alt="Visit YUI on GitHub" height="77" src="/blog-archive/assets/getinvolved.png" width="251" /></a></td>
+				<td><a href="http://developer.yahoo.com/yui/articles/hosting/?dom&event&yahoo&MIN&norollup#configure"><img alt="Configure your YUI implementation using the YUI Configurator." height="158" src="/blog-archive/assets/configure.png" width="129" /></a></td> </tr> </table> <h3>New for 2.8.0</h3>
+	<p>Four significant components make their debut in this release:<ul>
+			<li><img align="right" alt="The YUI Storage Utility provids a common interface into backends supplied by HTML 5, Flash, and Gears." height="271" hspace="10" src="/blog-archive/assets/storagetypes.png" vspace="5" width="150" /><strong>Matt Snider's <a href="http://developer.yahoo.com/yui/storage/">Storage Utility</a></strong>: Matt is the lead frontend engineer (and the first employee) at <a href="http://mint.com">Mint.com</a> (which uses YUI extensively; congratulations on their <a href="http://www.techcrunch.com/2009/09/14/the-value-of-techcrunch50-mint-acquired-by-intuit-for-170m-two-years-after-winning-tc40/">big news today</a>) and the <a href="http://mattsnider.com">author of a popular JavaScript blog</a>. Matt contributed the <a href="http://developer.yahoo.com/yui/storage/">Storage Utility</a> for 2.8.0, a meta-component for client-side storage that provides HTML5-style local and session storage interfaces across various storage mechanisms. With this initial release, Storage can employ one of three storage mechanisms: HTML5 Storage, Google Gears, and storage via the Flash Shared Object. With HTML5-capable browsers growing share rapidly, and with the prevalence of Flash as a fallback, this gives you reliable coverage for the vast majority of your users. The Storage API allows you to specify which of these three mechanisms to use and in what order to try them.<li><img align="right" alt="Daniel Barreiro (Satyam)" height="206" hspace="10" src="/blog-archive/assets/satyam.jpg" vspace="5" width="160" /><strong>Satyam's <a href="http://developer.yahoo.com/yui/progressbar/">ProgressBar Control</a></strong>: <a href="http://www.satyam.com.ar/yui/">Satyam</a> (Daniel Barreiro) is best known to the YUI community as one of the foremost experts on YUI's powerful <a href="http://developer.yahoo.com/yui/datatable/">DataTable Control</a>, and he's the author of <a href="/blog-archive/blog/2008/10/15/datatable-260-part-one/">important</a> <a href="/blog-archive/blog/2008/10/27/datatable-260-part-two/">tutorials</a> that have helped tens of thousands of developers make full use of DataTable. He's also known as one of the <a href="/blog-archive/blog/2008/02/27/community-awards">most helpful members</a> of the YUI community. With 2.8.0, Satyam contributes a new component, the <a href="http://developer.yahoo.com/yui/progressbar/">ProgressBar</a>, that further deepens YUI's portfolio of UI controls. ProgressBar offers a convenient API, a wide range of custom events, and full support for Animation and its wide range of easing effects.<br />
+				<br /><a href="http://developer.yahoo.com/yui/examples/progressbar/pb_basic.html"><img alt="Basic ProgressBar example." height="178" src="/blog-archive/assets/progressbarexample-20090828-144255.jpg" width="510" /></a><li><strong>Alaric Cole's <a href="http://developer.yahoo.com/yui/swfstore/">SWFStore Utility</a></strong>: SWFStore provides the Flash Shared Object functionality to the meta <a href="http://developer.yahoo.com/yui/storage/">Storage Utility</a> and comprises a JavaScript API for storing text data with FSO. SWFStore supports on-the-fly gzipping of your stored key/value pairs, which helps you get better mileage out of Flash's 100KB default limit (this can be extended if the user permits). While many developers will use SWFStore in the context of Storage Utility, we've also presented it as a standalone feature for those who wish to use it directly. <li><strong>Allen Rabinovich's <a href="http://developer.yahoo.com/yui/swf/">SWF Utility</a></strong>: In 2.8.0, we've broken out Flash detection and embedding functionality into a separate shared utility. We have begun moving YUI's hybrid Flash/JS components &mdash; including <a href="http://developer.yahoo.com/yui/charts">Charts</a> and <a href="http://developer.yahoo.com/yui/swfstore/">SWF Store</a> &mdash; onto Allen's new base component. (<strong>Note</strong>: If you only want to check for Flash version, you can independently included the <code>swfdetect</code> module, which populates <code>YAHOO.env.ua.flash</code>.</ul> <h3>Additional Highlights</h3>
+	<ul>
+		<li><strong>Cross-Domain Support in Connection Manager</strong>: <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a> (YUI's XMLHttpRequest component) gets <a href="http://developer.yahoo.com/yui/examples/connection/xdr.html">support for basic cross-domain (XDR) requests</a> in 2.8.0. We have implemented the Flash-based XDR mechanism that was first released as part of <a href="http://developer.yahoo.com/yui/3/io/">the YUI 3 IO component</a>. We've also broken out core Connection Manager functionality into a <code>connection-core</code> module, reducing your code footprint if you're only using the basic XHR capability. <a href="http://developer.yahoo.com/yui/articles/hosting/?connectioncore&MIN&norollup">Head over to the Configurator to update your dependency list</a> if you want to opt in to this more slender package. <li><a href="http://developer.yahoo.com/yui/examples/event/event-delegation.html"><img align="right" alt="Event delegation example on the YUI website shows how to use the new event delelgate support to reduce the number of event listeners on the page while building rich, event-driven web apps." height="120" hspace="10" src="/blog-archive/assets/event-delegate-20090831-135312.png" vspace="5" width="171" /></a><strong><a href="http://developer.yahoo.com/yui/event/#delegate">Event Delegation</a> Support in <a href="http://developer.yahoo.com/yui/event">Event Utility</a></strong>: YUI has long included a detailed <a href="http://developer.yahoo.com/yui/examples/event/event-delegation.html">event delegation example/tutorial</a>, and we <a href="/blog-archive/blog/2007/01/17/event-plan/">talked up the technique here on YUIBlog</a> back in 2007. With 2.8.0, Todd Kloots has built support for event delegation directly into the library with the new <a href="http://developer.yahoo.com/yui/event/#delegate">Event Delegate module</a>, bringing 2.8.0 to parity with the event delegation support we delivered in YUI 3.<li><strong>Carousel Gets a Gallery</strong>: Andres Narvaez and Gamaiel Zavala, frontend engineers for Yahoo!'s media properties, have worked with Gopal Venkatasen to extend the <a href="http://developer.yahoo.com/yui/carousel/">YUI Carousel Control</a> to provide "gallery-style" support with multiple rows of items. At Yahoo!, Andres and Gamaiel have implemented this feature on redesigned video galleries for sites like <a href="http://sports.yahoo.com/video/player">Yahoo! Sports</a>: <br />
+			<br /><a href="http://sports.yahoo.com/video/player"><img src="/blog-archive/assets/gallerysports-20090828-164227.jpg" /></a><li><a href="http://developer.yahoo.com/yui/examples/calendar/taiwan.html"><img align="right" alt="Calendar Control with year offset example on the YUI website." height="163" hspace="10" src="/blog-archive/assets/taiwancalendar-20090831-140114.png" vspace="5" width="171" /></a><strong><a href="http://developer.yahoo.com/yui/calendar/">Calendar</a> Adds Support for <a href="http://developer.yahoo.com/yui/examples/calendar/taiwan.html">Year Offsets</a></strong>: The new <code>year_offset</code> configuration property in the <a href="http://developer.yahoo.com/yui/calendar/">Calendar Control</a> provides support for calendaring systems that are fundamentally Gregorian but whose zero-year is different than 0 C.E. (the Thai calendar is one of several such systems).<li><strong>Dual Axis Support in Charts:</strong> Tripp Bridges has been hard at work on <a href="http://developer.yahoo.com/yui/charts/">YUI Charts</a>, and among many improvements for 2.8.0 he has added support for multi-axis charts.<br /><a href="http://developer.yahoo.com/yui/examples/charts/charts-dualaxes.html"><img alt="Multi-axis chart example." height="362" src="/blog-archive/assets/multiaxischarts-20090909-093827.png" vspace="5" width="510" /></a><li><strong>Much More</strong>: Hundreds of bug fixes and enhancements are included in YUI 2.8.0; George Puckett's <a href="http://yuilibrary.com/projects/yui2/wiki/ReadMe/Rollup_2.8.0">release manifest</a> provides component-by-component details of these changes. </ul>
+	<h3>Acknowledgements</h3>
+	<p>Some of the most interesting new work in YUI 2.8.0 (including Matt's <a href="http://developer.yahoo.com/yui/storage/">Storage</a> and Satyam's <a href="http://developer.yahoo.com/yui/progressbar/">ProgressBar</a>) come from outside of Yahoo, and community involvement in the project continues to grow month by month. To those of you who contributed timely bug fixes and enhancements in this release, and to the hundreds who helped refine the library through high-quality enhancement requests and bug reports, thank you!<h3>What's Next?</h3>
+	<p>YUI 2 development and maintenance continues. You can follow this work on <a href="http://yuilibrary.com/">YUILibrary.com</a>, where the <a href="http://yuilibrary.com/projects/yui2/roadmap">Roadmap</a> will soon tick over to the priority list for 2.9.0. As bug fixes roll into the YUI 2 development tree, you can <a href="http://github.com/yui">follow them in near-real time on GitHub</a>. If there's anything that's not moving fast enough for you, fork the repo, <a href="http://developer.yahoo.com/yui/community/contribute.html">sign a CLA</a>, and start making pull requests.<p>The team remains hard at work on <a href="http://developer.yahoo.com/yui/3/">YUI 3</a>, and we're now finalizing the documentation for the <a href="http://yuilibrary.com/projects/yui3/roadmap">upcoming 3.0.0 GA release</a> that will bring the new YUI 3 core and most utilities out of beta. <a href="http://github.com/yui/yui3/tree/master">YUI 3 is also available on GitHub</a>, so feel free to clone the YUI 3 repo and start exercising the upcoming release. Beyond the GA, we'll continue to work on bringing widgets to YUI 3 on the new Widget stack and making it easier for the community to make contributions across the project.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

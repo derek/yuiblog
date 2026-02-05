@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Using YUI 3 to Build the Yahoo! Sports Tourney Pick&#x27;em Game</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Using YUI 3 to Build the Yahoo! Sports Tourney Pick&#x27;em Game</li></ul>
+				<h1 class="yui3-u-7-8">Using YUI 3 to Build the Yahoo! Sports Tourney Pick&#x27;em Game</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">March 19, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Mark Kawakami" height="240" hspace="10" src="/blog-archive/assets/markk.jpg" vspace="10" width="320" /><em><strong>About the author:</strong>Mark Kawakami (<a href="http://twitter.com/skippykawakami" title="Follow Mark Kawakami on Twitter">@skippykawakami on Twitter</a>) is a frontend engineer on the <a href="http://sports.yahoo.com/" title="Yahoo! Sports - Sports News, Scores, Rumors, Fantasy Games, and more">Yahoo! Sports</a> team at <a href="http://www.yahoo.com/" title="Yahoo!">Yahoo!</a></em></div> </div>
+	<p>Every March, users all around the world flock to Yahoo! Fantasy Sports to play our NCAA Tournament bracket game, "<a href="http://tournament.fantasysports.yahoo.com/">Tourney Pick'Em</a>." It's one of our most popular games.<p>In many ways, it's also one of our simplest. Just fill out your bracket by selecting the teams you expect will win. Sounds easy, right? Well there's a catch -- there are <a href="http://sportsnationblog.blogspot.com/2008/03/yahoo-second-chance-ncaa-college.html">9,223,372,036,854,780,000</a> different possible ways you can fill your bracket out.<p>That absurdly huge number presents a challenge for us as well. How do you make something with 9 quintillion possible combinations so easy-to-use that a user can fill out their brackets in just a couple of minutes? The answer involves a fair amount of JavaScript beneath the hood, which we call our "bracket engine".<p>The bracket engine we had been using since 2004 had served us well, but after six NCAA tournaments it was beginning to show it's age. The YUI Library didn't even exist when it was first written (for that matter, neither did JSON or Firebug). So for this year's game, we decided that instead of the incremental improvements we normally make, we'd start from scratch. Rebuilding from the ground up gave us the opportunity to completely modernize our bracket engine, so it's only fitting that we went as modern as we could by using YUI 3. This would be one of the first projects Yahoo! Fantasy Sports has built with YUI 3; but, at this point, we knew that the strengths of the library were too great to pass up. Happily, the new bracket engine turned out even better than we had hoped for.<p><a href="http://tournament.fantasysports.yahoo.com/t2" title="Yahoo! Sports Second Chance Tournament Pick'em"><img alt="Yahoo! Fantasy Sports Tourney Pick'em" src="/blog-archive/assets/tourney-blog-dnd-20100319-065945.jpg" /></a><p><a href="http://developer.yahoo.com/yui/3/" title="YUI 3 — Yahoo! User Interface Library">YUI 3</a> turned out to be ideally suited for building the complex interactions we wanted for the bracket engine. We switched from an entirely click-based interface to a drag and drop interface, and <a href="http://developer.yahoo.com/yui/3/dragdrop/" title="YUI 3: Drag & Drop">YUI 3's drag-and-drop capabilities</a> are so easy to use it was practically the first thing we got working. We switched from an interface built entirely by JavaScript to one where the bracket is drawn with HTML and CSS and then enhanced with JavaScript. This meant some pretty deep dives into the DOM, but YUI 3's use of CSS selectors nearly everywhere made short work of those.<p>Going into this project, I knew that the drag-and-drop and CSS selector capabilities of YUI 3 would prove invaluable, but I kept being surprised at how useful many other components of YUI 3 would be. For this post, I'd like to explore one that doesn't get as much attention: <code>Y.Base</code>. (<a href="http://developer.yahoo.com/yui/3/base">Base</a> is part of YUI's component infrastructure, and YUI engineer <a href="http://developer.yahoo.com/yui/theater/video.php?v=desai-yuiconf2009-widgets">Satyen Desai has a nice introduction to that set of tools on YUI Theater</a>.)<h3>Y.Base is Pumpin'</h3>
+	<p>While working on the Bracket Engine, I found that <code>Y.Base</code> was incredibly useful. There are two valuable things you get for free with <code>Y.Base</code>: attributes and event targeting. Both were significantly more useful than I had expected. YUI 3 doesn't require you to use <code>Y.Base</code> when creating your own classes, but for any class I build that's even slightly non-trivial, I'm going to use <code>Y.Base</code> as my starting point.<h3>Attributes</h3>
+	<p>Attributes give you the ability to easily configure an object when you instantiate it. If you've used many YUI widgets or utilities, this will be familiar: <pre>
+var config = {
+    'node': node,
+    'duration': 0.25,
+    'easing': Y.Easing.easeOut
+};
+var anim = new Y.Anim(config);
+</pre><p>In the example above the <code>config</code> variable is an example of attributes in action. But you get more than just simplifying the process of instantiating complex objects. You can define getters, setters, default values, etc. But for me, the real power comes as attribute values are changed. Immediately before and immediately after you change an attribute's value, an event is fired, allowing your code to respond to changes to your object.<p>For instance, in our bracket engine, when a user clicks on a little icon for a matchup, a popup opens that displays information about how the two teams stack up against each other. <p>The popup is represented in JavaScript by a class we call <code>MatchupPanel</code>. <code>MatchupPanel</code> has an attribute named <code>matchup</code> which stores a reference to the matchup object being displayed. An event listener within <code>MatchupPanel</code> swings into action anytime the <code>matchup</code> attribute changes. So to change what matchup we're displaying in the popup, we simply change the <code>matchup</code> attribute.<pre>
+var MatchupPanel = function() {
+    MatchupPanel.superclass.constructor.apply(this, arguments);
+}
+
+MatchupPanel.NAME = "matchuppanel";
+MatchupPanel.ATTRS = {
+    "teamA": { value: null },
+    "teamB": { value: null },
+    "container": { value: null },
+    "matchup": { value: null },
+    ...
+};
+
+Y.extend(MatchupPanel, Y.Base, {
+    initializer: function() {
+        ...
+        this.after("matchupChange", this.afterMatchupChange);
+    },
+    ...
+    afterMatchupChange: function(e) {
+        var m = this.get("matchup");
+        if(m) {
+            var game1 = m.get("game_1");
+            var game2 = m.get("game_2");
+            var team_1 = game1.getValue();
+            var team_2 = game2.getValue();
+            if(team_1 && team_2) {
+                this.setupDisplay(team_1, team_2);
+                this.show();
+            }
+            else {
+                this.hide();
+            }
+        }
+        else {
+            this.hide();
+        }
+    },
+    ...
+}
+  </pre><h3>Events</h3>
+	<p><code>Y.Base</code> also incorporates YUI 3's <a href="http://developer.yahoo.com/yui/3/examples/event/event-ce.html" title="YUI Library Examples: Event: Using Custom Events">custom events and custom event bubbling</a>. This means that not only is it easy to create and fire custom events, it's easy for other objects to respond to them, including stopping propagation as the event bubbles up the chain of targets you've specified, just as browser events bubble up the DOM hierarchy.<p>For the brackets, we used this in a few places. For instance, as the user advances teams through the rounds, new matchup combinations are formed. The winner of the first and second games in round one face each other in the first game in round two, and we have to display the icon for the matchup popup.<p>The <code>Matchup</code> object is responsible for showing or hiding the icon, while each game within a matchup is represented by a <code>TeamGame</code> object. When a team is advanced into a <code>TeamGame</code> object, the object fires an event. By declaring that the <code>Matchup</code> object is a target for the <code>TeamGame</code>'s events, the <code>Matchup</code> knows when one of its games changes and can hide or show the icon as necessary.<p>Here's a (very) simplified example of this in action for the <code>Matchup</code> object:<pre>
+var Matchup = function() {
+    Matchup.superclass.constructor.apply(this, arguments);
+}
+
+
+Matchup.NAME = "matchup";
+Matchup.ATTRS = {
+    "container": { value: null },
+    "game_1":    { value: null },
+    "game_2":    { value: null },
+    "id":        { value: null },
+    "infotrigger": { value: null }
+    ...
+}
+
+
+Y.extend(Matchup, Y.Base, {
+    initializer: function(cfg) {
+        var li = this.get("container");
+        var games = li.all("li.ysf-tpe-game");
+        ...
+        //create the TeamGame objects for this matchup
+        for(var x=0; x&lt;games.size(); x++) {
+            var gameNode = games.item(x);
+            
+            var gameobj = new TeamGame({
+                "matchup": this, 
+                "container": gameNode
+            });
+            if(this.get("game_1") == null) {
+                this.set("game_1", gameobj);
+            }
+            else if(this.get("game_2") == null) {
+                this.set("game_2", gameobj);
+            }
+            
+            // allow the TeamGame's events bubble to this matchup
+            gameobj.initTarget(this);
+            
+        }
+        ...
+    },
+    initHandlers: function() {
+        this.on("teamgame:changed", this.onMatchupChange);
+        this.onMatchupChange();
+    },
+    onMatchupChange: function(e) {
+        // Whenever one of the this matchup's games changes
+        // this will check to see if the info icon needs to 
+        // be hidden or displayed.
+        ...
+   },
+   ...
+}
+</pre><p>... and for the <code>TeamGame</code> object:<pre>
+var TeamGame = function() {
+    TeamGame.superclass.constructor.apply(this, arguments);
+    this.publish("changed", {prefix: "teamgame"});
+}
+
+
+TeamGame.NANE  = "teamgame";
+TeamGame.ATTRS = {
+    "container": { value: null },
+    "matchup":   { value: null },
+    "select":    { value: null },
+    "gameid":    { value: null }
+    ...    
+}
+
+Y.extend(TeamGame, Y.Base, {
+    initializer: function(cfg) {
+        var cont = this.get("container");
+        if(cont) {
+            var sel = cont.one("select");
+            this.set("select", sel);
+            var sid = cont.getAttribute("id");
+            var gameid = TeamGame.getGameId(sid);
+            this.set("gameid", gameid);
+        }
+    },
+    initTarget: function(matchup) {
+        // Allow a matchup to be a target for this game's events.
+        var targ = matchup || this.get("matchup");
+        this.addTarget(targ);
+    },
+    setValue: function(val) {
+        // sets the select menu to a given value.
+        // this is what happens behind the scenes when
+        // a user makes their picks.
+        var oldValue = this.getValue();
+        var sel = Y.Node.getDOMNode(this.get("select"));
+        var opts = sel.options;
+        var selIdx = null;
+        for(var x=0; x&lt;opts.length; x++) {
+            if(opts[x].value == val) {
+                selIdx = x;
+            }
+        }
+        if(selIdx !== null) {
+            sel.selectedIndex = selIdx;
+            var newValue = this.getValue();
+            var gameid = this.get("gameid");
+            this.fire("teamgame:changed", {
+                "game": gameid, 
+                "old": oldValue, 
+                "new": newValue
+            });
+            return selIdx;
+        }
+        return false;
+    },
+    getValue: function() {
+        var select = this.get("select");
+        return parseInt(select.get("value"));
+    },
+    ...
+}
+       
+</pre><p>By combining Events and Attributes into an easily extended class, <code>Y.Base</code> takes care of a lot of the plumbing a complex web app requires. To me, the biggest benefit of this is that I can sketch out a quick boxes-and-arrows diagram of how I want my app to work, and quickly turn that into working JavaScript.<p>If you want to see all of this (and more) in action, there's still time to sign up for our other NCAA Tournament game, "<a href="http://tournament.fantasysports.yahoo.com/t2">Second Chance Tourney Pick'Em</a>". And this one is a bit easier, there's only 32,768 ways to fill out the bracket.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

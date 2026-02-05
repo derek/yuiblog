@@ -1,0 +1,775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Working with the YUI DataTable Control, Part 1: Getting Started &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; Working with the YUI DataTable Control, Part 1: Getting Started</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.3" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-131"><a href="/blog/2007/09/12/satyam-datatable/" rel="bookmark" title="Permanent Link to Working with the YUI DataTable Control, Part 1: Getting Started">Working with the YUI DataTable Control, Part 1: Getting Started</a></h2>
+				<small>September 12, 2007 at 5:22 pm by Daniel Barreiro | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<p><strong>Don&#8217;t miss <a href="/blog/2007/09/26/satyam-datatable-2/">Part Two of this series</a>, in which Satyam explores methods for changing data within the <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable Control</a>.</strong></p>
+<div class="interview">
+<div class="intro">
+<p><img src="http://yuiblog.com/assets/satyam.jpg" alt="Daniel Barreiro (Satyam)" width="160" height="206" align="right"><strong>About the Author:</strong>  Daniel Barreiro (screen name Satyam) has been around for quite some time.  The ENIAC was turned off the day before he was born, so he missed that &mdash; but he hasn&#8217;t missed much since.  He&#8217;s had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere.  When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic.  Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;&#8217;s and &gt;&#8217;s, he ended up learning quite a lot about the world of frontend engineering.  It&#8217;s been a long journey since COBOL and Fortran.  Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain.</p>
+<p>When he&#8217;s not basking in the Mediterranean sun, Saytam can be found among the most prolific and knowledgable participants in the YUI community on the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YDN-JavaScript developer forum</a>.</p>
+</p></div>
+</div>
+<p><P><a href="http://developer.yahoo.com/yui">YUI&#8217;s DataTable Control</a> has many options, more than any single application will use. Unless you want to improvise something different for each and every page, chances are you will be using a subset of those options. As most often is the case, whatever worked your first time, that&#8217;s what you will use in the rest of the pages, usually copying it over and then modifying it for each page. Then, in the second or third page, you notice that clicking on a column heading does reorder the data but not in the way you expected; so, you research a little more and find out that the code you so happily copied all over needs some retouching. Given the complexity of the component and the problems you will address with it, planning a little bit in advance is a good idea.</P> <P>This article aims to share with you some lessons from my own implementations of DataTable and from the questions I&#8217;ve seen posted <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">on YDN-JavaScript</a> related to this component. DataTable will continue to evolve, and some of the issues addressed here may change in nature over time, but I hope to help shorten your path to a smooth deployment of DataTable based on the 2.3.x release.</P>  <span id="more-131"></span><br />
+<h2>Data Types</h2>
+<p> <P>The data shown to the user by DataTable is a reflection of the data it holds in the internal <CODE>RecordSet</CODE> array. <CODE>DataTable</CODE> assumes this data to be one of the native JavaScript data types; after all, that is the only choice it has. Thus, numbers are expected to be actual integers or floats, dates to be JS <CODE>Date</CODE> objects and booleans to be actual <CODE>true</CODE> or <CODE>false</CODE> values, not just &#8216;truish&#8217; or &#8216;unlikely&#8217; like 1 and 0 or <CODE>!= 0</CODE> and <CODE>null</CODE> (i.e., they have to compare to <CODE>true</CODE> and <CODE>false</CODE> with a triple equal). Your <CODE>DataTable</CODE> might look cool in a first trial but then things start to break down when trying to use advanced features if the data types aren&#8217;t properly implemented, so keep this in mind.</P> <H2>The DataSource Component</H2> <P>Data is read into the <CODE>RecordSet</CODE> via the <CODE>DataSource</CODE> component. The <CODE>DataSource</CODE> can actually be used as a separate component, though it is not currently well documented independently of the <CODE>DataTable</CODE>. It can be used to retrieve structured data, letting it manage the connection and parse the data into a JavaScript array of values, so it might be handy if you read any table-oriented data, such as a menu or a tree. You set it up as you would for the <CODE>DataTable</CODE> and then instead of passing it to the <CODE>DataTable</CODE>, you call its <CODE>sendRequest</CODE> method to get the data. That&#8217;s what the <CODE>DataTable</CODE> does and just like you won&#8217;t have much to do with the <CODE>DataSource</CODE> once you&#8217;ve got your data, neither has the <CODE>DataTable</CODE>; once it&#8217;s got its data, the <CODE>DataSource</CODE> just drops out of the picture. But first you have to actually get that data, and it is an important step.</P> <P>First, you have to define the format of that data. For example, I use PHP and MySQL and I don&#8217;t care to load my server doing much data conversion on the server side when the client machine might have as much CPU power as my server; so I pass data just the way it comes and let the client deal with it. Thus, dates will be <CODE>YYYY-MM-SS hh:mm:ss</CODE> and booleans will be 0 or 1 which, of course, is not the way <CODE>DataTable</CODE> wants them. The <CODE>DataSource</CODE> component is the place to fix that.</P> <P>When you set the <CODE>DataSource</CODE> you specify the names of the columns it will receive, like this:</P><br />
+<PRE>myDataSource.responseSchema = {<br />
+    fields: [&quot;name&quot;,&quot;breed&quot;,&quot;age&quot;]<br />
+};</PRE><br />
+<P> The code above assumes all fields will be treated as strings. The <CODE>fields</CODE> property can have an array of strings representing the column names or it can have object literals, like this:</P> <PRE>myDataSource.responseSchema = {<br />
+      fields: [&quot;name&quot;,&quot;breed&quot;,<br />
+            {key:&quot;age&quot;, parser:YAHOO.util.DataSource.parseNumber}<br />
+      ]<br />
+};</PRE> <P> The value of the <CODE>parser</CODE> property is the function to be called to parse that data. <CODE>DataSource</CODE> itself has a brief set of such functions, but if they are not good for your data, it is easy to define your own. The function should expect a single argument, the original value, and return the internal JavaScript representation of it. The <CODE>parseDate</CODE> function uses the JavaScript <CODE>Date</CODE> object constructor to parse the data, which takes several textual date formats. However, it does not automatically process my SQL output, so I defined my own custom function as follows:</P><br />
+<PRE>YAHOO.util.DataSource.parseDate = function (oData) {<br />
+        var parts = oData.split(&#8217; &#8216;);<br />
+        var datePart = parts[0].split(&#8217;-');<br />
+        if (parts.length &gt; 1) {<br />
+                var timePart = parts[1].split(&#8217;:');<br />
+                return new Date(datePart[0],datePart[1]-1,datePart[2],timePart[0],timePart[1],timePart[2]);<br />
+        } else {<br />
+                return new Date(datePart[0],datePart[1]-1,datePart[2]);<br />
+        }<br />
+};</PRE><br />
+<P> Notice that I used the very same name for the function as the original <CODE>parseDate</CODE> function. There is no need to actually do it that way, but since I am not going to use the original function I might as well override it and have mine as the default. We&#8217;ll see other circumstances when doing this can be quite useful.</P> <P>So this is how you deal with converting each of the data values from the external representation to the internal one. But values don&#8217;t come one at a time on their own, they come in whole packages and there is another choice you have to make: the message format. I find XML a little verbose, unnecessarily so, while plain-text (comma- or tab-separated values) a little too terse. JSON suits me fine, but you&#8217;ll need to make your own choice with respect to the message format. It is easier if you settle into one format, whichever it is, and even provide expansion space. DataTable author Jenny Han Donnelly&#8217;s <A HREF="http://developer.yahoo.com/yui/datatable/#xhr">JSON over XHR example</A> shows a sample of data with extras:</P><br />
+<PRE>{SalesDatabase:<br />
+    {totalItems:40, itemsFound:2, items: [<br />
+        {Company:&quot;A1 Services&quot;,<br />
+        Title:&quot;CEO&quot;,<br />
+        Name:&quot;Jane Jones&quot;,<br />
+        Phone:&quot;800-555-2121&quot;,<br />
+        Email:&quot;janejones@a1services.com&quot;},</p>
+<p>        {Company:&quot;Acme&quot;,<br />
+        Title:&quot;President&quot;,<br />
+        Name:&quot;John Smith&quot;,<br />
+        Phone:&quot;800-555-1212&quot;,<br />
+        Email:&quot;johnsmith@acme.com&quot;}<br />
+    ]}<br />
+}</PRE><br />
+<P> Notice the <CODE>totalItems</CODE> and <CODE>itemsFound</CODE> fields. You might ask yourself why this doesn&#8217;t start with the square bracket after <CODE>items</CODE> in the second line. That&#8217;s why JSON is better than plain text, if it wasn&#8217;t for that allowance to carry some extra structured information in the same package, JSON would be no better than plain text with the column names repeated too many times. </P> <P>For this example, you would set your <CODE>DataSource</CODE> like this (from the component docs):</P><br />
+<PRE>var myDataSource = new YAHOO.util.DataSource(&quot;http://url/datafeed.php?&quot;);<br />
+myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSON;<br />
+myDataSource.responseSchema = {<br />
+    resultsList: &quot;SalesDatabase.items&quot;,<br />
+    fields: [&quot;Company&quot;,&quot;Title&quot;,&quot;Name&quot;,&quot;Phone&quot;,&quot;Email&quot;]<br />
+};</PRE><br />
+<P> Notice the dot notation you must use to specify the branch you have to travel to reach the data. XML fans might expect XPATH; don&#8217;t. Also, the field description consists of strictly the column names, since they are all strings and there are no dates or numbers to parse. <CODE>DataSource</CODE> ignores the extra info, but you can get to it, if needed.</P> <P>My choice of extra information, though, is somewhat different that what is illustrated in the YUI examples that ship with DataTable. My standard JSON reply uses this format:</P><br />
+<PRE>{<br />
+        replyCode:200, replyText:&rdquo;Ok&rdquo;,<br />
+        data:[{ &#8230; } , &#8230; ]<br />
+}</PRE><br />
+<P> I use this format even for replies that carry no data, such as database actions like record deletes or updates. In those cases, there won&#8217;t be any data, just a success or failure indication. This standard format could be thought of as an envelope which can carry any information between server and client. For example, if the action request is an insert on a table with an auto increment field, I also use this format:</P><br />
+<PRE>{<br />
+        replyCode:201, replyText:&rdquo;Data follows&rdquo;,<br />
+        data:{AddressId:23}<br />
+}</PRE><br />
+<P> <CODE>DataSource</CODE> won&#8217;t take this last message since the data is not an array, which is what it usually deals with, but I still use it even for requests I pass to the server via <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>. In my view, the function at the server side that produces the JSON reply does not and should not care where the request came from and its replies have always the same format.</P> <P><CODE>DataSource</CODE> will also completely ignore the <CODE>replyCode</CODE> and <CODE>replyText</CODE> properties: It will go straight for the data. Nevertheless, if it doesn&#8217;t find the data element, it will trigger a <CODE>responseParseEvent</CODE> event, where you should be able to get to the full response and find out why did it fail. Unfortunately, the arguments passed in the <CODE>responseParseEvent</CODE> don&#8217;t give you access to that field. The best alternative I&#8217;ve found is to redefine the method <CODE>doBeforeCallback</CODE> (which is meant to be overridden for cases like this when you need access to the raw and/or parsed data before the callback gets it). This function always gets called, error or not, so you have to test for errors and then you can reach the raw response in <CODE>oRawResponse</CODE> as plain text and do whatever you like with it. Here&#8217;s an example of what that function might look like:</P> <PRE>myDataSource.doBeforeCallback = function(oRequest, oRawResponse, oParsedResponse) {<br />
+        if (oParsedResponse.error) {<br />
+                var r = eval(&#8217;(&#8217; + oRawResponse + &#8216;)&#8217;);<br />
+                if (r.replyCode !== undefined) {<br />
+                        alert(r.replyText);<br />
+                } else {<br />
+                        alert(oRawResponse);<br />
+                }<br />
+        };<br />
+        return oParsedResponse;<br />
+};</PRE><br />
+<H3> Column definitions</H3> <P>Now that we have the data into the <CODE>DataTable</CODE>&#8217;s <CODE>RecordSet</CODE> array, we need to specify how to show it to the user. We do this with the column definitions, which is the second argument to the <CODE>DataTable</CODE> constructor. Column definitions are created as an array of object literals, one item per column to be shown. Notice that the number of columns in the <CODE>DataTable</CODE> might not match the number of columns in the incoming data. You might either ignore some of the columns coming from the server or add columns calculated from data in other columns or made up somehow. That might help to explain why you have to mention the column names twice, once for the <CODE>DataSource</CODE>, once again for the <CODE>DataTable</CODE>: Depending on your implementation, they might  not be a one-for-one match.</P> <P>The <CODE>key</CODE> property for each column should match the field name given in the fields list in the <CODE>DataSource</CODE>. The <CODE>label</CODE> property is the text to be shown in the column heading, which defaults to the value of the <CODE>key</CODE> property if no <CODE>label</CODE> value is given.</P> <H3>Sorting</H3> <P>The <CODE>sortable</CODE> property is <CODE>true</CODE> or <CODE>false</CODE> and specifies whether you want the user to be able to click on that column&#8217;s header and sort it. If the data was properly converted when read, the internal sorter (it actually uses JavaScript&#8217;s native <CODE>Array</CODE> <CODE>sort</CODE> method) should work since it knows how to sort all the native data types. If your values cannot be sorted by the standard comparison operators that <CODE>sort</CODE> uses, you can specify a custom function which will be passed to the <CODE>sort</CODE> function to deal with any other data type. If your data is already sorted, it is good to show that to the user: The <CODE>sortedBy</CODE> configuration property of the <CODE>DataTable</CODE> does that by highlighting the column and putting an arrow by the column header. You set it when instantiating the <CODE>DataTable</CODE>, in the fourth argument as part of the configuration object literal:</P><br />
+<PRE>var myDataTable = new YAHOO.widget.DataTable (<I>&lt;elContainer&gt;</I> , <I>&lt;aColumnDefs&gt;</I> , <I>&lt;oDataSource&gt;</I> , {<br />
+        sortedBy:{<br />
+                key:&#8217;Company&#8217;,<br />
+                dir:&#8217;asc&#8217;<br />
+        }<br />
+});</PRE><br />
+<P> Setting the <CODE>sortedBy</CODE> property just does the highlighting, it doesn&#8217;t sort the data; it is just a means of telling the <CODE>DataTable</CODE> that the data is already sorted. When the user clicks a column header, provided it has <CODE>sortable:true</CODE> set, then it will be sorted and the highlight will change, but otherwise the <CODE>DataTable</CODE> does not assume the data to be sorted in any way.</P> <P>An issue somewhat associated with sorting is the relationship in between row numbers and record IDs; namely, that <em>there is no relationship</em>. Initially, on a freshly loaded table, the row numbers and record IDs will match, but after sorting, inserting or deleting rows, they won&#8217;t match any longer. The record ID (<CODE>YAHOO.widget.Record.getId()</CODE>) is permanently associated with the row but the row number is not, so be careful with your use of row numbers.  If you use the <CODE>DataTable.addRow</CODE> method and insert the record at position 0, the first row, that will be its row number, but the record ID will be one higher than the highest record ID it ever had. Deleted rows renumber the remaining rows but the record IDs remain with the gaps. Sorts simply scramble the record IDs with respect to order.</P> <H3>Formatting</H3> <P>The <CODE>DataTable</CODE> comes with plenty of formatters which you specify via the <CODE>formatter</CODE> property in the column definitions. For the standard formatters you can give the name of the formatter as a string literal, such as <CODE>&#8216;date&#8217;</CODE>, which the <CODE>DataTable</CODE> will translate to <CODE>YAHOO.widget.DataTable.formatDate</CODE>. For custom formatters (or even for the standard ones, if you feel so inclined) you can provide a function. For example, in Europe we use dates in <CODE>DD/MM/YYYY</CODE> format instead of the <CODE>MM/DD/YYYY</CODE> used by default in <CODE>DataTable</CODE>. I can do one of two things: I either define my own formatter and explicitly set it in every column definition or I replace the provided function, like this:</P><br />
+<PRE>YAHOO.widget.DataTable.formatDate = function(el, oRecord, oColumn, oData) {<br />
+        var oDate = oData;<br />
+        if(oDate instanceof Date) {<br />
+                el.innerHTML = oDate.getDate() + &#8216;/&#8217; + (oDate.getMonth()+1)  + &#8216;/&#8217; + oDate.getFullYear();</p>
+<p>                // Make all dates older than a month show on a red background<br />
+                var DM = YAHOO.widget.DateMath;<br />
+                if (DM.before(oDate,DM.add(new Date(),DM.MONTH,-1))) {<br />
+                        el.style.backgroundColor = &#8216;red&#8217;;<br />
+                }<br />
+        } else {<br />
+                el.innerHTML = YAHOO.lang.isValue(oData) ? oData : &#8221;;<br />
+        }<br />
+};</PRE><br />
+<P> I would still have to specify <CODE>formatter:&#8217;date&#8217;</CODE> in the column definition, but <CODE>DataTable</CODE> will use the redefined version instead of the original. If you have an international site and might need dates or currencies in different formats it might be easier to declare the columns with <CODE>formatter:&#8217;date&#8217; </CODE>or <CODE>formatter:&#8217;currency&#8217; </CODE>and have sets of JavaScript source files with different formatting functions for each country locale or make a customizable version of all the standard functions using the same names and load locale configurations for them.</P> <P>You might wish <CODE>DataTable</CODE> would guess what formatter to use from your data, but many times it cannot. For example, a link or an email address are both strings, but you would actually want them displayed as hyperlinks; currency values are plain numbers, so letting <CODE>DataTable</CODE> guess is of no use.</P> <P>The standard link and email formatters use the same value both for the display text and the underlying <CODE>href</CODE> attribute for the link, like this, where <CODE>oData</CODE> contains the actual value from the <CODE>Record</CODE> (all formatters default to display the data as-is if it is not the data type expected &#8212; that&#8217;s why the <CODE>if</CODE> is there):</P><br />
+<PRE>YAHOO.widget.DataTable.formatLink = function(el, oRecord, oColumn, oData) {<br />
+    if(YAHOO.lang.isString(oData)) {<br />
+        el.innerHTML = &quot;&lt;a href=\&quot;&quot; + oData + &quot;\&quot;&gt;&quot; + oData + &quot;&lt;/a&gt;&quot;;<br />
+    } else {<br />
+        el.innerHTML = YAHOO.lang.isValue(oData) ? OData : &quot;&quot;;<br />
+    }<br />
+};</PRE><br />
+<P> Now, say you want to display the <CODE>mailto:</CODE> link using just the name of the person while setting the href attribute to the email address, then you would use your own formatter. This might be a case when the number of columns in the <CODE>DataSource</CODE> don&#8217;t match the columns displayed in the table. Let&#8217;s say the <CODE>DataSource</CODE> has one column each for the eMail address and the name, and the <CODE>DataTable</CODE> only one. For example:</P><br />
+<PRE>YAHOO.example.formatUserWithEmail = function(el, oRecord, oColumn, oData) {<br />
+        if (YAHOO.lang.isString(oData)) {<br />
+                var eMail = oRecord.getData(&#8217;email&#8217;);<br />
+                if (YAHOO.lang.isString(eMail) &amp;&amp; eMail.length) {<br />
+                        el.innerHTML = &#8216;&lt;a href=&rdquo;mailto:&#8217; + eMail + &#8216;&rdquo;&gt;&#8217; + oData + &#8216;&lt;/a&gt;&#8217;;<br />
+                } else {<br />
+                        elInnerHTML = oData;<br />
+                }<br />
+        } else {<br />
+                el.innerHTML = YAHOO.lang.isValue(oData) ? oData : &quot;&quot;;<br />
+        }<br />
+};</PRE><br />
+<P> I would assign this formatter function to the column containing the name while the column containing the eMail would not be included in the column definitions. But it <em>would </em>be included in the fields definition for the <CODE>DataSource</CODE> so that the data will actually be there for you, in the <CODE>oRecord</CODE> argument.</P> <P>As for the rest of the arguments to the formatter function, the first one is the cell, which allows you further flexibility since you are not limited to just format the contents; you can also format the container itself. In my <CODE>formatDate</CODE> function above, I put code in it to make all dates older than a month show on a red background. (While we&#8217;re on the subject of dates, do check <CODE><a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.DateMath.html">YAHOO.widget.DateMath</a></CODE>, part of the <CODE>Calendar</CODE> component, which has some potentially relevant functionality).</P> <P>The <CODE>oColumn</CODE> argument gives you a copy of the definitions you provided in the column definitions plus some more, such as the default values of the ones you left out. There is nothing preventing you from adding further properties to the column definition besides the ones <CODE>DataTable</CODE> uses; just make sure their names don&#8217;t collide with the ones <CODE>DataTable</CODE> uses. If you add extra properties, those will show up in the <CODE>oColumn</CODE> argument of the formatter. This would allow you to have a parameterized formatter, with the formatting options coming in the <CODE>oColumn</CODE> argument. And, as shown here, I use single quotes for JavaScript literals and double quotes for the HTML stuff, which spares me from having to escape double quotes within double quotes and makes it much easier to detect unbalanced quotes (but for the sake of this article I have respected the format of code that I copied from YUI documentation).</P> <H3>In-line Editing</H3> <P>One of the most exciting features of the <CODE>DataTable</CODE> is the possibility of editing cells right on the spot. If you assign an editor to a column in the column definitions, that column will be editable. Just as you add a <CODE>formatter</CODE> property to allow for different formatters, you use the <CODE>editor</CODE> property to use any of the several editors provided with the <CODE>DataTable</CODE>, which you can either call by short name or by assigning it a function or a reference to a function of your own.  You have a good sampling of the editors available in the <A HREF="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">code samples</A>.  </P> <P>Though the inline editor will take care of updating the underlying <code>RecordSet</code> and make those changes visible to the user, you would want those changes to be sent to the server, where the data resides permanently.  Other changes to the <code>DataTable</code>, such as inserting or deleting rows are closely tied to cell editing. That&#8217;s a subject for another article, as synchronizing your data between client and server is a lengthier topic than we have space for here. In any case, with the variety of editors available, you would be hard pressed to miss the one you truly needed.</P><br />
+<h2>Conclusion<BR> </h2>
+<p><img src="http://yuiblog.com/assets/satyam_datatable.gif" width="515" height="226"></p>
+<p>The image above summarizes the format of the data at each stage in the system, how it comes out from the server, how it is stored internally in the <code>DataTable</code>&#8217;s <code>RecordSet</code>, how it is presented to the user, and where to put the conversions as the data goes from one to the other and back again.</p>
+<p> <P>YUI&#8217;s <CODE>DataTable</CODE> is very flexible and allows you to do many things. Making your choices in advance allows you to define your own version of the <CODE>DataTable</CODE> and either cast some of those choices or make them more easily accessible according to your taste and preferences. The whole application will look and behave more consistently and, should you want to change anything, many of the changes will be concentrated in just one single place.</P></p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2007/09/12/satyam-datatable/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2007/09/12/satyam-datatable/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Working with the YUI DataTable Control, Part 1: Getting Started&u=http://yuiblog.com/blog/2007/09/12/satyam-datatable/" title="bookmark Working with the YUI DataTable Control, Part 1: Getting Started on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2007/09/12/satyam-datatable/&amp;title=Working with the YUI DataTable Control, Part 1: Getting Started" title="bookmark Working with the YUI DataTable Control, Part 1: Getting Started in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2007/09/12/satyam-datatable/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2007/09/12/satyam-datatable/&amp;title=Working with the YUI DataTable Control, Part 1: Getting Started" title="post Working with the YUI DataTable Control, Part 1: Getting Started to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2007/09/12/satyam-datatable/"
+    dc:identifier="http://yuiblog.com/blog/2007/09/12/satyam-datatable/"
+    dc:title="Working with the YUI DataTable Control, Part 1: Getting Started"
+    trackback:ping="http://yuiblog.com/blog/2007/09/12/satyam-datatable/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">19 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2007/09/12/satyam-datatable/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2007/09/12/satyam-datatable/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-189891" class="class_comment1">
+	<blockquote><p>
+{<br />
+    replyCode:200, replyText:”Ok”,<br />
+    data:[{ … } , … ]<br />
+}</p>
+<p>I use this format even for replies that carry no data, such as database actions like record deletes or updates. In those cases, there won’t be any data, just a success or failure indication.
+</p></blockquote>
+<p>Why can&#8217;t you just read the HTTP headers to see if you get a status 200 OK?</p>
+	<p class="alignright"><small>Comment by Kim Pepper &#8212; September 12, 2007 <a href="#comment-189891">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-189957" class="class_comment2">
+	<p>[&#8230;] Working with the YUI DataTable Control (Yahoo! User Interface Blog) The YUI is such a great tool for developing websites, especially the part where I do not have to worry about different browsers is great. This article gives an excellent overview of the power of the YUI DataTable. Also goes into some JSON tricks (tags: yui webdev javascript json tables tips tutorial) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://meijer.wordpress.com/2007/09/13/links-for-2007-09-13/' rel='external nofollow'>links for 2007-09-13 &laquo; Joost&#8217;s weblog</a> &#8212; September 13, 2007 <a href="#comment-189957">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-190179" class="class_comment1">
+	<p>@Kim Pepper asked:</p>
+<p>     Why can’t you just read the HTTP headers<br />
+     to see if you get a status 200 OK?</p>
+<p>The problem would not be with the 200 replyCode but with the other error codes.  The browser would handle them and would never reach your application.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.satyam.com.ar' rel='external nofollow'>Satyam</a> &#8212; September 13, 2007 <a href="#comment-190179">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-190259" class="class_comment2">
+	<p>Did anyone ask me to make a long story short?  Nope, so here it goes.</p>
+<p>In the envelope for my JSON message I simply adopted the numerical ranges of HTTP.  This is simply a coincidence.  They are meant to carry application level status information.  HTTP is a level below and it carries it&#8217;s own status information as well as the TCP/IP layer further down below has its own.  Each is to be generated and acted upon at its proper level. When the XHR object calls the failure callback it is meant for communication errors, not application errors.</p>
+<p>For example, I create my replies on the server side via PHP.  I use the set_error_handler() function to trap PHP errors and warnings and package them in the very same envelope.  When this occurs, I place extra error information in the same envelope, file name, line number, error description and so on.  I would not be able to easily reach  (if at all) that extra information if the XHR object triggers the failure callback.</p>
+<p>Could I have used the HTTP header for my replyCodes?  I might have, assuming that most versions of most browsers would ignore most of the codes, but I don&#8217;t like betting against Murphy.  Some proxies might also act on some of the codes because browsers and proxies are the ones these codes are meant for.  </p>
+<p>There are many code ranges unused and undefined in the RFC, but I don&#8217;t want to check which ones are available nor I want to discover what the proxies and browsers, or their versions of the XHR object do about them.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.satyam.com.ar' rel='external nofollow'>Satyam</a> &#8212; September 13, 2007 <a href="#comment-190259">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-190322" class="class_comment1">
+	<p>thanks so much for taking the time to share your wealth of knowledge with the community.  It is much appreciated.  I hope there are a plethora of tutorials published on YUI topics.  I have completely redone my admin panels with it. It&#8217;s awesome and would not be able to get it done without community support.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.autonomi.net' rel='external nofollow'>druidarab</a> &#8212; September 13, 2007 <a href="#comment-190322">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-190458" class="class_comment2">
+	<p>[&#8230;] Working with the YUI DataTable Control » Yahoo! User Interface Blog (tags: database datagrid tips yui data table control yahoo tutorial guide javascript web development) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://blog.napyfab.com/194/links-for-2007-09-13/' rel='external nofollow'>napyfab:blog&raquo; Blog Archive &raquo; links for 2007-09-13</a> &#8212; September 13, 2007 <a href="#comment-190458">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-192722" class="class_comment1">
+	<p>Is there anyway of knowing records original classes? I was planning to use them in custom sort functions for things like footer, subtable within table.</p>
+	<p class="alignright"><small>Comment by Ankit Gupta &#8212; September 17, 2007 <a href="#comment-192722">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-193023" class="class_comment2">
+	<blockquote cite="Ankit Gupta"><p>Is there anyway of knowing records original classes? </p></blockquote>
+<p>This question is not about anything mentioned in the article.  It is better handled in the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/" rel="nofollow">YUI Developers list</a></p>
+	<p class="alignright"><small>Comment by satyam &#8212; September 17, 2007 <a href="#comment-193023">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-196377" class="class_comment1">
+	<p>This blog was very helpfull for me, thanks a lot for sharing.<br />
+But i have still a question. Is there a way to change column&#8217;s sortable value just for one column.</p>
+<p>I have a table with a column having 8 different entries given bei serverside JSON. Now i change serverrequest so that column always shows the same entry and i don&#8217;t need to sort it no more, but it&#8217;s still sortable.</p>
+<p>Tried with onDataReturnInitializeTable but don&#8217;t know how to use or to overwrite.</p>
+<p>regards from germany</p>
+	<p class="alignright"><small>Comment by DCEOnline &#8212; September 21, 2007 <a href="#comment-196377">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-199469" class="class_comment2">
+	<p>Hello,</p>
+<p>Your article is extensive. Thanks for this. </p>
+<p>I have a question: Did you get a chance to write an article on how an inline edit can be synced with the server? Or can you point me to another article that discusses this? </p>
+<p>Would greatly appreciate your help.<br />
+Thanks,<br />
+Prit</p>
+	<p class="alignright"><small>Comment by Prit &#8212; September 25, 2007 <a href="#comment-199469">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-199701" class="class_comment1">
+	<p>The launch of 2.3.1 got the followup article a little delayed.  It won&#8217;t be long now.<br />
+Thanks<br />
+Satyam</p>
+	<p class="alignright"><small>Comment by <a href='http://satyam.com.ar' rel='external nofollow'>Satyam</a> &#8212; September 25, 2007 <a href="#comment-199701">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-200125" class="class_comment2">
+	<p>[&#8230;] miss Part One of this series, in which Satyam explores practical steps on getting started with the YUI DataTable [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2007/09/26/satyam-datatable-2/' rel='external nofollow'>Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable &raquo; Yahoo! User Interface Blog</a> &#8212; September 26, 2007 <a href="#comment-200125">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-207707" class="class_comment1">
+	<p>I have output data from several tables onto one xml page using php. I want to use some of the data to make a table and the rest of the xml data to be used as a javascript array for other purposes such as dropdown values. How do i access the additional data i want as an array. I have the table working from the file.</p>
+	<p class="alignright"><small>Comment by Nick &#8212; October 8, 2007 <a href="#comment-207707">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-207731" class="class_comment2">
+	<p><a href="#comment-207707" rel="nofollow">Nick</a></p>
+<p>The <a href="http://developer.yahoo.com/yui/examples/datatable/dt_serverpagination.html" rel="nofollow">server pagination example</a> shows how extra information in the incoming data can be accessed.  The example uses JSON data instead of XML but the basics are the same.  </p>
+<p>You have to redefine the <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.DataSource.html#doBeforeCallback" rel="nofollow">doBeforeCallback</a> method which, by default, simply returns the third argument.  You might use the second argument, oRawResponse, which, in an XML query will give you the full XML object as it came from the server with all the DOM methods available to access it.  You will have to turn it into a JS array.  The method parseXMLData in <a href="http://developer.yahoo.com/yui/docs/DataSource.js.html" rel="nofollow">datasource-beta.js</a> can help you as a model on how to do it.  </p>
+<p>Another alternative is to listen to event <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.DataSource.html#responseEvent" rel="nofollow">responseEvent</a> and read the original XML data from oArgs.response.responseXML.  </p>
+<p>doBeforeCallback has the advantage that you can easily modify the data that will go into the DataTable, should you need to.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 8, 2007 <a href="#comment-207731">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-207739" class="class_comment1">
+	<p>Hey Everybody!</p>
+<p>The <a href="http://tech.groups.yahoo.com/group/ydn-javascript/" rel="nofollow">YUI discussion forum</a> is a far better place to ask about how to do this or that.  There you have plenty of knowledgeable people that receive all the mails.  There is very few people who checks this blog and you cannot count on us having the right answer or to be around when you need it.  You stand a better chance in the forum.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 8, 2007 <a href="#comment-207739">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-208025" class="class_comment2">
+	<p><a href="#comment-207707" rel="nofollow">Nick</a>,</p>
+<p>The place to pick extra information from the envelope is the <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.DataSource.html#doBeforeCallback" rel="nofollow">doBeforeCallBack</a> or doBeforeParseData methods of DataSource either of which you would have to override.  These are called after and before the incoming data is parsed.  The library implementation of them return one of its arguments without modification, which you will have to do in your version, but in the meantime you can read the extra information from oRawResponse.responseXML.</p>
+<p>You can see an example of this in the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_serverpagination.html" rel="nofollow">server-side pagination example</a>.  The example uses JSON data, not XML but the principle is the same.  </p>
+<p>You would have the data as an XML object, not as a JS array, you would have to read it and transform it.  It is a DOM object with all the methods so it shouldn&#8217;t be hard.  Look for method parseXMLData in datasource-beta.js for an example on how to do it.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 8, 2007 <a href="#comment-208025">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-208299" class="class_comment1">
+	<p>How can I format only the column headers? I want them to appear as hyperlinks for those columns that I have implemented by custom sort method on. (i.e. those columns set as sortable: true)</p>
+<p>Thanks!</p>
+	<p class="alignright"><small>Comment by Shafique &#8212; October 9, 2007 <a href="#comment-208299">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-209762" class="class_comment2">
+	<p>Nice artice. I have a question as of YUI 2.3.1 the datatable has all things like sorting, resizing and other stuff. But i cannot find information on how to maintain the state of YUI table so that when a user re-visits teh webpage he/she sees columns sorted or resized as he/she configured them on previous login. And what if i want that if user presses back button or comeback to the page he/she sees the same page displayed 9if sorting is enabled).</p>
+	<p class="alignright"><small>Comment by Shoaib &#8212; October 12, 2007 <a href="#comment-209762">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-209961" class="class_comment1">
+	<p><a href="#comment-209762" rel="nofollow">Shoaib</a>,</p>
+<p>I think that is not easy to do right now, the information required to restore everything is distributed all over the DataTable and to restore it you can&#8217;t simply restore that info and have the DataTable to redraw itself, for example, myDataTable.get(&#8217;sortedBy&#8217;) will return an object indicating the column key and direction of the column sorted, nevertheless, restoring the value of that property won&#8217;t make the table sort itself, you have to call method sortColumn, check sortedBy to see if it got sorted in the direction you expected and call it again if not.  Resizing is only reflected in the actual HTML table, I don&#8217;t think it is set anywhere within the DataTable, you&#8217;ll have to listen to columnResizeEvent to pick the changes and then deal with the DOM to restore it.</p>
+<p>If you do find all the bits and pieces and figure out how to restore each, then the <a href="http://developer.yahoo.com/yui/history/" rel="nofollow">Browser History Manager</a> would be the component to handle the navigation.  Nevertheless, it has limitations as to how much information it can store and a hard refresh will wipe it out.  You might have to resort to cookies or to send it asynchronously to the server to have it stored there.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 12, 2007 <a href="#comment-209961">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="131" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/10/17/rte-fileupload-231/">Adding File Upload to the YUI Rich Text Editor&#8217;s Image Dialog</a></li>
+					    		<li class="recent"><a href="/blog/2007/10/15/video-scott/">YUI Theater &mdash; Bill Scott: &#8220;Designing the Rich Web Experience: Principles and Patterns for Rich Interaction Design on the Web&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/10/02/challenges-of-interface-design-for-mobile-devices/">Challenges of Interface Design for Mobile Devices</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/26/satyam-datatable-2/">Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/25/gaia/">Implementation Focus: Gaia Online</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/19/yui-2-3-1-released/">YUI Version 2.3.1: Bug-Fix Release</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://www.yswfblog.com/">Yahoo! Flash (R) Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 23 queries. 0.665 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1192767748" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

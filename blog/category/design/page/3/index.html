@@ -1,0 +1,934 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     Design Archive - YUI Blog - page 3	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Design Category Feed" href="/blog/category/design/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.8.2'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive paged category category-design category-1 paged-3 category-paged-3 yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		<ul class="breadcrumbs"><li class="front_page"><a href="//yuilibrary.com/">YUI</a></li><li><a href="/blog">Blog</a></li>Design<li></li></ul>
+
+		
+ 			
+							<h1>Blog: Category &#8216;Design&#8217;</h1>
+
+			
+							<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/design/page/4/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/design/page/2/" >Newer Entries &raquo;</a>    </div>
+</div>			
+									
+								<div class="post-243 post type-post status-publish format-standard hentry category-design tag-continuity tag-design tag-patterns tag-sign-in tag-social first-post">
+				
+						<h2 id="post-243"><a href="/blog/2008/08/26/continuity/">What&#8217;s So Social about Sign-in?</a></h2>
+					
+
+						<div class="entry">
+							<p><a href='http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity ' title='signing into Buzz'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/08/continuity.png' alt='Signing into Buzz' /></a></p>
+<p>Just recently I published a new pattern, <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity">Sign-in Continuity</a>, to the <a href="http://developer.yahoo.com/ypatterns/">Yahoo! Design Pattern Library</a>. It could be filed under &#8220;Engagement,&#8221; a category we have internally but that hasn&#8217;t appeared yet here, but I decided to put it in the &#8220;Social&#8221; category instead.</p>
+<p>The pattern is about making sure that a user&#8217;s momentum isn&#8217;t robbed when they want to participate in a community and have to be challenged for their login credentials in order to sign their contribution. The crux of the pattern is to preserve context and make sure the user is inconvenienced as minimally as possible so that the <em>continuity</em> of the experience is preserved.</p>
+<p>This raises a legitimate question: What&#8217;s &#8220;social&#8221; about sign-in? I have two reasons for classifying this pattern that way. </p>
+<p>One is that signing-in is an act of claiming one&#8217;s identity in a shared space. Identity is an important social pattern &#8220;parent&#8221; and we have a number of patterns related to identity in the works.</p>
+<p>The other is that social sites have evolved some new engagement patterns (some positive, some negative) having to do with invitation, sharing, organic growth, and levels of involvement, and in this context signing in to participate plays a role.</p>
+<p>This was, by the way, what we like to call a &#8220;peeve-driven&#8221; pattern. I was trying to comment on a social object at Yahoo! site. (I won&#8217;t say which one because the problem has since been fixed.) I was challenged to sign in, which was fine, but once I presented my credentials, I was returned to the site&#8217;s home page instead of to the comment box I had been working on. Oh noes!</p>
+<p>Sometimes, a poor user experience can help us identify an antipattern (in this case, sign-in </em>dis</em>continuity or in the original Latin, <em>participatio interruptus</em>) &mdash; and then the antipattern points the way to the positive solution.</p>
+<p>I&#8217;d also like to mention that my summer intern, <a href="http://blog.chrishanrath.com/">Chris Hanrath</a>, completed this pattern and prepared it for publication. Chris also spent a lot of the summer working on the pattern library site redesign that I can&#8217;t wait to unveil. Stay tuned!</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/04458900ffe8ab944f9c593d133292ad?s=32"> <div class="cont"><a href="http://developer.yahoo.com/ypatterns/" class="name">By Christian Crumlish</a><span class="date">August 26th, 2008<span></div></div>
+				</div>
+										
+								<div class="post-231 post type-post status-publish format-standard hentry category-accessibility category-design category-development">
+				
+						<h2 id="post-231"><a href="/blog/2008/07/17/context-menus-and-focus-in-opera/">Context Menus and Focus in Opera</a></h2>
+					
+
+						<div class="entry">
+							<p> As a JavaScript toolkit developer, there are two features lacking in Opera that have frustrated me for a while: support for the <code>contextmenu</code> DOM event and the ability to override the default rendering of focus via CSS.  When Opera released version 9.5, I was disappointed to see that neither of these features were implemented. As frontend engineers, we spend a lot of time responding to decisions made by browser manufacturers, but we don&#8217;t get much opportunity to learn the specific thought process behind those decisions. After exchanging some emails with the Opera team, I now have some insight into their decisions and the perspective that perhaps withholding such features could be beneficial to the user.</p>
+<h3>Background</h3>
+<p> Although the capabilities of the browser have evolved significantly in recent years, the user&#8217;s perception of the browser hasn&#8217;t necessarily evolved with it.  After the launch of Yahoo! Photos 3.0, I remember a friend of mine emailing me because she was having trouble viewing the large version of her photos.  She was repeatedly clicking on each thumbnail without success.  Eventually she figured out that she needed to double click on the thumbnails to view the full size image.  Double clicking to open a folder or a file is, of course, a natural interaction on the desktop, but for years users were trained not to expect this interaction in the context of web applications. </p>
+<p> Some users still don&#8217;t expect desktop-like interaction from web applications.  I remember logging into my Yahoo! Mail not long ago and seeing checkboxes next to each message.  I paused.  What were these checkboxes, these artifacts of Web 1.0, doing in my Web 2.0 application?  I had been using the new DHTML, Outlook-like version of Yahoo! Mail since its early beta and had become used to dragging and dropping in order to move and delete messages.  But the reappearance of these checkboxes was another sign that not every user&#8217;s expectations had evolved with the capabilities of the browser. </p>
+<p> As the browser has matured it has evolved it into a platform for rich application development, making it possible to deliver applications with a level of interactivity and visual fidelity of those found on the desktop.  And while the browser is now a platform, it also continues to play its original Web 1.0 role of an application, a content viewer that enables users to surf all of the news sites, blogs, etc. scattered across the eclectic Web.  But as the browser now plays these dual roles of being an application and an application development and delivery platform, how does this duality impact the user in terms of usability and accessibility?  And what user-centric features and functionality can consumers expect of a browser, especially one battling with duality?  I suspect that Opera&#8217;s answer to these questions is that not all users understand the modern browser&#8217;s dual role, and that is it necessary to render some fundamental things consistently across experiences within the browser. </p>
+<h3>Context Menus</h3>
+<p> <a href="http://developer.yahoo.com/yui/examples/menu/contextmenu_source.html"><img src="http://yuiblog.com/assets/klootsopera/contextmenu.gif" alt="The YUI Menu Control's ContextMenu in Safari (top) and Opera (bottom); Opera does not allow developers to customize the context menu in web applications." width="280" height="300" hspace="10" vspace="5" align="right"></a></p>
+<p>Consider context menu functionality. By not implementing the <code>contextmenu</code> event, Opera does not allow frontend engineers to override the<br />
+default context menu provided by the browser; all other <a href="http://developer.yahoo.com/yui/articles/gbs/">A-Grade browsers</a> support this feature. What benefit could there be to not implementing the <code>contextmenu</code> event?</p>
+<p>If some users  perceive everything inside the scope of the browser as a web page, that influences the user&#8217;s expectation of what functionality will be surfaced in a context menu.  Over the years many users have come to expect that raising a context menu in the scope of a browser will surface browser-centric functionality relative to HTML content (i.e. &#8220;Open Link in New Window&#8221;), rather than functionality of the web application running within the browser.  Therefore, providing a custom context menu for a web application might not be expected or seen as helpful for users who have come to rely on functionality in the browser&#8217;s context menu.</p>
+<p>The downside is that, by not allowing the developer to provide custom context menu implementations (such as those provided by the <a href="http://developer.yahoo.com/yui/menu/">YUI Menu Control</a>), Opera is in a small way preventing the user from understanding the browser as a platform for rich application development. </p>
+<h3>Focus</h3>
+<p>Focus could be considered as sacred as the context menu. Knowing what element has focus is fundamental to keyboard accessibility. And while most modern browsers support customization of the rendering of focus, is it a good idea to do so?  The presentation and behavior is of HTML is now so completely customizable via CSS and JavaScript that the user experience can differ drastically across sites and applications on the web.  Keeping something as fundamental as focus consistent means one less thing the user has to re-learn when navigating the across the web.  Consider the following example: </p>
+<h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-1">Example 1: Anchor Elements (The Good)</a></h4>
+<table>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
+<td>Focused anchor in Opera 9.5 (Mac)</td>
+</tr>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td>Focused anchor styled as a button in Opera 9.5 (Mac)</td>
+</tr>
+</table>
+<p> This example illustrates how the focused state of an anchor element is rendered consistently in Opera regardless of how it is styled.  This consistency can be considered helpful to the user in that the familiarity of the focus outline conveys the element&#8217;s role.  Therefore, the user knows what to expect when the element is clicked regardless of how it is styled.  However, as illustrated in the following example, this benefit breaks down a little as the focus model for buttons isn&#8217;t the same as it is for anchor elements.</p>
+<h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-2">Example 2: Buttons (The Bad)</a></h4>
+<table>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused button in Opera 9.5 for Mac"></td>
+<td>Focused, unstyled button in Opera 9.5 (Mac)</td>
+</tr>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td>Focused, styled button in Opera 9.5 (Mac)</td>
+</tr>
+</table>
+<p> This example illustrates a potential flaw in Opera&#8217;s rendering of focus in version 9.5: unlike anchor elements, unstyled and styled buttons get two different renderings of focus, both of which are completely different, and different from the focus style applied to anchor elements.  So, in Opera 9.5 there are three different focus implementations for the user to learn: the system default, the Wii-style focus and the dotted border.  Compare Opera&#8217;s focus implementation to that of Safari or Internet Explorer, where by default focus is rendered consistently across elements of various types. </p>
+<table>
+<thead>
+<tr>
+<th>Opera</th>
+<th>Safari</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/anchor.png" height="25" width="51" alt="Screen capture of a focused anchor in Opera 9.5 for Mac"></td>
+<td><img src="http://yuiblog.com/assets/klootsopera/anchor-safari.png" height="25" width="51" alt="Screen capture of a focused anchor in Safari for Mac"></td>
+<td>Focused, unstyled acnhor</td>
+</tr>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td><img src="http://yuiblog.com/assets/klootsopera/anchor-button-safari.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Safari for Mac"></td>
+<td>Focused anchor styled as a button</td>
+</tr>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/button-1.png" height="24" width="69" alt="Screen capture of a focused, unstyled button in Opera 9.5 for Mac"></td>
+<td><img src="http://yuiblog.com/assets/klootsopera/button-safari.png" height="24" width="67" alt="Screen capture of a focused, unstyled button in Safari for Mac"></td>
+<td>Focused, unstyled button</td>
+</tr>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/button-2.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td><img src="http://yuiblog.com/assets/klootsopera/yuibutton-safari.png" height="34" width="81" alt="Screen capture of a focused, styled button in Safari for Mac"></td>
+<td>Focused, styled button</td>
+</tr>
+</tbody>
+</table>
+<p> Since the default implementation of focus can be customized in other browsers, perhaps Opera users still fair better since learning Opera&#8217;s three, fixed focus models is ultimately better than having to learn potentially infinitely more.  That said, if Opera is going to prevent customization of focus in the interest of usability and accessibility, they could further improve the user experience by providing a consistent implementation of focus across elements. As it stands in Opera 9.5, the following mixed styles can appear together, presenting a  confusing set of visual cues:</p>
+<h4><a href="/sandbox/yui/v252/examples/button/example10.html#example-3">Example 3: Mixed types together (The Ugly)</a></h4>
+<table>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/link-button.png" height="34" width="69" alt="Screen capture of a focused anchor styled as a button in Opera 9.5 for Mac"></td>
+<td>Focused anchor styled as a button in Opera 9.5 (Mac)</td>
+</tr>
+<tr>
+<td><img src="http://yuiblog.com/assets/klootsopera/button-4.png" height="26" width="70" alt="Screen capture of a focused, styled button in Opera 9.5 for Mac"></td>
+<td>Focused, styled button in Opera 9.5 (Mac)</td>
+</tr>
+</table>
+<p> As illustrated by the first and second examples, Opera has three different, yet fixed implementations of focus.  While Opera&#8217;s implementation of focus can be considered good insofar as the user only has a limited number of focus models to learn, it might also be considered bad in that it makes it harder to provide a consistent user experience within a single site or web application.  For example, if you wanted to place an anchor and button next to each other in a toolbar, but style them consistently so that they both look like buttons, each would still render focus differently in Opera, leaving the user to wonder how the difference is significant. </p>
+<h3>Conclusion</h3>
+<p> In Opera designers and developers lose a degree of customization, but the user gains a slightly more consistent browsing experience. In some ways this consistency benefits the user in that fundamental interactions like focus and context menus remain the same regardless of the site or web application in use.  However, by limiting certain types of customization designers and developers will find it just a bit harder to provide a consistent user experience within their site or application and to train the user to expect more from Web 2.0. </p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/df4fd1f9aa463884decd65f5ea9d9584?s=32"> <div class="cont"><span class="name">By Todd Kloots</span><span class="date">July 17th, 2008<span></div></div>
+				</div>
+										
+								<div class="post-212 post type-post status-publish format-standard hentry category-design tag-design-patterns tag-pattern tag-pattern-library tag-reputation tag-social tag-social-design tag-social-design-patterns">
+				
+						<h2 id="post-212"><a href="/blog/2008/06/10/patterns-for-designing-a-reputation-system/">Patterns for Designing a Reputation System</a></h2>
+					
+
+						<div class="entry">
+							<p><a href='/blog/2008/06/10/patterns-for-designing-a-reputation-system/reputation-patterns/' rel='attachment wp-att-213' title='Reputation patterns'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/06/rep-patterns.jpg' alt='Reputation patterns' border='0' /></a></p>
+<p>Recently, we released a family of related <a href="http://developer.yahoo.com/ypatterns/parent.php?pattern=reputation">Reputation patterns</a> to the Yahoo Design Pattern Library, the first of several collections of social-design related patterns that we&#8217;re working on. These patterns are somewhat different from the typical UI or rich-interaction type of pattern. They don&#8217;t tell you how to lay out a page or where to put an interactive widget. Instead, they address how to design a reputation system for your social software.</p>
+<p>A key element in the Reputation family of patterns is one we call <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=competitive">The Competitive Spectrum</a>:</p>
+<p><a href='/blog/2008/06/10/patterns-for-designing-a-reputation-system/competitive-spectrum-2/' rel='attachment wp-att-215' title='Competitive Spectrum'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/06/competitive-spectrum1.jpg' alt='Competitive Spectrum' /></a></p>
+<p>The Competitive Spectrum is the first pattern you should look at because it asks you to consider the degree of <em>competitiveness</em> in the community you are trying to build or foster. Are you aiming for a highly cooperative community, an arena for death-matches, or something in between? The answer to that question will inform which of the remaining Reputation patterns best apply to the design of your site or application.</p>
+<p>The primary author of these patterns (and the creator of the sensitizing images) is <a href="http://soldierant.net/archives/2008/06/patterns_of_reputati.html">Bryce Glass</a>, a senior interaction designer on the Y! OS social team. Product manager Yvonne French deserves some of the credit as well. The patterns were developed for an internal reputation platform here at Yahoo! that was inspired and guided by online community guru <a href="http://www.fudco.com/habitat/archives/000076.html">Randy Farmer</a>. We&#8217;re very pleased to be able to share them with the wider web community now and as always we welcome feedback and suggestions for improvement.</p>
+<p>UPDATE: I forgot to mention that Bryce gave a great talk about reputation design at the IA Summit this year: <a href="http://www.slideshare.net/soldierant/designing-your-reputation-system/">Designing Your Reputation System (in 10 Easy Steps)</a>.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/04458900ffe8ab944f9c593d133292ad?s=32"> <div class="cont"><a href="http://developer.yahoo.com/ypatterns/" class="name">By Christian Crumlish</a><span class="date">June 10th, 2008<span></div></div>
+				</div>
+										
+								<div class="post-182 post type-post status-publish format-standard hentry category-design tag-design tag-design-patterns tag-europe tag-mining tag-pattern-mining tag-patterns tag-user-experience tag-web-20 tag-workshop">
+				
+						<h2 id="post-182"><a href="/blog/2008/03/28/pattern-mining/">Pattern-mining call for proposals: Rich interaction (web 2.0) patterns</a></h2>
+					
+
+						<div class="entry">
+							<p><a href="http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx"><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/03/web20patterns.jpg' alt="Tim OReilly's web 2.0 patterns meme map" width="500" height="375"></a></p>
+<p>Dragos Manolescu from Microsoft Live Labs and Joe Yoder from The Refactory are organizing a <a href="http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx">pattern-mining workshop</a> at <a href="http://tools.ethz.ch/workshops.html">TOOLS 2008 Europe</a>, July 5-6 (dates still to be confirmed) in Zurich, Switzerland. I&#8217;ve agreed to be on the program committee to help review proposals and advice. </p>
+<p>In their own words:</p>
+<blockquote><p>Web 2.0 features are now commonplace &mdash; blogs, wikis, RSS feeds, social bookmarking and the like are almost everywhere you look online.  Now that these technologies are maturing, what are their common problems and challenges? How are these problems being solved? What similar challenges do Web 2.0 developers face, and how can they leverage the most common solutions?  Here’s your chance to gather with other professionals facing the same issues and work together to identify solutions.</p></blockquote>
+<p>We are looking for system experts, domain experts, and pattern experts to come together, bring examples, detect commonalities, and write patterns. Proposals are due May 5.</p>
+<p>See the <a href="http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx">call for proposals</a> for more details.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/04458900ffe8ab944f9c593d133292ad?s=32"> <div class="cont"><a href="http://developer.yahoo.com/ypatterns/" class="name">By Christian Crumlish</a><span class="date">March 28th, 2008<span></div></div>
+				</div>
+										
+								<div class="post-162 post type-post status-publish format-standard hentry category-accessibility category-design category-development tag-accessibility tag-charts tag-tables tag-visualizing-data">
+				
+						<h2 id="post-162"><a href="/blog/2008/01/17/tables-and-charts/">Automatic conversion from simple, accessible data tables to YUI Charts</a></h2>
+					
+
+						<div class="entry">
+							<link rel="stylesheet" type="text/css" href="/assets/charttable/chartsstyles.css">
+<div class="interview">
+<div class="intro">
+<p><img src="http://yuiblog.com/assets/heilmann.jpg" width="300" height="225" hspace="5" vspace="5" align="right"><strong>About the Author:</strong> Christian Heilmann is the author of <em><a href="/blog/2006/06/27/heilmann-excerpt/">Beginning JavaScript with DOM Scripting and Ajax</a></em>. He has worked in web development for almost 9 years for several agencies and .coms and is currently a lead developer at Yahoo! in England.  Christian is a frequent speaker on the conference circuit in the UK and Europe; you can find some of his writing <a href="/blog/2007/01/17/event-plan/">here on YUIBlog</a> as well as on his personal blog at <a href="http://wait-till-i.com">http://wait-till-i.com</a>.</p>
+</div>
+<p>Charts are a great idea to make rows and rows of boring numbers easier to understand and to take in &mdash; for people that can see them. However, not all of your site&#8217;s visitors can see and you&#8217;ll also want to keep information you offer available for search engines. There are a lot of libraries on the web that allow you to create charts, but not many take this use case into consideration.</p>
+<h2>In praise of data tables</h2>
+<p>This is where data tables come into play. (<strong>Note:</strong> For the purposes of this article, I&#8217;m referring to pure HTML tables &mdash; not to rich UI controls like Jenny Han Donnelly&#8217;s <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable Control</a>.)  They are the perfect data construct in HTML as they are  available both for people that can see and those who can&#8217;t. Assistive technologies like screen readers offer a way to navigate tables and to read their information row-by-row and cell-by-cell. All you need to do to please everyone is to use the correct markup (including a few attributes you might not have used yet):</p>
+<pre><code>&lt;table summary=&quot;Results of a survey of which animals people would like to see more on YDN&quot;&gt;
+  &lt;caption&gt;What animals would you like to see more?&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Animal&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Requests&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Kittens&lt;/td&gt;
+      &lt;td&gt;45331&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Puppies&lt;/td&gt;
+      &lt;td&gt;32323&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Elephants&lt;/td&gt;
+      &lt;td&gt;12345&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Badgers&lt;/td&gt;
+      &lt;td&gt;6546&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sharks (without lasers)&lt;/td&gt;
+      &lt;td&gt;223&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Sharks (with lasers)&lt;/td&gt;
+      &lt;td&gt;2323&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<p>The <code>summary</code> attribute tells assistive technology what this table is about and the <code>caption</code> shows up for all users. The <code>th</code> elements define what cells are headers and the <code>scope</code> attribute applies them to all the data cells they are connected to. In this case it means that &#8220;animal&#8221; gets read out before each animal and &#8220;requests&#8221; before each number. This means that even a visitor who cannot see will still know in row five what the information is about. All in all the table renders as:</p>
+<table summary="Results of a survey of which animals people would like to see more on YDN">
+<caption>What animals would you like to see more?</caption>
+<thead>
+<tr>
+<th scope="col">Animal</th>
+<th scope="col">Requests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kittens</td>
+<td>45331</td>
+</tr>
+<tr>
+<td>Puppies</td>
+<td>32323</td>
+</tr>
+<tr>
+<td>Elephants</td>
+<td>12345</td>
+</tr>
+<tr>
+<td>Badgers</td>
+<td>6546</td>
+</tr>
+<tr>
+<td>Sharks (without lasers)</td>
+<td>223</td>
+</tr>
+<tr>
+<td>Sharks (with lasers)</td>
+<td>2323</td>
+</tr>
+</tbody>
+</table>
+<p>Easy to understand, but not too pretty. And it can get boring.  How about we use this information and create a tasty pie chart like the following (click on the image below to see the working example in action)?</p>
+<p><a href="/assets/charttable/chartsexample.html"><img src="http://yuiblog.com/assets/charttable/chart-table.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="536" border="0"></a></p>
+<h2>Using table data to automatically generate charts</h2>
+<p>In order to have the table be preceeded by a pie chart like this all you need is to add two scripts at the end of the document body and a class called <code>yui-table</code> to the table itself. For example:</p>
+<pre><code>&lt;table class=&quot;yui-table&quot; summary=&quot;Results of a survey of what browser people love&quot;&gt;
+  &lt;caption&gt;What browser do you love?&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th scope=&quot;col&quot;&gt;Browser&lt;/th&gt;
+      &lt;th scope=&quot;col&quot;&gt;Lovers&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;MSIE&lt;/td&gt;
+      &lt;td&gt;221&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Firefox&lt;/td&gt;
+      &lt;td&gt;516&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Opera&lt;/td&gt;
+      &lt;td&gt;312&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Safari&lt;/td&gt;
+      &lt;td&gt;100&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Omniweb&lt;/td&gt;
+      &lt;td&gt;30&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Lynx&lt;/td&gt;
+      &lt;td&gt;4&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;script src=&quot;http://yui.yahooapis.com/2.4.1/build/yuiloader/yuiloader-beta-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;tablestoyuicharts.js&quot;&gt;&lt;/script&gt;</code></pre>
+<p>This will show in a browser with the latest Flash plugin like this:</p>
+<p><a href="/assets/charttable/chartsexample.html"><img src="http://yuiblog.com/assets/charttable/chart-table2.png" alt="The accessible table enhanced with a pie chart (image; click through to see working example)" width="414" height="527" border="0"></a></p>
+<p>You can define the size of the chart in CSS by defining a width and height for each div element with a class of <code>yuichartfromtable</code>:</p>
+<pre><code>div.yuichartfromtable{
+  width:300px;
+  height:300px;
+  margin:0 auto;
+}
+</code></pre>
+<p>As for the scripts: the first script is the <a href="http://developer.yahoo.com/yui/loader">YUI Loader Utility</a> which allows you to pull in YUI components on-demand. This is great, as you don&#8217;t need to add lots and lots of <code>script</code> elements but let the YUI Loader figure out what it needs. You can <a href="/assets/charttable/tablestoyuicharts.js">download the second script here</a>; if you care to know what is going on with it, check the following section. If you just want to use the script, then you&#8217;re done :-).</p>
+<h2>How does this work?</h2>
+<p>The script to turn all tables with the class <code>yui-table</code> into charts is quite short, as it uses the newer YUI components that take a lot of the heavy lifting off you, especially the table-to-dataset conversion which is done by the <a href="http://developer.yahoo.com/yui/datasource">YUI DataSource Utility</a>. The full script is this:</p>
+<pre><code>
+var tablestoYUIchartsplease = new YAHOO.util.YUILoader({
+  require: ['charts'],
+  onSuccess: function(){
+    var tables = YAHOO.util.Dom.getElementsByClassName('yui-table','table');
+    YAHOO.util.Dom.batch(tables,function(o){
+      var chartcontainer = document.createElement('div');
+      YAHOO.util.Dom.addClass(chartcontainer,'yuichartfromtable');
+      YAHOO.util.Dom.insertBefore(chartcontainer,o);
+      var data = new YAHOO.util.DataSource(o);
+      data.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
+      data.responseSchema = {fields:['response','count']};
+      YAHOO.widget.Chart.SWFURL = 'http://developer.yahoo.com/yui/build/charts/assets/charts.swf?_yuiversion=2.4.1';
+      var chart = new YAHOO.widget.PieChart(chartcontainer,data,{
+        categoryField:'response',
+        dataField:'count',
+        expressInstall:'http://developer.yahoo.com/yui/build/charts/assets/expressinstall.swf'
+      });
+    });
+  }
+});
+if(document.location.toString().indexOf('http')!==-1){
+  tablestoYUIchartsplease.insert();
+}</code></pre>
+<p>Let&#8217;s chunk it up and see what each section does:</p>
+<pre><code>var tablestoYUIchartsplease = new YAHOO.util.YUILoader({
+  require: ['charts'],
+  onSuccess: function(){
+</code></pre>
+<p>First up, we let the <a href="http://developer.yahoo.com/yui/loader">YUI Loader</a> do its magic: We instantiate a new loader, tell it we need the <a href="http://developer.yahoo.com/yui/charts">YUI Charts Control</a> and wait for the different script nodes to be generated and the components to be loaded before we continue. The loader tells us all is OK by firing the <code>onSuccess</code> event, which we use to execute an anonymous function that does all the other work.</p>
+<pre><code>    var tables = YAHOO.util.Dom.getElementsByClassName('yui-table','table');
+    YAHOO.util.Dom.batch(tables,function(o){
+</code></pre>
+<p>We use <a href="http://developer.yahoo.com/yui/dom">the YUI Dom Collection</a> to get all tables with the correct class and apply a function to each of these tables using the <code>batch</code> method. The method sends the current table as the parameter <code>o</code> to this function.</p>
+<pre><code>      var chartcontainer = document.createElement('div');
+      YAHOO.util.Dom.addClass(chartcontainer,'yuichartfromtable');
+      YAHOO.util.Dom.insertBefore(chartcontainer,o);
+</code></pre>
+<p>We create a new <code>div</code> element, give it a class of <code>yuichartfromtable</code> (to allow for styling) and insert the new element into the document before the table.</p>
+<pre><code>      var data = new YAHOO.util.DataSource(o);
+      data.responseType = YAHOO.util.DataSource.TYPE_HTMLTABLE;
+      data.responseSchema = {fields:['response','count']};
+</code></pre>
+<p>Then we allow the rather new <a href="http://developer.yahoo.com/yui/datasource">YUI DataSource Utility</a>  to flex its binary muscles. While this is meant to wade through external data sources and JavaScript arrays for you, it also allows for a <code>responseType</code> of HTML table, which means it converts a table to a JavaScript object you can work with. As we&#8217;re dealing here with a really simple table, all we need to do in terms of <code>responseSchema</code> is to define two fields: a <code>response</code> (what) and a <code>count</code> (how many). These three lines are all you need to convert the table to a dataset that both the <a href="http://developer.yahoo.com/yui/charts">YUI Charts Control</a> and the <a href="http://developer.yahoo.com/yui/datatable">YUI DataTable Control</a> can use.</p>
+<pre><code>      YAHOO.widget.Chart.SWFURL = 'http://developer.yahoo.com/yui/build/charts/assets/charts.swf?_yuiversion=2.4.1';
+      var chart = new YAHOO.widget.PieChart(chartcontainer,data,{
+        categoryField:'response',
+        dataField:'count',
+        expressInstall:'http://developer.yahoo.com/yui/build/charts/assets/expressinstall.swf'
+      });
+</code></pre>
+<p>Time for pie: we define the URL of the Flash movie that draws the pie and instantiate a new pie chart. We send the <code>div</code> we created earlier as the container, the <code>data</code> we retrieved from the table as the data to display and define a configuration object. This object has the <code>response</code> field as the categories and the <code>count</code> field as the data. The <code>expressinstall</code> defines what Flash movie to show if the visitor doesn&#8217;t have the right Flash version.</p>
+<pre><code>    });
+  }
+});
+if(document.location.toString().indexOf('http')!==-1){
+  tablestoYUIchartsplease.insert();
+}</code></pre>
+<p>Almost done. All the script now needs to do is to call the <code>insert()</code> method of the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> &mdash; that gets the ball rolling. I&#8217;ve enclosed the method in an <code>if</code> statement that checks if the HTML is called up via HTTP or not as the Charts Control needs HTTP to work.</p>
+<h2>Summary</h2>
+<p>That&#8217;s all you need to do to progressively enhance an accessible data table to turn them into a pie chart using the YUI Charts Control. We can extend this example to allow for several types of charts and to turn the tables into sortable data tables quite easily. If there is interest, drop us a comment.</p>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/7ca3f79845f6e7ad8bc7769ca5abf1f5?s=32"> <div class="cont"><a href="http://wait-till-i.com" class="name">By Christian Heilmann</a><span class="date">January 17th, 2008<span></div></div>
+				</div>
+										
+								<div class="post-159 post type-post status-publish format-standard hentry category-design tag-animation tag-carousel tag-design-patterns tag-images tag-pattern tag-pattern-library tag-slide tag-transition">
+				
+						<h2 id="post-159"><a href="/blog/2008/01/15/carousel-pattern/">Carousel Design Pattern</a></h2>
+					
+
+						<div class="entry">
+							<p><a href='http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel'><img src='http://www.yuiblog.com/blog/wp-content/uploads/2008/01/3d-carousel.thumbnail.jpg' alt='3-D carousel wireframe image' align="right" hspace="10" vspace="5"></a>As the end of last year was winding up I spent some time tinkering with the open pattern library, in order to clear the way for our latest pattern release, <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel">Carousel</a>. One reason why I needed to do this tinkering is that the Carousel pattern contains a few new fields in its data model. These are primarily elements that we have been including lately in our internal patterns that I wanted to find a way to promote to the public library.</p>
+<p>But first, a little bit about the pattern. Folks inside and outside of Yahoo! have been asking us for a carousel patterns since before I got here (and you all want carousel code from YUI too &mdash; <a href="http://tech.groups.yahoo.com/group/ydn-javascript/message/23851">we hear you</a>). It&#8217;s been possible to make a carousel using the <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=slide">Slide Transition</a> pattern and associated YUI code, as Bill Scott <a href="http://billwscott.com/carousel/">demonstrated</a> quite some time ago, but the detailed do&#8217;s and don&#8217;ts of effective carousels were still left up to the individual developers.</p>
+<p><a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel"><img src="http://yuiblog.com/assets/carousel-pattern.png" width="300" height="294" align="right" hspace="10" vspace="10" alt="The Carousel Pattern page on the Pattern Library site"></a>Internally here at Yahoo! we had a several partial carousel guidelines (carousels are used extensively across the network, especially in the Media Group sites) but no consistent standard. This past summer a large number of user experience designers carried on a week-long discussion &mdash; sharing experience and insights &mdash; and hashed out the major issues involved with carousel design. After that I gathered a group of interested designers and developers and started shaping those comments into a sketchy pattern draft.</p>
+<p><a href="/blog/2007/10/02/challenges-of-interface-design-for-mobile-devices/">Lucas Pettinati</a>, a designer on the YDN team who also works closely with YUI, devoted a lot of time to sorting out the subtle details and possible variations on the basic carousel theme with me, and also cooked up some basic wireframe diagrams to help illustrate the possibilities. The draft pattern made its way through several review cycles and finally emerged ready to publish near the end of last year.</p>
+<p>Why so much effort? It&#8217;s a good question. It&#8217;s certainly possible to describe a carousel in pattern format in a lot fewer words than we did. Both <a href="http://welie.com/patterns/showPattern.php?patternID=carrousel">Patterns in Interaction Design</a> and <a href="http://ui-patterns.com/pattern/Carousel">UI-patterns.com</a> manage to describe carousels in fairly simple terms (the latter even uses a Yahoo! carousel as its sensitizing example). </p>
+<p>We felt that there were more subtle issues at work here than simply queuing up a bunch of images and allowing them to scroll into a viewport. You&#8217;ll be the judge of whether we were right, and as always we welcome feedback on the pattern.</p>
+<p>One last note about the pattern format: I&#8217;ve added a new field, Special Cases, to the pattern format. We&#8217;ve used it internally for some time and I&#8217;m not sure why we haven&#8217;t used it in the open library. In the past that material sometimes made it into the solution or rationale or was left out. As with <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=votetopromote">Vote to Promote</a> I&#8217;ve also included a Pattern Gallery and have now made that a standard element in the pattern model.</p>
+<p>Finally, I&#8217;ve added a few new headings to the links along the gutter of the pattern description: Other Examples, Wireframe Templates, and Similar Patterns in Other Libraries. Other Examples are examples from around the Web, outside of the Yahoo! network. Wireframe templates are downloadable stencils (currently in Omnigraffle and Visio XML format) that designers can use to create and position their carousels. Similar Patterns in Other Libraries are, well&#8230; need I explain?</p>
+<p>Inside Yahoo! our designers always want stencils to work with just as our developers always want code. We are working on producing wireframe templates for all of our patterns, starting with the new ones. You&#8217;ll notice that we don&#8217;t yet have YUI code for the carousel pattern but as soon as we do I will of course add a link to it from the pattern entry.</p>
+<p>So I spent the holidays tinkering with the JSON and PHP files that build the library and adding in the new fields without breaking all the old patterns. (OK, I broke them but then I fixed them but that&#8217;s what staging servers are for, right?) Now that the new year has rolled around I realized I had stealth-released the carousel pattern when I should really be shouting about the newest pattern to the rafters. A lot of people have worked hard on this and I&#8217;m proud of the result. I hope you find it useful. Let us know what you think.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/04458900ffe8ab944f9c593d133292ad?s=32"> <div class="cont"><a href="http://developer.yahoo.com/ypatterns/" class="name">By Christian Crumlish</a><span class="date">January 15th, 2008<span></div></div>
+				</div>
+										
+								<div class="post-150 post type-post status-publish format-standard hentry category-design category-yui-theater tag-brown-bag tag-christian-crumlish tag-design tag-design-patterns tag-hci tag-pattern-library tag-patterns tag-process tag-theater tag-video tag-xian tag-yahoo-design-pattern-library">
+				
+						<h2 id="post-150"><a href="/blog/2007/12/07/pattern-library-brown-bag/">An inside look at the Pattern Library</a></h2>
+					
+
+						<div class="entry">
+							<p>As the third curator of Yahoo!&#8217;s <a href="http://developer.yahoo.com/ypatterns/">Design Pattern Library</a> I often receive a lot of thanks and praise from website designers and developers for the way we at Yahoo! have offered this resource to the world. I usually try to explain that much of the goodness happened before I came on board and that I can&#8217;t really take credit for it, but when my ego needs a boost I just smile and nod.</p>
+<p>When Erin Malone and Matt Leacock and others first launched the internal pattern library, they presented a talk at the IA Summit, called <a href="http://www.boxesandarrows.com/view/implementing_a_pattern_library_in_the_real_world_a_yahoo_case_study">Implementing a Pattern Library in the Real World: A Case Study</a> (and subsequently the linked article on the same topic at Boxes and Arrows). Then Erin and Bill Scott took the library to the public on the Yahoo! Developer Network website and Bill Scott <strike>&#8220;</strike><em>enriched</em><strike>&#8220;</strike> the library with tons of Ajax-y goodness, closely tied to the <a href="http://developer.yahoo.com/yui">YUI Library</a>.</p>
+<p>Since that time, I came on board and I&#8217;ve worked on reorganizing the library, updating the patterns, and shepherding a new generation of patterns through our internal refinement and review process, with an eye toward identifying useful social and openness patterns that we can share with the whole Web. So when people come up to me at conferences or find me on mailing lists for <a href="http://iainstitute.org/">information architects</a> and <a href="http://gamma.ixda.org/topics.php?topic=patterns">interaction designers</a> frequently they are curious about how the library has evolved in the years since it was founded, what our internal process looks like these days for writing, reviewing, approving, and rating patterns, and how we decide which ones to publish in the open library.</p>
+<p>Recently, I gave a talk here at Yahoo! as part of our UED brown-bag series, called <a href="http://developer.yahoo.net/blogs/theater/archives/2007/12/ued_pattern_library_w_christian_crumlish.html">The Pattern Library Wants YOU!</a>, intended to update oldtimers on changes and improvements to our process and infrastructure and to orient new designers about the library, and of course to encourage people to get involved. Ricky Montalvo, our ace videographer for <a href="http://developer.yahoo.com/yui/theater/">YUI Theater</a> and YDN Theater, recorded my talk and edited it together with my slides, and we just spent a week or so removing any too-sensitive information and getting our friendly legal folks to sign off on releasing the talk to the public.</p>
+<p>So, without further ado, here is the public version of my talk, which should answer a lot of those questions I&#8217;m hearing these days.</p>
+<div>
+<embed src='http://us.i1.yimg.com/cosmos.bcst.yahoo.com/player/FLVVideoSimple.swf' flashvars='id=5342962&#038;autoStart=0&#038;bw=0' type='application/x-shockwave-flash' width='400' height='300'></embed>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/04458900ffe8ab944f9c593d133292ad?s=32"> <div class="cont"><a href="http://developer.yahoo.com/ypatterns/" class="name">By Christian Crumlish</a><span class="date">December 7th, 2007<span></div></div>
+				</div>
+							
+							<div class="bottom-nav">
+					<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/design/page/4/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/design/page/2/" >Newer Entries &raquo;</a>    </div>
+</div>				</div>
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/16/yui-weekly-for-may-16-2014/">YUI Weekly for May 16, 2014</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'> <option value="">Select Month</option> 	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+ </select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" title="View all posts filed under Accessibility">Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" title="View all posts filed under CSS 101">CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1 current-cat"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (652)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" title="View all posts filed under Frontend Jobs at Yahoo">Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" title="View all posts filed under Graded Browser Support">Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" title="View all posts filed under Miscellany">Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" title="View all posts filed under Open Hours">Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" title="View all posts filed under Performance">Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" title="View all posts filed under Releases">Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" title="View all posts filed under Target Environments">Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" title="View all posts filed under Yeti">Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" title="View all posts filed under YUI 3 Gallery">YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" title="View all posts filed under YUI Events">YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" title="View all posts filed under YUI Implementations">YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" title="View all posts filed under YUI Theater">YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" title="View all posts filed under YUI Weekly">YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/" title="Syndicate this site using RSS 2.0">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/" title="The latest comments to all posts in RSS">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>						</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1404507396" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

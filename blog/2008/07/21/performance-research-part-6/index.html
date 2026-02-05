@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Performance Research, Part 6: Less is More — Serving Files Faster by Combining Them</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/performance/">Performance</a></li>
+                    <li class="current">Performance Research, Part 6: Less is More — Serving Files Faster by Combining Them</li></ul>
+				<h1 class="yui3-u-7-8">Performance Research, Part 6: Less is More — Serving Files Faster by Combining Them</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">July 21, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><em>This article is the sixth in a series of YUIBlog articles describing experiments conducted to learn more about optimizing web page performance (<a href="/blog-archive/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/blog-archive/blog/2007/01/04/performance-research-part-2/">Part 2</a>, <a href="/blog-archive/blog/2007/03/01/performance-research-part-3/">Part 3</a>, <a href="/blog-archive/blog/2007/04/11/performance-research-part-4/">Part 4</a>, <a href="/blog-archive/blog/2008/02/06/iphone-cacheability/">Part 5</a>).</em></div> </div>
+	<p>In <a href="/blog-archive/blog/2006/11/28/performance-research-part-1/">Performance Research Part 1</a>, we discussed how reducing the number of HTTP requests has the biggest impact on improving the response time and is often the easiest performance improvement to make. One technique without having to simplify the page design is to combine multiple scripts into a single script, and similarly combine multiple stylesheets into a single stylesheet.<blockquote>Combining multiple files reduces the extra bytes from HTTP headers as well as potential transfer latency caused by TCP slow starts, packet losses, etc.</blockquote> <p>Figure 1 shows a graphical view of how time is spent loading a page with six separate scripts. Notice that for every file, the browser makes a separate HTTP request to retrieve the file. The gaps between the scripts indicate the time the browser takes to parse and render each script. Figure 2 shows the how time is spent loading a page with the same six scripts combined into a single script.<div class="figure">
+			<h4><strong>Figure 1.</strong> Loading a page with six separate scripts</h4>
+			<p><img alt="Figure 1. Loading a page with six separate scripts" height="114" id="six-separate-scripts" src="/blog-archive/assets/six-separate-scripts.gif" width="487" /></div>
+		<div class="figure">
+			<h4><strong>Figure 2.</strong> Loading a page with one combined script</h4>
+			<p><img alt="Figure 1. Loading a page with one combined script" height="63" id="six-separate-scripts" longdesc="six-separate-scripts.gif" src="/blog-archive/assets/one-single-script.gif" width="484" /></div> <p>Combining JavaScript and CSS files as part of the development process can be burdensome. It usually makes sense during development to organize the code into logical modules as separate files. Typically, combining those separate files before product release is either a manual process or part of a build process. Every time one of the individual files is changed, the larger file needs to be re-combined and re-pushed. The cost of this across an organization as large as Yahoo! is significant.<h3>Serve Files Faster using Combo Handler</h3>
+	<p>Combo Handler, built in collaboration by <a href="http://developer.yahoo.com/performance/">Yahoo!'s Exceptional Performance team</a> and the groups that support our CDN, is one solution to combine multiple files into a single, larger file.<p>Combo Handler provides a way to allow developers to maintain the logical organization of their code in separate files, while achieving the advantages of combining those into a single file as part of the final user experience. It alleviates the need for the time-consuming re-build and re-push processes. In addition, Combo Handler integrates seamlessly into a content delivery network, taking full advantage of the <a href="http://developer.yahoo.com/performance/rules.html#cdn">benefits of a CDN</a> while reducing the drawbacks of dynamically combining separate files.<p>We've been using this service across many Yahoo! properties for some time now to help improve end users' response times. Thanks to the YUI team, it is <a href="/blog-archive/blog/2008/07/16/combohandler/">now available</a> to all of you that are using the Yahoo!-hosted YUI JavaScript files. (Note: Combo-handling of CSS files is not supported at this time.) <a href="http://developer.yahoo.com/yui/articles/hosting/#configure">Head over to the YUI Configurator</a> to generate combo-ready filepaths customized for your specific YUI implementation.<h3>Combo Handler Best Practices</h3>
+	<p>When using Combo Handler to combine files, pay special attention to the order in which the files are specified. Not only could there be file dependencies, browsers will only use the cached version of a file if the filename extracted from the URL is identical. For example, suppose the following smaller files (<code>dom.js</code> and <code>event.js</code>) are combined into a single larger file using Combo Handler: <pre>
+   http://yui.yahooapis.com/combo?event.js&dom.js
+   http://yui.yahooapis.com/combo?dom.js&event.js
+</pre><p>In the example above, the browser will download and cache both files separately because the filenames are actually different.<p>Also, you may not always want to combine all files into one single file. Suppose you have one or more scripts that are shared across multiple pages in your site in addition to scripts that are only used on specific pages. By combining everything into one large file and using this file across your entire site, some pages will spend time downloading more than it really needs. Instead, take a look at different types of combinations. You might combine the scripts that are used in every page across your site into one script. Then for each page or group of pages, combine common scripts into another separate script.<h3>Yahoo! HotJobs Combines and Reduces Response Time by 8%!</h3>
+	<p>The <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team ran an experiment with <a href="http://hotjobs.yahoo.com">Yahoo! HotJobs</a> to determine the response time savings our users would benefit from by combining multiple files into a single file. Two real user test buckets were created for this experiment. In one bucket, users visited a page with six JavaScript files left uncombined. In the second bucket, users visited the same page with the six JavaScript files combined into one single file. <blockquote>Combining six JavaScript files into one single JavaScript file improved performance by almost 8% on average for Yahoo! HotJobs' users on broadband bandwidth speeds and 5% for users on lan. No design or feature changes required!</blockquote> <p>Keep in mind that the page we tested was already highly optimized for performance and had a <a href="http://developer.yahoo.com/yslow">YSlow</a> "A" grade. The response time savings depend on a number of factors including number of files combined, browser caching patterns, etc. This experiment supported our previous research, which indicated that reducing HTTP requests is an effective way to improve response times for our end users.<h3>Takeaways</h3>
+	<p>Improve response times by combining multiple JavaScript and CSS files. Yahoo!'s <a href="/blog-archive/blog/2008/07/16/combohandler/">Combo Handler</a> Service is one solution that provides a way to make fewer HTTP requests for Yahoo!-hosted JavaScript files, and also leverages the benefits of a Content Delivery Network.<ul>
+			<li>Combine scripts and stylesheets to reduce HTTP requests.<li>Look at different types of file combinations.<li>Avoid users from having to download more than they really need.<li>Pay special attention to the order in which files are combined.</ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

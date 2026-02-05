@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Implementation Focus: Vitalist, a Getting Things Done (GTD) Web App Built with YUI 2</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Implementation Focus: Vitalist, a Getting Things Done (GTD) Web App Built with YUI 2</li></ul>
+				<h1 class="yui3-u-7-8">Implementation Focus: Vitalist, a Getting Things Done (GTD) Web App Built with YUI 2</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">April 12, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="authorbox">
+		<p><em><strong><img align="right" alt="" src="/blog-archive/assets/vitalist/headshot.jpg" />About the author:</strong>Matt Berg is a co-founder of <a href="http://www.vitalist.com/" title="GTD Software Online for Getting Things Done » Vitalist">Vitalist</a>, the premier web-based productivity manager for GTD. Matt is responsible for the UI and usability of the various Vitalist applications. He has a B.B.A. in MIS from the University of Texas at Austin and has been working on web applications since 2000. You can follow Matt on Twitter at <a href="http://twitter.com/mattberg" title="Matt Berg on Twitter">@mattberg</a></em></div>
+	<h3>About Vitalist</h3>
+	<p><a href="http://www.vitalist.com/" title="GTD Software Online for Getting Things Done » Vitalist">Vitalist</a> is a powerful personal organization tool that closely follows the popular <a href="http://www.davidco.com/" title="David Allen, Getting Things Done® and GTD®">Getting Things Done methodology by David Allen</a>. With Vitalist, all of your to-dos are online, in GTD format, and ready to be accessed or updated from anywhere.<p><img alt="" src="/blog-archive/assets/vitalist/main-small.png" /><h3>Why YUI?</h3>
+	<p>We have been using YUI at Vitalist pretty heavily since around version 2.2.0 &mdash; for about three years. Initially we ended up choosing YUI out of the available JavaScript frameworks for two major reasons: documentation and code footprint. To this day, I feel YUI continues to lead the pack in both of those areas.<p>With user interfaces getting more complex everyday, another major benefit of YUI is the number of available utilities and widgets. And at Vitalist we are taking full advantage, using the following components (version 2.8.0r4): <a href="http://developer.yahoo.com/yui/animation/">animation</a>, <a href="http://developer.yahoo.com/yui/autocomplete/">autocomplete</a>, <a href="http://developer.yahoo.com/yui/history/">browser history</a>, <a href="http://developer.yahoo.com/yui/calendar/">calendar</a>, <a href="http://developer.yahoo.com/yui/compressor/">compressor</a>, <a href="http://developer.yahoo.com/yui/connection/">connection</a>, <a href="http://developer.yahoo.com/yui/cookie/">cookie</a>, <a href="http://developer.yahoo.com/yui/fonts/">CSS fonts</a>, <a href="http://developer.yahoo.com/yui/reset/">CSS reset</a>, <a href="http://developer.yahoo.com/yui/datasource/">datasource</a>, <a href="http://developer.yahoo.com/yui/dom/">dom</a>, <a href="http://developer.yahoo.com/yui/dragdrop/">drag and drop</a>, <a href="http://developer.yahoo.com/yui/element/">element</a>, <a href="http://developer.yahoo.com/yui/event/">event</a>, <a href="http://developer.yahoo.com/yui/json/">json</a>, <a href="http://developer.yahoo.com/yui/logger/">logger</a>, <a href="http://developer.yahoo.com/yui/menu/">menu</a>, <a href="http://developer.yahoo.com/yui/selector/">selector</a>, <a href="http://developer.yahoo.com/yui/swf/">swf</a>, <a href="http://developer.yahoo.com/yui/container/tooltip/">tooltip</a>, <a href="http://developer.yahoo.com/yui/yahoo/">yahoo</a>.<h3>Obsession with Performance and Responsiveness</h3>
+	<p>Early on at Vitalist we decided to go the rout of loading most of the necessary components and data on the initial visit to our main application. This was done for two reasons, UI responsiveness and ease of offline setup. Let's focus on responsiveness.<p>While in theory it's simple, having JavaScript handle basically all of our UI generation definitely added some complexities. For example, the speed of appending and traversing the DOM is of the utmost importance. Something as simple as adding a root element to the <code>getElementsByClassName</code> function boosts performance significantly. And sometimes we had to sacrifice programmatic convenience for speed. While the <a href="http://developer.yahoo.com/yui/selector/" title="YUI 2: Selector Utility">YUI 2 Selector Utility</a> can be very powerful, we originally found <code>getElementsByClassName</code> to be faster. (With the latest releases of YUI 2, the Selector Utility performance seems to have increased quite a bit, but we still default to <code>getElementsByClassName</code> when possible to boost performance &mdash; especially in browsers that have native support, which <a href="http://developer.yahoo.com/yui/dom/" title="YUI 2: Dom Collection">YUI 2's Dom Utility</a> leverages.)<p><img alt="" src="/blog-archive/assets/vitalist/autocomplete-small.png" /><p><a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">YUI 2 AutoComplete</a> powers one of the newer features of Vitalist, released in the last year or so, but it has also been one of the hardest implementations in terms of responsiveness and browser CPU usage. In our initial attempt, every time we needed a new autocomplete control for an input we would create a new instance, destroying it once it was no longer needed. This typically happens when moving from "page" to "page" (keep in mind, all of our "pages" are just client-generated screens). Internet Explorer struggled with this, often pegging the CPU at 100% and effectively bringing the computer to a halt. This forced us to turn off autocomplete support for IE. Two key changes helped us create a more efficient autocomplete. First, we create just a few generic instances of the autocomplete that can be shared from "page" to "page". Then the only update necessary is setting a new DataSource, which in our implementation requires less CPU effort. Number two, pay attention to the <code>maxResultsDisplayed</code> property. Because we allow the full autocomplete list to be displayed without any input (we also added the down arrow key to show the list), we initially set the <code>maxResultsDisplayed</code> to an arbitrarily large number like 10,000. Simply changing this number to the length of our actual datasource resulted in significant CPU performance gains.<p><img alt="" src="/blog-archive/assets/vitalist/logger-small.png" /><p>For monitoring performance on the front-end, we use the <a href="http://developer.yahoo.com/yui/logger/" title="YUI 2: Logger">YUI 2 Logger Control</a>. When in debug mode, we output many log updates detailing the various steps of JavaScript processing. One great thing about the logger is the fact that it keeps a timestamp of when it was last updated. This has been very helpful when trying to figure out the bottlenecks in our code. And for more of the server side performance monitoring, <a href="http://developer.yahoo.com/yslow/" title="Yahoo! YSlow for Firebug">YSlow</a> has also been very helpful in making sure we are generating http requests as fast as possible.<h3>Most Interesting Implementation Feature</h3>
+	<p><img alt="" src="/blog-archive/assets/vitalist/dragdrop-small.png" /><p>Personally, I had the most fun implementing drag and drop in Vitalist (using <a href="http://developer.yahoo.com/yui/dragdrop/" title="YUI 2: Drag & Drop">YUI 2 Drag and Drop</a>). Drag and drop actually serves two purposes in Vitalist for the same drag element. First, we use it for manually re-sorting lists; secondly, we use it for moving tasks between lists. To accomplish this, two different drop target "zones" are used: one for the list elements in the content and one for the list elements in the left sidebar menu.<p>The interesting part here is the two different zones function quite differently. When dragging in the content area, we want the drag element to constantly move the hovered element and append the drag element in the new location. In the menu area, we don't want to anything to shift, but we do want to highlight the menu selection we are hovering over. Here is a code snippet from the onDragOver method:<pre>
+if (destElNodeName === "li") {
+	orig_p = srcEl.parentNode;
+	p = destEl.parentNode;
+	
+	if (!_D.hasClass(p.parentNode, "nav")) {
+		if (this.goingUp) {
+			p.insertBefore(srcEl, destEl);
+		} else {
+			p.insertBefore(srcEl, destEl.nextSibling);
+		}
+	} else {
+		_D.removeClass(_S.query("#sidebar .nav:not(.alt) li"), "drag");
+		_D.addClass(destEl, "drag");
+	}
+
+	_DDM.refreshCache();
+}
+</pre><h3>Building Vitalist components with YUI Compressor</h3>
+	<p><img alt="" src="/blog-archive/assets/vitalist/admin-small.png" /><p>Related to our obsession with performance, we created a web front-end that uses the <a href="http://developer.yahoo.com/yui/compressor/" title="YUI Compressor">YUI Compressor</a> in conjunction with some other scripts to build the various JavaScript and CSS components used throughout Vitalist. This ensures we are keeping the smallest code footprint possible for each of the major sections of our site. And as you may know, keeping the number of http requests as low as possible helps on page load times, so combining JavaScript and CSS files where possible can help a great deal.<p>Some background is necessary here. Vitalist has its own core set of JavaScript utilities and CSS that are shared across all of the major sections of the site. Each individual section (such as the main application, iPhone-optimized application, or marketing site) has its own specific JavaScript and CSS.<p>So the basics of the build process are as follows: First, the global JavaScript and CSS files are minified using YUI Compressor. Then, for each section, the various JavaScript and CSS files are minified, and then combined with the global file to create one single file. In addition, each section only requires certain components of YUI, so each of the required pieces are combined into a single YUI file, further reducing the number of files needed.<h3>What's Next?</h3>
+	<p>The next major project with Vitalist using YUI will be upgrading to the <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 — Yahoo! User Interface Library">YUI 3</a> framework. With version 3.1.0's ability to use legacy YUI 2 components easily, it's time to make the move.<p>If you are interested in learning more about Vitalist, please check out our website: <a href="http://www.vitalist.com">www.vitalist.com</a>. Also, feel free to email us at <a href="mailto:support@vitalist.com">support@vitalist.com</a> with any questions you may have.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

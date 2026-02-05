@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Introducing Yeti: The YUI Easy Testing Interface</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Introducing Yeti: The YUI Easy Testing Interface</li></ul>
+				<h1 class="yui3-u-7-8">Introducing Yeti: The YUI Easy Testing Interface</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By Reid Burke</a><span class="date">August 25, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><a href="http://yuilibrary.com/projects/yeti/"><img alt="Welcome to Yeti" src="/blog-archive/assets/yeti/splash.jpg" title="" /></a><p>Testing JavaScript is an important but often overlooked part of web development. One reason is because developing for the web means targeting more than one browser. YUI currently classifies <a href="http://developer.yahoo.com/yui/articles/gbs/">11 different environments</a> that enjoy our highest support level. In addition, we also test YUI on emerging X-grade environments like mobile devices. When you have so many different environments to support, it's tempting to just pick a couple important ones to develop with locally and hope for the best.<p>At YUI, we use <a href="http://seleniumhq.org/">Selenium</a> and <a href="http://hudson-ci.org/">Hudson</a> for running <a href="http://developer.yahoo.com/yui/3/test/">YUI Test</a>-based unit tests on various browser and operating system configurations as part of our continuous integration strategy. This is great for catching problems that result from integrating your work with the rest of a complex software stack. It comes with a price: CI tools like these are complicated to setup and maintain. In any case, they don't help you while you're developing code and testing <em>before</em> you commit.<p>Today, I'm excited to release <a href="http://yuilibrary.com/projects/yeti/">Yeti</a> 0.1.0, an experimental command-line tool designed to make cross-browser testing easier before you commit a line of code.<p>Yeti automatically launches JavaScript unit tests in a browser and reports the results without leaving your terminal. It's very simple to use: Just run <code>yeti test.html</code> to get the results of the YUI Test-based test in <code>test.html</code>. You can pass multiple HTML documents to test multiple components at once.<pre><code>$ yeti dom/tests/dom.html attribute/tests/attribute.html json/tests/json.html 
+✔  DOM Tests from Safari (Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16)
+  20 passed
+  0 failed
+
+✔  Y.JSON (JavaScript implementation) from Safari (Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16)
+  68 passed
+  0 failed
+
+✔  Attribute Unit Tests from Safari (Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_4; en-us) AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16)
+  106 passed
+  0 failed
+
+194 tests passed! (3217ms)
+</code></pre><p>The real power of Yeti is running tests in multiple browsers simultaneously. Although Yeti can open your tests one-by-one on your computer, Yeti allows you to run tests on any browser on any device&mdash;all at the same time.<p>If you run Yeti without arguments, it will start a web server that you can access at <code>http://localhost:8000</code>. You can then point browsers or devices on your network to that URL and every test you run from that point will be executed on all browsers visiting the test page.<p><a href="http://yuilibrary.com/projects/yeti/"><img alt="Multiple browsers with Yeti" src="/blog-archive/assets/yeti/multiple-browsers.jpg" title="Yeti running a test on these browsers. Note that even uncaught exceptions are captured!" /></a><p>When combined with the excellent <a href="http://localtunnel.com/">localtunnel</a>, firewalls between you and other computers are less painful. If you're not working with sensitive information, it's a simple way to make your Yeti available to the internet:<pre><code>$ localtunnel 8000
+   Port 8000 is now publicly accessible from http://example.localtunnel.com
+</code></pre><p>You can then visit that URL to access Yeti and start running tests:<p><a href="http://yuilibrary.com/projects/yeti/"><img alt="Yeti on iOS 4 Safari" src="/blog-archive/assets/yeti/mobilesafari.jpg" style="border:10px solid #000" /></a><p>This is especially useful for cellular devices: You can use your carrier's internet connection without needing to get your device on the same network as your development computer.<p>Yeti aims to make JavaScript testing easier; however, it's far from being complete. (Don't take the 0.1.0 version number lightly.) Yeti assumes you're using YUI Test, has only been tested on Mac OS X, and may not work with some kinds of testing scenarios. Despite these shortcomings, Yeti has been so useful internally that we didn't want to wait any longer to share it with the YUI community.<h4>Getting the code</h4>
+	<p>Yeti is <a href="http://github.com/yui/yeti">available on GitHub</a> and offered under <a href="http://developer.yahoo.com/yui/license.html">YUI's BSD license</a>.<h4>Installing</h4>
+	<p>Yeti is written entirely in JavaScript and runs on top of <a href="http://nodejs.org/">NodeJS</a>. If you're already a NodeJS and <a href="http://npmjs.org/">npm</a> user, installing is very simple:<pre><code style="font-size:170%">$ npm install yeti@stable
+</code></pre><p>If you haven't installed NodeJS and npm and you're on a recent Mac, you can still install Yeti with a convenient installer.<table>
+			<tr>
+				<td><a href="http://yuilibrary.com/downloads/download.php?file=3716057163a82b4b00c2a00ab0bb186e"><img alt="Yeti Icon" src="/blog-archive/assets/yeti/download0.jpg" /></a></td>
+				<td><a href="http://yuilibrary.com/downloads/download.php?file=3716057163a82b4b00c2a00ab0bb186e" style="font-size:120%;font-weight:bold">Download the Yeti 0.1.0 Installer</a> 2.7 MB<br /><span style="color:#666">Requires Mac OS X 10.6 and a Intel Core 2 processor or better</span></td> </tr> </table> <p>If your computer doesn't meet the installer's requirements, you can still use Yeti if you're able to install npm. More installation and usage instructions are available in <a href="http://github.com/yui/yeti/blob/master/README.md">Yeti's README</a>.<h4>Your participation is welcome</h4>
+	<p>Yeti is the first project we've launched in <a href="http://yuilibrary.com/labs/">YUI Labs</a>, an umbrella category where our new ideas and initiatives will take shape. As such, Yeti is offered without the same level of support as our other projects. We still encourage you to ask questions and give feedback in <a href="http://yuilibrary.com/forum/viewforum.php?f=230">Yeti's forums</a> and hope Yeti makes testing easy and fun. If it doesn't, please <a href="http://yuilibrary.com/forum/viewforum.php?f=230">tell us</a>, <a href="http://yuilibrary.com/projects/yeti/newticket">file a bug</a> or consider <a href="http://yuilibrary.com/projects/yeti/pullreq">contributing to Yeti</a>.<p>Happy testing!<p class="authorbox"><em><strong>About the Author:</strong> Reid Burke (<a href="http://twitter.com/reid">@reid</a>) is the newest member of the YUI team. He loves abominable snow monsters and JavaScript.</em></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

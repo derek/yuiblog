@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Working with the YUI DataTable (Updated for v2.6.0), Part 1: Getting Started</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Working with the YUI DataTable (Updated for v2.6.0), Part 1: Getting Started</li></ul>
+				<h1 class="yui3-u-7-8">Working with the YUI DataTable (Updated for v2.6.0), Part 1: Getting Started</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">October 16, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Daniel Barreiro (Satyam)" height="206" src="/blog-archive/assets/satyam.jpg" width="160" /><strong>About the Author:</strong> Daniel Barreiro (screen name Satyam) has been around for quite some time. The ENIAC was turned off the day before he was born, so he missed that but he hasn't missed much since. He's had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere. When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic. Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;'s and &gt;'s, he ended up learning quite a lot about the world of frontend engineering. It's been a long journey since COBOL and Fortran. Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain. <p> When he's not basking in the Mediterranean sun, Satyam can be found among the most prolific and knowledgable participants in the YUI community on the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YDN-JavaScript developer forum</a>. </div> </div>
+	<p><a href="http://developer.yahoo.com/yui">YUI's DataTable Control</a> has many options, more than any single application will use. Unless you want to improvise something different for each and every page, chances are you will be using a subset of those options. As most often is the case, whatever worked your first time, that's what you will use in the rest of the pages, usually copying it over and then modifying it for each page. Then, in the second or third page, you notice that clicking on a column heading does reorder the data but not in the way you expected; so, you research a little more and find out that the code you so happily copied all over needs some retouching. Given the complexity of the component and the problems you will address with it, planning a little bit in advance is a good idea. <p> This article is an update of a <a href="/blog-archive/blog/2007/09/12/satyam-datatable">similar article</a> written when version 2.3 of YUI was current. With version 2.6, the DataTable has been taken out of beta, which means its public interfaces will no longer change &mdash; so this should be the definitive article about it on this 2.x line of code. <h2> Data Types </h2>
+	<p> The data shown to the user by DataTable is a reflection of the data it holds in the internal <code>RecordSet</code> array. <code>DataTable</code> assumes this data to be one of the native JavaScript data types; after all, that is the only choice it has. Thus, numbers are expected to be actual integers or floats, dates to be JavaScript <code>Date</code> objects and booleans to be actual <code>true</code> or <code>false</code> values, not just 'truish' or 'unlikely' like 1 and 0 or <code>!= 0</code> and <code>null</code> (i.e., they have to compare to <code>true</code> and <code>false</code> with a triple equal). Your <code>DataTable</code> might look cool in a first trial but then things start to break down when trying to use advanced features if the data types aren't properly implemented, so keep this in mind, values should be converted to their proper native types. <h2> The DataSource Component </h2>
+	<p> Data is read into the <code>RecordSet</code> via the <code>DataSource</code> component, the same one used by the <a href="http://developer.yahoo.com/yui/charts/">Charts</a> and <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete</a> components. It can be used to retrieve structured data, letting it manage the connection, parse the data, fetch the values, convert them and place them into a JavaScript array of values, so it might be handy if you read any table-oriented data, basically, the result of any database query. <p> One thing it does not do, and is often the cause of much confusion, is to take data back. The DataSource goes one-way, it is a source of data, it does not keep a permanent connection to the server so it cannot take any updated values and modify them in whatever storage media they came from. It wouldn't be able to do so, after all, what's the opposite of an SQL Select statement, an Insert or an Update? You have to put the logic for updates on the server side and then it is up to you how you communicate with it and we will see that in the second part of this series. <p> So, the first thing you have to do is to decide where your data will be coming from. Most often it comes from a remote source so you would use the <code>XHRDataSource</code> class. But you might want to support users who don't have JavaScript enabled and you want them to see the raw information without JavaScript enhancements, then you will draw the HTML table for non-JavaScript users and make the <code>LocalDataSource</code> class read it so it gets enhanced by the DataTable for the rest. The <code>LocalDataSource</code> will also read an XML Data Island if you use them. If the source of your data is on a separate domain and the regular XHR connection would fail, then you would use the <code>ScriptNodeDataSource</code> which uses YUI's <a href="http://developer.yahoo.com/yui/get/">Get utility</a> to do cross-domain data retrieval. Finally, data might come from some other library you have to interact with to request the data. You can then use the <code>FunctionDataSource</code> that takes a function to read the data from and by whatever means you require. <p> Then, you have to define the format of that values themselves. For example, I use PHP and MySQL and I don't care to load my server doing much data conversion on the server side when the client machine might have as much CPU power as my server; so I pass data just the way it comes and let the client deal with it. Thus, dates will be <code>YYYY-MM-SS hh:mm:ss</code> and booleans will be 0 or 1 which, of course, is not the way <code>DataTable</code> wants them. The <code>DataSource</code> component is the place to fix that. <p> When you set the <code>DataSource</code> you specify the names of the columns it will receive, like this: <pre>
+myDataSource.responseSchema = {
+    fields: ["name","breed","age"]
+};
+</pre><p> The code above assumes all fields will be treated as strings. This could produce strange results such as having a dog aged "11" sorted as if it were younger than a dog aged "2". The <code>fields</code> property allows you to specify a parser, like this: <pre>
+myDataSource.responseSchema = {
+    fields: ["name","breed",
+        {key:"age", parser:YAHOO.util.DataSource.parseNumber}
+    ] 
+};
+</pre><p> Version 2.6 has made it easier: instead of providing the full reference to the built-in function you can use shortnames: <pre>
+myDataSource.responseSchema = {
+    fields: ["name","breed",
+        {key:"age", parser:'number'}
+    ] 
+};
+</pre><p> The <code>DataSource</code> itself has a brief set of such functions, (<code>'date'</code>, <code>'number'</code> and <code>'string'</code>) but if they are not good for your data, it is easy to define your own. The function should expect a single argument, the original value, and return the internal JavaScript representation of it. For example, the <code>parseDate</code> function uses the JavaScript <code>Date</code> object constructor to parse the data, which takes several textual date formats; however, it does not automatically process my SQL output, so I defined my own custom function as follows: <pre>
+YAHOO.util.DataSource.Parser['sqlDate'] = function (oData) {
+    var parts = oData.split(' ');
+    var datePart = parts[0].split('-');
+    if (parts.length &gt; 1) {
+        var timePart = parts[1].split(':');
+        return new Date(datePart[0],datePart[1]-1,datePart[2],timePart[0],timePart[1],timePart[2]);
+    } else {
+        return new Date(datePart[0],datePart[1]-1,datePart[2]);
+    }
+};
+</pre><p> By adding the function to the <code>YAHOO.util.DataSource.Parser</code> array, I can now use the shortname <code>'sqlDate'</code> in the <code>parser</code> setting. <p> So this is how you deal with converting each of the data values from the external representation to the internal one. But values don't come one at a time on their own, they come in whole packages and there is another choice you have to make: the message format. I find XML a little verbose, unnecessarily so, while plain-text (comma- or tab-separated values) somewhat limited. JSON suits me fine, but you'll need to make your own choice regarding the message format. It is easier if you settle into one format, whichever it is, and even provide expansion space. DataTable author Jenny Han Donnelly's <a href="http://developer.yahoo.com/yui/datatable/#xhr">JSON over XHR example</a> shows a sample of data with extras: <pre>
+{SalesDatabase:
+    {totalItems:40, itemsFound:2, items: [
+        {Company:"A1 Services",
+        Title:"CEO",
+        Name:"Jane Jones",
+        Phone:"800-555-2121",
+        Email:"janejones@a1services.com"},
+
+        {Company:"Acme",
+        Title:"President",
+        Name:"John Smith",
+        Phone:"800-555-1212",
+        Email:"johnsmith@acme.com"}
+    ]}
+}
+</pre><p> Notice the <code>totalItems</code> and <code>itemsFound</code> fields. You might ask yourself why this doesn't start with the square bracket after <code>items</code> in the second line. That's why JSON is better than plain text, if it wasn't for that allowance to carry some extra structured information in the same package, JSON would be no better than plain text with the column names repeated too many times. <p> For this example, you would set your <code>DataSource</code> like this: <pre>
+var myDataSource = new YAHOO.util.XHRDataSource("http://url/datafeed.php?", {
+    responseType: YAHOO.util.DataSource.TYPE_JSON,
+    responseSchema: {
+        resultsList: "SalesDatabase.items", 
+        fields: ["Company","Title","Name","Phone","Email"] 
+    }
+});
+</pre><p> Notice the dot notation you must use to specify the branch you have to travel to reach the data. XML fans might expect XPATH; don't. The field description simply consists of the column names, since they are all strings and there are no dates or numbers to parse. <code>DataSource</code> ignores the extra info, but you can get to it, if needed. <p> My choice of extra information, though, is somewhat different than what is illustrated in the YUI examples that ship with DataTable. My standard JSON reply uses this format: <pre>
+{
+    replyCode:200, replyText:Ok,
+    data:[{ ... } , ... ]
+}
+</pre><p> I use this format even for replies that carry no data, such as database actions like record deletes or updates. In those cases, there won't be any data, just a success or failure indication. This standard format could be thought of as an envelope which can carry any information between server and client. For example, if the action request is an insert on a table with an auto increment field, I also use this format: <pre>
+{
+    replyCode:201, replyText:Data follows,
+    data:{AddressId:23}
+}
+</pre><p> The <code>DataSource</code> won't take this last message since the data is not an array, which is what it usually deals with, but I still use it even for requests I pass to the server via <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>. In my view, the function at the server side that produces the JSON reply does not and should not care where the request came from and where the reply goes, it will always have the same format. <p> The <code>DataSource</code> will completely ignore the <code>replyCode</code> and <code>replyText</code> properties, it will go straight for the data. We need some way to access that information before it is lost. More important, however, is that if the <code>replyCode</code> signals an error, the rest of the data might well be useless so we must trap it as soon as possible. The method <code>doBeforeParseData</code> is meant to be overridden for cases like this when you need access to the raw unparsed data before it goes any further. Here's an example of what that function might look like: <pre>
+myDataSource.doBeforeParseData = function (oRequest, oFullResponse, oCallback) {
+    if (oFullResponse.replyCode) {
+        if (oFullResponse.replyCode &gt; 299) {
+            alert(oFullResponse.replyText);
+            return {};
+        }
+    } else {
+        alert(oFullResponse);
+    }
+    return oFullResponse;
+};
+</pre><p> Returning an empty object in case of error will ensure that the DataSource fails without taking too long to parse something that is irrelevant and makes the DataTable show the <code>"Data Error"</code> message. <p> For XML data, a similar scheme may be used, for example: <pre>
+&lt;?xml version="1.0"?&gt;
+&lt;reply code="200" text="ok"&gt;
+    &lt;data id="1" name="Alice" /&gt;
+    &lt;data id="2" name="Bob" /&gt;
+    &lt;data id="3" name="Carol" /&gt;
+&lt;/reply&gt;
+</pre><p> While with JSON data the <code>oFullResponse</code> argument for <code>doBeforeParseData</code> is already JSON-unencoded, the same argument for XML data is still an XML document, which is harder to access. Fortunately, the XML parser is a little more forgiving: if it doesn't find any member called <code>data</code> it will not produce an error simply assuming there are no records for that query. This allows us to wait until after it is parsed so the meta data is easily accessible. We can then use the meta-data facility of the DataSource. We would declare the DataSource for the above like this: <pre>
+var myDataSource = new YAHOO.util.XHRDataSource('People.php?',{
+    responseType: YAHOO.util.DataSource.TYPE_XML,
+    responseSchema: {
+        resultNode: 'data',
+        fields:['id','name'],
+        metaNode: 'reply',
+        metaFields: {replyCode:'code',replyText:'text'}
+    }
+});
+</pre><p> And then, we can extract and check the meta-information like this: <pre>
+myDataSource.doBeforeCallback = function (oRequest, oFullResponse, oParsedResponse, oCallback) {
+    if (parseInt(oParsedResponse.meta.replyCode,10) &gt; 299) {
+        alert(oParsedResponse.meta.replyText);
+        oParsedResponse.error = true;
+    }
+    return oParsedResponse;
+};
+</pre><p> The above shows how you can extract and process meta-data from an XML DataSource (the same facility, with different property names, exists for JSON data). It also shows how, in <code>doBeforeCallBack</code> we can signal an error to the DataTable by setting the <code>error</code> property of <code>oParsedResponse</code> to true before we return it. Incidentally, I purposefully put all the data and meta-data into element attributes. The XML parser can locate data in both places, as text contents of an element or as an attribute and a mixture of both.. <h3> Column definitions </h3>
+	<p> Now that we have the data into the <code>DataTable</code>'s <code>RecordSet</code> array, we need to specify how to show it to the user. We do this with the column definitions, which is the second argument to the <code>DataTable</code> constructor. Column definitions are created as an array of object literals, one item per column to be shown. Notice that the number of columns in the <code>DataTable</code> might not match the number of fields in the incoming data. You might either not show some of the fields coming from the server or add columns calculated from data in other columns or made up somehow. All fields read by the DataSource will be available in the <code>RecordSet</code> array, even if they are not shown. That might help to explain why you have to mention the column names twice, once for the <code>DataSource</code>, once again for the <code>DataTable</code>: depending on your implementation, there might not be a one-for-one match. Besides, for plain data formats like text or array, where fields are not named, the DataSource will read the fields in the order they are listed, which might not be the order in which you want them shown. <p> The <code>key</code> property for each column should match the field name given in the <code>fields</code> array in the <code>DataSource</code>. The <code>label</code> property is the text to be shown in the column heading, which defaults to the value of the <code>key</code> property if no <code>label</code> value is given. <h3> Sorting </h3>
+	<p> The <code>sortable</code> property can be set to <code>true</code> or <code>false</code> and specifies whether you want the user to be able to click on that column's header and sort it. If the data was properly converted when read, the internal sorter (it actually uses JavaScript's native <code>Array</code> <code>sort</code> method) should work since it knows how to sort all the native data types. If your values cannot be sorted by the standard comparison operators that <code>sort</code> uses, you can specify a custom function which will be passed to the <code>sort</code> function to deal with any other data type. <p> Database servers are good at sorting so if your data is already sorted, it is good to show that to the user, the <code>sortedBy</code> configuration attribute of the <code>DataTable</code> does that by highlighting the column and putting an arrow by the column header. You set it when instantiating the <code>DataTable</code>, in the fourth argument as part of the configuration object literal: <pre>
+var myDataTable = new YAHOO.widget.DataTable (<i>&lt;elContainer&gt;</i> , <i>&lt;aColumnDefs&gt;</i> , <i>&lt;oDataSource&gt;</i> , {
+    sortedBy:{
+        key:'Company',
+        dir: YAHOO.widget.DataTable.CLASS_ASC
+    }
+});
+</pre><p> Setting the <code>sortedBy</code> property just does the highlighting, it doesn't sort the data; it is just a means of telling the <code>DataTable</code> that the data is already sorted. When the user clicks a column header, provided it has <code>sortable:true</code> set, then it will be sorted and the highlight will change, but otherwise the <code>DataTable</code> does not assume the data to be sorted in any way. The <code>sortedBy.dir</code> property can still take the <code>'asc'</code> and <code>'desc'</code> shortnames for backward compatibility, though I think it is really handy to use the shortnames and hope they will remain; however, if you read the property back, it will show the new values. <p> An issue somewhat associated with sorting is the relationship in between row numbers and record IDs; namely, that <em>there is no relationship</em>. Initially, on a freshly loaded table, the row numbers and record IDs will match, but after sorting, inserting or deleting rows, they won't match any longer. The record ID (<code>YAHOO.widget.Record.getId()</code>) is permanently associated with the row but the row number is not, so be careful with your use of row numbers. If you use the <code>DataTable.addRow</code> method and insert the record at position 0, the first row, that will be its row number, but the record ID will be one higher than the highest record ID it ever had. Deleted rows renumber the remaining rows but the record IDs remain with the gaps. Sorts simply scramble the record IDs with respect to order. <h3> Formatting </h3>
+	<p> The <code>DataTable</code> comes with plenty of formatters which you specify via the <code>formatter</code> property in the column definitions. For the standard formatters you can use their shortnames, a string literal, such as <code>'date'</code>, which the <code>DataTable</code> will translate to <code>YAHOO.widget.DataTable.formatDate</code>. For custom formatters (or even for the standard ones, if you feel so inclined) you can provide a function. <p> In the original example I used dates as an example, in Europe we use dates in <code>DD/MM/YYYY</code> format instead of the <code>MM/DD/YYYY</code> used by default in <code>DataTable</code> and I will still show how to do it but I will also show how version 2.6 has made it easier immediately after. Just as with the parsers, I can either define it in-line or add it to the array of custom formatters so I can use it via a shortname, like this: <pre>
+YAHOO.widget.DataTable.Formatter['dmyDateHiliteOld'] = function(el, oRecord, oColumn, oData) {
+    if(oData instanceof Date) {
+        el.innerHTML = oData.getDate() + '/' + (oData.getMonth()+1)  + '/' + oData.getFullYear();
+
+        var DM = YAHOO.widget.DateMath; // this requires the Calendar widget
+        // Make all dates older than a month show on a red background
+        if (DM.before(oData,DM.add(new Date(),DM.MONTH,-1))) {
+            YAHOO.util.Dom.addClass(el,'oldDate');
+        } else {
+            YAHOO.util.Dom.removeClass(el,'oldDate');
+        }
+    } else {
+        el.innerHTML = YAHOO.lang.isValue(oData) ? oData : '';
+    }
+};
+</pre><p> The point of highlighting dates older than a month is to show that a formatter not only has access to the contents of the cell but to the whole of the cell itself so it can change anything it wants. It can even go higher up and modify the row the cell belongs to. There was a bug in version 2.5 that made this impossible (the formatter was called before the cell was appended to the row) and still now (2.6.0) the formatter is called after the cell is added to the row, but before the row is appended to the table so you can't use method <code>this.getTrEl(el)</code> which will fail, but <code>getAncestorByTagName</code> works fine (by the time you read this, it might have been fixed). Here, we highlight the whole row when dates are old. <pre>
+YAHOO.widget.DataTable.Formatter['dmyDateHiliteOld'] = function(el, oRecord, oColumn, oData) {
+    if(oData instanceof Date) {
+        el.innerHTML = oData.getDate() + '/' + (oData.getMonth()+1)  + '/' + oData.getFullYear();
+
+        var DM = YAHOO.widget.DateMath; 
+        // var tr = this.getTrEl(el);   // This doesn't work
+        var tr = YAHOO.util.Dom.getAncestorByTagName(el,'tr');
+        if (DM.before(oData,DM.add(new Date(),DM.MONTH,-1))) {
+            YAHOO.util.Dom.addClass(tr,'oldDate');
+        } else {
+            YAHOO.util.Dom.removeClass(tr,'oldDate');
+        }
+    } else {
+        el.innerHTML = YAHOO.lang.isValue(oData) ? oData : '';
+    }
+};
+</pre><p> Having added the formatter to the <code>Formatter</code> list I would just have to specify <code>formatter:'dmyDateHiliteOld'</code> in the column definition. <p> The good news now is that none of this is actually needed in 2.6. The built-in formatter for dates is highly configurable and it uses the <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Date.html"><code>YAHOO.util.Date.format</code></a> static function which uses handy format specs or locale settings. The easiest in the long run is to have your locale setting defined as explained in the API docs for <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.DateLocale.html"><code>YAHOO.util.DateLocale</code></a>. I will simply set an ad-hoc formatter: <pre>
+var myDataTable = new YAHOO.widget.DataTable (<i>&lt;elContainer&gt;</i> , <i>&lt;aColumnDefs&gt;</i> , <i>&lt;oDataSource&gt;</i> , {
+    dateOptions:{format:'%d/%m/%Y'} ,
+    currencyOptions:{prefix: '&euro;', decimalPlaces:2, decimalSeparator:',', thousandsSeparator:'.'} 
+});
+</pre><p> I also added a specification for currency which will allow us to display monetary amounts by simply setting <code>formatter:'currency'</code> in the column definition. <p> You might wish <code>DataTable</code> would guess what formatter to use from your data, but many times it cannot. For example, a link or an email address are both strings, but you would actually want them displayed as hyperlinks; currency values are plain numbers, so letting <code>DataTable</code> guess is of no use. <h4> Combining data from several fields </h4>
+	<p> The standard <code>'link'</code> and <code>'email'</code> formatters use the same value both for the display text and the underlying <code>href</code> attribute for the link. This is not always what we want. We may receive from the server two separate fields, <code>name</code> and <code>email</code> and we want the e-mail to display as a <i>mailto:</i> link under the name thus combining two separate fields from the <code>DataSource.responseSchema.fields</code> array into a single column. We can set the following formatter: <pre>
+YAHOO.widget.DataTable.Formatter.formatUserWithEmail = function(el, oRecord, oColumn, oData) {
+    if (YAHOO.lang.isString(oData)) {
+        var eMail = oRecord.getData('email');
+        if (YAHOO.lang.isString(eMail) &amp;&amp; eMail.length) {
+            el.innerHTML = '&lt;a href=mailto:' + eMail + '&gt;' + oData + '&lt;/a&gt;';
+        } else {
+            el.innerHTML = oData; 
+        }
+    } else { 
+        el.innerHTML = YAHOO.lang.isValue(oData) ? oData : ""; 
+    } 
+};
+</pre><p> I would assign this formatter function to the column containing the name while the column containing the eMail would not be included in the column definitions. But it <em>would</em> be included in the fields definition for the <code>DataSource</code> so that the data will actually be there for you, in the <code>oRecord</code> argument. <p> As for the remaining argument to the formatter function, the <code>oColumn</code> argument gives you a copy of the definitions you provided in the column definitions plus some more, such as the default values for the settings you didn't set explicitly. There is nothing preventing you from adding further properties to the column definition besides the ones <code>DataTable</code> uses; just make sure their names don't collide with the ones <code>DataTable</code> uses. If you add extra properties, those will show up in the <code>oColumn</code> argument of the formatter. This would allow you to have a parameterized formatter, with the formatting options coming in the <code>oColumn</code> argument. <h3> Other formatters </h3>
+	<p>Several formatters produce HTML elements the user can interact with. Beyond the link and email formatters, which the user can actually click, the <code>'textbox'</code>, <code>'textarea'</code>, <code>'button'</code>, <code>'checkbox'</code>, <code>'radio'</code> and <code>'dropdown'</code> formatters can also be user to provide elements the user can interact with. These are not to be confused with the cell editors, which we will see in the second part of the series. The cell editors will update the value in the underlying <code>Record</code> object for that row. The formatters, on the other hand, though they do provide the expected HTML <code>&lt;input&gt;</code> and other elements, they have no default action. A <code>'checkbox'</code> formatter assigned to a column containing a boolean value will correctly show checked or unchecked to reflect the underlying value. The user will be able to click on the checkbox and see the checkbox changing its state, but that won't be reflected anywhere else.<p> These controls are mostly meant to trigger actions that might not directly affect the underlying data. For example, a <code>'checkbox'</code> formatter could be assigned to a made-up column, one which has no corresponding field from the DataSource. The checkboxes will show unchecked since an <code>undefined</code> is almost like a <code>false</code>. Such a column might be used in response to a 'delete selected' button so, the act of clicking in itself produces no lasting change. Buttons might be used to perform operations involving more than one field in a record or records amongst them, dropdowns might be used to select which action to perform, when and if it is performed. In all this cases, the user action does not involve an immediate change upon the underlying data. What you would normally do is to listen to events triggered by the user interaction. The DataTable provides them, in plenty: <code>dropdownChangeEvent</code> and the several click events, <code>linkClickEvent</code>, <code>buttonClickEvent</code>, <code>checkboxClickEvent</code> and <code>radioClickEvent</code> which bubble to <code>cellClickEvent</code> then to <code>rowClickEvent</code> and finally to <code>tableClickEvent</code> and their equivalents for thead cells and double clicks, where applicable. <p> Let us assume there is a whole bunch of checkboxes, buttons and links in several columns in the DataTable. How can you handle them? You can use the element specific events but you can also use the general one, like this: <pre>
+myDataTable.on('cellClickEvent',function (oArgs) {
+    // 'this' is already referring to the DataTable
+    var target = oArgs.target;
+    var record = this.getRecord(target);
+    var column = this.getColumn(target);
+    switch (column.key) {
+        case 'column1':
+            // ....
+            break;
+        case 'whateverColumn':
+            // ....
+            break;
+        default:
+            // ignore clicks on other columns, do nothing
+            break;
+    }
+});
+</pre><p> The code above shows the most standard way to deal with clicks in a DataTable. If what you are listening to is <code>rowClickEvent</code> then you can't fetch the column since the event will signal the whole row as the target. From the argument of the listener we pick the targeted cell, the one that has received the click, from that we find what the column and record for that cell is. With the <code>column.key</code> value we can identify what column and consequently, what element was clicked, was it the column with the checkboxes or that with the buttons? Then we can branch according to that, or simply ignore the click. Finally, from the record we can read the value of any field in the row. <p> For example, let us say we want to implement a column of checkboxes to do a certain operation on a batch of records. Adding the column of checkboxes to the DataTable is as easy as adding the following entry into the column definitions: <pre>
+    {key:'select',label:'Select',formatter:'checkbox'}
+</pre><p> There will be no corresponding value coming from the DataSource so nothing needs to be added to the <code>responseSchema.fields</code> array. Then, we listen to the click event: <pre>
+myDataTable.on('checkboxClickEvent',function (oArgs) {
+    var target = oArgs.target;
+    var record = this.getRecord(target);
+    var column = this.getColumn(target);
+    if (column.key == 'select') { // to ensure we respond to the right column
+        var primaryKey = record.getData('id');
+        if (target.checked) {
+            YAHOO.example.recordSelection[primaryKey] = true;
+        } else {
+            delete YAHOO.example.recordSelection[primaryKey];
+        }
+    }
+});
+</pre><p> After reading the usual properties we make sure the click was on the expected column (just in case we add more checkboxes in the future) and then read the value of the database primary key value from the field called <code>'id'</code> via method <code>Record.getData()</code>, then based on whether the checkbox is checked or not we add that primary key value to a globally accessible hash indexed by the <code>primaryKey</code> value or remove it from that same list if it is unchecked. Whatever group operation we might later do, we just have to go through this hash. <p> Why did I listen to <code>checkboxClickEvent</code> instead of the cell-level event? The first part of the code looks pretty much the same, the difference is what <code>target</code> is. For a <code>cellClickEvent</code>, <code>target</code> will be the <code>&lt;td&gt;</code> element, which doesn't have any <code>checked</code> property, for <code>checkboxClickEvent</code>, <code>target</code> is the <code>&lt;input type="checkbox" /&gt;</code> element which does. <p>What if you want to actually show the user something like a checkbox that the user can't interact with? If you use the <code>'checkbox'</code> formatter, the box will be active. The best is to provide a custom formatter like this:<pre>
+YAHOO.widget.DataTable.Formatter.showBoolean = function(el, oRecord, oColumn, oData) {
+    if (oData) {
+        YAHOO.util.dom.addClass(el,'true');
+    } else {
+        YAHOO.util.dom.removeClass(el,'true');
+    }
+};
+</pre><p>The graphics designer can then assign to the style <code>.true</code> whatever suits his/her design, whichever background image or color is more suitable. This provides more flexibility and independence of design than actually drawing something in it. Notice we are not filling the cell with anything at all. <h3> In-line Editing </h3>
+	<p> One of the most exciting features of the <code>DataTable</code> is the possibility of editing cells right on the spot. If you assign an editor to a column in the column definitions, that column will be editable. Just as you add a <code>formatter</code> property to allow for different formatters, you use the <code>editor</code> property to use any of the several editors provided with the <code>DataTable</code>, which you can either call by short name or by assigning it a function or a reference to a function of your own. You have a good sampling of the editors available in the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">code samples</a>. <p> Though the in-line editor will take care of updating the underlying <code>RecordSet</code> and make those changes visible to the user, you would want those changes to be sent to the server, where the data resides permanently. Other changes to the <code>DataTable</code>, such as inserting or deleting rows are closely tied to cell editing. That's a subject for another article, as synchronizing your data between client and server is a lengthier topic than we have space for here. In any case, with the variety of editors available, you would be hard pressed to miss the one you truly needed. <h2> Conclusion<br /> </h2>
+	<p> YUI's <code>DataTable</code> is very flexible and allows you to do many things. Making your choices in advance allows you to define your own version of the <code>DataTable</code> and either cast some of those choices or make them more easily accessible according to your taste and preferences. The whole application will look and behave more consistently and, should you want to change anything, many of the changes will be concentrated in just one single place. </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,376 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Using the TabView Control with My Dispatcher Plugin</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Using the TabView Control with My Dispatcher Plugin</li></ul>
+				<h1 class="yui3-u-7-8">Using the TabView Control with My Dispatcher Plugin</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">November 3, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro"><img align="right" alt="Caridy Patiño Mayea" height="150" hspace="10" src="/blog-archive/assets/caridy-portrait.jpg" vspace="5" width="150" /><p><em>Caridy, a leading and always-helpful contributor to the <a href="http://groups.yahoo.com/group/ydn-javascript">YUI community forum</a>, has been working in front of a PC since the nineties. Until recently, he was a professional programmer developing LAMP applications for the University of Las Villas where he received his B.S. in Computer Science in 2003, and for several companies around the world. He recently joined Yahoo and works for Yahoo's emerging markets group in Miami.</em><p><em>For the last two years he's been focused on JavaScript as a development platform. Early last year he decided to create an easy-to-adopt YUI extension called "<a href="http://bubbling-library.com/">Bubbling Library</a>" as a side project; you can read <a href="/blog-archive/blog/2007/09/13/bubbling-library-by-caridy/">his YUIBlog introduction to the Bubbling Library here</a>.</em></div> </div>
+	<p>This article is about my <a href="http://bubbling-library.com/eng/api/docs/plugins/dispatcher">Dispatcher Plugin</a> (part of my <a href="http://www.bubbling-library.com">Bubbling Library</a>) and how to use it along with the <a href="http://developer.yahoo.com/yui/tabview/">YUI TabView</a> to load on-demand content using the <a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a>. The Bubbling Library doesn't ship with YUI, but it's a free download and licensed under the same BSD terms as is YUI.<h3>YUI TabView Overview</h3>
+	<p>One of the most compelling components in the <a href="http://developer.yahoo.com/yui/">YUI Library</a> is the TabView Control. It allows us to maximize the space in our web pages, ordering and segmenting the information and sharing the container (visualization area) at the same time. It&#8217;s easy to use as a developer and as an end user because the navigable tabbed views of content represent a well known design pattern in most OSs. Most users feel comfortable using TabView right away.<h3>A Few Examples</h3>
+	<p>One of my favorite characteristics of the YUI widgets is that they can be used to enhance the DOM in an unobtrusive way with little effort. &nbsp;The TabView widget is no exception: <pre>&lt;div id=&quot;demo&quot; class=&quot;yui-navset&quot;&gt;     
+  &lt;ul class=&quot;yui-nav&quot;&gt;         
+    &lt;li class=&quot;selected&quot;&gt;&lt;a href=&quot;#tab1&quot;&gt;&lt;em&gt;Tab One Label&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;         
+    &lt;li&gt;&lt;a href=&quot;#tab2&quot;&gt;&lt;em&gt;Tab Two Label&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;     
+  &lt;/ul&gt;                 
+  &lt;div class=&quot;yui-content&quot;&gt;         
+    &lt;div&gt;&lt;p&gt;Tab One Content&lt;/p&gt;&lt;/div&gt;         
+    &lt;div&gt;&lt;p&gt;Tab Two Content&lt;/p&gt;&lt;/div&gt;
+
+  &lt;/div&gt; 
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt; 
+var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);
+&lt;/script&gt;</pre><p>(<a href="http://developer.yahoo.com/yui/examples/tabview/frommarkup.html">Live demo</a>.)<p><a href="http://developer.yahoo.com/yui/examples/tabview/frommarkup.html"><img height="214" src="/blog-archive/assets/tabviewexample.png" width="510" /></a><p>If Progressive Enhancement isn't relevant in your implementation, you can create a TabView object purely from JavaScript, creating the tabs and rendering them into a specified DOM element. In this case, the content of the tabs will not be available for search engines, which is a drawback, but the content for each tab can be loaded on demand using AJAX or by injecting the HTML code directly during the definition of the tab. Let's see an example:<pre>
+var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);
+myTabs.addTab( new YAHOO.widget.Tab({ <br />  label: 'Tab One Label', <br />  content: '&lt;p&gt;Tab One Content&lt;/p&gt;',
+  active: true  <br />})); <br />myTabs.addTab( new YAHOO.widget.Tab({ <br />  label: 'Tab Three Label',
+  content: '&lt;p&gt;Loading, please wait...&lt;/p&gt;', <br />  dataSrc: 'tab2.html' <br />}));
+myTabs.appendTo(document.body);
+</pre><p>(<a href="http://developer.yahoo.com/yui/examples/tabview/fromscript.html">Live demo</a>.)<p>This technique is mostly used in dynamic web applications. We can also combine the progressively enhanced and dynamic approaches, creating a tabview with the default content from the markup and then inserting the rest of the tabs on the fly. In this case, each tab will load the content using AJAX. Check out this example: <pre>&lt;div id=&quot;demo&quot; class=&quot;yui-navset&quot;&gt;     
+  &lt;ul class=&quot;yui-nav&quot;&gt;         
+    &lt;li class=&quot;selected&quot;&gt;&lt;a href=&quot;#tab1&quot;&gt;&lt;em&gt;Tab One Label&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;    
+  &lt;/ul&gt;                 
+  &lt;div class=&quot;yui-content&quot;&gt;         
+    &lt;div&gt;&lt;p&gt;Tab One Content&lt;/p&gt;&lt;/div&gt;
+
+  &lt;/div&gt; 
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt; 
+var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);
+var tab2 = new YAHOO.widget.Tab({ <br />  label: 'Tab Two Label', <br />  content: '&lt;p&gt;Loading, please wait...&lt;/p&gt;',
+  dataSrc: 'tab2.html'  <br />})
+myTabs.addTab( tab2 );<br />myTabs.addTab( new YAHOO.widget.Tab({ <br />  label: 'Tab Three Label', <br />  content: '&lt;p&gt;Tab Three Content&lt;/p&gt;' <br />}));
+
+&lt;/script&gt;</pre><p>TabView uses the <a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a> to load the content on demand, and it handles all the AJAX logic under the hood. <em>Keep in mind that the Connection Manager is subjected to the Cross Domain Policy, which means that you can only use URLs within the current domain</em>. (In <a href="http://developer.yahoo.com/yui/3/">YUI 3.0</a>, the successor to Connection Manager, <a href="http://developer.yahoo.com/yui/3/io/">the IO Utility</a>, provides Flash-based support for cross-domain AJAX [<a href="http://developer.yahoo.com/yui/3/examples/io/io-xdr.html">demo</a>].)<p>Sometimes we want to create enhanced functionality within the tab content (when a certain tab becomes active), and for this you can use “<code>contentChange</code>” or “<code>beforeContentChange</code>” events to execute certain actions. We could add this kind of logic to the previous example as follows: <pre>&lt;script type=&quot;text/javascript&quot;&gt;<br />function handleContentChange(e) {  <br />  alert('tab2 was loaded...');
+  /* you can render a datatable within the tab now :-) */<br />}<br />tab2.addListener('contentChange', handleContentChange);<br />&lt;/script&gt;</pre><h3>The Problem</h3>
+	<p>But this approach can introduce certain dependencies and complexity within our code, because the actions for a certain tab’s content will be defined at the page level, which means that if you want change the content of tab, you probably need to change something at the application level as well -- the functionality of the tab's content is not encapsulated with that content.<p>Creating monolithic contents (on demand content that will encapsulate its own requirements, initialization process and behaviors) seems be a solution, but there is a problem: If you want load a certain content within a tab, and that content has some JavaScript functionality, that functionality will not be executed because. The tab widget will use innerHTML to replace the tab’s content. The browser will then strip out the “script” tags because it's injecting the code within the tab, and that script content will not be executed at all. Generally this is a good thing, as it protects you from one potential vector for XSS attacks. But in the event you need to bring in scripts this way, it's a problem you need to work around. (Keep in mind, though, that working around this puts the responsibility for security squarely on your shoulders. Using the event-driven approach described above is a better, more secure approach for applications where it's possible to use it.)<p> If you go down the path of bringing scripts into the page with the content of a tab, the good news is that you can use a plugin to delegate the work, and it will handle the AJAX routine to execute and process the CSS and the JavaScript code within the on demand contents. This plugin, from my <a href="http://www.bubbling-library.com/">Bubbling Library</a>, is called “Dispatcher” (<code>YAHOO.plugin.Dispatcher</code>), and it has been one of the most popular components from my Bubbling Library Extension. <h3>YUI Dispatcher Plugin</h3>
+	<p>The complexity of the code will be almost the same as what we've seen above; even the syntax is quite similar. Let&#8217;s start with an example: <pre>&lt;div id=&quot;demo&quot; class=&quot;yui-navset&quot;&gt;     
+  &lt;ul class=&quot;yui-nav&quot;&gt;         
+    &lt;li class=&quot;selected&quot;&gt;&lt;a href=&quot;#tab1&quot;&gt;&lt;em&gt;Tab One Label&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;    
+  &lt;/ul&gt;                 
+  &lt;div class=&quot;yui-content&quot;&gt;         
+    &lt;div&gt;&lt;p&gt;Tab One Content&lt;/p&gt;&lt;/div&gt;
+
+  &lt;/div&gt; 
+&lt;/div&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+var myTabs = new YAHOO.widget.TabView(&quot;demo&quot;);<br /><em>YAHOO.plugin.Dispatcher.delegate (new YAHOO.widget.Tab({<br />  label: 'Tab Two Label',
+  content: '&lt;p&gt;Loading, please wait...&lt;/p&gt;',<br />  dataSrc: 'tab2.html'<br />}), myTabs);</em>
+
+myTabs.addTab( new YAHOO.widget.Tab({ <br />  label: 'Tab Three Label', <br />  content: '&lt;p&gt;Tab Three Content&lt;/p&gt;' <br />}));
+&lt;/script&gt;</pre><p>The method “<code>delegate</code>” will do the job for you in an efficient way. The process is quite simple: <ul>
+			<li> The Tab object loads the content using the YUI Connection Manager <li> Before injecting the code using innerHTML, it passes the code to the dispatcher. <li> The dispatcher strips out the JavaScript and CSS code from the content. <li> The dispatcher injects the parsed content (without JavaScript/CSS tags) within the tab area. <li> The dispatcher executes each JavaScript chunk and injects each CSS tag in the order in which they appear. Remote JavaScript and remote CSS will be loaded using the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a> by default, which means that they are not subjected to the Cross Domain Policy. </ul> <p><a href="http://bubbling-library.com/sandbox/dispatcher/plugin-dispatcher-dynamic-tabs.html">(Live demo.)</a><h3>Complex Example</h3>
+	<p>Let's look at a more complex example. In this case, the second tab loads some content, and the content defines its own functionality, creating/rendering a <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable</a> within it. Exactly the same code from the previous example:<pre>
+&lt;script type=&quot;text/javascript&quot;&gt;<br /><em>YAHOO.plugin.Dispatcher.delegate (new YAHOO.widget.Tab({<br />  label: 'Tab Two Label',<br />  dataSrc: 'tab2.html'<br />}), myTabs, {
+  /* Object literal with the area configuration */
+});</em>
+
+<em></em>
+&lt;/script&gt;
+</pre><p>And the content of the file &quot;<code>tab2.html</code>&quot; should look like this:<pre>
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; 
+href=&quot;http://yui.yahooapis.com/2.5.2/build/datatable/assets/skins/sam/datatable.css&quot;&gt;<br />&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/2.5.2/build/datasource/datasource-beta-min.js&quot;&gt;&lt;/script&gt;<br />&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/2.5.2/build/datatable/datatable-beta-min.js&quot;&gt;&lt;/script<br />&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://bubbling-library.com/sandbox/dispatcher/data.js&quot;&gt;&lt;/script&gt;
+<br />&lt;div id=&quot;basic&quot; class=&quot;example&quot;&gt;&lt;/div&gt;<br />&lt;script type=&quot;text/javascript&quot;&gt;<br />var myColumnHeaders = [<br />  {key:&quot;id&quot;, sortable:true, resizeable:true},<br />  {key:&quot;quantity&quot;, type:&quot;number&quot;, sortable:true, resizeable:true},<br />  {key:&quot;amount&quot;, type:&quot;currency&quot;, sortable:true, resizeable:true},<br />  {key:&quot;title&quot;, type:&quot;html&quot;, sortable:true, resizeable:true}<br />];<br />var myColumnSet = new YAHOO.widget.ColumnSet(myColumnHeaders);<br />var myDataSource = new YAHOO.util.DataSource(YAHOO.example.Data.bookorders);<br />myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSARRAY;<br />myDataSource.responseSchema = {<br />  fields: [&quot;id&quot;,&quot;quantity&quot;,&quot;amount&quot;,&quot;title&quot;]<br />};<br />var myDataTable = new YAHOO.widget.DataTable(&quot;basic&quot;, myColumnSet, myDataSource);<br />&lt;/script&gt;</pre><p>As you can see, the content of &quot;<code>tab2.html</code>&quot; is like another page, and the tab object works like an <code>iframe</code>. The differences are:<ul>
+			<li>There is a single document (less memory and bandwidth used by the browser).<li>The tab is sharing the execution scope with the current document (easy JavaScript integration).<li>There is more flexibility for cosmetics because the container is just another DIV within the current document instead of being an iframe.</ul> <p><a href="http://bubbling-library.com/sandbox/dispatcher/plugin-dispatcher-dynamic-tabs-with-datatable-inside.html">(Live demo.)</a><h3>Memory Leaks </h3>
+	<p>Now that we can create widgets and add listeners to certain elements within the tab content, we need to keep in eye on the memory management, especially in the tabs where we aren't caching the dynamic content. In those tabs, the content will be loaded multiple times, replacing the old content and executing the scripts again. By default, the dispatcher releases all the listeners in the area before it displays new content using <code>YAHOO.util.Event.purgeElement. </code>But sometimes this is not enough.<p>The destroyer is a hook method and is only available during the execution of the scripts from dynamic content, which means that you can use this within the tab content: <pre>YAHOO.plugin.Dispatcher.destroyer.subscribe (function(el, config){   
+  // el: HTML Element that grap the tab’s content   
+  // config: Object literal with the area configuration */ 
+}); </pre><p>And because the destroyer is a <a href="http://developer.yahoo.com/yui/event/#customevent">YUI Custom Event</a>, you can add multiple listeners to it. The dispatcher plugin fires the Custom Event when you try to load a new content within the same tab. <p>You can load fresh content within the tab by setting the cache property to false during the creation of the tab, and every time you click on the tab the YUI Connection Manager loads the content again. <p>At this point, the dispatcher fires the destroyer Custom Event before switching the content of the DIV (tab’s wrapper). Then it will setup a new destroyer object for the new content, and you will be able to add new listeners for the new content. <p>This technique will allow you to create widgets and destroy them in a more memory-friendly way when the content changes. <p><a href="http://bubbling-library.com/sandbox/dispatcher/ondestroy-utility.html">(Live demo.)</a><h3>More Features</h3>
+	<p>The dispatcher plugin is very flexible and has the following features:<ul>
+			<li>Load content within a general container (DIV)<li>Browser history integration<li>Loading Mask integration<li>Customize the execution proccess<li>CSS path correction process</ul> <h3>Upcoming Features</h3>
+	<ul>
+		<li>Layout Manager 2.6.0 integration<li>Form handling (automatic submit process thru Connection Manager)</ul>
+	<h3>Requirements</h3>
+	<p>Include the dispatcher plugin after the connection manager, and don't forget to include the tabview widget as well, but not <em>necesary before the dispatcher</em>:<pre id="line1">&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/2.5.2/build/yahoo-dom-event/yahoo-dom-event.js&quot;&gt;&lt;/script<br />&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/2.5.2/build/connection/connection-min.js&quot;&gt;&lt;/script&gt;<br />&lt;script type=&#8221;text/javascript&#8221; 
+src=&#8217;http://js.bubbling-library.com/1.5.0/build/dispatcher/<strong><em>dispatcher-min.js</em></strong>&#8217;&gt;&lt;/script<br />&lt;script type=&quot;text/javascript&quot; 
+src=&quot;http://yui.yahooapis.com/2.5.2/build/tabview/tabview-min.js&quot;&gt;&lt;/script&gt;
+
+</pre><h3>Troubleshooting</h3>
+	<h4>Handling Errors (Debugging)</h4>
+	<p>There are two configuration options to handle errors:<pre>YAHOO.plugin.Dispatcher.delegate (new YAHOO.widget.Tab({<br />    label: 'Tab Two Label',<br />    dataSrc: 'tabs2.html'<br />}), myTabs, {
+    onError: function (el) {<br />      // el: DOM Reference for the area<br />      // when the YUI connection manager call the failure method<br />      // 403, 404, etc<br />    },<br />    error: function (el, jsCode) {<br />      // el: DOM Reference for the area, jsCode: javascript code<br />      // this method get fired when a JS error occur during the execution<br />      // this is for debugging only...<br />    }<br />});
+</pre><p><a href="http://bubbling-library.com/sandbox/dispatcher/error-handle.html">(Live demo.)</a><h4>Anonymous Functions</h4>
+	<p>The dispatcher plugin uses an anonymous function to execute inline scripts, introducing a problem with the global variables. Let’s see an example: <p><strong>Original Content:</strong><pre>function myFunc () {   
+  // your stuff here 
+}
+var myVar = 1; </pre><p><strong>The dispatcher transforms it into this:</strong><pre>(function() { 
+  function myFunc () { 
+    // your stuff here 
+  } 
+  var myVar = 1; 
+})();</pre><p>So, “<code>myFunc</code>” and “<code>myVar</code>” are not global variables and are only accessible within the same script tag. <p>To tackle this issue, you should use <em>namespaces</em>: <pre>YAHOO.example.myFunc = function () { 
+  // your stuff here 
+};
+YAHOO.example.myVar = 1;</pre><p>Or the nasty trick to force it to be global: <pre>window.myFunc = function () { 
+  // your stuff here 
+};
+window.myVar = 1; </pre><h4><strong>Customizing the execution routine</strong></h4>
+	<p> There is a configuration argument to customize the evaluation routine. The code should look like this: <pre>YAHOO.plugin.Dispatcher.delegate (new YAHOO.widget.Tab({<br />    label: 'Tab Two Label',<br />    dataSrc: 'tabs2.html'<br />}), myTabs, {
+    evalRoutine: myCustomEval<br />});</pre><p>In this case, <code>myCustomEval</code> should execute the script. <p><a href="http://bubbling-library.com/sandbox/dispatcher/customizing-inline-execution.html">(Live demo.)</a><h3>Working Examples</h3>
+	<ul>
+		<li><a href="http://bubbling-library.com/sandbox/dispatcher/plugin-dispatcher-dynamic-tabs.html">TabView and Dispatcher</a><br /> In this example the dispatcher manages the content inside the tabs, executing the scripts (remote and inline &quot;script&quot; tags) during the dataSrc request.<li><a href="http://bubbling-library.com/sandbox/dispatcher/plugin-dispatcher-dynamic-tabview-inside-tabview.html"> Nested TabViews</a><br /> In this example, we use two different approach: one using the tab's events to modify the loaded content and a second sing the dispatcher to leave the task to the content which is a more flexible approach.<li><a href="http://bubbling-library.com/sandbox/dispatcher/plugin-dispatcher-dynamic-tabs-with-datatable-inside.html">Tabview, DataTable and Dispatcher (<strong><em>check the last tab</em></strong>)</a><br /> In this example the dispatcher manages the content inside a tab to render a YUI Datatable during the dataSrc request.<li><a href="http://bubbling-library.com/sandbox/dispatcher/ondestroy-utility.html">How to avoid memory leaks</a><br /> In this example, you can see how the first tab &quot;Datatable Control&quot; define the rules to destroy the YUI Datatable.<li><a href="http://bubbling-library.com/sandbox/dispatcher/index.html">More examples here</a>.</ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

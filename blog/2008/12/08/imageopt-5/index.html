@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Image Optimization, Part 5: AlphaImageLoader</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Image Optimization, Part 5: AlphaImageLoader</li></ul>
+				<h1 class="yui3-u-7-8">Image Optimization, Part 5: AlphaImageLoader</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">December 8, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Stoyan Stefanov." hspace="10" src="/blog-archive/assets/stoyan.jpg" vspace="5" /><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></div> </div>
+	<p><em>This is part 5 in an ongoing series. You can read the other parts here:</em><ul>
+			<li><a href="/blog-archive/blog/2008/10/29/imageopt-1/">Image Optimization Part 1: The Importance of Images</a><li><a href="/blog-archive/blog/2008/11/04/imageopt-2/">Image Optimization Part 2: Selecting the Right File Format</a><li><a href="/blog-archive/blog/2008/11/14/imageopt-3/">Image Optimization Part 3: Four Steps to File Size Reduction</a><li><a href="/blog-archive/blog/2008/12/05/imageopt-4/">Image Optimization Part 4: Progressive JPEG...Hot or Not?</a></ul> <p>This installment of the image optimization series is about the IE-proprietary AlphaImageLoader CSS filter, which developers often use as a workaround to solve transparency issues with truecolor PNGs in IE. The problem with AlphaImageLoader is that it hurts page performance and, therefore, hurts user experience. I argue that AlphaImageLoader should be avoided when at all possible.<h3>Quick Refresher</h3>
+	<p>As mentioned in a <a href="/blog-archive/blog/2008/11/04/imageopt-2/">previous article</a>, <a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics">PNGs</a> come in several different types but can roughly be divided into:<ul>
+			<li>Indexed (palette), also referred to as PNG8 which have up to 256 colors.<li>Truecolor PNG, also referred to as PNG32 or PNG24.</ul> <p>Both formats support alpha (variable) transparency and, while PNG8 images degrade to a GIF-like non-variable transparency in IE6 (<a href="/blog-archive/assets/png8-transparency.png">example</a>, <a href="http://www.sitepoint.com/blogs/2007/09/18/png8-the-clear-winner/">source</a>), truecolor PNGs show an uglyish background in place of the transparent pixels (source <a href="" http://www.w3.org/graphics/png/inline-alpha.html="http://www.w3.org/Graphics/PNG/inline-alpha.html">W3C</a>).<img alt="truecolor PNG transparency problem in IE6" src="/blog-archive/assets/png-transparency.png" /><h3>The AlphaImageLoader fix</h3>
+	<p>IE6 (and older versions of IE) provides a solution to the problem through its proprietary <code>filter</code> CSS property. The following code will display the proper image cross-browser:<pre>
+#some-element {
+    background: url(image.png);
+    _background: none;
+    _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='image.png', sizingMethod='crop');
+}
+</pre><p>As you can see, the underscore CSS hack is used to target IE &lt; 7 and<ol>
+			<li>"undo" the background; and<li>load the same image, using Microsoft's AlphaImageLoader filter.</ol> <p>The reason to target IE prior to version 7 is that IE7 supports the alpha transparency natively without the need for filters. (IE8 does too and it actually <a href="http://blogs.msdn.com/ie/archive/2008/09/08/microsoft-css-vendor-extensions.aspx">changes the filter syntax</a> completely.)<p> It's interesting to note that the filter doesn't change the image; rather, it changes the HTML element this style is applied to. The other interesting thing is that each element is processed synchronously in a single UI thread. The process applying the filter takes some resources for each element and the more "filtered" elements you have, the worse it gets, even if you use the same image for all the elements. <p>The question is: How does this affect the overall performance of the page?<h3>Freeze! Side Effect #1</h3>
+	<p>Here's a simple experiment: Create a page that has a CSS filter and then simulate (and exaggerate) network latency by delaying the image used in the filter by ten seconds. The result? Not only is nothing rendered (blank page) for ten seconds, but the browser freezes, meaning you cannot interact with it, click its icons or menus, type in the URL...you can't even close it.<p><a href="/blog-archive/assets/image-opt-tests/alphatest.html">Here's a test example.</a><p>In the example, I didn't use the underscore hack so you can see the (d)effect in IE7 too, even in IE8 in "compatibility mode".<p>While the effect is exaggerated for demo purposes, network latencies are a fact of life and this is probably the worst user experience you can deliver: Someone comes to your page and their browser freezes.<p>Note that parallel downloads are not blocked. The browser still downloads the other page components in the background, but there's no progressive rendering. You can think of it this way &mdash; since IE will not render anything until the very last bit of CSS comes down the wire (<a href="http://www.phpied.com/rendering-styles/">more info</a>), and your because CSS has a dependency on a filtered image, the rendering is blocked until the dependency is satisfied.<p>What if you have several AlphaImageLoader filters on the page? They are processed synchronously one after the other so the problem is multiplied. If you have 5 images, each delayed 2 seconds on the server, then the browser freezes for a total of 10 seconds.<h3>Time and Memory &mdash; Side Effects #2 and #3</h3>
+	<p>Another negative effect of using the AlphaImageLoader is the increase of the amount of memory required to process and apply the filters. These days we might be tempted to think our visitors' computers have a virtually indefinite supply of memory, but for older computers (those more likely to run IE6 and under) this may not be the case.<p>And at the end of it, it's the performance we're most interested in, performance as measured by the time it takes for the page to load in the browser. Let's do a test to measure how much time and memory is required by the filters.<p>First, let's have a baseline page &mdash; one that has a hundred &lt;div&gt;s with the same non-filtered background image. Then let's have a second page with a filter applied to the divs (all 100 divs use the same). A hundred elements with filtered backgrounds is unlikely to be found in a normal page, but a little exaggeration will help with the measurements.<p>The time is measured from the start of the page to the onload event of the page, after the images have been cached, thus eliminating the time required to download the page and the images. The memory consumption is measured with the help of the <a href="http://technet.microsoft.com/en-us/sysinternals/bb896653.aspx">ProcessExplorer</a> tool and given as the before/after delta of the private bytes measurement, showing the "price" of rendering the page.<p> <p>Here are the median results from 10 runs in IE6 on a PC with a dual 2GHz CPU and 500M RAM. On a less powerful computer, the load times are likely to be even worse.<style type="text/css">td.number{text-align:right}</style>
+		<table border="1">
+			<caption>AlphaImageLoader test results</caption>
+			<tbody>
+				<tr>
+					<th>test page</th>
+					<th>time, seconds</th>
+					<th>memory, MB</th> </tr>
+				<tr>
+					<td><a href="alpha-no-filter-100.html">Test #1 - no filters</a></td>
+					<td class="number">0.031</td>
+					<td class="number">0.6</td> </tr>
+				<tr>
+					<td><a href="alpha-filter-100.html">Test #2 - with filters</a></td>
+					<td class="number">0.844</td>
+					<td class="number">46.8</td> </tr> </tbody> </table> <p>As you can see, the AlphaImageLoader effect is pretty bad &mdash; our test page loads 27 times slower and eats up 78 times more memory. These results are, of course, highly speculative &mdash; it's just one image tested on just one PC (relatively powerful and underworked). With different images, applied to a different number of elements and on different machines, results may vary considerably, especially when there's less RAM or CPU, or if you throw network latency (side effect #1) into the mix. But this example illustrates the important concepts:<ul>
+			<li>AlphaImageLoader is slow and requires more memory<li>It's applied per element, not per image</ul> <p>If you have a sprite image and you use it for different elements (sprites with alpha filters are trickier, <a href="http://www.julienlecomte.net/blog/2007/07/4/">but doable</a>), you'll pay the penalty for each element the sprite is used on.<h3>Yahoo! Search Case Study</h3>
+	<p>Using lab tests like the one above can give us some idea of the AlphaImageLoader "price," and you might be tempted to test and calculate approximately how much you pay for each filtered element, but there's nothing better than a real life test with millions of requests coming form different parts of the world with different browsers, computers and bandwidth.<p><a href="http://search.yahoo.com/search?p=yahoo+search">Yahoo!'s search results page</a> used to have a truecolor PNG sprite and employed AlphaImageLoader to achieve the transparency (an <a href="http://us.js2.yimg.com/us.yimg.com/i/us/sch/el/ngsprt_srp_20071130.png">older version of the sprite</a> is still around if you're curious). Replacing the truecolor PNG with a gracefully degrading PNG8 (<a href="/blog-archive/blog/2008/11/04/imageopt-2/">discussed previously</a>) decreased the pageload time by 50-100ms for the users of IE 5 and 6. 100ms may not seem like much, but for a page that loads under a second, it's at least 10%. Also, according to <a href="http://home.blarg.net/%7Eglinden/StanfordDataMining.2006-11-29.ppt">an Amazon study</a>, 100ms slower means 1% fewer sales (even for their content-heavy pages). Earning 1% more by just replacing an image doesn't look like a bad deal at all.<h3>So Now What?</h3>
+	<p>The best thing would be to avoid AlphaImageLoader completely and, like Y!Search, take the time to create PNG8 images that degrade nicely in IE6 and look good in all other browsers. How do you create a gracefully degrading PNG8? Well, create a GIF-like image first, one that has only fully transparent or fully opaque pixels. After making sure it looks acceptable (it will look like this in IE6), proceed to enhancing the image with semi-transparent pixels which will smooth any rounded corners or other parts that would benefit from transparency. Unfortunately, as far as I know, Fireworks is currently the only image processing software capable of handling alpha transparency in PNG8. You can also try command line tools such as <a href="pngnq.sourceforge.net">pngnq</a> and <a href="http://www.libpng.org/pub/png/apps/pngquant.html">pngquant</a>, although automated truecolor-to-palette PNG conversion might not always yield satisfactory results and you might need to pick the fully opaque pixels manually.<p>There might be cases when you won't be able to get by with a PNG8 and absolutely need to use AlphaImageLoader &mdash; for example when most or all pixels are semi-transparent (imagine a "play" button over a video thumbnail). Dave Artz of AOL has some <a href="http://www.artzstudio.com/2008/07/png-alpha-transparency-no-clear-winner/">other cases</a> where PNG8 will not be good enough. In such cases (but only after you try your best to persuade the designer to reconsider the use of transparency), make sure you use the underscore hack (<code>_filter</code>) so that you don't penalize IE7 users.<p>Sometimes instead of PNG8 people use GIF for IE6 and truecolor PNG for the others, but that's not necessary; with one PNG8 you achieve both binary and alpha transparency.<p>Additional benefits from using a PNG8 are:<ol>
+			<li>PNG8 is usually smaller than truecolor PNG,<li>only one image to maintain for all browsers<li>cleaner CSS with no hacks, branches or proprietary tags<li>ability to repeat background</ol> <h3>Transparency with VML</h3>
+	<p>Using VML is yet another option in IE to make a truecolor PNG transparent, and it solves several problems: alpha transparency, performance, and background repeat. Unfortunatelly, it comes with the price of extra non-standard markup (or dependency on JavaScript to generate it if you want your initial markup clean) and more propritary CSS. Here's an example on how to implement it.<p>If, for example, you have an empty div, you need to wrap it in one VML <code>:rect</code> (or <code>:shape</code>) and one <code>:fill</code> element, like this:<pre>
+&lt;v:rect&gt;
+  &lt;v:fill type=&quot;tile&quot; src=&quot;alphatest.png&quot;&gt;
+    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+  &lt;/v:fill&gt;
+&lt;/v:rect&gt;
+</pre><p>Somewhere in the markup before that you also need to declare a VML namespace:<pre>
+&lt;xml:namespace ns=&quot;urn:schemas-microsoft-com:vml&quot; prefix=&quot;v&quot; /&gt;
+</pre><p>And in your stylesheet you need:<pre>
+v\:rect  {
+    behavior:url(#default#VML);
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+
+v\:fill  {
+    behavior:url(#default#VML);
+}
+</pre><p><a href="/blog-archive/assets/image-opt-tests/vml.html">A test page</a> with 100 VML <code>rect</code> elements loads in 0.094 seconds (almost 10 times faster than using filters) and the memory usage is under 4Mb (10 times less than the filtered page).<p>As you can see this solution adds more markup and proprietary CSS, but it's still a solution and doesn't have the penalties of the AlphaImageLoader. (Thanks go to <a href="http://dillerdesign.com/experiment/DD_roundies/">this post</a> by Drew Diller and also <a href="http://www.htmlremix.com/curved-corner-border-radius-cross-browser/">HTML Remix</a>, who accidentally found this side effect while working on another problem &mdash; rounded corners with VML, via <a href="http://snook.ca/archives/html_and_css/ie-rounded/">snook.ca</a>) <h3>P.S. ...and What about Other Filters</h3>
+	<p>AlphaImageLoader is not the only filter that exists. Another popular one is the opacity filter. <p>For example, for 50% element opacity developers use the properties: <ul>
+			<li><code>opacity: 0.5</code> (standard),<li><code>-moz-opacity: 0.5</code> (early Mozilla versions, before Firefox 0.9), and<li>for IE, <code>filter: alpha(opacity=50)</code>.</ul> <p>A quick test in IE6 shows that the opacity filter is not nearly as slow as the AlphaImageLoader, but it's still making the page slower and takes the same amount of memory. This test uses color background, not an image, but even with an image the results are pretty much the same.<table border="1">
+			<caption>opacity filter test results</caption>
+			<tbody>
+				<tr>
+					<th>test page</th>
+					<th>time, seconds</th>
+					<th>memory, MB</th> </tr>
+				<tr>
+					<td><a href="alpha-no-opacity-100.html">Test #3 - 100 divs, no opacity</a></td>
+					<td class="number">0.016</td>
+					<td class="number">0.2</td> </tr>
+				<tr>
+					<td><a href="alpha-opacity-100.html">Test #4 - 100 divs with opacity</a></td>
+					<td class="number">0.093</td>
+					<td class="number">46.7</td> </tr> </tbody> </table> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

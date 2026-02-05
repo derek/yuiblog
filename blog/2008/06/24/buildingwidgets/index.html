@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Building Your Own Widget Library with YUI</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Building Your Own Widget Library with YUI</li></ul>
+				<h1 class="yui3-u-7-8">Building Your Own Widget Library with YUI</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">June 24, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>The <a href="http://developer.yahoo.com/yui/">Yahoo! User Interface Library</a> (YUI) has an ample assortment of components. Nevertheless, there will be always some functionality you want that a library like YUI hasn't anticipated or hasn't built yet. Sometimes you just want a subset of the many options a component might provide; in other cases, you may have a default configuration that you'd like to bake into a component to facilitate consistent use across your site. The flexibility built into YUI provides intrinsic support for extending, customizing, or creating wholly new components. If you find yourself in one of these situations, then building your own library of YUI-based components may make good sense.<p>This lengthy article is meant to get you started creating your own custom components using the tools available to you within YUI, including the Element Utility and the Event Utility. Understanding these tools can save you lots of time and make it easy to create API-driven components that expose powerful hooks to implementers making use of your work.<ul>
+			<li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#customizing">Customizing Existing YUI Components</a><ul>
+					<li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#usingextend">Using <code>YAHOO.lang.extend</code></a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#shortcuts">Creating and Using Shortcuts for Common YUI References</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#register">Registering a Component with YUI</a></ul> <li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#new">Developing Wholly New Widgets with YUI</a><ul>
+					<li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#element">The YUI Element Utility as a Foundation for Component Development</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#events">Managing DOM Events and Custom Events with Element</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#extend2">A Closer Look at <code>extend</code></a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#attributeprovider">Element and AttributeProvider</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#render">Adding a <code>render</code> Method</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#destroy">Adding a Destructor</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#subclasses">Subclasses</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#bundling">Bundling Functionality: The Field Object and the Fields Object</a></ul> <li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#pe">Progressive Enhancement</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#sprites">CSS Sprites</a><li><a href="/blog-archive/blog/2008/06/24/buildingwidgets/#final">Final Thoughts</a></ul> <h2 id="customizing">Customizing Existing YUI Components</h2>
+	<p>Let's begin by looking at how you would go about creating your own custom version of an existing YUI component.<p>For example, a server-side transaction may take quite a while and you may want to signal to the user that it is in progress. The <a href="http://developer.yahoo.com/yui/container/panel/"> YUI Panel</a> component is a handy way to produce a floating pop-up window. Panel serves many purposes, though, so it is not specifically tailored for this &quot;loading message&quot; implementation. You will need to implement something like the following to have your &quot;loading-panel&quot; pop-up displayed:<pre>if (!loadingPanel) {
+    loadingPanel = new YAHOO.widget.Panel('loadingPanel',{
+        width:&quot;100px&quot;, 
+        fixedcenter: true, 
+        constraintoviewport: true, 
+        underlay:&quot;shadow&quot;, 
+        close:false, 
+        visible:false, 
+        draggable:true
+    });
+    loadingPanel.setHeader(&quot;Loading ...&quot;);
+    loadingPanel.setBody('&lt;img src=&quot;loading.gif&quot; /&gt;');
+    Dom.setStyle(loadingPanel.body,'textAlign','center');
+    loadingPanel.render(document.body);
+}
+                    
+loadingPanel.show();</pre><p>Variable <code>loadingPanel</code> holds a reference to the Panel instance; once this instance is declared, later popups just reuse the existing instance and are therefore faster and less resource-intensive. But including implementation code like this inline in every page you need is a waste of time (because any change needs to be made in multiple places) and, for your users, a waste of bandwidth. Let's trim this down by turning it into a custom version of YUI's Panel.<p>In the <a href="/blog-archive/assets/buildingwidgets/sample1.html">first sample,</a> you can see this same code both as inline code and as a reusable custom component. The custom component would normally reside in a separate file that would be included in all pages. I defined it in the page in this sample to make it easier to compare the inline syntax with the library-style syntax. The page uses the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> to load components.<p>The YUI Library takes care to avoid using global variables that might collide with other libraries. In fact, the whole library is packed in the properties of a single global object called <code>YAHOO</code>; thus, as long as everybody keeps away from the <code>YAHOO</code> global variable, there should be little risk of collision. We can do the same for our own libraries because, though we control our own code, in the hopefully long life of that code other features might be added. Mashups, ad providers and others might use the global namespace carelessly and inadvertently break our application. Thus, the first step is to call the <code>YAHOO.namespace</code> static function to create an object space for our own library.<pre>YAHOO.namespace('SATYAM');</pre><p>This will create a property <code>SATYAM</code> under <code>YAHOO</code>. YUI uses only a very few names under <code>YAHOO</code>; you can keep safe by simply avoiding any of those few. None of those names uses anything but lowercase characters so any or all uppercase letters will keep you even safer. <p>You could create your own namespace by simply assigning an empty object to <code>YAHOO</code> directly, but the <code>namespace</code> function first checks to see if the namespace exists and preserves it if it does exist. If you have several library files, you will likely want to load more than one of them in any page. Each of those library files will want to make sure the new namespace exists but while preserving it if it has already been created by another of your library files.<p>Once you have your own branch under the <code>YAHOO</code> namespace, you define the constructor for your custom loading panel:<pre>YAHOO.SATYAM.LoadingPanel = function(id) {
+                
+    YAHOO.SATYAM.LoadingPanel.superclass.constructor.call(this, 
+        id || YAHOO.util.Dom.generateId() , 
+        {
+            width: &quot;100px&quot;, 
+            fixedcenter: true, 
+            constraintoviewport: true, 
+            underlay: &quot;shadow&quot;, 
+            close: false, 
+            visible: false, 
+            draggable: true
+        }
+    );
+
+    this.setHeader(&quot;Loading ...&quot;);
+    this.setBody('&lt;img src=&quot;loading.gif&quot; /&gt;');
+    YAHOO.util.Dom.setStyle(this.body, 'textAlign', 'center');
+    this.render(document.body);
+};</pre><h3 id="usingextend">Using <code>YAHOO.lang.extend</code></h3>
+	<p>Compare this code with the previous code box; you'll note that it's quite similar. You might be wondering what <code>superclass</code> is. That is part of the inheritance mechanism provided by YUI's <code>extend</code> method. After you declare the constructor for your new object, you call <code>extend</code>:<pre>YAHOO.lang.extend(YAHOO.SATYAM.LoadingPanel, YAHOO.widget.Panel);</pre><p>The sequence of first defining the constructor for the new object and then extending it with the base object may seem counterintuitive when read in a linear fashion. When you think about the sequence of execution, though, it makes perfect sense: The new object is defined by what will become its constructor, but the constructor itself does not get executed immediately. The <code>extend</code> function <em>does</em> get executed immediately, so by the time a new <code>LoadingPanel</code> object is instanced, our new object has already been extended. <p>After extending the new object, <code>this</code> will refer to both the new object and the base object. Our new object inherits from Panel methods such as <code>setHeader</code>, <code>setBody</code>, <code>render</code> as well as properties like <code>body</code> that can then be accessed via <code>this</code>. <p>Sometimes we might want to override a method of the base object. Indeed, we have already done that &mdash; by declaring the constructor of our custom object, we are overriding the constructor of the base class. The <code>extend</code> function places all original methods under a property named <code>superclass</code>, so you still have access to all the functionality of the original method. The first thing we do within the constructor of the new object is to call the constructor of the base (superclass) object and, since that is a static function, we need to adjust the scope of the superclass constructor so that it runs in the scope of our Loading Panel's constructor. We use method <code>call</code> of JavaScript native <code>Function</code> object, which takes the first argument as the execution scope of the function called and passes it the rest of the arguments.&nbsp; The YUI Librarydocumentation often uses the term &quot;class&quot; or &quot;superclass&quot; as a carry over from classical programming languages. JavaScript doesn't actually have classes (objects are derived from one another and inheritance is prototypal instead of classical)&nbsp; but the word &quot;class&quot; is loosely descriptive of the mechanism. <p>Calling the base class constructor does not need to be the first thing to do in the constructor of the new class; in fact, it might not be done at all, depending on the object you are defining. You are free to do it if and when you choose. The sequence of first defining the new constructor and then extending it before trying to create an instance of that object is mandatory. <p>Using the object we just created is easy: <pre>if (!loadingPanel2) {
+    loadingPanel2 = new YAHOO.SATYAM.LoadingPanel();
+}
+loadingPanel2.show();</pre><p>We simply create a new instance if none exists, and then we show it. We don't use the optional argument, a string that would become the <code> id</code> of the HTML element that our widget will create. Since we don't care to, we leave it out and let our function make one up via <a href="http://developer.yahoo.com/yui/dom/"> YUI Dom</a>'s method <code>generateId</code>.<h3 id="shortcuts">Creating and Using Shortcuts for Common YUI References</h3>
+	<p>When looking at the <a href="/blog-archive/assets/buildingwidgets/sample1.html">example</a> you might find that most of the names of the basic YUI components are not spelled out in full. That is because, close to the top of the source file, I have declared several shortcuts &mdash; that is, local variables that hold references to those library components. This has several advantages:<ul>
+			<li>since the shortcuts are local variables inside a function they don't trash the global namespace;<li>it is shorter to write;<li>it is easier on the interpreter since instead of, for example, looking for property <code>Dom</code> in object <code>util</code> within the object <code>YAHOO</code>, which is global and, thus, the last scope in which the interpreter will search for a symbol when all other local spaces fail, it simply looks for the shortcut, which is in the local scope, the first place it searches;<li>compression utilities such as the <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> are free to minify variables declared locally, something it cannot do with global ones because they could be referenced in other included files that might not be compressed.</ul> <p>So far, we've seen the mechanism YUI provides to make inheritance easy to handle but we haven't yet produced an actual library file. We'll do it YUI-style. The file <a href="/blog-archive/assets/buildingwidgets/LoadingPanel.js">LoadingPanel.js</a> contains a single component &mdash; basically the code we've seen so far. It first declares the namespace to use:<pre>YAHOO.namespace('SATYAM');</pre><p>Then, it puts all the code within an anonymous function, which gets immediately executed (notice the empty parenthesis at the end). This allows us to declare the shortcuts for the YUI components we will use within the library without trashing the global namespace:<pre>(function(){
+    var Dom = YAHOO.util.Dom,
+        Event = YAHOO.util.Event,
+        Panel = YAHOO.widget.Panel;
+
+    // here goes the library contents itself
+
+})();</pre><p>Right in the middle of that block we put the library code exactly as we've seen it in the previous sample.<h3 id="register">Registering a Component with YUI</h3>
+	<p>Finally, at the very end we add the following line:<pre>YAHOO.register('SATYAM.LoadingPanel', YAHOO.SATYAM.LoadingPanel, {version: &quot;0.99&quot;, build: '11'});</pre><p>Method <code>register</code> stores the provided information in a well known place for the entire YUI Library to access. This serves several purposes. Some YUI Library components can use optional components, usually to provide some fancy behavior such as animated transitions, so knowing where to look for currently loaded components makes it easier to see whether your optional components are present. <p>Most important, though, is that if you use the <a href="http://developer.yahoo.com/yui/yuiloader/"> YUI Loader</a>, the <code>register</code> function is the one it uses to check whether the load it has initiated finally succeeds. The call to the <code>register</code> function should be the last thing you do in each source file; that line effectively tells YUI that the module you're registering <em>is now ready for use</em>. The <a href="http://developer.yahoo.com/yui/yuiloader/"> YUI Loader</a> depends on this method invocation to know when your module is safe to use.<p>We use that library file in our <a href="/blog-archive/assets/buildingwidgets/sample2.html">second example</a> file. To load the library we use the following code:<pre>var loader = new YAHOO.util.YUILoader();
+    
+loader.addModule({
+    name: 'SATYAM.LoadingPanel',
+    type: 'js',
+    requires: ['container'],
+    fullpath: 'LoadingPanel.js'
+});
+  
+loader.require('reset', 'grids', 'base', 'SATYAM.LoadingPanel');</pre><p>After we declare the instance of the YUI Loader that we will use, we call method <code>addModule</code> providing the information about our library file. We have to use exactly the same name we declared when we called method <code>register</code> at the end of the library itself, we tell it it is a JavaScript file (the YUI Loader can also load CSS files), we tell the dependencies it has and finally we point to its location. Perhaps <code>fullpath</code> was not a good choice of a name for the property since usually we will provide a relative path. What it actually means is that it won't be concatenated with the base path declared elsewhere, which defaults to <a href="http://developer.yahoo.com/yui/articles/hosting/">Yahoo's servers</a>.<p>Once the library information is added to the instance of the <a href="http://developer.yahoo.com/yui/yuiloader/"> YUI Loader</a>, we can request it just as we would with standard YUI components. We just list it in the array of modules we require for our application using the same name we've given the module all along. Keep in mind that adding the module metadata via <code>addModule</code> does not actually load the module; <em>it simply lets YUI Loader know it exists</em>. It is the <code>require</code> method that tells YUI Loader which modules we actually need in this page. When we finally call method <code>insert</code>, the <a href="http://developer.yahoo.com/yui/yuiloader/"> YUI Loader</a> will go through all the modules requested, find their dependencies, calculate the load order based on the dependency tree, start loading them and wait for the loaded modules to call the <code>register</code> function to signal they are loaded and ready.<p>This same technique could be used to create your login boxes or other standard popups or your own equivalents to the browser's native &quot;accept&quot; and &quot;confirm&quot; dialogs inheriting from <a href="http://developer.yahoo.com/yui/container/dialog/index.html"> Dialog</a> and <a href="http://developer.yahoo.com/yui/container/simpledialog/index.html"> SimpleDialog</a> in the <a href="http://developer.yahoo.com/yui/container/"> YUI Container</a> component. You can also use it to customize many other standard objects: <a href="http://developer.yahoo.com/yui/editor/">Rich Text Editors</a> with your own set of toolbar tools and functionality, a <a href="http://developer.yahoo.com/yui/datasource/"> DataSource</a> with your server communication options already set up, your own application-wide menu and so on. These are all based on existing YUI components that we simply customize to suit the environment of our application. <h2>Developing Wholly New Widgets with YUI</h2>
+	<p>So far we've been looking at how to customize an existing component using <code>extend</code>. What if we want to develop a completely new component?<p>Let's say we want to develop a full set of input fields so we can build input forms via JavaScript. Our basic input component will be an HTML <code>&lt;label&gt;</code> coupled with an <code>&lt;input&gt;</code> element, plus an error indicator.<h3 id="element">The YUI Element Utility as a Foundation for Component Development</h3>
+	<p>Most YUI visual components (widgets) use a common foundation, the <a href="http://developer.yahoo.com/yui/element/"> Element Utility</a>. Element provides several features to help manage HTML elements; additional features are inherited from <code> AttributeProvider</code> and <code>EventProvider</code> (for managing configuration attributes and custom events). One of the main design goals of the YUI Library is that it should work the same in all supported browsers (those in the <a href="http://developer.yahoo.com/yui/articles/gbs/"> A grade list</a>). By wrapping an HTML element with <code> Element</code> and using its methods instead of the raw DOM methods, which can behave differently in each browser, you automatically achieve a degree of cross-browser compatibility.<p>You can see the results in the file <a href="/blog-archive/assets/buildingwidgets/Fields.js">Fields.js</a>. By now you should be familiar with the envelope: We declare the <code>SATYAM</code> namespace, enclose everything in an anonymous function that gets immediately executed, we end it with a call to <code>register</code>, and within the anonymous function we define the usual shortcuts. Though constants don't exist in JavaScript, we also declare a prefix for all the classNames of the HTML elements we will generate and we call it <code>CSS_PREFIX</code>, all in uppercase, following the coding convention of other languages which do support constants (which helps to make our intent more plain). We will be generous in giving CSS classNames to many of the elements we create so as to allow the visual designer granular control over the presentation without having to modify the program itself. <p> We have also included a <a href="/blog-archive/assets/buildingwidgets/Fields.css">CSS stylesheet</a>. The stylesheet is indispensable for design purposes; calling the <a href="/blog-archive/assets/buildingwidgets/sample3.html">sample page</a> 'plain' when you don't use the stylesheet is being generous. You will notice in the sample page that there are two fieldsets, and one is the mirror image of the other. The JavaScript and HTML used to produce those two forms are exactly the same; they differ only in the CSS class applied. Achieving this kind of presentation independence with plain <code>&lt;table&gt;</code> elements (a common fallback used to build form layouts before CSS became ubiquitous) would have been impossible because the code and markup would have needed to be unique for each form.<p> There is very little to be done in the constructor:<pre>var CSS_PREFIX = 'satyam_field_';
+        
+var TextField = function(oConfigs) {
+        
+    TextField.superclass.constructor.call(this, document.createElement('div') , oConfigs);
+
+    this.createEvent('updateEvent');
+        
+};
+
+
+
+YAHOO.SATYAM.TextField = TextField;</pre><p>We call the constructor of the object we inherit from: <a href="http://developer.yahoo.com/yui/element/">Element</a>. (<strong>Note:</strong> We haven't called <code>extend</code> yet in the code above; we'll add that method in a moment.) As we have seen before, <code>YAHOO.lang.extend</code> places all prototype members of the base object under the <code>superclass</code> property, including its constructor. We call the constructor, adjusting the scope to the object itself. <a href="http://developer.yahoo.com/yui/element/">Element</a> requires a reference to the HTML element for which it will provide a wrapper and an object containing any necessary configuration attributes. We simply create an HTML <code> &lt;div&gt;</code> element on the spot when calling the base constructor and we pass on the same configuration attributes we have received to our own constructor.<h3 id="events">Managing DOM Events and Custom Events with Element</h3>
+	<p><a href="http://developer.yahoo.com/yui/element/">Element</a> already provides wrappers for many standard DOM events. By inheriting from <a href="http://developer.yahoo.com/yui/element/">Element</a> we are already wrapping <code>click</code>, <code>dblclick</code>, <code>keydown</code>, <code>keypress</code>, <code>keyup</code>, <code>mousedown</code>, <code>mousemove</code>, <code>mouseout</code>, <code>mouseover</code>, <code>mouseup</code>, <code>focus</code>, <code>blur</code> and <code>submit</code> on the <code>div</code> that we create for each <code>TextField</code> instance. These events can be produced either by the DOM element wrapped in <a href="http://developer.yahoo.com/yui/element/">Element</a> or they may bubble from the DOM elements that are descendants of the wrapped element. All of them can be listened to by subscribing through the <code>on</code> method:<pre>myFieldInstance.on(&quot;click&quot;, someFunction);</pre><p>In this case, we will add a &quot;custom event&quot; of our own called <code>updateEvent</code>. <a href="http://developer.yahoo.com/yui/element/">Element</a> inherits from <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.EventProvider.html"> EventProvider,</a> which provides a standard mechanism to create, fire and listen to custom events. Thus, handling of our <code> updateEvent</code> will be just like handling all actual DOM events; <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.EventProvider.html"> EventProvider</a> will make them all look alike. Actually, the call to <code>createEvent</code> is optional. EventProvider is capable of creating events on demand when they are subscribed to. When the library fires the event, if the data structure hasn't been created, it means nobody is listening to the event. Here's how you would subscribe to the <code>updateEvent</code>:<pre>myFieldInstance.on(&quot;updateEvent&quot;, someFunction);</pre><p>Note that the syntax is just the same as subscribing to the DOM-based click event as we saw above.<p>The <code>TextField</code> constructor function we just created is contained within the anonymous function so it is invisible outside of that function &mdash; there is no way (yet) to access this constructor globally. It is handy to have such a short name to refer to it and it is faster for the interpreter as well, but we do want to make it public. We do that by copying the reference to that object to <code>YAHOO.SATYAM.TextField</code>, which then becomes the public name for the object under the namespace we created before.<h3 id="extend2">A Closer Look at <code>extend</code></h3>
+	<p>Now, let's take a look at how we extend our TextField object with Element:<pre>Lang.extend(TextField, YAHOO.util.Element, {
+    initAttributes: function (oConfigs) { /* ... */ },
+    render: function (parentEl) { /* ... */ },
+    destroy: function () { /* ... */ },
+    getValue: function () { /* ... */ },
+    setValue: function (newValue) { /* ... */ },
+    _renderInputEl: function (containerEl) { /* ... */ }
+}
+</pre><p>As I noted above, the mechanism for inheritance can seem counterintuitive in that we have to declare the inheritor constructor first and only then can we extend it with the properties and methods of the base object. We do this via the <code>YAHOO.lang.extend</code> method (<code>Lang</code> is the shortcut we declared for <code>YAHOO.lang</code>). We tell <code>extend</code> which object inherits from which. A third, optional, argument to <code>extend</code> is an object containing properties and methods that will also become part of the new object prototype (and will override members of the same name inherited from the superclass, if present). Here, we are declaring several additional methods, which I've stubbed out for now &mdash; we'll look at some of these more closely in a moment, and all of them appear in full in the functioning example. (If you want to learn a bit more about how <code>extend</code> works, <a href="http://developer.yahoo.com/yui/examples/yahoo/yahoo_extend.html">take a look at the dedicated example and tutorial provided for this method</a> and at <a href="http://developer.yahoo.com/yui/docs/YAHOO.lang.html#method_extend">its API doc reference</a>.)<h3 id="attributeprovider">Element and AttributeProvider</h3>
+	<p><a href="http://developer.yahoo.com/yui/element/"> Element</a> (via AttributeProvider) provides a standard mechanism for dealing with managed configuration attributes. It provides <code>get</code> and <code>set</code> methods to access them and reads initial values automatically via the constructor's <code>oConfig</code> argument as we saw above. <a href="http://developer.yahoo.com/yui/element/">Element</a> already has a few attributes of its own, but when we create an object based on it we will usually add some custom attributes. <a href="http://developer.yahoo.com/yui/element/">Element</a> creates and initializes its own in method <code>initAttributes</code>, we do the same with ours. <pre>initAttributes: function (oConfigs) {
+            
+    TextField.superclass.initAttributes.call(this, oConfigs);
+
+    var container = this.get('element');
+
+    this.setAttributeConfig('labelEl', {
+        readOnly: true,
+        value: container.appendChild(document.createElement('label'))
+    });
+    
+    this.setAttributeConfig('inputEl', {
+        readOnly: true,
+        value: container.appendChild(document.createElement('div'))
+    });
+
+    this.setAttributeConfig('name', {
+        writeOnce: true,
+        validator: Lang.isString
+    });
+            
+    this.setAttributeConfig('id', {
+        writeOnce: true,
+        validator: function (value) {
+            return /^[a-zA-Z][\w0-9\-_.:]*$/.test(value);
+        },
+        value: Dom.generateId(),
+        method: function (value) {
+            this.get('inputEl').id = value;
+        }
+    });
+
+    this.setAttributeConfig('label', {
+        validator: Lang.isString,
+        method: function (value) {
+            this.get('labelEl').innerHTML = value;
+        },
+        value: ''
+    });
+
+    this.setAttributeConfig('value', {
+        value: null
+    });
+
+    this.setAttributeConfig('validator',{
+        validator: Lang.isFunction,
+        value: function (value) {
+            return false;
+        }
+    });
+}</pre><p>Our method <code>initAttributes</code> overrides Element's own method; nevertheless, the original <code>initAttributes</code> is not lost because <code>extend</code> has copied all of the original members of Element's prototype to Field's <code>superclass</code> property. Within our <code>initAttributes</code> method, we first call the original <code>initAttributes</code>, adjusting the scope to that of our own object, and then we start defining our own attributes. We use method <code>setAttributeConfig</code> to do so. It requires a name for the attribute and then a series of optional arguments, some of which are shown in the codeblock above. An attribute can be <code>readOnly</code>, <code>writeOnce</code> or, if not stated otherwise, readable and writable. It can have a <code>validator</code> function that should return <code> true</code> if the value set is valid. We use some of YUI's own functions from <code>YAHOO.lang</code>, such as <code>isString</code>, <code>isBoolean</code> or <code>isFunction</code> to validate some of the attributes but we use our own function for the <code> id</code> attribute, since the DOM <code> id</code> property cannot be just any string. Some of the attributes have initial values whereas some will be left undefined. For <code>id</code>, the initial value will be produced by method <code>YAHOO.util.Dom.generateId</code> which ensures that you get a valid and unique id.<p>The final <code>setAttribute</code> property we want to look at is the <code>method</code> property. This property contains a function that will be executed when the configuration attribute is set. This, of course, is nothing more than what a normal property setter method should do but, since JavaScript does not provide for a standard and brief way to handle setters, YUI's <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html"> AttributeProvider</a> does so.<p>When we set an attribute to a new value (<code>myComponent.set('someAttribute,'new value')</code>), if the attribute is not <code>readOnly</code> or if it is <code>writeOnce</code> it hasn't been written yet, the function in the <code>validator</code> property will be called, if present. If that returns <code>true</code>, the function in the <code>method</code> property will then be called. All this doesn't mean much to the end user who won't see a thing, but, if you load the <code>-debug</code> versions of Event and Element, YUI will output log messages at each step in a <a href="http://developer.yahoo.com/yui/logger/">Logger Control</a> console or in the browser console.<p>In the sample above, we are using <code>Dom.generateId()</code> to produce a default <code>id</code> for <code>inputEl</code> and we have a function set in the <code>method</code> property that assigns the <code>id</code> to <code>inputEl</code>. However, the <code>method</code> function is not called for initial, default values, <code>inputEl</code> won't get the default value if not explicitly set. We can ensure the <code>method</code> function gets called by using <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html"> AttributeProvider</a>'s <code>refresh</code> method sometime after we have called <a href="http://developer.yahoo.com/yui/element/">Element</a>'s constructor:<pre>this.refresh(['id'],true);</pre><p>The first argument is an array containing the names of the attributes to be refreshed, the second tells whether it will trigger the notification events (more on them in the next paragraph), which you usually don't want fired the first time around so you set the <code>silent</code> argument to <code>true</code>. <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html"> AttributeProvider</a> will then go through the attributes you listed and call the <code>method</code> function for each of them. Beware that if the attribute has been explicitly set in that <code>oConfig</code> argument we used above when creating the object, the <code>method</code> function would have been called once and calling <code>refresh</code> will call it once again so when using <code>refresh</code> be aware of this possible repetition<p>That, however, is not the whole story. The developer using your library might want to respond to the setting of a configuration attribute. Though possible, letting the developer using your library to override the <code>method</code> or <code>validator</code> properties is risky. <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html">AttributeProvider</a> provides a couple of events for each attribute the library user can listen to. After the new attribute value has been validated and right before calling the function assigned to the <code> method</code> property, <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html">AttributeProvider</a> will fire a <code>before<i>XXXX</i>Change</code> event, where the <code><i>XXXX</i></code> is the name of your attribute with its first letter changed to uppercase. Thus, <code>myComponent.set('something','whatever')</code> will fire the <code>beforeSomethingChange</code> event. If the function listening to this event returns exactly <code>false</code> (not a <i>falsy</i> value such as not returning anything), the setting will be cancelled, the value of the attribute will remain unchanged and the function in the <code>method</code> property will not be called. Thus, a function listening to the <code>before<i>XXXX</i>Change</code> event may act as a <code>validator</code> function. If all listeners return a value that is not <code>false</code>, the <code>validator</code> returns true, and the value is finally set, <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html">AttributeProvider</a> will fire the <code><i>XXXX</i>Change</code> event. Here the case of the attribute name in the <code><i>XXXX</i></code> part is preserved; the string 'Change' is simply appended to it. The event listener would then act pretty much like the function in the attribute's <code>method</code> property.<p>There is one more feature of <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html">AttributeProvider</a> that's worth highlighting. When initializing an object just created, quite often there are dependencies in between its settings (ie, you can't set one until you set some other). When you create an object derived from <a href="http://developer.yahoo.com/yui/element/"> Element</a>, you will usually provide a set of attributes all at once. If these attributes are not set in the right order, the object will not initialize correctly. In <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.AttributeProvider.html">AttributeProvider</a> the attributes will be set in the order in which <code>setAttributeConfig</code> was called, not the order in which the attributes appear in the call to the constructor. In the example above, attributes <code>name</code>, <code>id</code> and <code>label</code> will be set in that order, regardless of the order they appear on the object creation options (the ones above them are either <code>readOnly</code> or are set as <code>writeOnce</code> and have been written to). In this way you have a predictable initialization sequence, regardless of the order in which configuration options are listed by your component's user. <h3 id="render">Adding a <code>render</code> Method</h3>
+	<p>Calling <a href="http://developer.yahoo.com/yui/element/"> Element</a>'s constructor and overriding <code>initAttributes</code> are the only things we need to do to have all the benefits of inheriting from <a href="http://developer.yahoo.com/yui/element/"> Element</a>. From now on, we can do as we please. However, to keep some consistency with the rest of the YUI Library we will provide a couple of more or less standard methods, <code>render</code> and <code>destroy</code> (some of the older YUI components lack these methods, but going forward they are <em>de rigueur</em>). Method <code>render</code> will create all the HTML elements that will make the component and will append them to the document. <pre>render: function (parentEl) {
+    
+    parentEl = Dom.get(parentEl);
+
+    if (!parentEl) {
+        YAHOO.log('Missing mandatory argument in YAHOO.SATYAM.TextField.render:  parentEl','error','Field');
+        return null;
+    }
+    
+    var containerEl = this.get('element');
+    this.addClass(CSS_PREFIX + 'container');
+    
+    var inputEl = this.get('inputEl');
+    Dom.addClass(inputEl,CSS_PREFIX + 'input');
+
+    var labelEl = this.get('labelEl');
+    labelEl.setAttribute('for', inputEl.id);
+    Dom.addClass(labelEl,CSS_PREFIX + 'label');
+    
+    this._renderInputEl(inputEl);
+
+    parentEl.appendChild(containerEl);
+
+    this.on('updateEvent', function (oArgs) {
+        var errMsg = this.get('validator').call(this, this.get('value'));
+        if (errMsg) {
+            Dom.addClass(inputEl,CSS_PREFIX + 'error');
+            inputEl.title = errMsg;
+        } else {
+            Dom.removeClass(inputEl,CSS_PREFIX + 'error');
+            inputEl.title = '';
+        }
+    });
+},
+</pre><p>Method <code> render</code> needs to know which DOM element to append our component to. As with all YUI widgets, we accept either an actual DOM reference or the <code>id</code> attribute of an HTML element. YUI Dom's <code> get</code> method ensures that we end up having a valid DOM reference. If <code>parentEl</code> is not a valid object (possibly it doesn't exist) then we return after sending an error message to the <a href="http://developer.yahoo.com/yui/logger/"> YUI Logger</a>. This is a good way to provide errors to the developer without troubling the end user who can do little about it anyway. If the <a href="http://developer.yahoo.com/yui/logger/"> Logger</a> component is loaded and active, <code>YAHOO.log</code> will write into it, otherwise, like in a production environment, it will do nothing, which is in line with what browsers normally do in most cases (fail quietly and get on with whatever happens next). For this example, I've made this call to <code>YAHOO.log</code>, but I've avoided further tests to keep the sample brief.<p>Calling <code>YAHOO.log</code> has another advantage: Such calls can be easily stripped out from the source once finished and tested by a simple regular expression search and replace. This partly explains the three flavors of the YUI files. Each YUI component comes in a <code>-debug</code>, a <code>-min</code> and a raw version, the first two being the suffixes in the file names. The <code>-debug</code> version is full of calls to <code>YAHOO.log</code> and it is good to use when you are debugging. The <a href="http://developer.yahoo.com/yui/logger/"> Logger</a> window lets you filter messages by type so you can concentrate on what you want. The raw version, with no suffix, is made from the <code>-debug</code> version with the calls to <code>YAHOO.log</code> stripped out. The <code>-min</code> version is derived from this last one by using the <a href="http://developer.yahoo.com/yui/compressor/"> YUI Compressor</a>. Then there are the aggregate files, the result of concatenating several often-used groups of components together. These are always minified even though they lack the <code>-min</code> suffix. We have used one of those in the example: <code>yuiloader-dom-event.js</code> contains the <a href="http://developer.yahoo.com/yui/yuiloader/"> YUI Loader</a>, the <a href="http://developer.yahoo.com/yui/yahoo/"> YAHOO global object</a> and the <a href="http://developer.yahoo.com/yui/dom/">Dom</a>, <a href="http://developer.yahoo.com/yui/event/"> Event</a> and <a href="http://developer.yahoo.com/yui/get/"> Get</a> utilities, all of which are so basic that it is easier and faster to load them all in one go. It is a good idea to adopt the same naming convention for your library files. The <a href="http://developer.yahoo.com/yui/yuiloader/"> YUI Loader</a> has a <code> filter</code> property that allows you to select the version of files you want, and it uses that naming convention to figure out which file is which version.<p><a href="http://developer.yahoo.com/yui/element/">Element</a> will save the object it wraps in property <code>element</code>. We fetch it and we append two HTML elements to it, one a <code>&lt;label&gt;</code> element and the other a <code>&lt;div&gt;</code> which will contain input fields. None of these are attached to the document yet; it's always a good idea to delay appending complex HTML to the document until everything is ready, because this prevents the browser's rendering engine from trying to repaint the page (which is both resource-intensive and can cause unwanted flickers). As with all the rest of the HTML elements, we are generous about adding <code>className</code>s to every element. We get the references to each of the elements created in <code>initAttributes</code> and add classNames to each. We also set the <code> for</code> attribute of the <code> &lt;label&gt;</code> element to point to the input field.<p>To actually build the input element we call <code>_renderInputEl</code>. Each type of element, text inputs/areas, radio buttons, and checkboxes will have its own renderer, so we make this method separate so it can be overridden. We simply call it, pass it its container element and trust it to do the right thing. <p>When all the HTML markup is done, we append it to the <code>parentEl</code>. We delay this until the very end so that the browser will calculate the layout of the page just once.<p>One of the configuration attributes for the <code>TextField</code> Control is a <code>validator</code> function. That function is expected to return an error message to be shown to the user or <code>false</code> if everything is ok. We subscribe to the <code>updateEvent</code> and call the function set in the <code>validator</code> attribute, adjusting the scope to that of our object, and pass it the value entered. If any error message is returned, we add a <code>className</code> that presumably will highlight the field and set the error message as the <code>title</code> (tooltip) for the field. <p>Method <code>_renderInputEl</code> starts with an underscore. This is a convention to indicate a private field. JavaScript does not support private variables; the underscore only means that the library user should refrain from using it because it is not part of the component's public API and may change in subsequent releases. Why not make it really invisible? By placing our shortcuts to YUI inside an anonymous function we made them invisible to anything outside of that function. Can't we do the same with this? Unfortunately, the trick we used with the shortcuts only works with static variables, not with instance variables such as <code>_renderInputEl</code>. We cannot make it invisible; thus, we can only signal the user our intent by using the underscore convention.<pre>_renderInputEl: function (containerEl) {
+    var input = containerEl.appendChild(document.createElement('input'));
+    input.name = this.get('name');
+    input.id = this.get('id') || input.name;
+    input.value = this.get('value');
+    Event.on(input, 'change', function(oArgs) {
+        this.fireEvent('updateEvent', {
+            event: oArgs,
+            target: input
+        });
+    }, this, true);
+    Event.on(input,'keyup', function (oArgs) {
+        this.set('value', input.value);
+    }, this, true);
+},</pre><p>Method <code>_renderInputEl</code> fills the container given with an actual input element. For our base object it will simply be a textbox. We draw it using the <code>name</code>, <code>id</code> and <code>value</code> saved elsewhere. We then listen to two events: <ol>
+			<li>on a <code>change</code>, we fire event <code>updateEvent</code>, which we declared in the constructor so as to communicate that the we are leaving the field and the value has changed; <li>we also listen to event <code>keyup</code> so as to keep the <code>value</code> stored for this field constantly updated.</ol> <h3 id="destroy">Adding a Destructor</h3>
+	<p>JavaScript does not have the concept of a destructor. When objects are no longer used, there is no destructor for the garbage collector to call and free resources. Unfortunately, most components create and/or make use of external resources that, if not freed, will take increasing amounts of memory (because garbage collection in JavaScript is not well implemented in some popular browsers). Though JavaScript does not support destructors, there is nothing preventing us from declaring one and documenting it for the programmer using our components. <pre>destroy: function () {
+    var el = this.get('element');
+    Event.purgeElement(el, true);
+    el.parentNode.removeChild(el);
+},</pre><p>Our <code> destroy</code> method takes the HTML element that represents our component, uses <a href="http://developer.yahoo.com/yui/event/"> YUI Event</a> <code>purgeElement</code> method to delete all event listeners from it and to recurse down through all children and finally remove the element itself. This will take the HTML element away from the document tree. We still have to delete the reference to our component, which cannot be done from within, that's up to the user.<h3 id="subclasses">Subclasses</h3>
+	<p>To define any new component derived from this one, we use a similar process. Here's how we might define a CheckboxField object based on the TextField object:<pre>var CheckboxField = function(oConfigs) {
+    CheckboxField.superclass.constructor.call(this, oConfigs);
+};
+
+YAHOO.SATYAM.CheckboxField = CheckboxField;
+
+Lang.extend(CheckboxField, TextField, {
+
+
+    initAttributes: function (oConfigs) {
+        oConfigs = oConfigs || {};
+        CheckboxField.superclass.initAttributes.call(this, oConfigs);
+        
+        this.setAttributeConfig('selected', {
+            validator: Lang.isBoolean,
+            method: function (value) {
+                var c = this.get('checkboxEl');
+                if (c) { c.checked = value; }
+            }
+        });
+        this.setAttributeConfig('checkboxEl', {
+            writeOnce: true
+        });
+    },
+    
+    _renderInputEl: function (containerEl) {
+        
+        containerEl.innerHTML += '&lt;input type=&quot;checkbox&quot; name=&quot;' + this.get('name') + 
+            '&quot; value=&quot;' + this.get('value') + '&quot;' + (this.get('selected')?' checked ':'') + 
+            ' id=&quot;' + this.get('id') + '&quot; /&gt;';
+        this.set('checkboxEl', containerEl.firstChild);
+        Dom.addClass(containerEl, CSS_PREFIX + 'checkbox');
+        Event.on(containerEl, 'click', function(oArgs) {
+            var target = Event.getTarget(oArgs); 
+            this.set('value', target.checked);
+            this.fireEvent('updateEvent', {
+                event: oArgs,
+                target: target
+            });
+        }, this, true);
+    }
+
+});
+</pre><p>In this case we are defining a field of type Checkbox which we base on our previous <code>TextField</code>. Since this declaration is still within the outer anonymous function, all previous shortcuts such as <code>TextField</code> are still valid. <p>The constructor for our <code>CheckboxField</code> component simply calls the base constructor. In other languages we might have skipped this declaration, but in JavaScript we declare an object by declaring its constructor, even if it is trivial. We make our component public by copying a reference to <code>YAHOO.SATYAM.CheckboxField</code> and then we make it an extension of <code>TextField</code>.<p>Finally, to change its behavior, we override a couple of methods of <code>TextField</code>. We override <code>initAttributes</code>, which <code>TextField</code> itself overrode, to add a couple more attributes. We then override <code>_renderInputEl</code> to draw our checkbox element. For the checkbox field we fire the <code>updateEvent</code> when we receive a click on the box. <p>The <a href="/blog-archive/assets/buildingwidgets/Fields.js">source code</a> contains a definition for a <code>RadioField</code> which is quite similar to <code>CheckboxField</code>. <h3 id="bundling">Bundling Functionality: The Field Object and the Fields Object</h3>
+	<p>Since input fields seldom go alone, it would be easier to create several of them at once. First, we will reduce the number of different objects we have to deal with. We will create a simple <code>Field</code> object that will be able to create any type of field. To do that we will add a <code>type</code> property to our configuration attributes, then a single <code>Field</code> object can create any type of field. <pre>var Field = function(oConfig) {
+    var Constructor = oConfig &amp;&amp; oConfig.type &amp;&amp; Field.types[oConfig.type];
+    if (Constructor) {
+        return new Constructor(oConfig);
+    }
+    return undefined;
+};
+
+YAHOO.SATYAM.Field = Field;
+
+Field.types = {
+    'text': TextField,
+    'radio': RadioField,
+    'checkbox':CheckboxField<code>
+};</code></pre><p>This constructor is an unusual one in that it returns a value. Constructors by default return a reference to the object being constructed. However, a constructor can explicitly return something other than itself. Here, we first locate the constructor of the field type requested; we verify that there is an <code>oConfig</code> object, that that <code>oConfig</code> object has a <code>type</code> property and that we have the constructor for that type in our <code>types</code> table. If so, we return a new object of the type that that constructor creates; otherwise, we return <code>undefined</code>. We make public that <code>Field</code> object as <code>YAHOO.SATYAM.Field</code> and we also create the <code>types</code> table, which is static, since there can only be one set of fields for the library. <p>A curiosity of this object, of no practical value whatsoever, is that since it has no reference to <code>this</code> at all and the only property is static instead of an instance property, it can either be called as a constructor, using <code>new</code>, or as a plain function. These two statements produce the same results, though we will prefer to use the <code>new</code> keyword for consistency: <table border="0" cellpadding="0" cellspacing="1" width="98%">
+			<tr>
+				<td width="50%"><pre>var checkLeft = new YAHOO.SATYAM.Field({
+    type: 'checkbox',
+    name: 'check',
+    label: 'Checkbox',
+    selected: true,
+    id: 'c4546'
+});</pre></td>
+				<td width="50%"><pre>var checkLeft = YAHOO.SATYAM.Field({
+    type: 'checkbox',
+    name: 'check',
+    label: 'Checkbox',
+    selected: true,
+    id: 'c4546'
+});</pre></td> </tr> </table> <p>How come function <code>Field</code> can have a property <code>types</code>? In JavaScript, all functions are instances of <code>Function</code>, so all functions are objects &mdash; and as objects they can be augmented with additional properties such as <code>types</code>. <p>If the library user decides to create a new type of input field, it is easy to incorporate it into the <code>Field</code> object: <pre>YAHOO.SATYAM.Field.types['newTypeName'] = YAHOO.SATYAM.NewInputField;</pre><p>This standardization in the way to create fields makes it easier for us to create a set of fields all at once. We do it via the Fields object: <pre>var Fields = function (oConfig) {
+    this.fields = {};
+    if (!Lang.isArray(oConfig)) oConfig = [oConfig];
+    for (var f = 0; f &lt; oConfig.length; f++) {
+        var cfg = oConfig[f];
+        var name = cfg.name;
+        if (!name || this.fields[name]) {
+            YAHOO.log('Missing or duplicate field name','error','Field');
+            return undefined;
+        }
+        this.fields[name] = new Field(cfg);
+    }        
+};
+
+YAHOO.SATYAM.Fields = Fields;
+
+Fields.prototype = {
+    render: function (container) {
+        for (var name in this.fields) {
+            if (this.fields.hasOwnProperty(name)) {
+                this.fields[name].render(container);
+            }
+        }
+    },
+    destroy: function () {
+        for (var name in this.fields) {
+            if (this.fields.hasOwnProperty(name)) {
+                this.fields[name].destroy();
+            }
+        }
+    }
+};
+
+</pre><p>The <code> Fields</code> object will take an array of configuration attributes (as does <code> Field</code>), or it can even take a single object. It first checks that the argument is an array and, if not, makes it one. It then loops through its elements reading the <code> name</code> property. It will store the fields created in the <code> fields</code> object, using the <code> name</code> as the key. If there is no <code> name</code> property or the <code> name</code> is already in use, it will issue an error in the <a href="http://developer.yahoo.com/yui/logger/"> YUI Logger</a> and return nothing. If the name exists and it is unique, it will create the field using the <code> Field</code> object seen above, each with its own <code> cfg</code> attributes and file it under the field name. As usually, once the constructor is defined, we make it public. We then define two methods, <code>render</code> and <code>destroy</code>, which simply loop through the individual fields and call the corresponding method in each. <p>In the <a href="/blog-archive/assets/buildingwidgets/sample3.html">example code</a>, we build <code>textLeft</code> and <code>radioLeft</code> via their corresponding field objects, <code>TextField</code> and <code>RadioField</code>. Then we create <code>checkLeft</code> using the generic <code>Field</code> object and the three fields in the second, mirrored fieldset all at once via <code>Fields</code>. <p>Actually, the <code>Field</code> object and its <code>types</code> table provide such a simple and flexible mechanism that we can add to the <code>Field.types</code> object any other object with a similar interface. So far we have been handling individual fields but since <code>Fields</code> allows us to define sets of input elements, we could add a family of components to contain such groups of fields. The base object could be a <code>Group</code> object that draws a <code>&lt;div&gt;</code> element allowing us to manipulate hiding, disabling or styling for the whole group at once. A <code>fields</code> configuration attribute in this <code>Group</code> object would contain the definitions for the fields contained within it. <p>From <code>Group</code> we could derive a <code>FieldSet</code> object that would draw a <code>&lt;FieldSet&gt;</code> instead of a <code>&lt;div&gt;</code> and would also have a <code>legend</code> configuration attribute. We could also derive a <code>FoldingGroup</code> or <code>FoldingFieldSet</code> which would allow these groups to be collapsed or expanded, optionally using the <a href="http://developer.yahoo.com/yui/animation/">Animation</a> utility, if loaded. The ultimate object derived from <code>Group</code> would be the <code>Form</code> which would also contain methods for form submittal and hooks for form-level validation. The code for this family of objects is not included since it would not show any relevant new techniques for the purpose of this article. <h2 id="pe">Progressive Enhancement </h2>
+	<p>If we want to reach the widest user population, we have to code for the widest variety of browsers, something the YUI Library helps us with, but we also have to consider those users who don't have JavaScript enabled. The YUI Library supports those users via 'progressive enhancement'. It assumes that, since there won't be any JavaScript active to draw the page, the server will provide a functional page in the traditional web style of a full-page reload per transaction. As a library developer we have to consider that our library might be used in those two circumstances, when we are fully in charge of drawing the elements on the page &mdash; as we have seen so far &mdash; or when we have a page with elements already in it and our library is used to enhance it, improving its appearance and providing extra functionality such as client-side validation and submission via XHR. <p>The most important enhancement in this process is adding listeners for all the events our library captures, which makes the page active and responsive. We would need to listen to form submission and handle it via XHR after passing through the configured validation. We would listen to changes in each of the fields and validate the input in each. We may add buttons to show calendars on the date input boxes, conditionally hide/show or enable/disable groups of controls based on inputs elsewhere in the form, offer autocomplete and so on. <p>If we mean to support progressive enhancement our input fields library has to be capable of finding out if the fields are already in the page and only if they are not there, draw them. We cannot be expected to support any arbitrary format for the fields we are meant to enhance. To start with, fields in a passive web page make no sense without an enclosing form so we will only enhance full forms. This makes our task easier since fields within forms don't make sense without a name (they could not be submitted otherwise) and that name is the key to locate them in the DOM as <code>form['name']</code> or <code>form.name</code>. So, our <code>Fields.render</code> method would have to first find out if the container is an HTML form and, if so, for each input element, we would try to locate a field with that name and enhance it with the rest of the information in the field configuration attribute. We might also try to locate the <code>&lt;label&gt;</code> elements pointing to our fields and also enhance them with the corresponding classNames and do likewise for the <code>&lt;div&gt;</code> that should enclose them both. <p>We're not going to delve further into this subject for the purposes of this already lengthy article. However, progressive enhancement has to be considered in the general design of the library if we want it to reach such a broad audience as the YUI Library does. An excellent use of this concept can be seen in the <a href="http://developer.yahoo.com/yui/menu/#start">YUI Menu</a> component. The markup that the component can parse makes a perfectly functional menu should JavaScript be disabled. On the other hand, the <a href="http://developer.yahoo.com/yui/calendar/">Calendar</a> component does not read existing markup since the functionality it provides could not be handled without JavaScript. As you build your own components, you'll need to make important decisions about which ones require progressive enhancement and which ones make sense only in a JavaScript-enabled environment.<h2 id="sprites">CSS Sprites</h2>
+	<p>There is only one further technique which I have not mentioned. When signaling errors on the input fields I add a className to the container. The visual designer may use this class to set any visual clue to the user. In this case, an alert icon is shown (<img border="0" height="16" src="/blog-archive/assets/buildingwidgets/alerta.gif" width="16" />). This icon is not added as an <code>&lt;img&gt;</code> tag to the field but as a non-repeating background image in the container which has a padding set on the corresponding side (depending on the skin used) to make space for it. The visual designer might have changed the color of the field itself or use any other visual clue; the code is, once again, completely agnostic in relation to visual presentation.<p>If several of these icons need to be packaged with the component, a further trick might be used: sprites. You can see a <a href="http://yui.yahooapis.com/2.5.2/build/assets/skins/sam/sprite.png">sprite</a> that comes with the YUI standard skin. It is a collection of graphical elements of small size which can be used in backgrounds, some repeating, such as shades for bars, some non-repeating like in the example above, each one individually accessible by indicating the offset from the edge of the set (see: <a href="http://www.w3.org/TR/CSS21/colors.html#background-properties">background-position</a>). This saves on connections to the server. Instead of loading each of the graphic elements when required you get all the graphic elements within the sprite in just one download. The size of the whole sprite is so small that it doesn't hurt to load something you might not use...it is better in most cases to have a slightly larger image download for the single sprite than to have all the extra HTTP requests required for multiple images. <h2 id="final">Final Thoughts</h2>
+	<p>JavaScript is a very flexible language which is very good for the component developer, but it can be tough for those using the components if the component developer does not follow some common patterns. The YUI Library provides a useful component-development paradigm with EventProvider for managed custom events and AttributeProvider for managed attributes; this article describes that paradigm, which characterizes YUI's most recent UI controls. <p><strong>Author's Note:</strong> <em>This article was done with the help of two Erics. One is Eric Abouaf, whose <a href="http://javascript.neyric.com/inputex/">inputEx</a> library of controls, featured in the <a href="/blog-archive/blog/2008/05/08/inputex/">YUI blog</a>, was the reason to write this article. I realized there was no documentation to guide library developers on how to write a library. I have also used, with permission, his idea of a widget to draw sets of input fields. The code for the article, though (made for clarity rather than performance or completeness) was done anew. The other is Eric Miraglia who made significant edits and suggestions over my initial draft.</em></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

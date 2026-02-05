@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Optimizing Yahoo! Search for the iPhone</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Optimizing Yahoo! Search for the iPhone</li></ul>
+				<h1 class="yui3-u-7-8">Optimizing Yahoo! Search for the iPhone</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 28, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><em><a href="http://wonko.com/"><img align="left" alt="Ryan Grove, Frontend Engineer on Yahoo Search" height="195" hspace="10" src="/blog-archive/assets/ryan-headshot.jpg" vspace="5" width="190" /></a><a href="http://wonko.com/">Ryan Grove</a> is a web developer and part-time getaway driver (the former for <a href="http://search.yahoo.com/">Yahoo! Search</a> and the latter for pretend). During the day he works primarily on Search Assist, iPhone Search, frontend architecture improvements, and performance; at night he writes open source software and occasionally sleeps.</em></div> </div>
+	<p>When we <a href="http://wonko.com/post/yahoo-search-brings-search-assist-searchmonkey-and-more-to-the-i">set out to build</a> an <a href="http://search.yahoo.com/i">iPhone-optimized version of Yahoo! Search</a>, we wanted to bring <a href="http://developer.yahoo.com/searchmonkey/">SearchMonkey</a>, <a href="http://search.yahoo.com/i/"><img align="right" alt="Yahoo! Search with Search Assist, tailored for the iPhone." height="517" hspace="10" src="/blog-archive/assets/ysearch-iphone.png" vspace="5" width="280" /></a> Search Assist, and other JavaScript-heavy Yahoo! Search features to the iPhone, but we also wanted the site to be blazing fast even over EDGE, all while reusing as much existing code as possible in order to minimize engineering effort and make maintenance easier. This is how we did it.<h3>Reduce</h3>
+	<p> Our first task was to remove code that wasn't strictly necessary for the iPhone experience. We were able to eliminate a significant portion of the Search Assist code, and we shaved off even more bytes by rewriting the remainder in an iPhone-specific way rather than the generic, framework-like style of the original code. <p> Some examples of the kinds of things an iPhone-specific site doesn't need: <ul>
+			<li><strong>Keyboard navigation and shortcuts:</strong> The iPhone doesn't have arrow keys and the keyboard only appears when a text input element has focus, so code that handles keyboard shortcuts and navigation events is unnecessary.<li><strong>Hover states and mouse movement handlers:</strong> Since the iPhone is a touchscreen device, there's no mouse cursor and thus no way for the user to hover over an element. Mobile Safari fires the <code>mousemove</code> and <code>mouseover</code> events just before the <code>mousedown</code>, <code>mouseup</code>, and <code>click</code> events, and it fires the <code>mouseout</code> event when an element loses focus.<li><strong>Context menus:</strong> There's no way to right-click or control-click on the iPhone, so the <code>contextmenu</code> event cannot be triggered.<li><strong>Text selection and clipboard handlers:</strong> Sadly, the iPhone does not provide clipboard functionality or a way to select text in an input element, so these handlers are useless.</ul> <p> Rewriting this code instead of reusing the existing code was a tradeoff since it meant we would need to spend more time maintaining it in the future, but the performance gains were worth it: we brought the minified JavaScript weight of the iPhone Search Assist implementation down from 32KB to 2KB (before gzip). Execution speed was also greatly improved by eliminating animations and simplifying the code that requests search suggestions on each keystroke. <p> After cutting out the unnecessary code, the next step was to make our remaining code as small as possible. The <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> made this easy, and we were able to save additional bytes by refactoring our code to follow the advice given in Nicholas Zakas's article <em><a href="/blog-archive/blog/2008/02/11/helping-the-yui-compressor/">Helping the YUI Compressor</a></em>, which describes several things you can do to help the YUI Compressor generate even more compact code. <p> Consider the following example (for the sake of brevity, I've replaced code that doesn't pertain to this example with placeholder comments): <pre><code>YAHOO.namespace('Search');
+
+YAHOO.Search.iPhone = function () {
+  // ... private methods ...
+
+  return {
+    // ... public methods ...
+
+    toggle: function (el) {
+      if (YAHOO.util.Dom.hasClass(el, 'hidden')) {
+        YAHOO.util.Dom.removeClass(el, 'hidden');
+      } else {
+        YAHOO.util.Dom.addClass(el, 'hidden');
+      }
+    }
+  };
+}();</code></pre><p> The YUI Compressor will compress the original 359 bytes to 209 bytes: <pre><code>YAHOO.namespace("Search");YAHOO.Search.iPhone=function(){return{
+toggle:function(A){if(YAHOO.util.Dom.hasClass(A,"hidden")){
+YAHOO.util.Dom.removeClass(A,"hidden")}else{YAHOO.util.Dom.addClass(A,
+"hidden")}}}}();</code></pre><p> We can compress this code even further by replacing the repeated reference to <code>YAHOO.util.Dom</code> with a local variable and by using the more compact ternary operator rather than an <code>if</code> statement: <pre><code>YAHOO.namespace('Search');
+
+YAHOO.Search.iPhone = function () {
+  var YUD = YAHOO.util.Dom;
+
+  // ... private methods ...
+
+  return {
+    // ... public methods ...
+
+    toggle: function (el) {
+      var className = 'hidden';
+
+      YUD[YUD.hasClass(el, className) ? 'removeClass' : 'addClass'](el,
+        className);
+    }
+  };
+}();</code></pre><p> This will compress to a mere 173 bytes: <pre><code>YAHOO.namespace("Search");YAHOO.Search.iPhone=function(){
+var A=YAHOO.util.Dom;return{toggle:function(C){var B="hidden";
+A[A.hasClass(C,B)?"removeClass":"addClass"](C,B)}}}();</code></pre><p> Optimizations like this are particularly important due to Mobile Safari's cache limitations, which we'll discuss a little later. <h3>Reuse</h3>
+	<p> Search Assist was the only JavaScript component that we rewrote for iPhone Search; everything else was reused wholesale with no modifications. Two things made this possible: <ul>
+			<li>Mobile Safari is a highly capable browser that can do virtually everything its big brother can do.<li>Our existing codebase uses YUI heavily. Since YUI takes care of most cross-browser issues for us, the code works well on all A-grade browsers including Safari and, by extension, Mobile Safari.</ul> <p> One of the most important factors to consider when reusing existing code is that the iPhone's processor is much slower than desktop processors; as a result, JavaScript execution can be tens or even hundreds of times slower. It's a good idea to avoid complex animation, heavy DOM manipulation, and other CPU-intensive operations. <p> If necessary, refactor your existing code to allow animations to be turned off, use <a href="http://developer.yahoo.com/performance/rules.html#events">event delegation</a> whenever possible to minimize your DOM event overhead, and always be sure to provide a tag name and root element to YUI Dom Utility methods like <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Dom.html#method_getElementsByClassName">getElementsByClassName</a>. You'll see performance improvements in desktop browsers as well as Mobile Safari. <h3>Recycle</h3>
+	<p> In the months after the iPhone was launched, the Yahoo! Exceptional Performance Team (and others outside of Yahoo!) discovered that <a href="/blog-archive/blog/2008/02/06/iphone-cacheability/">Mobile Safari doesn't cache components larger than 25KB</a> pre-gzip. This presents a bit of a problem for iPhone web apps using YUI since the core YUI components (<a href="http://developer.yahoo.com/yui/yahoo/">YAHOO Global Object</a>, <a href="http://developer.yahoo.com/yui/dom/">Dom Collection</a>, and <a href="http://developer.yahoo.com/yui/event">Event Utility</a>) weigh in at a combined size of just over 30KB. We wanted to <a href="http://developer.yahoo.com/performance/rules.html#num_http">minimize the number of HTTP requests we made</a>, especially via EDGE, but we also wanted to ensure that our components were cached so the browser wouldn't need to download them on every pageview.<p> The solution was a tradeoff: We split our components into cache-friendly chunks of less than 25KB. This results in a few additional HTTP requests the first time the user visits the site, but it ensures that the components are cached and don't need to be re-downloaded for future pageviews. <p> The easiest way to do this is to use the <a href="http://developer.yahoo.com/yui/articles/hosting/">YUI Dependency Configurator</a>, which will automatically create <a href="/blog-archive/blog/2008/07/16/combohandler/">ComboHandler</a> URLs for the components you select. For example, if your iPhone web app requires YAHOO, Dom, Event, and the <a href="http://developer.yahoo.com/yui/json/">JSON Utility</a>, you can break these dependencies up into two requests, each smaller than 25KB:<pre>
+&lt;script type="text/javascript"
+  src="http://yui.yahooapis.com/combo?2.5.2/build/yahoo/yahoo-min.js&amp;2.5.2/build/dom/dom-min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript"
+  src="http://yui.yahooapis.com/combo?2.5.2/build/event/event-min.js&amp;2.5.2/build/json/json-min.js"&gt;&lt;/script&gt;
+</pre><p> One catch: the YUI Configurator will try to include <code>yahoo-min.js</code> in each generated URL since all YUI libraries depend on it. There's no need to load this file twice, so be sure to manually remove it from all but the first URL you generate. <h3>Rejoice</h3>
+	<p> Thanks to Mobile Safari's awesomeness, YUI's abstraction of browser compatibility issues, YUI Compressor's excellent minification routines, and ComboHandler's ability to aggregate multiple components into cache-friendly chunks, it only took us two weeks to build <a href="http://search.yahoo.com/i">Yahoo! Search for iPhone</a>. The end result is snappy even on slow EDGE network connections.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Dynamic Loading and Rendering with YUI&#x27;s Menu and TreeView Controls</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Dynamic Loading and Rendering with YUI&#x27;s Menu and TreeView Controls</li></ul>
+				<h1 class="yui3-u-7-8">Dynamic Loading and Rendering with YUI&#x27;s Menu and TreeView Controls</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 2, 2006<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<p class="intro"><strong>Note:</strong> The information in this article regarding the <a href="http://developer.yahoo.com/yui/menu">YUI Menu Control</a> is obsolete as of current versions of the library; Menu now supports a <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.Menu.html#lazyLoad"><code>lazyLoad</code> configuration property</a> to make progressive rendering simpler to implement. -EM 2007-03-04</div>
+	<p>The richness revolution on the web is about improving the user experience. A richer interface can feel faster and more responsive because it can bring users closer to their data and to powerful tools for enhancing, filtering, or sharing that data. We add richness to pages to make our applications faster, lighter, and more responsive to the user's needs.<p>At the same time, adding richness and interactivity to a web page invariably means adding code complexity. Instead of simply loading the data required to represent a document, we load data related to visual and informational transformations that might take place within the document based on user interactions. This infusion of information (and rules about behavior and presentation related to that information) adds weight to the page — weight on the wire, weight in terms of processing and parsing information and rules, and weight within the browser as it holds all of this richness in memory.<p>One place where we run up against practical limitations of richness in web applications is in UI controls like <a href="http://developer.yahoo.com/yui/treeview">TreeView</a> and <a href="http://developer.yahoo.com/yui/menu/">Menu</a> in which nodal information structures are given easily-navigated UI treatments. A library of 1,000 nodes might live very compactly in a 100x200 pixel space using a Tree or Menu — ten top-level nodes with ten children each yield 100 nodes just in the top two levels; a third level, again with ten children per node, gets us to 1,000. <p>This compression of data in visual space is one of the powers of richness, but it also highlights the potential for rich UI controls to grow exponentially in their resource consumption. Where a UL with ten links would typically require a trivial amount of memory and rendering power, a Menu with 10 top-level nodes and 1000 nodes in total might increase data load by a few orders of magnitude. And it might increase the complexity of the DOM by just as much, while creating an additional burden of an object model in JavaScript in which every node in the Menu is represented by one or more JavaScript objects.<p>Both the TreeView and Menu Controls in YUI support strategies for reducing the impact that this added complexity has on initial pageload times and in-page resource consumption. In this article, we'll review those strategies and look under the covers at how this can be accomplished in the Menu Control.<h3>Dynamic Loading in the YUI TreeView Control </h3>
+	<p>The <a href="http://developer.yahoo.com/yui/treeview/">YUI TreeView Control</a> helps you address the problem of navigating vast node collections by providing support for <em>dynamic loading</em>. Dynamic loading is a mechanism whereby the children of a node are only loaded when the user expands that node. This allows you, for example, to use YUI's <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> to make XHR calls as TreeView nodes are expanded, gradually filling out the data for the node library — but only doing so as the user demonstrates a need for that information.<p>Adam Moore, the author of the TreeView Control, has provided <a href="http://developer.yahoo.com/yui/examples/treeview/dynamic.html">a nice example of dynamic loading in the TreeView Control</a>. While this example doesn't use Connection Manager to fetch data (rather, it randomly creates data for the nodes), it does illustrate the dynamic loading implementation pattern. Adam walks through the pattern on the example page and breaks out the key elements of the technique.<p>Dynamic loading in TreeView can be configured for the entire TreeView instance or on a node-by-node basis, giving you flexibility in how you manage your initial pageweight and the corresponding complexity of your DOM structure. <h3>Progressive Rendering in the YUI Menu Control </h3>
+	<p><a href="http://developer.yahoo.com/yui/examples/menu/example13.html"><img align="right" alt="The progressively-rendered menu example" border="0" height="153" hspace="10" src="/blog-archive/assets/menu.gif" vspace="5" width="300" /></a>Todd Kloots, author of the <a href="http://developer.yahoo.com/yui/menu/">YUI Menu Control</a>, this week added a new example to Menu's documentation that illustrates a similar technique using Menu. His <em><a href="http://developer.yahoo.com/yui/examples/menu/leftnavfrommarkup.html">progressive rendering </a></em><a href="http://developer.yahoo.com/yui/examples/menu/leftnavfrommarkup.html"> example</a> exemplifies the creation of a Menu based on an in-memory JavaScript data model. The result is a lightweight, fast-rendering Menu with 50+ child nodes built around a scalable technique. Let's peek under the covers of his implementation.<p>First, Todd puts his markup on the page for the top level of the menu in which his four top-level nodes or menu items (Communication, Shopping, Entertainment, and Information) are displayed. He does this using a standardized module format shared by a number of YUI components; this format is documented with the <a href="http://developer.yahoo.com/yui/container/module/">Module component</a> on the YUI web site. The basic menu information structure is nodal; Menu can consume data for menu items from an unordered list in the markup.<pre><textarea class="HTML" cols="60" name="code" rows="1"><div id="productsandservices" class="yuimenu">
+  <div class="bd">
+    <ul class="first-of-type">
+      <li class="yuimenuitem"><a href="http://communication.yahoo.com">Communication</a></li>
+      <li class="yuimenuitem"><a href="http://shopping.yahoo.com">Shopping</a></li>
+      <li class="yuimenuitem"><a href="http://entertainment.yahoo.com">Entertainment</a></li>
+      <li class="yuimenuitem">Information</li>
+    </ul>            
+  </div>
+</div></textarea></pre><p>With this markup in place, Todd instantiates the main menu:<pre><textarea class="JScript" cols="60" name="code" rows="1">var oProductsServicesMenu = new Menu("productsandservices");</textarea></pre><p>The main menu is now in place; it's time to lay a foundation for progressive rendering of submenus. Each of the four top-level menu items will have its own submenu populated by data that's not yet in the DOM. Todd begins by creating an object containing all the data he'll use for his submenus; it's organized into buckets corresponding to the four top-level items. Here's the beginning of that code block, with the data being shaped into an object literal: <pre><textarea class="JScript" cols="60" name="code" rows="1">var oMenuData = {
+"communications": [ 
+  { text: "360", url: "http://360.yahoo.com" },
+  { text: "Alerts", url: "http://alerts.yahoo.com" },
+  { text: "Avatars", url: "http://avatars.yahoo.com" },
+  ...</textarea></pre><p>The next step is to create the four top-level submenus (instances of <code>YAHOO.widget.Menu</code>) and link them to the data provided in oMenuData above:<pre><textarea class="JScript" cols="60" name="code" rows="1"> var oCommunicationsMenu = new YAHOO.widget.Menu("communications"),
+  oShoppingMenu = new YAHOO.widget.Menu("shopping"),
+  oEntertainmentMenu = new YAHOO.widget.Menu("entertainment"),
+  oInformationMenu = new YAHOO.widget.Menu("information");
+
+oCommunicationsMenu.itemsData = oMenuData["communications"];
+oShoppingMenu.itemsData = oMenuData["shopping"];
+oEntertainmentMenu.itemsData = oMenuData["entertainment"];
+oInformationMenu.itemsData = oMenuData["information"];</textarea></pre><p>Now Todd has a top-level Menu and we have Menu instances for each of the four main submenus. At this point he applies his progressive rendering technique, a strategy that relies on Menu's intrinsic BeforeShowEvent (<a href="http://developer.yahoo.com/yui/docs/container/YAHOO.widget.Module.html#beforeShowEvent">inherited from Module</a>). By writing a handler to execute just before a Menu is shown, we can defer its rendering (and all of its overhead in terms of DOM element creation) until the Menu is actually needed. Here is Todd's <code>onBeforeShowEvent</code> handler:<pre><textarea class="JScript" cols="60" name="code" rows="1">function onMenuBeforeShow(p_sType, p_sArgs, p_oMenu) {
+
+  // Check if the menu has any items. If not, add them                
+  if(this.getItemGroups().length == 0) {
+
+    var aItemsData = this.itemsData,
+      nItems = aItemsData.length,
+      oItemData,
+      oItemConfig,
+      oSubmenu;
+
+    for(var i=0; i<nItems; i++) {
+      oItemData = aItemsData[i];
+      if(oItemData) {
+        oItemConfig = {};
+        if(oItemData.url) {
+          oItemConfig.url = oItemData.url;
+        }
+        if(oItemData.submenuItems) {
+          oSubmenu = new YAHOO.widget.Menu(oItemData.submenuId);
+          oSubmenu.itemsData = oItemData.submenuItems;
+          oSubmenu.beforeShowEvent.subscribe(onMenuBeforeShow, oSubmenu, true);
+          oItemConfig.submenu = oSubmenu;
+        }
+
+        // Add the new MenuItem instance to the Menu
+        this.addItem(new YAHOO.widget.MenuItem(oItemData.text, oItemConfig));
+      }
+    }
+
+    // Render the submenu into its parent MenuItem 
+    // instance's element
+    this.render(this.parent.element);                       
+  }                
+}
+</textarea></pre><p>The approach here is a simple one: Build submenus only in response to user interaction. The submenus begin as empty vessels that know <em>about</em> their intrinsic data (it's in their <code>itemsData</code> property); however, they don't render that data until they're activated by the user. When that happens, the <code>onBeforeShowEvent</code> (to which we'll attach this method as a handler) fires. It takes the following steps:<ol>
+			<li>Checks to see if this submenu has already been rendered (line 3); if it has, its <code>getItemGroups</code> method will return subitems, and nothing more needs to be done here. <li>Loops through each menu item in this submenu (line 12-29), gathering its configuration properties and creating any submenus that might be associated with this menu item (line 19-24). Once all necessary information is in hand, the menu item is added to its parent Menu (line 27).<li>Renders the menu, preparing it to be shown (line 33). </ol> <p>The finishing touches for Todd's implementation involve subscribing this function to the <code>onBeforeShowEvent</code> of each of the four main submenus, assigning those submenus to the Menu instance created from markup, and then rendering and showing the main menu:<pre><textarea class="JScript" cols="60" name="code" rows="1">// Assign a "beforeshow" handler to each submenu of the 
+// items in the root menu. 
+oCommunicationsMenu.beforeShowEvent.subscribe(onMenuBeforeShow, oCommunicationsMenu, true);
+oShoppingMenu.beforeShowEvent.subscribe(onMenuBeforeShow, oShoppingMenu, true);
+oEntertainmentMenu.beforeShowEvent.subscribe(onMenuBeforeShow, oEntertainmentMenu, true);
+oInformationMenu.beforeShowEvent.subscribe(onMenuBeforeShow, oInformationMenu, true);
+
+// Add the empty submenus to the items in the root menu instance 
+oProductsServicesMenu.getItem(0).cfg.setProperty("submenu", oCommunicationsMenu);
+oProductsServicesMenu.getItem(1).cfg.setProperty("submenu", oShoppingMenu);
+oProductsServicesMenu.getItem(2).cfg.setProperty("submenu", oEntertainmentMenu);
+oProductsServicesMenu.getItem(3).cfg.setProperty("submenu", oInformationMenu);
+
+// Render and display the root menu
+oProductsServicesMenu.render();
+oProductsServicesMenu.show();</textarea></pre><p>The result of this particular technique is a Menu with 50+ nodes, of which only a small fraction need to be rendered when the page loads. In this implementation, the data for the remaining nodes is in the page (and has weight on the wire during initial pageload as a result) but takes up only trivial resources until called upon. And, for a more complex Menu with a few more levels (and potentially 500, 5000 or more menu items), it's easy to see how <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a> could be built into your <code>onBeforeShowEvent</code>, with the ConnectionManager <code>success</code> callback being used to add menu items, <code>render</code> the menu, and <code>show</code> it. <h3>Conclusion: Richness on a Diet</h3>
+	<p>The bottom line here is that we can get richer pages that overload small pieces of screen real estate with powerful interactive paths, and we can do this in ways that don't add massive weight and resource consumption to their contexts. Doing necessitates more thought up front. However, this kind of forethought is the price of entry for most high-volume web applications that want to include more and richer interactions within a single page. Using dynamic loading and progressive rendering in TreeViews and Menus can lead to light pageweights and fast rendering, giving you the best of both worlds: Rich interactive power along with lightness on the wire and in the page. Extending that technique throughout your site using Connection Manager can help you achieve real richness and solid performance even in highly interactive contexts.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

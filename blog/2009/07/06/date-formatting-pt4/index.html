@@ -1,0 +1,339 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Date Formatting with YUI - Part IV</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Date Formatting with YUI - Part IV</li></ul>
+				<h1 class="yui3-u-7-8">Date Formatting with YUI - Part IV</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">July 6, 2009<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>In <a href="/blog-archive/blog/2009/02/11/date-formatting-pt1-2/">Part I</a> of this series, we introduced date formatting with the YUI Date utility and integrated it with the DataTable control in <a href="/blog-archive/blog/2009/02/25/date-formatting-pt2/">Part II</a> and the Charts control in <a href="/blog-archive/blog/2009/03/18/date-formatting-pt3/">Part III</a>. In this final part, we'll look at date localisation with YUI.<p>To recap, we can format dates using YUI using the <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Date.html"><code>YAHOO.util.Date</code></a> class, which is currently distributed as part of the <a href="http://developer.yahoo.com/yui/datasource/">DataSource</a> utility. Any valid <code>strftime</code> format specifier is supported, so for example, <code>YAHOO.util.Date.format(new Date(), { format: "%Y-%b-%d"});</code> would return the date as <code>&lt;four digit year&gt;-&lt;short month name&gt;-&lt;two digit day of month&gt;</code>. <p>The Date utility accepts an optional third parameter, which specifies the locale to use when formatting a date. If not specified, this defaults to <code>"en"</code>. The locale is a string that may be the two-letter <a href="http://en.wikipedia.org/wiki/ISO_639-1">ISO-639-1 language code</a>, optionally followed by a hyphen and a two-letter <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO-3166-1 country code</a>. For example, <code>fr</code> is used for French, while <code>fr-CA</code> is used for the dialect of French spoken in Canada, and <code>fr-CH</code> is used for the dialect of French spoken in Switzerland. <code>de-CH</code>, on the other hand, is the dialect of German spoken in Switzerland.<table class="basic">
+			<caption>Examples of valid locale codes</caption>
+			<thead>
+				<tr>
+					<td>Locale Code</td>
+					<td>Language</td> </tr> </thead>
+			<tbody>
+				<tr>
+					<td>en</td>
+					<td>English (default)</td> </tr>
+				<tr>
+					<td>fr</td>
+					<td>French</td> </tr>
+				<tr>
+					<td>fr-CA</td>
+					<td>French dialect spoken in Canada</td> </tr>
+				<tr>
+					<td>fr-CH</td>
+					<td>French dialect spoken in Switzerland</td> </tr>
+				<tr>
+					<td>de</td>
+					<td>German</td> </tr>
+				<tr>
+					<td>de-DE</td>
+					<td>German dialect spoken in Germany</td> </tr> </tbody> </table> <p>The locale code impacts only the following format specifiers:<dl>
+			<dt>%a<dd>abbreviated weekday name according to the current locale<dt>%A<dd>full weekday name according to the current locale<dt>%b<dd>abbreviated month name according to the current locale<dt>%B<dd>full month name according to the current locale<dt>%c<dd>preferred date and time representation for the current locale<dt>%h<dd>same as %b<dt>%p<dd>either "AM" or "PM" according to the given time value, or the corresponding strings for the current locale<dt>%P<dd>like %p, but lower case<dt>%r<dd>time in AM and PM notation equal to %I:%M:%S %p<dt>%x<dd>preferred date representation for the current locale without the time<dt>%X<dd>preferred time representation for the current locale without the date</dl> <h3>Built-in locales</h3>
+	<p>Let's start off by looking at the built-in locales. The Date utility includes the following locales by default:<ul>
+			<li>en - English (the default)<li>en-US - US English<li>en-GB - British English<li>en-AU - Australian English (identical to British English)</ul> <p> In the following example, we'll print out the locale-specific date format using the built-in locales: <pre>
+var d = new Date();
+var f = { format: "%x%n" };
+var s = "%x:\n";
+s += "  Default:\t" + YAHOO.util.Date.format(d, f);
+s += "  en-US:\t" + YAHOO.util.Date.format(d, f, "en-US");
+s += "  en-GB:\t" + YAHOO.util.Date.format(d, f, "en-GB");
+
+alert(s);
+</pre><p><a href="/blog-archive/assets/dateformatting/locale-example1.html">See a working example</a>. Note the different output for en-US and en-GB. Similar differences between these two locales can be seen for <code>%r</code>, <code>%c</code>, and <code>%X</code>.<h3>Supporting other languages</h3>
+	<p>Now, there are many languages other than English, and many web applications that cater to speakers of these languages which the date formatter should support. While these aren't provided by YUI itself, it is fairly easy to add your own locale patch. Let's create one now for French. We do this by mixing in the <code>YAHOO.util.DateLocale</code> class with our locale definitions using the <a href="http://developer.yahoo.com/yui/docs/YAHOO.lang.html#method_merge">YAHOO.lang.merge</a> method: <pre>
+YAHOO.util.DateLocale["fr"] = YAHOO.lang.merge(YAHOO.util.DateLocale, {
+	a: ["dim", "lun", "mar", "mer", "jeu", "ven", "sam"],
+	A: ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"],
+	b: ["jan", "fév", "mar", "avr", "mai", "jun", "jui", "aoû", "sep", "oct", "nov", "déc"],
+	B: ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"],
+	c: "%a %d %b %Y %T %Z",
+	p: ["", ""],
+	P: ["", ""],
+	x: "%d.%m.%Y",
+	X: "%T"
+});
+
+var d = new Date();
+var f = { format: "%c%n" };
+var s = "%c:\n";
+s += "  Default:\t" + YAHOO.util.Date.format(d, f);
+s += "  fr:   \t" + YAHOO.util.Date.format(d, f, "fr");
+
+alert(s);
+</pre><p><a href="/blog-archive/assets/dateformatting/locale-example2.html">Try it out</a>.<p>Similarly, we can create one for Canadian French by using the French locale as a base. The only difference is in the locale-specific date format <code>%x</code>:<pre>
+YAHOO.util.DateLocale["fr-CA"] = YAHOO.lang.merge(YAHOO.util.DateLocale["fr"], {
+	x: "%Y-%m-%d"
+});
+
+var d = new Date();
+var f = { format: "%A, %x%n" };
+var s = "%A, %x:\n";
+s += "  Default:\t" + YAHOO.util.Date.format(d, f);
+s += "  fr:   \t" + YAHOO.util.Date.format(d, f, "fr");
+s += "  fr-CA:\t" + YAHOO.util.Date.format(d, f, "fr-CA");
+s += "  fr-CH:\t" + YAHOO.util.Date.format(d, f, "fr-CH");
+s += "  de-CH:\t" + YAHOO.util.Date.format(d, f, "de-CH");
+
+alert(s);
+</pre><p><a href="/blog-archive/assets/dateformatting/locale-example3.html">Try it out</a>.<p> <p>Notice that we also try to access <code>fr-CH</code> and <code>de-CH</code> which haven't been defined. In this case, the Date utility falls back to a less specific locale and tries <code>fr</code> and <code>de</code> instead. Since <code>de</code> hasn't been defined either, it falls back to <code>en</code>, which is built in.<p>I've included definitions for a few locales as examples. If you'd like to use these locales, it may make more sense to just include the code directly in your HTML pages, or copy the files to your own servers.<ul>
+			<li><a href="/blog-archive/assets/dateformatting/datelocale-fr.js">fr</a> - French, Canadian French and Swiss French<li><a href="/blog-archive/assets/dateformatting/datelocale-de.js">de</a> - German, and Swiss German<li><a href="/blog-archive/assets/dateformatting/datelocale-hi.js">hi</a> - Hindi<li><a href="/blog-archive/assets/dateformatting/datelocale-ko.js">ko</a> - Korean</ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

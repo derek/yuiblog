@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>&quot;AutoGrid&quot; for YUI Grids — Using JavaScript to Create Adaptive Grids</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">&quot;AutoGrid&quot; for YUI Grids — Using JavaScript to Create Adaptive Grids</li></ul>
+				<h1 class="yui3-u-7-8">&quot;AutoGrid&quot; for YUI Grids — Using JavaScript to Create Adaptive Grids</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">June 26, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>I love <a href="http://developer.yahoo.com/yui/grids/">YUI Grids</a>. I know my CSS and I know how to work around different problems of browsers, but I am also very much bored about having to fix and test and create these workarounds over and over again. While YUI Grids might not be perfect for all cases of web development out there, I am happy to take a pragmatic approach and just create sites that can be done with them (now you also know why I am not a designer).<p>One problem I keep having when I put some YUI Grids-based sites live is that people complain about me expecting a certain screen resolution or viewport size. YUI grids can either be 100% wide, which can be pretty silly on high resolutions, or optimized for resolutions of either 800x600 or 1024x768. When you optimize for 800 pixels people on higher resolutions will complain about the length of the page and when you go for 1024 people will say they have to scroll to see your side-bar on 800x600. You can't win.<p>Or can you? CSS is not dynamic &mdash; it has a fixed state and you can only hope that the browser does the right thing with what you give it (well, there are conditional comments for IE, but technically they are HTML, and of course there are media queries in CSS3 and other goodies, but for the sake of the argument let's say supporting IE6 is a base). JavaScript, on the other hand, is very dynamic and you can read out and check what is happening to the browser currently in use and react to it. <p>Putting this feature of JavaScript to good use you can create a YUI-Grids-based layout that remains flexible and changes according to needs. All you need to do is use some <a href="http://developer.yahoo.com/yui/dom/">YUI Dom</a> magic and change IDs and classes accordingly.<p>YUI Grids come in several flavours of overall width, defined by the ID on the container DIV:<ul>
+			<li>#doc - 750px centered (good for 800x600)<li>#doc2 - 950px centered (good for 1024x768)<li>#doc3 - 100% fluid (good for everybody)<li>#doc4 - 974px fluid (good for 1024x768)<li>#doc-custom - custom width</ul> One thing to remember here is that even <code>doc3</code> has a minimum width of 750 pixels, which is why for a fully flexible grid you need to override that: <pre>#doc3{
+  min-width:0;
+}</pre><p>Inside the container DIV you can have two blocks, and their width and the position of the side bar is defined by the class on the container DIV:<ul>
+			<li>.yui-t1 - Two columns, narrow on left, 160px<li>.yui-t2 - Two columns, narrow on left, 180px<li>.yui-t3 - Two columns, narrow on left, 300px<li>.yui-t4 - Two columns, narrow on right, 180px<li>.yui-t5 - Two columns, narrow on right, 240px<li>.yui-t6 - Two columns, narrow on right, 300px</ul> <p>Putting these together you can create a plan for your flexible grid:<ul>
+			<li>When the available screen space is larger than 950 pixels, use doc2 and the widest sidebar &mdash; either left or right<li>If you have less than 950 pixels, use doc and the medium size sidebars<li>If you have less than 760 pixels, use doc3 and the smallest sidebars<li>If you have even less &mdash; say 600 pixels &mdash; at your disposal, show the side bar below the main content</ul> <p>The script to allow for this is not really rocket science. All it needs to do is read out the grids settings, the width of the available browser window and then change the IDs and classes accordingly.<pre>YAHOO.example.autoGrid = function(){
+  var container = YAHOO.util.Dom.get('doc') || 
+                  YAHOO.util.Dom.get('doc2') || 
+                  YAHOO.util.Dom.get('doc4') || 
+                  YAHOO.util.Dom.get('doc3') ||
+                  YAHOO.util.Dom.get('doc-custom');
+  if(container){
+    var sidebar = null;
+    var classes = container.className;
+    if(classes.match(/yui-t[1-3]|yui-left/)){
+       var sidebar = 'left';
+    }
+    if(classes.match(/yui-t[4-6]|yui-right/)){
+       var sidebar = 'right';
+    }
+    function switchGrid(){
+      var currentWidth = YAHOO.util.Dom.getViewportWidth();
+      if(currentWidth > 950){
+        container.id = 'doc2';
+        if(sidebar){
+          container.className = sidebar === 'left' ? 'yui-t3' : 'yui-t6';
+        }
+      }
+      if(currentWidth < 950){
+        container.id = 'doc';
+        if(sidebar){
+          container.className = sidebar === 'left' ? 'yui-t2' : 'yui-t5';
+        }
+      }
+      if(currentWidth < 760){
+        container.id = 'doc3';
+        if(sidebar){
+          container.className = sidebar === 'left' ? 'yui-t1' : 'yui-t4';
+        }
+      }
+      if(currentWidth < 600){
+        container.id = 'doc3';
+        container.className = '';
+      }
+    };
+    switchGrid();
+    /* 
+      Throttle by Nicholas Zakas to work around MSIE's resize nasties.
+      http://www.nczonline.net/blog/2007/11/30/the_throttle_function
+    */
+    function throttle(method, scope) {
+      clearTimeout(method._tId);
+        method._tId= setTimeout(function(){
+        method.call(scope);
+      }, 100);
+    };
+    YAHOO.util.Event.on(window,'resize',function(){
+      throttle(YAHOO.example.autoGrid.switch,window);
+    });
+    
+  };
+  return {
+    switch:switchGrid
+  };
+}();</pre><p>Let's go through it step by step:<pre>YAHOO.example.autoGrid = function(){
+  var container = YAHOO.util.Dom.get('doc') || 
+                  YAHOO.util.Dom.get('doc2') || 
+                  YAHOO.util.Dom.get('doc4') || 
+                  YAHOO.util.Dom.get('doc3') ||
+                  YAHOO.util.Dom.get('doc-custom');
+  if(container){
+</pre><p>First we check if there is actually a YUI Grid in the current document, by testing for the presence of the correct IDs. If there is, we execute the rest of the code.<pre>    var sidebar = null;
+    var classes = container.className;
+    if(classes.match(/yui-t[1-3]|yui-left/)){
+       var sidebar = 'left';
+    }
+    if(classes.match(/yui-t[4-6]|yui-right/)){
+       var sidebar = 'right';
+    }</pre><p>We define <code>sidebar</code> as null, retrieve the class name of the container element and check if there was a column structure defined. In addition to the preset YUI Grids classes we also defined <code>yui-left</code> and <code>yui-right</code> here. These styles allow you to not have a sidebar without the script functionality but to get one once the script determines that there is enough space for one.<pre>    function switchGrid(){
+      var currentWidth = YAHOO.util.Dom.getViewportWidth();
+      if(currentWidth > 950){
+        container.id = 'doc2';
+        if(sidebar){
+          container.className = sidebar === 'left' ? 'yui-t3' : 'yui-t6';
+        }
+      }
+      if(currentWidth < 950){
+        container.id = 'doc';
+        if(sidebar){
+          container.className = sidebar === 'left' ? 'yui-t2' : 'yui-t5';
+        }
+      }
+      if(currentWidth < 760){
+        container.id = 'doc3';
+        if(sidebar){
+          container.className = sidebar === 'left' ? 'yui-t1' : 'yui-t4';
+        }
+      }
+      if(currentWidth < 600){
+        container.id = 'doc3';
+        container.className = '';
+      }
+    };
+    switchGrid();</pre><p>The method <code>switchGrid()</code> does all the work we defined. We set up the different cases for applying IDs and classes and call the method immediately after it's been defined.<pre>    /* 
+      Throttle by Nicholas Zakas to work around MSIE's resize nasties.
+      http://www.nczonline.net/blog/2007/11/30/the_throttle_function
+    */
+    function throttle(method, scope) {
+      clearTimeout(method._tId);
+        method._tId= setTimeout(function(){
+        method.call(scope);
+      }, 100);
+    };
+    YAHOO.util.Event.on(window,'resize',function(){
+      throttle(YAHOO.example.autoGrid.switch,window);
+    });</pre><p>For full flexibility, we also apply an event listener that re-checks the grid specifications when the user resizes the browser. As Internet Explorer has a nasty habit of firing the resize event while the user resizes the window, we need to throttle the execution of <code>switchGrid()</code>. <a href="http://www.nczonline.net/blog/2007/11/30/the_throttle_function">This is explained in detail on Nicholas Zakas' blog</a>.<pre>  };
+  return {
+    switch:switchGrid
+  };
+}();</pre><p>As the throttle method needs a public method to call from <code>setTimeout()</code> we return a pointer to <code>switchGrid</code>.<p>That's all. You can try out the effect <a href="/blog-archive/assets/autogrid.html">on the demonstration page</a>. If you define your sidebar independent of size, you can create some wonderfully dynamic and flexible sites with this little script.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

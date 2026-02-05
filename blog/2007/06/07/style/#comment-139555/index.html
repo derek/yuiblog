@@ -1,0 +1,702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Who&#8217;s Got Style? &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; Who&#8217;s Got Style?</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.2" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-112"><a href="/blog/2007/06/07/style/" rel="bookmark" title="Permanent Link to Who&#8217;s Got Style?">Who&#8217;s Got Style?</a></h2>
+				<small>June 7, 2007 at 9:28 am by Nicholas C. Zakas | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<p>With DOM support across all <a href="http://developer.yahoo.com/yui/articles/gbs/">A-grade browsers</a>, many basic (and some complex) interactions can be accomplished with relative ease. Things like adding and removing elements, inserting HTML text, and working with events are now reasonably manageable on a cross-browser basis. There are, of course, some quirks that have to be accounted for, but generally speaking, most things work as you would expect them to. Except for dynamically inserting CSS into your page.</p>
+<p>When writing HTML, CSS can be embedded in the page using the <code>&lt;style&gt;</code> element, like this:</p>
+<pre>&lt;style type="text/css"&gt;
+&nbsp;&nbsp;a {
+&nbsp;&nbsp;&nbsp;&nbsp;color: red;
+&nbsp;&nbsp;}
+&lt;/style&gt;</pre>
+<p>This block of code can be placed anywhere in a page and its rules will be applied to the entire page. Since we have the DOM API, which gives us the ability to dynamically create elements, attributes, and text nodes with a document, one would assume that some very basic JavaScript code could be used to mimic this HTML code. Logically, it would work like this:</p>
+<pre>var styleElement = document.createElement("style");
+styleElement.type = &#8220;text/css&#8221;;
+styleElement.appendChild(document.createTextNode(&#8221;a { color: red; }&#8221;));
+document.body.appendChild(styleElement);</pre>
+<p>It should be just that easy…but it&#8217;s not. For Opera and Firefox, browsers that purport to have great standards support, this works perfectly well. In Safari and Internet Explorer it fails, though not for the same reason.</p>
+<p>Safari requires dynamically created <code>&lt;style&gt;</code> elements to be inserted into the &lt;head&gt; for the rules to be applied, which is a fairly easy change to the previous code:</p>
+<pre>var styleElement = document.createElement("style");
+styleElement.type = &#8220;text/css&#8221;;
+styleElement.appendChild(document.createTextNode(&#8221;a { color: red; }&#8221;));
+document.getElementsByTagName(&#8221;head&#8221;)[0].appendChild(styleElement);</pre>
+<p>This code now works in Opera, Firefox, and Safari. But what about IE? When IE encounters <code>style.appendChild()</code> it throws the rather obtuse and not-very-helpful error message, &#8220;unexpected call to method or property access&#8221;. Try replacing that with a call to set innerHTML, and you&#8217;ll get an equally useless error message of &#8220;unknown runtime error&#8221;. What&#8217;s going on here?</p>
+<p>It turns out that IE won&#8217;t let you manipulate <code>&lt;style&gt;</code> elements in this way. There is, however, a different way to do the same thing. IE supports a <code>styleSheet</code> property on each style element that allows for the manipulation of the style sheet and the rules contained within. The <code>styleSheet</code> property has a property called <code>cssText</code>, which can be used to set and retrieve the CSS text for the style sheet. So, the code can be modified to work in IE by doing this:</p>
+<pre>var styleElement = document.createElement("style");
+styleElement.type = &#8220;text/css&#8221;;
+if (styleElement.styleSheet) {
+&nbsp;&nbsp;styleElement.styleSheet.cssText = &#8220;a { color: red }&#8221;;
+} else {
+&nbsp;&nbsp;styleElement.appendChild(document.createTextNode(&#8221;a { color: red; }&#8221;));
+}
+document.getElementsByTagName(&#8221;head&#8221;)[0].appendChild(styleElement);</pre>
+<p>This code now works in all A-grade browsers and can be genericized into a function like this:</p>
+<pre>function addCss(cssCode) {
+var styleElement = document.createElement(&#8221;style&#8221;);
+&nbsp;&nbsp;styleElement.type = &#8220;text/css&#8221;;
+&nbsp;&nbsp;if (styleElement.styleSheet) {
+&nbsp;&nbsp;&nbsp;&nbsp;styleElement.styleSheet.cssText = cssCode;
+&nbsp;&nbsp;} else {
+&nbsp;&nbsp;&nbsp;&nbsp;styleElement.appendChild(document.createTextNode(cssCode));
+&nbsp;&nbsp;}
+&nbsp;&nbsp;document.getElementsByTagName(&#8221;head&#8221;)[0].appendChild(styleElement);
+}</pre>
+<p>Using this function, you can add as many new blocks of CSS code to your page as you would like.</p>
+<p><strong>A warning:</strong> IE only allows writing to <code>styleSheet.cssText</code> one time per <code>&lt;style&gt;</code> element. If you try to do it more than one time, it can crash the browser. For this reason, it&#8217;s best not to reuse <code>&lt;style&gt;</code> elements on your page. Instead, remove them or just add new ones.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2007/06/07/style/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2007/06/07/style/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Who&#8217;s Got Style?&u=http://yuiblog.com/blog/2007/06/07/style/" title="bookmark Who&#8217;s Got Style? on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2007/06/07/style/&amp;title=Who&#8217;s Got Style?" title="bookmark Who&#8217;s Got Style? in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2007/06/07/style/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2007/06/07/style/&amp;title=Who&#8217;s Got Style?" title="post Who&#8217;s Got Style? to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2007/06/07/style/"
+    dc:identifier="http://yuiblog.com/blog/2007/06/07/style/"
+    dc:title="Who&#8217;s Got Style?"
+    trackback:ping="http://yuiblog.com/blog/2007/06/07/style/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">20 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2007/06/07/style/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2007/06/07/style/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-137135" class="class_comment1">
+	<p>I just use YAHOO.util.DOM.setStyle.  That seems to work for all browsers.</p>
+<p>Yep, snide remark.  But thanks for the wonderful work on YUI and this blog!</p>
+	<p class="alignright"><small>Comment by <a href='http://mike.hostetlerhome.com' rel='external nofollow'>MikeH</a> &#8212; June 7, 2007 <a href="#comment-137135">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137173" class="class_comment2">
+	<p>YASIEQTMS (yet another stupid IE quirk - thanks Microsoft!)</p>
+	<p class="alignright"><small>Comment by PHPlvr &#8212; June 7, 2007 <a href="#comment-137173">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137186" class="class_comment1">
+	<p>This is neat and all, but why would you need to add CSS styles dynamically with JS? Wouldn&#8217;t putting all your CSS in a stylesheet be the best way to do it? </p>
+<p>Is there an edge case where this is appropriate?</p>
+	<p class="alignright"><small>Comment by <a href='http://www.ryandoherty.net' rel='external nofollow'>Ryan</a> &#8212; June 7, 2007 <a href="#comment-137186">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137213" class="class_comment2">
+	<p>A case I can come up with is something I&#8217;m actually in the middle of doing.  Similar to how the yahoo mail loading page works.</p>
+<p>I render an initial page and want to then ajax in the css and chunks (Rails partials) to the page while my loading div hovers above.</p>
+<p>I haven&#8217;t really seen or thought of a more elegant way to do it, so&#8230;if anyone has any thoughts bradswinfrey at (good ol&#8217;) yahoo dot com</p>
+	<p class="alignright"><small>Comment by BradW &#8212; June 7, 2007 <a href="#comment-137213">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137235" class="class_comment1">
+	<p>Do you have any use case when this would be an appropriate, maintainable solution? </p>
+<p>In my mind using this technique conflicts with the precepts that you discussed in the  &#8220;Mantainable Javascript&#8221; presentation (Modifying CSS from Javascript and viceversa)</p>
+	<p class="alignright"><small>Comment by Victor Morales &#8212; June 7, 2007 <a href="#comment-137235">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137256" class="class_comment2">
+	<p>I remember having to figure all this stuff out when developing the Y! Site Solution; and spending hours and hours getting this to work just right. I dug into way too many API&#8217;s I was not expecting to get involved in. In the end, there was some crazy branching going on.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.dustindiaz.com' rel='external nofollow'>Dustin Diaz</a> &#8212; June 7, 2007 <a href="#comment-137256">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137264" class="class_comment1">
+	<p>@Victor - This technique is actually very useful for maintainability purposes. It allows you to dynamically load CSS code from the server and then inject it into your page. The new My Yahoo! uses this technique for accomplishing some pretty cool effects.</p>
+<p>Why not use a dynamically created link tag? That&#8217;s another possibility depending on your needs. Using XHR to load CSS versus using a new link tag gives you the ability to a) handle errors and b) determine when the file has been fully downloaded.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.nczonline.net/' rel='external nofollow'>Nicholas C. Zakas</a> &#8212; June 7, 2007 <a href="#comment-137264">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137287" class="class_comment2">
+	<p>@Nicholas: As always, you are one step forward. Few days ago, I was thinking about the dispatcher plugin (YAHOO.util.Dispatcher) and how to introduce support for CSS (inline and remote) as an essential element for the creation of a dynamic area inside the web page, thanks for the research and share this stuff.</p>
+<p>@Ryan and BradW: If you&#8217;re creating a dynamic area (DIV), and you need to load a remote content within this area using the connection manager, and you don&#8217;t know what kind of widget will be deployed in this area, will be very useful that the chunk (webpart that will be displayed inside the area) be JAVASCRIPT/CSS independent (the chunk will contain the required scripts and the required css), and you can use a dispatcher to:<br />
+1. loading the chunk<br />
+2. processing the response<br />
+3. execute the javascripts tags (inlines and remotes)<br />
+4. including the css tags (inlines and remotes)<br />
+5. displaying the content</p>
+<p>The step 4 will be solved with the Nicholas&#8217; code.</p>
+<p>Actually you can see an example here:<br />
+<a href="http://bubbling.comarq.com/themes/bubbling/jscripts/yui-cms/examples/dispatcher/plugin-dispatcher-dynamic-tabs-with-datatable-inside.html" rel="nofollow">http://bubbling.comarq.com/themes/bubbling/jscripts/yui-cms/examples/dispatcher/plugin-dispatcher-dynamic-tabs-with-datatable-inside.html</a><br />
+The &#8220;datatable control&#8221; tab, will load and display a datatable (including datasource-beta.js and datatable-beta-min.js onDemand), as you can see, the tab&#8217;s content are carry on with all the necessary resources, but the datatable&#8217;s CSS is defined in the original page. Now, with the Nichalas&#8217;s  code, the chunk will have a complete independence.</p>
+<p>@Victor: I don&#8217;t know why you see a conflict on this technique? If you need to load a remote CSS onDemand, the CSS&#8217;s code is not mixed with the javascript, in this case, the javascript&#8217;s code is the loader.</p>
+	<p class="alignright"><small>Comment by <a href='http://bubbling.comarq.com/' rel='external nofollow'>Caridy Patiño</a> &#8212; June 7, 2007 <a href="#comment-137287">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137450" class="class_comment1">
+	<p>Thanks for the information regarding IE, but I think the  would always be in the  not outside of it.  The Safari implementation is correct.</p>
+<p>Even if you leave Safari out, I think putting the  outside of the  will not work in strict mode.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.skypoet.net' rel='external nofollow'>Oliver Tse</a> &#8212; June 7, 2007 <a href="#comment-137450">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137554" class="class_comment2">
+	<p>[&#8230;] Who’s Got Style? The Yahoo Blog explains how you can inject style tags into your document using javascript and the DOM. (tags: javascript dom html reference css) [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://monc.se/kitchen/72/links-for-2007-06-08' rel='external nofollow'>links for&nbsp;2007-06-08&nbsp;|&nbsp;David&#8217;s kitchen</a> &#8212; June 8, 2007 <a href="#comment-137554">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137562" class="class_comment1">
+	<p>I use dynamic css as described <a href='http://www.javascriptkit.com/domref/stylesheet.shtml' rel="nofollow">here</a>.</p>
+	<p class="alignright"><small>Comment by <a href='http://zproxy.wordpress.com' rel='external nofollow'>zproxy</a> &#8212; June 8, 2007 <a href="#comment-137562">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137601" class="class_comment2">
+	<p>In my last post, I munged up my response&#8230; Here&#8217;s the complete response.</p>
+<p>Thanks for the information regarding IE, but I think the style tag would always be in the head tag not outside of it. The Safari implementation is correct.</p>
+<p>Even if you leave Safari out, I think putting the style tag outside of the head will not work in strict mode.</p>
+<p>The YUI blog is informative and great.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.skypoet.net' rel='external nofollow'>Oliver Tse</a> &#8212; June 8, 2007 <a href="#comment-137601">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137616" class="class_comment1">
+	<p>Interesting article, but I have a small nit to pick.</p>
+<p>You say: &#8220;This block of code [style block] can be placed anywhere in a page &#8230;&#8221;</p>
+<p>According to the HTML 4.01 spec section 14.2.3, style tags must be contained in the head element: &#8220;HTML permits any number of STYLE elements in the HEAD section of a document.&#8221;</p>
+<p>Link to the spec:<br />
+<a href="http://www.w3.org/TR/html401/present/styles.html#edef-STYLE" rel="nofollow">http://www.w3.org/TR/html401/present/styles.html#edef-STYLE</a></p>
+<p>I&#8217;m not sure what the browser support is for style blocks defined outside the head (most likely it works fine), but there&#8217;s no reason not to stick to the spec &#8212; append the style block to the head, as you do in the Safari example.</p>
+<p>Also, a comment:<br />
+I don&#8217;t really see the maintainability benefit of this technique.  If you compress/minify your CSS and allow the browser to download and apply it, what would the benefit of dynamically creating styles be?</p>
+<p>I don&#8217;t mean to be negative, the article is well-written and makes some interesting points.</p>
+	<p class="alignright"><small>Comment by ross &#8212; June 8, 2007 <a href="#comment-137616">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137646" class="class_comment2">
+	<p>To those would pointed out that the HTML spec says all style elements should be in the head of the document, you are correct. The point I was trying to make is that when a browser makes an exception in one direction it seems odd that it doesn&#8217;t make an exception in the other. Why would style tags included inside of the body work when dynamically created style tags placed inside of the body do not? This is what makes our profession so interesting (fun?).</p>
+<p>@Ross - The maintainability aspect is from the separation of JavaScript and CSS, as described in my talk. Victor pointed out that using this function would require embedding of CSS into your JavaScript code. However, that doesn&#8217;t have to be case. You can retrieve the CSS via XHR and insert it into the page using this function. That way, the CSS and JavaScript are separated and you are able to dynamically load styles (which becomes necessary more frequently these days) with all the bells and whistles of other XHR requests.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.nczonline.net/' rel='external nofollow'>Nicholas C. Zakas</a> &#8212; June 8, 2007 <a href="#comment-137646">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-137687" class="class_comment1">
+	<p>Nicholas, </p>
+<p>Thanks for the clarification. I agree.  I think this is why we should use toolkits and libraries.</p>
+<p>A similar problem exists with dynamic script tags &#8212; <a href="http://skypoetsworld.blogspot.com/2007/05/on-demand-javascript-ie67-and-firefox.html" rel="nofollow">Dynamic  Script Tags</a></p>
+<p>Oliver</p>
+	<p class="alignright"><small>Comment by <a href='http://www.skypoet.net' rel='external nofollow'>Oliver Tse</a> &#8212; June 8, 2007 <a href="#comment-137687">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-138593" class="class_comment2">
+	<p>[&#8230;] Who&#8217;s Got Style? Yahoo! User Interface Blog - I ran into this when I started building widgets. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://alexking.org/blog/2007/06/10/around-the-web' rel='external nofollow'>Around the web | alexking.org</a> &#8212; June 10, 2007 <a href="#comment-138593">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139065" class="class_comment1">
+	<p>[&#8230;] el Yahoo! User Interface Blog, hace unos d&iacute;as, publicaron un interesante art&iacute;culo sobre como, con DOM, [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.webintenta.com/anadir-css-dinamicamente-en-tu-web.html' rel='external nofollow'>Intenta &raquo; Blog Archive &raquo; Añadir CSS dinámicamente en tu web</a> &#8212; June 11, 2007 <a href="#comment-139065">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-139555" class="class_comment2">
+	<p>Regarding why you might want to add style blocks using JavaScript: I&#8217;ve worked on a web site builder that allowed users to dynamically change the look of links on the page (and other things), so we needed to be able to throw a style block on the page containing:</p>
+<p>a { color: #F82156; text-decoration: none }<br />
+a:visited { color: #752007; }<br />
+a:hover { text-decoration: underline }</p>
+<p>For this and similar situations, adding script blocks is a great solution.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.thefutureoftheweb.com/' rel='external nofollow'>Jesse Skinner</a> &#8212; June 12, 2007 <a href="#comment-139555">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-140436" class="class_comment1">
+	<p>[&#8230;] CSS dinámicamente en tu&nbsp;web  En el Yahoo! User Interface Blog, hace unos días, publicaron un interesante artículo sobre como, con DOM, añadir CSS [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://jeryrojas.wordpress.com/2007/06/14/anadir-css-dinamicamente-en-tu-web/' rel='external nofollow'>Añadir CSS dinámicamente en tu web &laquo; Jery Rojas - Diseñador Web</a> &#8212; June 13, 2007 <a href="#comment-140436">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-151871" class="class_comment2">
+	<p>[&#8230;] Who’s Got Style?   Posted in перевод, wtf, javascript, программирование | Trackback | [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://blog.web2.com.ua/2007/07/03/kto-poluchil-stil/' rel='external nofollow'>.wpal &raquo; Blog Archives &raquo; Кто получил стиль?</a> &#8212; July 4, 2007 <a href="#comment-151871">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="112" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/08/21/video-mlinac/">YUI Theater &mdash; Matt Mlinac: &#8220;The YUI ImageLoader Utility&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/20/schultz-solitaire/">Implementation Focus: World of Solitaire by Robert Schultz</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/15/video-henry/">YUI Theater &mdash; Shawn Henry: &#8220;Web Content Accessibility Guidelines Update&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/15/yswfblog/">Introducing the Yahoo! Flash&reg; Blog</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/13/rte-notes/">Some Notes on the YUI Rich Text Editor</a></li>
+					    		<li class="recent"><a href="/blog/2007/07/31/yui-2-3-0-released/">YUI 2.3.0: Six New Components and a Prettier Face</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 25 queries. 0.509 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1187939319" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

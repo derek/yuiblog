@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Developing a JavaScript Library for Yahoo! &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; Developing a JavaScript Library for Yahoo!</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.2" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-19"><a href="/blog/2006/02/17/developing-a-javascript-library-for-yahoo/" rel="bookmark" title="Permanent Link to Developing a JavaScript Library for Yahoo!">Developing a JavaScript Library for Yahoo!</a></h2>
+				<small>February 17, 2006 at 12:17 pm by Eric Miraglia | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<p>When we set out about a year ago to build the <a href="http://developer.yahoo.net/yui/">Yahoo! User Interface Library</a>, we had a specific set of challenges to address. First and foremost, we wanted to enable our front-end engineers to spend more time working on advanced, product-specific features and less time doing cross-browser tuning of generic interactions like drag and drop. We have a deep, talented, and  creative pool of developers across the company, but we hadn&#8217;t done enough to develop shared libraries that normalize differences across relevant browsers. As a community, we agreed that we needed better toolkits for those rich interactions that can enhance users&#8217; experiences of Yahoo! products.</p>
+<p>Creating the library represented a significant undertaking, and we spent a lot of time talking among the larger front-end engineering community here about how to go about doing this. Having now made the library publicly available as an open-source, open-use resource, we wanted to share with you some of the thought processes driving our engineering agenda. </p>
+<h3>Heterogeneity</h3>
+<p>We talk a lot at Yahoo! about <em>heterogeneity</em>, a word that describes an essential part of our company&#8217;s challenge across numerous disciplines. With respect to improving our shared JavaScript libraries at Yahoo!, heterogeneity defines the problem in two important ways:</p>
+<ol>
+<li><strong>Heterogeneity of the Yahoo! Product Family: </strong>Yahoo! products are diverse in terms of their size, the technologies we use, our development methodologies, and our locations geographically. More importantly, perhaps, our users and their needs vary significantly from product to product. As a result, some properties have been able to implement very rich feature sets, whereas others have proceeded more conservatively in defying the page-granular interaction paradigm that came to define the first decade of the mainstream web. Given this context, the library needed to facilitate application enhancement without dictating too much about how architecture, methodology, or coding style.</li>
+<li><strong>Heterogeneity of client configurations: </strong>Yahoo! has, by some internal estimates, more than 10,000 different client configurations accessing its products on a regular basis. While we can distill that into more manageable groupings (like &#8220;IE 5,&#8221; &#8220;Safari 1.3,&#8221; &#8220;Netscape 8+,&#8221; &#8220;Mac FireFox 1.5+,&#8221; and so on), there remain dozens of viable browser/platform combinations in use by millions of people each. Writing JavaScript for dozens of run-time engines and accessing dozens of implementations of DOM methods can be a recipe for paralysis &mdash; it naturally leads to conservatism with respect to making commitments for advanced features. A library that serves the needs of developers facing this degree of client-side heterogeneity must first and foremost build upon a coherent philosophy of browser support. Nate Koechley has been working on this effort for several years at Yahoo!, and <a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">he shared our philosophy publicly</a> for the first time in conjunction with the release of the library earlier this week. Growing out of that important work, our library had to provide normalized access to advanced functionality while supporting all of what we&#8217;re calling the &#8220;A-grade&#8221; browsers. </li>
+</ol>
+<p>In these two important ways, the creation of a JavaScript library with maximum usefulness for Yahoo! developers involved being sensitive to the heterogeneity that&#8217;s at the core of the front-end engineering discipline. This led us in the direction of modular components and an <em>&agrave; la carte</em> implementation style, one that could be used in a lightweight, unobtrusive way as properties began to add specific rich interactions to existing pages. By the same token, the library in the aggregate should provide broad support for properties whose design ambitions were more transformative, who wanted to create extremely rich and fundamentally event-granular applications. And that support had to be relatively unconstrained in terms of development methodology and programming style. While we love Rails creator <a href="http://www.itconversations.com/shows/detail658.html"> David Heinemeier Hansson&#8217;s description</a> of how &#8220;constraints will set you free,&#8221;  we couldn&#8217;t serve well our developer population if we didn&#8217;t acknowledge in the library&#8217;s design that their environments were already large, complex, and not susceptible to radical change. The library had to impose few constraints and live happily in a lot of different ecosystems.</p>
+<h3>The Browser as a GUI Platform</h3>
+<p>If heterogeneity drove our decisions about how to architect the library, it was an old picture of an upside-down triangle that influenced us most in creating a roadmap and an organizational structure for our work.</p>
+<p>The browser environment today shares significant common ground with where the desktop GUI industry was ten or fifteen years ago: Toolkits are comparatively new, platforms are awkward, and it&#8217;s too hard to bridge the gap between a great interactive design and real-world, cross-platform engineering implementation. While part of the problem lies in the fundamental protocols of the web, which was never meant to be a platform for deploying desktop-like applications (at least, not without the help of a Java plugin), a significant part of it lies in the browser itself. Modern browsers are tantalizingly close to making rich application development realizable and robust, but the work is still too hard and the foundation too wobbly. Early Macintosh and Windows developers often felt just this way in the early days of the desktop.</p>
+<p>In 1995, <a href="http://en.wikipedia.org/wiki/Alan_Cooper">Alan Cooper</a> (in <em><a href="http://shopping.yahoo.com/search;_ylt=Aj3NVSqtxxgh_SEBjFO7ldobFt0A;_ylu=X3oDMTBtNTA5a3RqBF9zAzE0NDg5MTE1BHNlYwNzZWFyY2g-?p=alan+cooper+about+face&amp;did=">About Face: The Essentials of Interaction Design</a></em>) created a model for how to think about the GUI ecosystem, and that model &mdash; he wrote about the desktop, but it&#8217;s enormously relevant to today&#8217;s browser &mdash; provides a wonderful picture of how an in-browser toolkit serves the larger goal of creating exceptional user interfaces:</p>
+<p><img src="http://www.yuiblog.com/i/cooper.gif" alt="Cooper's GUI canon" width="500" height="286" border="0" /></p>
+<p>For Cooper, the basic granules of interaction were called &#8220;primitives&#8221; &mdash; the mouse click is a primitive unit of input; combinations of primitives that took on more coherent units of interaction or intent were considered &#8220;compounds&#8221;; from compounds, application-specific &#8220;idioms&#8221; could be authored.</p>
+<p>We took Cooper&#8217;s model and re-cast it in terms of the browser and specifically in terms of the challenge of creating a toolkit to enable effective GUI development for web applications. Components that dealt with Cooper&#8217;s &#8220;primitives,&#8221; the most granular elements of interaction, we called utilities. Among our utilities, some (like <a href="http://developer.yahoo.net/yui/connection/index.html">Connection Manager</a>, encapsulating XMLHttpRequest transactions) don&#8217;t have any intrinsic visual characteristics and so would be, in Cooper&#8217;s model, perhaps something like a &#8220;sub-primitive.&#8221; But that&#8217;s how we thought of that bucket. </p>
+<p>Having built five utility components targeting the rich interactions most in demand among Yahoo! user-experience teams, we&#8217;ve turned our attention more recently to the level Cooper calls &#8220;compounds,&#8221; to a class of components we call &#8220;controls.&#8221; We consider controls to be highly recognizable visual presentations that allow users to interact with information quickly and intuitively. Controls, like  <a href="http://developer.yahoo.net/yui/calendar/index.html">Calendar</a>,  <a href="http://developer.yahoo.net/yui/slider/index.html">Slider</a> and  <a href="http://developer.yahoo.net/yui/treeview/index.html">TreeView</a> in our initial library release, should be familiar to users from the desktop world, should require virtually no discovery or learning in terms of their basic interaction, and should be easily invoked on the web page with just a few lines of code. The desktop paradigm, of course, has dozens of widgets; we don&#8217;t aim to be that comprehensive, and yet it&#8217;s clear that a lot of work remains for us to more fully populate our collection.</p>
+<p><img src="http://www.yuiblog.com/i/yahoo.gif" alt="An interpretation of that canon, applied to web application design" width="437" height="286" /></p>
+<p>As this  foundation of utilities and widgets grows in depth and breadth, we hope that application designers will be more free to create what Cooper calls the &#8220;idiom&#8221; of the application &mdash; that set of interactions, workflows, shortcuts, and visual treatments that allow a user to get into a highly productive sense of oneness with her underlying data. Great idioms, not great libraries, toolkits or frameworks, are the essence of great applications.</p>
+<h3>Going Forward</h3>
+<p>We are early in the process of building the Yahoo! User Interface Library. Fundamentally, we see this as a body of components that maps to Cooper&#8217;s inverted pyramid &mdash; utilities that normalize and add power to basic interactions in the browser and controls that provide a rich, familiar set of interactions within the interface. There is no magic pixie dust here: Good application idioms emerge only from diligent research, inspired design, and a committed engineering process that draws on all available tools at hand. This library is just one of those tools, and ultimately a small (though, we hope, useful) part of the much larger process.</p>
+<p>Going forward, our goal is to improve the existing utilities and add new ones where we see good opportunities. At the same time, we&#8217;ll work hard to diversify and improve the family of controls from which designers and developers can draw. We won&#8217;t be publishing a detailed roadmap for the library, although we&#8217;ll try to provide clear guidance when new work is imminent; we&#8217;ll try to strike a rational balance, giving you a sense of what you can expect only when we&#8217;re on really solid ground from which to do so. Stay tuned to the blog for ongoing progress updates, and if you&#8217;re a developer interested in using the library please consider <a href="http://groups.yahoo.com/group/ydn-javascript/">joining the Yahoo! Group</a> on which we&#8217;re discussing the components and their use. </p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Developing a JavaScript Library for Yahoo!&u=http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/" title="bookmark Developing a JavaScript Library for Yahoo! on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/&amp;title=Developing a JavaScript Library for Yahoo!" title="bookmark Developing a JavaScript Library for Yahoo! in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/&amp;title=Developing a JavaScript Library for Yahoo!" title="post Developing a JavaScript Library for Yahoo! to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/"
+    dc:identifier="http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/"
+    dc:title="Developing a JavaScript Library for Yahoo!"
+    trackback:ping="http://yuiblog.com/blog/2006/02/17/developing-a-javascript-library-for-yahoo/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">12 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2006/02/17/developing-a-javascript-library-for-yahoo/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2006/02/17/developing-a-javascript-library-for-yahoo/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-161" class="class_comment1">
+	<p>Your experiences, insights, and especially the context of such a huge pool of users faced by the Yahoo! team is of enormous benefit to Web developers working on a smaller scale. Thanks for sharing, the code of course, but more importantly for the documentation and the process!</p>
+	<p class="alignright"><small>Comment by <a href='http://loadaveragezero.com/' rel='external nofollow'>Douglas Clifton</a> &#8212; February 17, 2006 <a href="#comment-161">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-170" class="class_comment2">
+	<p>What most of us developers would like to see is a collaboration between Google, Yahoo, Mozilla, MS and others to provide a single library that can be cached between sites (or dare I say preinstalled). The problem is that with small sites the current JS libraries and AJAX aren&#8217;t really practical since they require a huge download upfront. Yes they will be cached but thats only relevant if you have a large site.</p>
+	<p class="alignright"><small>Comment by Shai &#8212; February 19, 2006 <a href="#comment-170">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-171" class="class_comment1">
+	<p>[&#8230;] The Yahoo! User Interface Blog has written a fantastic explanation (and very technical, too) of how browsers as a GUI platform resemble early desktop development. Creating rich desktop-like applications through a browser is facing similar challenges that desktop applications faced over a decade ago. They&#8217;ve taken a concept written by Alan Cooper called the the &#8216;GUI ecosystem&#8217; for desktops and applied it to JavaScript development for browsers. The concept structures various levels of user interface into a hierarchical pyramid based on complexity. The benefit of this is by modeling code into &#8216;tool-kits&#8217; keeping the &#8216;GUI ecosystem&#8217; in mind as Yahoo! has done with its User Interface Library you can develop exceptional user-interface widgets for your web page. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.sharewonders.com/2006/02/19/yahoo-user-interface-blog-the-browser-as-a-gui-platform/' rel='external nofollow'>Share Wonders &raquo; Blog Archive &raquo; Yahoo! User Interface Blog: The Browser as a GUI Platform</a> &#8212; February 19, 2006 <a href="#comment-171">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-174" class="class_comment2">
+	<p><strong>Yahoo Gets It&#8230;</strong></p>
+<p>Eric Miraglia at the Yahoo! User Interface blog talks about creating their JavaScript library. One point&nbsp; he touches on is the hetrogeneity of client configurations, and how that underscored the need for a robust cross-browser toolkit:Writing Java&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://www.earthcode.com/ajax/2006/02/yahoo_gets_it.html' rel='external nofollow'>Web 2.0 Technologies</a> &#8212; February 20, 2006 <a href="#comment-174">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-177" class="class_comment1">
+	<p>Yahoo! User Interface Blog, helps a lots for web developer like me to have a deep understanding of web usability and lots of very interesting yahoo developers views&#8230; thank you guys for sharing such a valuable information with us&#8230; thank you&#8230;YaHoO!! :)</p>
+<p>&#8211;<br />
+Balakumar Muthu</p>
+	<p class="alignright"><small>Comment by <a href='http://i5bala.blogspot.com' rel='external nofollow'>Balakumar Muthu</a> &#8212; February 20, 2006 <a href="#comment-177">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-185" class="class_comment2">
+	<p><strong>Yahoo! Makes User Interface Pattern Libraries Public&#8230;</strong></p>
+<p>Yahoo! is making portions of their Design Pattern Library and user interface code available to the public under an open-source license (via O&#8217;Reilly Radar). They&#8217;ve also launched a User Interface&#8230;&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://www.davidsturtz.com/weblog/archives/000389.php' rel='external nofollow'>DavidSturtz.com</a> &#8212; February 21, 2006 <a href="#comment-185">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-188" class="class_comment1">
+	<p>This looks good, but I think you should keep accessibility in mind and also how a page functions when JavaScript is disabled. Sounds silly for a JavaScript library, but this is part of overall good  web design, and your examples should therefore show JavaScript used sensibly.</p>
+<p>For example, some of the calendar control examples should show how to use your libraries sensibly. The travel site seemed good as there are alternative inputs. (I didn&#8217;t check if that little calendar icon itself was created using JavaScript). However, some of the other examples like multiple selection etc, while I appreciate they are demonstrating the technology, should also use that opportunity to show, or at least discuss what you should bear in mind for accessibility (where JavaScript can still be used), and where JavaScript is disabled (to show developers how to allow users to still access the underlying functionality.)</p>
+<p>Else, this is good stuff!!</p>
+	<p class="alignright"><small>Comment by Krishan Patel &#8212; February 22, 2006 <a href="#comment-188">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-201" class="class_comment2">
+	<p>On <a href="http://developer.yahoo.net/faq/," rel="nofollow">http://developer.yahoo.net/faq/,</a> the first 4 links under &#8220;What Does Yahoo! Offer?&#8221; incorrectly point to travel and shopping, which are the next 2 links.</p>
+<p>Also, where is the Feedback/Contact link on <a href="http://developer.yahoo.net/?" rel="nofollow">http://developer.yahoo.net/?</a> There is none, anywhere. It&#8217;d be nice to have one under the &#8220;FAQ&#8221; link in the left sidebar.</p>
+<p>Feel free to contact me at my email address if you need to. (Does any blogging platform support reply notification? That&#8217;d be a nice feature. And, personally, the intermixing of pingbacks with comments breaks the thread of the discussion.)</p>
+	<p class="alignright"><small>Comment by James McKinney &#8212; February 23, 2006 <a href="#comment-201">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-202" class="class_comment1">
+	<p>P.S. I should receive some notification that my previous comment is going to be reviewed before it is published. My immediate reaction was to think that it wasn&#8217;t sent (maybe it wasn&#8217;t?). Also, like Yahoo!&#8217;s own guidelines suggest for writing reviews, people like having a &#8220;Preview&#8221; button. I think it&#8217;s true for blog comments, too.</p>
+	<p class="alignright"><small>Comment by James McKinney &#8212; February 23, 2006 <a href="#comment-202">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-207" class="class_comment2">
+	<p><strong>Yahoo! Design Patterns and User Interface Library&#8230;</strong></p>
+<p>&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://www.25hoursaday.com/weblog/PermaLink.aspx?guid=340fec2b-242a-4eda-a679-5d9e46fabdee' rel='external nofollow'>Dare Obasanjo aka Carnage4Life</a> &#8212; February 24, 2006 <a href="#comment-207">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-114641" class="class_comment1">
+	<p>[&#8230;] we opened up the YUI Library in February, we talked about some of our motivations for creating an entirely new JavaScript toolkit. One of those motivations, [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2006/10/16/pageweight-yui0114/' rel='external nofollow'>YUI: Weighing in on Pageweights &raquo; Yahoo! User Interface Blog</a> &#8212; May 14, 2007 <a href="#comment-114641">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-142953" class="class_comment2">
+	<p>Feel free to contact me at my email address if you need to. (Does any blogging platform support reply notification? That’d be a nice feature. And, personally, the intermixing of pingbacks with comments breaks the thread of the discussion.)</p>
+	<p class="alignright"><small>Comment by <a href='http://www.tercumehizmeti.com' rel='external nofollow'>tercüme</a> &#8212; June 18, 2007 <a href="#comment-142953">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="19" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/08/21/video-mlinac/">YUI Theater &mdash; Matt Mlinac: &#8220;The YUI ImageLoader Utility&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/20/schultz-solitaire/">Implementation Focus: World of Solitaire by Robert Schultz</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/15/video-henry/">YUI Theater &mdash; Shawn Henry: &#8220;Web Content Accessibility Guidelines Update&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/15/yswfblog/">Introducing the Yahoo! Flash&reg; Blog</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/13/rte-notes/">Some Notes on the YUI Rich Text Editor</a></li>
+					    		<li class="recent"><a href="/blog/2007/07/31/yui-2-3-0-released/">YUI 2.3.0: Six New Components and a Prettier Face</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 23 queries. 0.523 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1187939020" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

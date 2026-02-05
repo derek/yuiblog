@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Image Optimization, Part 4: Progressive JPEG...Hot or Not?</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Image Optimization, Part 4: Progressive JPEG...Hot or Not?</li></ul>
+				<h1 class="yui3-u-7-8">Image Optimization, Part 4: Progressive JPEG...Hot or Not?</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">December 5, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Stoyan Stefanov." hspace="10" src="/blog-archive/assets/stoyan.jpg" vspace="5" /><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></div> </div>
+	<p><em>This is part 4 in an ongoing series. You can read the other parts here:</em><ul>
+			<li><a href="/blog-archive/blog/2008/10/29/imageopt-1/">Image Optimization Part 1: The Importance of Images</a><li><a href="/blog-archive/blog/2008/11/04/imageopt-2/">Image Optimization Part 2: Selecting the Right File Format</a><li><a href="/blog-archive/blog/2008/11/14/imageopt-3/">Image Optimization Part 3: Four Steps to File Size Reduction</a></ul> <p>In the <a href="/blog-archive/blog/2008/11/14/imageopt-3/">previous article</a>, the progressive JPEGs were briefly mentioned as a possible option when optimizing JPEGs. This post now diggs into this option a little deeper with the results of an optimization experiment involving over 10,000 images.<h3>Baseline vs. progressive JPEGs</h3>
+	<p>Baseline are the "normal" JPEGs, the type of JPEG that all image programs write by default. The browsers load them top-to-bottom as more of the image information comes down the wire.<a href="/blog-archive/assets/5-base-example.jpg"><img alt="Loading a baseline JPEG" src="/blog-archive/assets/5-base-example-small.jpg" /></a><p>Loading a baseline JPEG, click to enlarge<p>Progressive JPEGs are another type of JPEGs, they are rendered, as the name suggests, progressively. First you see a low quality version of the whole image. Then, as more of the image information arrives over the network, the quality gradually improves.<a href="/blog-archive/assets/4-prog-example.jpg"><img alt="Loading a baseline JPEG" src="/blog-archive/assets/4-prog-example-small.jpg" /></a><p>Loading a progressive JPEG, click to enlarge<p>From usability perspective, progressive is usually good, because the user gets feedback that something is going on. Also if you're on a slow connection, progressive JPEG is preferable because you don't need to wait for the whole image to arrive in order to get an idea if it is what you wanted. If not, you can click away from the page or hit the back button, without waiting for the (potentially large) high quality image.<p>A reason against progressive JPEGs I've heard is that they look a bit old school and that users might be underimpressed, if not irritated, by the progressive rendering. I am not aware of a user study that focuses on this issue, please comment if you have heard or conducted such a experiment.<p>There is controversial information in blogs and books whether progressive JPEGs are bigger or smaller than the baseline JPEGs in terms of file size. So, as part of the never-ending quest for smaler file sizes and lossless optimization, here is an experiment that attempts to answer this question.<h3>The experiment</h3>
+	<p>One of the <a href="http://developer.yahoo.com/everything.html">many free APIs</a> that Yahoo! provides is the <a href="http://developer.yahoo.com/search/image/V1/imageSearch.html">image search API</a>. I used it to find images that match a number of queries, such as "kittens", "puppies", "monkeys", "baby", "flower", "sunset".. 12 queries in total. Once having the image URLs, I downloaded all the images and cleaned up 4xx and 5xx error responses and non-jpegs (turned out sometimes sites host PNGs or even BMPs renamed as .jpg). After the cleanup there were 10360 images to work with, images of all different dimensions and quality, and best of all, real life images from live web sites.<p>Having the source images, I ran them through jpegtran twice with the following commands:<p><code>&gt; jpegtran -copy none -optimize source.jpg result.jpg</code><p>and<p><code>&gt; jpegtran -copy none -progressive source.jpg result.jpg</code><p>The first one optimizes the Huffman tables in the baseline JPEGs (details discussed in the previous article). The second command converts the source JPEGs into progressive ones.<p>Let's see what the result file sizes turn out to be.<h3>Results</h3>
+	<blockquote>The Census report, like most such surveys, had cost an awful lot of money and didn't tell anybody anything they didn't already know &mdash; except that every single person in the Galaxy had 2.4 legs and owned a hyena. Since this was clearly not true the whole thing had eventually to be scrapped.</blockquote> Douglas Adams &mdash; "So Long, and Thanks for All the Fish" <p>The median JPEG returned in this experiment was 52.07 Kb, which is probably not the most useful statistic. The important thing is that the median saving when using jpegtran to optimize the image losslessly as a <strong>baseline JPEG is 9.04%</strong> of the original (the median image becomes 47.36 Kb) and when using a <strong>progressive JPEG, it's 11.45%</strong> (46.11 Kb median).<p>So it looks like progressive JPEGs are smaller on average. But that's only the average, it's not a hard rule. In fact in more than 15% of the cases (1611 out of the 10360 images) the progressive JPEG versions were bigger. Since it's difficult to predict when an image will be smaller as progressive by just looking at it (or for automated processing without even looking at it), an idea of how the image will perform based on its dimensions or file size would be really helpful.<p>Looking for a relationship, I plotted all the results on a graph where:<ul>
+			<li>Y is the difference in the savings "baseline minus progressive", so negative numbers will mean cases when baseline is smaller <li>X is the file size of the original image</ul> <p>The graph shows how the results are all over the place, but there seems to be a trend &mdash; the bigger the image, the better it is to save it as a progressive JPEG.<img alt="Progressive vs baseline JPEG" src="/blog-archive/assets/1-progressive-jpeg-overview.png" /><p>"Zooming" into the area of smaller file sizes to see where progressive JPEGs get less effective, let's only consider the images that are 30K and under. Then using the trendline feature of Excel, we can see where the line is drawn (for a clearer trendline mouse over or focus or click the image).<a href="/blog-archive/assets/3-progressive-jpeg.png"><img alt="Progressive vs baseline JPEG for smaller images" id="progressive-jpeg-chart" src="/blog-archive/assets/2-progressive-jpeg.png" /></a><h3>Summary</h3>
+	<p>The take-home messages after looking at the graphs above:<ul>
+			<li>when your JPEG image is under 10K, it's better to be saved as baseline JPEG (estimated 75% chance it will be smaller)<li>for files over 10K the progressive JPEG will give you a better compression (in 94% of the cases)</ul> <p>So if your aim is to squeeze every byte (and consitency is not an issue), the best thing to do is to try both baseline and progressive and pick the smaller one.<p>The other option is have all images smaller than 10K as baseline and the rest as progressive. Or simply use baseline for thumbs, progressive for everything else.<h3>IE and progressive JPEGs</h3>
+	<p>"Oh, not IE again!" is probably what you're thinking, but it's not so bad actually. It's just that IE doesn't render progresive JPEGs progressively. It displays the image just fine, but only when it arrives completely. So in IE, the baseline JPEGs display more progressively (top-to-bottom is still progress) than the progressive JPEGs.<h3>A word on ImageMagick</h3>
+	<p>ImageMagick is a an impressive set of command-line image tools, which you can also use to optimize files. Unlike most other image software, by default ImageMagick writes <strong>optimized</strong> baseline JPEGs (as if using the -optimize switch in jpegtran).<p>ImageMagick can also strip meta data and write progressive JPEGs, so I repeated the experiment outlined above but using ImageMagick instead of jpegtran. The commands used were:<pre>
+&gt;convert -strip source.jpg result.jpg // baseline JPG
+&gt;convert -strip -interlace Plane source.jpg result.jpg // progressive JPEG
+</pre><p>Observations from the ImageMagick experiment:<ul>
+			<li>The baseline vs. progressive trendline is the same: images 10K or bigger are better optimized when using progressive encoding<li>The overall compression is better: the median is <strong>10.85% optimization for baseline JPEGs</strong> (jpegtran saved 9.04%) and <strong>13.25% for progressive JPEGs</strong> (11.45% with jpegtran)<li>There is some quality loss. ImageMagick doesn't perform fully lossless operations. Inspecting random images visually I couldn't tell any difference but using <a href="http://www.phpied.com/image-diff/">an image diff</a> utility shows that pixel information in the images has been modified.</ul> <p>And the last set of stats gleaned from the experiment has to do with the speed of writing JPEGs. Here's how jpegtran and ImageMagick performed while optimizing the 10k+ images on my laptop (Windows XP, 2GHz dual CPU, 500Mb RAM). From fastest to slowest:<ol>
+			<li>jpegtran baseline (11 images per second),<li>jpegtran progressive (9 images/s),<li>ImageMagick baseline (7 images/s),<li>ImageMagick progressive (5.5 images/s)</ol> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

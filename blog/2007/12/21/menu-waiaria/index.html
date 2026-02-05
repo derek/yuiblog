@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Using WAI-ARIA Roles and States with the YUI Menu Control</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Using WAI-ARIA Roles and States with the YUI Menu Control</li></ul>
+				<h1 class="yui3-u-7-8">Using WAI-ARIA Roles and States with the YUI Menu Control</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">December 21, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>
+		<table border="0" cellspacing="10" width="51	0">
+			<tbody>
+				<tr>
+					<td><img alt="Victor Tsaran (left) and Todd Kloots of Yahoo!" height="300" src="/blog-archive/assets/kloots_tsaran.jpg" width="430" /></td>
+					<td style="font-size:10px;" valign="bottom"><a href="http://www.flickr.com/photo_zoom.gne?id=414400167&size=o">Image of Victor Tsaran by Stephen Woods</a>; <a href="http://www.flickr.com/photo_zoom.gne?id=413976052&size=l">image of Todd Kloots by Sandy Leung</a>. Used by kind permission.</td> </tr> </tbody> </table> <p><strong>About the Authors:</strong> <em>A <a href="http://developer.yahoo.com/yui/examples/menu/menuwaiaria.html">new YUI example</a> demonstrates how to use the WAI-ARIA Roles and States with YUI's <a href="http://developer.yahoo.com/yui/menu">Menu Control</a>. In this article, YUI Menu author <strong>Todd Kloots</strong> and Yahoo! accessibility guru <strong>Victor Tsaran</strong> introduce the WAI-ARIA Roles and States, explain how they dovetail with Menu, and provide a detailed account of the user experience with two different screen readers. </em><h3>What are WAI-ARIA Roles and States?</h3>
+	<p>Developed by IBM, and adopted by the W3C, the WAI-ARIA (Web Accessibility Initiative - Accessible Rich Internet Applications) Roles and States provide a means of making DHTML widgets and content accessible to assistive technologies such as screen readers. Much as CSS can be used to completely change the visual presentation of an HTML element, the WAI-ARIA Roles and States can be used to transform how HTML elements are presented to users of assistive technologies.<h3>How it works</h3>
+	<p>Implemented as a set of HTML attributes, the WAI-ARIA Roles and States bridge the gap between DHTML and assistive technology. For example: while CSS provides a means of painting a <code>&#60;ul&#62;</code> element as a menu, and JavaScript allows for the implementation of the expected menu-like behaviors for that <code>&#60;ul&#62;</code> element, a screen reader only communicates to the user that the menu is a <code>&#60;ul&#62;</code> element. Therefore, there is a gap between the developer's intention for the role an HTML element is to play as a DHTML widget and how that widget is presented to a user of assistive technology. The WAI-ARIA Roles and States close this gap, allowing the developer to accurately communicate the role an HTML element is to play in the scope of a DHTML widget. When an element has WAI-ARIA Roles and States applied, a screen reader will announce its role and current state when it is focused. This allows <code>&#60;ul&#62;</code> elements to be presented as menus, <code>&#60;div&#62;</code> elements to be presented as modal dialogs, etc.<h3>The value of a DHTML Library</h3>
+	<p>The application of the WAI-ARIA Roles and States alone does not make a widget accessible. It it is still up to the developer to implement the mouse and keyboard functionality that the user expects for the role applied to a given widget. For this reason, a DHTML widget library can be helpful in that the nitty gritty of implementing the correct keyboard and mouse behaviors is done for you. Such is the case with the YUI Menu library. The YUI Menu implements all of the expected menu-like keyboard and mouse behaviors, so all the developer needs to do is apply the WAI-ARIA Roles and States.<h3>Applying Roles and States to a YUI Menu</h3>
+	<p>The WAI-ARIA Roles and States can be applied to a YUI Menu instance regardless of wether it is built using existing markup on the page, or entirely through JavaScript. However, since the WAI-ARIA Roles and States depend on Menu's JavaScript-based keyboard functionality, it follows that the attributes representing the WAI-ARIA Roles and States only be applied via JavaScript. This <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a> strategy ensures the best possible user experience by only applying WAI-ARIA Roles and States when the browser technologies required to support them (in this case, CSS and JavaScript) are available.<p>When applying the attributes representing the WAI-ARIA Roles and States to a Menu widget, it is best to do so via a "render" event listener. Waiting for a Menu's "render" event to fire ensures that all of its DOM elements have been appended to the document and are available to be scripted. Roles and states are added to a Menu's DOM elements via the <a href="http://www.w3.org/TR/2000/WD-DOM-Level-1-20000929/level-one-core.html#ID-F68F082">setAttribute</a> method and removed via the <a href="http://www.w3.org/TR/2000/WD-DOM-Level-1-20000929/level-one-core.html#ID-6D6AC0F9">removeAttribue</a> method. The following excerpt from the <a href="http://developer.yahoo.com/yui/examples/menu/menuwaiaria.html">the Menu example</a> demonstrates this technique.<pre class="code">
+/*
+  Add the WAI-ARIA Roles and States to the MenuBar's DOM elements once it 
+  is rendered.
+*/
+
+oMenuBar.subscribe("render", function () {
+
+  /*
+     Apply the "role" attribute of "menu" or "menubar" depending on the type of 
+     the Menu control being rendered.
+  */
+
+  this.element.setAttribute("role", 
+          (this instanceof YAHOO.widget.MenuBar ? "menubar" : "menu"));
+
+
+  /*
+     Apply the appropriate "role" and "aria-[state]" attributes to the label of
+     each MenuItem instance.
+  */
+
+  var aMenuItems = this.getItems(),
+    i = aMenuItems.length - 1,
+    oMenuItem,
+    oMenuItemLabel;
+  
+
+  do {
+
+    oMenuItem = aMenuItems[i];
+
+
+    /*
+      Retrieve a reference to the anchor element that serves as the label for 
+      each MenuItem.
+    */
+
+    oMenuItemLabel = oMenuItem.element.firstChild;
+
+
+    // Set the "role" attribute of the label to "menuitem"
+
+    oMenuItemLabel.setAttribute("role", "menuitem");
+
+
+    // Remove the label from the browser's default tab order
+
+    oMenuItemLabel.setAttribute("tabindex", -1);
+
+
+    /*
+      Optional: JAWS announces the value of each anchor element's "href"
+      attribute when it recieves focus.  If the MenuItem instance's "url" 
+      attribute is set to the default, remove the attribute so that JAWS 
+      does announce its value.
+    */
+
+    if (oMenuItem.cfg.getProperty("url") == "#") {
+
+      oMenuItemLabel.removeAttribute("href");
+    
+    }
+
+
+    /*
+      If the MenuItem has a submenu, set the "aria-haspopup" attribute to 
+      true so that the screen reader can announce 
+    */
+
+    if (oMenuItem.cfg.getProperty("submenu")) {
+    
+      oMenuItemLabel.setAttribute("aria-haspopup", true);
+    
+    }
+
+  }
+  while (i--);
+  
+
+  /*
+     Set the "tabindex" of the first MenuItem's label to 0 so the user can 
+     easily tab into and out of the control.
+  */
+
+  if (this.getRoot() == this) {
+  
+    this.getItem(0).element.firstChild.setAttribute("tabindex", 0);
+  
+  }
+
+});
+</pre><p>The tables below lists the complete set of the menu-specific WAI-ARIA Roles and States and how they map to YUI Menu DOM elements.<h4><a href="http://www.w3.org/TR/aria-role/#roles">Related ARIA Roles</a></h4>
+	<table>
+		<thead>
+			<tr>
+				<th>WAI-ARIA Role</th>
+				<th>YUI Menu DOM Element</th> </tr> </thead>
+		<tbody>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-role/#menu">menu</a></td>
+				<td><code>&#60;div class="yuimenu"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-role/#menubar">menubar</a></td>
+				<td><code>&#60;div class="yuimenubar"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-role/#menuitem">menuitem</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code> and <code>&#60;a class="yuimenubaritemlabel"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-role/#menuitemcheckbox">menuitemcheckbox</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-role/#menuitemradio">menuitemradio</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code></td> </tr> </tbody> </table>
+	<h4><a href="http://www.w3.org/TR/aria-state/#widgets">Related ARIA States</a></h4>
+	<table>
+		<thead>
+			<tr>
+				<th>WAI-ARIA State</th>
+				<th>YUI Menu DOM Element</th> </tr> </thead>
+		<tbody>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-state/#haspopup">haspopup</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code> and <code>&#60;a class="yuimenubaritemlabel"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-state/#checked">checked</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-state/#selected">selected</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code> and <code>&#60;a class="yuimenubaritemlabel"&#62;</code></td> </tr>
+			<tr>
+				<td><a href="http://www.w3.org/TR/aria-state/#disabled">disabled</a></td>
+				<td><code>&#60;a class="yuimenuitemlabel"&#62;</code> and <code>&#60;a class="yuimenubaritemlabel"&#62;</code></td> </tr> </tbody> </table>
+	<p>Once the WAI-ARIA Roles and States are applied, there are a few tweaks that can be made to the YUI Menu's DOM elements to further improve the user experience. For YUI Menu, the label of each MenuItem instance is represented in HTML as an anchor element (i.e. <code>&#60;a class="yuimenuitemlabel"&#62;</code>), and in IE and Firefox, anchor elements are automatically part of the tab order. Having MenuItem labels in the tab order by default is important when JavaScript is disabled to ensure that the user can navigate a Menu via the keyboard with the tab key.<p>Since the YUI Menu code provides its own, desktop-like keyboard functionality when JavaScript is enabled, having every MenuItem label in the browser's default tab order can be a nuisance to users screen readers. When navigating the document with the tab key, users of screen readers have to tab through every single MenuItem label in a Menu, regardless of whether or not they want to use the Menu control. This problem can be solved by setting the "tabindex" attribute of every MenuItem label but the first to a value of -1. Setting an element's "tabindex" attribute to a value of -1 removes it from the browser's default tab order, while maintaining its focusability via JavaScript. Since the YUI Menu keyboard functionality is activated when any MenuItem label has focus, with just one MenuItem label in the browser's default tab order the Menu's keyboard functionality will be preserved, while at the same time giving the user the ability to quickly tab into and out of the control.<h3>Supported Browsers and Screen Readers</h3>
+	<p>In order to take advantage of the WAI-ARIA Roles and States a user must have both a web browser and screen reader that support them. Firefox 1.5 was the first browser to support the WAI-ARIA Roles and States, and its implementation has evolved considerably in version 3, making it much easier for developers to apply the attributes representing roles and states. Both Microsoft and Opera are planing to implement the WAI-ARIA Roles and States in future versions of their browsers. The two major screen readers, Freedom Scientific's JAWS and GW Micro's Window-Eyes both support the WAI-ARIA Roles and States, JAWS as of version 7.1 and Window-Eyes as of version 5.5. Regardless of the screen reader you choose, it is necessary to turn off the <a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php#screenmodes">virtual buffer</a> in order to take advantage of the WAI-ARIA Roles and States.<h3>Known Issues</h3>
+	<p>The YUI Menu example that uses the WAI-ARIA Roles and States was tested using Firefox 3 beta along with JAWS 8 and 9, and Window-Eyes 6.1. The user experience with JAWS and Window-Eyes was almost identical, but there were a few small differences worth mentioning.<h4>JAWS</h4>
+	<p>Each MenuItem in a YUI Menu has a url property that can be used to specify a URL that it will automatically navigate to when clicked. Setting the "url" property, sets the "href" attribute of the anchor element that serves as the MenuItem's label. If no value is specified for a MenuItem's "url" property, the "href" attribute of the anchor element is set to "#" by default. When a role of "menuitem" is applied to a MenuItem's anchor element, JAWS still reads the value of the "href" attribute, which can be undesirable if the value of the "href" is set to "#." In such cases, it is best to just remove the "href" attribute.<p>One of the cool feature of JAWS is that when navigating a page's DOM using the virtual buffer mode, if an element is selected that has one of the WAI-ARIA Roles applied, JAWS will automatically switch off the virtual buffer to take advantage of the WAI-ARIA Roles and States.<h4>Window-Eyes 6.1</h4>
+	<p>When the first item in a MenuBar receives focus, Window-Eyes doesn't announce the role of "menubar," but rather just the text label of the item along with its state.<h4>YUI Menu and the disabled WAI-ARIA State</h4>
+	<p>There is currently a minor issue with Menu and ARIA where the <a href="http://www.w3.org/TR/aria-state/#disabled">disabled</a> state cannot be used with MenuItems. This is because if a MenuItem is disabled, Menu currently skips over it when navigating with the keyboard (a behavior based on menus in OS X). This keyboard behavior will be updated in a future release of YUI Menu so that disabled MenuItem instances can be properly communicated to assistive technology.<h3>Resources</h3>
+	<ul>
+		<li><a href="http://developer.yahoo.com/yui/examples/menu/menuwaiaria.html">The new YUI Menu example demonstrating the use of WAI-ARIA roles and states</a><li><a href="http://developer.mozilla.org/en/docs/ARIA:_Accessible_Rich_Internet_Applications/Relationship_to_HTML_FAQ">ARIA: Accessible Rich Internet Applications/Relationship to HTML FAQ</a><li><a href="http://www.w3.org/TR/aria-role/">Roles for Accessible Rich Internet Applications (WAI-ARIA Roles) Version 1.0</a><li><a href="http://www.w3.org/TR/aria-state/">States and Properties Module for Accessible Rich Internet Applications (WAI-ARIA States and Properties) Version 1.0</a><li><a href="http://www.w3.org/WAI/PF/adaptable/HTML4/">Embedding Accessibility Role and State Metadata in HTML Documents</a><li><a href="http://www.mozilla.org/access/dhtml/">Accessible DHTML</a><li><a href="http://developer.mozilla.org/en/docs/Key-navigable_custom_DHTML_widgets">Key-navigable custom DHTML widgets</a><li><a href="http://www.mozilla.com/en-US/firefox/all-beta.html">Firefox 3 Beta 2</a><li><a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">Freedom Scientific JAWS Screen Reader</a><li><a href="http://www.gwmicro.com/Window-Eyes/">GW Micro Window-Eyes Screen Reader</a><li><a href="http://video.yahoo.com/video/play?vid=514676">An Introduction to Screen Readers</a><li><a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php">Making Ajax Work with Screen Readers</a></ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Ask Satyam: Using YQL and YUI with YQLDataSource</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Ask Satyam: Using YQL and YUI with YQLDataSource</li></ul>
+				<h1 class="yui3-u-7-8">Ask Satyam: Using YQL and YUI with YQLDataSource</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 9, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<blockquote>
+		<p><a href="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book"><img align="right" height="132" hspace="20" src="/blog-archive/assets/satyam-book-small-20100809-120823.jpg" width="106" /></a>Satyam (a.k.a Daniel Barreiro) is a long-time YUI contributor and one of the most prolific, generous experts in the <a href="http://yuilibrary.com/forum/" title="YUI Library :: Forums :: Index page">YUI forums</a>. He is also <a href="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book">the author of a new book on YUI 2.8.0, <em>YUI 2.8.0: Learning the Library</em></a>. This article in the "Ask Satyam" series <a href="/blog-archive/blog/2010/07/29/ask-satyam/#comment-593067" title="Ask Satyam — and Be Eligible for a Free Copy of the New YUI 2.8 Book from Packt » Yahoo! User Interface Blog (YUIBlog)">was suggested by Mike Hatfield</a>. Satyam will be answering several additional questions in the coming weeks here on YUIBlog as part of the series.</blockquote>
+	<h3>Getting to Know YQL</h3>
+	<p>Yahoo! Query Language, <a href="http://developer.yahoo.com/yql/" name="YAHOO! Query Language">YQL</a>, is a great way of accessing an immense amount of information via a standard easy-to-use interface. To have a taste of how easy it is, compare the old <a href="http://developer.yahoo.com/music/api_guide/ArtistService.html">Artist Service documentation </a>with this simple YQL query: <code><a href="http://developer.yahoo.com/yql/console/?q=select%20*%20from%20music.artist.search%20where%20keyword='Rihanna'&_uiFocus=music">select * from music.artist.search where keyword='Rihanna'.</a></code><p><a href="http://developer.yahoo.com/yql/console/?q=select%20*%20from%20music.artist.search%20where%20keyword='Rihanna'&_uiFocus=music"><img src="/blog-archive/assets/yql-20100809-102848.jpg" /></a><p>The <a href="http://developer.yahoo.com/yql/console/">YQL Console</a> is very easy to use. It lists many of the tables available and sample queries on them so you can easily explore the wealth of information accessible through it. YQL does not store the data; rather, it is a query interface to other databases or APIs. The number of tables that YQL lists from Yahoo! sources is 142 but if you click on the <a href="http://developer.yahoo.com/yql/console/?q=show%20tables&env=store://datatables.org/alltableswithkeys">Show Community Tables</a> link, the count rises to 825 and includes access to public data on Amazon, Facebook, NetFlix or the New York Times. (That's where you'll find a few YUI-related tables, too.)<p>Sometimes these tables require an access key you have to obtain from their owners; without it you may either not be able to perform the query or you will get a limited number of results. The YQL service itself has two addresses, one public and another which requires registration and provides better performance and, of course, you will need authentication to access private data from some of its tables.<p>By default, YQL will only provide a sample reply with about 10 records. You can specify a larger number of results by adding the requested number of results in parentheses after the table name, for example:<pre>select * from music.artist.search(22) where keyword=&quot;madonna&quot;</pre><p> Next to each table name in the Data Tables list in the YQL Console, whenever you mouse over a table name a <span style="color:white;background-color:grey;font-family:Verdana, sans-serif">&nbsp;Desc&nbsp;</span> button will show to the right of the table name. That will provide a description of the table and will usually include sample queries and a list of fields. Be attentive to which fields are marked as <em>required</em>. This is where you may find required access keys for certain tables. <h3>Using YQL with YUI</h3>
+	<p>YQL is a flexible, generic interface to structured data on the web, and YUI (with <a href="http://developer.yahoo.com/yui/datasource/" title="YUI 2: DataSource">DataSource</a>, <a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">AutoComplete</a>, <a href="http://developer.yahoo.com/yui/datatable/" title="YUI 2: DataTable">DataTable</a> and <a href="http://developer.yahoo.com/yui/charts/" title="YUI 2: Charts">Charts</a>) is good at consuming and providing interfaces to this data.<p>There are a few caveats to keep in mind at the outset, however.<h3>Quirk #1: Partial Queries and YQL Source Data</h3>
+	<p>Some tables are not fit for pairing with <a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">AutoComplete</a> since they don't provide results for partial search keys. Although YQL allows wildcard queries such as <code>keyword like 'mado%'</code>, the actual provider of the data may not support such queries — so as the user starts typing in the AutoComplete box the name of Madonna, only results with full-word matches will appear and Madonna will not be offered until the name is typed in full. Keep this in mind as you explore the YQL Tables that are of interest to you in your application. <h3>Quirk #2: Sorting and Pagination in YQL</h3>
+	<p>Sorting in YQL is a filter applied after the result set is fetched. If you were to use YQL as the source for a DataTable with server-side sorting and pagination, you would be in trouble: If the user has the table already sorted by a certain column and asks for page two, YQL will first select the next <i>N</i> records of the unsorted table and then sort those when you would normally expect the next <i>N</i> records of the sorted table. For example, say you have a table with a single numeric field and the table contains 4,3,2,1 in that order. You have a DataTable with two rows per page and have it sorted by its single column. YQL will return 3,4 for the first page and 1,2 for the second, instead of 1,2 and then 3,4. That is because it first does the 'page' selection on the unsorted data and then sorts it.<h3>Quirk #3: YQl Response Structures</h3>
+	<p>YQL response structures change depending on the number of items returned. If we were to dump the variable pointing to the results, we may get any of these, depending on the item count:<style type="text/css">
+		#yqldatasource td {border:1px solid black; padding:5px;}
+		</style>
+		<table id="yqldatasource">
+			<tr>
+				<th>Count</th>
+				<th>YQL Response</th>
+				<th>Consistent Version</th> </tr>
+			<tr>
+				<td>0</td>
+				<td><pre>Null</pre></td>
+				<td><pre>[]</pre></td> </tr>
+			<tr>
+				<td>1</td>
+				<td><pre>{someChangingPropertyName: {
+			fieldName1:value1, 
+			fieldName2:value2, 
+			...
+		}}</pre></td>
+				<td><pre>[
+			{
+				fieldName1:value1, 
+				fieldName2:value2, 
+			...
+			}
+		]</pre></td> </tr>
+			<tr>
+				<td>2 or more</td>
+				<td><pre>{someChangingPropertyName: [
+		    {
+				fieldName1:value1row1, 
+				fieldName2:value2row1,
+				...
+			},
+		    {
+				fieldName1:value1row2, 
+				fieldName2:value2row2, 
+				...
+			},
+		    ...
+		]}</pre></td>
+				<td><pre>[
+		    {
+				fieldName1:value1row1, 
+				fieldName2:value2row1, 
+				...
+			},
+		    {
+				fieldName1:value1row2, 
+				fieldName2:value2row2, 
+				...
+			},
+		    ...
+		]</pre></td> </tr> </table> <p>The last column shows a more consistent alternative, no whimsical property name and always an array with whatever number of items the query might return, but always a simple array.<h3>YQL and Asynchronous Cross-Domain Data</h3>
+	<p>YQL can also provide the very same information in several formats, <a href="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text=%22san%20francisco,%20ca%22">XML</a>, <a href="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text=%22san%20francisco,%20ca%22&format=json">JSON</a> and <a href="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text=%22san%20francisco,%20ca%22&format=json&callback=cbfunc">JSONP</a>, the later being the one we are most interested in. Due to the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same-Origin Policy</a>, browsers don't allow their <a href="http://en.wikipedia.org/wiki/XMLHttpRequest">XMLHttpRequest</a> object to access sources out of its own domain. <a href="http://developer.yahoo.com/yui/connection/">YUI's Connection Manager</a> and <a href="http://developer.yahoo.com/yui/3/io/" title="YUI 3: IO">YUI IO</a>, which were originally limited to XMLHttpRequest, have introduced an <a href="http://developer.yahoo.com/yui/connection/#xdr">XDR interface with Flash</a> which allows such cross-domain requests.<p>The <a href="http://developer.yahoo.com/yui/get/">YUI Get Utility</a> coupled with YQL's <a href="http://en.wikipedia.org/wiki/JSONP#JSONP" name="Wikipedia entry for JSONP">JSONP</a> capability also addresses this problem. Let's see how this works. You can add <code>&lt;script&gt;</code> tags at any time and <code>&lt;script&gt;</code> tags can load anything from anywhere; we do this regularly when we load the YUI Library components from Yahoo!'s CDN regardless of where our page is located. However, this approach requires some help from the server because the <code>&lt;script&gt;</code> tag expects JavaScript code. If we were to load a file containing the following:<pre>123</pre><p> it wouldn't do us any good, because the value is not assigned to a variable. If we were to load this:<pre>var result = 123;</pre><p> then, the number would be stored into variable <code>result</code>. Such a variable would be in the global scope, <a href="/blog-archive/blog/2006/06/01/global-domination/" title="Global Domination » Yahoo! User Interface Blog (YUIBlog)">which is not a good idea</a>. Even worse, although value would be retrievable once stored, we wouldn't know when it becomes available; we'd have to poll the <code>result</code> variable to discover when we'd gotten data. The <a href="http://developer.yahoo.com/yui/get/" title="YUI 2: Get Utility">YUI Get Utility</a> solves this problem by signaling both successful and failed transactions.<p>A more general solution, relying on some help from the server, is to wrap the value in a callback function:<pre>callbackFunction(123);</pre><p> This function takes care of storing or processing the value and it would not be called until the content is fully loaded, so it can also signal the arrival of the data. Most JSONP servers accept a URL argument (usually called <code>callback</code>) which contains the name of the function to wrap the data with. Namespaced functions such as <code>YAHOO.example.SiteExplorer.callback</code> are a wise option for callback functions.<p>An important issue is to be considered: JSONP is by no means as secure as JSON. JSON does not allow any sort of executable code in the field values. Though, in principle, any good JSON encoder should prevent code from being injected into the JSON output, YUI's <a href="http://developer.yahoo.com/yui/json/">JSON utility</a> also checks that none is received. This is not the case with JSONP where anything received will be happily executed, with all sorts of possible side-effects, no questions asked. In JSONP, you are basically asking a foreign server to produce a script to load. Thus, be careful to use JSONP with trusted servers and, if you plan to provide JSONP from your server, make sure to use a good JSON encoder before wrapping the results in the callback so that any field that might contain fraudulent code gets escaped and thus neutralized. Just as we learned about <a href="http://en.wikipedia.org/wiki/SQL_injection">SQL Injection</a> and how to prevent it, remember JSONP shares this kind of <a href="http://en.wikipedia.org/wiki/JSONP#Basic_Security_concerns">vulnerability</a>.<p>The YQL service supports JSONP; in the console, an extra input box appears to the right of the JSON checkbox, initially containing the text <code>cbfunc</code>.<p><img src="/blog-archive/assets/yql-callback-20100809-113007.jpg" /><p>This is translated to an extra parameter in querystring. If we select JSON, the URL changes from:<pre>http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20
+	      geo.places%20where%20text%3D%22san%20francisco%2C%20ca%22</pre><p> to<pre>http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20
+	     geo.places%20where%20text%3D%22san%20francisco%2C%20ca%22&amp;
+	     format=json&amp;callback=cbfunc</pre><p> The basic URL takes a <code>q</code> argument containing the URL-encoded query. For JSON we may specify <code>format=json</code> and to make it JSONP we provide the name of the <code>callback</code> function. An optional <code>diagnostics=true</code> argument may be added to get some extra diagnostics information in the response.<h3>Using YQL as a Source of Data in YUI</h3>
+	<p>Jonathan LeBlanc has also written a convenient <a href="http://github.com/jcleblanc/yql-utilities/tree/master/js-yql-display/">utility</a> to do YQL queries and format their results based on a simple template, which he presented in a <a href="/blog-archive/blog/2009/06/17/yui-and-yql/">YUI Blog article</a>. You just need to provide the YQL query, the template to format the result and the container for the result and it takes care of all the minutiae for us.<pre>yqlWidget.push(
+   // query
+   'select item.description from weather.forecast where location = 90210',  
+   // configuration options
+   {},
+   // template with placeholders with field names inside curly brackets
+   '&lt;br style=&quot;clear:both&quot; /&gt;{item.description}',
+   // id of the container for the results
+   'widgetContainer'
+);
+yqlWidget.render();</pre><p>Any number of fields can be requested in the query; even nested fields such as <code>item.description</code> can be used in the template by enclosing them in curly brackets.<h3>YQLDataSource</h3>
+	<p>The YQLDataSource class takes Jonathan's work one step further by transforming the YQL data into a formal DataSource object that YUI can make use of. The result of a YQL query is usually some tabular information. YUI's <a href="http://developer.yahoo.com/yui/datasource/">DataSource</a> component is designed to retrieve this type of information. Several other YUI components use DataSource to fetch their data, including <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete</a>, <a href="http://developer.yahoo.com/yui/charts/">Charts</a> and <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>. Some time ago I developed a subclass of DataSource, <a href="http://www.satyam.com.ar/yui/2.8.0/YQLDataSource.js">YQLDataSource</a> that extends <code>YAHOO.util.ScriptNodeDataSource</code> to connect to the YQL web service to fetch data from it. I used it in <a href="http://www.satyam.com.ar/yui/2.8.0/nested1.html">this example</a>, where the data for an AutoComplete box and two levels of nested DataTables are provided by YQLDataSource (the nested DataTables will be the subject of a further article).<p>YQLDataSource is simple and could be simpler still. In the constructor we set the default URL for the YQL web service, if none is explicitly given by the developer:<pre>YAHOO.util.YQLDataSource = function (oLiveData, oConfigs) {
+	    oLiveData = oLiveData || 'http://query.yahooapis.com/v1/public/yql?format=json&amp;q=';
+	    YAHOO.util.YQLDataSource.superclass.constructor.call(this, oLiveData, oConfigs); 
+	};</pre><p> As part of the URL we already establish the format of the reply as JSON and add the <code>q</code> argument to receive the YQL query.<p>Just as all other DataSource subclasses do, we copy over the static members, mostly constants, that we can use:<pre>YAHOO.lang.augmentObject(YAHOO.util.YQLDataSource, YAHOO.util.DataSourceBase);</pre><p> When extending the ScriptNodeDataSource, we override several of its members, the first of them being the <code>responseType</code> since we know the <code>responseType</code> will be JSON:<pre>YAHOO.lang.extend(YAHOO.util.YQLDataSource, YAHOO.util.ScriptNodeDataSource, {
+	    responseType:YAHOO.util.DataSource.TYPE_JSON,</pre><p> Since we will receive a YQL statement as the request, we need to escape it before allowing it to be concatenated into the rest of the URL. We do that in the <code>makeConnection</code> method, which we override thus:<pre>makeConnection : function(oRequest, oCallback, oCaller) {
+	     YAHOO.util.YQLDataSource.superclass.makeConnection.call(this,
+	          encodeURIComponent(oRequest),oCallback,oCaller);
+	}</pre><p> We call the original version with the <code>oRequest</code> argument, which contains the YQL query, properly escaped.<p>Now we add some magic. We'll assume that we've been careful and explicitly enumerated the fields to retrieve. I dislike seeing <code>Select *</code> statements in production code; they're fine for exploring but wasteful in an end product. Thus, I'll trust that whatever fields come in the response are the ones we really wanted. Unfortunately, YQL does not return a list of fields nor their data type; moreover, depending on the query, fields such as dates might show up in very different formats. Since YQL is no more than an intermediary, the values it returns are those from the original source in whichever format they are provided, which accounts for the different formats of values such as dates or Booleans.<p>So, in the end, we will trust whatever comes in the results but, if some piece of data is not in the proper format, we'll still allow a parser to be specified. For example, to sort a column containing numbers in YUI DataTable, number fields need to be actual JavaScript numbers, not just strings containing digits. The YQL query for the tracks of a particular album returns the numeric values as strings, so we need to parse them into numbers. We can say:<pre>var tracksDS = new YQLDS('', {
+	    responseSchema: {
+	        fields:[
+	            {key:'Track.discNumber', parser:'number'}, 
+	            {key:'Track.trackNumber', parser:'number'},
+	            {key:'Track.duration', parser:'number'},
+	            {key:'Track.popularity', parser:'number'}
+	        ]
+	    }
+	});</pre><p>The query also contains a <code>title</code> field, which is a string and needs no parsing. Also note that the data is nested a level further down so we use dot-notation to fetch it. If the first row of data, which we use to figure out what fields are coming, is not representative of the structure of the response, the fields missing in that first row can be specified as well and, finally, if for some reason the data is not located where YQLDataSource assumes, we can also specify the <code>resultsList</code>. <p>We won't go into every detail here; the source code contains comments that will guide you through the steps. Enough to say that the <code>parseJSONData</code> method is overridden so, before the original method is called, all the field information is extracted from the first row of the data about to be parsed and combined with whatever the developer has specified. In this method we also add the <code>responseSchema.metaFields </code> property, if not already present, to extract meta-information that is always available on the query, the number of records returned (<code>count</code>),when the result set was created (<code>created</code>) and the language of the data (<code>lang</code>).<p><a href="http://satyam.com.ar/yui/2.8.0/YQLDataSource.html" title="YQL DataSource"><img src="/blog-archive/assets/satyam-yql-ds-example-20100809-115849.jpg" /></a><p>For simple cases, I built <a href="http://satyam.com.ar/yui/2.8.0/YQLDataSource.html">this example</a> which uses YQLDataSource and is able to fill a given container with the results of a query based on a template. The function can be called like this:<pre>YAHOO.example.YQLSubstitute(
+	    'list',
+	    'select title, abstract, url, source from search.news where query=&quot;barcelona&quot;',
+	    '&lt;li&gt;&lt;h2&gt;{title}&lt;\/h2&gt;&lt;p&gt;{abstract}&lt;\/p&gt;&lt;address&gt;&lt;a href=&quot;{url}&quot;&gt;{source}&lt;\/a&gt;&lt;\/address&gt;&lt;\/li&gt;'
+	);</pre><p> I called the function <code>YQLSubstitute </code>and placed it under the <code>YAHOO.example</code> namespace. It takes the following arguments:<ol>
+			<li>A reference to or the id of the HTML that will contain the results (in this case, a reference to a <code>&lt;ul id='list'&gt;</code> element elsewhere in the page). <li>The YQL statement to execute.<li>The template with the field names as placeholders <li>
+				<p>An optional configuration object. </ol> <p>Since the query is supported by YQLDataSource, it is possible to use dot-notation to specify nested fields in the placeholders. The optional fourth argument, the configuration options, is passed straight through to the YQLDataSource so, if any parser is needed, they can be set here. Additionally, the <code>YQLWebService</code> configuration option lets you override the URL of the YQL web service.<h3>YQL and YUI 3</h3>
+	<p>For YUI 3, there are still not many other components that can consume the data from a DataSource and DataSchema so, for the time being, I used Dav Glass' <a href="http://yuilibrary.com/gallery/show/yql">YQLQuery</a> gallery module which will be part of the 3.2.0 release. In the <a href="http://satyam.com.ar/yui/3.0.0/YQLSubstitute.html">YQLSubstitute</a> example for YUI 3 I tried to provide the same interface as in the YUI 2 example, with a few exceptions. The first argument is a CSS3 selector as is customary in YUI 3; nested fields and parsers are not available and there is no extra configuration option, just the first three mandatory arguments. Both examples are well commented, just scroll down to reach the comments after the query output.<h3>Conclusion</h3>
+	<p>In this article we have: <ul>
+			<li>seen what YQL is and explored the YQL Console which lets us put together a YQL query and see the resulting output provided in several formats <li>explained what JSONP is and how to use it with the YUI Get Utility <li>linked to a few examples that use Get to query YQL tables and present the results <li>seen the YQLDataSource and how it works, including examples with AutoComplete and DataTable<li> defined a YQLSubstitute function using YQLDataSource <li>defined the same function for YUI3 using the YQLQuery gallery component</ul> <p>Do explore the many links provided along the article; the examples are real-life queries going straight to the YQL web service. Remember to scroll down past the sample output to read the descriptions and the commented code.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

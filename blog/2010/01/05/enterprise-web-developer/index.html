@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Implementation Focus: Enterprise Web Developer, a Python/YUI Framework</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Implementation Focus: Enterprise Web Developer, a Python/YUI Framework</li></ul>
+				<h1 class="yui3-u-7-8">Implementation Focus: Enterprise Web Developer, a Python/YUI Framework</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">January 5, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" hspace="10" src="/blog-archive/assets/rob_tweed-20100104-162331.jpg" vspace="5" /><em><strong>About the author</strong>: Rob Tweed is the founder and co-director of <a href="http://www.mgateway.com/">M/Gateway Developments Ltd.</a>, which is based in the UK. He has been working in application development since the early 1980s. Much of his work has focused around healthcare IT, which is consistently challenging, characterized by large, complex datasets, high security and performance requirements, and limited budgets. M/Gateway originally developed the Web gateway technology for database vendor InterSystems&#8217; core database product <a href="http://www.intersystems.com/cache/index.html">Cach&eacute;</a>. M/Gateway&#8217;s current customers are mainly in the healthcare and financial services sectors. Some run internal intranet applications, but some, such as <a href="http://www.slideshare.net/george.james/missioncritical-ajaxmaking-test-ordering-easier-and-faster-at-quest-diagnostics?type=powerpoint">Quest Diagnostics</a>, run their applications across the open Internet for their customers in the US.</em></div> </div>
+	<h3><a href="http://www.mgateway.com/ewd.html">Enterprise Web Developer</a> (EWD), a Python/YUI framework</h3>
+	<p>Since the early days in 1996, I wanted people to be able to use web technologies as a user interface to applications that they&#8217;d previously have considered using Client/Server or some other GUI technology to create. It seemed to be to be a technology that had the potential to be heavily automated so that developers could focus on expressing <em>what</em> they wanted to do rather than <em>how</em> to achieve it.<p>The thing that has always dismayed and surprised me is how the industry has not embraced this philosophy. Whilst there is no shortage of web/Ajax frameworks out there - there seems to be a new one every week - they all have a common theme: the notion that a web/Ajax application is primarily a programming issue. By contrast I&#8217;ve been firmly of the view that by building a framework that was first and foremost design-focused, the programming aspects could be potentially automated to such a degree that the actual programming required in even a complex healthcare application should be able to be reduced to almost trivial levels. That&#8217;s been the design goal of our EWD and it proves that such an approach is practical, feasible and highly beneficial.<h3 id="why_python_and_yui">Why Python and YUI?</h3>
+	<p>We&#8217;ve ported EWD to the free Open Source NoSQL database <a href="http://en.wikipedia.org/wiki/GT.M">GT.M</a> and Chris Munt, M/Gateway co-founder, has developed a number of language bindings that EWD can use. Our recent slidecast series (described below) was based around his Python binding because it&#8217;s such a popular language these days - <a href="http://python.dzone.com/articles/python-use-45-google-app">recent reports</a> suggest that it has grown in use by 45% since April 2008. However, you could use EWD just as easily with Ruby or Java. <p>Our <a href="http://www.mgateway.com/ewdDemo.html">screencast series</a> focuses on EWD/YUI integration for several reasons:<ul>
+			<li>YUI provides a very powerful and highly functional and usable set of UI widgets<li>unlike many of the Javascript frameworks, YUI is not an &#8220;all or nothing&#8221; environment, so you can mix and match YUI components with your own<li>YUI is a free Open Source library so in combination with EWD and GT.M running on a Linux platform, the demo is based on a completely free Open Source stack<li>it has the Yahoo! and Douglas Crockford pedigree: what more need you say!</ul> <h3 id="you_use_xml_syntax_to_incorporate_yui_what_advantages_does_this_offer">EWD uses XML syntax to incorporate YUI. What advantages does this offer?</h3>
+	<p>Making EWD work with YUI was pretty straightforward, but it soon became clear to me that the average developer faced quite a few obstacles when adopting such a Javascript framework for their UI development. Frameworks are complex environments, requiring a lot of detailed knowledge of pretty advanced Javacript, there's a big learning curve and there&#8217;s a lot of &#8220;devil in the detail&#8221;. Furthermore, that complex and verbose Javascript requires downstream maintenance, often by someone other than the original developer. Additionally, for me, they presented yet another example of how the industry&#8217;s solution to web/Ajax application development was moving further towards programming and away from the skillsets of designers. <p>From the earliest days of EWD I&#8217;d ensured that it was user-extensible, allowing you to encapsulate functionality and behaviour as XML-based &#8220;custom tags&#8221;, and they proved to be a perfect solution to incorporating YUI. The YUI custom tags I&#8217;ve demonstrated are therefore a custom extension of EWD. The YUI custom tags not only generate all the Javascript needed by the corresponding widget, they also manage the destruction of the widget at the correct time, and include optimised &#8220;just in time&#8221; loading of the correct .js and .css files, leaving the developer to not have to worry about all that up-front configuration stuff. Another key feature of XML tags is that they are inherently nestable, and usually that&#8217;s exactly what you need to do with YUI widgets: menus and datatables nested inside tab-panels for example. So the real advantages are that the developer can express <em>what</em> he/she wants to do in just a few intuitively named and laid out custom tags. Not only does it make development quick and simple, but downstream maintenance also becomes simple too (and remember that one of the major costs and overheads of a big, mission-critical application is maintenance).<p>A good example is the use of TabView widgets. In EWD these can be described by a simple, intuitive (and therefore highly maintainable) set of nested XML Custom tags, eg:<pre>
+&lt;yui:TabView&gt;
+    &lt;yui:Tab label="By Artist" active="true" dataSrc="selectCDXArtist.ewd" /&gt;
+    &lt;yui:Tab label="By Title" active="false" dataSrc="selectCDXTitle.ewd" /&gt;
+&lt;/yui:TabView&gt;
+</pre><p>The <i>yui:TabView</i> Custom Tag's <i>tag processor</i> is invoked by EWD's compiler when it encounters an instance of this tag, and it generates the run-time code that will send the appropriate YUI TabView Javascript and associated HTML markup to the browser.<h3>EWD instructional series</h3>
+	<p>We've done a series of <a href="http://www.mgateway.com/ewdDemo.html">screencasts</a> to introduce EWD. Here is Part One:<p>
+		<object height="344" width="425">
+			<param name="movie" value="http://www.youtube.com/v/j_DEP7q1WsM&hl=en_US&fs=1&" />
+			<param name="allowFullScreen" value="true" />
+			<param name="allowscriptaccess" value="always" /><embed allowfullscreen="true" allowscriptaccess="always" height="344" src="http://www.youtube.com/v/j_DEP7q1WsM&hl=en_US&fs=1&" type="application/x-shockwave-flash" width="425" /></object> <p>The goal of the <a href="http://www.mgateway.com/ewdDemo.html">screencasts</a> was to demonstrate the extreme level of automation of EWD when used to its full potential. I also wanted to demonstrate how, in EWD, you&#8217;re very much describing what you&#8217;re wanting to achieve, leaving EWD to do all the <em>how</em> work and to handle all the day-to-day things that are essential to a web application but that can and should be automated, eg session management, security management etc. I hope when people watch the videos they see how little programming has been left for a programmer to do: it&#8217;s basically fetching data from the database, validating form fields against a database, and saving data back to a database.<p>They always say a picture is worth a thousand words, and I think a video is even more potent. Seeing is believing, and there&#8217;s nothing like being shown how a tool can be used by the guy who designed and wrote it!<p>I chose to explore a set of typical UI interactions for an average application that could be demonstrated in the space of about an hour. I also wanted to demonstrate how nesting of the UI components was possible using both the inherent nesting of YUI custom tags and EWD&#8217;s &#8220;fragment&#8221;-based Ajax architecture. The demo covers logging into an application, a main menu, tab panels for choosing the action required and a query against the database whose results are presented in a DataTable. Hopefully the fact that I&#8217;ve been able to demonstrate how all that functionality can be created in just over an hour shows the power and benefit of EWD as a development framework. And in terms of maintainability, the entire application I demonstrate is described in just 134 lines of simple HTML/XML markup and only 78 lines of straightforward Python code!<h3>Where can people get EWD to try it out for themselves?</h3>
+	<p>The quickest and simplest way to get a fully-working EWD system up and running is to use our free <a href="http://gradvs1.mgateway.com/main/index.html?path=mdb/mdbDownload">M/DB Installer</a>. We've done a <a href="http://www.youtube.com/watch?v=BxC7Yvsmlfs">screencast</a> for this too.<p>At present the EWD/YUI Custom Tag library isn't generally available, but we're hoping to be able to release it soon.<p>We also have a <a href="http://groups.google.co.uk/group/enterprise-web-developer-community">forum for EWD users</a> that people are very welcome to join.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

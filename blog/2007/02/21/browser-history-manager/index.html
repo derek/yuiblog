@@ -1,0 +1,288 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Building the YUI Browser History Manager</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Building the YUI Browser History Manager</li></ul>
+				<h1 class="yui3-u-7-8">Building the YUI Browser History Manager</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By Julien Lecomte</a><span class="date">February 22, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><a href="http://www.flickr.com/photos/equanimity/381176638/" title="Photo Sharing"><img align="right" alt="Julien Lecomte" height="174" hspace="10" src="http://farm1.static.flickr.com/152/381176638_6cc6e7a200_m.jpg" vspace="5" width="240" /></a><strong>About the Author:</strong> Julien Lecomte is an engineer on Yahoo!'s DHTML Evangelist team, a group that provides architectural assistance to Yahoo! developers on the design and implementation of rich interactions in the browser. He has worked extensively on Yahoo!'s new Mail application. Julien is the author of a new, experimental <a href="http://developer.yahoo.com/yui/">YUI</a> component, the <a href="http://developer.yahoo.com/yui/history/">Browser History Manager</a>, which was released earlier this week. In this article, he explores the broad problems associated with controlling history and state in the browser during rich interactions and he lays out the multifaceted approach he took to building a YUI history manager with support for all A-Grade browsers. -Eric Miraglia</div>
+		<h3 id="problem-statement">Most Ajax Applications Break Standard Browser Functionality</h3>
+		<p>Our industry has made significant progress in the past few years. Web pages have become vastly more sophisticated in terms of appearance and responsiveness. Some companies have pushed the envelope so far that their web page could easily be mistaken for a native application (check out <a href="http://www.scalix.com/enterprise/products/webclient_screenshots.php">Scalix Web Access</a> or <a href="http://mail.yahoo.com/">the new Yahoo! Mail</a>, to name just two examples). In the meantime, that same rush to produce the most stunning web experience has led us to forget some of the most basic principles of the web. Our pages run inside a web browser, and even if modern web browsers can now be used to support very complex applications they are mostly used for what they were originally intended to do: browsing the web.<p>This dual purpose creates a lot of confusion among users. Some of the basic features of browsing, such as the use of back and forward buttons, or the ability to bookmark a page, rarely achieve the desired result in a dynamic web application because dynamic changes to a page do not naturally register themselves with the browser's native history engine. Moreover, there is a difference between &quot;backing out changes&quot; in an application &mdash; the <em>undo</em> command, ctrl-z &mdash; and retracing one's steps in a navigation context. Many web-application developers find themselves puzzling over what role the back button should play when they make the transition from writing web sites to writing web applications. <h3 id="bhm-bliss">Ignorance Is Bliss...</h3>
+		<p>Only recently did I find myself impacted in my own work by the absence of a good solution for managing navigation history and session state in a rich application. At the time, I was working on a very simple web site for my father's new venture. After "ajaxifying" the site, the navigation became a lot faster. However, a coworker of mine pointed out to me that the back and forward buttons were not working anymore, and that individual sections of the web site could not be bookmarked. In my case, this problem was a deal-breaker; I absolutely had to find a solution. After a bit of time digging around on Yahoo! Search, I discovered a long and impressive library of articles from developers attempting to solve this problem.<h3 id="bhm-prior">Currently Available Solutions</h3>
+		<p>One of the most important articles in this collection is <a href="http://www.onjava.com/pub/a/onjava/2005/10/26/ajax-handling-bookmarks-and-back-button.html">Brad Neuberg's piece</a> on how to handle bookmarks and the back button in Ajax applications. <a href="http://codinginparadise.org/projects/dhtml_history/README.html">Neuberg's Really Simple History (RSH)</a> framework works well on most browsers, but unfortunately it does not work on Safari &mdash; considered an <a href="http://developer.yahoo.com/yui/articles/gbs/gbs_browser-chart.html">A-Grade browser</a> in <a href="http://developer.yahoo.com/yui/articles/gbs/gbs.html">Yahoo!'s Graded Browser Support approach</a>. Another disadvantage of the RSH framework is the need for a server round-trip every time a new entry is added to the browser history on Internet Explorer. Nevertheless, Neuberg's work, which pushed back the frontier on this difficult issue, made me believe that my quest was not hopeless.<p>I then read <a href="http://dev2dev.bea.com/pub/a/2006/01/ajax-back-button.html">Mark Schiefelbein's article</a> on developing Ajax applications that preserve standard browser functionality. His article mainly looks at the <a href="http://developer.yahoo.com/yui/articles/gbs/gbs_browser-chart.html">Backbase Ajax engine</a> and how it provides support for the back/forward buttons. The Backbase solution works well, but I was once again confronted by the issue of browser support; their demos do not appear to work on Opera and Safari. Moreover, Backbase is a commercial product, and I wanted a solution that would play well with the open-source tools I was already using, and in particular one that could be included as part of <a href="http://developer.yahoo.com/yui/">YUI</a>.<h3 id="bhm-creating">Creating a Browser History Manager for YUI </h3>
+		<p>Given that background, I decided to tackle the problem on my own. After a little bit of tinkering, I was able to put together a demo that worked on Firefox and Opera using the <a href="http://www.w3.org/Addressing/URL/4_2_Fragments.html">URL fragment identifier</a>. The idea is very simple: Change the URL fragment identifier, using the <code>window.location.hash</code> property, to add a new entry to the browser history and periodically check the value of the hash to detect history changes. In addition to solving the issue with the back/forward buttons, this also allows the application to be bookmarked in a specific state. This approach provides support for Firefox (and other Gecko-derived browsers), Opera, and for recent nightly builds of WebKit (the open-source rendering engine underlying Apple's Safari browser). Unfortunately, the <code>window.location.hash</code> approach does not work fully on current versions of Safari &mdash; and, more importantly, it does not work at all on Internet Explorer. It might serve as part of the solution, but it obviously couldn't constitute a unified approach across browsers. <p>One of my colleagues at Yahoo!, <a href="http://blog.davglass.com/">Dav Glass</a>, is an accomplished Mac geek who has a great deal of experience solving hard problems on Safari; Dav volunteered to help tackle browser history in the current versions of Safari. With Safari, there were two main issues to overcome:<ol>
+				<li>We needed to identify when back forward interactions occurred;<li>When those interactions occurred, we needed to identify where we were in our stack of saved states. </ol> <p>After reading <a href="http://bloomd.home.mchsi.com/histapi/test.html">David Bloom's post</a> on using <code>document.body.scrollTop</code>, we started thinking about what other properties might change during back/forward navigation. So we wrote a script to dump all the <code>window.*</code> variables and found out that, in Safari, <code>window.history.length</code> changed each time the browser history changed &mdash; not that it <em>should</em> change, but it clearly did. Armed with this knowledge, we began by setting up our own "history" array to track the changes keyed off of the <code>window.history.length</code> change. This approach gave us the two pieces of information we needed: We could tell when the user hit &quot;back&quot; or &quot;forward&quot;, and we could tell where they were when they did so. (<strong>Note: </strong>The fact that <code>window.history.length</code> changes when the user hits the back button is a bug that has been fixed in WebKit. Therefore, this approach requires "forward compatible code" for Safari by using the URL fragment identifier as the preferred, long-term method of detecting history changes; we only fall back to relying on the history object itself when it's necessary to do so. Over time, the <code>window.history.length</code> hack will become less and less important.) <p>All of that still left us in need of a solution for Internet Explorer. On IE, we had to adopt a radically different approach. We create a hidden IFrame that we initially point to an existing document on the web server. Writing to the IFrame using <code>document.write</code> adds a new entry to the browser history. The HTML we write looks like this ("current_state" is replaced by the actual state of the application):<div class="codeblock" id="bhm-cb2">
+				<p>&lt;html&gt;<br /> &nbsp;&lt;body&gt;<br /> &nbsp;&nbsp;&lt;div id="state"&gt;current_state&lt;/div&gt;<br /> &nbsp;&lt;/body&gt;<br /> &lt;/html&gt;</div> <p>We then periodically (every 50ms) look at the content of the IFrame &mdash; especially the text inside the inner &lt;div&gt; element &mdash; to detect history changes. Once we detect a change to the history, we change the URL fragment identifier using <code>top.location.replace(...)</code>; this technique allows the application to be bookmarked in a specific state without impacting IE's history stack.<p>In sum, the YUI Browser History Manager uses three different techniques to provide support across the A-Grade browsers:<style>#bhm td {font-size:11px; padding:2px;}  #bhm td.middle {border-bottom:1px dotted #666;} #bhm {border:1px solid #330066;background-color:#F5F5CE;margin-bottom:1.5em;}#bhm td code {white-space:normal;}</style>
+			<table border="0" cellspacing="10" id="bhm">
+				<tr valign="top">
+					<td class="middle"><strong>Firefox (and Gecko Browsers), Opera and Nightly WebKit</strong></td>
+					<td class="middle">Add history entries and detect history changes by using the URL fragment identifier (<code>window.location.hash</code>)</td> </tr>
+				<tr valign="top">
+					<td class="middle"><strong>Safari (current)</strong></td>
+					<td class="middle">Add history entries by using the URL fragment identifier (<code>window.location.hash</code>), and detect history changes by checking <code>window.history.length</code></td> </tr>
+				<tr valign="top">
+					<td><strong>Internet Explorer</strong></td>
+					<td>Add history entries by writing to an IFrame, detect history changes by checking the content of the IFrame, and add bookmark support by setting the URL fragment identifier using <code>top.location.replace(...)</code></td> </tr> </table> <h3 id="bhm-initial-state">The Problem Of The Initial State</h3>
+		<p>Another concern in creating the Browser History Manager was to provide a mechanism for identifying the initial state of the application when the page/application loads via the back button (eg, the user has navigated away from the application to another site, then returns to our application using the back button). Indeed, from a programmatic standpoint, returning to a page using the back button or the forward button, or simply loading the page for the first time, are identical scenarios. However, the state of the application may need to be different depending on the situation. For example, if you return to a page using the back button, the state of the application should be the last state visited by the application before you left the page; this will likely be different from the initial state when the page first loaded during this browser session.<p>We approach this problem by storing state information in a hidden form field because the value of form fields persists across pages during the entire browser session. If we set the value of our form field to the current state of the application every time the application changes state, we can then initialize our page appropriately when the user returns to our application after having interacted with it beyond its initial state. <h3 id="bhm-indended-use">Intended Use: &quot;Back&quot; vs. &quot;Undo&quot; </h3>
+		<p>The main role of the YUI Browser History Manager is to persist the history of states visited by a web application within a single browser session; in <a href="http://developer.yahoo.com/yui/history/">this week's initial (and experimental) release</a> we believe that it handles this problem well. However, there are limits to what these techniques allow you to do. The simple fact that URLs have a maximum length limits the amount of state data that can be stored (that limit is browser dependent &mdash; it is 2083 bytes on Internet Explorer, a bit more on other browsers). Imagine for example a <a href="http://developer.yahoo.com/yui/treeview/">TreeView Control</a> containing thousands of nodes located at several levels of depth. If you wanted to represent the collapsed/expanded state of each node as a string, you would quickly run out of room; the information space provided by the URL doesn't have the capacity to support that level of detail. More complex web applications can have a theoretically infinite number of states.<p>Given these limitations, and given the user's expectation of what a &quot;back button does&quot; as compared to an &quot;undo&quot; command, we recommend thinking about the Browser History Manager as a tool for managing high-level navigational states: what screen is displayed, what tab is selected, what month is being displayed in a dynamically-generated calendar, etc. Because we cannot encode an infinite number of states, the back button cannot act as an "undo" command that takes snapshots of session states at high resolution throughout an interaction &mdash; and it shouldn't try to do so. This sometimes subtle difference should drive the way you plan to make use of the YUI Browser History Manager.<h3 id="bhm-feedback">Feedback</h3>
+		<p>Due to the complexity of this problem space as it applies to the A-Grade browser family, we're releasing the YUI Browser History Manager as an <a href="http://developer.yahoo.com/yui/articles/faq/#experimental">experimental</a> utility at this point. We look forward to your feedback (here, or <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">in our forums</a>), and we hope to improve this implementation over the coming months to make it a genuinely robust, reliable, and cross-browser utility that solves one of the most vexing and problematic challenges involved in building rich internet applications. </div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

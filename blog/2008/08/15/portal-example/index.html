@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>A Closer Look at YUI 3.0 PR 1: Dav Glass&#x27;s Draggable Portal Example</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">A Closer Look at YUI 3.0 PR 1: Dav Glass&#x27;s Draggable Portal Example</li></ul>
+				<h1 class="yui3-u-7-8">A Closer Look at YUI 3.0 PR 1: Dav Glass&#x27;s Draggable Portal Example</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 15, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><a href="http://developer.yahoo.com/yui/3/">YUI 3.0 Preview Release 1</a> was made available on Wednesday, and with it we provided a look at how the next major iteration of YUI is taking shape. Among the elements we shipped with the preview is a new example from <a href="http://blog.davglass.com/">Dav Glass</a>, the <a href="http://developer.yahoo.com/yui/3/examples/dd/portal-drag.html">Draggable Portal</a>, which exercises a broad cross section of the preview's contents.<p><a href="http://developer.yahoo.com/yui/3/examples/dd/portal-drag_source.html"><img alt="The Portal Example in the YUI 3.0 preview release." height="205" src="/blog-archive/assets/portal.png" width="510" /></a><p>The Draggable Portal is a common design pattern in which content modules on the page can be repositioned, minimized, removed, and re-added to the page. The state of the modules persists in the background, so a reload of the page or a return to the page calls up the modules in their most recently positioned state. You see variations of this design pattern on many personlizable portals like <a href="http://my.yahoo.com">My Yahoo</a>, <a href="http://netvibes.com/">NetVibes</a>, and <a href="http://google.com/ig">iGoogle</a>.<p>In this article, we'll take a look under the hood of this example to get a richer sense of YUI's 3.x codeline and the idioms and patterns it establishes. We're just pulling out some specific code snippets to examine here, but you can review the full code source for <a href="http://developer.yahoo.com/yui/3/examples/dd/portal-drag.html">this example</a> &mdash; <a href="http://developer.yahoo.com/yui/3/examples/">and for 66 others</a> &mdash; on <a href="http://developer.yahoo.com/yui/3/">the YUI 3 website</a>.<h3>Self-completion and Sandboxes</h3>
+	<p>A core concept in YUI 3.x is that you generally work with <em>instances</em> of YUI rather than global objects. The first line of the Draggable Portal illustrates a pattern that will grow familiar with use of YUI 3.x:<pre>//Use loader to grab the modules needed
+YUI().use('dd', 'anim', 'easing', 'io', 'cookie', 'json', function(Y) { ...
+</pre><p>YUI here is being instantiated and a set of modules is requested (<code>dd</code>, <code>anim</code>, etc.). The resulting YUI instance is passed to the last argument of <code>use</code>, which is a callback function. The callback is called once YUI has verified that all of the necessary modules are present. There are some important concepts here:<ol>
+			<li><strong>&quot;Self completing&quot; installation:</strong> If any of the modules needed is not yet on the page, the built-in Loader will retrieve it (before executing your dependent code).<li><strong>Optimized loading:</strong> By default, any modules that need loading will be fetched in a single HTTP request using combo-handling. This means that you can load a very small YUI &quot;seed&quot; on most pages and let YUI fetch additional resources as needed while still having very few HTTP requests and good performance.<li><strong>Sandboxing:</strong> The argument passed to the callback function, <code>Y</code> by convention, is the YUI instance. This instance can be separate from other YUI usage throughout the page. This allows you to compartmentalize your YUI usage with as many sandboxes as you require. Down the road, this will also make it possible to have multiple versions of YUI 3.x running safely on the same page. (YUI 3.x and 2.x can always live together safely.)</ol> <p><strong>More Reading:</strong> You can explore all of these issues in more depth on <a href="http://developer.yahoo.com/yui/3/yui/">the User's Guide for the YUI module</a> &mdash; the basic building block of YUI 3.x.<h3>The Power of Selectors</h3>
+	<p>John Resig's <a href="http://jquery.com/">jQuery</a> was among the first JavaScript libraries to demonstrate the power and intuitiveness of a selector-driven syntax, and since that time most major libraries have implemented CSS selector support for element targeting (YUI 2.x's <a href="http://developer.yahoo.com/yui/selector/">Selector Utility</a> provides this functionality in the current codeline). YUI 3.x moves selector syntax onto center stage, making it the preferred idiom for referring to elements on the page.<p>You'll see this throughout the Draggable Portal code and throughout all YUI 3.x implementations, but here's one example of its use. On initialization, we need to get a reference to all of the <code>ul</code> elements that can contain content modules. The pattern is that we want every <code>ul</code> with the classname <code>list</code> that is a descendant of the element <code>#play</code> (where <code>Y</code> is a YUI instance):<pre>var uls = Y.all('#play ul.list');</pre><p>The return value of this method is a NodeList &mdash; a collection of Nodes — another core feature of YUI 3.x.<p><strong>More Reading:</strong> There is a brief section on Node selector queries on the <a href="http://developer.yahoo.com/yui/3/node/#node-query">Node User's Guide</a>.<h3>Working with Nodes, Nodelists, and Event Facades</h3>
+	<p>One of the first things you'll notice in your work with YUI 3.x is that the normalization of DOM and event interfaces is managed through Node and NodeList objects, which you interact with as though they were HTMLElements, and event facades, which you interact with as though they were DOM event objects. <p>In the Draggable Portal, the <code>_nodeClick</code> function uses Nodes and events to handle the logic that processes a click on the <em>minimize</em> and <em>close</em> icons at the top of each module:<pre>//Handle the node:click event
+var _nodeClick = function(e) {
+    //Is the target an href?
+    if (e.target.test('a')) {
+        var a = e.target, anim = null, div = a.get('parentNode').get('parentNode');
+        //Did they click on the min button
+        if (a.hasClass('min')) {
+            //Get some node references
+            var ul = div.query('ul'),
+                h2 = div.query('h2'),
+            h = h2.get('offsetHeight'),
+            hUL = ul.get('offsetHeight'),
+            inner = div.query('div.inner');
+            
+            //Create an anim instance on this node.
+            anim = new Y.Anim({
+                node: inner
+            });
+            //Is it expanded?
+            if (!div.hasClass('minned')) {
+                //Set the vars for collapsing it
+                /*snip*/
+            } else {
+                //Set the vars for expanding it
+                /*snip*/
+            }
+            //Run the animation
+            anim.run();
+
+        }
+
+         /*snip*/
+        //Stop the click
+        e.halt();
+    }
+};</pre><p><code>_nodeClick</code> is an event handler and it receives an event facade as its first argument (<code>e</code>). This event facade, which we treat like a standard DOM event object, has the standard assortment of properties and methods &mdash; and where those properties and methods are divergently implemented across A-Grade browsers, they've been normalized. This allows you to use standard DOM-scripting idioms &mdash; as you see in <code>_nodeClick</code>'s first line of code, <code>if(e.target...)</code>, which addresses the target element of the DOM click event.<p>But in that line, you also see evidence that <code>e.target</code> is not an HTMLElement but rather a Node instance. Node permits you to modify properties (<code>mynode.set(&quot;innerHTML&quot;, &quot;New contents.&quot;</code>) and also to do powerful things like execute the <code>test</code> method, as we're doing here:<pre>if (e.target.test('a')) {/*do something*/}</pre><p>Here, we're using <code>test</code> which takes as its argument a CSS selector and returns <code>true</code> if this Node matches the selector string. If the Node instance corresponds to an anchor element, the test will pass.<p>Elsewhere in <code>_nodeClick</code> you'll see more usage of the Node instance. For example, Node is used to test whether the event target has a specific CSS classname applied...<pre>if (a.hasClass('min')) {...}</pre><p>...and to gather Node references for all the <code>h2</code> descendants of a given Node:<pre>h2 = div.query('h2');</pre><p>In the examples above, <code>a</code> and <code>div</code> are existing Node instances. In the second example, if there are multiple <code>h2</code> descendants of <code>div</code> a NodeList object will be returned instead of a single Node; a NodeList is a powerful object that lets you intrinsically batch operations on a group of Nodes.<h3>Custom Events: Now, with Bubbles</h3>
+	<p>Another significant development in YUI 3.x is the implementation of bubbling in the Custom Event system. Custom Events and DOM events converge in 3.x, sharing a common syntax (in fact, DOM events are wrapped in Custom Events). Like DOM events, Custom Events can bubble and, as such, they can be subjected to the suppression of default behavior (<code>preventDefault</code>) and their propagation can be interrupted by script (<code>stopPropagation</code>).<p>In the Draggable Portal, we see Custom Events being used this way. A simple <code>stopper</code> function is created that stops the propagation of an event (generically, working for both DOM and Custom Events because of their shared interface):<pre>var stopper = function(e) {
+   e.stopPropagation();
+};</pre><p>Later, this method is applied to Custom Events provided by the Drag and Drop Utility:<pre>dd.on('drag:end', stopper);</pre><p>In the Portal, this technique is used to stop the propagation (bubbling) of drag events when an item is dragged into the canvas from the left column. In those cases, the item "transforms" into a module during the drag and then uses the drag events for the module. Once that happens, the drag events from its initial, left-column state are suppressed. By stopping the propagation of the event, an event handler that is listening for the <code>drag:end</code> event at a higher level in the application will not fire.<p>You'll find as you work with YUI 3.x that this subtle change to Custom Events is surprisingly useful and powerful as you wire together disparate modules that need to work together in your application.<p><strong>More Reading:</strong> Read more about the Node object on the <a href="http://developer.yahoo.com/yui/3/node/">Node User's Guide</a>; read more about <a href="http://developer.yahoo.com/yui/3/event/">the new Event Utility</a> on its User's Guide, and check out <a href="http://developer.yahoo.com/yui/3/examples/event/event-ce.html">the event-bubbling example showing the bubbling properties of custom events</a>.<h3>Fetching Cross-Domain JSON Data Without XSS</h3>
+	<p>In this first preview release, we're primarily revamping the architecture of YUI's utility layer, and that focus trumps new functionality for the most part. But we're also beginning to add in some of the next-generation features that YUI implementers have been asking for. One of those features is a safe, ubiquitously supported mechanism for doing cross-domain requests (XDR) wherein JSON (or other) data can be safely fetched from another domain without the intervention of a server-side proxy.<p>In the Draggable Portal, all of the RSS feeds are being fetched via <a href="http://pipes.yahoo.com/">Yahoo! Pipes</a> using YUI's new XDR support. In 3.x, <a href="http://developer.yahoo.com/yui/3/io/">the IO Utility</a> replaces <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a> as the broker of in-page HTTP requests. And IO makes use of Flash and External Interface to provide a safe, reliable XDR implementation. Here's what the code looks like. <p>First, IO is configued to use Flash for XDR, and we tell it where to find our <code>.swf</code> file:<pre>
+//Setup the config for IO to use flash
+Y.io.transport({
+    id: 'flash',
+    yid: Y.id,
+    src: 'assets/io.swf'
+});</pre><p>When creating the request itself, the syntax feels very much like a traditional operation using Connection Manager:<pre>
+//The Yahoo! Pipes URL
+var url = 'http:/'+'/pipes.yahooapis.com/pipes/pipe.run...';
+//Start the XDR request
+var id = Y.io(url, {
+    method: 'GET',
+    xdr: { 
+        use:'flash'
+    },
+    //XDR Listeners
+    on: { 
+        success: function(id, data) {
+            //On success get the feed data
+            var d = feeds[trans[id]],
+            //Node reference
+            inner = d.mod.query('div.inner'),
+            //Parse the JSON data
+            oRSS = Y.JSON.parse(data.responseText),
+            html = '';
+            
+            //Did we get data?
+            if (oRSS && oRSS.count) {
+                //Walk the list and create the news list
+                Y.each(oRSS.value.items, function(v, k) {
+                    if (k < 5) {
+                        html += '&lt;li&gt;&lt;a href="' + v.link + '" target="_blank"&gt;' + v.title + '&lt;/a&gt;';
+                    }
+                });
+            }
+            //Set the innerHTML of the module
+            inner.set('innerHTML', '<ul>' + html + '</ul>');
+            if (Y.DD.DDM.activeDrag) {
+                //If we are still dragging, update the proxy element too..
+                var proxy_inner = Y.DD.DDM.activeDrag.get('dragNode').query('div.inner');
+                proxy_inner.set('innerHTML', '<ul>' + html + '</ul>');
+                
+            }
+        },
+        failure: function(id, data) {
+            //Something failed..
+            alert('Feed failed to load..' + id + ' :: ' + data);
+        }
+    }
+});</pre><p><strong>More Reading:</strong> You can <a href="http://developer.yahoo.com/yui/3/io/">learn more about the IO Utility from it's User's Guide</a>. To learn more about XDR using IO, check out the <a href="http://developer.yahoo.com/yui/3/examples/io/io-xdr.html">Cross Domain JSON Transaction example</a>.<h3>More to Explore</h3>
+	<p>There's a lot more to Dav's <a href="http://developer.yahoo.com/yui/3/examples/dd/portal-drag.html">Draggable Portal</a> example, and there are <a href="http://developer.yahoo.com/yui/3/examples/">dozens of examples</a> on the <a href="http://developer.yahoo.com/yui/3/">YUI 3.x website</a> — we invite you to explore those in more detail as time permits. We're looking forward to your feedback on the YUI 3.x discussion forum. In the meantime, we have our heads down on the next projects on the <a href="http://developer.yahoo.com/yui/articles/roadmap/">roadmap</a>, including the 2.6.0 release, improved platforms for community contributions, and subsequent preview releases of 3.x incorporating additional functionality and your feedback.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

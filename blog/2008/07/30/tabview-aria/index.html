@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Enhancing TabView Accessibility with WAI-ARIA Roles and States</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Enhancing TabView Accessibility with WAI-ARIA Roles and States</li></ul>
+				<h1 class="yui3-u-7-8">Enhancing TabView Accessibility with WAI-ARIA Roles and States</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">July 31, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p> The <a href="http://developer.yahoo.com/yui/tabview/">YUI TabView Control</a> is built on a strong foundation of semantic markup that provides users with some basic accessibility. But while TabView looks like a desktop tab control, screen readers don't present it as an atomic widget, leaving users to figure out how the various HTML elements that compose a TabView relate to each other. However, through the application of the <a href="http://www.w3.org/TR/wai-aria/">WAI-ARIA Roles and States</a>, it is possible to enhance TabView's accessibility such that users of screen readers perceive it as a desktop tab control. <p> A <a href="/blog-archive/sandbox/yui/v252/examples/tabview/aria_tabview.html">complete example</a> of TabView using the WAI-ARIA Roles and States is available in the YUI Sandbox. <a href="/blog-archive/assets/tabviewscreencast.mov">Watch a screen cast of the example running in Firefox 3 with the NVDA screen reader</a>, or <a href="http://www.nvda-project.org/wiki/Snapshots">download the latest development snapshot of NVDA</a> and try it yourself. <div>
+			<object height="322" width="512">
+				<param name="movie" value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.16" />
+				<param name="allowFullScreen" value="true" />
+				<param name="bgcolor" value="#000000" />
+				<param name="flashVars" value="id=9051193&vid=3199866&lang=en-us&intl=us&thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/4371/69134473.jpeg&embed=1" /><embed allowfullscreen="true" bgcolor="#000000" flashvars="id=9051193&vid=3199866&lang=en-us&intl=us&thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/4371/69134473.jpeg&embed=1" height="322" src="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.16" type="application/x-shockwave-flash" width="512" /></object>
+			<br /><a href="http://video.yahoo.com/watch/3199866/9051193">YUI TabView with ARIA roles and states/Todd Kloots</a> @ <a href="http://video.yahoo.com">Yahoo! Video</a></div> <h3>Applying the WAI-ARIA Roles and States to TabView</h3>
+	<h4>Step 1: Getting Started</h4>
+	<p> To start working with the WAI-ARIA Roles and States you'll need both a browser and screen reader that support ARIA. Both <a href="http://www.mozilla.com/en-US/firefox/">Firefox 3</a> and <a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/getitnow.mspx">Internet Explorer 8 Beta 1</a> have ARIA support. Trial versions of the leading <a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">JAWS</a> and <a href="http://www.gwmicro.com/Window-Eyes/">Window-Eyes</a> screen readers are available for free download. However, the open-source <a href="http://www.nvda-project.org/">NVDA Screen Reader</a> is the best option for developers as it is both free and provides excellent support for ARIA. <h4>Step 2: Adding Enhanced Keyboard Support</h4>
+	<p> Out of the box, TabView provides basic keyboard support. Each Tab in a TabView is represented by an <code>&#60;A&#62;</code> element whose <code>href</code> attribute is set to the id of an <code>&#60;DIV&#62;</code> element that contains its content. In IE and Firefox, <code>&#60;A&#62;</code> elements are automatically placed in the browser's default tab index, enabling the user to toggle between Tabs by pressing the tab key, and select a Tab by pressing enter. (In Safari and Opera, <code>&#60;A&#62;</code> elements are not in the tab index by default. Safari users can change this by going to the Safari Menu, Selecting "Preferences", then choose the "Advanced" tab and check the "Press Tab to highlight each item on a webpage" checkbox.) <p> Having all of the Tabs in a TabView in the browser's default tab index is a mixed blessing: it provides basic keyboard accessibility, but can also make navigating more tedious in that users navigating via the tab key have to tab through every Tab's <code>&#60;A&#62;</code> as well as the content of the active Tab's correpsonding TabPanel in order to skip past the control. This problem can be solved by setting the <code>tabindex</code> attribute of the <code>&#60;A&#62;</code> element of the active Tab to a value of 0, and the inactive Tabs to -1. Setting an element's <code>tabindex</code> attribute to a value of -1 removes it from the browser's default tab order, while maintaining its focusability via JavaScript. Therefore, with this change in place it will be easier for the user to skip over a TabView widget while navigating with the keyboard. <h5>Mac vs. Windows</h5>
+	<p> With only one Tab now in the browser's default tab index, it will be necessary to supplement the TabView with support for the arrow keys to enable the user to navigate between Tabs as they would on the desktop. There are two different models for arrow key support for tabbed-content controls in operating systems: Mac OS X and Windows. On Windows, pressing the left or right arrow key moves focus to the next Tab and immediately displays its corresponding TabPanel. On the Mac, with VoiceOver enabled, the arrow keys only move focus between each Tab, and the user must press the space bar to load the content of the Tab's corresponding TabPanel. Of the two, the Mac's model might be considered better for a DHTML TabView. For example, if each Tab's content is loaded via XHR, the Mac's more intentional Tab selection model could help prevent the user from making requests for data he/she is not interested in consuming. <h5>Supporting Multiple Orientations</h5>
+	<p> The <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.TabView.html#config_orientation"><code>orientation</code></a> attribute of the TabView is used to render the Tabs on any of the widget's four sides. To provide arrow key support that will work regardless of the orientation of the Tabs, the left and up keys will move the focus to the previous Tab, while the right and down arrow keys will move the focus to the next Tab. As an additional convenience to the user, we'll take another cue from the Mac's tab control implementation so that focus is automatically moved to the first or last Tab when the user has reached the beginning or end of a list of Tabs. <p> To apply these keyboard enhancements to TabView, we'll define a new prototype method named <code>enhanceAccessibility</code>. This new method is designed to provide consistent keyboard support for TabView across all of the <a href="http://developer.yahoo.com/yui/articles/gbs/">A-Grade</a> browsers. It will work regardless of how the TabView is constructed (from existing markup, or from script), its orientation, or if its content is static or loaded via XHR. <pre>YAHOO.widget.TabView.prototype.enhanceAccessibility = function () {
+
+	var Dom = YAHOO.util.Dom,
+		Event = YAHOO.util.Event,
+		UA = YAHOO.env.ua,
+
+		oTabViewEl = this.get("element"),
+		oTabList = Dom.getChildren(oTabViewEl)[0],
+		aTabListItems = Dom.getChildren(oTabList),
+		aTabs = this.get("tabs"),
+		oTabIndexMap = {},
+		oTab,
+		oTabEl,
+		oTabAnchor,
+		oTabContentEl,
+		oFocusedTabAnchor,
+		sTabId,
+		oActiveTab;
+
+
+	//	Set the "tabIndex" attribute of each Tab's &#60;A&#62; element: The 
+	//	"tabIndex" of the active Tab's &#60;A&#62; element is set to 0, the others to -1.
+	//	This improves the keyboard accessibility of the TabView by placing
+	//	only one Tab in the browser's tab index by default, allowing the user
+	//	to easily skip over the control when navigating the page with the tab key.
+
+	Dom.batch(oTabList.getElementsByTagName("A"), function (element) {
+		element.tabIndex = -1;
+	});
+	
+
+	oActiveTab = this.get("activeTab");
+
+	if (oActiveTab) {
+		Dom.getFirstChild(oActiveTab.get("element")).tabIndex = 0;
+	}
+
+
+	//	Returns the &#60;A&#62; element representing each Tab in the TabView.
+
+	var getTabAnchor = function (element) {
+	
+		var oTabAnchor;
+	
+		if (Dom.getAncestorByClassName(element, "yui-nav")) {
+
+			if (element.nodeName.toUpperCase() === "A") {
+				oTabAnchor = element;
+			}
+			else {
+				oTabAnchor = Dom.getAncestorByTagName(element, "A");
+			}
+
+		}
+		
+		return oTabAnchor;
+	
+	};
+
+
+	//	Keydown event listener for the TabView that provides support for 
+	//	using the arrow keys to move focus between each Tab.
+
+	this.on("keydown", function (event) {
+	
+		var oCurrentTabAnchor = getTabAnchor(Event.getTarget(event)),
+			oCurrentTabLI,
+			oNextTabLI,
+			oNextTabAnchor;
+
+
+		if (oCurrentTabAnchor) {
+
+			oCurrentTabLI = oCurrentTabAnchor.parentNode;
+
+			switch (Event.getCharCode(event)) {
+
+				case 37:	// Left
+				case 38:	// Up
+
+					oNextTabLI = Dom.getPreviousSibling(oCurrentTabLI);
+					
+					if (!oNextTabLI) { 
+						oNextTabLI = aTabListItems[aTabListItems.length-1];
+					}
+				
+				break;
+
+				case 39:	// Right
+				case 40:	// Down
+
+					oNextTabLI = Dom.getNextSibling(oCurrentTabLI);
+					
+					if (!oNextTabLI) { 
+						oNextTabLI = aTabListItems[0];
+					}
+				
+				break;
+			
+			}
+
+			oNextTabAnchor = Dom.getChildren(oNextTabLI)[0];
+
+			if (!oFocusedTabAnchor) {
+				oFocusedTabAnchor = oCurrentTabAnchor;			
+			}
+
+			oFocusedTabAnchor.tabIndex = -1;
+			oNextTabAnchor.tabIndex = 0;
+
+			oNextTabAnchor.focus();
+
+			oFocusedTabAnchor = oNextTabAnchor;
+
+		}
+
+	});
+
+};</pre><h4>Step 3: Adding the WAI-ARIA Roles and States</h4>
+	<p> With the keyboard functionality in place, we'll proceed with the application of the WAI-ARIA Roles and States. Once applied, assistive technologies (AT) such as a screen reader will no longer announce the HTML elements that compose the TabView as HTML elements, but as a tab control. In this way the relationship between the WAI-ARIA Roles and States and HTML is similar to that of CSS: both enable the developer to change the presentation of markup. And since the WAI-ARIA Roles and States enable the TabView to be presented to the user as a desktop tab control, it makes the previous work of applying desktop-like keyboard behavior all the more critical. If users of AT are going to preceive the TabView as a desktop tab control, it needs to fulfill that expectation from a keyboard perspective. <p> As a best practice, apply the WAI-ARIA Roles and States via JavaScript. Since the WAI-ARIA Roles and States depend on JavaScript-based keyboard functionality, it follows that the attributes representing the WAI-ARIA Roles and States only be applied via JavaScript. This <a href="http://en.wikipedia.org/wiki/Progressive_enhancement">Progressive Enhancement</a> strategy ensures the best possible user experience by only applying WAI-ARIA Roles and States when the browser technologies required to support them (in this case, CSS and JavaScript) are available. <p> Roles and states are added to a TabView's DOM elements via the <a href="http://www.w3.org/TR/2000/WD-DOM-Level-1-20000929/level-one-core.html#ID-F68F082"><code>setAttribute</code></a> method. At present only two browsers have WAI-ARIA support: <a href="http://www.mozilla.com/en-US/firefox/">Firefox 3</a> and <a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/getitnow.mspx">Internet Explorer 8 Beta 1</a>. (The <a href="http://www.opera.com/docs/changelogs/windows/950/">changelog</a> for Opera 9.5 mentions support for screen readers, MSAA, and ARIA, but in my testing in Opera I didn't find ARIA to work.) Therefore, we'll make use of YUI's browser detection (<a href="http://developer.yahoo.com/yui/docs/YAHOO.env.ua.html"><code>YAHOO.env.ua</code></a>) and only apply the Roles and States to browsers that support them. The role of <a href="http://www.w3.org/TR/wai-aria/#tab"><code>tab</code></a> will be applied to each Tab's <code>&#60;A&#62;</code> element, and the role of <a href="http://www.w3.org/TR/wai-aria/#tablist"><code>tablist</code></a> to their parent <code>&#60;UL&#62;</code>. Finally, each Tab's content element (<code>&#60;DIV&#62;</code>) will receive the role of <a href="http://www.w3.org/TR/wai-aria/#tabpanel"><code>tabpanel</code></a> and an <a href="http://www.w3.org/TR/wai-aria/#labelledby"><code>aria-labelledby</code></a> attribute with a value of the id of the <code>&#60;A&#62;</code> representing its corresponding Tab instance. The <code>aria-labelledby</code> attribute enables the screen reader to announce the label of the Tab for each TabPanel when the first element in a TabPanel receives focus, providing the user with some context as to where they are. The following example illustrates how the ARIA roles and properties are applied to each of the HTML elements that compose a TabView: <pre>&#60;div class="yui-navset"&#62;
+	&#60;ul <em>role="tablist"</em>&#62;
+		&#60;li&#62;
+			&#60;a href="..." id="tab-1" <em>role="tab"</em>&#62;tab label&#60;/a&#62;
+
+		&#60;/li&#62;
+	&#60;/ul&#62;
+	&#60;div clas="yui-content"&#62;
+		&#60;div <em>role="tabpanel"</em> <em>aria-labelledby="tab-1"</em>&#62;tab content&#60;/div&#62;
+
+	&#60;/div&#62;
+&#60;/div&#62;</pre><h5>Screen-Reader Specific Tweaks</h5>
+	<p> The implementation of the WAI-ARIA Roles and States is slightly different across screen readers, so it is necessary to make some additional tweaks. A role of <a href="http://www.w3.org/TR/wai-aria/#presentation"><code>presentation</code></a> will need to be applied to the parent <code>&#60;LI&#62;</code> element of each <code>&#60;A&#62;</code>, so that the Window-Eyes screen reader recognizes that each Tab belongs to the same TabList. For JAWS it is necessary to remove the <code>href</code> attribute of each Tab's <code>&#60;A&#62;</code> element to prevent it from announcing the attribute's value when focused. Ideally JAWS would behave like NVDA and Window-Eyes and allow the applied <code>role</code> attribute of <a href="http://www.w3.org/TR/wai-aria/#tab"><code>tab</code></a> to take precedence over the default role of the <code>&#60;A&#62;</code> element. The following illustrates the updated markup for a TabView with the screen reader tweaks applied: <pre>&#60;div class="yui-navset"&#62;
+	&#60;ul <em>role="tablist"</em>&#62;
+		&#60;li <em>role="presentation"</em>&#62;
+
+			&#60;a id="tab-1" <em>role="tab"</em>&#62;tab label&#60;/a&#62;
+		&#60;/li&#62;
+	&#60;/ul&#62;
+	&#60;div clas="yui-content"&#62;
+		&#60;div <em>role="tabpanel"</em> <em>aria-labelledby="tab-1"</em>&#62;tab content&#60;/div&#62;
+
+	&#60;/div&#62;
+&#60;/div&#62;</pre><p> With this strategy for applying the WAI-ARIA Roles and States to TabView, we can update the <code>enhanceAccessibility</code> method: <pre>YAHOO.widget.TabView.prototype.enhanceAccessibility = function () {
+
+	var Dom = YAHOO.util.Dom,
+		Event = YAHOO.util.Event,
+		UA = YAHOO.env.ua,
+
+		oTabViewEl = this.get("element"),
+		oTabList = Dom.getChildren(oTabViewEl)[0],
+		aTabListItems = Dom.getChildren(oTabList),
+		aTabs = this.get("tabs"),
+		oTabIndexMap = {},
+		oTab,
+		oTabEl,
+		oTabAnchor,
+		oTabContentEl,
+		oFocusedTabAnchor,
+		sTabId,
+		oActiveTab;
+
+
+	//	Set the "tabIndex" attribute of each Tab's &#60;A&#62; element: The 
+	//	"tabIndex" of the active Tab's &#60;A&#62; element is set to 0, the others to -1.
+	//	This improves the keyboard accessibility of the TabView by placing
+	//	only one Tab in the browser's tab index by default, allowing the user
+	//	to easily skip over the control when navigating the page with the tab key.
+
+	Dom.batch(oTabList.getElementsByTagName("A"), function (element) {
+		element.tabIndex = -1;
+	});
+	
+
+	oActiveTab = this.get("activeTab");
+
+	if (oActiveTab) {
+		Dom.getFirstChild(oActiveTab.get("element")).tabIndex = 0;
+	}
+
+
+	//	Returns the &#60;A&#62; element representing each Tab in the TabView.
+
+	var getTabAnchor = function (element) {
+	
+		var oTabAnchor;
+	
+		if (Dom.getAncestorByClassName(element, "yui-nav")) {
+
+			if (element.nodeName.toUpperCase() === "A") {
+				oTabAnchor = element;
+			}
+			else {
+				oTabAnchor = Dom.getAncestorByTagName(element, "A");
+			}
+
+		}
+		
+		return oTabAnchor;
+	
+	};
+
+
+	//	Keydown event listener for the TabView that provides support for 
+	//	using the arrow keys to move focus between each Tab.
+
+	this.on("keydown", function (event) {
+	
+		var oCurrentTabAnchor = getTabAnchor(Event.getTarget(event)),
+			oCurrentTabLI,
+			oNextTabLI,
+			oNextTabAnchor;
+
+
+		if (oCurrentTabAnchor) {
+
+			oCurrentTabLI = oCurrentTabAnchor.parentNode;
+
+			switch (Event.getCharCode(event)) {
+
+				case 37:	// Left
+				case 38:	// Up
+
+					oNextTabLI = Dom.getPreviousSibling(oCurrentTabLI);
+					
+					if (!oNextTabLI) { 
+						oNextTabLI = aTabListItems[aTabListItems.length-1];
+					}
+				
+				break;
+
+				case 39:	// Right
+				case 40:	// Down
+
+					oNextTabLI = Dom.getNextSibling(oCurrentTabLI);
+					
+					if (!oNextTabLI) { 
+						oNextTabLI = aTabListItems[0];
+					}
+				
+				break;
+			
+			}
+
+			oNextTabAnchor = Dom.getChildren(oNextTabLI)[0];
+
+			if (!oFocusedTabAnchor) {
+				oFocusedTabAnchor = oCurrentTabAnchor;			
+			}
+
+			oFocusedTabAnchor.tabIndex = -1;
+			oNextTabAnchor.tabIndex = 0;
+
+			oNextTabAnchor.focus();
+
+			oFocusedTabAnchor = oNextTabAnchor;
+
+		}
+
+	});
+
+
+	//	Only apply the WAI-ARIA Roles and States for FF 3 and IE 8 since those
+	//	are the only browsers that currently support ARIA.
+	
+	if ((UA.gecko && UA.gecko >= 1.9) || (UA.ie && UA.ie >= 8)) {
+
+		//	Set the "role" attribute of the &#60;UL&#62; encapsulating the Tabs to "tablist"
+
+		oTabList.setAttribute("role", "tablist");
+		
+	
+		for (var i = 0, nLength = aTabs.length; i < nLength; i++) {
+		
+			oTab = aTabs[i];
+			oTabEl = oTab.get("element");
+			oTabAnchor = Dom.getChildren(oTabEl)[0];
+
+
+			//	Create a map that links the ids of each Tab's &#60;A&#62; element to  
+			//	the Tab's "index" attribute to make it possible to retrieve a Tab
+			//	instance reference by id.
+
+			sTabId = oTabAnchor.id;
+		
+			if (!sTabId) {
+				sTabId = Dom.generateId();
+				oTabAnchor.id = sTabId;
+			}
+	
+			oTabIndexMap[sTabId] = i;
+
+
+			//	Need to set the "role" attribute of each Tab's &#60;LI&#62; element to 
+			//  "presentation" so that Window-Eyes recognizes that each Tab belongs to 
+			//	the same TabList. Without this, Window-Eyes will announce each Tab as  
+			//	being "1 of 1" as opposed to "1 of 3," or "2 of 3".
+
+			oTabEl.setAttribute("role", "presentation");
+
+			oTabAnchor.setAttribute("role", "tab");
+
+
+
+			//	JAWS announces the value of the "href" attribute of each Tab's &#60;A&#62;  
+			//	element when it recieves focus.  Ideally JAWS would allow the 
+			//	applied "role" attribute of "tab" to take precedence over the default   
+			//  role of the &#60;A&#62; element like NVDA and Window-Eyes do.  It is 
+			//	possible to fix this problem by removing the "href" attribute from 
+			//	the &#60;A&#62;.
+
+			oTabAnchor.removeAttribute("href");
+	
+
+			oTabContentEl = oTab.get("contentEl");
+
+			oTabContentEl.setAttribute("role", "tabpanel");
+			
+
+			//	Set the "aria-labelledby" attribute for the TabPanel &#60;LI&#62; element to 
+			//	the id of its corresponding Tab's &#60;A&#62; element.  Doing so enables the 
+			//	screen reader to announce the label of the Tab for each TabPanel when  
+			//	the first element in a TabPanel receives focus, providing the user  
+			//	with some context as to where they are.
+			
+			oTabContentEl.setAttribute("aria-labelledby", sTabId);
+		
+		}
+
+
+		//	Add a keypress listener that toggles the active Tab instance when the user 
+		//	presses the Enter key.  This is necessary because the removal of the "href" 
+		//	attribute from each Tab's &#60;A&#62; element (for JAWS support) causes the 
+		//	TabView's default Enter key support to stop working.  Support for the Space
+		//	Bar is also added as an additional convience for the user.
+
+		this.on("keypress", function (event) {
+		
+			var oTabAnchor = getTabAnchor(Event.getTarget(event)),
+				nCharCode = Event.getCharCode(event);
+	
+			if (oTabAnchor && 
+				(nCharCode === 13 || nCharCode === 32) && 
+				(oTabAnchor.parentNode !== this.get("activeTab").get("element"))) {
+
+					this.set("activeIndex", oTabIndexMap[oTabAnchor.id]);
+			
+			}
+		
+		});
+	
+	}
+
+};</pre><h4>Step 4: Putting It All Together</h4>
+	<p> To test the new <code>enhanceAccessibility</code> method, we'll use the <a href="http://developer.yahoo.com/yui/examples/tabview/datasrc.html">Getting Content from an External Source example</a> from the existing TabView examples gallery as a starting point. Once the TabView instance has been appended to the page, we'll call the new <code>enhanceAccessibility</code> method. Next we'll use some additional WAI-ARIA Roles and States to make some example-specific tweaks. First we'll, use the <a href="http://www.w3.org/TR/wai-aria/#describedby"><code>describedby</code></a> property to provide some helpful instructional text that will be announced to the user when the TabView initially receives focus. Since each Tab's content is loaded asynchronously, we'll also leverage <a href="http://www.w3.org/WAI/PF/aria-practices/#LiveRegions">WAI-ARIA Live Regions</a> to message users when a Tab's content is both being loaded and has finished loading. (Note: The <code>describedby</code> property and Live Regions are currently only supported in the <a href="http://www.nvda-project.org/wiki/Snapshots">latest development snapshots of NVDA</a>.) The following code snippet illustrates how it all comes together: <pre>(function() {
+
+	var oTabView = new YAHOO.widget.TabView();
+
+	oTabView.addTab( new YAHOO.widget.Tab({
+		label: "Opera",
+		content: "&#60;p&#62;Please wait.  Content loading.&#60;/p&#62;",
+		dataSrc: "news.php?query=opera+browser",
+		cacheData: true,
+		active: true
+	}));
+
+	oTabView.addTab( new YAHOO.widget.Tab({
+		label: "Firefox",
+		content: "&#60;p&#62;Please wait.  Content loading.&#60;/p&#62;",
+		dataSrc: "news.php?query=firefox+browser",
+		cacheData: true
+	}));
+
+	oTabView.addTab( new YAHOO.widget.Tab({
+		label: "Explorer",
+		content: "&#60;p&#62;Please wait.  Content loading.&#60;/p&#62;",
+		dataSrc: "news.php?query=microsoft+explorer+browser",
+		cacheData: true
+	}));
+
+	oTabView.addTab( new YAHOO.widget.Tab({
+		label: "Safari",
+		content: "&#60;p&#62;Please wait.  Content loading.&#60;/p&#62;",
+		dataSrc: "news.php?query=apple+safari+browser",
+		cacheData: true
+	}));
+
+
+	oTabView.appendTo("container");
+	oTabView.enhanceAccessibility();
+
+
+	var Dom = YAHOO.util.Dom,
+		UA = YAHOO.env.ua,
+		oActiveTab,
+		oTitle,
+		oTabViewEl,
+		oLog,
+		sInstructionalText;
+
+
+	//	Only apply the WAI-ARIA Roles and States for FF 3 and IE 8 since those
+	//	are the only browsers that currently support ARIA.
+	
+	if ((UA.gecko && UA.gecko >= 1.9) || (UA.ie && UA.ie >= 8)) {
+
+		oActiveTab = oTabView.get("activeTab");
+
+
+		//	Append some instructional text to the &#60;H2&#62;
+
+		oTitle = Dom.get("tabview-title");
+
+		sInstructionalText = oTitle.innerHTML;
+
+		oTitle.innerHTML = (sInstructionalText + "&#60;em id=\"tabview-description\"&#62;Press the space bar or enter key to load the content of each tab.&#60;/em&#62;");
+
+
+		//	Set the "aria-describedby" attribute of the &#60;UL&#62; with the role of "tablist"
+		//	to the id of the &#60;EM&#62; inside the &#60;H2&#62;.  This will trigger the screen reader 
+		//	to read the text of the &#60;EM&#62; when the TabView is initially focused, 
+		//	providing some additional instructional text to the user.  (Currently this 
+		//	only works with the NVDA screen reader.)
+
+		Dom.getChildren(oTabView.get("element"))[0].setAttribute("aria-describedby", "tabview-description");
+		
+
+		//	Append a live region to the TabView's root element that will be used to 
+		//	message users about the status of the TabView.
+
+		oTabViewEl = oTabView.get("element");
+		oLog = oTabViewEl.ownerDocument.createElement("div");
+
+		oLog.setAttribute("role", "log");
+		oLog.setAttribute("aria-live", "polite");
+
+		oTabViewEl.appendChild(oLog);
+
+
+		//	"activeTabChange" event handler used to notify the screen reader that 
+		//	the content of the Tab is loading.
+
+		oTabView.on("activeTabChange", function (event) {
+
+			var oTabEl = this.get("activeTab").get("element"),
+				sTabLabel = oTabEl.textContent || oTabEl.innerText,
+				oCurrentMessage = Dom.getFirstChild(oLog),
+				oMessage = oLog.ownerDocument.createElement("p");
+
+			oMessage.innerHTML = "Please wait.  Content loading for " + sTabLabel + " property page.";
+
+			if (oCurrentMessage) {
+				oLog.replaceChild(oMessage, oCurrentMessage);
+			}
+			else {
+				oLog.appendChild(oMessage);						
+			}
+
+		});	
+	
+
+		//	"dataLoadedChange" event handler used to notify the screen reader that 
+		//	the content of the Tab has finished loading.
+		
+		var onDataLoadedChange = function (event) {
+
+			var oTabEl = this.get("element"),
+				sTabLabel = oTabEl.textContent || oTabEl.innerText,
+				oCurrentMessage = Dom.getFirstChild(oLog),
+				oMessage = oLog.ownerDocument.createElement("p");
+
+			oMessage.innerHTML = "Content loaded for " + sTabLabel + " property page.";
+
+			if (oCurrentMessage) {
+				oLog.replaceChild(oMessage, oCurrentMessage);
+			}
+			else {
+				oLog.appendChild(oMessage);						
+			}
+		
+		};
+	
+		oTabView.getTab(0).on("dataLoadedChange", onDataLoadedChange);
+		oTabView.getTab(1).on("dataLoadedChange", onDataLoadedChange);
+		oTabView.getTab(2).on("dataLoadedChange", onDataLoadedChange);
+		oTabView.getTab(3).on("dataLoadedChange", onDataLoadedChange);
+
+	}
+
+})();</pre><h3>Further Reading and Resources</h3>
+	<ul>
+		<li><a href="/blog-archive/blog/2007/12/21/menu-waiaria/">Using WAI-ARIA Roles and States with the YUI Menu Control</a><li><a href="http://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA) Version 1.0 W3C Specification</a><li><a href="http://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Best Practices</a><li><a href="http://developer.mozilla.org/en/docs/ARIA:_Accessible_Rich_Internet_Applications/Relationship_to_HTML_FAQ">ARIA: Accessible Rich Internet Applications/Relationship to HTML FAQ</a><li><a href="http://www.mozilla.org/access/dhtml/">Accessible DHTML</a><li><a href="http://developer.mozilla.org/en/docs/Key-navigable_custom_DHTML_widgets">Key-navigable custom DHTML widgets</a><li><a href="http://www.mozilla.com/en-US/firefox/">Firefox 3</a><li><a href="http://www.microsoft.com/windows/products/winfamily/ie/ie8/getitnow.mspx">Internet Explorer 8 Beta 1</a><li><a href="http://www.nvda-project.org/">NVDA Screen Reader</a><li><a href="http://www.freedomscientific.com/fs_products/software_jaws.asp">Freedom Scientific JAWS Screen Reader</a><li><a href="http://www.gwmicro.com/Window-Eyes/">GW Micro Window-Eyes Screen Reader</a><li><a href="http://video.yahoo.com/video/play?vid=514676">An Introduction to Screen Readers</a><li><a href="http://juicystudio.com/article/making-ajax-work-with-screen-readers.php">Making Ajax Work with Screen Readers</a></ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

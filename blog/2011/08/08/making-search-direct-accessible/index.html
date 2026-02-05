@@ -1,0 +1,309 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Making Search Direct Accessible</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Making Search Direct Accessible</li></ul>
+				<h1 class="yui3-u-7-8">Making Search Direct Accessible</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 9, 2011<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>A few months ago we launched the first beta release of Search Direct. This new product explores the concept of real-time feedback, instantly delivering answers to the user with each keystroke. Given the diversity of Yahoo!'s audience, we wanted to make Search Direct as accessible as possible. Initially, we believed that this would be an easy task since this product would be based on YUI 3, a JavaScript library with accessibility baked into its DNA. Contrary to my expectations as an engineer, this task turned out to be more difficult than we anticipated.<h3>Introducing Search Direct</h3>
+	<p>Although Search Direct is built from the ground up using YUI's component infrastructure, its most visibly prominent interface is based on the <a href="http://developer.yahoo.com/yui/3/autocomplete/">YUI AutoComplete widget</a> which includes many accessibility features right out of the box. Suggestions related to a particular query are displayed in this autocomplete implementation. Search Direct also features a content panel, a.k.a. the <i>rich panel</i>, where suggestion-related content is displayed. The intention of the rich panel is to provide a direct answer to the user when a suggestion from the autocomplete list is selected.<a href="http://search.yahoo.com/"><img alt="Search Direct Screenshot - Query: jen, Soft-selection: Jennifer Aniston" src="/blog-archive/assets/accessible-search-direct/sd.jpg" width="100%" /></a><p>A new set of suggestions is displayed in the list on every keystroke, and the first suggestion is selected by default. This default selection is called a <i>soft selection</i>. Soft selections and subsequent interactions with the suggestion list dictate the content that is rendered into the rich panel. In reality, things are a bit more complicated (performance optimizations, additional cache layers, etc), but for the sake of simplicity we can assume that this is the common workflow.<h3>Accessibility features</h3>
+	<p>In the quest for making Search Direct accessible, we looked at the implementation of Search Assistant, a technology that Yahoo! pioneered a few years back, as well as the native accessibility features of YUI.<p>After this investigation, three primary accessibility features were proposed for Search Direct:<ul>
+			<li>Using the <a href="http://developer.yahoo.com/yui/3/intl/">YUI Internationalization utility</a> to serve localized content.<li>Setting <code>role</code> and <code>aria-*</code> attributes on elements within the autocomplete widget, that need to be identified and processed by screen readers.<li>Using a hidden <code>div</code> that represents a live region (<code>aria-live</code>) to notify the user when something happens. E.g., the number of available suggestions, the selected suggestion, etc.</ul> <p>The plan was to notify the user of any changes in the Search Direct interface, and provide a set of keyboard shortcuts to navigate the following visual components:<ul>
+			<li>Searchbox<li>Submit button<li>Suggestion list<li>Rich panel</ul> <p>Sounds like a breeze, right? Well, let's take a step back.<h3>The problem</h3>
+	<p>What we have here are two asynchronous processes &mdash; one of them for updating the suggestion set and the other one for retrieving corresponding answers &mdash; and they're both <i>really</i> fast. We're talking about 250ms end to end. Since the interface is changing at such a rapid pace, keeping track of everything can be difficult for a screen reader user. It gets an order of magnitude more complicated when updates happen in an asynchronous, near real-time manner. Because the screen reader was being notified of every change in the interface, the resulting chatter made it difficult to make sense of what was going on.<p>Lacking an acceptable solution, we started collaborating with Yahoo!'s resident accessibility guru, Victor Tsaran (<a href="http://twitter.com/#!/vick08">@vick08</a>) to try and come up with something better.<p>The first time we watched Victor interact with Search Direct, it was immediately clear to me that a majority of his focus was on the rich panel instead of the suggestion list. This was a surprise for me, as we viewed the list as the "source of truth". During one of our sessions, we had a stroke of luck when we happened to disable all the accessibility features of the list. As soon as the noise introduced by the list was cut out, Search Direct started to make sense to Victor!<h3>How users of screen readers perceive Search Direct</h3>
+	<p>After realizing that we were trying to solve the wrong problem, we went back to the original user story: <i>"As a user, I can get an answer as I type"</i>. Getting the answer across to the user was the priority. After redefining the problem, we concentrated our accessibility efforts on an implementation where the screen reader prioritized the rich panel content over the suggestion list.<p>For example, if the user types <code>"miami wea"</code>, the screen reader will tell them two things:<ul>
+			<li>10 suggestions.<li>WEATHER MIAMI, FL. TODAY, Scattered Thunderstorms, 89°F 77°F. TOMORROW, Isolated Thunderstorms, 90°F 74°F...</ul> <p>It will then continue reading out the rest of the rich panel content. The user doesn't need to know all 10 suggestions up front, every time the list updates. If they do want to know, the information is readily accessible via keyboard navigation.<p>To ensure that the suggestion list is adding value to the experience, we make sure that the first phrase in the rich panel is closely related to its corresponding suggestion. For instance, based on the previous example, <code>"weather miami"</code> is the first phrase in the rich panel for the suggestion: "miami weather".<p>Victor Tsaran, of the Yahoo! Accessibility Lab, shows how it works on FireFox with the NVDA screen reader:<iframe allowfullscreen="allowfullscreen" frameborder="0" height="349" src="http://www.youtube.com/embed/Vd_W_8tIDNA" width="560"> </iframe> <p>The screen reader experience for our application is easier to follow since we now only focus on the following two visual components:<ul>
+			<li>Searchbox<li>Rich panel</ul> <p>Changes to the autocomplete list as a whole are no longer tracked, and the submit button is ignored since the user can always hit enter for the current query or use a keyboard shortcut (tilda access key: <code>[control, alt or shift] + ~</code>) to switch between the input element and the rich panel. These keyboard navigation options are revealed to the user when the searchbox is acknowledged by the screen reader.<p>From an engineering perspective, this change greatly simplified things. The amount of DOM manipulation in the most active component was drastically reduced, improving the overall performance of Search Direct. Here is an example of the implementation:<code><pre>
+function SDAAria () {
+    var node = this._liveRegion = Y.Node.create(&#x27;&lt;div role=&quot;status&quot; class=&quot;off-screen&quot; aria-live=&quot;assertive&quot;&gt;&lt;/div&gt;&#x27;);
+    // Create the ARIA live region...
+    Y.one(&#x27;body&#x27;).append(node);
+    // listening for aria:live messages to update the live region
+    this.on(&#x27;aria:live&#x27;, this._handlerMsg, this);
+    // listening for gossip:refresh to announce how many suggestions
+    this.on(&#x27;gossip:refresh&#x27;, this._handleGossipRefresh, this);
+}
+SDAAria.ATTRS = {
+     strings: {
+         valueFn: function () {
+             return Y.Intl.get(&#x27;sd-aria&#x27;);
+         }
+     }
+};
+SDAAria.prototype = {
+    _ariaSay: function (stringId, subs) {
+        var message = this.get(&#x27;strings.&#x27; + stringId) || &#x27;&#x27;;
+        this._liveRegion.setContent( subs ? Y.Lang.sub(message, subs) : message );
+    },
+    _handlerMsg: function (e) {
+        if (e.id) {
+            this._ariaSay(e.id, e.subs);
+        }
+    },
+    _handleGossipRefresh: function () {
+        var size = this.get(&#x27;suggestions&#x27;).size();
+        this._ariaSay( (size &gt; 0 ? &#x27;SUGGESTIONS&#x27; : &#x27;NO_SUGGESTIONS&#x27;), {
+            n: size
+        });
+    }
+};
+</pre></code><h3>Lessons learned</h3>
+	<p>When creating an accessible interface, it's important to ask the right questions. Making every bit of your application accessible may not be the right approach.<p>Request early feedback from users of screen readers &mdash; don't assume that you have your bases covered until you get some user feedback. Utilizing every tool and feature at your disposal may not have the intended effect.<p>Users of screen readers may have difficulty keeping track of real-time updates, especially if screen readers are bombarded with notifications. In these scenarios, less can be more. Identify and focus on what is important for the user instead of trying to replicate the raw experience of the application for the screen reader.<p class="authorbox"><img alt="Caridy Patiño" class="alignleft" height="266" src="/blog-archive/assets/accessible-search-direct/caridy.jpg" width="259" /><em><strong>About the author:</strong> Caridy Pati&#241;o, Principal Frontend for Yahoo! Search Direct. He has been a longtime YUI Contributor and creator of Bubbling Library YUI Extension, as well as guest blogger at YUIBlog.com sharing some of his extensive experience building high performance web applications. Loading strategies, event-driven architectures and SSJS are some of the subjects where Caridy spends most of his time these days.</em></div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

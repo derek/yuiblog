@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Empty Links and Screen Readers</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Empty Links and Screen Readers</li></ul>
+				<h1 class="yui3-u-7-8">Empty Links and Screen Readers</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">January 24, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="" height="188" hspace="5" src="/blog-archive/assets/mikedavies.jpg" vspace="5" width="250" /><strong>About the Author:</strong> Mike Davies is a web developer for Yahoo! Europe focusing on web accessibility. He was the Technical Lead Developer of a website redesign which became a PAS 78 case study into the business benefits of accessible websites. Mike writes about web accessibility, Atom and web standards on his personal blog at <a href="http://www.isolani.co.uk/">isolani.co.uk</a>. (<a href="http://www.flickr.com/photos/thevoicewithin/374414594/">Photograph courtesy of Neil Crosby</a>)</div>
+		<p>With the help of other members of the Yahoo! Accessibility Stakeholders group, I ran a screen reader test to establish whether links that contain no link text were an accessibility barrier. We tested a number of approaches to hiding links across a typical range of screen reader and browsers.<p>The conclusion is that the most accessible link is one that contains link text. Different techniques of hiding links, from no link text, through to hiding by <abbr title="Cascading Stylesheets">CSS</abbr> can cause an accessibility barrier to screen reader users. Each screen reader presented its user with a different set of problems and barriers.<p>What follows is a detail description of the test, tabulated results, summary of techniques that passed, failed or came close, and a list of web development recommendations.<h3>The Microformats include pattern</h3>
+		<p>The Microformats group have created an <a href="http://microformats.org/wiki/include-pattern">include pattern</a> which is a mechanism for including a portion of data from one area of a page into another area on the same page. Essentially, it's a means of preventing the duplication of data.<p>A good example of this is a page that lists all the reviews done by one person. Instead of every review having to duplicate the reviewer details, we can use the include pattern to define the reviewer once, and include it into each review. No needless duplication.<p>The main technique being advocated as an include is the humble link, but in an effort to minimise duplication of content, the example is an empty link; a link with no link text:<pre title="Example markup of an include pattern">
+<code>
+&lt;a class="include" href="#author" title="James Levine"&gt;&lt;/a&gt;
+</code>
+</pre><p>The current accessibility understanding is that empty links can present a barrier to screen reader users. The Microformats group have attempted to solve this problem by using the title attribute to offer something a screen reader can use to announce a link.<p>The issue here is to find a way of marking up a microformat include pattern that's accessible to screen reader users.<h3>Test cases</h3>
+		<p>I produced 18 test cases covering a wide range of techniques to hide a link from being displayed. These tests covered:<ul>
+				<li>Normal links with proper link text<li>Links with no link text or title attribute<li>Links with a title, but no link text<li>Links containing just whitespace for text</ul> <p>Each type of link was styled in the following ways:<ul>
+				<li>Displayed in a default manner<li>Positioned off-screen<li>Visibility of hidden<li>Display set to none</ul> <p>The tests were carried out by three screen reader users. Two of them are super-users of screen readers, so consequently have a great deal of experience and knowledge that can allow them to work around many difficult accessibility issues. Interestingly, neither of them had their main screen reader set up to read out both the link text and the title. Both of them have multiple screen readers installed. The third tester was a web developer with a deep understanding of using screen readers.<p>Ideally, we'd need more screen reader users to create a decent sample, including non-power users, but the results we saw are fairly consistent.<h3>Success criteria</h3>
+		<p>There are two screen reader behaviours that form a successful test case. The first was that a link was read out normally, as if it were an inline link within a paragraph of text. The second successful behaviour was that the screen reader does not announce the presence of a link and just skips over it.<h3>The test results</h3>
+		<p>We covered four major screen reader versions over three different browsers. The results for each combination can be seen in the following table. The result cells are colour coded to quickly highlight techniques that are safe to use:<ul>
+				<li>Red-coloured cells indicates buggy behaviour or the output was likely to frustrate the screen reader user.<li>Amber-coloured cells indicate that the technique did work, but relies on stylesheets to hide the link from screen readers.<li>Light green-coloured cells indicate the technique did work, but relies on particular configurations of a screen reader.<li>Green-coloured cells indicate that the technique did work, and did not rely on stylesheets or a particular screen reader configuration.</ul> <p>All the information conveyed in colour is also available in the table footnotes and the notes below.<h4>Tables for each browser combination</h4>
+		<table>
+			<caption>Link results for JAWS 8.0 and JAWS 7.10 with Internet Explorer 6<sup>4</sup></caption>
+			<thead>
+				<tr>
+					<th scope="col">type of link</th>
+					<th scope="col">default</th>
+					<th scope="col">offscreen</th>
+					<th scope="col"><code>visibility: hidden<code></code></code></th>
+					<th scope="col"><code>display: none</code></th> </tr> </thead>
+			<tbody>
+				<tr>
+					<th scope="row">Normal</th>
+					<td class="good">text</td>
+					<td class="good">text</td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty</th>
+					<td class="bad"><code>href</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace</th>
+					<td class="bad"><code>href</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td> </tr> </tbody> </table>
+		<table>
+			<caption>Link results for JAWS 8.0 and Firefox 2</caption>
+			<thead>
+				<tr>
+					<th scope="col">type of link</th>
+					<th scope="col">default</th>
+					<th scope="col">offscreen</th>
+					<th scope="col"><code>visibility: hidden<code></code></code></th>
+					<th scope="col"><code>display: none</code></th> </tr> </thead>
+			<tbody>
+				<tr>
+					<th scope="row">Normal</th>
+					<td class="good">text</td>
+					<td class="good">text</td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty</th>
+					<td class="bad">absolute <code>href</code></td>
+					<td class="bad">absolute <code>href</code></td>
+					<td class="bad">absolute <code>href</code></td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="bad">absolute <code>href</code>, <code>title</code></td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace</th>
+					<td class="bad"><code>href</code></td>
+					<td class="bad">buggy<sup>1</sup></td>
+					<td class="bad">absolute <code>href</code></td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="bad">buggy<sup>1</sup></td>
+					<td class="bad">absolute <code>href</code>, <code>title</code></td>
+					<td class="ugly">nothing</td> </tr> </tbody> </table>
+		<table>
+			<caption>Link results for JAWS 9.0 with Internet Explorer 6</caption>
+			<thead>
+				<tr>
+					<th scope="col">type of link</th>
+					<th scope="col">default</th>
+					<th scope="col">offscreen</th>
+					<th scope="col"><code>visibility: hidden<code></code></code></th>
+					<th scope="col"><code>display: none</code></th> </tr> </thead>
+			<tbody>
+				<tr>
+					<th scope="row">Normal</th>
+					<td class="good">text</td>
+					<td class="good">text</td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty</th>
+					<td class="bad"><code>href</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace</th>
+					<td class="iffy">nothing<sup>2</sup></td>
+					<td class="iffy">nothing<sup>2</sup></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr> </tbody> </table>
+		<table>
+			<caption>Link results for Window-Eyes 6.1 with Internet Explorer 6</caption>
+			<thead>
+				<tr>
+					<th scope="col">type of link</th>
+					<th scope="col">default</th>
+					<th scope="col">offscreen</th>
+					<th scope="col"><code>visibility: hidden<code></code></code></th>
+					<th scope="col"><code>display: none</code></th> </tr> </thead>
+			<tbody>
+				<tr>
+					<th scope="row">Normal</th>
+					<td class="good">text</td>
+					<td class="good">text</td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty</th>
+					<td class="bad"><code>href</code></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td>
+					<td class="bad"><code>href</code></td> </tr>
+				<tr>
+					<th scope="row">empty with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace</th>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="bad"><code>href</code></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace with <code>title</code></th>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr> </tbody> </table>
+		<table>
+			<caption>Link results for Window-Eyes 6.1 with Internet Explorer 7</caption>
+			<thead>
+				<tr>
+					<th scope="col">type of link</th>
+					<th scope="col">default</th>
+					<th scope="col">offscreen</th>
+					<th scope="col"><code>visibility: hidden<code></code></code></th>
+					<th scope="col"><code>display: none</code></th> </tr> </thead>
+			<tbody>
+				<tr>
+					<th scope="row">Normal</th>
+					<td class="good">text</td>
+					<td class="good">text</td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">empty</th>
+					<td class="bad">"empty", <code>href</code><sup>3</sup></td>
+					<td class="bad">"empty", <code>href</code><sup>3</sup></td>
+					<td class="ugly">nothing</td>
+					<td class="bad">"empty", <code>href</code><sup>3</sup></td> </tr>
+				<tr>
+					<th scope="row">empty with <code>title</code></th>
+					<td class="almost"><code>title</code></td>
+					<td class="almost"><code>title</code></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace</th>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr>
+				<tr>
+					<th scope="row">whitespace with <code>title</code></th>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="almost">nothing<sup>2</sup></td>
+					<td class="ugly">nothing</td>
+					<td class="ugly">nothing</td> </tr> </tbody> </table>
+		<h4>Footnotes to the tables</h4>
+		<ul>
+			<li>1. <samp>buggy</samp> means the screen reader reacted as if there were two separate links instead of just an empty link.<li>2. <samp>nothing</samp> means that the screen reader announces there's a link, but there's no link text read out.<li>3. <samp>"empty", href</samp> means the screen reader reads out the word "empty" followed by the contents of the <code>href</code> attribute<li>4. In JAWS 8.0 with Internet Explorer when a list of links was displayed, the links could not be reordered alphabetically. We tried both a different page, and with JAWS 7.10, and that worked fine. Empty links breaks JAWS 8.10 ability to sort links when listed.</ul>
+		<h3>Test case failures (code red)</h3>
+		<p>The following is a list of failures and buggy behaviour:<ul>
+				<li>An empty linked styled with <code>display none</code> caused the <code>href</code> attribute of the link to be read out in Window Eyes 6.1<li>An empty link styled to <code>visibility: hidden</code> caused the <code>href</code> attribute to be read out in JAWS 7.10 and JAWS 8.0 in Internet Explorer and Firefox 2. With Firefox, JAWS 8.0 read out the absolute <abbr title="Uniform Resource Locator">URL</abbr> of the link.<li>An empty link regardless of styling (apart from <code>display: none</code>) caused the <code>href</code> attribute to be read out in JAWS 7.10 and JAWS 8.0 on both Internet Explorer and Firefox. Again, JAWS 8.0 with Firefox read out the absolute URL of the link.<li>A link containing whitespace as link text caused the <code>href</code> attribute to be read out in JAWS 7.10 and JAWS 8.0 in Internet Explorer and Firefox.<li>With JAWS 8.0 and Firefox we saw a buggy behaviour where a link containing just whitespace as link text was actually read out as two separate links.<li>With Window Eyes 6.1 and Internet Explorer 6 we saw buggy behaviour where a link containing just whitespace and a <code>title</code> attribute, but styled to appear offscreen, the <code>href</code> attribute was read out even though there was a <code>title</code> attribute present. </ul> <h3>Test cases relying on stylesheets (code amber)</h3>
+		<p>All of the test cases that relied either on the <code>display</code> or <code>visibility</code> styles to hide the link from the screen reader did succeed (except for the failures noted above, for example the handling of <code>visibility</code> is exceptionally buggy in JAWS).<p>When CSS is not enabled, or the styles are ignored by the screen reader, the behaviour falls back to the default case.<h3>Test cases relying on screen reader configuration (code light green)</h3>
+		<p>Test cases using the <code>title</code> attribute worked when the screen reader was configured to read out <code>title</code> attributes. Both our experienced screen reader users had changed their screen reader configuration to read out <code>title</code>s on links when there was no actual link text. Unfortunately, this is not sufficient to conclude that this is a majority preference.<p>Thus, techniques using the <code>title</code> attribute are reliant on a specific screen reader configuration to work as expected. This configuration cannot be assured, and cannot be relied on.<p>Test cases designed to hide the link from a screen reader by not supplying any link text fail when the screen reader configuration is set to announce links. Announcing links gets the screen reader to preface all link text with the word 'Link'. Empty links that successfully dodge screen reader heuristics and produce no link text still run into the frustrating problem of a link being announced, but no text associated with that link.<h3>Passed test cases (code green)</h3>
+		<p>Only two of the eighteen test cases resulted in an unqualified pass:<ul>
+				<li>A normal text link with default styling<li>A normal text link displayed offscreen. (Links displayed offscreen are still announced by the screen reader)</ul> <h3>Conclusion</h3>
+		<p>Not using proper link text forces the browser and screen reader to fallback to heuristics in an attempt to determine what the link text should be. Internet Explorer decides to offer the <code>title</code> attribute, and failing that, it tries to extract something readable from the <code>href</code> attribute. JAWS 8 with Firefox 2 on the other hand reads out the absolute URL of the page, followed by, if available, the <code>title</code> attribute; or if the <code>title</code> attribute is not available, it extracts something readable from the <code>href</code> attribute.<p>There are breakages in JAWS 8.0/IE6 and Windows Eyes with IE6, when the link text is empty. We observed that a screen reader user could not alphabetically sort a list of links in JAWS 8.0, and so this creates a barrier to quickly finding a link, a barrier that wasn't there before, and it's the markup that provokes/uncovers this bug.<p>Windows Eyes also has problems with empty text links, falling back to reading out the <code>href</code> attribute, and uniquely reads out the link <code>href</code> when the link is styled with <code>display: none</code>.<p>An empty link with a <code>title</code> attribute, styled with <code>display: none</code> looks to be a feasible option, but flounders because of two ungrounded assumptions:<ul>
+				<li>CSS will always be enabled on browsers communicating with screen readers<li>The <code>title</code> attribute is configured to be read out by screen readers.</ul> <p>Neither of these assumptions realistically hold, nor can be relied on.<h3>Web Developer Recommendations</h3>
+		<ul>
+			<li>Always have proper link text for a link, and assure that the link text makes sense in context. At that point the link can then be hidden by positioning it offscreen. If the link is styled with <code>display</code> set to <code>none</code>, ensure that the content makes sense with and without the link text in place.<li>Never have an anchor with jusst an <code>href</code> attribute. The screen reader fallback is to read out the entire URL or try to extrapolate something readable from it, or a combination of both. This can lead to unpredictable results. How a browser or screen reader translates a URL into text that is read out requires more extensive testing.<li>Never use <code>visibility: hidden</code> to hide an empty link from view. This leads to the <code>title</code> attribute being ignored in both JAWS/IE6 set-ups, and the absolute URL of the link being read out with Firefox. It also introduces a dependency on CSS to prevent an accessibility barrier.<li>Never use just white space as the link text, the choice of link text between the setups tested differ significantly, with all combinations creating an accessibility barrier - either of reading an entire absolute URL, or guessing the link text based on URL extrapolation, or as in Window Eyes announcing a link, but with no link text read out.<li>Never use <code>display: none</code> as a means of hiding this link. This creates a dependency on CSS, since the rendering of the page in screen readers is degraded.<li>Never rely on the <code>title</code> attribute as the sole means of providing a form of link text since it's inconclusive whether <code>title</code> attributes are enabled for all screen reader users.</ul>
+		<h3>Resources</h3>
+		<ul>
+			<li><a href="/blog-archive/assets/emptylinks.html">Test cases</a>: The 18 test cases that we used for this experiment. This will allow interested parties to re-run these tests and confirm the findings.</ul>
+		<p>Thank you to Artur Ortega and Victor Tsaran (both of the Yahoo! Accessibility Stakeholders Group) for volunteering time to run these test cases and talk through the issues they encountered - that process was enlightening and informative. Thanks to Ben Hawkes Lewis for his insight and guidance on screen reader usage, also for volunteering to run these tests through his screen readers, and his support of running this experiment. Finally, thanks to Ben Ward for taking the initiative to understand and resolve the accessibility implications of certain markup techniques, and for providing me with an interesting problem to tackle.</div> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

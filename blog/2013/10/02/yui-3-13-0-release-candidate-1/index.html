@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI 3.13.0 Release Candidate 1</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">YUI 3.13.0 Release Candidate 1</li></ul>
+				<h1 class="yui3-u-7-8">YUI 3.13.0 Release Candidate 1</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">October 2, 2013<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>We are happy to announce a new release candidate for everyone to try out: <strong>3.13.0-rc-1</strong>. It is available through our CDN <a href="http://yui.yahooapis.com/3.13.0-rc-1/build/yui/yui-min.js">here</a>, downloadable via an <a href="http://yui.zenfs.com/releases/yui3/yui_3.13.0-rc-1.zip">archive</a>, and installable via <a href="https://npmjs.org/package/yui">npm</a>.<p>This release candidate is currently being tested across our <a href="http://yuilibrary.com/yui/environments/">target environments</a> and we're fixing any showstopper bugs. Check out the <a href="https://github.com/yui/yui3/wiki/Development-Schedule">release schedule</a> for more details. Please take this opportunity to try out this release candidate in your own test environments and <a href="https://github.com/yui/yui3/issues/new">file issues</a> if you run across anything that doesn't work the way you expect (please indicate which version you were testing when you file the issue).<h2>What's New In This Release</h2>
+	<p>We have a full plate of changes and improvements! The main focus of this release centered around improvements to the Rich Text Editor, but there are changes across the board reflecting the amazing activity of our YUI community. You can find them listed below.<p><a id="rich"></a><h3>Rich Text Editor Improvements</h3>
+	<p>A major new feature for <a href="http://stage.yuilibrary.com/yui/docs/editor/">Editor</a> is the ability to work in one of two modes. The traditional mode was via an iframe element on a page, and this is not changed. A second new mode allows Editor to work as an inline editor on a page using ContentEditable. Due to this, some internal changes have been made. <code>Y.Frame</code> is now a plugin and it extends <code>Y.Plugin.Base</code>. There is a new Plugin called ContentEditable which allows the editor to work without having to use an iframe element. If a container is not specified, <code>EditorBase</code> creates and plugs an instance of Y.Frame, otherwise it uses the provided container (<a href="https://github.com/yui/yui3/issues/1041">#1041</a>). This is thanks to the work of <a href="https://github.com/ipeychev">Iliyan Peychev</a> and <a href="https://github.com/apipkin">Tony Pipkin</a>. Check out the <a href="http://stage.yuilibrary.com/yui/docs/examples/#component-editor">updated examples</a> on the staging site for implementation details. Note if you are already using Editor, there should be no changes needed for you to make, as it is backwards compatible.<h3>App Framework Improvements</h3>
+	<p><a id="router"></a><h4>Router</h4>
+	<p>Take note that several changes in <a href="http://stage.yuilibrary.com/yui/docs/router/index.html">Router</a> are not backwards compatible. These include a Router's <code>root</code> path is now enforced as its mount point. Routers with a specified <code>root</code> will only consider paths as matching its route handles if that path is semantically within the Router's <code>root</code> path (<a href="https://github.com/yui/yui3/issues/1083">#1083</a>). The <code>getPath()</code> method now returns the <em>full</em> current path, whereas before it returned the current path relative to the Router's <code>root</code>. This also affects <code>req.path</code> which is now the full path as well. Router's dispatching process has been changed to take <code>req</code> and <code>res</code> objects instead of creating them inside the <code>_dispatch()</code> method. This refactor also removed the deprecated support for calling <code>res()</code> as an alias for <code>next()</code>. Please take note of these changes as you may have to change the way you implement Router if you call these methods.<p>There were several other changes as well. Router now accepts route objects through its <code>route()</code> method. These route objects are the same as those specified in a Router's <code>routes</code> attribute and what Router uses for its internal storage of its routes. If these route objects contain a regular expression as their <code>path</code> or they contain a <code>regex</code> or <code>regexp</code> property, then they are considered fully-processed. Route objects can also contain any arbitrary metadata which will be preserved (<a href="https://github.com/yui/yui3/issues/1067">#1067</a>). Additional <code>req</code> attributes were added: <code>req.router</code> which is a reference to the Router instance, and <code>req.route</code> which is a reference to the current route object whose callbacks are being dispatched. Lastly, calling the <code>dispatch()</code> method will now set a <code>req.src</code> to <code>dispatch</code>.<p><a id="model"></a><h4>Model</h4>
+	<p>In <a href="http://stage.yuilibrary.com/yui/docs/model/">Y.Model</a>, <code>ModelSync.Local</code> was added which is an extension that provides a <code>sync()</code> implementation for <code>localStorage</code> that can be mixed into Models and ModelLists (<a href="https://github.com/yui/yui3/issues/1218">#1218</a>). You can find an example in the <a href="https://github.com/tastejs/todomvc/tree/gh-pages/architecture-examples/yui">YUI TodoMVC example app</a>.<p><a id="button"></a><h3>Button and Widget Changes</h3>
+	<p>The changes made in both <a href="http://stage.yuilibrary.com/yui/docs/button/">Button</a> and <a href="http://stage.yuilibrary.com/yui/docs/widget/">Widget</a> were in order to improve Y.Button. One long-standing issue was the problem of always having to wrap Button with a container element such as a div. In Widget, support was improved for having single-box widgets (where the 'bounding box' was equivalent to the 'container box') by defaulting <code>boundingBox</code> to <code>srcNode</code> if <code>CONTENT_TEMPLATE</code> is null (<a href="https://github.com/yui/yui3/issues/1125">#1125</a>).<p>In support of this, in Y.Button a <code>labelHTML</code> attribute was added to <code>Y.ButtonCore</code> for nested HTML label support, and now Y.Button correctly retains all node attributes upon render. In the past, the node was recreated, and any custom attributes on the node would get destroyed.<p><a id="calendar"></a><h3>Calendar Updates</h3>
+	<p>Some fixes in <a href="http://stage.yuilibrary.com/yui/docs/calendar/">Calendar</a> include resolving an issue where one couldn't select a date when passing <code>minimumDate</code> (<a href="https://github.com/yui/yui3/issues/1030">#1030</a>), and removal of some superfluous strings from the Hungarian calendar translations (<a href="https://github.com/yui/yui3/issues/1054">#1054</a> - thanks <a href="https://github.com/drjayvee">Jeroen Versteeg </a>).<p><a id="datatable"></a><h3>DataTable Changes</h3>
+	<p><a href="http://stage.yuilibrary.com/yui/docs/datatable/">DataTable</a> has had a number of updates. A highlight module was added (<a href="https://github.com/yui/yui3/issues/1196">#1196</a>), improvements were made to the documentation and variable naming for better code understanding (<a href="https://github.com/yui/yui3/issues/946">#946</a> - thanks Satyam), <code>Show All</code> was added to language packs (<a href="https://github.com/yui/yui3/issues/1173">#1173</a>), a <code>contentUpdate</code>event was added to trigger after a DataTable has been updated from a <code>dataChange</code> event (<a href="https://github.com/yui/yui3/issues/1072">#1072</a>), and an issue was fixed with objects that were recursively nested being cloned infinitely (<a href="https://github.com/yui/yui3/issues/1008">#1008</a>).<p>In addition, an issue where <a href="http://stage.yuilibrary.com/yui/docs/api/modules/datatable-paginator.html">Paginator's</a> count would become out of sync with DataTable when DataTable data was added or removed (<a href="https://github.com/yui/yui3/issues/1011">#1011</a>), and a French language pack was added as well (<a href="https://github.com/yui/yui3/issues/1166">#1166</a>).<p><a id="event"></a><h3>Event, CustomEvent, and Event ValueChange Updates</h3>
+	<p>In <a href="http://stage.yuilibrary.com/yui/docs/event/">Event</a>, delegated focus and blur events now behave the same way other events do when a delegate sub from a container closer to the target calls <code>e.stopPropagation()</code>. Delegate subs from containers higher in the parent axis are not notified (<a href="https://github.com/yui/yui3/issues/1145">#1145</a>).<p>In <a href="http://stage.yuilibrary.com/yui/docs/api/classes/CustomEvent.html">CustomEvent</a>, <code>addTarget</code> and <code>removeTarget</code> are now chainable.<p><a href="http://stage.yuilibrary.com/yui/docs/api/classes/ValueChange.html">Event ValueChange</a> was updated to support <code>&lt;select&gt;</code> and <code>[contenteditable="true"]</code> elements as well (<a href="https://github.com/yui/yui3/issues/1184">#1184</a>).<p><a id="file"></a><h3>Updates in File</h3>
+	<p>YUI Community member <a href="https://github.com/jetfault">Jerry Reptak</a> added a check in <a href="http://stage.yuilibrary.com/yui/docs/api/classes/File.html">File</a> to make sure that the XHR exists before aborting (<a href="https://github.com/yui/yui3/issues/1053">#1053</a>).<p><a id="graphics"></a><h3>Graphics Change</h3>
+	<p>In <a href="http://stage.yuilibrary.com/yui/docs/graphics/">Graphics</a>, a fix was made for an issue involving elements being orphaned after <code>destroy()</code> being called (#1138).<p><a id="history"></a><h3>History Fixes</h3>
+	<p>The <a href="http://stage.yuilibrary.com/yui/docs/history/">History</a> module received some fixes including fixing a possible exception with <code>HistoryHTML5.init()</code> in IE10 (fixed by <a href="https://github.com/arielschiavoni">Ariel Schiavoni</a>), <a href="https://github.com/roblund">Rob Lund</a> added a workaround for a <code>replaceState</code> bug in Chrome/Webkit (<a href="https://github.com/yui/yui3/issues/1159">#1159</a>), and <a href="https://github.com/blzaugg">Byran Zaugg</a> fixed an issue with <code>parseHash</code> not parsing blank values in a hash string (<a href="https://github.com/yui/yui3/issues/1116">#1116</a>).<p><a id="node"></a><h3>Node and ScrollInfo Node Plugin Fixes</h3>
+	<p>In <a href="http://stage.yuilibrary.com/yui/docs/node/">Node</a>, pull request <a href="https://github.com/yui/yui3/issues/1169">#1169</a> fixed an issue with <code>inDoc</code> failing if Node was not bound to a DOM node. In the <a href="http://stage.yuilibrary.com/yui/docs/api/modules/node-scroll-info.html">Node plugin for ScrollInfo</a>, the methods <code>getOffsceenNodes()</code> and <code>getOnscreenNodes()</code> were fixed to avoid returning incorrect information in certain cases.<p><a id="paginator"></a><h3>Paginator Naming Fix</h3>
+	<p>In <a href="http://stage.yuilibrary.com/yui/docs/paginator/">Paginator</a>, a minor fix was done for a misspelling of Paginator in a NAME parameter.<p><a id="transition"></a><h3>Transition Update</h3>
+	<p>In <a href="http://stage.yuilibrary.com/yui/docs/transition/">Transition</a>, an optional flag was added to NodeList.transition which, if true, fires the callback only once at the end of the NodeList transitions (<a href="https://github.com/yui/yui3/issues/880">#880</a> - thanks <a href="https://github.com/Perturbatio">Perturbatio</a>).<p><a id="uploader"></a><h3>Uploader Fix</h3>
+	<p>Jerry Reptak fixed another issue in <a href="http://stage.yuilibrary.com/yui/docs/uploader/">Uploader</a> involving an <code>uploadcancel</code> typo.<p><a id="yuicore"></a><h3>YUI Core Update</h3>
+	<p>A new method under <a href="http://stage.yuilibrary.com/yui/docs/api/classes/Lang.html">Y.Lang</a>, called <code>Y.Lang.isRegExp()</code> was created.<p><a id="removal"></a><h2>Removals and Deprecations</h2>
+	<p>Another theme of sorts for this release was deprecation and removal. We <a href="/blog-archive/blog/2013/06/04/yui-3-10-2-released/#deprecations">deprecated SimpleYUI</a> a while back, and as of this release it is removed from the codebase. We also have <a href="https://groups.google.com/forum/#!topic/yui-contrib/_SaE7C8Asks">deprecated and removed</a> all of the Flash files from our repository. If you are looking to compile and host your own SWFs to include in YUI, you will need to visit the <a href="https://github.com/yui/yui3-swfs">yui3-swfs</a> repo to obtain the source files. Also removed was <a href="https://github.com/yui/yui3/pull/1117">widget-locale</a>, as it had been already deprecated almost 3 years ago.<p>New deprecations include the official <a href="https://github.com/yui/yui3/wiki/Deprecation-Policy">deprecation</a> of <a href="https://github.com/yui/phploader">PHP Loader</a> and <a href="https://github.com/yui/2in3">YUI 2in3</a>. These projects will no longer be supported and their features may removed from YUI in the future (as in the case for YUI 2in3).<h2>Additional Details</h2>
+	<p>We run over 8,700 tests for <a href="http://yuilibrary.com/yui/environments/">every target environment</a> with our internal CI system, so having a comprehensive set of tests for every feature is critical to maintaining our high standards for the quality in our codebase. If you are interested in contributing to YUI, consider taking on an <a href="https://github.com/yui/yui3/issues?direction=desc&labels=up+for+grabs&page=1&sort=created&state=open"><code>up-for-grabs</code></a> bug, write a test, or even simply file an <a href="https://github.com/yui/yui3/issues/new">issue</a>.<p>There were a total of 486 commits for this upcoming release by 17 contributors. You can read more about the details of this release candidate in the <a href="https://github.com/yui/yui3/wiki/YUI-3.13.0-Change-History-Rollup">Change History Rollup</a> and the <a href="https://github.com/yui/yui3/compare/v3.12.0...v3.13.0-rc-1">GitHub Comparison</a> to 3.12.0.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

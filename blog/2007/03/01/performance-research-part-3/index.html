@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Performance Research, Part 3: When the Cookie Crumbles</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Performance Research, Part 3: When the Cookie Crumbles</li></ul>
+				<h1 class="yui3-u-7-8">Performance Research, Part 3: When the Cookie Crumbles</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">March 2, 2007<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p>This article, co-written by Patty Chi, is the third in a series of articles describing experiments conducted to learn more about optimizing web page performance (<a href="/blog-archive/blog/2006/11/28/performance-research-part-1/">Part 1</a>, <a href="/blog-archive/blog/2007/01/04/performance-research-part-2/">Part 2</a>). You may be wondering why you're reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering &mdash; that is, the user interface design and development.</div> </div>
+	<p>HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. This article discusses the impact of cookies on the overall user response time.<h3 id="http-quick-review">HTTP Quick Review</h3>
+	<p>Cookies originate from web servers when browsers request a page. Here is a sample HTTP header sent by the web server after a request for <code>www.yahoo.com</code>:<pre>
+  HTTP/1.1 200 OK
+  Content-Type: text/html; charset=utf-8
+  Set-Cookie: C=abcde; path=/; domain=.yahoo.com
+</pre><p>The header includes information about the response such as the protocol version, status code, and content-type. The <code>Set-Cookie</code> is also included in the response and in this example the name of the cookie is "C" and the value of the cookie is "abcde". Note: The maximum size of a cookie is 5051 bytes in IE 6.0 and 4096 bytes in Firefox 1.5.<p>The browser saves the "C" cookie on the user's computer and sends it back in future requests. The "<code>domain=.yahoo.com</code>" specifies that the browser should include the cookie in future requests within the <code>.yahoo.com</code> domain and all its sub-domains. For example, if the user then visits <code>finance.yahoo.com</code>, the browser includes the "C" cookie in the request. Since an Expires attribute is not included in this example, the cookie expires at the end of the session.<p>Here is a sample HTTP header for <code>finance.yahoo.com</code> sent by the browser:<pre>
+  GET / HTTP/1.1
+  Host: finance.yahoo.com
+  User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; ...
+  Cookie: C=abcde;
+</pre><p>Notice that the "C" cookie, originating from <code>www.yahoo.com</code>, is also included in the request for <code>finance.yahoo.com</code>.<h3 id="impact-on-response-time">Impact of cookies on response time</h3>
+	<p id="table1">The performance team at Yahoo! ran an experiment to measure the impact of retrieving a document with various cookie sizes. The experiment measured a static HTML document with no elements in the page. The primary variable in the experiment was the cookie size. We ran the experiment using a test harness that fetches a set of URLs repeatedly while measuring how long it takes to load the page on DSL. The results are shown in Table 1.<div class="figure" id="response-times-for-various-cookie-sizes-figure">
+			<table class="chart" id="response-times-for-various-cookie-sizes-table">
+				<caption>Table 1. Response times for various cookie sizes</caption>
+				<tr>
+					<th>Cookie Size</th>
+					<th>Median Response Time (Delta)</th> </tr>
+				<tr>
+					<td>0 bytes</td>
+					<td>78 ms (<b>0 ms</b>)</td> </tr>
+				<tr>
+					<td>500 bytes</td>
+					<td>79 ms (<b>+1 ms</b>)</td> </tr>
+				<tr>
+					<td>1000 bytes</td>
+					<td>94 ms (<b>+16 ms</b>)</td> </tr>
+				<tr>
+					<td>1500 bytes</td>
+					<td>109 ms (<b>+31 ms</b>)</td> </tr>
+				<tr>
+					<td>2000 bytes</td>
+					<td>125 ms (<b>+47 ms</b>)</td> </tr>
+				<tr>
+					<td>2500 bytes</td>
+					<td>141 ms (<b>+63 ms</b>)</td> </tr>
+				<tr>
+					<td>3000 bytes</td>
+					<td>156 ms (<b>+78 ms</b>)</td> </tr> </table>
+			<p class="gloss"><strong>Note: </strong> Times are for page loads on DSL (~800 kbps).</div> <p>These results highlight the importance of keeping the size of cookies as low as possible to minimize the impact on the user's response time. A 3000 byte cookie, or multiple cookies that total 3000 bytes, could add as much as an 80 ms delay for users on DSL bandwidth speeds. The delay is even worse for users on dial-up.<h3 id="how-big-at-yahoo">How big are users' cookies set at the .yahoo.com domain?</h3>
+	<p>Cookies set at the <code>.yahoo.com</code> domain affect the overall response time for users visiting web pages across the Yahoo! network. Figure 1 shows the percentages of Yahoo!'s total page views with various cookie sizes set at the <code>.yahoo.com</code> domain.<div class="chart">
+			<h4 id="percent-of-views-with-cookie-sizes"><strong>Figure 1.</strong> Percentage of Page Views with Various Cookie Sizes</h4>
+			<p><img alt="Figure 1. Percentage of Page Views with Various Cookie Sizes" height="304" id="cookies" src="/blog-archive/assets/performance/cookies.gif" width="505" /></div> <p>About 80% of page views have fewer than 1000 bytes of cookies, which correlates to about a 5 to 15 ms delay for users on DSL bandwidth speeds. While the data shows that the majority of page views aren't impacted by a significant delay, it also shows that about 2% of page views have over 1500 bytes of cookies set at the <code>.yahoo.com</code> domain. Although 2% sounds insignificant, at Yahoo! this translates to millions of page views per day, a compelling motivation for us to investigate this 2% and eliminate unnecessary cookies, reduce cookie sizes, and set cookies at more granualar domain levels.<p>In an earlier post about browser cache usage, one user made a <a href="/blog-archive/blog/2007/01/04/performance-research-part-2/#comment-29021">comment</a> about the side-effects of different browsers. Since Internet Explorer and Firefox have different implementations for the maximum size and number of cookies supported, we also analyzed the data by browser type and found no significant difference between the cookie sizes. It would be interesting to further investigate whether there is a difference in performance across browsers.<h3 id="how-big-across-the-web">Analysis of Cookie Sizes across the Web</h3>
+	<p id="table2">To show how Yahoo!'s cookie usage relates to those of other companies, we analyzed the cookies set by other popular web sites. For this experiment, we cleared all our cookies and visited only the home pages of these web sites. Table 2 shows between 60 and 500 bytes of cookie information included in the HTTP headers.<div class="figure" id="total-cookie-sizes-figure">
+			<table class="chart" id="total-cookie-sizes-chart">
+				<caption>Table 2. Total Cookie Sizes</caption>
+				<tr>
+					<td>&nbsp;</td>
+					<th>Total Cookie Size</th> </tr>
+				<tr>
+					<th><a href="http://www.amazon.com/">Amazon</a></th>
+					<td>60 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.google.com/">Google</a></th>
+					<td>72 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.yahoo.com/">Yahoo</a></th>
+					<td>122 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.cnn.com/">CNN</a></th>
+					<td>184 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.youtube.com/">YouTube</a></th>
+					<td>218 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.msn.com/">MSN</a></th>
+					<td>268 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.ebay.com/">eBay</a></th>
+					<td>331 bytes</td> </tr>
+				<tr>
+					<th><a href="http://www.myspace.com/">MySpace</a></th>
+					<td>500 bytes</td> </tr> </table>
+			<p class="gloss"><strong>Note: </strong> We only requested the home page.</div> <p>The data in Table 2 reflects only cookies set at the top domain levels to eliminate any cookies that may have been set by ads. The total cookie size for Yahoo! (122 bytes) in Table 2 differs from the cookie sizes indicated in Figure 4 because in this experiment we visited only the home pages of each web site. The data in Figure 4 reflect real users, many of whom visit multiple Yahoo! web pages. To illustrate, if <code>tv.yahoo.com</code> and <code>movies.yahoo.com</code> wanted to share information within a cookie, the cookie must be set at the <code>.yahoo.com</code> domain. The total cookie size set at the <code>.yahoo.com</code> domain for a user who visits multiple Yahoo! sub-domains is typically higher than the total cookie size set for a user who only visits <code>www.yahoo.com</code>.<p>Setting cookies at the appropriate path and domain is just as important as the size of the cookie, if not more. A cookie set at the <code>.yahoo.com</code> domain impacts the response time for every Yahoo! page in the <code>.yahoo.com</code> domain that a user visits.<h3 id="takeaways">Takeaways</h3>
+	<ul>
+		<li>Eliminate unnecessary cookies.<li>Keep cookie sizes as low as possible to minimize the impact on the user response time. <li>Be mindful of setting cookies at the appropriate domain level so other sub-domains are not affected.<li>Set an Expires date appropriately. An earlier Expires date or none removes the cookie sooner, improving the user response time.</ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI and Loader changes for 3.4.0</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">YUI and Loader changes for 3.4.0</li></ul>
+				<h1 class="yui3-u-7-8">YUI and Loader changes for 3.4.0</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">July 1, 2011<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>In 3.4.0 we started the process of shifting some of Loader's logic around, to not only make it more performant, but to make it more robust and easier to use in other places (like on the server). We will be rolling out more changes in future revisions, but I wanted to take some time and explain what was changed, why it was changed and how it may impact developers. For the majority of use-cases, developers will notice nothing different, except that things are a little faster and their requirement downloads are a little smaller.<h3>Seed File</h3>
+	<p>The first thing I want to address is the YUI seed file. In previous versions of YUI, our seed file was very tiny and did not contain Loader or any of its meta-data. We've found that in the 90% use-case this was not as performant as we had hoped. The normal user includes the seed file then requests their modules, which in turn means that the seed needs to first fetch Loader, then calculate all of its dependencies, then fetch them all. We now feel that this extra http request is the wrong thing to do, so the new standard seed file contains Loader and its meta-data. Yes, this will make the initial request a little larger, but it will make the loading of modules that much faster since all of its meta-data requirements are now already on the page.<p>If you wish to use it the old way, you can just include the yui-base seed file instead. It contains everything that is needed to make YUI run in stand-alone mode plus it contains the ability to fetch Loader on demand. If you require even finer-grained dependencies, we have created a yui-core seed file that is exactly what the old yui-base seed was.<pre>
+    /build/yui/yui-min.js //YUI Seed + Loader
+    /build/yui-base/yui-base-min.js //Old YUI Seed with Loader fetch support
+    /build/yui-core/yui-core-min.js //Old yui-base without Loader fetch support
+</pre><p>It should be noted that these URLs are different than the previous URLs. Anyone that was using the <code>yui/yui-base.js</code> files need to repoint them to <code>yui-core/yui-core.js</code>. If you want the older way of loading the seed and fetching Loader, you would use the <code>yui-base/yui-base.js</code> seed file.<p>The other reasoning for this change is our roadmap for making YUI run in as many places as possible. The old seed file plus Loader in a single combo server request is all well and good if you have a combo server available in your application. <em>But what about on the server? Or in an offline app on a mobile device?</em> These places need to minimize file access while still getting the information they need.<h3>Rollups</h3>
+	<p>The next thing that we changed was removing rollups from the system and defaulting <strong>allowRollup</strong> to false in the Loader config. <em>What does this mean to you?</em> Well, hopefully nothing at all. Before I explain the impact of the change, let me explain the reasoning behind it. The primary reason is, again, performance, along with payload delivery. Take this example:<pre>
+     Module A: requires event-a, event-b
+     Module B: requires event-c, event-d
+</pre><p>When you request both, the rollup logic prior to 3.4.0 used to determine that you should get the <em>event</em> rollup. Which actually meant that you were getting: <pre>
+     event.a, event.b, event.c, event.d, event.e, event.f, event.g, event.h
+</pre><p>You ended up with more on your page than you actually needed. By turning off the rollup support, YUI will now ask for only what you actually requested and nothing more. In most cases, you <em>will not notice this</em>. Module developers, may run into a situation where things that worked in the past may not work now. The reason for this is that they actually worked by <em>accident</em> before. Let me use a real world example: <strong>Dial</strong>.<p> In 3.3.0, Dial required this: <pre>
+    requires: [
+        'widget',
+        'dd-drag',
+        'substitute',
+        'event-mouseenter', 
+        'transition',
+        'intl'
+    ]
+</pre><p>For the most part, Dial worked in 3.4.0, however keyboard support did not work. After doing some simple investigating, it turned out that the rollup support was actually requesting the entire <strong>Event</strong> rollup (which includes event-move and event-key). Without the rollup logic pulling in all of event, 3.4.0 Dial no longer had all of its requirements. Making Dial's requirements more specific and defining all of its actual dependencies properly makes it work as expected.<pre>
+    requires: [
+        'widget',
+        'dd-drag',
+        'substitute',
+        'event-mouseenter',
+        'event-move',
+        'event-key',
+        'transition',
+        'intl'
+    ]
+</pre><p>For module developers, it is a best practice to make sure that your module requires exactly what it needs to function. Do not <strong>assume</strong> that an upstream module requirement is there. It's always better to make sure that you ask for what you need.<p>This also means that module requirements are more well defined. For example, <code>datatype-date</code> has Intl support built in. In previous versions you would access the Intl like this:<pre>
+    Y.Intl.getAvailableLangs('datatype-date');
+</pre><p>But since this module doesn't actually have a language (the <code>datatype-date-format</code> module does), this will fail. It needs to be more specific and actually ask for languages for the correct module:<pre>
+    Y.Intl.getAvailableLangs('datatype-date-format');
+</pre><h3>Build File Explosion and Submodule Removal</h3>
+	<p>After making this change, the next change we made was exploding the build directory and removing submodules from the core system. Submodule logic was not removed, only our meta-data structure was changed. This will provide backward compatibility for current installations.<p> <p>Submodules in the core system caused a couple of issues that we needed to resolve. The first reason was performance. Each time Loader needed to calculate dependencies, it needed to walk the submodule/plugin structure of each module. Doing this thousands of times was hurting our performance during the Loader calculate routine. By removing support for submodules in the core system we saved tens of thousands of function calls and iterations.<p>Loader was changed so that if a <code>use</code> property in a module's meta-data defined more modules, it will use those modules instead of trying to load the original module. So, if you requested "<code>dd</code>" Loader would inspect "<code>dd</code>"'s meta-data and see a use property that looks something like this: <pre>
+    "dd-ddm-base,dd-ddm,dd-ddm-drop,dd-drag,dd-proxy,dd-constrain,dd-drop,dd-scroll,dd-drop-plugin"
+</pre><p>In the core YUI seed file, we are also including what we are calling <strong>virtual rollups</strong> or <strong>aliases</strong>. These module definitions are exactly the same as the meta-data in Loader. This way you can include all the files exported from our <em>Dependency Configurator</em> and still use these rollups without having Loader present on the page. In future releases, we will be refining this approach even more.<p>After making this change, we then preceeded to explode our build files. In previous releases, the submodules determined the modules file path. For example:<pre>
+    "dd": {
+        "submodules": {
+            "dd-drag": 
+            // Module data
+        }
+    }
+</pre><p>In 3.3.0 when you built "dd", the file structure looked something like this:<pre>
+    /build/dd/dd-drag.js
+    /build/dd/dd-ddm.js
+    /build/dd/dd-drop.js
+</pre><p>With the build system exploded in 3.4.0, "dd"'s build files now look like this:<pre>
+    /build/dd-drag/dd-drag.js
+    /build/dd-ddm/dd-ddm.js
+    /build/dd-drop/dd-drop.js
+</pre><p>This allowed us to remove the "path" property from all of our module meta-data as well, saving file size and reducing the logic required to assemble the modules url paths.<p><strong>If you are including a pre-configured combo URL, you must recalculate your URL when you upgrade.</strong><p>The downside to this change is that if you are including a combo URL of modules to "prep" your page you can not just change the version number and upgrade. You will need to revisit the <strong>Dependency Configurator</strong> and generate a new URL with new module structure.<h3>The Future</h3>
+	<p>I will be continuing to refine, refactor and maximize every aspect of our Loader and Seed strategy. These first steps were needed to aid in future changes that need to be made for not only our client-side strategy but also our server, command-line and mobile device strategies as well.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

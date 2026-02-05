@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Ask Satyam: Writing Clean, Debuggable Code</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Ask Satyam: Writing Clean, Debuggable Code</li></ul>
+				<h1 class="yui3-u-7-8">Ask Satyam: Writing Clean, Debuggable Code</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 2, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<blockquote>
+		<p><a href="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book"><img align="right" height="132" hspace="20" src="/blog-archive/assets/satyam-book-small-20100809-120823.jpg" width="106" /></a>Satyam (a.k.a Daniel Barreiro) is a long-time YUI contributor and one of the most prolific, generous experts in the <a href="http://yuilibrary.com/forum/" title="YUI Library :: Forums :: Index page">YUI forums</a>. He is also <a href="https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book">the author of a new book on YUI 2.8.0, <em>YUI 2.8.0: Learning the Library</em></a>. This article in the "Ask Satyam" series <a href="/blog-archive/blog/2010/07/29/ask-satyam/#comment-593089" title="Ask Satyam — and Be Eligible for a Free Copy of the New YUI 2.8 Book from Packt » Yahoo! User Interface Blog (YUIBlog)">was suggested by JoeDev</a>. While its focus (like the focus of the new book) is mostly on YUI 2, many of the practices described here are applicable to YUI 3 as well — and to frontend development in general, regardless of your library of choice.</blockquote>
+	<p>Before posting a question <a href="http://yuilibrary.com/forum/" title="YUI Library :: Forums :: Index page">in the YUI Library forums</a>, there are plenty of things you can do by yourself and, if you have your tools handy, you may find your answer all by yourself in no time. Besides, clean code is robust code, much less likely to break when subjected to stress. Good practices not only avoid fatal errors (the kind that drive you to the IRC channel or forums in search of help), but they surface warnings about minor errors and help you stay away from the fatal edge. <p>In this article, I'm going to take a look at some of those best practices. Some of these are specific to developing with <a href="http://developer.yahoo.com/yui/" title="YUI Library">YUI</a>, but the vast majority apply to frontend development regardless of your choice of Ajax library.<h3>JSLint</h3>
+	<p>A trip through <a href="http://www.jslint.com/">JSLint</a> is part of the build process for YUI. JSLint, itself fully written in JavaScript, is like a compiler but without code generation. It will, however, produce many of the useful error messages and warnings that a compiler would. A browser's JavaScript interpreter forgives many errors and assumes defaults you might be unaware of; JSLint forgives little, and it points you to better choices in your program. <a href="http://widgets.yahoo.com/widgets/jslint-1" title="JSLint - Yahoo! Widgets"><img align="right" alt="Yahoo! Widget for JSLint" hspace="10" src="/blog-archive/assets/JSLintYahooWidget-20100827-130355.jpg" vspace="5" /></a>JSLint is available in many formats; the <a href="http://yuilibrary.com/projects/builder" title="YUI Build Tool :: YUI Library">YUI Builder tool</a> uses it as a standalone command line application, but you can also integrate it into Eclipse or whatever IDE or more-or-less capable editor you use — there is even a <a href="http://widgets.yahoo.com/widgets/jslint-1" title="JSLint - Yahoo! Widgets">Yahoo! Widget for JSLint</a>. <p>If the zillion lines of code in the YUI library can go through JSLint with no errors and few warnings (it can't avoid a few things), so should your code. I find JSLint very helpful when I'm tired. Bean counting in the late evening is a waste of time; you are likely to miss the most obvious errors. JSLint doesn't care what time of the day it is and will point you straight to that mismatched curly bracket or misspelled variable that's at the root of the problem.<p>JSLint is most helpful if you keep your code clean from the start. If you've never used JSLint before and try it out on an application that is already hundreds of lines long, it will flood you with so many warnings that it will feel that it hampers your job more than it helps. However, that only happens the first few times. Once you learn to stay away from bad coding practices, JSLint diagnostics will be few and straight to the point; your real error, the one that's driving you nuts, will clearly stand out. In the meantime, JSLint will teach you to make your code safe and robust.<p>So, don't wait for a tough error to show up. If you have never used JSLint, try it with what you believe to be good code, it might not be as good as you assumed. As <a href="/blog-archive/crockford/" title="Crockford on JavaScript: A Public Lecture Series at Yahoo!">Douglas Crockford</a> (author of JSLint) says, "JSLint will hurt your feelings." But that's a small price to pay for better code.<h3>Global and unused variables</h3>
+	<p>One of the things JSLint will warn you about is the use of global variables. There should be no global variables except those you know about, such as the ones created automatically like <code>window</code> or <code>document</code> and those for the libraries you are using such as <code>YAHOO</code> (in <a href="http://developer.yahoo.com/yui/2/" title="YUI 2 — Yahoo! User Interface Library">YUI 2</a>) or <code>YUI</code> (in <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 — Yahoo! User Interface Library">YUI 3</a>). You may also want to create a single global for your own namespace.<p><a href="/blog-archive/blog/2006/06/01/global-domination/" title="Global Domination » Yahoo! User Interface Blog (YUIBlog)">Global variables are dangerous</a>, and there are usually more of them than you'd expect; moreover, "extras" such as mashups and banners might add more of them. Since the <code>window</code> HTML DOM namespace can be omitted from compound names, <code>window.name</code>, <code>window.length</code> and <code>window.location</code> become the global variables <code>name</code>, <code>length</code> and <code>location</code>. Have you never used such variable names in your code? I don't mean in their HTML DOM sense but as everyday field names in a table — like the <em>name</em> of a person, the <em>length</em> of an object or the <em>location</em> of a book on the shelf. What if you use those variables without declaring them? You might assume that <code>length</code> is initially <code>undefined</code> but, in fact, if you don't declare your own local copy of it (and initialize it), <code>length</code> will be a reference to <code>window.length</code>. And if you assign something to <code>location</code>, you might accidentally cause your user to navigate away from the current page. Here, I am just giving examples of possible collisions with the browser's built-in variables, but if you start adding libraries from other sources, the chance for collisions increases. The JavaScript syntax highlighter used in YUI's examples uses the global variable <code>dp</code> as its root and the number of global variables any Google script might add when you insert a map or other tool in your page is impolite, to say the least.<p>It's not merely that you want to step lightly with respect to other people's variables — by staying out of the global namespace, you reduce the risk that they will step on yours (or that you'll step on your own). With asynchronous threads weaving themselves around each other, as is often the case in modern JavaScript applications, you can't really be sure the order in which your various pieces of code will execute and what global variable will be left at what value by whom. The only sane approach is to avoid them whenever possible.<p>Global variables might also point to a typo. If you have a global variable you didn't mean to have and you have an unused variable with a similar name, you might have misspelled one of them: that is, you may have declared it with one name and used it with another different spelling. It can also mean that you have declared it after you have used it, which means that at execution time you might find your variable not initialized as you would have expected.<h3>Using <code>this</code></h3>
+	<p>Using <code>this</code> is often troublesome for beginners because it's easy to lose track of where we are in the scope chain. Until we get some practice, keeping track of scope can be an issue. Also, developing a coding style and a structure for the application helps greatly; after all, it's all about knowing where you place things. If you learn to organize your code consistently and store state in logical places (<code>this</code> points to one such place), information in your program will be easy find. Any debugger will show you what <code>this</code> points to at each step. It's always a good thing to check first if <code>this</code> is referencing the object you expect. A lot of times when we have a bug, it's be because <code>this</code> is pointing to <code>window</code>. There are several situations that can produce this result.<p>If we have a method with an inner function, when we call that inner function it won't get the scope of the caller but rather that of <code>window</code>. This example shows that the inner function doesn't share the scope of the method within which it is contained:<pre>var someObject = {
+    outerFunction: function () {
+        console.log('outer',this); // prints outer Object {}
+        var innerFunction = function () {
+            console.log('inner',this);<font color="#0000ff"><b>// prints inner Window</b></font> 
+        };
+        innerFunction();
+    }
+};
+someObject.outerFunction();</pre><p> There are a couple of ways to fix this. In this example, we ask JavaScript to correct the scope using <code>call()</code>:<pre>var someObject = {
+    outerFunction: function () {
+        console.log('outer',this); // prints outer Object {}
+        var innerFunction = function () {
+            console.log('inner',this); // prints inner Object {}
+        };
+        innerFunction<font color="#008000"><b>.call(this)</b></font>;
+    }
+};
+someObject.outerFunction();</pre><p> In the next example, we take advantage of the ability for inner functions to share the variables of containing functions. We create a variable <code>self</code> which we initialize to the value of <code>this</code> in the outer function. We can then use <code>self</code> in the inner function to refer to the outer function:<pre>var someObject = {
+    outerFunction: function () {
+        console.log('outer',this); // prints outer Object {}
+        <font color="#008000"><b>var self = this;</b></font> 
+        var innerFunction = function () {
+            console.log('inner',<font color="#008000"><b>self</b></font>); // prints inner Object {}
+        };
+        innerFunction();
+    }
+};
+someObject.outerFunction();   </pre><p> Finally, with events, the scope of the listener is that of the element to which the listener is attached:<pre>var someObject = {
+    outerFunction: function () {
+        console.log('outer',this); // prints outer Object {}
+        YAHOO.util.Event.on('button','click',function () {
+            console.log('inner',this); <font color="#0000ff"><b>// prints inner &lt;button id=&quot;button&quot;&gt;</b></font> 
+        });
+    }
+};
+someObject.outerFunction();</pre><p> Unless we adjust the scope of the listener when setting it up <pre>var someObject = {
+    outerFunction: function () {
+        console.log('outer',this); // prints outer Object {}
+        YAHOO.util.Event.on('button','click',function () {
+            console.log('inner',this); // prints <font color="#008000"><b>inner Object {}</b></font> 
+        }<font color="#008000"><b>,this,true</b></font>);
+    }
+};
+someObject.outerFunction();</pre><p> This also applies to YUI components. If we listen to a click event on a DataTable cell, a TreeView node or a MenuItem, the scope of the listeners will be those of the YUI component instance that owns the event — unless it is explicitly set otherwise.<h3>Sandboxes for applications</h3>
+	<p>Another good way to keep your code clean is to start with a clean skeleton. The style of coding JavaScript applications has changed over time. Nowadays, most developers use two different styles: one for applications and one for library components. Most YUI 2 examples reflect the old style, where we used <code>YAHOO.namespace</code> to create a namespace for our own code.<p>Nowadays, for our applications, we mostly use a single sandbox declared within the scope of an anonymous function that executes <code>onDOMReady</code>:<pre>YAHOO.util.Event.onDOMReady(function() {
+    var Dom = YAHOO.util.Dom,
+        Event = YAHOO.util.Event,
+        Lang = YAHOO.lang;
+ 
+    var yourVariable = initialValue,
+        moreOfTheSame = otherInitialValue;
+    
+    var myFunction1 = function ( …) {
+        // body of function;
+    };
+    var myFunction2 = function (… ) {
+        // body of function;
+    };
+    ...
+});</pre><p> This technique has several benefits. <ol>
+			<li>We check for the readiness of the DOM right from the start, ensuring that all the pieces of HTML that we might want to manipulate are present and safe to use. <li>The function provided to <code>onDOMReady</code> is not wasted at all; it's the container of the sandbox and, because it's anonymous, it does not pollute the global namespace. <li>We immediately start defining our variables, including aliases or short names for our most often-used objects. This has several other advantages of its own: <ol>
+					<li>We save some typing <li>The YUI Compressor can compress our short names, whereas it cannot compress a global name like <code>YAHOO</code> or its properties such as <code>util</code> or <code>Menu</code> no matter how deep they might be. If they are anchored in a global name such as <code>YAHOO</code>, the whole branch is untouchable. Thus our already short names <code>Dom</code>, <code>Event</code> and <code>Lang</code> might be further reduced to <code>A</code>, <code>B</code> and <code>C</code> when Compressor is run at build time. <li>The interpreter does not need to resolve over and over again the long names. Each dot in a name such as <code>YAHOO.util.Event.onDOMReady</code> is time consumed in a symbol table look up. <li>All variables will be available anywhere inside this anonymous function, even to functions defined within, unless a variable of the same name was defined in them. Basically, it is as if a sub-global environment has been defined within, and all variables there will be available anywhere just by name. <li>For the variables in the sandbox we don't need to use <code><b>this</b></code>, which gives us such headaches when using traditional OOP technique of making even the main function an object. </ol> <li>
+				<p>We define our functions. We can do this with the <code>var</code> statement, as I did above or the <code>function</code> statement; there is a subtle difference but it is mostly irrelevant. I use the <code>var</code> statement to highlight that they are just as accessible as the other variables: we can access them anywhere in the sandbox. </ol> <p>Of course this relies on the ability of JavaScript to allow us to define functions within functions and on the fact that the inner functions have access to all the variables defined in the outer function. Basically, each function you define creates a new local environment accessible to any further functions within.<p>Sandboxing is the standard way of doing things in YUI 3:<pre>YUI().use('module1', … , function (Y) {
+    // This is the sandbox
+});</pre><h3> Namespaces for libraries</h3>
+	<p>While the sandboxing technique is great for final applications, it's not good for libraries. What happens in the sandbox stays in the sandbox, completely invisible to the outside world. However, when you define a library utility or component of your own, you want to re-use it, so it needs to be globally accessible (which is not the same as being purely global). Anything you define under <code>YAHOO.example</code> — e.g., <code>YAHOO.example.myUtility</code> — is globally accessible. You can access it by its full name once it has been defined. <code>myUtility</code>, as a member of the global <code>YAHOO</code>, is not global but it is globally accessible. <p>When we build libraries, we usually use the sandbox for our code and namespacing for sharing, like this:<pre>(function () {
+    var MyClass = function () {
+        // this would be the constructor
+    };
+    MyClass.prototype = {
+        // properties and methods 
+    };
+    YAHOO.namespace('MyLibrary');
+    YAHOO.MyLibrary.MyClass = MyClass
+})();</pre><p>We create a sandbox by defining everything within an anonymous function, which we immediately execute (see all those parenthesis there?, they mean 'take the result of defining this function and execute it'). Here, we don't wait for the DOM to be ready; libraries seldom do, since the application that uses them is responsible to check that everything is in place. Within the sandbox, we have the same advantages as with the previous sandbox. We can define short names for anything we use often, even for the class we are defining: none of them will be visible outside. Then, to make it globally accessible, we create a namespace of our own and place our recently created class in it. <h3>YUI Logger</h3>
+	<p>Let's say we have our code nice and clean, with no JSLint errors or warnings, but we still have problems to debug. YUI can be helpful in telling us what's wrong. For production code, we will usually load the minified versions of the YUI components, but there are also two other versions. The <tt>-debug.js</tt> version is the one that can help us uncover problems. For example, we might be using Dom Collection's method <code>setStyle</code> to, lets say, change the color of a block of text. The change doesn't happen and we can't find what's wrong. The file <tt>dom-debug.js</tt> has this helpful line, which is deleted in the <code>-min</code> version:<pre>YAHOO.log('element ' + el + ' is undefined', 'error', 'Dom');</pre><p>This is executed when <code>setStyle</code> tries to locate the element to be styled and does not find it. The error message will probably show a misspelled element id or some such error that is so hard to pick after a long day of staring at the same code. <p>It's easy to get the logger up and running; you just need to <a href="http://developer.yahoo.com/yui/articles/hosting/?logger&MIN&loadOptional&norollup" title="YUI 2: Dependency Configurator">include its files</a>:<pre>&lt;link type=&quot;text/css&quot; rel=&quot;stylesheet&quot; href=&quot;http://yui.yahooapis.com/2.8.1/build/logger/assets/skins/sam/logger.css&quot;&gt;
+&lt;script src=&quot;http://yui.yahooapis.com/2.8.1/build/yahoo-dom-event/yahoo-dom-event.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://yui.yahooapis.com/2.8.1/build/dragdrop/dragdrop-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;http://yui.yahooapis.com/2.8.1/build/logger/logger-min.js&quot;&gt;&lt;/script&gt;</pre><p> The basic <code>yahoo-dom-event</code> aggregate is most likely to be there already while the Drag &amp; Drop optional dependency is handy to move the logger window out of the way. Then, just add:<pre>var myLogReader = new YAHOO.widget.LogReader();</pre><p>Then, it's a matter of loading the <code>-debug</code> versions of the component files and all the messages they produce will be shown. The amount of information can be overwhelming so, it is wise not to load all <code>-debug</code> versions at once. The Logger can also filter the information it displays and you may uncheck the Info category of messages to concentrate on Warn and Fail. The filters do not affect what is logged, only what is shown; Logger logs all messages, regardless of whether the LogReader displays them or not. There is only one message queue per application and logging will start as soon as the Logger component file is loaded, it doesn't matter whether it is shown or not. <p>Another power-user strategy for YUI debugging with the Logger Control is to take advantage of Logger's ability to leverage the browser's console (in supported browsers):<pre>YAHOO.widget.Logger.enableBrowserConsole();</pre><p>With this line of code, you can pipe all Logger messages to the browser console, which is a natural part of your workflow in development in any case.<p>The only tedious thing about the Logger is remembering to change the component files from the minified, aggregates and combos to the <code>-debug</code> versions. In this, as always, the <a href="http://developer.yahoo.com/yui/articles/hosting/">Dependency Configurator</a> is a great help; click on the <code>-debug</code> button on the top left and it will produce the correct list of files.<p>And, now that I've mentioned it:<h3>Check your dependencies</h3>
+	<p>It's a good idea when you start with YUI to pick an example that closely resembles what you want to do and modify it. As you add more features, you take bits and pieces from other examples and incorporate them into your developing application. One frequent source of problems are the dependencies. Many people paste the dependency files of each and every example into their application, duplicating some of them over and over again. Missing, duplicate or out of order dependencies might produce unexpected errors. Not having the YAHOO Global Object loaded before anything else is most certainly going to be fatal. At any rate, loading something twice will certainly increase the time it takes your page to load. <p>Finally, if you are using your own servers to load the YUI library, you might have the base path for your copy of the library wrong. If you have Firebug, go to the Net tab and check that there are no lines in red. Those would mean that a requested resource could not be found.<h3>Debugging</h3>
+	<p>The Firebug add-on for Firefox is still the best debugger around, plus it is free. By default, when the debugger is activated the "Break on all errors" option is on, which means that Firebug will stop at the point where it finds an error and show the error message and source code. Some of those errors will be the same that JSLint would have diagnosed, so JSLint is still the first place to start — especially because Firebug can only signal one error on each run while JSLint can signal them all at once. Some errors will only show up at runtime, so the debugger is the only option. Whenever you get to such a break, the first thing to check is <code>this</code>, a four-letter word of the trickiest sort.<p>When using a sandbox, debuggers will usually show local variables and arguments, but they will not normally offer to show the variables in containing functions, such as those declared in the sandbox and used from within the inner functions. The debugger will be able to show their value if you explicitly ask for them by name, but it will not show them automatically. Another alternative is to make them globally accessible. For example, since <code>YAHOO.example</code> is always available (when YUI 2 is on the page), if you want to keep an eye on a certain component at all times you can simply copy it there:<pre>var myTree = new YAHOO.widget.TreeView('tree-container');
+YAHOO.example.myTree = myTree;</pre><p>We add the last assignment while debugging so we can keep an eye on the TreeView instance while debugging since <code>myTree</code> would normally be within the sandbox and invisible elsewhere.<h3>Don't use members starting with underscore</h3>
+	<p>Many people use the debugger to look for the names of variables or properties holding the information they need. Sometimes that information is stored in properties starting with an underscore, like <code>_nodes</code>. By convention, those are <em>private</em> properties, not for general use. JavaScript enforces no true concept of private or protected members; thus the leading underscore is the conventional way to signal the intent of the class developer to keep that property private. These properties can present a temptation (after all, you can see them there in the debugger), but there are a couple of good reasons why it is not wise to use them in your programs. <p>First, only public interfaces are supported. Since you are not supposed to use a property starting with an underscore, the class developer is free to change it at any time. The developer should have provided some public mechanism to access this same value; for example, a <code>_nodes</code> private property might have a <code>getNodes()</code> method or a <code>nodes</code> configuration attribute. Either of these would be the public interface to that same value. The second reason not to use properties with leading underscores is that their accessors might need to produce a secondary effect which accessing the private property would completely bypass. The component would then be left in an inconsistent, fragile state.<p>So, if you are using the debugger to look for a value and you find it in a property starting with a leading underscore, don't use it. Go instead to the API docs and look in the Methods index for some <code>getXxxx()</code> method with a similar name or in the Configuration Attributes index. Avoid using private variables.<h3>Stack Traces</h3>
+	<p>The YUI library is robust and reliable. If the debugger breaks within the YUI library, it's more likely that it is because of an error induced by your code that by some failure in YUI itself. JavaScript was designed to carry on, always coping with errors as best as possible. The YUI library does likewise. The <code>-debug </code>versions will have extra checks and will emit diagnostic messages, but they are all stripped out in the minified versions. If you see an error in a YUI file it is likely that it got there out of pure stubbornness, but don't try to find the error there. When the debugger stops it is not because it has found the cause of the error but because the JavaScript interpreter can no longer carry on. <p>Breaks in minified files are not helpful, if you get a message such as...<pre>F is not an object in line 7 of dom-min.js</pre><p>...it is pointless to ask in the forum about it. First of all, <code>F</code> is an alias generated by YUI Compressor to replace a longer, descriptive variable name in the original uncompressed file; secondly, the first few lines of a component file are usually taken by the copyright notice, which the YUI Compressor always respects. And since the YUI Compressor also deletes all new-line characters, as it does with other white space, all the executable code in <code>dom-min.js</code> is in lines 7, 8 and 9 — so the line number doesn't say much either.<p>That is when the Stack Trace tab in the right sub-panel of the Script tab of Firebug (or wherever you can find the stack trace in your debugger) comes handy. It tells you how you got there. Here is a screen capture from Firebug:<p><img alt="Firebug's Script tab." src="/blog-archive/assets/asksatyam3-stack-20100902-080216.jpg" /><p>The item on top of the right panel, <code>createEvent()</code>, is the name of the function where the current statement is; the one below is the place where <code>createEvent()</code> was called; the one below that the function that called the previous one; and so on. Most debuggers will let you select any of those trace points and see how you got to where you are. Firebug also lets you check the value of the variables at each of the trace points. We can see in the left subpanel the yellow arrow pointing to <code>createEvent()</code>. We got lucky this time, as it will always point to the line containing the offending code, but that code might be anywhere within that line; fortunately, <code>createEvent()</code>happens to be at the beginning of the line. See the variables and arguments? <code>B</code>, <code>G</code>, <code>L</code>...there is no guessing what the original names could have been, as this is the YUI Compressor at work. However, note that <code>YAHOO</code> is untouched and the copyright notices are preserved.<p>You might not recognize many of the names in the stack trace, as they might be functions within functions within the YUI library itself. Eventually, you might see function names you recognize. In this image, I know <code>showAlbums</code>, which calls the constructor for the <code>REDT</code> class (which is code I wrote). I don't have a clue about anything else. That's where I will go looking...to the ones I know.<p>If you are not sure, you can go through the full list. If you see compressed code (assuming you have not compressed your own yet), simply ignore it, or switch to the non-minified version of the YUI source files. But focus primarily on those names you recognize that belong to your own code. Note that Firebug uses <code>(?)()</code> for traces it cannot name. Usually, your code in the sandbox will be signaled that way since the sandbox is contained in an anonymous function. At any such point in your trace, check the values of the variables you provided as arguments; some of them might not be what you assumed. Check them against the API docs to see if it is a valid argument value. <p>If the argument and variable values you see are inconclusive, at least you can place a breakpoint right before your code calls the YUI component. You might then be able to see how you got into the mess.<p>Stack traces are often ignored by developers but with JavaScript's tendency to keep digging itself into an ever deeper hole as it tries to carry on, it is good to be able to come up to the surface to look around. As with all debugging techniques, it might not always work, but it is nice to know it is there. Let's be honest, if you have read this far, you know what desperation is.<h3>Asynchronous calls</h3>
+	<p>A lot of the interactivity that characterizes Web2.0 apps is based on the ability to handle asynchronous events. In contrast with the original style of web applications, where every interaction involved waiting for a new page to be delivered from the server, the modern interactive applications involve setting things up and listening for any of several possible events to happen...and then responding to those events. We set listeners for clicks or keystrokes and or other programmatic events; these are usually intuitive. Asynchronous calls and their callbacks, however, often are harder to understand. <p>The most common error I see in implementations on the forums is to place code right after an asynchronous call such as Connection Manager's <code>asyncRequest()</code>or DataSource's <code>sendRequest()</code> methods, assuming that such code will be executed when the operation is completed. When you call such a function, you are just priming the operation, not executing it in full. No data will be available after the call to the async method. Only the request for such data would have been produced so far. The server must receive it and process it, and the reply (if it ever comes) is still off in the future. That is why for such asynchronous operations we use callback functions. <p>A callback is like the function we assign as a listener for an event such as a click on a button in a form; when the user clicks, the listener gets called. The callback on a asynchronous event is very much like this; just as we send a form for a user to fill in, we send a request message to the server, and just as we wait for the filled-in form to be submitted back to our program, we wait for the reply sent by the server to come back to us. We cannot know when the user will submit the form or the server send the reply; that's why we set what for a user action we call an event listener and for an asynchronous event we call a callback function. It might seem the server reply is fast if not instantaneous, but it means ages in CPU time.<h3>Debugging asynchronous calls</h3>
+	<p>Sometimes there is no alternative but to single-step through the code. Be careful when you get to asynchronous calls such as Connection Manager's <code>asyncRequest()</code> method, DataSource's <code>sendRequest()</code> or DOM's <code>window.setTimeout()</code>. These start an asynchronous request for data against the server or delay some action a given time and their callbacks get called when the data has been received or the time has elapsed. There are two issues to consider; first, the debugger won't step into the callback automatically. If you want to catch up with the reply, you have to put a breakpoint inside the callback function. Lots of people reach the point of calling the asynchronous method and expect the single-stepping to resume within the callback when the async operation is finished. This will not happen; the thread of execution does not flow automatically into the callback, and the debugger cannot be expected to figure that one out.<p>Second, when you reach the line with the asynchronous call, put the breakpoint in the callback and then let the application run. Usually, whatever goes after the async call is not really important; in fact, the async call is normally at the end of a function, since there isn't much to do until the reply arrives. Don't single-step over the async call, because the debugger will keep the JavaScript interpreter on hold and, when the reply arrives or the time lapses, it will be missed since the interpreter was frozen and unable to handle it. So, if you were clicking on Step Over, when you get to the async call, make sure you have the breakpoint in the callback and then click Run so the JavaScript interpreter is active and able to handle the reply.<p>For repetitive events such as callbacks to <code>window.setInterval()</code> or other time-critical operations, it is better not to put breakpoints in them. While you are on hold, many events will be missed. It is usually better to use <code>console.log</code> or the YUI Logger to simply signal that the event is happening and show a few critical values. Don't use <code>window.alert()</code> for the same reason; it puts a hold on the browser and the events you care about will be missed.<h3>Conclusion</h3>
+	<p>There are many tools to help us find out what is happening in our programs. With the proper tools at hand, we can find an error in less time than what it takes us to write a question in the forums. The first step, however, is to write good and reliable code and make JSLint an integral part of your development process.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

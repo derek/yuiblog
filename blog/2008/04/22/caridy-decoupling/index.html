@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Creating Component Communication Pipelines with YUI (Decoupling)</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Creating Component Communication Pipelines with YUI (Decoupling)</li></ul>
+				<h1 class="yui3-u-7-8">Creating Component Communication Pipelines with YUI (Decoupling)</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">April 22, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro"><img align="right" alt="Caridy Patiño Mayea" height="150" hspace="10" src="/blog-archive/assets/caridy-portrait.jpg" vspace="5" width="150" /><p><em>Caridy, a leading and always-helpful contributor to the <a href="http://groups.yahoo.com/group/ydn-javascript">YUI community forum</a>, has been working in front of a PC since the nineties. For the past eight years he's been a professional programmer developing LAMP applications for the University of Las Villas where he received his B.S. in Computer Science in 2003, and for several companies around the world. He left his university job in August to pursue an independent consulting career and to follow his passion for open source solutions and agile development.</em><p><em>For the last two years he's been focused on JavaScript as a development platform. Early last year he decided to create an easy-to-adopt YUI extension called "<a href="http://bubbling-library.com/">Bubbling Library</a>" as a side project; you can read <a href="/blog-archive/blog/2007/09/13/bubbling-library-by-caridy/">his YUIBlog introduction to the Bubbling Library here</a>.</em></div> </div>
+	<p>Creating complex web applications demands organization and modularization. Modularization introduces a new problem — the comunication pipes between components. This is a serious challenge for developers, as more components and widgets mean more pipelines and more dependencies. In this article, we'll look at a technique to mitigate these issues: Creating an abstraction layer to moderate the comunication between the components and widgets in a web application. This technique is based on YUI and makes use of my <a href="http://www.bubbling-library.com/">Bubbling Library</a>, which is a BSD-licensed superset of functionality that builds on top of the YUI foundation.<p>Most current YUI components use &quot;<a href="http://developer.yahoo.com/yui/event/#customevent">Custom Events</a>&quot; as their main communication pipes. This is good. Using custom events you can, for example, know when a <a href="http://developer.yahoo.com/yui/container/panel/">YUI Panel</a> is opened or closed, and the components in your application can subscribe a listener to this custom event to know when the Panel's status changes. <pre>
+YAHOO.example.myPanel.showEvent.subscribe(function(){<br />  // your stuff here...<br />});</pre><p> The weakness of this model is that all the components in your application need to know about or have access to the YUI Panel object to subscribe a listener. Even worse, they all need to wait until the YUI Panel instance is created (because that's when the custom event is created and becomes available for subscription), so they need to be aware of the timeline in the application. If you need to introduce a new component in your application, to attach a listener you must wait until the YUI Panel has been created. What happens if you have several panels instead of one? You keep adding more and more listeners, creating more dependencies, and more timeline control.<p>The solution for this overwhelming amount of complexity is simple and very useful for complex web applications. Those who are accustomed to high-level programming languages, blackbox programmers,and APIs fans will love this implementation for sure. <h3>Decoupling</h3>
+	<p> The idea here is to create components that do not need to know about other components in the application. Each component will catch certain messages (listening events) generated by another component, o create a new message (broadcasting events) based on the received message, and fire the new message to reach all the listeners. We'll have an abstraction layer that will allow us to subscribe listeners for a specific message. For example:<pre>YAHOO.Bubbling.on( 'onPanelShow', function(layer, args) {<br />
+    // do the job here... 
+});</pre><p><img align="left" alt="Decoupling" height="194" hspace="10" src="/blog-archive/assets/caridy-decoupling/article1.jpg" vspace="5" width="400" />In this diagram, we have two components that will broadcast a message to the abstraction layer (Custom Behavior Layer), reaching all the listeners for that specific message (keying on the message's name).<p>Each component will also have three listeners (C1: B1,B2 and B3; C2:B4, B5, B2). In the case of the message B2, both components will be listeners for the same message, and both will be able to react when the message arrives.<p style="clear:both;">What's critical here is that we will be able to subscribe listeners to an <em>undefined</em> event, without worrying about what will fire this type of event or about what else might belistening for the same event. And this new listener will be executed whenever something (a component in your application) fires an event with the same name, in this case <code>onPanelShow</code>.<p>On the other hand, we will be able to fire an event, without previously defining it. For example:<pre>YAHOO.Bubbling.fire ('onPanelShow', {<br />  param1: value1,
+  param2: value2<br />});</pre><p>This call will send a message to all listeners, passing the name of the layer and the literal object (second argument).<p>We can go one step further, and pass the YUI Panel's reference in the literal object, and the listeners will be able to query the Panel instance's data, check the panel name, etc. For example::<pre>var myPanel = YAHOO.widget.Panel(&quot;win&quot;, {fixedcenter: true});
+
+myPanel.showEvent.subscribe(function(){<br />  YAHOO.Bubbling.fire ('onPanelShow', {<br />    panel: myPanel,
+    param1: 'value1',
+    param2: 'value2'<br />  });<br />});</pre><p>Each time the YUI Panel is displayed, a broadcast message will be fired, the name of the event will be <code>onPanelShow</code>, and the listeners of this type of event will be queried, using the <code>panel</code>, <code>param1</code> and <code>param2</code> as references. There are some interesting aspects to this example. You don't need a global reference for the Panel object because there will be no subscribers attached directly to the YUI Panel object. Instead, we will subscribe the listener to the abstract layer (<code>YAHOO.Bubbling</code>). You can have more than one Panel, each Panel will fire the same event, and the listeners will be able to handle the broadcast without knowing anything about the Panel's nature or environment. Finally, each subscriber will be able to define its execution scope, using the 3rd parameter:<br /><pre>YAHOO.Bubbling.on( 'onPanelShow', myListenerFunc, myScope);</pre><p>Utilized well, this technique gives us the possibility to create a complex web application where each component will have an API to use for communicating with other components without knowing the component itself, or knowing the nature of the component.<h3>Requirements</h3>
+	<p>The <a href="http://www.bubbling-library.com/">Bubbling Library YUI Extension</a> has already implemented this technique, so the requirements are simple:<pre id="line1">&lt;script type="text/javascript" src="http://yui.yahooapis.com/2.5.1/build/yahoo-dom-event/yahoo-dom-event.js"&gt;&lt;/script&gt;<br />&lt;script type="text/javascript" src='http://js.bubbling-library.com/1.5.0/build/bubbling/bubbling.js'&gt;&lt;/script&gt;
+</pre><p><em><small>* Bubbling Core (6k minify version)</small></em><h3>Other examples</h3>
+	<ul>
+		<li>Creating a notification system that will handle application messages — displaying each message in a box on the bottom-right corner of the browser, with different backgrounds, all the components in your application will be able to broadcast a message; the notification system will catch the event and will display the message in the corresponding box, depending on the parameters sent by the sender.<li>Creating a loading mask (just like Gmail) that will display the message every time that the <a href="http://developer.yahoo.com/yui/connection/">YUI Connection Manager</a>, the <a href="http://developer.yahoo.com/yui/get/">YUI Get Utitlity</a> or the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> starts waiting for a response from the server. In this case, all the components will have access to the <a href="http://developer.yahoo.com/yui/connection/">Connection Manager</a>, and each component will need to fire the LOADING EVENT every time it uses one of the loading mechanisms.<li>In a web app that supports multiple layouts — every time you switch the current layout, all the web parts will need to be notified in order to readjust the visual interface. All the components can define a listener to the switching action, and all will be notified with the name of the new layout to apply and new css rules isplaying or hiding certain information related to the component.<li>In a webmail system, you need to be notified when a new message arrives or when an unread message has been read. There are some pieces of the application that would be interested in this event (inbox, messenger, the message counter, etc), but the reader panel don't know which of these parts are present on the page.</ul>
+	<h3>Conclusions</h3>
+	<ul>
+		<li>This technique is ideal for a large development teams. It reduces the complexity of the code and minimizes the number of global variables by eliminating the hard pipelines between components.<li> Large applications with many dynamic areas are tricky when you need to control the loading timeline. Using this technique you don't need to worry about the loading timeline.<li>Applications based on this technique are easy to extend.<li>Each component has a simpler API making it easier for other developers to understand and reuse.<li>All the listeners will share the same syntax <br /><code>YAHOO.Bubbling.on('onEventName', function(layer, args) {});</code></ul> </div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

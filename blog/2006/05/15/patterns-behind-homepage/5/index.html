@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Patterns Behind the Yahoo! Home Page Beta &raquo; Yahoo! User Interface Blog (YUIBlog)</title>
+<!-- 	<title>Yahoo! User Interface Blog (YUIBlog) &raquo; Patterns Behind the Yahoo! Home Page Beta</title> -->
+	 <meta http-equiv="Content-Encoding" content="gzip" />
+<meta http-equiv="Accept-Encoding" content="gzip, deflate" />
+	<meta name="generator" content="WordPress 3.0.4" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+  
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/combo?2.8.2r1/build/yuiloader-dom-event/yuiloader-dom-event.js&3.3.0/build/yui/yui-min.js"></script> 
+    
+    	<link rel='archives' title='June 2012' href='/blog/2012/06/' />
+	<link rel='archives' title='May 2012' href='/blog/2012/05/' />
+	<link rel='archives' title='April 2012' href='/blog/2012/04/' />
+	<link rel='archives' title='March 2012' href='/blog/2012/03/' />
+	<link rel='archives' title='February 2012' href='/blog/2012/02/' />
+	<link rel='archives' title='January 2012' href='/blog/2012/01/' />
+	<link rel='archives' title='December 2011' href='/blog/2011/12/' />
+	<link rel='archives' title='November 2011' href='/blog/2011/11/' />
+	<link rel='archives' title='October 2011' href='/blog/2011/10/' />
+	<link rel='archives' title='September 2011' href='/blog/2011/09/' />
+	<link rel='archives' title='August 2011' href='/blog/2011/08/' />
+	<link rel='archives' title='July 2011' href='/blog/2011/07/' />
+	<link rel='archives' title='June 2011' href='/blog/2011/06/' />
+	<link rel='archives' title='May 2011' href='/blog/2011/05/' />
+	<link rel='archives' title='April 2011' href='/blog/2011/04/' />
+	<link rel='archives' title='March 2011' href='/blog/2011/03/' />
+	<link rel='archives' title='February 2011' href='/blog/2011/02/' />
+	<link rel='archives' title='January 2011' href='/blog/2011/01/' />
+	<link rel='archives' title='December 2010' href='/blog/2010/12/' />
+	<link rel='archives' title='November 2010' href='/blog/2010/11/' />
+	<link rel='archives' title='October 2010' href='/blog/2010/10/' />
+	<link rel='archives' title='September 2010' href='/blog/2010/09/' />
+	<link rel='archives' title='August 2010' href='/blog/2010/08/' />
+	<link rel='archives' title='July 2010' href='/blog/2010/07/' />
+	<link rel='archives' title='June 2010' href='/blog/2010/06/' />
+	<link rel='archives' title='May 2010' href='/blog/2010/05/' />
+	<link rel='archives' title='April 2010' href='/blog/2010/04/' />
+	<link rel='archives' title='March 2010' href='/blog/2010/03/' />
+	<link rel='archives' title='February 2010' href='/blog/2010/02/' />
+	<link rel='archives' title='January 2010' href='/blog/2010/01/' />
+	<link rel='archives' title='December 2009' href='/blog/2009/12/' />
+	<link rel='archives' title='November 2009' href='/blog/2009/11/' />
+	<link rel='archives' title='October 2009' href='/blog/2009/10/' />
+	<link rel='archives' title='September 2009' href='/blog/2009/09/' />
+	<link rel='archives' title='August 2009' href='/blog/2009/08/' />
+	<link rel='archives' title='July 2009' href='/blog/2009/07/' />
+	<link rel='archives' title='June 2009' href='/blog/2009/06/' />
+	<link rel='archives' title='May 2009' href='/blog/2009/05/' />
+	<link rel='archives' title='April 2009' href='/blog/2009/04/' />
+	<link rel='archives' title='March 2009' href='/blog/2009/03/' />
+	<link rel='archives' title='February 2009' href='/blog/2009/02/' />
+	<link rel='archives' title='January 2009' href='/blog/2009/01/' />
+	<link rel='archives' title='December 2008' href='/blog/2008/12/' />
+	<link rel='archives' title='November 2008' href='/blog/2008/11/' />
+	<link rel='archives' title='October 2008' href='/blog/2008/10/' />
+	<link rel='archives' title='September 2008' href='/blog/2008/09/' />
+	<link rel='archives' title='August 2008' href='/blog/2008/08/' />
+	<link rel='archives' title='July 2008' href='/blog/2008/07/' />
+	<link rel='archives' title='June 2008' href='/blog/2008/06/' />
+	<link rel='archives' title='May 2008' href='/blog/2008/05/' />
+	<link rel='archives' title='April 2008' href='/blog/2008/04/' />
+	<link rel='archives' title='March 2008' href='/blog/2008/03/' />
+	<link rel='archives' title='February 2008' href='/blog/2008/02/' />
+	<link rel='archives' title='January 2008' href='/blog/2008/01/' />
+	<link rel='archives' title='December 2007' href='/blog/2007/12/' />
+	<link rel='archives' title='November 2007' href='/blog/2007/11/' />
+	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+		<link rel="alternate" type="application/rss+xml" title="Yahoo! User Interface Blog (YUIBlog) &raquo; Patterns Behind the Yahoo! Home Page Beta Comments Feed" href="/blog/2006/05/15/patterns-behind-homepage/feed/" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/blog/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Yahoo! User Interface Blog (YUIBlog)' href='/blog/' />
+<link rel='start' title='Yahoo! Design Pattern Library Released' href='/blog/2006/02/13/yahoo_patterns_released/' />
+<link rel='prev' title='Peeling Back the Interface of the Yahoo! Home Page Beta' href='/blog/2006/05/15/peeling-back-the-homepage-beta/' />
+<link rel='next' title='Design Patterns Conversation' href='/blog/2006/05/24/design_patterns_convers/' />
+<meta name="generator" content="WordPress 3.0.4" />
+<link rel='canonical' href='/blog/2006/05/15/patterns-behind-homepage/' />
+<link rel='shortlink' href='/blog/post/27/' />
+</head>
+
+<body>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog (YUIBlog)</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item page-item-2"><a href="/blog/about/" title="About">About</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/" title="YUI Jobs">YUI Jobs</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/" title="Contribute">Contribute</a></li>
+				</ul>
+			</div>
+		
+			<!--<div id="search">
+				<form id="searchform" method="get" action="http://www.yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>-->
+            
+            <div id="search">
+            <form action="http://search.yahoo.com/search" id="sitesearchform">
+            <input name="vs" type="hidden" value="yuiblog.com">
+            <div id="sitesearch">
+                <label for="searchinput">Site Search: </label>
+                <input type="text" id="searchinput" name="p">
+                <input type="submit" value="Search" id="searchsubmit" class="ygbt">    
+                <div id="searchcontainer"></div>
+            </div>
+            </form>
+            </div>
+	</div>
+	
+<!-- end header -->			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+		<!--don't suppress WP formatting-->		
+			<div class="entrada">
+				<h2 id="post-27"><a href="/blog/2006/05/15/patterns-behind-homepage/" rel="bookmark" title="Permanent Link to Patterns Behind the Yahoo! Home Page Beta">Patterns Behind the Yahoo! Home Page Beta</a></h2>
+				<small>May 15, 2006 at 9:47 pm by Bill Scott | In <a href="/blog/category/design/" title="View all posts in Design" rel="category tag">Design</a>, <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | <a href="/blog/2006/05/15/patterns-behind-homepage/#comments" title="Comment on Patterns Behind the Yahoo! Home Page Beta">23 Comments</a></small>
+						
+			<p>The yahoo.com home page team has been very busy over the last few months testing the new home page to create a richer experience for our users. There are many challenges to changing any home page. Just imagine the challenges with changing the most trafficked home page on the entire web!</p>
+<p>One of the <a href="http://looksgoodworkswell.blogspot.com/2006/01/nine-tips-for-designing-rich-internet.html">design principles I regularly discuss</a> is to</p>
+<blockquote><p>Cross Page Boundaries Reluctantly</p></blockquote>
+<p>This principle captures the idea that every piece of logical content does not have to be on a different page. Instead when we design a content page, especially a home page, we should consider how we can expand the user&#8217;s virtual space. In many ways this is similar to creating a play. At any given time the view on the stage is only a small part of the action. The backstage, props, and other actors are all being prepared for the next scene. A home page can provide ways to allow a user to take a &#8220;sneak peek&#8221; at additional content and essentially &#8220;open up&#8221; the page space.</p>
+<p>This is just what the new Yahoo! home page has done.</p>
+<h2>Personal Assistant</h2>
+<p>One of the really nice additions is the Personal Assistant. It gives a quick glance at what is happening in your personal space. All of the content that appears when you rollover the different areas is pulled in via an Ajax lookup. It also does a nice job of exposing and hiding content during exploration.</p>
+<p>So here are some of the benefits of Ajax-ifying the home page.</p>
+<h2>Live Information</h2>
+<p>Since each rollover is actually an Ajax lookup, you get the latest content. Rolling over Mail, will give you your last 5 messages.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/44/147251911_076d2ed3c8_o.png" alt="Personal assistant mail panel"/></div>
+<h2>Dynamic Paging</h2>
+<p>When looking at your Messenger contacts notice the Next/Previous links. You can sub-page through the content in this exploded tab view. The paging is very fast since it uses Ajax to pull in content.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/52/147251896_202ad268bd_o.png" alt="Personal assistant messenger paging"/></div>
+<p>Another variation on paging is found in the Movies and Radio Panels. Content can be scrolled in by using the Left/Right arrows.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/49/147251921_d1d96cf049_o.png" alt="Personal assistant movie paging"/></div>
+<h2>In Context Configuration</h2>
+<p>On the Weather (or Local) panel, you can change the location by clicking the &#8220;Change Location&#8221; link. This overlays a configuration panel over the weather info. Change the location to see weather for a different area.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/46/147251938_f7508f5178_o.png" alt="Personal assistant weather panel"/></div>
+<h2>Dynamic Local Content</h2>
+<p>In the Local panel, you can toggle between a view of traffic conditions or local events on a map. Ajax makes it easy to toggle and get the latest information since it is fetched just-in-time and live. And the map is live and draggable.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/47/147251918_e3788d21b8_o.png" alt="Personal assistant local map"/></div>
+<h2>Tabbed Content Areas</h2>
+<p>While tabbed areas are not new, coupled with Ajax they make it fast to load the page and then get the additional content on demand. You can see Featured content as well as Entertainment, Sports, Money, News, World and Video in the tabbed content areas.</p>
+<p>Notice the creative way the sub-content is handled in each of the tabbed areas. A hyper-linked area in the content shows more information when clicked on.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/46/147251933_6813ef7bd0_o.png" alt="Tabs with sub-content"/></div>
+<h2>Tour</h2>
+<p>To aid in discoverability, the Yahoo! home page introduces a nice tour technology. Clicking the Tour button takes you through a Tour Wizard. The Dim and Brighten patterns are used to call attention to the area being shown.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/56/147251905_c0280811a7.jpg" alt="Yahoo! home tour"/></div>
+<h2>Slide Outs</h2>
+<p>Both the &#8220;All Yahoo! Services&#8221; and the &#8220;Page Options&#8221; provide slide outs and drop downs that expose more navigation choices and configuration options.</p>
+<div class="pattern-example"><img src="http://static.flickr.com/44/147251923_6281ba9280_o.png" alt="Yahoo! home configuration"/></div>
+<p>Taken together, the changes make it possible to have a cleaner, more streamlined home page while at the same time allowing a lot more content to be easily accessible.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: <a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/&amp;title=Patterns Behind the Yahoo! Home Page Beta" title="bookmark Patterns Behind the Yahoo! Home Page Beta in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/&amp;title=Patterns Behind the Yahoo! Home Page Beta" title="post Patterns Behind the Yahoo! Home Page Beta to reddit">reddit!</a></p>
+			<!---->
+            
+            <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.yuiblog.com%2Fblog%2F2006%2F05%2F15%2Fpatterns-behind-homepage%2F&layout=standard&show-faces=true&width=450&action=recommend&font=verdana&colorscheme=light" scrolling="no" frameborder="0" allowTransparency="true" style="border:none; overflow:hidden; width:450px; height:25px"></iframe>
+					
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+			xmlns:dc="http://purl.org/dc/elements/1.1/"
+			xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+		<rdf:Description rdf:about="http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/"
+    dc:identifier="http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/"
+    dc:title="Patterns Behind the Yahoo! Home Page Beta"
+    trackback:ping="http://www.yuiblog.com/blog/2006/05/15/patterns-behind-homepage/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">23 Comments 
+</h2>
+
+
+<p>
+
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-1327" class="class_comment1">
+	<p><strong>Neue Yahoo! Homepage als public beta&#8230;</strong></p>
+<p>Yahoo! letzte Nacht ihre neue Homepage als Beta ver&ouml;ffentlicht. Dass interessante dabei ist, dass diese neue Homepage unter Verwendung der Yahoo User Interface Library und der Yahoo! User Interface Design Pattern entstanden ist, die erst k&uuml;rz&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://www.webthreads.de/2006/05/neue-yahoo-homepage-als-public-beta/' rel='external nofollow' class='url'>webthreads.de</a> &#8212; May 16, 2006 <a href="#comment-1327">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1330" class="class_comment2">
+	<p>[...] New Yahoo! homepage is finally available for public view, which was previously in private testing. Many visual changes are done supported by smart Ajax support. They also added a personal assistant, which groups recent emails, instant messenger and other information together. Also check Yahoo User Interface Blog for further details and patterns behind new home page. Now I hope to see their email interface change with Ajax support soon, which would compete with gmail&#39;s. I believe they are far too late to act on that. [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://kuneri.wordpress.com/2006/05/16/new-face-of-yahoo/' rel='external nofollow' class='url'>~Kuneri Bloggy &raquo; New face of Yahoo!</a> &#8212; May 16, 2006 <a href="#comment-1330">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1331" class="class_comment1">
+	<p>[...] Patterns Behind the Yahoo! Home Page Beta » Yahoo! User Interface Blog Analysis of design principles used on the new Yahoo homepage   (tags: ajax design interface patterns yahoo) [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.razvan-antonescu.info/links-for-2006-05-16' rel='external nofollow' class='url'>Razvan Antonescu &raquo; links for 2006-05-16</a> &#8212; May 16, 2006 <a href="#comment-1331">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1341" class="class_comment2">
+	<p>[...] Ya se puede probar la nueva página principal de Yahoo!, explican las novedades en su User Interface blog. También nos desvelan algunos de los patrones que han utilizado en el nuevo diseño. [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.qweos.net/blog/2006/05/16/yahoo-home-page/' rel='external nofollow' class='url'>Los textos de qweos.net&raquo; Blog Archive &raquo; Yahoo! Home Page</a> &#8212; May 16, 2006 <a href="#comment-1341">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1342" class="class_comment1">
+	<p>[...] Yahoo apparently has a new homepage up today. I wish I could see it. Although it says it works with IE 6 and Firefox 1.5, when I go there with Firefox 1.5 (Mac), it gives me an error. Oh well. Rich Ziade has a review, and the Yahoo UI team does an interesting breakdown of the UI patterns used. [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.adaptivepath.com/blog/2006/05/16/yahoos-new-homepage/' rel='external nofollow' class='url'>Adaptive Path &raquo; Blog Archive &raquo; Yahoo&#8217;s New Homepage</a> &#8212; May 16, 2006 <a href="#comment-1342">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1344" class="class_comment2">
+	<p>[...] Following the launch of Yahoo&#8217;s new homepage design, the Yahoo UI team discusses the patterns behind the homepage and the technology that powers the new interface. [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.socialpatterns.com/yahoo/behind-the-new-yahoo-homepage/' rel='external nofollow' class='url'>Behind the New Yahoo Homepage - Social Patterns</a> &#8212; May 16, 2006 <a href="#comment-1344">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1345" class="class_comment1">
+	<p>[...] Update: Bill Scott and Nate Koechley have both given their take on the patterns and ideas that went behind the redesign including: [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://ajaxian.com/archives/new-yahoo-homepage-gets-ajaxy' rel='external nofollow' class='url'>Ajaxian &raquo; New Yahoo! Homepage gets Ajaxy</a> &#8212; May 16, 2006 <a href="#comment-1345">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1346" class="class_comment2">
+	<p>[...] This morning Yahoo! unveiled its new homepage design.  There&#8217;s a great post from Yahoo!&#8217;s UI team on the rationale behind the finer aspects of the redesign.  [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://76design.com/shiftcontrol/index.php/2006/05/16/yahoo-homepage-redesign/' rel='external nofollow' class='url'>shift+control &raquo; Blog Archive &raquo; Yahoo! Homepage Redesign</a> &#8212; May 16, 2006 <a href="#comment-1346">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1349" class="class_comment1">
+	<p>[...] Maailmalla myös Yahoo ja Flickr ovat uudistumassa. Flickrin navigaatio muuttui kesken kaiken, kun olin aiemmin illalla lisäämässä kuvia viime viikonlopun koiraleiriltä. Yahoon ulkoasu-uudistus on kertakaikkisen komea. Yahoo User Interface Blog kertoo kahdessa artikkelissaan taustoja uudistukselle: Peeling Back the Interface of the Yahoo! Home Page Beta ja Patterns Behind the Yahoo! Home Page Beta.   Aihe: Internet, Habbo Hotel, Duuni [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.visakopu.net/weblog/2006/05/16/toita-pukkaa/' rel='external nofollow' class='url'>Visa Kopu &raquo; Töitä pukkaa</a> &#8212; May 16, 2006 <a href="#comment-1349">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1351" class="class_comment2">
+	<p><strong>The New Yahoo!&#8230;</strong></p>
+<p>Lots of buzz around the new Yahoo homepage which was made available as a preview today. Most appreciated the interactive elements that let you check your email and local traffic conditions without leaving the page. The team packed in a&#8230;&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://cavitate.net/flashpoint/2006/05/the_new_yahoo.html' rel='external nofollow' class='url'>flashpoint</a> &#8212; May 16, 2006 <a href="#comment-1351">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1357" class="class_comment1">
+	<p><strong>Home Sweet Home&#8230;</strong></p>
+<p>This week Yahoo! is unveiling a public preview of the new home page design. The whole look and feel is new, which you&#8217;d expect with the periodic redesigns of this page, but what&#8217;s really cool is all the interactivity. If&#8230;&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://www.cantoni.org/2006/05/16/yhomepage' rel='external nofollow' class='url'>Cantoni.org</a> &#8212; May 16, 2006 <a href="#comment-1357">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1363" class="class_comment2">
+	<p>Hi Bill, well done on the homepage. It looks good, works well :-).</p>
+<p>Can you say how the team used the patterns, how muc you worked with them etc. It seems like a great case study for one of the highest profile pages around.</p>
+	<p class="alignright"><small>Comment by <a href='http://ajaxpatterns.org' rel='external nofollow' class='url'>Michael Mahemoff</a> &#8212; May 17, 2006 <a href="#comment-1363">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1365" class="class_comment1">
+	<p>[...] • Patterns behind the Yahoo! home page beta • Peeling back the interface of the Yahoo! home page beta [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://blog.untitled.art.br/?p=77' rel='external nofollow' class='url'>Untitled.art.br &raquo; Blog Archive &raquo; Yahoo! O novo.</a> &#8212; May 17, 2006 <a href="#comment-1365">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1366" class="class_comment2">
+	<p><strong>Yet Another Yahoo! Home Page Redesign&#8230;</strong></p>
+<p>	Hold on to your chairs, kids! It&#8217;s about to happen again. The venerable Yahoo! is about to change its home page &#8212; yet one more time!</p>
+<p>&#8230;&#8230;</p>
+	<p class="alignright"><small>Trackback by <a href='http://www.uie.com/brainsparks/2006/05/16/yet-another-yahoo-home-page-redesign/' rel='external nofollow' class='url'>UIE Brain Sparks</a> &#8212; May 17, 2006 <a href="#comment-1366">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1369" class="class_comment1">
+	<p>Hopefully the new Yahoo! homepage will support Safari soon.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.designmeme.com/' rel='external nofollow' class='url'>Stuart Robertson</a> &#8212; May 17, 2006 <a href="#comment-1369">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1372" class="class_comment2">
+	<p>[...] Desde la web de qweos.net me entero de que a través de un blog la gente de Yahoo explica cómo han abordado el rediseño de su home. el blog tiene información muy interesante sobre las novedades que han desarrollado para su nueva portada (patrones de diseño, ajax, un tour guiado y otras cosas bastante interesantes). [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.tripix.net/?p=110' rel='external nofollow' class='url'>Tripix.net &raquo; Patrones de diseño y la nueva home de Yahoo</a> &#8212; May 17, 2006 <a href="#comment-1372">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1392" class="class_comment1">
+	<p>[...] Some interesting stuff here about it. [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://tcal.net/archives/2006/05/19/new-yahoo-homepage/' rel='external nofollow' class='url'>The Community At Large &raquo; New Yahoo! Homepage</a> &#8212; May 19, 2006 <a href="#comment-1392">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1393" class="class_comment2">
+	<p>[...] Some interesting stuff here about it. [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://tcal.net/archives/2006/05/19/new-yahoo-homepage/' rel='external nofollow' class='url'>The Community At Large &raquo; New Yahoo! Homepage</a> &#8212; May 19, 2006 <a href="#comment-1393">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1395" class="class_comment1">
+	<p>Yahoo is very very big today, congrats for all your ui patterns and your homepage redesign which are simply wonderful, a must.</p>
+<p>You are far ahead anything i have seen and thought you. Yahoo is creating the future.</p>
+<p>I have only one regret: great movie, great photo, great book let an intact footprint to the future, does your site will? not so sure with current web technology. you should think about how some(annualy) archive can be preserved, i&#8217;m sure one day they will enter in museum, academia, history</p>
+<p>kudos guys (:<br />
+very great<br />
+soni</p>
+	<p class="alignright"><small>Comment by <a href='http://www.conanza.com' rel='external nofollow' class='url'>Soni</a> &#8212; May 19, 2006 <a href="#comment-1395">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1585" class="class_comment2">
+	<p>Great new look and feel. I do wonder though if all your users will have the mouse dexterity to use the rollover panels.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.applemad.com' rel='external nofollow' class='url'>Rob Winters</a> &#8212; May 29, 2006 <a href="#comment-1585">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-1695" class="class_comment1">
+	<p>[...] Yahoo! User Interface Blog &#8211; Patterns Behind the Yahoo! Home Page Beta [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://charlesc.ilovemeow.net/2006/06/02/internet/591/' rel='external nofollow' class='url'>NBN - Nothing But Net &raquo; Yahoo!新首頁分析</a> &#8212; June 1, 2006 <a href="#comment-1695">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-170298" class="class_comment2">
+	<p>[...] Richard MacManus has the podcast exclusive. For those that want to get in under the hood, check out Bill Scott posting on design considerations and Nate Koechley with the nitty on the technical details covering things such as the use of CSS [...]</p>
+	<p class="alignright"><small>Pingback by <a href='http://everwas.com/2006/05/the_new_yahoo.html' rel='external nofollow' class='url'>The New Yahoo! &#8212; everwas</a> &#8212; August 10, 2007 <a href="#comment-170298">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-211234" class="class_comment1">
+	<p>Yahoo has simplified its interface and is adopting well with the varying changes to the UI trends. </p>
+<p>I do think that yahoo has moved fast towards the Ajax services and &#8216;what you can get is far more than what you can see&#8217; apprach.</p>
+<p>i hope that internet speed in growing countries does not ditter the fantastic approach.</p>
+	<p class="alignright"><small>Comment by vish &#8212; October 15, 2007 <a href="#comment-211234">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<p>Sorry, the comment form is closed at this time.</p>
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+		  <div id="twitter">
+			<h3>YUI Library on Twitter</h3>
+				<ul class="twitter">
+                	<li><a href="http://twitter.com/yuilibrary">@yuilibrary Twitter feed</a></li>
+                    <li><a href="https://twitter.com/yuilibrary/yui-team/members">YUI Devs on Twitter</a></li>
+                </ul>
+          </div>
+
+ 							<div class="translation">
+					<h3>Translate</h3>
+						
+<!--FLAG_BAR_BEGIN--><div id="translation_bar"><map id="gltr_flags_map" name="gltr_flags_map"><area shape='rect' coords='0,0,16,11' href='/blog/index.php/' id='flag_en'   title='English'/><area shape='rect' coords='20,0,36,11' href='/blog/index.php/it/' id='flag_it'   title='Italian'/><area shape='rect' coords='40,0,56,11' href='/blog/index.php/ko/' id='flag_ko'   title='Korean'/><area shape='rect' coords='60,0,76,11' href='/blog/index.php/zh-CN/' id='flag_zh-CN'   title='Chinese (Simplified)'/><area shape='rect' coords='80,0,96,11' href='/blog/index.php/zh-TW/' id='flag_zh-TW'   title='Chinese (Traditional)'/><area shape='rect' coords='100,0,116,11' href='/blog/index.php/pt/' id='flag_pt'   title='Portuguese'/><area shape='rect' coords='120,0,136,11' href='/blog/index.php/de/' id='flag_de'   title='German'/><area shape='rect' coords='140,0,156,11' href='/blog/index.php/fr/' id='flag_fr'   title='French'/><area shape='rect' coords='0,15,16,26' href='/blog/index.php/es/' id='flag_es'   title='Spanish'/><area shape='rect' coords='20,15,36,26' href='/blog/index.php/ja/' id='flag_ja'   title='Japanese'/><area shape='rect' coords='40,15,56,26' href='/blog/index.php/ar/' id='flag_ar'   title='Arabic'/><area shape='rect' coords='60,15,76,26' href='/blog/index.php/ru/' id='flag_ru'   title='Russian'/><area shape='rect' coords='80,15,96,26' href='/blog/index.php/el/' id='flag_el'   title='Greek'/><area shape='rect' coords='100,15,116,26' href='/blog/index.php/nl/' id='flag_nl'   title='Dutch'/><area shape='rect' coords='120,15,136,26' href='/blog/index.php/bg/' id='flag_bg'   title='Bulgarian'/><area shape='rect' coords='140,15,156,26' href='/blog/index.php/cs/' id='flag_cs'   title='Czech'/><area shape='rect' coords='0,30,16,41' href='/blog/index.php/hr/' id='flag_hr'   title='Croatian'/><area shape='rect' coords='20,30,36,41' href='/blog/index.php/da/' id='flag_da'   title='Danish'/><area shape='rect' coords='40,30,56,41' href='/blog/index.php/fi/' id='flag_fi'   title='Finnish'/><area shape='rect' coords='60,30,76,41' href='/blog/index.php/hi/' id='flag_hi'   title='Hindi'/><area shape='rect' coords='80,30,96,41' href='/blog/index.php/pl/' id='flag_pl'   title='Polish'/><area shape='rect' coords='100,30,116,41' href='/blog/index.php/ro/' id='flag_ro'   title='Romanian'/><area shape='rect' coords='120,30,136,41' href='/blog/index.php/sv/' id='flag_sv'   title='Swedish'/><area shape='rect' coords='140,30,156,41' href='/blog/index.php/no/' id='flag_no'   title='Norwegian'/><area shape='rect' coords='0,45,16,56' href='/blog/index.php/tl/' id='flag_tl'   title='Filipino'/><area shape='rect' coords='20,45,36,56' href='/blog/index.php/iw/' id='flag_iw'   title='Hebrew'/><area shape='rect' coords='40,45,56,56' href='/blog/index.php/id/' id='flag_id'   title='Indonesian'/><area shape='rect' coords='60,45,76,56' href='/blog/index.php/lv/' id='flag_lv'   title='Latvian'/><area shape='rect' coords='80,45,96,56' href='/blog/index.php/lt/' id='flag_lt'   title='Lithuanian'/><area shape='rect' coords='100,45,116,56' href='/blog/index.php/sr/' id='flag_sr'   title='Serbian'/><area shape='rect' coords='120,45,136,56' href='/blog/index.php/sl/' id='flag_sl'   title='Slovenian'/><area shape='rect' coords='140,45,156,56' href='/blog/index.php/uk/' id='flag_uk'   title='Ukrainian'/><area shape='rect' coords='0,60,16,71' href='/blog/index.php/vi/' id='flag_vi'   title='Vietnamese'/><area shape='rect' coords='20,60,36,71' href='/blog/index.php/th/' id='flag_th'   title='Thai'/><area shape='rect' coords='40,60,56,71' href='/blog/index.php/tr/' id='flag_tr'   title='Turkish'/><area shape='rect' coords='60,60,76,71' href='/blog/index.php/hu/' id='flag_hu'   title='Hungarian'/><area shape='rect' coords='80,60,96,71' href='/blog/index.php/is/' id='flag_is'   title='Icelandic'/><area shape='rect' coords='100,60,116,71' href='/blog/index.php/ms/' id='flag_ms'   title='Malay'/><area shape='rect' coords='120,60,136,71' href='/blog/index.php/fa/' id='flag_fa'   title='Persian'/></map><img style='border:0px;' src='http://www.yuiblog.com/blog/wp-content/plugins/global-translator/gltr_image_map.png' usemap='#gltr_flags_map'/></div><div id="transl_sign"></div><!--FLAG_BAR_END-->
+				</div>    
+             
+            
+		  <div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>	
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+						
+					<li>
+						<a href="/blog/category/accessibility" title="Posts and articles about accessibility">Accessibility Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/accessibility">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/accessibility">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2012/06/27/minor-yui-assets-outage/">Minor YUI Assets Outage</a></li>
+					    		<li class="recent"><a href="/blog/2012/06/27/yui-open-hours-thurs-june-28th/">YUI: Open Hours Thurs June 28th</a></li>
+					    		<li class="recent"><a href="/blog/2012/06/18/yui-open-hours-thurs-june-21st/">YUI: Open Hours Thurs June 21st</a></li>
+					    		<li class="recent"><a href="/blog/2012/06/13/yui-3-6-0-pr2-is-now-available/">YUI 3.6.0 PR2 Is Now Available</a></li>
+					    		<li class="recent"><a href="/blog/2012/06/12/yui-open-hours-thurs-june-14th/">YUI: Open Hours Thurs June 14th</a></li>
+					    		<li class="recent"><a href="/blog/2012/05/29/yui-open-hours-thurs-may-31st/">YUI: Open Hours Thurs May 31st</a></li>
+					    		<li class="recent"><a href="/blog/2012/05/21/yui-open-hours-thurs-may-24th/">YUI: Open Hours Thurs May 24th</a></li>
+					    		<li class="recent"><a href="/blog/2012/05/11/yui-and-travis-sitting-in-a-git-tree/">YUI and Travis sitting in a git-tree</a></li>
+					    		<li class="recent"><a href="/blog/2012/05/11/yui-3-6-0-pr1-is-now-available/">YUI 3.6.0 PR1 Is Now Available</a></li>
+					    		<li class="recent"><a href="/blog/2012/05/09/yuidoc-0-3-0-is-official/">YUIDoc 0.3.0 is Official!</a></li>
+							</ul>
+			</div>
+			
+			<div id="ydn">
+			<h3>YUI Library</h3>
+				<ul>
+					<li><a href="http://yuilibrary.com/yui/docs/guides/">YUI Documentation</a></li>
+					<li><a href="http://yuilibrary.com/">YUI Project Resources</a></li>
+					<li><a href="http://yuilibrary.com/forum/">YUI Discussion Forums</a></li>
+                                        <li><a href="http://yuilibrary.com/theater/">YUI Theater</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2012/06/' title='June 2012'>June 2012</a>&nbsp;(5)</li>
+	<li><a href='/blog/2012/05/' title='May 2012'>May 2012</a>&nbsp;(9)</li>
+	<li><a href='/blog/2012/04/' title='April 2012'>April 2012</a>&nbsp;(13)</li>
+	<li><a href='/blog/2012/03/' title='March 2012'>March 2012</a>&nbsp;(6)</li>
+	<li><a href='/blog/2012/02/' title='February 2012'>February 2012</a>&nbsp;(7)</li>
+	<li><a href='/blog/2012/01/' title='January 2012'>January 2012</a>&nbsp;(8)</li>
+	<li><a href='/blog/2011/12/' title='December 2011'>December 2011</a>&nbsp;(7)</li>
+	<li><a href='/blog/2011/11/' title='November 2011'>November 2011</a>&nbsp;(12)</li>
+	<li><a href='/blog/2011/10/' title='October 2011'>October 2011</a>&nbsp;(4)</li>
+	<li><a href='/blog/2011/09/' title='September 2011'>September 2011</a>&nbsp;(9)</li>
+	<li><a href='/blog/2011/08/' title='August 2011'>August 2011</a>&nbsp;(6)</li>
+	<li><a href='/blog/2011/07/' title='July 2011'>July 2011</a>&nbsp;(7)</li>
+	<li><a href='/blog/2011/06/' title='June 2011'>June 2011</a>&nbsp;(8)</li>
+	<li><a href='/blog/2011/05/' title='May 2011'>May 2011</a>&nbsp;(6)</li>
+	<li><a href='/blog/2011/04/' title='April 2011'>April 2011</a>&nbsp;(10)</li>
+	<li><a href='/blog/2011/03/' title='March 2011'>March 2011</a>&nbsp;(8)</li>
+	<li><a href='/blog/2011/02/' title='February 2011'>February 2011</a>&nbsp;(5)</li>
+	<li><a href='/blog/2011/01/' title='January 2011'>January 2011</a>&nbsp;(10)</li>
+	<li><a href='/blog/2010/12/' title='December 2010'>December 2010</a>&nbsp;(24)</li>
+	<li><a href='/blog/2010/11/' title='November 2010'>November 2010</a>&nbsp;(21)</li>
+	<li><a href='/blog/2010/10/' title='October 2010'>October 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/09/' title='September 2010'>September 2010</a>&nbsp;(17)</li>
+	<li><a href='/blog/2010/08/' title='August 2010'>August 2010</a>&nbsp;(18)</li>
+	<li><a href='/blog/2010/07/' title='July 2010'>July 2010</a>&nbsp;(8)</li>
+	<li><a href='/blog/2010/06/' title='June 2010'>June 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/05/' title='May 2010'>May 2010</a>&nbsp;(11)</li>
+	<li><a href='/blog/2010/04/' title='April 2010'>April 2010</a>&nbsp;(22)</li>
+	<li><a href='/blog/2010/03/' title='March 2010'>March 2010</a>&nbsp;(22)</li>
+	<li><a href='/blog/2010/02/' title='February 2010'>February 2010</a>&nbsp;(16)</li>
+	<li><a href='/blog/2010/01/' title='January 2010'>January 2010</a>&nbsp;(8)</li>
+	<li><a href='/blog/2009/12/' title='December 2009'>December 2009</a>&nbsp;(9)</li>
+	<li><a href='/blog/2009/11/' title='November 2009'>November 2009</a>&nbsp;(29)</li>
+	<li><a href='/blog/2009/10/' title='October 2009'>October 2009</a>&nbsp;(14)</li>
+	<li><a href='/blog/2009/09/' title='September 2009'>September 2009</a>&nbsp;(12)</li>
+	<li><a href='/blog/2009/08/' title='August 2009'>August 2009</a>&nbsp;(4)</li>
+	<li><a href='/blog/2009/07/' title='July 2009'>July 2009</a>&nbsp;(5)</li>
+	<li><a href='/blog/2009/06/' title='June 2009'>June 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/05/' title='May 2009'>May 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/04/' title='April 2009'>April 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2009/03/' title='March 2009'>March 2009</a>&nbsp;(15)</li>
+	<li><a href='/blog/2009/02/' title='February 2009'>February 2009</a>&nbsp;(10)</li>
+	<li><a href='/blog/2009/01/' title='January 2009'>January 2009</a>&nbsp;(7)</li>
+	<li><a href='/blog/2008/12/' title='December 2008'>December 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/11/' title='November 2008'>November 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/10/' title='October 2008'>October 2008</a>&nbsp;(16)</li>
+	<li><a href='/blog/2008/09/' title='September 2008'>September 2008</a>&nbsp;(4)</li>
+	<li><a href='/blog/2008/08/' title='August 2008'>August 2008</a>&nbsp;(9)</li>
+	<li><a href='/blog/2008/07/' title='July 2008'>July 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/06/' title='June 2008'>June 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/05/' title='May 2008'>May 2008</a>&nbsp;(12)</li>
+	<li><a href='/blog/2008/04/' title='April 2008'>April 2008</a>&nbsp;(11)</li>
+	<li><a href='/blog/2008/03/' title='March 2008'>March 2008</a>&nbsp;(7)</li>
+	<li><a href='/blog/2008/02/' title='February 2008'>February 2008</a>&nbsp;(10)</li>
+	<li><a href='/blog/2008/01/' title='January 2008'>January 2008</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/12/' title='December 2007'>December 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/11/' title='November 2007'>November 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+                    <li><a href="http://xianlandia.com">Christian Crumlish</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://ericmiraglia.com/">Eric Miraglia</a></li>
+					<li><a href="http://www.julienlecomte.net/blog/">Julien Lecomte</a></li>
+					<li><a href="http://lucassmith.name/">Luke Smith</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://techfoolery.com">Ross Harmes</a></li>
+                    <li><a href="http://wonko.com/">Ryan Grove</a></li>
+					<li><a href="http://schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://www.phpied.com/">Stoyan Stefanov</a></li>
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments that contribute toward the conversations on the blog. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://careers.yahoo.com/">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Log in</a></li>
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2006-2012 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+
+	<p><!-- 21 queries. 0.628 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1341220077" border="0" width="1" height="1" alt="visit" /></noscript>
+<script>
+YUI().use("get", function(Y) {
+	Y.Get.script("http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462");
+});
+</script>
+<!-- Yahoo! Web Analytics - All rights reserved -->
+<script type="text/javascript" src="http://d.yimg.com/mi/ywa.js"></script>
+<script type="text/javascript">
+/*globals YWA*/
+var YWATracker = YWA.getTracker("10001638119858");
+/*
+YWATracker.setDocumentName("");
+YWATracker.setDocumentGroup("");
+*/
+YWATracker.submit();
+</script>
+<noscript>
+<div><img src="http://a.analytics.yahoo.com/p.pl?a=10001638119858&amp;js=no"
+width="1" height="1" alt="" /></div>
+</noscript>
+
+</body>
+</html>

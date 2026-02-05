@@ -1,0 +1,883 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+	
+	<title>
+		     YUI Implementations Archive - YUI Blog - page 2	</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.5.1/build/cssgrids/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="http://yuilibrary.com/combo/main-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/vendor/prettify/prettify-min.css">
+	<link ref="stylesheet" type="text/css" href="http://yuilibrary.com/css/docs-min.css">
+	<!-- /IMPORT -->
+
+
+	<link rel="stylesheet" href="/blog/wp-content/themes/yuilibraryv2/style.css" type="text/css" />
+
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+
+	
+        <script>var YUI_config={"filter":"min","maxURLLength":1024,"groups":{"site":{"combine":true,"comboBase":"/combo/js?","root":"","modules":{"hoverable":{"path":"hoverable-min.js","requires":["event-hover","node-base","node-event-delegate"]},"search":{"path":"search-min.js","requires":["autocomplete","autocomplete-highlighters","node-pluginhost"]},"api-filter":{"path":"apidocs/api-filter-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources"]},"api-list":{"path":"apidocs/api-list-min.js","requires":["api-filter","api-search","event-key","node-focusmanager","tabview"]},"api-search":{"path":"apidocs/api-search-min.js","requires":["autocomplete-base","autocomplete-highlighters","autocomplete-sources","escape"]}}}}};</script>
+
+        <script src="http://yui.yahooapis.com/3.5.1/build/yui/yui-min.js"></script>
+
+	<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Feed" href="/blog/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; Comments Feed" href="/blog/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="YUI Blog &raquo; YUI Implementations Category Feed" href="/blog/category/yui-implementations/feed/" />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=4.0'></script>
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="archive paged category category-yui-implementations category-8 paged-2 category-paged-2 yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+			<header>
+	     <div class="content">
+	     <div class="yui3-u-3-4">
+               <a href="//yuilibrary.com/" rel="home"><div id="hd-logo" role="image" aria-label="YUI logo"></div></a>
+             </div>
+	     <div class="yui3-u-1-4">
+		    	<div id="topsearch" style="position: relative; left: -40px; top: 35px;">
+<form action="http://www.yuiblog.com/blog" id="main-search" class="search" method="get">
+        <input type="search" class="search-input" style="width: 200px; font-size:10px;" placeholder="Search the blog" id="s" name="s" value="" />
+</form>
+</div>	     </div>
+
+	     <div id="main-nav" class="yui3-u"><nav>
+              <ul class="nav hoverable-group">
+
+            <li class="nav-tab hoverable  nav-tab-active">
+                <a href="http://yuilibrary.com">Home</a>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/quick-start/">Quick Start</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/configurator/">Configurator</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/download/yui3/">Download YUI 3</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/yui/docs/">Documentation</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/guides/">User Guides</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/examples/">Examples</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/tutorials/">Tutorials</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/yui/docs/api/">API Docs</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable nav-break">
+                <a href="http://yuilibrary.com/community/">Community</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/gallery/">Gallery</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="/" title="YUI Blog">Blog</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/forum/">Forums</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/theater/">YUI Theater</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/calendar/">Calendar</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/contribute/">Contribute</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="https://github.com/yui/" target="_blank" title="External link">YUI on GitHub &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/newticket/">File a Ticket</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/report/">View Tickets</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui3/dashboard/">Dashboard</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+            <li class="nav-tab hoverable ">
+                <a href="http://yuilibrary.com/projects/">Other Projects</a>
+
+                    <ul class="nav-submenu">
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yui2/">YUI 2</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuicompressor/">YUI Compressor</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yui.github.com/yuidoc" target="_blank" title="External link">YUI Doc &#187;</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/builder/">YUI Builder</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/phploader/">YUI PHP Loader</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuitest/">YUI Test</a>
+
+                            </li>
+
+                            <li class="nav-child ">
+
+                                    <a href="http://yuilibrary.com/projects/yuilibrary/">YUI Website</a>
+
+                            </li>
+
+                    </ul>
+
+            </li>
+
+    </ul>
+			</nav>
+                         </div>
+			 </div>
+			</header>
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+<div class="yui3-u-3-4 print-max-width">
+<div id="docs-main" class="content">
+
+		<ul class="breadcrumbs"><li class="front_page"><a href="//yuilibrary.com/">YUI</a></li><li><a href="/blog">Blog</a></li>YUI Implementations<li></li></ul>
+
+		
+ 			
+							<h1>Blog: Category &#8216;YUI Implementations&#8217;</h1>
+
+			
+							<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/yui-implementations/page/3/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/yui-implementations/" >Newer Entries &raquo;</a>    </div>
+</div>			
+									
+								<div class="post-2647 post type-post status-publish format-standard hentry category-in-the-wild category-yui-implementations first-post">
+				
+						<h2 id="post-2647"><a href="/blog/2010/09/28/carrentalexpress/">Implementation Focus: Car Rental Express</a></h2>
+					
+
+						<div class="entry">
+							<div class="authorbox">
+<p><strong>About the author:</strong><img src="http://yuiblog.com/assets/carrentalexpress/profile-picture-small.jpg" align="right" /> Stefan Klopp is the Director of Development for <a href="http://www.expressitech.com/" title="Express Internet Technologies">ExpressITech</a>, the parent company of <a href="http://www.carrentalexpress.com" title="Car Rental Express">Car Rental Express</a>. Stefan has been developing highly usable web solutions for the car rental industry in various roles over the last 6 years. He currently lives and works in Vancouver, British Columbia, Canada.</p>
+</p></div>
+<p><a href="http://www.carrentalexpress.com/" title="Cheap Car Rentals - Compare Rental Agencies with Car Rental Express">Car Rental Express</a> is the leading independent car rental comparison website on the Internet. It lets users rent cars online in more than 1000 cities and airports around the world.</p>
+<p>Our user base is largely non-technical, which means they want to compare prices and rent cars as easily as possible. With the relaunch of our website in June of 2010 we have implemented many components of YUI 2 to help provide our customers with an intuitive experience.</p>
+<p><strong>Which YUI components are we using?</strong></p>
+<p>The components that we&#8217;ve been using include <a href="http://developer.yahoo.com/yui/connection/" title="YUI 2: Connection Manager">Connection Manager</a>, <a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">AutoComplete</a>, <a href="http://developer.yahoo.com/yui/datasource/" title="YUI 2: DataSource">DataSource</a>, <a href="http://developer.yahoo.com/yui/calendar/" title="YUI 2: Calendar">Calendar</a>, <a href="http://developer.yahoo.com/yui/animation/" title="YUI 2: Animation">Animation</a>, <a href="http://developer.yahoo.com/yui/json/" title="YUI 2: JSON utility">JSON</a>, and <a href="http://developer.yahoo.com/yui/container/" title="YUI 2: Container">Container</a>.</p>
+<p><strong>Why we chose YUI</strong></p>
+<p>When reviewing the different JavaScript libraries that we could potentially use on <a href="http://www.carrentalexpress.com/" title="Cheap Car Rentals - Compare Rental Agencies with Car Rental Express">Car Rental Express</a>, we found that the YUI was the most complete for our needs. The biggest selling features for us was the very modular approach the YUI took to implement different design patterns, as well as the robust documentation and examples they provided. From a development standpoint this led to rapid development of our application without having to struggle with a library.</p>
+<p><strong>How we use YUI</strong></p>
+<p>We utilize the YUI in a number of ways. Our 4 most used components are AutoComplete, Calendar, Container, and Connection Manager. Here are some of the ways we use each of these components.</p>
+<p><strong><a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">AutoComplete</a></strong></p>
+<p>The AutoComplete component is used extensively on our site to help users find a city or airport in which to rent a car. We really liked how easy it was to implement this component, and how quickly it responds. We cache search results server-side to help improve search results; however, having the client-side caching also helped tremendously in speeding up the response of the component. Another feature that we really took to was how easy the results were to style. When displaying the locations to the user this was crucial as we needed to identify which locations where found in cities and which were found at airports.</p>
+<p><img src="http://yuiblog.com/assets/carrentalexpress/auto-complete-styled.png" title="Auto Complete Component Styled" width="510" /></p>
+<p><strong><a href="http://developer.yahoo.com/yui/calendar/" title="YUI 2: Calendar">Calendar</a></strong></p>
+<p>The Calendar component is also used throughout the site when a renter is filling in dates to conduct a search. We are using a customized version of John Peloquin&#8217;s <a href="http://developer.yahoo.com/yui/examples/calendar/intervalcal.html" title="YUI Library Examples: Calendar Control: Interval Selection Calendar">Interval Selection Calendar</a> and displaying it in a <a href="http://developer.yahoo.com/yui/container/dialog/" title="YUI 2: Dialog">YUI Dialog</a>. Essentially what we wanted to do was give the renter a two-month view when choosing their dates, as well as visually show them what date range they currently have selected. Again, this was extremely straightforward to implement using YUI 2 Calendar, and it basically came down to creating a YUI Dialog, setting the body to contain a div for the Calendar, then attaching a YUI Interval Calendar to that div.</p>
+<p><img src="http://yuiblog.com/assets/carrentalexpress/calendar.png" title="Interval Calendar" width="510" /></p>
+<p><strong><a href="http://developer.yahoo.com/yui/container/" title="YUI 2: Container">Containers</a></strong></p>
+<p>We utilize YUI Containers throughout our website in a number of different ways. In the example above we were using a Dialog to help us display the Interval Calendar when a user was selecting a date. On our rate search results page we make heavy use of Containers to give the renter more information on different aspects of the car rental agency and the vehicle they might potentially rent. Most of the containers on this page are <a href="http://developer.yahoo.com/yui/container/panel/" title="YUI 2: Panel">Panels</a> that we re-use for each different listing. For example, the vehicle display features Panel:</p>
+<p><img src="http://yuiblog.com/assets/carrentalexpress/standard-panel.png" title="Standard Panel" width="510"  /></p>
+<p>Things got a little more fun  with the Renter Rated agency ratings. When displaying the ratings, we really wanted to focus the user&#8217;s attention to the scores an agency received and to display this information in a clean, easy-to-view way. By utilizing the Dialog Control we were able to constrain the viewport and center the dialog easily to help us achieve this goal. By setting a blank header and footer it made styling simple by just adding the appropriate styles to our CSS. The end result was a clean ratings container that provides the renter with the information they want.</p>
+<p><img src="http://yuiblog.com/assets/carrentalexpress/renter-rated-dialog.png" title="Dialog Container Styled" width="510" /> </p>
+<p><strong><a href="http://developer.yahoo.com/yui/connection/" title="YUI 2: Connection Manager">Connection Manager</a></strong></p>
+<p>Connection Manager is used throughout the site whenever we need to pull data via a XHR request. In some of the examples above we utilize this component for requesting cities and airports for the AutoComplete implementaitons and pulling the rating information for the Renter Rated Dialog.</p>
+<p>One interesting way we utilize Connection Manager is with our rental center block that sits on most pages. To help with performance we do a lot of full-page caching on many of our content pages. However, we still wanted to display the dynamic rental center block on these pages. This presented us with a problem we were able to solve with Connection Manager. Rather than having to break up our fully cached page and cache only aspects of the page we found it was easier to just include the rental center block via a simple asynchronous request. We found that this allowed us to retain the performance from having a fully cached page, yet still display dynamic content in our rental center box.</p>
+<p><img src="http://yuiblog.com/assets/carrentalexpress/rental-center-included-va-connection.png" title="Rental Center included via Connection Component" width="510" /></p>
+<p><strong>Final Thoughts</strong></p>
+<p>Overall we have been extremely happy with our choice to use YUI. It provides us with a modular library that is well documented, easy to use and implement.</p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 28th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2601 post type-post status-publish format-standard hentry category-yui-implementations">
+				
+						<h2 id="post-2601"><a href="/blog/2010/09/15/implementation-focus-lamplight/">Implementation Focus: Lamplight</a></h2>
+					
+
+						<div class="entry">
+							<div class="interview">
+<div class="intro">
+<p><img align="right" src="http://yuiblog.com/assets/Mattlamp.jpg" hspace=10 vspace=10 height=106 width=132><em>Matt Parker (<a href="http://twitter.com/Lamplightdb">@Lamplightdb on Twitter</a>) is the founder and developer at <a href="http://www.lamplightdb.co.uk/">Lamplight Database Systems</a>, a small company providing a fully-featured web-based management system for non-profits in the UK.  Matt lives and works in North-West London.</em></p>
+</div>
+<p class="q"><strong>What is Lamplight?</strong></p>
+<p>Lamplight is a database for charities and voluntary groups (that&#8217;s non-profits) in the UK. It helps our customers keep their data efficiently, demonstrate the impact they have on the people they work with, and streamline administrative and reporting tasks. We&#8217;ve been going since 2004 and re-wrote the entire system in 2009, using YUI2 very heavily.</p>
+<p>Lamplight has a pretty demanding bunch of users: they are generally not very keen to be sat in front of a computer &mdash; they want to be out working with the people they serve. So Lamplight&#8217;s got to be intuitive to use, responsive, and make their jobs easier.</p>
+<p>We&#8217;re also committed to making it affordable for the smallest organisations &mdash; a hosted system starts at &#163;15/month (for the whole organisation). So we work really hard to make a single system that is flexible enough for a whole range of different organisations to use without becoming impossible to manage and administer.</p>
+<p class="q"><strong>Which YUI components do you use?</strong></p>
+<p>It&#8217;s easier to list the ones we don&#8217;t: Carousel, Charts, Cookie, ImageCropper, ImageLoader, Layout, ProgressBar, Slider, Storage, SWF and TreeView. Everything else is in there to a greater or lesser extent. <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>, <a href="http://developer.yahoo.com/yui/editor/">Editor</a> and <a href="http://developer.yahoo.com/yui/menu/">Menu</a> get the biggest workouts.</p>
+<p class="q"><strong>Why did you choose YUI?</strong></p>
+<p>First impressions go a long way. While I was trying out some of the libraries, YUI widgets seemed to be the most responsive, and/or the most reliable in different browsers. And then it doesn&#8217;t take long to realise the documentation, examples, and forums are really impressive too.</p>
+<p>In some ways it&#8217;s made things harder &mdash; we use Zend Framework on the server, which (now) comes with Dojo &#8216;built in&#8217; &mdash; but I&#8217;m pretty sure it was the right decision.</p>
+<p class="q"><strong>What have you had most fun with?</strong></p>
+<p>We&#8217;re just about to push the new YUI 2 based Diary to all our customers. Diary&#8217;s my own creation, and it seems to be working pretty well. It does what you expect a diary to do &mdash; drag and drop appointments, click and drag to add, and so on. It&#8217;s built on a whole stack of existing YUI 2 components (the <a href="http://developer.yahoo.com/yui/resize/">Resize</a> utility, <a href="http://developer.yahoo.com/yui/dragdrop/">Drag &amp; Drop</a>, and <a href="http://developer.yahoo.com/yui/docs/module_datemath.html">DateMath</a> in particular). Diary is on GitHub, along with the API docs and a few examples (<a href="http://mattparker.github.com/diary/">http://mattparker.github.com/diary/</a>)</p>
+<p><img src="http://yuiblog.com/assets/lamplight/lamplight-diary.jpg" width="510" height="311" alt="Screenshot of Lamplight's Diary"></p>
+<p>I&#8217;ve also enjoyed working with <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>. I&#8217;ve added a column chooser context menu, used and added a bit to <a href="http://satyam.com.ar/yui/#keynav">Satyam&#8217;s work with key navigation around an editable table</a>, and implemented remote sorting/paging with the server returning HTML.</p>
+<p>And <a href="http://developer.yahoo.com/yui/editor/">Editor&#8217;s</a> received some attention too: we have mail-merge menu buttons, some extra HTML filter buttons to handle content pasted from MS Word, a document templating system, and a built-in image insertion/uploader (images come from our server).</p>
+<p><img src="http://yuiblog.com/assets/lamplight/lamplight-editorform.jpg" width="510" height="351" alt="Screenshot of Lamplight's Editor"></p>
+<p>Finally, we&#8217;ve got a very simple ACL system, so that (for example) I only need one set of context menus that enable or disable items depending on who&#8217;s logged in &mdash; I think it&#8217;s good to know what you can&#8217;t do, rather than searching for a removed &#8216;delete&#8217; option!</p>
+<p class="q"><strong>What&#8217;s been hardest?</strong></p>
+<p>Managing all the widgets that come and go. There shouldn&#8217;t ever be a page load until you log out, and in that time there are a lot of DataTables, TabViews, Buttons, ContextMenus&#8230; coming and going. Sometimes these&#8217;ll be in a Dialog, so I can&#8217;t just destroy() them on every ajax request, for example. I&#8217;ve ended up with a singleton WidgetManager, which stores sets of widgets (for example a form with some Buttons and a DataTable) and destroys (or hides them out the way, in the case of Editor) them at the right moment. All these widgets register themselves with the WidgetManager when they&#8217;re constructed. And we re-wrote fair chunks so that there&#8217;s only a single Editor, Dialog, and Panel that get re-used whenever they&#8217;re needed. Fortunately this wasn&#8217;t too painful as they&#8217;re all wrapped on the server by PHP classes, so I only needed to alter my Yui_Datatable or Yui_Form (for example) classes.</p>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">September 15th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2459 post type-post status-publish format-standard hentry category-yui-implementations">
+				
+						<h2 id="post-2459"><a href="/blog/2010/08/19/yui-at-duckduckgo/">Using YUI 2 on the DuckDuckGo Search Engine</a></h2>
+					
+
+						<div class="entry">
+							<p><a href="http://duckduckgo.com/?q=yui+library"><img src="http://yuiblog.com/assets/duckduckgo-20100817-115307.jpg"></a></p>
+<p><a href="http://duckduckgo.com/">DuckDuckGo</a> is a search engine that uses YUI extensively. Here&#8217;s what it uses in particular:</p>
+<ul>
+<li>
+<p><i>ImageLoader</i>. Matt Mlinac&#8217;s <a href="http://developer.yahoo.com/yui/imageloader/" title="YUI 2: ImageLoader">YUI 2 ImageLoader</a> was the first thing I implemented and what originally hooked me on YUI for this project. DuckDuckGo has favicons next to results and often has &#8220;Zero-click Info&#8221; above results that usually includes <a href="http://duckduckgo.com/Yahoo!_UI_Library">an image</a>. I didn&#8217;t want these images to compete with the results when loading, as getting results as fast as possible is the ultimate goal.</p>
+<p>The ImageLoader Utility handles this well by loading the images after the page load. DDG also auto-loads the next page of results when you scroll down. Sometimes the favicons icons are therefore hidden, and with ImageLoader their load is delayed (sometimes indefinitely) until necessary. To accomplish this, there is a different image group per (internal) page, each with its own custom trigger.</p>
+<pre>div.event=new YAHOO.util.CustomEvent('it');
+    var ig1=new YAHOO.util.ImageLoader.group(div,'click');
+    ig1.addCustomTrigger(div.event);
+    div.ig = ig1;
+</pre>
+<li>
+<p><i>Cookie</i>. DuckDuckGo has a lot of <a href="http://duckduckgo.com/settings.html">settings</a>, which are stored via cookies and alternately via  <a href="http://duckduckgo.com/params.html">URL params</a>. When cookies are used, I use Nicholas Zakas&#8217;s <a href="http://developer.yahoo.com/yui/cookie/" title="YUI 2: Cookie Utility">YUI 2 Cookie Utility</a> to easily get and set the values.</p>
+<pre>  YAHOO.util.Cookie.set(cookie, value, { expires: new Date("January 12, 2025") });
+  x=ki||YAHOO.util.Cookie.get("i");</pre>
+<li>
+<p><i>StyleSheet</i>. Some DDG settings change the look and feel of the site. These changes are actually accomplished after page load via Luke Smith&#8217;s <a href="http://developer.yahoo.com/yui/stylesheet/" title="YUI 2: StyleSheet Utility">YUI 2 StyleSheet Utility</a>. Some of these changes are straightforward and I can just use the <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.Dom.html#method_setStyle" title="API: dom  YAHOO.util.Dom   (YUI Library)"><code>setStyle</code> Dom function</a>.</p>
+<pre>YAHOO.util.Dom.setStyle('b2','display','block');</pre>
+<p>Others require actual class changes, which I use the utility to do.</p>
+<pre>YAHOO.util.StyleSheet('DDG').set('.ci', {display: "block"}).
+            set('.cid', {display: "block"}).
+            set('.ci2', {display: "block"}).
+            enable();</pre>
+<li>
+<p><i>Dom</i>. I also use some functions in Matt Sweeney&#8217;s base <a href="http://developer.yahoo.com/yui/dom/" title="YUI 2: Dom Collection">YUI 2 Dom component</a>. I referenced <code>setStyle</code> above, and I also use the related <code>getStyle</code>, <code>addClass</code> and <code>removeClass</code> functions. In addition, I find the <code>getViewportHeight</code>, <code>getViewportWidth</code>, <code>getX</code> and <code>getY</code> functions to be incredibly useful to make things work cross-browser, and now on mobile screens as well.</p>
+<li>
+<p><i>KeyListener</i>. DDG has a bunch of <a href="http://duckduckgo.com/goodies.html">keyboard shortcuts</a> that let you navigate results without the mouse. I use the <a href="http://developer.yahoo.com/yui/docs/YAHOO.util.KeyListener.html" title="API: event  YAHOO.util.KeyListener   (YUI Library)">YUI 2 KeyListener</a> component to enable these shortcuts.</p>
+<pre>kl14 = new YAHOO.util.KeyListener(document, { keys:[70] }, { fn:not } );kl14.enable();</pre>
+<li>
+<p><i>AutoComplete</i>. I&#8217;m currently working on adding search suggestions to the search engine, and will be using Jenny Donnelly&#8217;s <a href="http://developer.yahoo.com/yui/autocomplete/" title="YUI 2: AutoComplete">YUI 2 AutoComplete</a> component for the front-end. I understand that AutoComplete is getting introduced in YUI 3 soon. Everything else I use has already been introduced in YUI 3, though I still use YUI 2. However, I will be exploring the migration to YUI 3 soon.</p>
+</ul>
+<p class="authorbox"><em><img align="right" hspace="20" vspace="5" src="http://yuiblog.com/assets/gabrielweinberg.jpg"><strong>About the author:</strong> Gabriel Weinberg is the founder of the DuckDuckGo search engine, based out of Valley Forge, PA. Gabriel has been a startup founder for over ten years, and his last company was sold in 2006. Gabriel holds degrees from MIT in Physics and the Technology and Policy Program.</em></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 19th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2453 post type-post status-publish format-standard hentry category-yui-implementations">
+				
+						<h2 id="post-2453"><a href="/blog/2010/08/18/yui3-at-assembla/">Implementing YUI on the Assembla.com Agile Planner</a></h2>
+					
+
+						<div class="entry">
+							<p><a href="http://blog.assembla.com/assemblablog/tabid/12618/bid/12940/Upgraded-Agile-Planner-for-Fast-Fun-Roadmapping.aspx" title="Upgraded Agile Planner for Fast, Fun Roadmapping"><img src="http://yuiblog.com/assets/assembla-20100818-072550.jpg"></a></p>
+<p>Fast and fun – that was the user requirement for <a href="http://blog.assembla.com/assemblablog/tabid/12618/bid/12940/Upgraded-Agile-Planner-for-Fast-Fun-Roadmapping.aspx" title="Upgraded Agile Planner for Fast, Fun Roadmapping">the new Assembla.com Agile Planner</a> – an AJAX interface for adding development tasks, building story/feature outlines, and scheduling them into releases.  We were lucky to have <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 &mdash; Yahoo! User Interface Library">YUI 3</a> to make it fast and fun to implement as well.</p>
+<p>I had used <a href="http://developer.yahoo.com/yui/2/" title="YUI 2 &mdash; Yahoo! User Interface Library">YUI 2</a> for a number of prior projects and I had been impressed by the engineering of the UI components and the underlying library infrastructure. I wanted to learn more about YUI 3, with its compact syntax and deeper focus on DOM manipulation and CSS3-style selectors.   This project, with a low dependence on &#8216;prebuilt widgets,&#8217; was a perfect opportunity to get my feet wet with YUI 3.  The facilities for &#8216;large app&#8217; implementation via custom modules and integration with YUI loader made it a natural choice.</p>
+<p>The Agile Planner supports a number of drag and drop user interactions with multiple interaction groups and context based behaviors. At the same time, it handles a complex set of interactions with the server, including merging in new data from the server, and propagating changes to the server.</p>
+<p>We improved on the existing Planner which was based on Rails handlers and Prototype.js.  YUI&#8217;s sandbox philosophy and strong OOP facilities made coexisting with Prototype.js a breeze.</p>
+<p>We used a large number of YUI components, including:</p>
+<ul>
+<li>Async-Queue to offer a responsive experience on a page that can involve 1000+ simultaneous tickets</li>
+<li>Drag and Drop with interaction groups. </li>
+<li>IO as a connection manager to queue and massage server interaction.</li>
+<li>Event-delegate to allow simply hydrating html templates and forgetting about them.</li>
+<li>Event-key for keyboard interaction and navigation.</li>
+<li>Collection for giving us a consistent implementation experience across browsers.</li>
+<li>Cookie for easy short-term UI persistence. </li>
+<li>Profiler to find the biggest speed gains</li>
+<li>YUI Doc to leave information for the rest of the team</li>
+</ul>
+<p>Working with YUI 3 on an app like this has been fun, and I am looking forward to hearing what our users will urge us to do next!</p>
+<p class="authorbox"><em><strong>About the author:</strong> Joachim Larsen is a frontend engineer with Assembla.com.</em></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">August 18th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2225 post type-post status-publish format-standard hentry category-development category-yui-implementations tag-celleditor tag-datatable tag-inline-editing">
+				
+						<h2 id="post-2225"><a href="/blog/2010/06/07/implementation-focus-demeter/">Implementation Focus: Demeter</a></h2>
+					
+
+						<div class="entry">
+							<div class="interview">
+<div class="intro"><em></p>
+<p><img src="http://yuiblog.com/assets/demeter/nikoni.png" width="100" height="129" hspace="10" vspace="5" align="right" alt="Niko Ni of GenMC Demeter"> <a href="http://github.com/bluepower" target="_blank" title="Niko Ni">Niko Ni</a> is an experienced Frontend Engineer with over 5 years of web development experience located in Shanghai, China. He is currently working for <a href="http://www.genesys.com/" target="_blank">Genesys Conferencing</a> (now part of <a href="http://www.intercall.com" target="_blank">InterCall</a>). He has been concentrating on building Ajax apps based on JavaEE or LAMP and contributing to some <a href="http://github.com/bluepower" target="_blank">open source</a> <a href="http://cz9908.com/showcase/?item=showcase-list&#038;p=1" target="_blank">projects</a> during his free time.
+</p>
+<p></em></div>
+<p><img src="http://yuiblog.com/assets/demeter/genmcdemeter-image1.png" width="510" height="315"></p>
+<h3>Tell us a little about your project.</h3>
+<p>&#8220;Demeter&#8221; is the codename for a recent web 2.0 application we built which provides powerful solutions to web conferencing, ad hoc meeting, and account management. Currently we have two major product suites: &#8220;Meeting Center&#8221; and &#8220;Admin Module&#8221;.</p>
+<p>Although it&#8217;s still in RC phrase with no public access to view it,  I have extracted a <a href="http://cz9908.com/blog/Niko-weblog-labs/lab-YUI/for-example/yui2-datatable-simple-extention/demo-edit-properties.html" target="_blank">prototype of the Admin Module</a> that demonstrates the management of portal properties.</p>
+<p><img src="http://yuiblog.com/assets/demeter/genmcdemeter-image2.png" width="510" height="310"></p>
+<h3>Which components of the YUI Library are used in your project?</h3>
+<p>When we were initially trying to decide which JS framework and UI library to use, there were three things that sold us on YUI: the great documentation, the wide variety of mature widgets, and the BSD license, so I introduced YUI to my company. The following modules are used in our project: </p>
+<ul>
+<li><strong>CSS:</strong> Reset, Fonts</li>
+<li><strong>Core:</strong> YAHOO, Dom, Event</li>
+<li><strong>Utilities:</strong> Connection Manager, DataSource, Element, JSON</li>
+<li><strong>Widgets:</strong> Calendar, Container, DataTable</li>
+<li><strong>Tools:</strong> Logger, Test</li>
+</ul>
+<h3>Admin module implementation overview</h3>
+<p>Our main requirements for the Admin module included:</p>
+<ul>
+<li>datatable with a customized editor popup</li>
+<li>theme/skin customization</li>
+<li>browser compatibility</li>
+</ul>
+<p>Here is the simple markup that sets up the UI:</p>
+<pre>
+    &lt;div id="datatable-ux"&gt;
+		&lt;div id="datatable-ux-hd"&gt;&lt;/div&gt;
+
+		&lt;div id="datatable-ux-bd"&gt;
+			&lt;div id="node-depths" style="display: none"&gt;root  &gt; Testing  &gt; 5_Dev Testing BA  &gt; 80000_1010&lt;/div&gt;
+
+			&lt;div id="output"&gt;&lt;/div&gt;
+			&lt;div id="yui-datatable" class="yui-dt"&gt;
+			  &lt;img src="images/icon-loading.gif" alt="loading" align="absmiddle" style="margin: 30px 0;" /&gt; loading data...
+			&lt;/div&gt;
+		&lt;/div&gt;
+
+		&lt;div id="datatable-ux-ft"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+	&lt;div id="node-apply-wrap" style="display: none;"&gt;
+		&lt;fieldset&gt;
+			&lt;legend&gt;Apply to&lt;/legend&gt;
+
+			&lt;input type="radio" name="node-apply" checked="checked" /&gt;Current node only&lt;br /&gt;
+			&lt;input type="radio" name="node-apply" /&gt;Current node and child nodes&lt;br /&gt;
+			&lt;input type="radio" name="node-apply" /&gt;Child nodes only
+		&lt;/fieldset&gt;
+	&lt;/div&gt;
+
+</pre>
+<p>Here is a code snippet of the simple extension I built for DataTable TextboxCellEditor:</p>
+<pre>
+   // simple example to extend the CellEditor Classes
+   // short alias
+   var lang = YAHOO.lang,
+	  util = YAHOO.util,
+	  widget = YAHOO.widget,
+	  Dom = util.Dom,
+	  Event = util.Event;
+
+   // extend TextboxCellEditor
+   Gcc.admin.TextboxCellEditor = function(config) {
+	   Gcc.admin.TextboxCellEditor.superclass.constructor.call(this, config);
+   };
+   lang.extend(Gcc.admin.TextboxCellEditor, widget.TextboxCellEditor, {
+	   renderForm : function() {
+		   Gcc.admin.TextboxCellEditor.superclass.renderForm.call(this);
+
+		   var oHd = document.createElement('DIV');
+		   this.getContainerEl().insertBefore(oHd, this.textbox);
+		   oHd.id = container.id + '-admin-editor-head';
+		   Dom.addClass(oHd, 'admin-editor-hd');
+
+		   var oCurrNode = document.createElement('DIV');
+		   this.getContainerEl().insertBefore(oCurrNode, this.textbox);
+		   oCurrNode.innerHTML = 'Current node: ' + Dom.get('node-depths').innerHTML;
+		   Dom.addClass(oCurrNode, 'admin-editor-pd');
+
+		   var oApply = document.createElement('DIV');
+		   this.getContainerEl().appendChild(oApply);
+		   oApply.innerHTML = Dom.get('node-apply-wrap').innerHTML;
+		   Dom.addClass(oApply, 'admin-editor-fieldset');
+	   },
+
+	   move : function() {
+		   Gcc.admin.TextboxCellEditor.superclass.move.call(this);
+		   Dom.addClass(this.textbox, 'admin-editor-pd');
+	   }
+   });
+</pre>
+<p>Then a cellClickEvent handler detects the underlying type of data value being edited and calls one of the customized cell editors.</p>
+<p><img src="http://yuiblog.com/assets/demeter/genmcdemeter-image3.png" width="510" height="381"></p>
+<p>With our server architecture consisting of the Apache Struts framework and the application container Weblogic, we found that YUI plays a good companion role as the &#8220;Clientside-Controller&#8221; and works well with Struts action results as a dynamic datasource.</p>
+<pre>
+&lt;%@ page pageEncoding="UTF-8" contentType="application/json; charset=UTF-8" %&gt;
+&lt;%@ taglib prefix="s" uri="/struts-tags" %&gt;
+{"PropertySet":{
+"Property":[
+&lt;s:iterator value="displayPropertyResultList" status="index"&gt;;
+    {
+    "Id":"&lt;s:property value="id" /&gt;",
+    "Name":"&lt;s:property value="name" /&gt;",
+    "Type":"&lt;s:property value="type" /&gt;",
+    "Value":"&lt;s:if test="%{value != null}"&gt;&lt;s:property value="value" /&gt;&lt;/s:if&gt;",
+    "ApplyFrom":"&lt;s:property value="applyFrom" /&gt;",
+    "ApplyTo":"&lt;s:property value="applyTo" /&gt;",
+    "Readable":"&lt;s:property value="readable" /&gt;",
+    "Writable":"&lt;s:property value="writable" /&gt;"
+    }
+    &lt;s:if test="%{!#index.last}"&gt;,&lt;/s:if&gt;
+
+&lt;/s:iterator&gt;
+]}
+}
+</pre>
+<p>More details and source code are available on <a href="http://github.com/bluepower/YUI-UX/tree/master/examples/yui2-datatable-simple-extention/" target="_blank">GitHub</a>, where I have extracted a prototype of the Admin UI using a local datasource as a simple demonstration.</p>
+<h3>What have been the challenges of using YUI in this project?</h3>
+<p>The main challenges have been around the fact that most of our developers are in fact not frontend engineers. They don&#8217;t always have quite as much experience dealing with cross-browser issues or JavaScript-specific tricks. Fortunately YUI helps us a lot to make good code structures and to smooth out most browser compatibility issues.</p>
+<h3>What&#8217;s next for Demeter? What are some upcoming features you are tackling with YUI?</h3>
+<p>One of the upcoming features we are working on is a reporting module that will make heavy use of <a href="http://developer.yahoo.com/yui/charts/">YUI Charts</a>. And we are also planning to use <a href="http://developer.yahoo.com/yui/treeview/">TreeView</a> widget to refactor our addressbook module.</p>
+<p>We are still using <a href="http://developer.yahoo.com/yui/2/">YUI 2</a>, but if more and more official widgets based on <a href="http://developer.yahoo.com/yui/3/">YUI 3</a> come out, we will consider totally moving to YUI 3 in the future.</p>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">June 7th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-2164 post type-post status-publish format-standard hentry category-in-the-wild category-yui-implementations tag-phanfare">
+				
+						<h2 id="post-2164"><a href="/blog/2010/05/19/phanfare/">Implementation Focus: Phanfare Media Organizer</a></h2>
+					
+
+						<div class="entry">
+							<p><a href="http://phanfare.com" title=""><img src="http://yuiblog.com/assets/phanfare-20100519-141100.jpg"></a></p>
+<p><cite>Cory Mintz</cite> from <a href="http://phanfare.com/">Phanfare</a> wrote in last week to tell us about their recent product launch, which is heavily based on YUI 2.8.0.</p>
+<blockquote><p>We just released our new web organizer yesterday&#8230;  It is a full photo and video organizer built as a web application, using just about every YUI 2 component. We think it really blurs the line between desktop and web software.</p>
+<p>Some notable features are:</p>
+<ul>
+<li>Using the <a href="http://developer.yahoo.com/yui/uploader/" title="">Uploader</a>, we let people organize and edit their photos as they upload.</li>
+<li>With the help of <a href="http://developer.yahoo.com/yui/dragdrop/" title="YUI Library">Drag and Drop</a> and <a href="http://developer.yahoo.com/yui/menu/" title="YUI Library">Menu</a>, the thumbnail grid has all of the behaviors of an OS’s file browser. You can drag select, drag and drop reorder, multi-select using ctrl and shift, arrow between thumbnails, etc.</li>
+<li>The dynamic loading of the <a href="http://developer.yahoo.com/yui/treeview/" title="YUI Library">TreeView</a>, let us lazy load user accounts with 100s of albums since they are hierarchical ( year -> album -> section ). This allows the page for an extremely large account to load just as fast as a small account.</li>
+</ul>
+</blockquote>
+<p>I love the clean professionalism of the site and the extraordinary attention to detail in the UI.  Feel free to tour the site &#8212; trial accounts are free and come populated with sample albums to give you a feel for what the site has to offer.  Congratulations to Cory and the team for such a fantastic launch.</p>
+<p><a href="http://phanfare.com" title=""><img src="http://yuiblog.com/assets/phanfare-20100519-141946.jpg"></a></p>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">May 19th, 2010<span></div></div>
+				</div>
+										
+								<div class="post-1964 post type-post status-publish format-standard hentry category-development category-yui-implementations">
+				
+						<h2 id="post-1964"><a href="/blog/2010/05/19/implementation-focus-mr-purple/">Implementation Focus: Mr Purple&#8217;s Movies and More</a></h2>
+					
+
+						<div class="entry">
+							<div class="interview">
+<div class="intro"><em></p>
+<p><img src="http://yuiblog.com/assets/mrpurple/murray.jpg" width="150" height="150" hspace="10" vspace="5" align="right" alt="Murray Macchio">Murray Macchio is a Senior Software Developer with over 7 years of web development experience located in Kingston, Ontario in Canada.  He is currently working with a company called SMT Plus to help streamline their e-learning development process.  He will soon be starting as a web developer at a company called Front Runner Pro.
+</p>
+<p></em></div>
+<p><img src="http://yuiblog.com/assets/mrpurple/screenshot.gif" width="510" height="398" alt="Screenshot of Mr. Purple's Movies and More web site"></p>
+<p class="q"><strong>Tell us a little about your project.</strong></p>
+<p>I had been putting off a website for my uncle&#8217;s company for some time, but with the help of YUI, I built his entire site from scratch in just 3 days.</p>
+<p class="q"><strong>What is your background with YUI? Why did you choose YUI for this project?</strong></p>
+<p>I have been using YUI for the past 2 years.  In my previous job, I introduced it into every single internal application.  I chose YUI for this project due to my familiarity with it, and because it does ALL of the hard work for you.  In short, YUI makes me look very good on a daily basis.</p>
+<p class="q"><strong>Which YUI components in particular are in use?</strong></p>
+<p>I used the <a href="http://developer.yahoo.com/yui/carousel/">Carousel</a>, <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete</a> and my absolute favorite, the <a href="http://developer.yahoo.com/yui/datatable/">DataTable</a>.</p>
+<p class="q"><strong>What have been the challenges of using YUI in this project?</strong></p>
+<p>The main challenges were with a couple of Carousel bugs.  These were issues I did expect, as it is still in beta.  The only really major issue I had was figuring out why 2 carousels on the same page didn&#8217;t play nicely together.  Then I realized that their items shared the same IDs.</p>
+<p><img src="http://yuiblog.com/assets/mrpurple/catalogue.gif" width="510" height="372" alt="Screenshot of catalogue page"></p>
+<p class="q"><strong>What are the things you&#8217;re most proud of in this project?</strong></p>
+<p>I am proud of the fact that I was able to provide a rich user experience very quickly.  Specifically, the catalog page that uses the AutoComplete widget with the DataTable allows users to easily browse a movie catalogue of over 4000 movies and games.</p>
+<p class="q"><strong>What are some upcoming features/projects you are tackling with YUI?</strong></p>
+<p>Next order of business, finish the Form Validation component I have been working on with Luke Smith for YUI 2.  I am excited to see how it&#8217;s received by the YUI community.  I also plan on introducing YUI to companies I will be working with in the near future.</p>
+<p class="q"><strong>How did the YUI components perform?</strong></p>
+<p>They performed excellent.  The DataTable was able to handle 4000 records at a time without an issue.  I have found that the performance of the YUI components has steadily improved with every release.</p>
+</div>
+						</div>
+
+						<div class="meta">
+    <img src="http://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">May 19th, 2010<span></div></div>
+				</div>
+							
+							<div class="bottom-nav">
+					<div class="navigation yui3-g">
+	<div class="next-posts yui3-u"><a href="/blog/category/yui-implementations/page/3/" >&laquo; Older Entries</a></div>
+            <span class="greyed nav-separator">|</span> 
+    	<div class="prev-posts yui3-u-1-2">
+        <a href="/blog/category/yui-implementations/" >Newer Entries &raquo;</a>    </div>
+</div>				</div>
+						
+	
+</div>
+</div>
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+    <div id="pages-3" class="sidebox widget widget_pages"><div class="hd"><h2>Pages</h2></div><div class="bd">		<ul>
+			<li class="page_item page-item-2"><a href="/blog/about/">About</a></li>
+<li class="page_item page-item-989"><a href="/blog/contribute/">Contribute</a></li>
+<li class="page_item page-item-1284"><a href="/blog/yui-team-positions/">YUI Jobs</a></li>
+		</ul>
+		</div></div>		<div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='http://www.yuiblog.com/blog/2014/08/'> August 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/06/'> June 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/05/'> May 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/04/'> April 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/03/'> March 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/02/'> February 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2014/01/'> January 2014 </option>
+	<option value='http://www.yuiblog.com/blog/2013/12/'> December 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/11/'> November 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/10/'> October 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/09/'> September 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/08/'> August 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/07/'> July 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/06/'> June 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/05/'> May 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/04/'> April 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/03/'> March 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/02/'> February 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2013/01/'> January 2013 </option>
+	<option value='http://www.yuiblog.com/blog/2012/12/'> December 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/11/'> November 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/10/'> October 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/09/'> September 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/08/'> August 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/07/'> July 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/06/'> June 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/05/'> May 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/04/'> April 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/03/'> March 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/02/'> February 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2012/01/'> January 2012 </option>
+	<option value='http://www.yuiblog.com/blog/2011/12/'> December 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/11/'> November 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/10/'> October 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/09/'> September 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/08/'> August 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/07/'> July 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/06/'> June 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/05/'> May 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/04/'> April 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/03/'> March 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/02/'> February 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2011/01/'> January 2011 </option>
+	<option value='http://www.yuiblog.com/blog/2010/12/'> December 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/11/'> November 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/10/'> October 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/09/'> September 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/08/'> August 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/07/'> July 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/06/'> June 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/05/'> May 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/04/'> April 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/03/'> March 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/02/'> February 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2010/01/'> January 2010 </option>
+	<option value='http://www.yuiblog.com/blog/2009/12/'> December 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/11/'> November 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/10/'> October 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/09/'> September 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/08/'> August 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/07/'> July 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/06/'> June 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/05/'> May 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/04/'> April 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/03/'> March 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/02/'> February 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2009/01/'> January 2009 </option>
+	<option value='http://www.yuiblog.com/blog/2008/12/'> December 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/11/'> November 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/10/'> October 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/09/'> September 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/08/'> August 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/07/'> July 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/06/'> June 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/05/'> May 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/04/'> April 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/03/'> March 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/02/'> February 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2008/01/'> January 2008 </option>
+	<option value='http://www.yuiblog.com/blog/2007/12/'> December 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/11/'> November 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/10/'> October 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/09/'> September 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/08/'> August 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/07/'> July 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/06/'> June 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/05/'> May 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/04/'> April 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/03/'> March 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/02/'> February 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2007/01/'> January 2007 </option>
+	<option value='http://www.yuiblog.com/blog/2006/12/'> December 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/11/'> November 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/10/'> October 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/09/'> September 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/08/'> August 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/07/'> July 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/06/'> June 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/05/'> May 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/04/'> April 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/03/'> March 2006 </option>
+	<option value='http://www.yuiblog.com/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/development/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8 current-cat"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div><div id="meta-2" class="sidebox widget widget_meta"><div class="hd"><h2>Meta</h2></div><div class="bd">			<ul>
+						<li><a href="/blog/wp-login.php">Log in</a></li>
+			<li><a href="/blog/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="/blog/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+<li><a href="https://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.org</a></li>			</ul>
+</div></div>
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+	<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/blog/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1419626120" border="0" width="1" height="1" alt="visit" /></noscript>	
+	<!-- Don't forget analytics -->
+
+	<script src="http://yuilibrary.com/combo/hoverable-min.js"></script>
+
+        <!-- Minified main.js from yuilibrary.com, with 'search' module requirement removed. -->
+        <script>(function(){var b=navigator.userAgent,c="",a="";if(/windows/i.test(b)){a="pc";c="win"}else{if(/macintosh/i.test(b)){a="mac";c="osx"}else{if(/ios/i.test(b)){c="ios";if(/(?:iphone|ipod)/i.test(b)){a="iphone mac"}else{if(/ipad/i.test(b)){a="ipad mac"}}}else{if(/linux/i.test(b)){if(/android/i.test(b)){a="android pc"}else{a="pc"}c="linux"}}}}document.documentElement.className+=" "+a+" "+c}());YUI().use("hoverable",function(b){var a=new b.Hoverable({hoverClass:"nav-tab-hover",srcNode:"#main-nav"})});
+        </script>
+	<script src="http://yuilibrary.com/vendor/prettify/prettify-min.js"></script>
+	<script>prettyPrint();</script>
+
+	<script>
+	(function() { /***
+		var ga = document.createElement('script'); ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		***/
+	}());
+	</script>
+	
+</body></html><script type="text/javascript">(function (d, w) {var x = d.getElementsByTagName('SCRIPT')[0];var f = function () {var s = d.createElement('SCRIPT');s.type = 'text/javascript';s.async = true;s.src = "//np.lexity.com/embed/YW/50f0aba8ce9ea20d2fd1df9287951fe1?id=4bff116c1ea8";x.parentNode.insertBefore(s, x);};w.attachEvent ? w.attachEvent('onload',f) :w.addEventListener('load',f,false);}(document, window));</script>

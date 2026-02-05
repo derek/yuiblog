@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI 3.7.3 - Windows 8 Apps and IE 10</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/releases/">Releases</a></li>
+                    <li class="current">YUI 3.7.3 - Windows 8 Apps and IE 10</li></ul>
+				<h1 class="yui3-u-7-8">YUI 3.7.3 - Windows 8 Apps and IE 10</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By Eric Ferraiuolo</a><span class="date">October 17, 2012<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><a href="http://windows.microsoft.com/en-US/windows/home">Windows 8</a> will be released in 9 days (on October 26, 2012), and <strong>YUI is ready to power JavaScript-based Windows 8 apps!</strong><p>With Windows 8, Microsoft is now enabling developers to use web technologies to build first-class apps for the Windows platform. These apps are also distributed through the Windows Store. We wanted to make sure YUI could be used to power Windows 8 apps, and today we are releasing YUI 3.7.3 which works excellently in all of the IE 10 runtimes in Windows 8, including the native Windows Runtime (which is used by Windows 8 apps.)<p><strong>YUI 3.7.3</strong> is now available on the <a href="http://yui.yahooapis.com/3.7.3/build/yui/yui-min.js" title="YUI 3.7.3 Seed file">Yahoo! CDN</a> (and as a <a href="http://yui.zenfs.com/releases/yui3/yui_3.7.3.zip" title="YUI 3.7.3 Zip file">download</a>). The <a href="http://yuilibrary.com/">YUI Library website</a> has been updated with the latest documentation, including the addition of IE 10 and the Windows 8 runtimes to our <a href="http://yuilibrary.com/yui/environments/">Target Environments</a>.<h3>IE 10 Runtimes in Windows 8</h3>
+	<p>Windows 8 has two main modes: <strong>Start screen</strong>, and <strong>Desktop</strong>. The Start screen mode (formerly known as Metro) is the new face of Windows, while the Desktop mode is the traditional interface. Both the Start screen and the Desktop have Internet Explorer apps powered by IE 10 runtimes, but Internet Explorer on the Start screen is more restrictive, and does not allow Flash, Silverlight, or ActiveX controls. It's also important to note that the <strong>Start screen mode is the default</strong> GUI in Windows 8.<p>Beyond the Internet Explorer apps in Windows 8, there are two other IE 10 runtimes: <strong>WebView</strong> and the <strong>native Windows Runtime</strong>. WebViews can be used in Windows 8 apps, but this environment is the most restrictive of the four. The native Windows Runtime environment has also been tightened down for security, but it provides APIs which extend its functionality and this is the environment in which JavaScript-based Windows Store apps run.<p>We have <a href="https://github.com/yui/yui3/wiki/Windows-8-JavaScript-Runtimes">more details</a> on the four IE 10 runtimes in Windows 8 on our Wiki.<h3>How We Quickly Added Support for Windows 8 and IE 10</h3>
+	<p>We were very confident when we set out to make YUI work in Windows 8 and IE 10. We felt that we would be able to fully identify issues, fix them, and test the fixes in a short amount of time. <strong>We gave ourselves 10 days</strong> (which included weekends) to get the job done. In those 10 days, we've thoroughly tested YUI in all four IE 10 runtimes, and we've made the necessary changes in this release to make sure you can use YUI to power your Windows 8 apps. We were able to meet our strict schedule and add support for all these new environments very quickly because of YUI's architecture.<p>We did <em>not</em> have to package a new version of YUI for these new Windows 8 runtime environments. Instead, we followed the same patterns we've used to make YUI run on mobile devices and on Node.js. We used <strong>YUI's powerful conditional loading infrastructure</strong>, our <strong>gesture/input normalization layer</strong>, and standard environment normalization techniques to implement the changes which make YUI work in the IE 10 runtimes in Windows 8.<p>As an app developer you can write the same JavaScript code on top of YUI which will work on the server, desktop web, mobile web, and now in native Windows apps! This is a key advantage of using YUI.<p>Below are some changes in this release that we'd like to highlight:<h4>Add XHR with CORS as a YQL transport</h4>
+	<p>We added the <a href="http://yuilibrary.com/yui/docs/api/modules/yql-winjs.html"><code>yql-winjs</code></a> module, which is automatically used when the <a href="http://yuilibrary.com/yui/docs/api/modules/yql.html"><code>yql</code></a> module is loaded in the native Windows Runtime. One of the native Windows Runtime restrictions is not supporting JSONP, and our default implementation of our <code>yql</code> module uses JSONP as its transport. Since the native Windows Runtime supports <a href="https://developer.mozilla.org/en-US/docs/HTTP_access_control">CORS</a> in XHR, and the YQL web service support CORS, we're able to use XHR with CORS as a YQL transport.<h4>Enhance Gesture Normalization</h4>
+	<p>YUI has had a mouse/touch gesture normalization layer for over two years — we were the first major JavaScript library to be agnostic to device-specific user inputs. Microsoft has created gesture abstractions which are present in all of the IE 10 runtimes, and YUI's gesture normalization layer will now leverage Microsoft's new <code>msPointer</code> APIs, when they're detected.<p><strong>Note:</strong> The XHR with CORS transport is something we&#8217;ll be exploring as the YQL transport for other environments as well.<h4>Support CSS3 Transitions Without Vendor Prefixes</h4>
+	<p>The <a href="http://yuilibrary.com/yui/docs/api/modules/transition.html"><code>transition</code></a> module has been improved to work both with and without vendor prefixes. Enabling <code>Y.Transition</code> to not require vendor prefixes means that <strong>IE 10 and Opera have gained support for native CSS3 Transitions</strong>.<p>This change also means that <a href="http://yuilibrary.com/yui/docs/api/classes/App.Transitions.html"><code>Y.App</code> transitions</a> are now supported in IE 10 and Opera as well.<h4>Leverage Native XML Parsing APIs</h4>
+	<p>We were able to retain YUI's XML parsing features in modules like <code>datatype-xml</code> for Windows 8 apps by leveraging the <code>Windows</code> APIs in the native Windows Runtime.<h4>Add Y.UA.winjs and Y.UA.touchEnabled</h4>
+	<p><a href="http://yuilibrary.com/yui/docs/api/classes/UA.html#property_winjs"><code>Y.UA.winjs</code></a> provides a way for you to identify that your code is running in Windows 8 app on the native Windows Runtime. With this environment being restrictive, having this hook is very useful.<p><a href="http://yuilibrary.com/yui/docs/api/classes/UA.html#property_touchEnabled"><code>Y.UA.touchEnabled</code></a> provides a hook to determine if the device supports touch-based gestures. The IE 10 runtimes in Windows 8 are the first environments to expose both touch <em>and</em> mouse based gestures to the browser.<h3>Known Issues</h3>
+	<p>After adding support for all of the IE 10 runtimes in Windows 8, there are a couple remaining known issues:<ul>
+			<li>
+				<p>Any element that you wish to tap/flick on using <code>event-tap</code> or <code>event-flick</code>, requires the following CSS:<pre><code>#myNode { -ms-touch-action: none; }</code></pre><p>See the Event Gestures user guide for <a href="http://yuilibrary.com/yui/docs/event/gestures.html#ie10-gestures-and--ms-touch-action">more</a> <a href="http://yuilibrary.com/yui/docs/event/gestures.html#known-issues-in-ie10-touch-mode">details</a>.<li>
+				<p>Editor will currently not function inside of the WinJS Windows 8 application environment. See the Rich Text Editor user guide for <a href="http://yuilibrary.com/yui/docs/editor/#knownissues">more details</a>.</ul> <h4>Bugs Filed with Microsoft</h4>
+	<p>During our testing of YUI on these new IE 10 runtimes, we've found several bugs which we've reported to Microsoft. To view the contents of these bugs, you <strong>must</strong> first <a href="http://connect.microsoft.com/directory/accepting-bugs/internet/">join the Internet Explorer Feedback Program</a>.<ul>
+			<li><a href="https://connect.microsoft.com/IE/feedback/details/763466/ie10-dynamic-script-loading-bug-async-404s">IE10 Dynamic Script Loading Bug - async + 404s</a><li><a href="https://connect.microsoft.com/IE/feedback/details/763871/dynamically-loaded-scripts-with-304s-responses-interrupt-the-currently-executing-js-thread-onload">Dynamically loaded scripts with 304s responses interrupt the currently executing JS thread onload</a><li><a href="https://connect.microsoft.com/IE/feedback/details/765964/win8-app-msapphost-cannot-set-secure-valid-html-using-innerhtml-if-it-contains-form-fields-with-name-set">Win8 App/MSAppHost : Cannot set secure, valid HTML using innerHTML if it contains form fields with `name` set</a><li><a href="https://connect.microsoft.com/IE/feedback/details/767646/ms-touch-action-does-not-allow-a-way-to-programmatically-prevent-default-touch-behavior">`-ms-touch-action` does not allow a way to programmatically prevent default touch behavior</a><li><a href="https://connect.microsoft.com/IE/feedback/details/763477/ie10-doesnt-support-the-common-feature-test-for-async-support">IE10 doesn't support the common feature test for async support</a></ul> <h3>Complete Changelog</h3>
+	<p>For a complete list of changes in YUI 3.7.3, please refer to the <a href="https://github.com/yui/yui3/wiki/YUI-3.7.3-Change-History-Rollup">change history rollup</a> for this release.<p>We spent last week documenting and re-testing these changes across all of our target environments. Using <a href="http://yeti.cx/">Yeti</a>, we are able to pump all 7,500+ of our unit tests to devices which are running a variety of browsers to make sure we did not introduce any regressions.<p>You should feel confident that upgrading to YUI 3.7.3 should be without issue, but if you find a bug, or want to suggest an enhancement, please don’t hesitate to <a href="http://yuilibrary.com/projects/yui3/newticket/">file a ticket</a>.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

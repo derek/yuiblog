@@ -1,0 +1,749 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>YUI: Weighing in on Pageweights &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; YUI: Weighing in on Pageweights</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.3" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-54"><a href="/blog/2006/10/16/pageweight-yui0114/" rel="bookmark" title="Permanent Link to YUI: Weighing in on Pageweights">YUI: Weighing in on Pageweights</a></h2>
+				<small>October 16, 2006 at 12:52 pm by Eric Miraglia | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<style>#pageweightTooltip .bd {background-color:#FFFFFF; font:10px Arial, Helvetica, sans-serif; color:#6600CC;}</style>
+<p>When we opened up the <a href="http://developer.yahoo.com/yui/">YUI Library</a> in February, <a href="/blog/2006/02/17/developing-a-javascript-library-for-yahoo/">we talked about</a> some of our motivations for creating an entirely new JavaScript toolkit.  One of those motivations, we said, was that Yahoo!&#8217;s diverse engineering communities demanded a solution that was lightweight, one that could be applied <em>&agrave; la carte</em> without unnecessary k-weight overhead.</p>
+<p>With YUI now encompassing three CSS foundation libraries, six utilities and nearly a dozen UI controls, we thought it would be a good time for a progress report on library size, page weights, and YUI&#8217;s <em>&agrave; la carte</em> architecture. (<strong>Note:</strong> This article focuses almost exclusively on pageweight, which itself is only one element of overall performance. Filesizes described here are based on YUI&#8217;s 0.11.4 release.) </p>
+<h3>Three Ways to Evaluate Filesize</h3>
+<p>JavaScript and CSS files exist in three different states, each with unique size profiles:</p>
+<ol>
+<li><strong>Full code source, including comments and whitespace:</strong> YUI, like most open-source JavaScript libraries, includes full-source files in its distribution. These files are formatted for developer readability and include extensive function-level comments to facilitate automated generation of API documentation. These files tend to be very large.</li>
+<li><strong>Minified source: </strong>YUI components are also distributed in minified form — minification meaning that comments, whitespace, and line breaks have been removed from the file. (Douglas Crockford&#8217;s <a href="http://www.crockford.com/javascript/jsmin.html">JSMin</a> and the <a href="http://dojotoolkit.org/docs/compressor_system.html">Dojo Compressor</a> are among the tools we use for this purpose.) <strong>YUI Library JavaScript files are reduced in size by more than 60% through minification alone.</strong></li>
+<li><strong>Minified, gzipped source sent over the wire:</strong> At Yahoo!, we evangelize the practice of serving all JavaScript and CSS files using gzip compression (a bandwidth-saving technique supported across the <a href="http://developer.yahoo.com/yui/articles/gbs/gbs_browser-chart.html">A-Grade browsers</a>). Gzipping reduces overall data transmission dramatically, and it is the minified, gzipped payload that ultimately determines the file&#8217;s weight on the wire.  <strong>YUI Library JavaScript files are reduced in size by more than 90% through the process of minification and gzipping combined.</strong></li>
+</ol>
+<p>Here is a filesize profile of the YUI Library JavaScript utilities&#8217; core files in (1) full, (2) minified, and (3) minified/gzipped form.</p>
+<div class="chart">
+<h4>Filesize Profile of YUI Utilities in Full, Minified and Minified/Gzipped Forms</h4>
+<p>	<img src="http://yuiblog.com/assets/pageweight/filesize_by_type.gif" alt="Chart: Filesize of YUI utilies JavaScript files in full, minified, and minified/gzipped profiles." width="550" height="255" longdesc="http://yuiblog.com/assets/pageweight/filesize_by_type.html" id="filesize_by_type"></p>
+<p class="gloss"><strong>Note:</strong> This chart does not include dependencies; the file sizes here are for each utility&#8217;s core source file only.</p>
+</div>
+<p>The data-transmission savings gained from minification and gzipping are dramatic &mdash; a document loading the entire YUI utility suite would incur 232.5KB in additional pageweight if serving the fully-commented source; that weight drops to <em>less than 20KB</em> when the files are minified and served with gzip compression, a savings of 91.9%.  In assessing library weight, we focus primarily on filesizes after minification and gzipping, as that is the truest measure of how much data needs to be transmitted to the browser. It&#8217;s worth reiterating, however, that this is only one part of the larger performance story.</p>
+<h3>Weighing Individual YUI Components When Used <em>&agrave; la Carte</em></h3>
+<p>One of the most important metrics for us in evaluating the success of YUI&#8217;s <em>&agrave; la carte</em> strategy is the aggregate filesize of each component, including its dependencies.  All YUI JavaScript components require the <a href="http://developer.yahoo.com/yui/yahoo/">Yahoo Object</a>; most also require <a href="http://developer.yahoo.com/yui/event/">Event</a> and <a href="http://developer.yahoo.com/yui/dom/">Dom</a>. The dependency tree beyond those foundations is more diverse. <strong>Including all JavaScript dependencies</strong> (even optional dependencies), what is the cost in transmitted filesize to include a  single YUI component when serving the minified files and gzipping the payload sent to the browser?</p>
+<div class="chart">
+<h4><em>&Agrave; la Carte</em> Pageweight of Individual YUI JavaScript Components, Including All Dependencies</h4>
+<p>	<img id="infographic" src="http://yuiblog.com/assets/pageweight/infographic.gif" alt="Chart: Kweight of individual YUI components, including dependencies." width="550" height="372" longdesc="http://yuiblog.com/assets/pageweight/infographic.html"></p>
+<p class="gloss"><strong>Note:</strong> Optional dependencies can have a significant impact on overall pageweight.  Container, for example, can make use of Connection Manager for wiring Dialog Controls to the server via XHR; it can also use Drag &amp; Drop to enable draggable Panels and Dialogs and Animation effects when showing and hiding Panels.  Those three optional components account for nearly 40% of Container&#8217;s pageweight in the chart above. The Panel implementation used above to show the large-format version of the chart image omits all of these optional effects, and as a result requires only 20.8KB of transmitted YUI JavaScript.  (Component filesizes represented in the chart do not include CSS resources.)</p>
+</div>
+<p>Because of YUI’s <em>&agrave; la carte</em> architecture, even the heaviest component is roughly half the weight of the image containing the chart above.  Looking at the single dimension of weight-on-the-wire, then, we feel comfortable that YUI is succeeding in one of its core goals: allowing implementers to choose specific richly interactive elements on a page-by-page basis without unduly inflating pageweight.</p>
+<h3>The YUI CSS Foundation</h3>
+<p>This summer, we began including in YUI three core CSS resources &mdash; <a href="http://developer.yahoo.com/yui/reset/">Reset</a>, <a href="http://developer.yahoo.com/yui/fonts/">Fonts</a>, and <a href="http://developer.yahoo.com/yui/grids/">Grids</a> &mdash; that provide a strong foundation on top of which developers can build semantic, progressively rendered, CSS-driven layouts.  The YUI CSS Grids component is a toolkit from which can be assembled more than 130 different wireframes, meeting the needs of a significant subset of page layout projects. And, taken together, this CSS foundation has an aggregate k-weight of just 1.3KB on the wire (minified and gzipped).</p>
+<p>For reference, here are the filesize profiles of the YUI CSS foundation files in (1) full, (2) minified, and (3) minified/gzipped forms.</p>
+<div class="chart">
+<h4>Filesize Profile of YUI CSS Foundation Files in Full, Minified and Minified/Gzipped Forms</h4>
+<p>	<img src="http://yuiblog.com/assets/pageweight/css_filesize_by_type.gif" alt="Chart: Filesize of YUI CSS foundation files in full, minified, and minified/gzipped profiles." width="400" height="193" longdesc="http://yuiblog.com/assets/pageweight/css_filesize_by_type.html" id="css_filesize_by_type"></div>
+<p></p>
+<h3>Beyond Filesize</h3>
+<p>Obviously, there&#8217;s a great deal to be said about library performance beyond raw k-weight on the wire; this single dimension is an important one, but achieving &#8220;performant richness&#8221; is a multifaceted problem.  Over time, we&#8217;ll explore some of these additional dimensions here on YUIBlog.</p>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.2.0/build/container/assets/container.css">
+<script type="text/javascript" src="http://yui.yahooapis.com/2.2.0/build/container/container-min.js"></script><br />
+<script type="text/javascript" src="http://yuiblog.com/assets/pageweight/pageweight.js"></script> </p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=YUI: Weighing in on Pageweights&u=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/" title="bookmark YUI: Weighing in on Pageweights on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/&amp;title=YUI: Weighing in on Pageweights" title="bookmark YUI: Weighing in on Pageweights in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/&amp;title=YUI: Weighing in on Pageweights" title="post YUI: Weighing in on Pageweights to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/"
+    dc:identifier="http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/"
+    dc:title="YUI: Weighing in on Pageweights"
+    trackback:ping="http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">26 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2006/10/16/pageweight-yui0114/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2006/10/16/pageweight-yui0114/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-10173" class="class_comment1">
+	<p>hi there,</p>
+<p> nice info. </p>
+<p>  Everyone should be doing this. I wish that Java (and other server-side framework authors ) and build frameworks like Ant and Maven should come up with easy way to do the minification and compression for Javascript component libraries(like YUI) and components. Even more important(in terms of ROI) would be an easy way to minify and compress custom Javascript files.</p>
+<p>  I know of an enterprise app(which is currently intranet only) that has loads of javascript files &#8212; it doesn&#8217;t use any compression or minification. Not sure if it uses GZIP compression on the wire either. This is fine as long as the app is on the intranet but if it were to be an extranet app or INTERNET app, then the bandwidth costs would be severe.</p>
+<p>Doubt : Apart from the bandwidth costs, the size of the DOM might be bigger for uncompressed/unminified javascript/HTML files since verbose element names and javascript functions/variable will surely be bigger than their minified/compressed ones. Does anyone know any better ?</p>
+<p>Thank you,</p>
+<p>BR,<br />
+~A</p>
+	<p class="alignright"><small>Comment by <a href='http://anjanb.wordpress.com' rel='external nofollow'>anjan bacchu</a> &#8212; October 16, 2006 <a href="#comment-10173">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10206" class="class_comment2">
+	<p>I heard that gzip compressed JavaScript sometimes breaks in IE. Does anyone know if this is true?</p>
+	<p class="alignright"><small>Comment by Mike &#8212; October 17, 2006 <a href="#comment-10206">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10208" class="class_comment1">
+	<p>[&#8230;] It&#8217;s nice to see some proactive options presented from Yahoo. Without trying to sound arrogant, most of us already knew this stuff but it&#8217;s great to see all the visuals. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://blog.chadlindstrom.ca/archives/2006/10/page-weight-a-common-service-for-front-end-frameworks' rel='external nofollow'>chad lindstrom&#8217;s blog &raquo; Blog Archive &raquo; Page Weight, a common service for front-end frameworks?</a> &#8212; October 17, 2006 <a href="#comment-10208">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10209" class="class_comment2">
+	<p>Good article.</p>
+<p>Slightly off-topic, but what if (big what-if) we as developers could link to the yui framework on say <a href="http://lib.yahoo.com/yui.js" rel="nofollow">http://lib.yahoo.com/yui.js</a> or some equivalent.</p>
+<p>There are some obvious reasons why Yahoo would not wish to do this (bandwidth costs), but also some obvious reasons why you would (potentially higher adoption).  Similarly some significant reasons why a 3rd party developer (dependency on remote service, no control over change) would want to link directly to lib.yahoo.com.</p>
+<p>It&#8217;s something I blogged about over at <a href="http://blog.chadlindstrom.ca/archives/2006/10/page-weight-a-common-service-for-front-end-frameworks" title="" rel="nofollow">http://blog.chadlindstrom.ca</a>.</p>
+<p>I don&#8217;t mean to hi-jack, but what do others think?</p>
+	<p class="alignright"><small>Comment by <a href='http://www.chadlindstrom.ca' rel='external nofollow'>ChadL</a> &#8212; October 17, 2006 <a href="#comment-10209">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10214" class="class_comment1">
+	<p>I working on a Javascript serving engine as we speak, with optional validation, compression, gzipping and checksuming from fully documented source on the fly. Its very encouraging to see both Yuui and Dojo posting on thier build tools, and to know that JSMin and ShrinkSafe are getting commercial level usage.</p>
+<p>I would be very interested to know more about Yahoo&#8217;s internal JS development processes - particularly Unit and Functional testing frameworks, and how you test visual effects?</p>
+<p>It is very much time to start treating Javascript as a software component itself and seek out or build the tools needed - of which Yahoo is delivering in spades.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.metafeather.net/' rel='external nofollow'>Liam Clancy (metafeather)</a> &#8212; October 17, 2006 <a href="#comment-10214">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10217" class="class_comment2">
+	<p>Just interested: Have you found any way to support this gzipped delivery in IE, too? The problems with caching or removing a part of the file when delivered compressed. Have you found any solution for this? Do you filter the clients by some special version. Could you please explain this more detailed? Thanks.</p>
+	<p class="alignright"><small>Comment by <a href='http://journal.webmagics.net' rel='external nofollow'>Sebastian Werner</a> &#8212; October 17, 2006 <a href="#comment-10217">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10220" class="class_comment1">
+	<p>There&#8217;s one thing I like even more about than the small filesizes: the number of files. The whole YUI lib consists of about 100 files. Nost other JS or PHP libs I include in my projects do contain much more files.</p>
+<p>Therefore, my web-projects usualy consist of loads of small files. When I upload a system trough FTP, most time is consumed by gettting directory listings and opening filetransfers. Not by transfering data.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.gerritduits.nl' rel='external nofollow'>Gerrit Duits</a> &#8212; October 17, 2006 <a href="#comment-10220">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10262" class="class_comment2">
+	<p>Re: gzip http compression, Yes - most likely any Netscape 4.x browser is not going to receive that compression. See <a href="http://www.webreference.com/internet/software/servers/http/compression/" rel="nofollow">webreference on http compression</a>.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.dustindiaz.com' rel='external nofollow'>Dustin Diaz</a> &#8212; October 17, 2006 <a href="#comment-10262">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10397" class="class_comment1">
+	<p>[&#8230;] O blog do projeto YUI est&aacute; com um post sobre esse problema que no YUI &eacute; at&eacute; preocupante vide o tamanho de seus componentes.&nbsp; [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.milfont.org/blog/archives/87' rel='external nofollow'>CMilfont &raquo; Tamanho dos arquivos JS</a> &#8212; October 18, 2006 <a href="#comment-10397">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10401" class="class_comment2">
+	<p>Since the UI specialists are customer advocates and concerned about PAGEWEIGHTS, LAYOUT, and general USABILITY perhaps you could address the problem of my yahoo mail plus account losing 35 filters that I paid for. It&#8217;s been 4 days past the promised RESPONSE time, and in the meantime, regardless of the I&#8217;m getting several hundred unfiltered messages. FILE SIZE is important as customer service.</p>
+	<p class="alignright"><small>Comment by Ted Fleischman &#8212; October 18, 2006 <a href="#comment-10401">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10443" class="class_comment1">
+	<p>Regarding gzip compression you might want to take a look at <a href="http://www.thinkvitamin.com/features/webapps/serving-javascript-fast" title="Serving Javascript Fast" rel="nofollow">the article by Cal Henderson</a>. </p>
+<p>It explains why gzip compression is problematic when using Netscape 4 or Internet Explorer (version 4 through 6) and gives some other good advise on how to optimize the serving of JavaScript and other resources. </p>
+<p>Cheers,<br />
+Jens</p>
+	<p class="alignright"><small>Comment by <a href='http://www.atlassian.com' rel='external nofollow'>Jens Schumacher</a> &#8212; October 18, 2006 <a href="#comment-10443">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-10691" class="class_comment2">
+	<p>Hi Ted,</p>
+<p>We appreciate you bringing this to our attention.</p>
+<p>We&#8217;ll be happy to look into your report.  We&#8217;ve sent you a separate email.  Please reply and provide the details requested and we&#8217;ll be happy to look into the issue.</p>
+<p>For future reference, please submit Yahoo! Customer Care email inquiries through the Yahoo! Mail Help Page URL below:</p>
+<p><a href="http://add.yahoo.com/fast/help/us/mail/cgi_feedback" rel="nofollow">http://add.yahoo.com/fast/help/us/mail/cgi_feedback</a></p>
+<p>We await your reply.</p>
+<p>Thank you for contact Yahoo! Customer Care.</p>
+<p>Regards,</p>
+<p>Montgomery<br />
+Yahoo! Customer Care</p>
+<p>&#8212;&#8211; on Oct. 18, 2006, Ted Fleischman wrote &#8212;&#8211;</p>
+<p>Since the UI specialists are customer advocates and concerned about PAGEWEIGHTS, LAYOUT, and general USABILITY perhaps you could address the problem of my yahoo mail plus account losing 35 filters that I paid for. It’s been 4 days past the promised RESPONSE time, and in the meantime, regardless of the I’m getting several hundred unfiltered messages. FILE SIZE is important as customer service. </p>
+<p>Comment by Ted Fleischman — October 18, 2006 #</p>
+	<p class="alignright"><small>Comment by <a href='http://mail.yahoo.com' rel='external nofollow'>Montgomery, Yahoo! Customer Care</a> &#8212; October 20, 2006 <a href="#comment-10691">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-12660" class="class_comment1">
+	<p>[&#8230;] On the topic of sending less data, the Yahoo! User Interface Blog weighs in on page waits with a discussion of javascript minimization versus compression. They also briefly cover the YUI decision to serve components à la carte, rather than in an aggregated file. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.procata.com/blog/archives/2006/10/31/faster-page-loading/' rel='external nofollow'>Faster Page Loading - Professional PHP</a> &#8212; October 31, 2006 <a href="#comment-12660">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-15642" class="class_comment2">
+	<p>Is the time gained from a reduced filesize worth the overhead to decompress the JavaScript libraries?  I haven&#8217;t found any benchmarks.</p>
+	<p class="alignright"><small>Comment by Jason &#8212; November 15, 2006 <a href="#comment-15642">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-15686" class="class_comment1">
+	<p>We&#8217;ve measured the impact of gzip compression at Yahoo!. Pages load faster when scripts are compressed. The amount depends on how big the scripts are in comparison to everything else. Another indicator of the tipping point is that mod_gzip (the module responsible for doing compression in apache 1.x) compresses anything over 500 bytes, by default. If you have scripts that are over 1-2 K in size, your users will benefit from compressing those files.</p>
+	<p class="alignright"><small>Comment by Steve Souders &#8212; November 15, 2006 <a href="#comment-15686">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-16638" class="class_comment2">
+	<p><strong>Update 0.12.0&#8230;</strong></p>
+<p>Animation   added boolean finish argument to Anim.stop().   AutoComplete   The following constants must be defined as static class properties and are no longer available as instance properties:  YAHOO.widget.DataSource.ERRORDATANULL  YAHOO.widget&#8230;&#8230;.</p>
+	<p class="alignright"><small>Trackback by <a href='http://mwwiki/display/Teams/Update+0.12.0' rel='external nofollow'>Confluence: Teams</a> &#8212; November 20, 2006 <a href="#comment-16638">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-17420" class="class_comment1">
+	<p>[&#8230;] Pack your Javascript  icd_onload_register(function(){ dp.SyntaxHighlighter.HighlightAll(); });With all these Javascript frameworks coming out recently and the move to a more dynamic web, your page size will increase due to the Javascript files. Now you can compress them on-the-fly with PHP.There has been written a lot on the subject of Javascript file size and how to reduce it. One of the recent article I recall is Yahoo&#8217;s Weighing in on Pageweights, in which they propose the source to be minified using a couple of techniques, out of which I prefer Douglas Crockford&#8217;s JSMin. This tool only removes comments, whitespace and newlines, making your file as compressed as it could be without modifying any code. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://agachi.name/weblog/archives/2006/11/25/pack-your-javascript.htm' rel='external nofollow'>Pack your Javascript - Valentin Agachi: web developer</a> &#8212; November 25, 2006 <a href="#comment-17420">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-20123" class="class_comment2">
+	<p>[&#8230;] Wenn man eine gro&szlig;e Bibliothek mit vielen Funktionen, M&ouml;glichkeiten und einer sehr guten Dokumentation ben&ouml;tigt sollte man sich unbedingt die Yahoo! User Interface Library genauer anschauen. Von der anf&auml;nglichen Gr&ouml;&szlig;e der Bibliothek sollte man sich nicht beeindrucken lassen, denn es bestehen M&ouml;glichkeiten und Techniken die Gr&ouml;&szlig;e zu minimieren und JavaScript dynamisch nachzuladen. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.webthreads.de/2006/12/beliebteste-ajax-frameworks/' rel='external nofollow'>webthreads.de &raquo; Beliebteste Ajax Frameworks</a> &#8212; December 6, 2006 <a href="#comment-20123">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-37165" class="class_comment1">
+	<p>[&#8230;] Further reading: Yahoo UI uses a modular Javascript approach (so does Dojo). See YUI&#8217;s impressive bandwidth numbers, including comparisons with gzip enabled. [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://eightpence.com/enable-server-side-compression-to-cope-with-those-huge-javascript-libraries/' rel='external nofollow'>Enable server-side compression to cope with those huge Javascript libraries &raquo; eightpence - Phil Crosby</a> &#8212; January 25, 2007 <a href="#comment-37165">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-46405" class="class_comment2">
+	<p>You&#8217;ve just taken all my concerns out of using the YUI. Thanks - great article.</p>
+<p>Keith</p>
+	<p class="alignright"><small>Comment by <a href='http://www.wump.com' rel='external nofollow'>Keith</a> &#8212; February 10, 2007 <a href="#comment-46405">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-64643" class="class_comment1">
+	<p>I am wondering how to maintain the dependencies when you compress all those modules in different files. Or I miss something that those modules have been merged into a big file before being compressed.</p>
+	<p class="alignright"><small>Comment by Rui &#8212; March 13, 2007 <a href="#comment-64643">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-65133" class="class_comment2">
+	<p>[&#8230;] Vous pouvez comparer la taille des fichiers originaux, minifiés et minifiés zippés sur cette page (en). [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://www.tri-oxyde.org/blog/2007/02/20/yahoo-heberge-a-present-les-fichiers-de-yui-sur-ses-propres-serveurs/' rel='external nofollow'>Julien Carosi, Internet Business Architect &raquo; Yahoo! héberge à présent les fichiers de YUI sur ses propres serveurs</a> &#8212; March 14, 2007 <a href="#comment-65133">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-65572" class="class_comment1">
+	<p>@Rui &#8212; Currently, you maintain dependencies yourself by including all the correct files in the correct order, as specified in the documentation for each control (see <a href="http://developer.yahoo.com/yui/" rel="nofollow">the YUI website</a> for this information); alternatively, you may aggregate files yourself (again, in the correct order) and serve single files with all the parts of YUI that you need.  We provide a few aggregates as part of the distribution; those are packaged in the correct order as well.  Although YUI may at some future point have loader mechanism to help you with this, you will always have the option to create your own specific aggregate files that include YUI plus your own JS resources; this is often the most performant way to deploy your applications.  Regards, Eric</p>
+	<p class="alignright"><small>Comment by <a href='http://blog.360.yahoo.com/ericmiraglia' rel='external nofollow'>Eric Miraglia</a> &#8212; March 14, 2007 <a href="#comment-65572">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-74699" class="class_comment2">
+	<p>[&#8230;] <a href="/blog/2006/10/16/pageweight-yui0114/" rel="nofollow">http://yuiblog.com/blog/2006/10/16/pageweight-yui0114/</a> [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='http://benjchristensen.wordpress.com/2006/10/30/javascript-and-css-optimization/' rel='external nofollow'>Javascript and CSS Optimization &laquo; Thoughts and Ramblings</a> &#8212; March 24, 2007 <a href="#comment-74699">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-114644" class="class_comment1">
+	<p>[&#8230;] aggregate file (along with Connection Manager) which weighs just 18.1KB gzipped on the wire. (More on YUI and pageweight; more on why reducing http requests is a Very Good [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2006/12/14/maps-plus-yui/' rel='external nofollow'>Using YUI with the Yahoo! Maps AJAX API &raquo; Yahoo! User Interface Blog</a> &#8212; May 14, 2007 <a href="#comment-114644">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-114645" class="class_comment2">
+	<p>[&#8230;] things. It seemed to be lean and designed in a way that made sense.&quot; The à la carte approach with its small file footprint was a big factor for MacAskill. &quot;I&#8217;m the optimization guy. I did not want a heavy [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2007/01/12/smugmug/' rel='external nofollow'>Implementation Focus: SmugMug &raquo; Yahoo! User Interface Blog</a> &#8212; May 14, 2007 <a href="#comment-114645">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="54" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/09/13/bubbling-library-by-caridy/">The Bubbling Technique &amp; Custom Event, YUI&#8217;s Secret Weapon by Caridy Pati&#241;o Mayea</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/12/satyam-datatable/">Working with the YUI DataTable Control</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/05/pattern-vote-to-promote/">New pattern (Vote to Promote), new navigation</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/04/video-souders/">YUI Theater &mdash; Steve Souders: &#8220;High Performance Web Sites: 14 Rules For Faster Pages&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/04/yui-region/">Shift Happens &mdash; Fixing Tricky Layouts with the YUI Dom Collection</a></li>
+					    		<li class="recent"><a href="/blog/2007/08/29/video-smarr/">YUI Theater &mdash; Joseph Smarr: &#8220;High-Performance JavaScript: Why Everything You&#8217;ve Been Taught is Wrong&#8221;</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(5)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://www.yswfblog.com/">Yahoo! Flash (R) Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 27 queries. 0.709 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1190021981" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

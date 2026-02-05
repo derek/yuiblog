@@ -1,0 +1,912 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head profile="http://gmpg.org/xfn/11">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<title>Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable &raquo; Yahoo! User Interface Blog</title>
+<!-- 	<title>Yahoo! User Interface Blog &raquo; Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable</title> -->
+	
+	<meta name="generator" content="WordPress 2.2.3" /> <!-- leave this for stats please -->
+	<!-- geocoding -->
+	<meta name="ICBM" content="37.416383,-122.024870" />
+	<meta name="DC.title" content="Yahoo! User Interface Blog" />
+	<!-- /geocoding -->
+	<style type="text/css" media="screen">
+		@import url(http://www.yuiblog.com/blog/wp-content/themes/yuiblog_v1/style.css);
+	</style>
+	<link rel="Shortcut Icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" />
+<!-- 	
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="/blog/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="/blog/feed/atom/" />	
+ -->	
+	<link rel="pingback" href="/blog/xmlrpc.php" />
+	<script type="text/javascript" src="http://yui.yahooapis.com/2.3.0/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+    	<link rel='archives' title='October 2007' href='/blog/2007/10/' />
+	<link rel='archives' title='September 2007' href='/blog/2007/09/' />
+	<link rel='archives' title='August 2007' href='/blog/2007/08/' />
+	<link rel='archives' title='July 2007' href='/blog/2007/07/' />
+	<link rel='archives' title='June 2007' href='/blog/2007/06/' />
+	<link rel='archives' title='May 2007' href='/blog/2007/05/' />
+	<link rel='archives' title='April 2007' href='/blog/2007/04/' />
+	<link rel='archives' title='March 2007' href='/blog/2007/03/' />
+	<link rel='archives' title='February 2007' href='/blog/2007/02/' />
+	<link rel='archives' title='January 2007' href='/blog/2007/01/' />
+	<link rel='archives' title='December 2006' href='/blog/2006/12/' />
+	<link rel='archives' title='November 2006' href='/blog/2006/11/' />
+	<link rel='archives' title='October 2006' href='/blog/2006/10/' />
+	<link rel='archives' title='September 2006' href='/blog/2006/09/' />
+	<link rel='archives' title='August 2006' href='/blog/2006/08/' />
+	<link rel='archives' title='July 2006' href='/blog/2006/07/' />
+	<link rel='archives' title='June 2006' href='/blog/2006/06/' />
+	<link rel='archives' title='May 2006' href='/blog/2006/05/' />
+	<link rel='archives' title='April 2006' href='/blog/2006/04/' />
+	<link rel='archives' title='March 2006' href='/blog/2006/03/' />
+	<link rel='archives' title='February 2006' href='/blog/2006/02/' />
+			<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/blog/xmlrpc.php?rsd" />
+<meta name="generator" content="FAlbum 0.2" />
+
+<style type="text/css">
+@import url(http://www.yuiblog.com/blog/wp-content/plugins/falbum/falbum.css);
+</style>
+</head>
+
+<body>
+<script type='text/javascript' src='http://track2.mybloglog.com/js/jsserv.php?mblID=2007010912241462'></script>
+<div id="content">
+	
+	<div id="header" onclick="location.href='/blog';" style="cursor: pointer;">
+		<h1><a href="/blog">Yahoo! User Interface Blog</a></h1>
+	</div>
+
+	<div id="pages">
+			<div class="alignleft">
+				<ul>
+				<li><a href="/blog">Blog</a></li>
+				<li class="page_item"><a href="/blog/about/" title="About">About</a></li>
+				</ul>
+			</div>
+		
+			<div id="search">
+				<form id="searchform" method="get" action="http://yuiblog.com/blog">
+					<input type="text" name="s" id="s" size="20" value="search in blog..." />
+				</form>
+			</div>
+	</div>
+	
+<!-- end header -->
+			
+	<div id="bloque">
+		
+		<div id="noticias">
+		
+				
+			<div class="entrada">
+				<h2 id="post-135"><a href="/blog/2007/09/26/satyam-datatable-2/" rel="bookmark" title="Permanent Link to Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable">Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable</a></h2>
+				<small>September 26, 2007 at 11:26 am by Daniel Barreiro | In <a href="/blog/category/development/" title="View all posts in Development" rel="category tag">Development</a> | </small>
+						
+			<p><strong>Don&#8217;t miss <a href="/blog/2007/09/12/satyam-datatable/">Part One of this series</a>, in which Satyam explores practical steps on getting started with the <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable Control</a>.</strong></p>
+<div class="interview">
+<div class="intro">
+<p>     <img src="http://yuiblog.com/assets/satyam.jpg" alt="Daniel Barreiro (Satyam)" width="160" height="206" align="right"><strong>About the Author:</strong>  Daniel Barreiro (screen name Satyam) has been around for quite some time.  The ENIAC was turned off the day before he was born, so he missed that &mdash; but he hasn&#8217;t missed much since.  He&#8217;s had a chance to punch cards, program 6502 chips (remember the Apple II?), own a TRS-80 and see some fantastic pieces of operating equipment in his native Argentina which might have been in museums elsewhere.  When globalization opened the doors to the world, his then barely usable English (plus an Electrical Engineering degree) put him on the career path which ended in a 5-year job in the Bay Area back in the days of NCSA Mosaic.  Totally intrigued by the funny squiggles a friend of his wrote in his plain text editor, full of &lt;&#8217;s and &gt;&#8217;s, he ended up learning quite a lot about the world of frontend engineering.  It&#8217;s been a long journey since COBOL and Fortran.  Now he lives quite happily semi-retired in the Mediterranean coast close to Barcelona, Spain.  When he&#8217;s not basking in the Mediterranean sun, Saytam can be found among the most prolific and knowledgable participants in the YUI community on the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YDN-JavaScript developer forum</a>.</p>
+</p></div>
+</p></div>
+<p>In a <a href="/blog/2007/09/12/satyam-datatable/">previous article</a> I wrote about how to get started with your own implementation of the <code> DataTable</code> component. In this article I will cover how to change the contents of the <code>DataTable</code>, especially how to communicate with your database server to make changes and, if successful, show those changes to the user,  since in many applications, the contents of the <code>DataTable</code> should be a reflection of the information in a database.</p>
+<p>  <span id="more-135"></span><br />
+<h2 id="deleting_records">Deleting records</h2>
+<p>We will start with the easiest transaction: deleting a single record. First let&#8217;s make a column containing a delete icon which, when clicked, will delete the row. To do that, we declare that extra column in the column definitions for the <code>DataTable</code> in this way:</p>
+<pre>var myColumnDefs = [
+    ....,
+    ....,
+    {key:'delete',label:' ',formatter:function(elCell) {
+        elCell.innerHTML = '&lt;img src=&quot;images/delete.png&quot; title=&quot;delete row&quot; /&gt;';
+        elCell.style.cursor = 'pointer';
+    }},
+    ....</pre>
+<p>We are declaring an extra column with <code>key</code> equal to <code>'delete'</code>, with a blank column header (if <code>label</code> is not declared the header will default to the <code>key</code>  value so we have to explicitly say we don&#8217;t want one) and with a <code>formatter</code> function that we define on the spot. We will use only the <code>elCell</code> argument so we don&#8217;t even bother to declare the other three arguments passed to the formatter function. We simply put an image into that cell; no <code>onClick</code> or <code>id</code> attributes are needed for that image, as we will see, and we couldn&#8217;t care less for the contents of that cell, meaning it can be a <code>&lt;button&gt;</code>, a simple text or nothing.</p>
+<p>We are going to be able to detect a click on the cell by subscribing to the <code>cellClickEvent</code>. If we also want to have inline cell editing, we would have the following somewhere in our code:</p>
+<pre>myDataTable.subscribe('cellClickEvent',myDataTable.onEventShowCellEditor);</pre>
+<p>This is telling the <code> DataTable</code> that when it receives a cell click event it should activate the cell editor, but that is not the only option. We could have instead:</p>
+<pre>myDataTable.subscribe('cellClickEvent',function(ev) {
+    var target = YAHOO.util.Event.getTarget(ev);
+    var column = myDataTable.getColumn(target);
+    if (column.key == 'delete') {
+        if (confirm('Are you sure?')) {
+            myDataTable.deleteRow(target);
+        }
+    } else {
+        myDataTable.onEventShowCellEditor(ev);
+    }
+});</pre>
+<p>Instead of simply showing the cell editor, first we check whether the click came from a cell in the new column, the one with the delete icon. Use the Event component&#8217;s <code>getTarget()</code> method to get the target cell of the click. We can then use the target cell to get the column via <code>getColumn()</code> and then check for its <code>key</code> value. If the <code>key</code> of the clicked column is the same for the delete icon column and, if the user confirms the action, we call <code>deleteRow()</code> and pass in the target cell as an argument. The event listener is executed in the scope of the table, so <code>this</code> and <code>myDataTable</code> within the function are the same.</p>
+<p>We have one problem with this code: the server knows nothing of this change, so we will have to insert some code in between the user confirmation and the actual row deletion:</p>
+<pre>myDataTable.subscribe('cellClickEvent',function(ev) {
+    var target = YAHOO.util.Event.getTarget(ev);
+    var column = this.getColumn(target);
+    if (column.key == 'delete') {
+        if (confirm('Are you sure?')) {
+            var record = this.getRecord(target);
+            YAHOO.util.Connect.asyncRequest(
+                'GET',
+                'myServer.php?deleteRow=' + record.getData('id'),
+                {
+                    success: function (o) {
+                        if (o.responseText == 'Ok') {
+                            this.deleteRow(target);
+                        } else {
+                            alert(o.responseText);
+                        }
+                    },
+                    failure: function (o) {
+                        alert(o.statusText);
+                    },
+                    scope:this
+                }
+            );
+        }
+    } else {
+        this.onEventShowCellEditor(ev);
+    }
+});</pre>
+<p>After confirming the user intention, we call <code>asyncRequest()</code> of the Connection Manager. We make a <code>GET</code> request to the server, passing it the value of the database primary key, here called <code>id</code>, for the current record which we get through a call to <code>getData()</code>. Upon a successful reply from the server, if it sends an <code>'Ok'</code> message, we delete the row as before. If there is any other reply from the server, we assume it to be an error message and we show it to the user, just as we do if we are unable to connect the server in the <code>failure</code> callback option.</p>
+<p>In this example I changed the references from <code>myDataTable</code> to <code>this</code>, since the event listener is called within the scope of the <code>DataTable</code>, but beware, the callback to the <code>asyncRequest()</code> method has a different scope unless you explicitly force it and so we need to add <code>scope:this</code> for the <code>this.deleteRow()</code> inside the callback to work. Thanks to closure, the variable <code>target</code> within the <code>success</code> callback function refers to the one in the enclosing function. I am simplifying a bit here, but in your own code you might prefer to use <code>YAHOO.widget.SimpleDialog</code> instead of <code>confirm()</code> and <code> alert()</code>.</p>
+<p>If you analyze this function you may notice that all the information it needs comes from the event <code>target</code> except for two hard coded values: the column key and the database&#8217;s primary key for the record. This forces us to rewrite this very same function for each and every table. We can, though, provide this information from elsewhere so that we could put this function into our own handy personal library. In the <a href="/blog/2007/09/12/satyam-datatable/">previous article</a> I mentioned that the column definitions were extensible, and you can add your own properties to them as long as their names don&#8217;t collide with those the YUI uses. We can add a couple of such properties. One we will call <code>action</code> and in this case we will set <code>action:'delete'</code>. The other property we will call <code>isPrimaryKey</code> and it will either be <code>true</code> or simply not be there. We will set it to <code>true</code> only in the column or columns which are the primary keys in the database. Our generic delete function might then look like this:</p>
+<pre>myDataTable.subscribe('cellClickEvent',function(ev) {
+    var target = YAHOO.util.Event.getTarget(ev);
+    var column = this.getColumn(target);
+    if (column.action  == 'delete') {
+        if (confirm('Are you sure?')) {
+            var record = this.getRecord(target);
+            YAHOO.util.Connect.asyncRequest(
+                'GET',
+                'myServer.php?action=delete' + myBuildUrl(record),
+                {
+                    success: function (o) {
+                        if (o.responseText == 'Ok') {
+                            this.deleteRow(target);
+                        } else {
+                            alert(o.responseText);
+                        }
+                    },
+                    failure: function (o) {
+                        alert(o.statusText);
+                    },
+                    scope:this
+                }
+            );
+        }
+    } else {
+        this.onEventShowCellEditor(ev);
+    }
+});</pre>
+<p>Where the <code>myBuildUrl()</code> function is:</p>
+<pre>var myBuildUrl = function(record) {
+    var url = '';
+    var cols = this.getColumnSet().keys;
+    for (var i = 0; i &lt; cols.length; i++) {
+        if (cols[i].isPrimaryKey) {
+            url += '&amp;' + cols[i].key + '=' + escape(record.getData(cols[i].key));
+        }
+    }
+    return url;
+};</pre>
+<p>This function goes through all the column definitions looking for the <code>isPrimaryKey</code> property and, if set, it will concatenate into the variable <code>url</code> the column&#8217;s <code>key</code> name, which we assume to be URL-safe, and the current value for that column taken from <code>record</code> all in proper and escaped URL encoded format. The value returned will even have the leading <code>'&amp;'</code> since, most of the time, we will be appending it to a partially built URL. Most of the transactions we do with the server will require us to identify the record by its primary keys so we will use this function quite often.</p>
+<h2><a name="inserting_rows"></a>Inserting rows</h2>
+<p>It is quite easy to insert a blank row into the <code>DataTable</code>. Let&#8217;s assume that we have added another column that has buttons to insert a row. The following code will insert a blank row above the row where the button was clicked. Since we now have more options for the <code>action</code> column property, we change the previous <code>if(column.action == 'delete')</code> to a switch:</p>
+<pre>myDataTable.subscribe('cellClickEvent',function(ev) {
+    var target = YAHOO.util.Event.getTarget(ev);
+    var column = this.getColumn(target);
+    switch(column.action) {
+        case 'insert':
+            this.addRow( {} , this.getRecordIndex(target));
+            break;
+    ....</pre>
+<p>The <code>addRow()</code> method takes an object literal whose property names are those of the <code>column.key</code> properties and the values for each property are the ones to be inserted. Those fields not explicitly set (none in this example) will be set to <code>undefined</code>. In normal circumstances the object literal should be filled with suitable defaults. The second argument to <code> addRow()</code> is the position where the record is to be inserted, in this case taken from the position of the click via <code>getRecordIndex()</code>.</p>
+<p>The user will still need to input data for the new row and the new data will need to be sent to the server as we will see later on. Since there is no built-in row editing functionality in the current release, the best option is to pop up a <code>Dialog</code> from the Container component. The <a href="http://developer.yahoo.com/yui/container/dialog/">documentation for the Dialog component</a> shows how to assemble a form and submit the information collected to the server, so I won&#8217;t cover that here.</p>
+<p>Another idea for row insertion is to trigger it via a context menu, where you would have to insert the new row in relation to the row that triggered the context menu. Or an &#8216;Add New Record&#8217; button or link directly outside the table could cause a row to be inserted at position 0, which would be the top of the table. This is a case where we can fully appreciate the difference in between row numbers and record id numbers that we mentioned in the <a href="/blog/2007/09/12/satyam-datatable/">previous article</a>. The record we have just created will get a new record id number, one higher than the highest record ever assigned. Nevertheless, it would get row number 0, because that&#8217;s where we placed it with the <code>addRow()</code> method. They are different concepts and they are also different from the primary key(s) of the database record on the server.</p>
+<p>Once we decide how we want to allow the user to insert a row, we need to send the request to, and handle the reply from, the server. We should not fully count on the information the user entered into the <code>Dialog</code> form &#8212; the database might assign default values for empty fields, it might have timestamp values inserted into date fields or, it might have an auto-incremented integer as its primary key so we need to know what that key value turned out to be. In the <a href="http://developer.yahoo.com/yui/container/dialog/#submit">Submitting Form Data</a> section in the <code> Dialog</code> documentation we have the <code> onSuccess</code> callback function which simply pops up a message alert to the user. We will use that callback to insert the record with the values returned from the server.</p>
+<p>In the <a href="/blog/2007/09/12/satyam-datatable/"> previous article</a> I mentioned the benefits of using a standard message response. We didn&#8217;t use that standard message format in the previous section in order to focus on the new information presented. Let&#8217;s take a moment and review since we now have a more complex reply from the server and we can&#8217;t just get by with a plain &#8216;Ok&#8217;. I use JSON as the basis for my server replies; I don&#8217;t recommend plain text because it lacks any structure (for instance, you could not make an envelope); and though XML is a good choice, I find it too verbose and harder to parse. My message format is this:</p>
+<pre>{
+    replyCode:200, replyText:&quot;Ok&quot;,
+    data:[{ ... } , ... ]
+}</pre>
+<p>All messages will be enclosed in an envelope carrying status information which reports in numeric and textual form the result of the transaction requested. Then in the optional <code>data</code> property, whatever extra information the client requested is also passed along. In the row delete case, the <code> data</code> property would be empty and there would either be a successful <code>200 'Ok'</code> reply or it would get some 500 <code>replyCode</code> and an error message in <code>replyText</code>. The numbers for the <code>replyCode</code> are modeled after the standard HTTP reply codes. In our row insert case, we would receive the reply status envelope plus the full record with all its default values, auto-incremented fields, timestamps and whatnot or, in the case of server error, a 500 <code>replyCode</code> and an error description. Thus, our Connection Manager <code>success</code> callback function would look like this:</p>
+<pre>var onSuccess = function(o) {
+    var r = parseJSON(o.responseText);
+    if (r.replyCode == 200) {
+        myDataTable.addRow(r.data,0);
+        var tr = myDataTable.getTrEl(0);
+        YAHOO.util.Dom.addClass(tr,'my-highlight-row');
+        setTimeout(function() {
+            YAHOO.util.Dom.removeClass(tr,'my-highlight-row');
+        },2000);
+    } else {
+        alert(r.replyText);
+    }
+};</pre>
+<p>We first decode the JSON reply with our favorite JSON parser. If the <code>replyCode</code> is <code>200</code>, indicating success, let&#8217;s add the row just as it comes from the server in the first table position, row number 0. Remember that when the <code>DataSource</code> reads the data, it makes the data type conversion through the function we set in the <code>parser</code> property. We have to do the same here. Some JSON converters on the server side send numbers as actual numbers instead of enclosing them in quotes. This is not often the case and it shouldn&#8217;t be counted upon since a later version might change that behavior, so the call to <code>addRow()</code> in a real case would more likely look like this:</p>
+<pre>myDataTable.addRow({
+    someNumericField: YAHOO.util.DataSource.parseNumber(r.data.someNumericField),
+    someDateField: YAHOO.util.DataSource.parseDate(r.data.someDateField),
+    someTextField: r.date.someTextField,
+    someBooleanField: !!r.date.someBooleanField  // yes, those are two 'not' operators put together
+},0);</pre>
+<p>The lines after the call to <code>addRow()</code> simply use the Dom Utility&#8217;s <code>addClass()</code>  and <code>removeClass()</code> to highlight the row for 2 seconds in order to call attention to the newly inserted row. </p>
+<p>All along we&#8217;ve been assuming the column <code> key</code> names are the same as the database table column names, a practice I recommend. SQL names are valid JavaScript variable names and are URL-safe so there is no reason not to use the same names all through, but of course, if you inherit a system with funny column names (some databases allow names in national language character sets which might cause encoding problems or JavaScript errors) you might have to change those names, preferably on the server side, if that is where the culprit lies.</p>
+<h2><a name="inline_cell_editing"></a>Inline cell editing</h2>
+<p>One of the most attractive features of the <code>DataTable</code> is that you can edit cells as if in a spreadsheet. The <a href="http://developer.yahoo.com/yui/datatable/#edit">documentation</a> covers the basics and a working example can be found <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">here</a>. Besides setting the <code>editor</code> property in the column definitions to a suitable editor for that column, you have to remember to pass the <code>cellClickEvent</code> to the <code>onEventShowCellEditor()</code> method just as is shown in the documentation or how we did when we captured the <code>cellClickEvent</code> for our own use.</p>
+<p>Notice that in all the above examples we have always had the <code>DataTable</code> as a reflection of the data on the database server. In all cases we have sent the intended change to the server, and only on a successful reply from the server we have updated the information presented to the user. We will do the same thing now with inline cell editing. The <code>DataTable</code> provides the <code>editorSaveEvent</code> which fires after the new value has been updated on the screen, which is unfortunately too late under this premise. If on communicating with the server we receive a failure <code>replyCode</code>, it is too late to revert the user input since the editor popup would have already been closed and the screen already updated, leading the user to believe the change has succeeded. He might have even navigated away from the page!</p>
+<p>The big problem is that the communication with the server is performed in an asynchronous way so the designers of the <code> DataTable</code> didn&#8217;t have much choice as to what they could offer, since such communication can be handled in so many ways. The many possible alternatives would make a parameterized <code>saveCellEditor()</code>, such is the name of the method, unwieldy.</p>
+<p>The only choice, then, would be to provide a custom method to handle the communication with the server. Ideally, the method <code>onEventSaveCellEditor()</code>, which in the supplied version simply calls <code>saveCellEditor()</code>, is meant to be a hook for such customizations since you could redefine <code>onEventSaveCellEditor()</code> to handle things your way. Unfortunately as of 2.3.0, there is a bug which renders this hook non-functional, so check the release notes for later versions on the status of this.</p>
+<p>Failing that, instead of overriding the hook <code>onEventSaveCellEditor()</code>, we can override <code>saveCellEditor()</code> itself. We will use the original as the model, so here it is, with its original comments removed and mine added:</p>
+<pre>YAHOO.widget.DataTable.prototype.saveCellEditor = function() {
+    if(this._oCellEditor.isActive) {
+        var newData = this._oCellEditor.value;
+        var oldData = this._oCellEditor.record.getData(this._oCellEditor.column.key);
+
+        if(this._oCellEditor.validator) {
+            this._oCellEditor.value = this._oCellEditor.validator.call(this, newData, oldData);
+            if(this._oCellEditor.value === null ) {
+
+// --------      on failure section
+                this.resetCellEditor();
+                this.fireEvent(&quot;editorRevertEvent&quot;,
+                    {editor:this._oCellEditor, oldData:oldData, newData:newData}
+                );
+// -------- end of on failure section 
+
+                return;
+            }
+        }
+
+// --------      on success section
+        this._oRecordSet.updateKey(this._oCellEditor.record, this._oCellEditor.column.key, this._oCellEditor.value);
+        this.formatCell(this._oCellEditor.cell);
+        this.resetCellEditor();
+        this.fireEvent(&quot;editorSaveEvent&quot;,
+            {editor:this._oCellEditor, oldData:oldData, newData:newData}
+        );
+// --------      end of on success section
+
+    }
+    else {
+    }
+};</pre>
+<p>I have marked a couple of sections out of the main body of the method which correspond to the actions taken on success and on failure. In this case, the only source of failure is the <code>validator</code> function, if provided, returning <code>null</code>. The variable <code>this._oCellEditor.value</code> is where all editors store the entered value. Actually, <code>this._oCellEditor</code> also holds lots of useful information which you can find described in the <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.DataTable.html#getCellEditor">API documentation</a>.</p>
+<p>A detail often overlooked is that the <code>validator</code> function is also the place to do data conversion for the data just entered. The value finally saved into the table is not the one initially read into the variable <code>newData</code> but that returned by the <code>validator</code> function. This is not optional for some data types. Digits entered into an HTML textbox do not make a number but a string of digits. If we allow that string to get into the <code>RecordSet</code>, we will find, later on, that sorting columns doesn&#8217;t work as expected. Other cell editors don&#8217;t give trouble: the calendar editor will already return a native JavaScript <code>Date</code> object. A dropdown will return the option value, not the description but, once again, as a string not a number. <code>DataTable</code> has the static function <code>YAHOO.widget.DataTable.validateNumber </code>which can be assigned to the <code>validator</code> function for any numeric column to do such conversion, as seen in the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">example</a> (see the column definition for column <code>'amount'</code>). Incidentally, <code>validateNumber()</code> failed to enter the API documentation so you won&#8217;t find it there.</p>
+<p>Our modified <code> saveCellEditor()</code> will look like this:</p>
+<p> <a name="saveCellEditor"></a></p>
+<pre>YAHOO.widget.DataTable.prototype.saveCellEditor = function() {
+
+// ++++ this is the inner function to handle the several possible failure conditions
+    var onFailure = function (msg) {
+        alert(msg);
+
+// --------      on failure section
+        this.resetCellEditor();
+        this.fireEvent(&quot;editorRevertEvent&quot;,
+            {editor:this._oCellEditor, oldData:oldData, newData:newData}
+        );
+// --------      end of on failure section
+
+    };
+
+// +++ this comes from the original except for the part I cut to place in the function above.
+
+    if(this._oCellEditor.isActive) {
+        var newData = this._oCellEditor.value;
+        var oldData = this._oCellEditor.record.getData(this._oCellEditor.column.key);
+
+        if(this._oCellEditor.validator) {
+            newData = this._oCellEditor.validator.call(this, newData, oldData);
+            this._oCellEditor.value = newData;
+            if(newData === null ) {
+
+// this is where the contents of the inner function onFailure used to be.
+                onFailure('validation');
+                return;
+            }
+        }
+
+// ++++++ from here on I added new, except for the 'success' case pasted in.
+
+        YAHOO.util.Connect.asyncRequest(
+            'POST',
+            'myServer.php?action=update&amp;newData=' + escape(newData) +
+            '&amp;oldData=' + escape(oldData) + myBuildUrl(this._oCellEditor.record),
+            {
+                success: function (o) {
+                    var r = parseJSON(o.responseText);
+                    if (r.replyCode == 200) {
+
+// --------     on success section
+                        this._oRecordSet.updateKey(this._oCellEditor.record, this._oCellEditor.column.key, newData);
+                        this.formatCell(this._oCellEditor.cell);
+                        this.resetCellEditor();
+                        this.fireEvent(&quot;editorSaveEvent&quot;,
+                            {editor:this._oCellEditor, oldData:oldData, newData:newData}
+                        );
+// --------     end of on success section
+
+                    } else {
+                        onFailure(r.replyText);
+                    }
+                },
+                failure: function(o) {
+                    onFailure(o.statusText);
+                },
+                scope: this
+            }
+        );
+    } else {
+    }
+};</pre>
+<p>I still left the original comments enclosing the success and failure actions, which have been moved around but remain mostly as they were. Since there are many causes of failure, the failure section has been enclosed in an inner function called <code>onFailure()</code> and moved to the top so it can be called from several places within the method. After that comes the original source except for the place where the failure section was, which now has a call to the <code> onFailure()</code> inner function.</p>
+<p>After validating, we have the call to <code> asyncRequest()</code> to pass the new value to the server. Notice how we build the URL indicating the action we want to have performed, the new and old values and the reference to the primary key built by the <code>myBuildUrl()</code> function which we introduced earlier. In the <code>success</code> callback we parse the JSON message of the server reply. We check for a <code>replyCode</code> of <code>200</code> which signals success and then go into the success section we took from the original. If the <code>replyCode</code> was anything but 200 we call the <code>onFailure()</code> function with the message received in <code>replyText</code>. If the communication failed, the <code> failure</code> callback will call the <code>onFailure()</code> function with the text from <code>statusText</code>. Finally we make sure to set the scope for the callback functions to that of the <code>DataTable</code>.</p>
+<p>We left most of the code as it was, including calls to events which we might not even use. We can change the behavior a little bit, though. If there is an error, you might choose to leave the editing popup open. The user would then either fix the value entered or click on the &#8216;Cancel&#8217; button to explicitly drop the intended change, an option I prefer so it is absolutely clear to the user that the change did not occur.</p>
+<h3><a name="Checkboxes_and_radio_buttons">Checkboxes and radio buttons</a></h3>
+<p>These two form elements can be utilized differently depending on the situation. Built-in formatters will display one checkbox or one radio button per row directly in a cell and expose checkboxClickEvent and radioClickEvent custom events, while the built-in editors are designed to display several checkboxes or several radio buttons in a dialog atop a cell so they let you set multiple (in the case of checkboxes) or mutually exclusive (in the case of radio buttons) values for each cell as an inline editor. The use of similar names is somewhat misleading in that you might associate <code>formatCheckbox</code> with <code>editCheckbox</code> and <code>formatRadio</code> with <code>editRadio</code> but they are not at all related.</p>
+<p>Another consideration is that users might expect to interact with checkboxes and radios differently than textboxes or calendars. Most probably they would expect the checkbox to be clickable and its state to change immediately without having to click an <code> Ok</code> or <code> Cancel</code> button. If the data is critical you might want to have the user confirm the change before committing it to the database. In the next section, <a href="#adding_editors">Adding Editors</a>, you will see how to make your own custom editor.</p>
+<p>If we want even fewer clicks to change the checkboxes or radio buttons, we wouldn&#8217;t use an editor at all, but instead the formatters to display these form elements directly in each cell. The <code>DataTable</code> makes it easy to execute click handlers by providing the <code>checkboxClickEvent</code> and <code>radioClickEvent</code> custom events. Note that although the formatter for dropdowns draws an active HTML select box, there is no corresponding <code>dropdownClickEvent</code> to signal changes to it, nor does the <code>DataTable</code> refuse to accept changes, which might lead the user to believe the change has been accepted.  This is marked TODO in the source, so keep an eye on that.</p>
+<p>The source of the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_formatting.html">Custom Cell Formatting</a> example provides us with most of the code we need:</p>
+<pre>this.myDataTable.subscribe(&quot;checkboxClickEvent&quot;, function(oArgs){
+    var elCheckbox = oArgs.target;
+    var elRecord = this.getRecord(elCheckbox);
+    var name = elRecord.getData(&quot;field5&quot;);
+    alert(&quot;Checkbox was &quot; + (elCheckbox.checked ? &quot;&quot; : &quot;un&quot;) + &quot;checked for &quot; + name);
+});  </pre>
+<p>This function listens for the <code> checkboxClickEvent</code> and, when fired, displays a message showing the new state and the value of an associated field in the same row; but this falls short of what we need. First of all, if you check the <a href="developer.yahoo.com/yui/examples/datatable/dt_formatting.html">example</a> mentioned, you will see that if you check some boxes and then do a sort, the checked boxes are lost. This is because the screen image of the <code> DataTable</code> is derived from the underlying <code>RecordSet</code>, and we have not changed that. When <code> DataTable</code> needs to refresh the table, it will resort to the <code> RecordSet</code> and will clear all the checkboxes and radio buttons.</p>
+<p>The first thing to do, then, is to update the <code>RecordSet</code>. The following two lines can take care of that:</p>
+<pre>var elColumn = this.getColumn(elCheckbox);
+this.getRecordSet().updateKey(elRecord, elColumn.key, elCheckbox.checked);</pre>
+<p>But we meant to have the database server be our master copy for the data and if we execute the lines above in the same listener function, we would have the user see a change that has not been accepted by the server yet. I won&#8217;t repeat the full code for this as you can see most of it in the <a href="#saveCellEditor"> code box above</a>. Remember we took from the original <code>saveCellEditor()</code> method a <em>success section</em> and a <em>failure section</em> and we rearranged the original code from <code>saveCellEditor()</code> so that the <em>success section</em> would be executed on receiving a <code>200 'Ok'</code> reply from the server and the <em>failure section</em> would be executed on any other condition. We will do the same thing here. Consider these last two lines of code as the <em>success section</em>.</p>
+<p>We don&#8217;t have a <em>failure section</em> so far but we will need one. While with textboxes the change done in the pop up editor has to be copied to the actual cell under it, with checkboxes and radio buttons, the control itself will have changed. So, our <em>failure section</em> needs to revert the change. We can do it in one of two ways. We can either explicitly change the value of the checked attribute of the checkbox or reject the event. Here they are, you just need to choose one:</p>
+<pre>elCheckbox.checked = ! elCheckbox.checked;
+YAHOO.util.Event.stopEvent(oArgs.event);</pre>
+<p>So, we just add the call to <code>asyncRequest()</code> and put these two pieces of code in the corresponding slots, as we did before.</p>
+<p>Radio buttons, though, require some extra work. HTML radio buttons are exclusive of one another but the fields in the <code>RecordSet</code> are not. We will be notified via <code>radioClickEvent</code> that a new radio button was clicked, but we won&#8217;t know which one has become unchecked. Moreover, while calling <code>stopEvent()</code> to cancel the click works in Firefox and it does revert the set of radio buttons to have the prior one checked, in IE you can stop the new radio button from getting checked, but it does not restore the previously checked radio button. My recommendation is to have a globally scoped variable (in <code>YAHOO.example </code>or your own namespace) containing a reference to the last radio button checked. In the <em>success section</em>, we have to first read the record of the previous checked radio button and set it to <code>false</code>, and then set the field in the new record and store the reference to the variable in the global tracker:</p>
+<pre>// on success:
+var elRecord = this.getRecord(YAHOO.example.myLastRadioButton);
+this.getRecordSet().updateKey(elRecord, elColumn.key, false);
+var elRecord = this.getRecord(elRadio);
+this.getRecordSet().updateKey(elRecord, elColumn.key, true);
+YAHOO.example.myLastRadioButton = elRadio;
+
+// on failure:
+elRadio.checked = false;
+YAHOO.example.myLastRadioButton.checked = true;</pre>
+<p>While in the <em>success section</em> we updated the <code>RecordSet</code> to reflect the changes and we don&#8217;t care about the user interface since it has already changed for us, in the <em>failure section</em> we leave the <code>RecordSet</code> alone, since we didn&#8217;t change anything in it, but revert the user interface which did change.</p>
+<h2><a name="adding_editors"></a>Adding editors</h2>
+<p>If you try the <a href="http://developer.yahoo.com/yui/examples/datatable/dt_cellediting.html">example</a> you might notice that if you try to edit the cells in the amount column you are allowed to enter anything at all. It is when you click the &#8216;Ok&#8217; button that the <code>validateNumber()</code> function rejects the entry and leaves the cell contents unmodified but, until you do so, you can quite happily fill the textbox with all sorts of nonsense. You don&#8217;t like it? What prevents you from making your own editor! Let&#8217;s take the standard <code>editTextbox()</code> method and make an <code>editNumber()</code> method of our own:</p>
+<pre>YAHOO.widget.DataTable.editNumber = function(oEditor, oSelf) {
+    var elCell = oEditor.cell;
+    var oRecord = oEditor.record;
+    var oColumn = oEditor.column;
+    var elContainer = oEditor.container;
+    var value = YAHOO.lang.isValue(oRecord.getData(oColumn.key)) ? oRecord.getData(oColumn.key) : &quot;&quot;;
+
+    var elTextbox = elContainer.appendChild(document.createElement(&quot;input&quot;));
+    elTextbox.type = &quot;text&quot;;
+    elTextbox.style.width = elCell.offsetWidth + &quot;px&quot;;
+    elTextbox.value = value;
+
+    YAHOO.util.Event.addListener(elTextbox, 'keypress', function(ev){
+        if (ev.keyCode != 0) return;
+        if (ev.charCode &gt;= 48 &amp;&amp; ev.charCode &lt;= 57) return;
+        YAHOO.util.Event.stopEvent(ev);
+    });
+
+    YAHOO.util.Event.addListener(elTextbox, &quot;keyup&quot;, function(ev){
+        oEditor.value = parseInt(elTextbox.value,10);
+        oSelf.fireEvent(&quot;editorUpdateEvent&quot;,{editor:oEditor});
+    });
+
+    elTextbox.focus();
+    elTextbox.select();
+};</pre>
+<p>Our <code>editNumber()</code> method is simply the <code>editTextbox()</code> method with a listener for the <code>keypress</code> event added, where we check for valid characters. We accept all non-printable characters such as arrow keys, backspace and so on by letting by all non-zero <code>keyCode</code> values. If the key pressed corresponds to a valid printable character then we check that is in the range of 48 to 57 that spans the digits. If the key pressed does not correspond to those, we call <code>stopEvent()</code> so the key pressed will not be accepted. By simply adding more <code>charCode</code> numbers to the conditional we could accept the minus sign, a decimal separator or whatever we want. We are also converting the string entered into the textbox to an actual integer (see the call to <code>parseInt()</code>) so there will be no need to use <code>validateNumber()</code> later on.</p>
+<p>To use this editor instead of the standard textbox editor in the column definition for this particular column, instead of indicating <code>editor:'textbox'</code> we would put:</p>
+<pre>..., editor:YAHOO.widget.DataTable.editNumber, ...</pre>
+<p>All edit methods receive the <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.DataTable.html#getCellEditor"><code>oEditor</code></a> object, which we met before under the name of <code>this._oCellEditor</code> and contains a lot of information: the cell being edited, the record and column for that cell and the container (which is the popup dialog where the <code>&lt;input&gt;</code> element, or whichever control you want, will be placed). The method also reads the current value of the cell from the record; usually it is safer to read the raw data value from the record than read it from <code>elCell.innerHTML</code> which might be formatted with extra decoration that we would have to strip away. We then create an <code>&lt;input&gt;</code> element inside the container, set the type to <code>text</code> (due to an anomaly in IE, we would not be able to set it to anything else anyway), stretch it to the same size as the cell in the <code>DataTable</code> and load it with the current value. Then we set our event listeners. Finally we put the focus on the textbox and select all its contents.</p>
+<p>Notice the <code>&lt;input&gt;</code> box is completely anonymous. We hold a reference to it in <code>elTextbox</code> but otherwise it has no <code>id</code> nor <code>name</code>; we don&#8217;t need one. If we need to reach it, it will always be the <code>firstChild</code> of the container. After the edit function executes, the <code>DataTable</code> will place the &#8216;Ok&#8217; and &#8216;Cancel&#8217; buttons (assuming they have not been disabled) and position the top left corner of the container to match the top left corner of the cell being edited.</p>
+<p>A very important thing to do is to respond to each and every change in the editor by storing its current value into <code>oEditor.value</code>. Different types of editors might hold their values in different ways. A textbox holds data in its <code>value</code> property, a textarea in <code>innerHTML</code>, and more complex editors such as the <code>Calendar</code> might require calling a method or a conversion. Since at any time the user might click the &#8216;Ok&#8217; button and our editor would lose the control of the value, it is important that at all moments it stores the current value in <code>oEditor.value</code> where <code>saveCellEditor()</code> can reach it.</p>
+<p>For a more complex example of an editor you might look at the <code>editDate()</code> method which uses the <code>Calendar</code> component. With the few tips mentioned above, you will find that it is not so difficult after all.</p>
+<h2>Conclusion</h2>
+<p>In this and the <a href="/blog/2007/09/12/satyam-datatable/">previous article</a>, we have seen how to create a <code>DataTable</code>, how to make changes to the <code>DataTable</code>, how to report those changes to the server and how, once accepted by the server, show those changes to the user. We have always maintained the database server as the primary source of our data, ensuring the <code>DataTable</code> does not show any changes until they have been confirmed by the server. We have also seen how to validate data input both at the row entry level and on a field-by-field basis.</p>
+			
+			<p class="related">Find conversations: <a href="http://www.bloglines.com/citations?url=http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/" title="find related discussion on bloglines">bloglines</a> | <a href="http://technorati.com/cosmos/search.html?url=http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/" title="find related discusion on technorati">technorati</a></p>
+			<p class="spread">Share and extend: 
+			<a href="http://myweb2.search.yahoo.com/myresults/bookmarklet?t=Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable&u=http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/" title="bookmark Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable on Yahoo! My Web">Bookmark with Yahoo! My Web</a>&nbsp;|&nbsp;<a href="http://del.icio.us/post?url=http://del.icio.us/post?url=http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/&amp;title=Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable" title="bookmark Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable in del.icio.us">Bookmark with del.icio.us</a>&nbsp;|&nbsp;<a href="http://www.digg.com/submit?url=http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/&amp;phase=2" title="digg this post">digg it!</a>&nbsp;|&nbsp;<a href="http://reddit.com/submit?url=http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/&amp;title=Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable" title="post Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable to reddit">reddit!</a></p>
+								
+			<div class="feedback"></div>
+
+
+			<!--
+			<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+				xmlns:dc="http://purl.org/dc/elements/1.1/"
+				xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+			<rdf:Description rdf:about="http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/"
+    dc:identifier="http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/"
+    dc:title="Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable"
+    trackback:ping="http://yuiblog.com/blog/2007/09/26/satyam-datatable-2/trackback/" />
+</rdf:RDF>			-->
+
+
+			</div>
+				
+		
+
+<h2 id="comments">12 Comments 
+	<a href="#postcomment" title="Leave a comment">&raquo;</a>
+</h2>
+
+
+<p>
+<a href='/blog/2007/09/26/satyam-datatable-2/feed/'><abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.</a> 
+
+<a href="/blog/2007/09/26/satyam-datatable-2/trackback/" rel="trackback">TrackBack <abbr title="Uniform Resource Identifier">URI</abbr></a>
+</p>
+
+<ol id="commentlist">
+
+
+
+	<li id="comment-200133" class="class_comment1">
+	<p>[&#8230;] miss Part Two of this series, in which Satyam explores methods for changing data within the YUI DataTable [&#8230;]</p>
+	<p class="alignright"><small>Pingback by <a href='/blog/2007/09/12/satyam-datatable/' rel='external nofollow'>Working with the YUI DataTable Control, Part 1: Getting Started &raquo; Yahoo! User Interface Blog</a> &#8212; September 26, 2007 <a href="#comment-200133">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-200941" class="class_comment2">
+	<p>What is the best way to force datatable to refresh its content?</p>
+<p>I am using JSON-based datasource.</p>
+	<p class="alignright"><small>Comment by <a href='http://www.bract.us' rel='external nofollow'>reza</a> &#8212; September 27, 2007 <a href="#comment-200941">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-201227" class="class_comment1">
+	<p>If you want to refresh the DataTable with data from the server, you can do:</p>
+<p><code>myDataTable.getDataSource().sendRequest(newRequest, myDataTable.onDataReturnInitializeTable, myDataTable);  </code></p>
+<p>The DataSource still has the base URL of the server.  Further arguments to let the server know what you want can be assembled as a URL-encoded string into newRequest, (much like the initialRequest configuration attribute when creating a DataTable), which may also be an empty string.</p>
+<p>You may further add this functionality to the DataTable, like this:</p>
+<p><code>YAHOO.util.DataTable.prototype.requery = function(newRequest) {<br />
+	this.getDataSource().sendRequest(newRequest || '', this.onDataReturnInitializeTable, this);<br />
+};</code></p>
+	<p class="alignright"><small>Comment by Satyam &#8212; September 28, 2007 <a href="#comment-201227">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-202195" class="class_comment2">
+	<p>is the inline editing method just in the data table available, or can i build it in a &#8220;normal&#8221; table also?</p>
+<p>this is a project of me: <a href="http://www.ragtek.org/yuilinklist.html" rel="nofollow">http://www.ragtek.org/yuilinklist.html</a> &amp; <a href="http://www.ragtek.org/forum/linkliste.php" rel="nofollow">http://www.ragtek.org/forum/linkliste.php</a> /secend view<br />
+and here i&#8217;d like to build in the inline editing method</p>
+	<p class="alignright"><small>Comment by <a href='http://www.ragtek.org' rel='external nofollow'>ragtek</a> &#8212; September 30, 2007 <a href="#comment-202195">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-202246" class="class_comment1">
+	<p>&#8230; and If you want to change requested url (live database) of the DataSource do this, before lines above:<br />
+<code><br />
+myDataTable.getDataSource().liveData = 'http://your.url.eu/data'<br />
+</code></p>
+	<p class="alignright"><small>Comment by <a href='http://aleks.datadiscovery.eu' rel='external nofollow'>Aleksander</a> &#8212; September 30, 2007 <a href="#comment-202246">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-203760" class="class_comment2">
+	<p>If using PHP on the server side, these are the functions I use on the server to handle communications with the AJAX client:</p>
+<p><a href="http://satyam.com.ar/int/PhpJson.htm" rel="nofollow">A PHP back end to YUI</a></p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 3, 2007 <a href="#comment-203760">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-205446" class="class_comment1">
+	<p>by Our modified saveCellEditor() i copied the code and it didn&#8217;t work.<br />
+Then i named<br />
+YAHOO.util.Connection.asyncRequest(&#8230;<br />
+to<br />
+YAHOO.util.Connect.asyncRequest(&#8230;<br />
+and everything is fine.</p>
+	<p class="alignright"><small>Comment by Cenap &#8212; October 5, 2007 <a href="#comment-205446">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-205939" class="class_comment2">
+	<p>The &#8220;PHP back end to YUI&#8221; is quite impressively simple.  What I mean is it provides a simple solution to a complex problem.  Your &#8220;BuildSql&#8221; function solves a number of problems which I was going to code into a class.  Rather verbose coding on my part I might add.</p>
+<p>I think I will rebuild it to support MS SQL, its the current environment I am working in.</p>
+<p>Question:  Is this code open source, have you licensed it?</p>
+	<p class="alignright"><small>Comment by ejennings &#8212; October 6, 2007 <a href="#comment-205939">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-207436" class="class_comment1">
+	<p>Cenap:</p>
+<p>Thanks for noticing. I use shorthand aliases for some of the most common objects like $D for YAHOO.util.Dom, $E for Event and on.  For the article, I wrongly expanded $C to Connection instead of Connect.</p>
+<p>I&#8217;m sorry for the trouble.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 8, 2007 <a href="#comment-207436">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-207444" class="class_comment2">
+	<p><a href="#comment-205939" rel="nofollow">ejennings</a>:</p>
+<p>I never give much thought to licensing.  I guess I should state something like: &#8220;Feel free to use in whichever way you want, just be nice, don&#8217;t take undue credit for it&#8221;.  Does this correspond to any standard license? Same goes for the code in these articles.</p>
+<p>Thanks for asking.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 8, 2007 <a href="#comment-207444">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-208287" class="class_comment1">
+	<p>thanks Satyam.  the information on callbacks when inserting a row was exactly the lead I needed in figuring out how to synch up the database ids with the datatable information presented to the viewer.  I was able to define a variable via JSON call back information in o.ResponseText then write it to the viewport.  I looked up the last insert id using PHP on the server side then returned that to the Javascript function to add a row.</p>
+	<p class="alignright"><small>Comment by druidarab &#8212; October 9, 2007 <a href="#comment-208287">#</a> </small></p>
+	</li>
+
+
+
+
+
+	<li id="comment-208293" class="class_comment2">
+	<p><a href="#comment-208287" rel="nofollow">druidarab</a>,</p>
+<p>If your back end runs PHP you might want to check <a href="http://www.satyam.com.ar/int/PhpJson.htm" rel="nofollow">A PHP back end to YUI</a>.  Since it is PHP and not JavaScript, I put it on my site, but it might well be the third part to this article.</p>
+<p>Search that page for &#8220;ajax_Places_insert&#8221; and you will see how I handle a database insert and the retrieval of the autoincrement Id field.  </p>
+<p>The code in both articles might not exactly match since, in order to simplify the explanation, I usually omit some things here and there.</p>
+	<p class="alignright"><small>Comment by Satyam &#8212; October 9, 2007 <a href="#comment-208293">#</a> </small></p>
+	</li>
+
+
+
+
+</ol>
+
+
+<h2 id="postcomment">Leave a comment</h2>
+
+
+<form action="http://www.yuiblog.com/blog/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1" />
+<label for="author"><small>Name (required)</small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2" />
+<label for="email"><small>Mail (will not be published) (required)</small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="50" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" /></p>
+<p><small><strong>Note: </strong>Comments are moderated for first-timers. Spam deleted.</small></p>
+<p><small><strong>XHTML:</strong> &lt;a href=&quot;&quot; title=&quot;&quot;&gt; &lt;abbr title=&quot;&quot;&gt; &lt;acronym title=&quot;&quot;&gt; &lt;b&gt; &lt;blockquote cite=&quot;&quot;&gt; &lt;code&gt; &lt;em&gt; &lt;i&gt; &lt;strike&gt; &lt;strong&gt; </small>
+<input type="hidden" name="comment_post_ID" value="135" />
+</p>
+
+
+</form>
+
+
+			
+		
+				</div>
+
+<!-- begin footer -->
+
+
+<!-- begin sidebar -->
+		<div id="sidebar">
+			
+					
+			<div id="syndicate">
+			<h3>Syndicate</h3>
+				<ul class="cats">
+<!-- 	 				<li><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" border="0" height="17" width="91" /></a><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog" class="icon"><img src="http://www.yuiblog.com/i/feed-icon-16x16.gif" alt="Feed" /></a></li> -->
+<li>All Posts<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+<li>All Comments<br><a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a> <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36"></a></li>
+
+<!-- 				</ul>
+			</div>
+			
+			
+			
+			<div id="categories">			
+			<h3>Categories:</h3>
+				<ul> -->
+					<li>
+						<a href="/blog/category/development/" title="Development related posts, including all posts about the Yahoo! User Interface (YUI) Library">All Development Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a>
+						<a href="http://feeds.yuiblog.com/yuiblog/development">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/design/" title="Design related posts, including all posts about the Yahoo! Design Patterns Library">All Design Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/design">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/yui-theater/" title="Posts about the Yahoo! Theater videos">YUI Theater Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91"></a>
+						<a href="http://feeds.yuiblog.com/yuiblog/yui-theater"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a>
+					</li>
+					<li>
+						<a href="/blog/category/in-the-wild" title="Posts and articles about YUI from across the internet">"In the Wild" Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/in-the-wild">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+					<li>
+						<a href="/blog/category/performance" title="Posts and articles about web site performance and optimization">Performance Posts</a><br>
+						<a href="http://add.my.yahoo.com/content?url=http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/my/addtomyyahoo4.gif" alt="Add to My Yahoo!" title="Add to My Yahoo!" align="middle" border="0" height="17" width="91">
+						</a> 
+						<a href="http://feeds.yuiblog.com/yuiblog/performance">
+							<img src="http://us.i1.yimg.com/us.yimg.com/i/us/ext/rss.gif" alt="View RSS Feed" title="View RSS Feed" align="middle" border="0" height="17" width="36">
+						</a></li>
+
+
+									</ul>				
+			</div>
+			
+			
+			
+			<div id="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+					    		<li class="recent"><a href="/blog/2007/10/17/rte-fileupload-231/">Adding File Upload to the YUI Rich Text Editor&#8217;s Image Dialog</a></li>
+					    		<li class="recent"><a href="/blog/2007/10/15/video-scott/">YUI Theater &mdash; Bill Scott: &#8220;Designing the Rich Web Experience: Principles and Patterns for Rich Interaction Design on the Web&#8221;</a></li>
+					    		<li class="recent"><a href="/blog/2007/10/02/challenges-of-interface-design-for-mobile-devices/">Challenges of Interface Design for Mobile Devices</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/26/satyam-datatable-2/">Working with the YUI DataTable Control, Part 2: Changing the Contents of the DataTable</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/25/gaia/">Implementation Focus: Gaia Online</a></li>
+					    		<li class="recent"><a href="/blog/2007/09/19/yui-2-3-1-released/">YUI Version 2.3.1: Bug-Fix Release</a></li>
+							</ul>
+			</div>			
+						
+<div id="featured-jobs">
+	<h3>Featured Job Opening</h3>		
+	<p>Yahoo!'s European web development team based in the heart of London's theatre district is seeking a standards-savvy front-end developer to work on Europe's busiest sites.</p>
+	<p>You will work closely with Information Architects, Visual Designers, User Researchers, Software Engineers, and Product Managers to ensure that our web based products in Europe provide the best possible experience for our users.</p>
+	<h4>Requirements:</h4>
+	<ul>
+		<li>Hand coded (X)HTML, CSS, and JavaScript, and be able to provide evidence of progressive enhancement techniques, clear separation of structure, presentation and behaviour layers in your front-end code including use of unobtrusive JavaScript.</li>
+		<li>Expert level knowledge of modern web standards techniques, cross-browser development, client and server side performance optimisation techniques, accessibility and search engine optimisation.</li>
+		<li>Strong PHP programming skills.</li>
+		<li>Solid BSD/Linux knowledge and experience of using version control systems such as CVS &amp; Subversion.</li>
+		<li>Experience in developing web applications with rich client interfaces using AJAX, drag and drop, and other DOM Scripting techniques.</li>
+		<li>Experience of Web Services (eg REST, SOAP, XML-RPC)</li>
+	</ul>
+	<h4>To apply or for more information:</h4>
+	<p><a href="mailto:euwebdevjobs@yahoo-inc.com?subject=[via YUIBlog]: ">euwebdevjobs@yahoo-inc.com</a></p>
+</div>			
+			
+			<div id="mbl">
+				<h3>Recent Readers</h3>
+				<script type="text/javascript" src="http://pub.mybloglog.com/comm2.php?mblID=2007010912241462&c_width=170&c_sn_opt=y&c_rows=10&c_img_size=f&c_heading_text=Recent+Readers&c_color_heading_bg=F5A61D&c_color_heading=ffffff&c_color_link_bg=FFFFFF&c_color_link=0643BB&c_color_bottom_bg=F5A61D"></script>
+			</div>
+		
+			
+			<div id="ydn">
+			<h3>Yahoo! Developer Network</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui">Yahoo! User Interface Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-javascript/join">Join ydn-javascript mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/ypatterns">Yahoo! Design Patterns Library</a></li>
+					<li><a href="http://groups.yahoo.com/group/ydn-patterns/join">Join ydn-patterns mailing list</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs.html">Graded Browser Support</a></li>
+					<li><a href="http://developer.yahoo.net/yui/articles/gbs/gbs_browser-chart.html">Browser Support Grid</a></li>
+				</ul>
+				<ul>
+					<li><a href="http://developer.yahoo.net/">Yahoo! Developer Network</a></li>
+				</ul>
+			</div>
+			
+			<div id="development-resources">
+			<h3>Development Resources</h3>
+				<ul>
+					<li><a href="http://domscripting.webstandards.org/">DOM Scripting Task Force</a></li>
+					<li><a href="http://developer.yahoo.net/common/json.html">Using JSON (JavaScript Object Notation)</a></li>
+					<li><a href="http://www.jslint.com/">JSLint, The JavaScript Verifier</a></li>
+					<li><a href="http://developer.yahoo.net/javascript/">Yahoo! JavaScript Developer Center</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Guide">Core JavaScript Guide [1.5]</a></li>
+					<li><a href="http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference">Core JavaScript Reference [1.5]</a></li>
+					<li><a href="http://www.ecma-international.org/publications/files/ecma-st/ECMA-262.pdf">ECMAScript Language Specification - 3rd edition (pdf)</a></li>
+					<li><a href="http://www.quirksmode.org/">QuirksMode by PPK</a></li>
+				</ul>
+			</div>
+			
+			<div id="design-resources">
+			<h3>Design Resources</h3>
+				<ul>
+					<li><a href="http://designinginterfaces.com/">Designing Interfaces</a></li>
+					<li><a href="http://www.designofsites.com/">Design of Sites book</a></li>
+					<li><a href="http://www.lukew.com/ff/" title="Functioning Form">Functioning Form</a></li>
+					<li><a href="http://www.visi.com/~snowfall/InteractionPatterns.html">Interaction Design Patterns</a></li>
+					<li><a href="http://www.welie.com/patterns/">Martijn van Welie</a></li>
+					<li><a href="http://www.ajaxpatterns.org/">Michael Mahemoff</a></li>
+					<li><a href="http://www.cs.helsinki.fi/u/salaakso/patterns/">Sari A. Laakso</a></li>
+					<li><a href="http://webpatterns.org/wordpress/">webpatterns.org</a></li>
+				</ul>
+			</div>
+			
+			<div id="archives">			
+			<h3>Archives:</h3>
+				<ul>
+					<li><a href='/blog/2007/10/' title='October 2007'>October 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/09/' title='September 2007'>September 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/08/' title='August 2007'>August 2007</a>&nbsp;(6)</li>
+	<li><a href='/blog/2007/07/' title='July 2007'>July 2007</a>&nbsp;(3)</li>
+	<li><a href='/blog/2007/06/' title='June 2007'>June 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/05/' title='May 2007'>May 2007</a>&nbsp;(12)</li>
+	<li><a href='/blog/2007/04/' title='April 2007'>April 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2007/03/' title='March 2007'>March 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/02/' title='February 2007'>February 2007</a>&nbsp;(7)</li>
+	<li><a href='/blog/2007/01/' title='January 2007'>January 2007</a>&nbsp;(8)</li>
+	<li><a href='/blog/2006/12/' title='December 2006'>December 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/11/' title='November 2006'>November 2006</a>&nbsp;(6)</li>
+	<li><a href='/blog/2006/10/' title='October 2006'>October 2006</a>&nbsp;(11)</li>
+	<li><a href='/blog/2006/09/' title='September 2006'>September 2006</a>&nbsp;(4)</li>
+	<li><a href='/blog/2006/08/' title='August 2006'>August 2006</a>&nbsp;(5)</li>
+	<li><a href='/blog/2006/07/' title='July 2006'>July 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/06/' title='June 2006'>June 2006</a>&nbsp;(3)</li>
+	<li><a href='/blog/2006/05/' title='May 2006'>May 2006</a>&nbsp;(7)</li>
+	<li><a href='/blog/2006/04/' title='April 2006'>April 2006</a>&nbsp;(2)</li>
+	<li><a href='/blog/2006/03/' title='March 2006'>March 2006</a>&nbsp;(1)</li>
+	<li><a href='/blog/2006/02/' title='February 2006'>February 2006</a>&nbsp;(14)</li>
+				</ul>
+			</div>
+			
+			<div id="blogroll">
+			<h3>Blogroll</h3>
+				<ul>
+					<li><a href="http://looksgoodworkswell.com">Bill Scott</a></li>
+					<li><a href="http://www.crockford.com/">Douglas Crockford</a></li>
+					<li><a href="http://www.dustindiaz.com/">Dustin Diaz</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-JG9noGk0aa9kLMDBru_y9a2uxmo-">Eric Miraglia</a></li>
+					<li><a href="http://www.emdezine.com/designwritings">Erin Malone</a></li>
+					<li><a href="http://foohack.com/">Isaac Schlueter</a></li>
+					<li><a href="http://sonofapigfarmer.com/">Lance Nishihira</a></li>
+					<li><a href="http://nate.koechley.com/blog">Nate Koechley</a></li>
+					<li><a href="http://www.nczonline.net">Nicholas C. Zakas</a></li>
+					<li><a href="http://www.schillmania.com/">Scott Schiller</a></li>
+					<li><a href="http://simon.incutio.com/">Simon Willison</a></li>
+				</ul>
+			</div>
+			
+			<div id="yblogs">
+			<h3>Other Yahoo! Blogs</h3>
+				<ul>
+					<li><a href="http://developer.yahoo.net/blog/">Yahoo! Developer Network Blog</a></li>
+					<li><a href="http://www.yswfblog.com/">Yahoo! Flash (R) Blog</a></li>
+					<li><a href="http://ysearchblog.com/">Yahoo! Search Blog</a></li>
+					<li><a href="http://www.ypnblog.com/">Yahoo! Publisher Network Blog</a></li>
+					<li><a href="http://next.yahoo.com/">Yahoo! Next Blog</a></li>
+					<li><a href="http://yodel.yahoo.com/">Yodel Anecdotal</a></li>
+					<li><a href="http://ymusicblog.com/">Yahoo! Music Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/blog-d8pH0dcoRKeB12yOcnUQp.9VCFos">Yahoo! Answers Blog</a></li>
+					<li><a href="http://ysearchblog.com/myweb/">Yahoo! My Web Blog</a></li>
+					<li><a href="http://blog.flickr.com/">FlickrBlog</a></li>
+					<li><a href="http://blog.del.icio.us/">del.icio.us Blog</a></li>
+					<li><a href="http://blog.360.yahoo.com/product_360">Blog 360</a></li>
+					<li><a href="http://upcoming.org/news/">Upcoming.org News</a></li>
+					<li><a href="http://ymailupdates.com/blog/">Yahoo! Mail Updates</a></li>
+					<li><a href="http://ystoreblog.com/">The Official Yahoo! Store Blog</a></li>					
+				</ul>
+			</div>
+			
+			<div id="commentpolicy">
+				<h3>Comment Policy</h3>
+				<p>We encourage comments and look forward to hearing from you. Please note that Yahoo! may, in our sole discretion, remove comments if they are off topic, inappropriate, or otherwise violate our <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a>.</p>
+			</div>
+			
+			<div id="careers">
+				<h3>Become a Yahoo!</h3>
+				<p>Are you a talented engineer, product manager, or designer looking to immerse yourself in an innovative and fun environment? Then come <a href="http://hotjobs.yahoo.com/Company-Profiles/Y/Yahoo-Inc-Jobs_10571">find a job with us</a>.</p>
+			</div>
+
+			<div id="meta">
+				<h3>Meta:</h3>
+				<ul>
+								<li><a href="/blog/wp-login.php">Login</a></li>
+				<!-- <li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li> -->
+								</ul>
+			</div>
+		
+		</div>
+			
+<div class="both"></div>
+			
+</div>
+
+<!-- end sidebar -->
+<div id="credits">
+	<div class="hostedby"><img src="http://us.i1.yimg.com/us.yimg.com/i/us/wh/gr/badge_hostedby_purp_2.gif" alt="Hosted by Yahoo!" /></div>
+	<p>Copyright &copy; 2007 Yahoo! Inc. All rights reserved. <a href="http://privacy.yahoo.com/privacy/us/">Privacy Policy</a> - <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a></p>
+	<p>Powered by <a href="http://wordpress.org">WordPress</a> on <a href="http://smallbusiness.yahoo.com/webhosting/">Yahoo! Web Hosting</a>.</p>
+<!-- 	<p><a href="http://feeds.yuiblog.com/YahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="http://feeds.yuiblog.com/CommentsForYahooUserInterfaceBlog"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+	<!-- <p><a href="/blog/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Entries Feed" /> Entries feed</a> and <a href="/blog/comments/feed/"><img class="icon" src="http://www.yuiblog.com/i/feed-icon-12x12.gif" alt="Comments Feed" /> comments feed</a>.</p> -->
+
+	<p><!-- 23 queries. 0.840 seconds. --></p>
+</div>
+
+<script type="text/javascript" language="JavaScript">
+//<![CDATA[
+var wpdone;
+function wpvisit()
+{
+  var z;
+  z="&r="+escape(document.referrer);
+  z=z+"&b="+escape(navigator.appName+" "+navigator.appVersion);
+  w=parseFloat(navigator.appVersion);
+  if (w > 2.0) {
+    z=z+"&s="+screen.width+"x"+screen.height;
+    z=z+"&o="+navigator.platform;
+    v="1.2";
+    if (navigator.appName != "Netscape") {
+      z=z+"&c="+screen.colorDepth;
+    } else {
+      z=z+"&c="+screen.pixelDepth
+    }
+    z=z+"&j="+navigator.javaEnabled();
+  } else {
+    v=1.0;
+  }
+  z=z+"&v="+v;
+
+  document.writeln("<img border=\"0\" src=\"http://visit.webhosting.yahoo.com/wisit.gif"+"/"+"?"+z+"\" />");
+}
+  wpvisit();
+//]]>
+</script>
+
+<noscript><img src="http://visit.webhosting.yahoo.com/wisit.gif?1192767753" border="0" width="1" height="1" alt="visit" /></noscript>
+
+
+</body>
+</html>

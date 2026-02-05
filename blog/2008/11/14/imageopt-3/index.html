@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>Image Optimization, Part 3: Four Steps to File Size Reduction</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">Image Optimization, Part 3: Four Steps to File Size Reduction</li></ul>
+				<h1 class="yui3-u-7-8">Image Optimization, Part 3: Four Steps to File Size Reduction</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">November 14, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<div class="interview">
+		<div class="intro">
+			<p><img align="right" alt="Stoyan Stefanov." hspace="10" src="/blog-archive/assets/stoyan.jpg" vspace="5" /><em><strong>About the Author:</strong><a href="http://www.phpied.com"> Stoyan Stefanov</a> is a Yahoo! web developer working for the <a href="http://developer.yahoo.com/performance/">Exceptional Performance</a> team and leading the development of the <a href="http://developer.yahoo.com/yslow/">YSlow</a> performance tool. He also an open-source contributor, conference speaker and technical writer: his latest book is called <a href="http://www.packtpub.com/object-oriented-javascript-applications-libraries/book">Object-Oriented JavaScript</a>.</em></div> </div>
+	<p><em>This is part 3 in an ongoing series. You can read the other parts here:</em><ul>
+			<li><a href="/blog-archive/blog/2008/10/29/imageopt-1/">Image Optimization Part 1: The Importance of Images</a><li><a href="/blog-archive/blog/2008/11/04/imageopt-2/">Image Optimization Part 2: Selecting the Right File Format</a><li><a href="/blog-archive/blog/2008/12/05/imageopt-4/">Image Optimization Part 4: Progressive JPEG…Hot or Not?</a></ul> <p>This post is about some common tools you can use to reduce the file size of your images. The idea is to be able to just take the images your designer has created and instead of using them "as is", go ahead and tidy them up in short time and no effort, without even looking at them.<p>The good news is that this process is:<ul>
+			<li><em>lossless</em> - you strip bytes, hence you lose some information, but not the pixel data and the resulting image looks exactly the same as the source with no quality loss<li><em>uses free tools</em> - all the tools we mention here are free and open-source, and work on both Windows and Unix<li><em>automated</em> - since these are command line tools, they are easy to script and automate; one example of such automation is the <a href="http://smush.it">smush.it</a> tool</ul> <h3>Step 1: Crush PNG</h3>
+	<p>PNGs store information in so-called "chunks" and not all of those chunks are required for the display of the image. In fact most of them are not. You can safely use a tool such as <a href="http://pmt.sourceforge.net/pngcrush/">pngcrush</a> and strip all the unneeded chunks. For example:<pre>&gt; pngcrush -rem alla -brute -reduce src.png dest.png</pre><p>Let's take a look at the options of this command:<ul>
+			<li><code>src.png</code> is the source image, <code>dest.png</code> is the destination (result) image<li><code>-rem alla</code> means remove all chunks but keeps the one for transparency<li><code>-reduce</code> tries to reduce the number of colors in the palette if this is possible<li><code>-brute</code> tries over a hundred different methods for optimization in addition to the default 10. It's slower and most of the times doesn't improve much. But if you're doing this process "offline", one or two more seconds are not important since there's a chance if a filesize win. Remove this option in performance-sensitive scenarios.</ul> <p>Running this command on the PNGs found on Alexa's top 10 sites gives us an average file size reduction of <strong>16.05%</strong>. This means you can easily <strong>strip weight off your PNG images</strong>, save bandwidth and disk space and improve load times, without sacrificing quality and without even touching a single line of application code.<p>PNGcrush is only one of the available tools for this sort of optimizations. Other tools you can take a look at include:<p>
+		<ul>
+			<li><a href="http://www.pobox.com/~jason1/pngrewrite/">pngrewrite</a><li><a href="http://www.cs.toronto.edu/~cosmin/pngtech/optipng/">OptiPNG</a><li><a href="http://advsys.net/ken/utils.htm">PNGOut</a></ul> <p>Now that we've got a pretty good PNG solution, let's see if we can do the same for the other image types.<h3>Step 2: Strip JPG Metadata</h3>
+	<p>JPEGs files contain meta data such as:<p>
+		<ul>
+			<li>comments<li>application-specific (think Photoshop) meta data<li>EXIF information such as camera information, date the photo was taken and even thumbnails of the actual image or audio!</ul> <p>This meta data is not required for the display of the image and can safely be stripped with no pixel quality loss. As discussed previously, JPEG is a lossy format, which means you lose quality every time you save. But luckily there are some operations that are lossless. Such operations include cropping a part of the image, rotation and the personal favorite - copying metadata. One tool that allows you to do these is called <a href="http://jpegclub.org/">jpegtran</a>.<p>Here's a command to copy the source image, optimize it and don't carry over any metadata in the new copy:<pre>&gt; jpegtran -copy none -optimize src.jpg dest.jpg</pre><p>Note that depending on the version you have, you might need to use the syntax ending with <code>src.jpg &gt; dest.jpg</code><p>The <code>-optimize</code> option will cause jpegtran to optimize the Huffman tables and improve compression.<p>Running this command on Alexa top 10 sites resulted in average savings of <strong>11.85%</strong>.<p>You may be able to further improve image size by using jpegtran's <code>-progressive</code> option. It produces JPEGs that load progressively in the browser, starting from a lower quality version of the image and improving as new image information arrives.<p><strong>Important note on stripping meta information: do it only for images that you own, because when jpegtan strips all the meta, it also strips any copyright information contained in the image file.</strong><h3>Step 3: GIF to PNG</h3>
+	<p>What's the best way to improve a GIF? Convert it to a PNG. As funny as it may sound, it's true. Most of the time you get a smaller file size from a PNG and the same quality and browser support, <a href="/blog-archive/blog/2008/11/04/imageopt-2/">as we discussed in a previous article</a>. Note that PNG will not always be smaller, but most of the time it will be, so it's worth checking after the conversion and keeping the smaller of the two files.<p>In order to automatically change your GIFs, you can use ImageMagick's <code>convert</code>:<pre>&gt; convert image.gif image.png</pre><p>If you want to force PNG8 format you can use:<pre>&gt; convert image.gif PNG8:image.png</pre><p>This is probably not necessary, since GIFs will most likely be converted to a PNG8 anyway because ImageMagick picks the appropriate format based on the number of colors.<p>Once you've converted the GIF to a PNG, don't forget to still crush the PNG result (as shown in step 1).<p>If the top 10 sites switch all their GIFs for PNGs (except those that don't yield a smaller file size), on average, this will result in <strong>20.42%</strong> file size reduction. The only inconvenience here is that you also need to write a search/replace script to find all the references to the GIF files and change them to the new PNG versions.<h3>Step 4: Optimize GIF animations</h3>
+	<p>Now that all GIFs are PNGs, PNGs are crushed and so are the JPEGs, what do we have left? GIF animations. One tool that can help you with those guys is called <a href="http://www.lcdf.org/gifsicle/">GIFsicle</a>. Since the animations consist of frames and some parts of the image don't change from one frame to another, GIFsicle doesn't carry over the duplicate pixel information. The way to run it is:<pre>&gt; gifsicle -O2 src.gif &gt; dest.gif</pre><h3>Smush.it</h3>
+	<p>As we said at the beginning, the beauty of those four steps is that they don't cause quality loss, so you don't have to open and compare the results before and after. They are also all command-line tools that can be automated easily. So you have nothing to lose by running all your images through those tools before you FTP them to your web server, you can only win.<p>And you can always try the <a href="http://smush.it">smush.it</a> tool, just to get an idea of how much you can potentially save.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

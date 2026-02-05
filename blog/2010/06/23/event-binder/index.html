@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>In the YUI 3 Gallery: Caridy Patiño Mayea&#x27;s Event Binder Module Provides Support for Early Event Binding and Event-driven Module Loading</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">In the YUI 3 Gallery: Caridy Patiño Mayea&#x27;s Event Binder Module Provides Support for Early Event Binding and Event-driven Module Loading</li></ul>
+				<h1 class="yui3-u-7-8">In the YUI 3 Gallery: Caridy Patiño Mayea&#x27;s Event Binder Module Provides Support for Early Event Binding and Event-driven Module Loading</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">June 23, 2010<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p><em>This article introduces my <a href="http://yuilibrary.com/gallery/show/event-binder">Event Binder module</a>, recently released in the YUI 3 Gallery.</em><p><a href="http://developer.yahoo.com/yui/3/" title="YUI 3 — Yahoo! User Interface Library">YUI 3</a> is getting good traction in the developer community, with significant adoption of the latest 3.1.1 release and a huge infusion of new, innovative projects in the <a href="http://yuilibrary.com/gallery/show" title="YUI Library :: Gallery">YUI 3 Gallery</a>. Many developers are getting their heads around the on-demand nature of YUI 3 and starting to leverage those capabilities in their designs. This approach has big advantages, but it also can present some challenges.<p>One of these challenges is to catch user interactions early. Even as the browser starts rendering the page, we want the user to be able to start interacting with page elements. In many cases, those interactions might happen before the JavaScript initialization process (including the attachment of event listeners) has completed.<p>In many cases you can streamline your initialization code by setting only your event listeners and then adding the logic for loading the pieces that you need for every user interaction. Recently, engineers at Facebook talked about a similar approach to improve the loading process — <a href="http://blog.reybango.com/2010/04/21/jsconf-2010-video-interviews-with-top-javascript-developers/">see the interview from Rey Bango</a> at JSConf. Here is an example of how this technique might work in YUI 3:<pre> &lt;script src=&quot;http://yui.yahooapis.com/combo?3.1.1/build/yui/yui-min.js&amp;
+ 
+	3.1.1/build/oop/oop-min.js&amp;3.1.1/build/event-custom/event-custom-base-min.js&amp;
+	3.1.1/build/event/event-base-min.js&amp;3.1.1/build/dom/dom-base-min.js&amp;
+	3.1.1/build/dom/selector-native-min.js&amp;3.1.1/build/dom/selector-css2-min.js&amp;
+	3.1.1/build/node/node-base-min.js&quot;&gt;&lt;/script&gt;
+ 
+YUI().use('event-base', function(Y) {
+    // wait until the user focuses on an input element to start loading assets
+    Y.on("click", function(e) {
+ 
+      Y.use ('anim', 'io', function() {
+          // load a remote content and display it using an animation here
+      });
+ 
+      e.halt(); // stop the propagation
+    }, "#demo");
+});</pre><p>This introduces some complexity in your code because listeners not only have to deal with the user interaction but also with some loading logic. Another downside to this approach is that you still have to load some JavaScript code at the top (in this case YUI seed, the Event Utility, and some dependencies) in order to define at least the listener and the loading logic to catch early actions. So, let’s consider this as two separate use-cases:<ul>
+			<li><a href="#early-interactions">Capturing early user interactions</a><li><a href="#on-demand-interactions">Facilitating the on-demand nature of some user interactions</a></ul> <p>To address these needs I've created a new module for <a href="http://developer.yahoo.com/yui/3/">YUI 3</a>. My main focus has been to create a component that works without affecting your application logic. This new module is called &quot;<a href="http://yuilibrary.com/gallery/show/event-binder">gallery-event-binder</a>&quot; and is now available through the YUI Loader. <h3 id="early-interactions">Capturing early user interactions</h3>
+	<p>The main goal of this feature is to guarantee that user interactions are queuing until event listeners are initialized.<p>Let’s see an <a href="http://caridy.github.com/examples/gallery-event-binder/simple.html">event binder example</a>:<pre>YUI({
+    //Last Gallery Build of this module
+    gallery: 'gallery-2010.06.07-17-52'
+}).use('gallery-event-binder', 'event', function(Y) {
+ 
+    Y.on('click', function(e) {
+ 
+        // do your stuff here
+        e.halt(); // stop the event propagation if you want...
+ 
+    }, '#demo');
+ 
+    // flush early user interactions
+    Y.EventBinder.flush('click');
+ 
+});</pre><p>In this example, YUI Loader will try to load the <code>gallery-event-binder</code> and <code>event</code> modules on-demand, and once they're both ready along with their dependencies, the code within the callback function (third argument) will be executed. During execution, a listener is set for an element with <code>id=demo</code>. The trick here is that once <code>Y.EventBinder.flush('click')</code> gets called, the system will flush some of the click events that might have happened before this initialization code gets executed.<h4>The configuration</h4>
+	<p>This technique requires some extra configuration, specifically the definition of <code>YUI_config</code> as a global variable to tweak the YUI execution. Don't worry, it's very simple. Let's see an example in details:<pre> 
+YUI_config = {
+    // standard YUI_config configuration
+    combine: true,
+    filter: 'min',
+ 
+    // event binder configuration starts here
+    eventbinder: {
+        // Event handler to store events that you want to redispatch.
+        fn: function(e) {
+            var binder = YUI_config.eventbinder,
+                filter = /yui3-event-binder/,
+                container = (e.target || e.srcElement),
+                info = {
+                    target: container,
+                    type : e.type
+                };
+ 
+            // look for an element with the class yui3-event-binder
+            while (container && !filter.test(container.className)) {
+                container = container.parentNode;
+            }
+ 
+            if (container) {
+                (binder.q = binder.q || []).push(info);
+ 
+                // prevent the default browser action for this event
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                return (e.returnValue = false);
+            }
+        },
+        // interface to listen for specific events
+        listenFor: function(type) {
+            var d = document;
+            // Before the library loads, we have to deal with browser inconsistencies
+            if (d.addEventListener) {
+                d.addEventListener(type, this.fn, false);
+            } else {
+                d.attachEvent('on' + type, this.fn);
+            }
+ 
+            return this;
+        }
+    }
+};
+// add events to the monitoring process
+YUI_config.eventbinder.listenFor('click');
+</pre><p>This code should be included at the very top of the page. It will be just a few bites once you <a href="http://yui.2clics.net/" title="Online YUI Compressor">minify</a> this configuration object. I recommend using a cacheable (external) file for production and including it in the head section in your pages. You can read more about <code>YUI_config</code> and the different configurations that you can tweak through this object in the <a href="http://developer.yahoo.com/yui/3/api/config.html">official API documentation</a>.<p>You can modify this configuration to suit you best, and define events that you care about as well. In the above example, we added 'click' to the monitoring list (last line). You can add multiple events to the monitoring list using chaining: <pre>YUI_config.eventbinder.listenFor('click').listenFor('keyup').listenFor('mouseover');</pre><p><strong>How does this feature work?</strong><p>Once the configuration (i.e., <code>YUI_config</code>) logic is executed, along with the call to <code>YUI_config.eventbinder.listenFor</code>, a listener for a specific event type will be defined. Only events that bubble up will be monitored as the listener will be defined for the <code>document</code> element. When a user interaction is caught at this level, it will be analyzed, specifically checking if the target element or any of its ancestors has classname <code>yui3-event-binder</code>. If so, the event will be added to a queue and the default behavior for that event will be prevented. This technique provides an easy way to monitor specific types of interaction in specific areas of the page.<p>When this code is executed, listeners for events of the specified type or types are added to the <code>document</code>, so when those events occur and bubble up (this only monitors events that bubble), they will be stopped and their information stored in a processing queue. Later, in your <code>use()</code> callback when your initialization is finished, simply call <code>Y.EventBinder.flush</code> to redispatch all the stored click events as if they happened just then—courtesy of the event-simulate module. <h3 id="on-demand-interactions">Facilitating the on-demand nature of some user interactions</h3>
+	<p>The main goal of this feature is to help developers to define loading logic based on user interactions.<p>Here’s <a href="http://caridy.github.com/examples/gallery-event-binder/modules-on-demand.html">another event binder example</a>:<pre> 
+YUI({
+  modules: {
+    'my-custom-module': {
+      fullpath: './my-custom-module.js'
+    }
+  }
+}).use('gallery-event-binder', 'node', function(Y) {
+ 
+  // set a listener for '#demo a' and rely on 'my-custom-module' 
+  // to handle that particular event.
+  Y.EventBinder.on('click', 'my-custom-module', '#demo a');
+ 
+  // set a delegate listener for all the anchors in a list and rely  
+  // on 'my-custom-module' and 'my-another-module' to handle those particular events
+  Y.EventBinder.delegate('click', ['my-another-module'], '#mylist', 'li a');
+ 
+});
+</pre><p>Here we use <code>Y.EventBinder.on</code> and <code>Y.EventBinder.delegate</code> to define some listeners. These two methods wrap <code>Y.on</code> and <code>Y.delegate</code> to drive loading logic through a user interaction. This lets us defer loading of specific functionality on a page until the user tries to use a particular feature.<p>In this case, when a user clicks on one of the elements, we load one or more custom YUI modules that implement all the features associated with that particular click. Once those modules become available (and new listeners are set), the binder will flush the event that was on hold during the loading process to preserve the state of the action.<p>This feature doesn't require any initial configuration. Both of Event Binder's features can be used at the same time to cover early and on-demand user-interactions. In this case, you need to define the configuration, then set the on-demand listeners, and finally flush the early events.<p>Here’s <a href="http://caridy.github.com/examples/gallery-event-binder/end2end.html">an end-to-end event binder example</a>:<pre> 
+// configuration
+YUI_config = { /* your custom event-binder configuration here */ };
+YUI_config.eventbinder.listenFor('click')
+ 
+// initialization
+YUI({
+  modules: {
+    'my-custom-module': {
+      fullpath: './my-custom-module.js'
+    }
+  }
+}).use('gallery-event-binder', function(Y) {
+  
+  Y.EventBinder.delegate('click', ['my-custom-module'], '#doc', '.yui3-event-binder a');
+  Y.EventBinder.flush('click');
+ 
+});
+</pre><h3>A more advanced configuration </h3>
+	<p>You can modify the <code>fn</code> function in your configuration to be more selective about which events to queue and you can store more information about the events. Additionally adds a <code>yui3-waiting</code> class to the click target which we style in CSS to display a loading spinner:<pre> 
+YUI_config = {
+    // standard YUI_config configuration
+    combine: true,
+    filter: 'min',
+ 
+    // event binder configuration starts here
+    eventbinder: {
+        // set of options that should be preserved for every event (all optional)
+        eventProperties: [
+            "ctrlKey", "altKey",
+            "shiftKey", "metaKey",
+            "keyCode", "charCode",
+            "screenX", "screenY",
+            "clientX", "clientY",
+            "button",
+            "relatedTarget"
+        ],
+ 
+        // listener callback function
+        fn: function(e) {
+            var binder = YUI_config.eventbinder,
+                props = binder.eventProperties,
+                filter = /yui3-event-binder/,
+                target = (e.target || e.srcElement),
+                container = target,
+                info = {
+                    target: target,
+                    type : e.type
+                },
+                i;
+ 
+            if (target.nodeType === 3) {
+                // target is a text node, so use its parent element
+                target = target.parentNode;
+            }
+ 
+            // look for an element with the class yui3-event-binder
+            while (container && !filter.test(container.className)) {
+                container = container.parentNode;
+            }
+ 
+            if (container) {
+                target.className += ' yui3-waiting';
+ 
+                // back up the event properties to simulate the event later on
+                for (i = props.length - 1; i >= 0; --i) {
+                    info[props[i]] = e[props[i]];
+                }
+ 
+                (binder.q = binder.q || []).push(info);
+ 
+                // prevent the default browser action for this event
+                if (e.preventDefault) {
+                    e.preventDefault();
+                }
+                return (e.returnValue = false);
+            }
+        },
+ 
+        listenFor: function(type) {
+            var d = document;
+ 
+            if (d.addEventListener) {
+                d.addEventListener(type, this.fn, false);
+            } else {
+                d.attachEvent('on' + type, this.fn);
+            }
+ 
+            return this;
+        }
+    }
+};
+// add events to the monitoring process
+YUI_config.eventbinder.listenFor('click');
+</pre><p>Check out this <a href="http://caridy.github.com/examples/gallery-event-binder/end2end.html">event binder example</a> to see this advanced configuration in action.<p><strong>Conclusion:</strong><p>For high performance web applications, it's important for pages to load and become responsive quickly. To accomplish this, we have to rely on on-demand loading techniques. Once you start using them, it's equally important to control user interactions that can happen before the corresponding code for an action become available.<p><a href="http://yuilibrary.com/gallery/show/event-binder">Event Binder (gallery-event-binder)</a> provides friendly APIs to deal with both use-cases without you having to change your application logic. It can be applied to any <a href="http://developer.yahoo.com/yui/3/" title="YUI 3 — Yahoo! User Interface Library">YUI 3</a> application without introducing extra complexity to your code.</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>

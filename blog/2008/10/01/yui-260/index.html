@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+
+
+	<title>YUI 2.6.0 Released</title>
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/css/docs-min.css">
+
+	<link rel="stylesheet" href="/css/blog.css" type="text/css" />
+
+
+    <!-- GOOGLE ANALYTICS SCRIPT.
+        When changing themes, be sure to copy/paste this script from this theme to the new theme.
+    -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-34018865-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-development category-performance" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/">Blog</a></li>
+                    <li><a href="/blog/category/development/">Development</a></li>
+                    <li class="current">YUI 2.6.0 Released</li></ul>
+				<h1 class="yui3-u-7-8">YUI 2.6.0 Released</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="http://developer.yahoo.com/yui/" class="name">By YUI Team</a><span class="date">October 1, 2008<span></div></div>
+
+<div class="blog" id="blog-content">
+	<p>The YUI development community is pleased to announce the release of <a href="http://developer.yahoo.com/yui">version 2.6.0 of the YUI Library</a>. You can <a href="http://developer.yahoo.com/yui/download/">download YUI 2.6.0</a> from SourceForge or configure your implementation using the updated <a href="http://developer.yahoo.com/yui/articles/hosting/">YUI Configurator</a>.<p>2.6.0 introduces a new <a href="http://developer.yahoo.com/yui/carousel">Carousel Control</a>, offers the <a href="http://developer.yahoo.com/yui/paginator">Paginator Control</a> for general use (it was previously bundled with DataTable), includes more than 450 total fixes, enhancements and optimizations, graduates eight components out of "beta," and now ships with more than <a href="http://developer.yahoo.com/yui/examples/">290 functional examples</a>.<h3 id="new-components-260">New YUI Controls</h3>
+	<h4 id="carousel-260">The Carousel Control</h4>
+	<p><a href="http://developer.yahoo.com/yui/carousel">The YUI Carousel Control</a>, contributed by Gopal Venkatesan (and based on the Carousel originally created by former Yahoo Bill Scott), provides a widget for browsing among a set of like objects arrayed vertically or horizontally in an overloaded page region. Like most YUI controls, Carousel can consume content from page markup using progressive enhancement techniques or be created, configured, and populated entirely via script. It has built-in support for the lazy-loading of content via XMLHttpRequest (aka Ajax) using YUI's <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a>. And be sure to notice that <a href="http://developer.yahoo.com/yui/examples/carousel/carousel-ariaplugin.html">Carousel's ARIA Plugin example</a> makes it easy to use the WAI-ARIA <a href="http://www.w3.org/TR/wai-aria/#role_model">Roles</a> and <a href="http://www.w3.org/TR/wai-aria/#supported">States</a> with the Carousel control.<img alt="carousel-example" src="/blog-archive/assets/2008/carousel-example-20080930-171839.png" /><h4 id="paginator-260">The Paginator Control</h4>
+	<p><a href="http://developer.yahoo.com/yui/paginator">The YUI Paginator Control</a> addresses the navigation aspect of chunked content, offering a set of controls that it can render into your UI to allow users to navigate through logical sections of local or remote data. It's a great tool for managing page load times by reducing the amount of markup or data needed per page. In combination with <a href="http://developer.yahoo.com/yui/connection">Connection Manager</a> or <a href="http://developer.yahoo.com/yui/datasource">DataSource</a>, paging through large sets of server side data is easy and can avoid the need for full page loads.<p>The simplicity of <a href="http://developer.yahoo.com/yui/examples/paginator/pag_getting_started.html">the getting started example</a> risks hiding Paginator's power, so be sure to explore the choices for <a href="http://developer.yahoo.com/yui/examples/paginator/pag_configuration.html">configuring the Paginator</a>. Plus, it's built on a UI component architecture that allows implementers to easily create custom Paginator controls that will work automatically.<p>The Paginator Control was introduced with DataTable in version 2.5.0, but it has been broken out as an optional dependency for general use as of version 2.6.0.<img alt="paginator-shadow" src="/blog-archive/assets/2008/paginator-shadow-20080929-155441.png" /><h3 id="improvements-260">Over 450 Improvements</h3>
+	<p>You can view <a href="http://tech.groups.yahoo.com/group/ydn-javascript/message/38553">2.6.0's comprehensive change log</a> of fixed bugs and concatenated release notes for the entire library, or keep reading for highlights.<h4 id="treeview-260">TreeView</h4>
+	<p>Prolific YUI contributor (and <a href="/blog-archive/blog/2008/02/27/community-awards/">YUI Community Awards</a> winner) Satyam has given <a href="http://developer.yahoo.com/yui/treeview/">TreeView</a> a significant overhaul with support for progressive enhancement, state retrieval, JSON-base construction, focus, keyboard navigation, and node editing. 2.6.0 should be fully backward-compatible with 2.5.2 and earlier implementations. More details in <a href="http://developer.yahoo.com/yui/treeview/#upgrade">the upgrade notes for TreeView</a>.<h4 id="calendar-260">Calendar</h4>
+	<p>Thanks to Satyen Desai, the <a href="http://developer.yahoo.com/yui/calendar">Calendar Control</a> received significant accessibility improvements in 2.6.0 including the addition of text to the previous-month, next-month, and close icons for improved screen-reader interaction.<h4 id="editor-260">Rich Text Editor</h4>
+	<p>Dav Glass added the often requested Undo and Redo capabilities to the <a href="http://developer.yahoo.com/yui/editor">Rich Text Editor</a> Control.<h4 id="dd-260">Drag &amp; Drop</h4>
+	<p>If you've struggled with making <a href="http://developer.yahoo.com/yui/dragdrop/">Drag &amp; Drop</a> work well over troublesome content such as iFrames, you'll welcome the introduction of a hidden shim that now makes such traversals effortless.<h4 id="uploader-260">Uploader</h4>
+	<p><a href="http://developer.yahoo.com/yui/uploader">Uploader</a> has been updated to work with Flash Player 10, a sign of our continued commitment to emerging technologies. But because of security changes in the upcoming Flash Player 10, the UI for invoking the "Browse" dialog has to be contained within the Flash player. Because of that, this new version of the Uploader is NOT BACKWARDS COMPATIBLE with the code written to work with the previous version (it is, however, compatible with Flash Player 9). Do not upgrade to this version without carefully reading the documentation and reviewing the new examples.<h4 id="datatable-260">DataTable</h4>
+	<p>There has been significant work on <a href="http://developer.yahoo.com/yui/datatable">DataTable</a> in this 2.6.0 release. (See the <a href="http://developer.yahoo.com/yui/build/datatable/README">README</a> for the full manifest.) Amongst the changes, DataTable introduces the ScrollingDataTable and CellEditor classes, the <a href="http://developer.yahoo.com/yui/paginator">Paginator</a> widget is now offered as a standalone component, and significant changes have been applied to DataTable's pagination and sorting architectures. While backward compatibility has been maintained whenever possible, the Paginator widget is now an optional dependency, and custom extensions to inline cell editing or server-side pagination and/or sorting will likely need to be updated to be compatible with the new models. Implementers who are upgrading from an earlier version are strongly advised to read the Upgrades Notes.<h4 id="autocomplete-260">AutoComplete</h4>
+	<p>As of the 2.6.0 release, <a href="http://developer.yahoo.com/yui/autocomplete">AutoComplete</a> has been migrated to use YAHOO.util.DataSource, which is now a new required dependency. The YAHOO.widget.DataSource class, which used to be packaged with the AutoComplete control has been removed. While backward compatibility has been maintained whenever possible, implementers who are upgrading from an earlier version are strongly advised to read the <a href="http://developer.yahoo.com/yui/autocomplete/#upgrade">Upgrades Notes</a> to smooth the transition.<h4 id="container-260">Container</h4>
+	<p>The <a href="http://developer.yahoo.com/yui/container">Container</a> family of controls have enhanced positioning, height, and modality support in 2.6.0 via new <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.Overlay.html#config_preventcontextoverlap"><code>preventcontextoverlap</code></a>, <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.Overlay.html#config_context"><code>context</code></a>, and <a href="http://developer.yahoo.com/yui/docs/YAHOO.widget.Overlay.html#config_autofillheight"><code>autofillheight</code></a> configuration properties.<h3 id="othernotes-260">Other Notes on 2.6.0</h3>
+	<h4 id="design-patterns">Yahoo! Design Pattern Library</h4>
+	<p>Concurrent with the initial YUI release in February 2006, Yahoo! released the Yahoo! Design Patterns Library. Design Patterns describe an optimal solution to a common problem within a specific context. Today we're happy to strengthen the relationship between these two sibling libraries by offering YUI code for two existing patterns: The <a href="http://developer.yahoo.com/ypatterns/parent.php?pattern=pagination">Pagination Design Pattern</a> and the <a href="http://developer.yahoo.com/ypatterns/pattern.php?pattern=carousel">Carousel Design Pattern</a>.<h4 id="accessibility-260">Accessibility Improvements</h4>
+	<p>We've continued to work hard to make YUI accessible. The Carousel, Button, Menu, TabView, and Container all have enhanced accessibility support in addition to what's otherwise noted in this blog post. We continue to count accessibility amongst our highest priorities; stay tuned for a few more blog posts on the topic in the coming days and weeks.<h4 id="graduation">Graduation Day</h4>
+	<p>The following seven YUI components have graduated from beta as of 2.6.0:<ul>
+			<li><a href="http://developer.yahoo.com/yui/cookie/">Cookie</a> Utility - with a new <code>removeSub()</code> method and two parsing improvements.<li><a href="http://developer.yahoo.com/yui/datasource/">DataSource</a> Utility - with significant backward-compatible refactoring, see the <a href="http://developer.yahoo.com/yui/build/datasource/README">README</a>.<li><a href="http://developer.yahoo.com/yui/resize/">Resize</a> Utility - with new support for a <code>useShim</code> config and a series of bug fixes.<li><a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader</a> Utility - with better timeout and combo handler support.<li><a href="http://developer.yahoo.com/yui/datatable/">DataTable</a> Control - significant improvements and bug fixes: check the <a href="http://developer.yahoo.com/yui/build/datatable/README">README</a>.<li><a href="http://developer.yahoo.com/yui/layout/">Layout Manager</a> - with new support for Ajax content retrieval and a series of bug fixes. <li><a href="http://developer.yahoo.com/yui/editor/">Rich Text Editor</a> - including lots of new custom events and the ability to customize the edit windows better, along with ~40 bug fixes.<li><a href="http://developer.yahoo.com/yui/profiler">Profiler</a> has been promoted out of beta unchanged.</ul> <p>(Note that the ProfileViewer developer tools, the Element and Selector utilities, and the Carousel and ImageCropper controls remain designated as beta.)<h3 id="thanks-260">Thanks!</h3>
+	<p>We're proud of this 2.6.0 release and want to thank the entire community for their contributions, guidance, and continued support. We hope you enjoy all the new power and easy of use reflected in 2.6.0, and we look forward to your feedback in the comments below and on the <a href="http://tech.groups.yahoo.com/group/ydn-javascript/">YUI mailing list</a>.<p>Thank you again on behalf of the entire development team, Adam Moore, Dav Glass, Eric Miraglia, George Puckett, Jenny Han Donnelly, Luke Smith, Matt Sweeney, Satyen Desai, Thomas Sha, and Todd Kloots; and contributors: Caridy Patiño, Dwight "Tripp" Bridges, Julien Lecomte, Matt Mlinac, Allen Rabinovich, Satyam, Gopal Venkatesan, and Nicholas C. Zakas</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/blog/2014/08/25/weve-moved-to-tumblr/">We’ve Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+					<li>
+				<a href="/blog/2014/05/21/yui-3-17-1-released/">YUI 3.17.1 Released</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/blog/2014/08/'> August 2014 </option>
+	<option value='/blog/2014/06/'> June 2014 </option>
+	<option value='/blog/2014/05/'> May 2014 </option>
+	<option value='/blog/2014/04/'> April 2014 </option>
+	<option value='/blog/2014/03/'> March 2014 </option>
+	<option value='/blog/2014/02/'> February 2014 </option>
+	<option value='/blog/2014/01/'> January 2014 </option>
+	<option value='/blog/2013/12/'> December 2013 </option>
+	<option value='/blog/2013/11/'> November 2013 </option>
+	<option value='/blog/2013/10/'> October 2013 </option>
+	<option value='/blog/2013/09/'> September 2013 </option>
+	<option value='/blog/2013/08/'> August 2013 </option>
+	<option value='/blog/2013/07/'> July 2013 </option>
+	<option value='/blog/2013/06/'> June 2013 </option>
+	<option value='/blog/2013/05/'> May 2013 </option>
+	<option value='/blog/2013/04/'> April 2013 </option>
+	<option value='/blog/2013/03/'> March 2013 </option>
+	<option value='/blog/2013/02/'> February 2013 </option>
+	<option value='/blog/2013/01/'> January 2013 </option>
+	<option value='/blog/2012/12/'> December 2012 </option>
+	<option value='/blog/2012/11/'> November 2012 </option>
+	<option value='/blog/2012/10/'> October 2012 </option>
+	<option value='/blog/2012/09/'> September 2012 </option>
+	<option value='/blog/2012/08/'> August 2012 </option>
+	<option value='/blog/2012/07/'> July 2012 </option>
+	<option value='/blog/2012/06/'> June 2012 </option>
+	<option value='/blog/2012/05/'> May 2012 </option>
+	<option value='/blog/2012/04/'> April 2012 </option>
+	<option value='/blog/2012/03/'> March 2012 </option>
+	<option value='/blog/2012/02/'> February 2012 </option>
+	<option value='/blog/2012/01/'> January 2012 </option>
+	<option value='/blog/2011/12/'> December 2011 </option>
+	<option value='/blog/2011/11/'> November 2011 </option>
+	<option value='/blog/2011/10/'> October 2011 </option>
+	<option value='/blog/2011/09/'> September 2011 </option>
+	<option value='/blog/2011/08/'> August 2011 </option>
+	<option value='/blog/2011/07/'> July 2011 </option>
+	<option value='/blog/2011/06/'> June 2011 </option>
+	<option value='/blog/2011/05/'> May 2011 </option>
+	<option value='/blog/2011/04/'> April 2011 </option>
+	<option value='/blog/2011/03/'> March 2011 </option>
+	<option value='/blog/2011/02/'> February 2011 </option>
+	<option value='/blog/2011/01/'> January 2011 </option>
+	<option value='/blog/2010/12/'> December 2010 </option>
+	<option value='/blog/2010/11/'> November 2010 </option>
+	<option value='/blog/2010/10/'> October 2010 </option>
+	<option value='/blog/2010/09/'> September 2010 </option>
+	<option value='/blog/2010/08/'> August 2010 </option>
+	<option value='/blog/2010/07/'> July 2010 </option>
+	<option value='/blog/2010/06/'> June 2010 </option>
+	<option value='/blog/2010/05/'> May 2010 </option>
+	<option value='/blog/2010/04/'> April 2010 </option>
+	<option value='/blog/2010/03/'> March 2010 </option>
+	<option value='/blog/2010/02/'> February 2010 </option>
+	<option value='/blog/2010/01/'> January 2010 </option>
+	<option value='/blog/2009/12/'> December 2009 </option>
+	<option value='/blog/2009/11/'> November 2009 </option>
+	<option value='/blog/2009/10/'> October 2009 </option>
+	<option value='/blog/2009/09/'> September 2009 </option>
+	<option value='/blog/2009/08/'> August 2009 </option>
+	<option value='/blog/2009/07/'> July 2009 </option>
+	<option value='/blog/2009/06/'> June 2009 </option>
+	<option value='/blog/2009/05/'> May 2009 </option>
+	<option value='/blog/2009/04/'> April 2009 </option>
+	<option value='/blog/2009/03/'> March 2009 </option>
+	<option value='/blog/2009/02/'> February 2009 </option>
+	<option value='/blog/2009/01/'> January 2009 </option>
+	<option value='/blog/2008/12/'> December 2008 </option>
+	<option value='/blog/2008/11/'> November 2008 </option>
+	<option value='/blog/2008/10/'> October 2008 </option>
+	<option value='/blog/2008/09/'> September 2008 </option>
+	<option value='/blog/2008/08/'> August 2008 </option>
+	<option value='/blog/2008/07/'> July 2008 </option>
+	<option value='/blog/2008/06/'> June 2008 </option>
+	<option value='/blog/2008/05/'> May 2008 </option>
+	<option value='/blog/2008/04/'> April 2008 </option>
+	<option value='/blog/2008/03/'> March 2008 </option>
+	<option value='/blog/2008/02/'> February 2008 </option>
+	<option value='/blog/2008/01/'> January 2008 </option>
+	<option value='/blog/2007/12/'> December 2007 </option>
+	<option value='/blog/2007/11/'> November 2007 </option>
+	<option value='/blog/2007/10/'> October 2007 </option>
+	<option value='/blog/2007/09/'> September 2007 </option>
+	<option value='/blog/2007/08/'> August 2007 </option>
+	<option value='/blog/2007/07/'> July 2007 </option>
+	<option value='/blog/2007/06/'> June 2007 </option>
+	<option value='/blog/2007/05/'> May 2007 </option>
+	<option value='/blog/2007/04/'> April 2007 </option>
+	<option value='/blog/2007/03/'> March 2007 </option>
+	<option value='/blog/2007/02/'> February 2007 </option>
+	<option value='/blog/2007/01/'> January 2007 </option>
+	<option value='/blog/2006/12/'> December 2006 </option>
+	<option value='/blog/2006/11/'> November 2006 </option>
+	<option value='/blog/2006/10/'> October 2006 </option>
+	<option value='/blog/2006/09/'> September 2006 </option>
+	<option value='/blog/2006/08/'> August 2006 </option>
+	<option value='/blog/2006/07/'> July 2006 </option>
+	<option value='/blog/2006/06/'> June 2006 </option>
+	<option value='/blog/2006/05/'> May 2006 </option>
+	<option value='/blog/2006/04/'> April 2006 </option>
+	<option value='/blog/2006/03/'> March 2006 </option>
+	<option value='/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2014 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>
