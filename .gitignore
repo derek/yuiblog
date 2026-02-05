@@ -27,3 +27,6 @@ original/
 
 # Build scripts
 scripts/
+
+# Local development symlink (for /yuiblog/ path resolution)
+yuiblog

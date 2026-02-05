@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=960" id="meta-viewport">
+    <script>
+    if (screen.width < 768) {
+        document.getElementById('meta-viewport').setAttribute('content', 'width=768');
+    }
+    </script>
+
+	<title>Reflecting on the Legacy of YUIBlog</title>
+
+	<link rel="shortcut icon" href="/yuiblog/favicon.ico" type="image/x-icon" />
+
+	<!-- IMPORT: yuilibrary.com -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic">
+	<link rel="stylesheet" type="text/css" href="/yuiblog/vendor/yui/cssgrids-min.css">
+	<link rel="stylesheet" type="text/css" href="/yuiblog/combo/main-min.css">
+	<link rel="stylesheet" type="text/css" href="/yuiblog/vendor/prettify/prettify-min.css">
+	<link rel="stylesheet" type="text/css" href="/yuiblog/css/docs-min.css">
+
+	<link rel="stylesheet" href="/yuiblog/css/blog.css" type="text/css" />
+
+</head>
+
+<body class="single single-post postid-5469 single-format-standard yui3-skin-sam">
+
+	<div id="doc">
+	      <div id="hd" class="yui3-g">
+		</div>
+		<div id="bd" class="clearfix yui3-g">
+
+		<div class="yui3-u-3-4" class="post-5469 post type-post status-publish format-standard hentry category-miscellany" id="post-5469">
+
+			<div class="content">
+
+
+				<ul class="breadcrumbs">
+                    <li class="front_page"><a href="//yuilibrary.com/">YUI</a></li>
+                    <li><a href="/yuiblog/">Blog</a></li>
+                    <li><a href="/yuiblog/blog/category/miscellany/">Miscellany</a></li>
+                    <li class="current">Reflecting on the Legacy of YUIBlog</li></ul>
+				<h1 class="yui3-u-7-8">Reflecting on the Legacy of YUIBlog</h1>
+
+				<div class="entry yui3-u-1">
+					<div class="meta">
+    <img src="https://www.gravatar.com/avatar/d011327f5a3d4f1dc4215968e2bfd524?s=32"> <div class="cont"><a href="#" class="name">By Derek Gathright</a><span class="date">February 5, 2026<span></div></div>
+
+<div class="blog" id="blog-content">
+
+<p>It's been over a decade since YUIBlog published its final posts in 2014, and in the subsequent years, we even saw them disappear from the internet, seemingly forever. While the library's influence on web development continues to resonate, I was saddened that there was so much valuable content that was lost to the world. Fortunately, I was able to scrape archives off the Wayback Machine, and with the help of LLMs, was able to reconstruct the disparate pieces into a cohesive archive.</p>
+<p>Now that it's been restored, as someone who was involved with the YUI community during its most active years, I wanted to take a moment to reflect on why this blog mattered so much to the JavaScript ecosystem.</p>
+
+<h2>A Different Era of JavaScript</h2>
+
+<p>When YUIBlog launched in February 2006, the JavaScript landscape looked nothing like it does today. There was no NPM, no Webpack or Vite, no React or Vue, no TypeScript or Next.js. It was just you in an editor (maybe Notepad), hand-coding vanilla JavaScript, and those same keystrokes were the file you shipped to the web. No compressors or transpilation. Browsers were wildly inconsistent, and JavaScript was often dismissed as a "toy language" not suitable for serious application development. It was in this environment, Yahoo's frontend engineering team began sharing their hard-won knowledge with the world.</p>
+
+<p>Heck, the very term "frontend engineer" (colloquially known as "F2Es" for a bit) was popularized by Yahoo and the community contributing to this blog. Yahoo recognized that building complex browser-based applications required specialized engineering skills, and they formalized it as a discipline, rather than shunning it as other companies did. That framing helped elevate the craft and shaped how the industry thinks about the role today.</p>
+
+<p>The blog wasn't just documentation for the YUI library. It was the 2000s masterclass in JavaScript engineering. Posts explored fundamental concepts that many developers take for granted today but were revolutionary at the time.</p>
+
+<h2>Foundational Posts That Shaped JavaScript</h2>
+
+<h3>Global Domination (June 2006)</h3>
+
+<p>One of the earliest and most influential posts was <a href="/yuiblog/blog/2006/06/01/global-domination/">"Global Domination"</a>, which made a compelling case for why global variables are problematic. This post introduced many developers to the concept of namespacing, using a single global object (like <code>YAHOO</code>) to contain all of an application's code. This pattern became standard practice and paved the way for future module systems.</p>
+
+<h3>The Module Pattern (June 2007)</h3>
+
+<p>Perhaps no single blog post has had more influence on JavaScript architecture than <a href="/yuiblog/blog/2007/06/12/module-pattern/">"A JavaScript Module Pattern"</a>. Written by Eric Miraglia and based on patterns taught by Douglas Crockford, this post introduced developers to the power of closures for creating private variables and methods. The immediately-invoked function expression (IIFE) pattern demonstrated here became ubiquitous in JavaScript development and directly influenced the design of CommonJS, AMD, and eventually ES6 modules. Over a decade later, I still can't type an IIFE without thinking <a href="https://youtu.be/taaEzHI9xyY?si=QBoDmykzcJfPoH0K&t=2064">"Dogballs"</a>.</p>
+
+<h3>Performance Research (2006-2008)</h3>
+
+<p>The YUI team's <a href="/yuiblog/blog/category/performance/">performance research</a> was groundbreaking. <a href="/yuiblog/blog/2006/11/28/performance-research-part-1/">"Performance Research, Part 1"</a> measured popular websites and found that only 5-38% of load time was spent retrieving the HTML document itself. The rest was spent on subsequent HTTP requests for images, scripts, and stylesheets. This shifted focus toward reducing HTTP requests and optimizing asset delivery, and led to tools like <a href="https://yslow.org/">YSlow</a>, a precursor to Lighthouse.</p>
+
+<p>Steve Souders, then Yahoo's Chief Performance Officer, presented his <a href="/yuiblog/blog/2007/09/04/video-souders/">"14 Rules for Faster Pages"</a> through YUI Theater. These rules became the foundation of web performance best practices and his book "High Performance Web Sites." The blog also introduced the <a href="/yuiblog/blog/2008/07/16/combohandler/">Combo Handler</a>, which combined multiple JavaScript files into a single HTTP request, a technique that predated modern bundlers like webpack.</p>
+
+<p>Stoyan Stefanov contributed extensively, from <a href="/yuiblog/blog/2008/07/22/non-blocking-scripts/">"Non-blocking JavaScript Downloads"</a> to his <a href="/yuiblog/blog/2008/10/29/imageopt-1/">Image Optimization series</a>. His work on async script loading is now built into the language with <code>async</code> and <code>defer</code> attributes, and his image research led to tools like Smush.it.</p>
+
+<p>It was these posts and others like them that got me hooked on web performance, a specialty I continue with to this day. You can even find the beginnings of that journey documented here: <a href="/yuiblog/blog/2013/07/16/velocity-2013-building-a-faster-and-stronger-web/">Velocity 2013 - Building a Faster and Stronger Web</a>.</p>
+
+<h3>Graded Browser Support (August 2006)</h3>
+
+<p>Yahoo's <a href="/yuiblog/blog/2006/08/18/browser-support-update-2006q3/">"Graded Browser Support"</a> introduced a practical framework that the industry widely adopted. The A/C/X grading system gave teams a way to make rational decisions about which browsers to fully support versus providing basic functionality. This approach influenced how companies thought about browser compatibility for years and evolved into modern progressive enhancement strategies.</p>
+
+<h3>Event-Driven Architecture (January 2007)</h3>
+
+<p>The post on <a href="/yuiblog/blog/2007/01/17/event-plan/">"Event-Driven Web Application Design"</a> introduced custom events and pub/sub patterns for decoupling JavaScript components. This architectural thinking predates modern frameworks but describes the same principles that now power React's state management, Vue's event system, and libraries like Redux. The ideas explored here became foundational to how we structure frontend applications.</p>
+
+<h3>Accessible JavaScript (December 2007)</h3>
+
+<p>YUI was a pioneer in making JavaScript accessible. Posts like <a href="/yuiblog/blog/2007/12/21/menu-waiaria/">"Using WAI-ARIA Roles and States with the YUI Menu Control"</a> were among the earliest practical guides to implementing ARIA in dynamic widgets. At a time when most JavaScript libraries ignored accessibility entirely, YUI demonstrated that rich interactions and screen reader support could coexist. These patterns are now standard in every modern component library.</p>
+
+<h3>Synchronous v. Asynchronous (April 2006)</h3>
+
+<p>In the early days of Ajax, many developers still used synchronous XMLHttpRequest calls that froze the browser. The post <a href="/yuiblog/blog/2006/04/04/synchronous-v-asynchronous/">"Synchronous v. Asynchronous"</a> made a clear case for why async was the right approach. This seems obvious now, but someone had to write it down and explain it clearly. YUI's Connection Manager became a model for how to handle HTTP requests properly.</p>
+
+<h3>Library Comparisons and Community</h3>
+
+<p>YUIBlog wasn't insular about other libraries. Posts like <a href="/yuiblog/blog/2010/10/27/jquery-and-yui-3-a-tale-of-two-javascript-libraries/">"jQuery and YUI 3: A Tale of Two JavaScript Libraries"</a> provided thoughtful comparisons that helped developers understand the tradeoffs between different approaches. This openness to discussing the broader ecosystem was rare and valuable.</p>
+
+<h2>YUI Theater: A Video Archive</h2>
+
+<p>Beyond written content, YUIBlog hosted <a href="/yuiblog/blog/category/yui-theater/">"YUI Theater,"</a> a collection of recorded talks from conferences and internal Yahoo presentations.</p>
+
+<p>Douglas Crockford's <a href="https://www.youtube.com/playlist?list=PL7664379246A246CB">"Crockford on JavaScript"</a> series was the highlight. For me, this was must-see TV. Every time a new episode dropped, I'd block out time to watch it. Over eight episodes, he traced JavaScript's history from its Lisp and Scheme roots through its quirks and redemption. His talk <a href="/yuiblog/blog/2009/08/11/video-crockford-json/">"The JSON Saga"</a> tells the story of how he invented JSON and standardized it by buying json.org. These weren't just tutorials; they were computer science education disguised as conference talks.</p>
+
+<p>The <a href="https://www.youtube.com/playlist?list=PLjKP9DUCzZoqAKuA4P4llDb6BR_obpeV_">YUI Open Roundtable</a> and <a href="https://www.youtube.com/playlist?list=PL29854C3883AA8170">Open Hours</a> was a pioneer in how an open-source project within a large company could actively engage with its community. The team held regular live sessions where anyone could join, ask questions, and discuss the library's direction. This level of transparency was unusual for corporate open-source at the time.</p>
+
+<p>The <a href="https://www.youtube.com/playlist?list=PLjKP9DUCzZorde6sLWHJ3GNd-6VrGrbqm">YUIConf videos</a> brought the annual conference to the global community. Not everyone could attend in person, but publishing the talks meant developers worldwide could benefit from the presentations and stay connected to the project.</p>
+
+<p>Many of these videos are still available on the <a href="https://www.youtube.com/@yuilibrary/playlists">YUI Library YouTube channel</a> and remain valuable educational resources.</p>
+
+<h2>The Legacy Lives On</h2>
+
+<p>While Yahoo eventually discontinued the YUI library in 2014, the ideas propagated through YUIBlog live on in every modern JavaScript application:</p>
+
+<ul>
+<li><strong>Module patterns</strong> evolved into CommonJS, AMD, and ES6 modules</li>
+<li><strong>Performance best practices</strong> became codified in tools like Lighthouse and Core Web Vitals</li>
+<li><strong>Component-based architecture</strong> pioneered by YUI widgets influenced React, Vue, and Angular</li>
+<li><strong>Custom events and pub/sub patterns</strong> are now fundamental to frontend architecture</li>
+<li><strong>Graded browser support</strong> evolved into modern progressive enhancement strategies</li>
+</ul>
+
+<p>Many engineers who contributed to YUIBlog went on to shape the broader web platform. They joined companies large &amp; small, created new frameworks, collectively wrote dozens of books, and continue advancing web standards to this day.</p>
+
+<h2>Why This Archive Matters</h2>
+
+<p>This static archive preserves nearly a thousand posts spanning eight years of JavaScript history. It's a time capsule of how the web development community learned to build complex applications in the browser. For historians of technology, it documents the transition of JavaScript from a scripting language to a serious platform for application development.</p>
+
+<p>For current developers, these posts offer perspective on why things work the way they do today. Understanding the problems these patterns were designed to solve helps us appreciate modern tools and make better decisions about when to use them.</p>
+
+<p>Thank you to everyone who contributed to YUIBlog over the years. Your work helped shape the web we build on today.</p>
+
+</div>
+
+
+
+	<div class="navigation">
+		<div class="next-posts"></div>
+		<div class="prev-posts"></div>
+	</div>
+
+
+			</div>
+		</div>
+    </div>
+
+
+
+
+<div id="sidebar" class="yui3-u-1-4"><div class="liner">
+
+        <div id="recent-posts-3" class="sidebox widget widget_recent_entries">		<div class="hd"><h2>Recent Posts</h2></div><div class="bd">		<ul>
+					<li>
+				<a href="/yuiblog/blog/2026/02/05/reflecting-on-yuiblog-legacy/">Reflecting on the Legacy of YUIBlog</a>
+						</li>
+					<li>
+				<a href="/yuiblog/blog/2014/08/25/weve-moved-to-tumblr/">We've Moved to Tumblr!</a>
+						</li>
+					<li>
+				<a href="/yuiblog/blog/2014/06/16/yui-gallery-deprecation-announcement/">YUI Gallery Deprecation Announcement</a>
+						</li>
+					<li>
+				<a href="/yuiblog/blog/2014/06/03/yui-3-17-2-released/">YUI 3.17.2 Released</a>
+						</li>
+					<li>
+				<a href="/yuiblog/blog/2014/05/23/yui-3-17-2-release-candidate-1/">YUI 3.17.2 Release Candidate 1</a>
+						</li>
+				</ul>
+		</div></div><div id="archives-3" class="sidebox widget widget_archive"><div class="hd"><h2>Archives</h2></div><div class="bd">		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+			<option value="">Select Month</option>
+
+				<option value='/yuiblog/blog/2026/02/'> February 2026 </option>
+	<option value='/yuiblog/blog/2014/08/'> August 2014 </option>
+	<option value='/yuiblog/blog/2014/06/'> June 2014 </option>
+	<option value='/yuiblog/blog/2014/05/'> May 2014 </option>
+	<option value='/yuiblog/blog/2014/04/'> April 2014 </option>
+	<option value='/yuiblog/blog/2014/03/'> March 2014 </option>
+	<option value='/yuiblog/blog/2014/02/'> February 2014 </option>
+	<option value='/yuiblog/blog/2014/01/'> January 2014 </option>
+	<option value='/yuiblog/blog/2013/12/'> December 2013 </option>
+	<option value='/yuiblog/blog/2013/11/'> November 2013 </option>
+	<option value='/yuiblog/blog/2013/10/'> October 2013 </option>
+	<option value='/yuiblog/blog/2013/09/'> September 2013 </option>
+	<option value='/yuiblog/blog/2013/08/'> August 2013 </option>
+	<option value='/yuiblog/blog/2013/07/'> July 2013 </option>
+	<option value='/yuiblog/blog/2013/06/'> June 2013 </option>
+	<option value='/yuiblog/blog/2013/05/'> May 2013 </option>
+	<option value='/yuiblog/blog/2013/04/'> April 2013 </option>
+	<option value='/yuiblog/blog/2013/03/'> March 2013 </option>
+	<option value='/yuiblog/blog/2013/02/'> February 2013 </option>
+	<option value='/yuiblog/blog/2013/01/'> January 2013 </option>
+	<option value='/yuiblog/blog/2012/12/'> December 2012 </option>
+	<option value='/yuiblog/blog/2012/11/'> November 2012 </option>
+	<option value='/yuiblog/blog/2012/10/'> October 2012 </option>
+	<option value='/yuiblog/blog/2012/09/'> September 2012 </option>
+	<option value='/yuiblog/blog/2012/08/'> August 2012 </option>
+	<option value='/yuiblog/blog/2012/07/'> July 2012 </option>
+	<option value='/yuiblog/blog/2012/06/'> June 2012 </option>
+	<option value='/yuiblog/blog/2012/05/'> May 2012 </option>
+	<option value='/yuiblog/blog/2012/04/'> April 2012 </option>
+	<option value='/yuiblog/blog/2012/03/'> March 2012 </option>
+	<option value='/yuiblog/blog/2012/02/'> February 2012 </option>
+	<option value='/yuiblog/blog/2012/01/'> January 2012 </option>
+	<option value='/yuiblog/blog/2011/12/'> December 2011 </option>
+	<option value='/yuiblog/blog/2011/11/'> November 2011 </option>
+	<option value='/yuiblog/blog/2011/10/'> October 2011 </option>
+	<option value='/yuiblog/blog/2011/09/'> September 2011 </option>
+	<option value='/yuiblog/blog/2011/08/'> August 2011 </option>
+	<option value='/yuiblog/blog/2011/07/'> July 2011 </option>
+	<option value='/yuiblog/blog/2011/06/'> June 2011 </option>
+	<option value='/yuiblog/blog/2011/05/'> May 2011 </option>
+	<option value='/yuiblog/blog/2011/04/'> April 2011 </option>
+	<option value='/yuiblog/blog/2011/03/'> March 2011 </option>
+	<option value='/yuiblog/blog/2011/02/'> February 2011 </option>
+	<option value='/yuiblog/blog/2011/01/'> January 2011 </option>
+	<option value='/yuiblog/blog/2010/12/'> December 2010 </option>
+	<option value='/yuiblog/blog/2010/11/'> November 2010 </option>
+	<option value='/yuiblog/blog/2010/10/'> October 2010 </option>
+	<option value='/yuiblog/blog/2010/09/'> September 2010 </option>
+	<option value='/yuiblog/blog/2010/08/'> August 2010 </option>
+	<option value='/yuiblog/blog/2010/07/'> July 2010 </option>
+	<option value='/yuiblog/blog/2010/06/'> June 2010 </option>
+	<option value='/yuiblog/blog/2010/05/'> May 2010 </option>
+	<option value='/yuiblog/blog/2010/04/'> April 2010 </option>
+	<option value='/yuiblog/blog/2010/03/'> March 2010 </option>
+	<option value='/yuiblog/blog/2010/02/'> February 2010 </option>
+	<option value='/yuiblog/blog/2010/01/'> January 2010 </option>
+	<option value='/yuiblog/blog/2009/12/'> December 2009 </option>
+	<option value='/yuiblog/blog/2009/11/'> November 2009 </option>
+	<option value='/yuiblog/blog/2009/10/'> October 2009 </option>
+	<option value='/yuiblog/blog/2009/09/'> September 2009 </option>
+	<option value='/yuiblog/blog/2009/08/'> August 2009 </option>
+	<option value='/yuiblog/blog/2009/07/'> July 2009 </option>
+	<option value='/yuiblog/blog/2009/06/'> June 2009 </option>
+	<option value='/yuiblog/blog/2009/05/'> May 2009 </option>
+	<option value='/yuiblog/blog/2009/04/'> April 2009 </option>
+	<option value='/yuiblog/blog/2009/03/'> March 2009 </option>
+	<option value='/yuiblog/blog/2009/02/'> February 2009 </option>
+	<option value='/yuiblog/blog/2009/01/'> January 2009 </option>
+	<option value='/yuiblog/blog/2008/12/'> December 2008 </option>
+	<option value='/yuiblog/blog/2008/11/'> November 2008 </option>
+	<option value='/yuiblog/blog/2008/10/'> October 2008 </option>
+	<option value='/yuiblog/blog/2008/09/'> September 2008 </option>
+	<option value='/yuiblog/blog/2008/08/'> August 2008 </option>
+	<option value='/yuiblog/blog/2008/07/'> July 2008 </option>
+	<option value='/yuiblog/blog/2008/06/'> June 2008 </option>
+	<option value='/yuiblog/blog/2008/05/'> May 2008 </option>
+	<option value='/yuiblog/blog/2008/04/'> April 2008 </option>
+	<option value='/yuiblog/blog/2008/03/'> March 2008 </option>
+	<option value='/yuiblog/blog/2008/02/'> February 2008 </option>
+	<option value='/yuiblog/blog/2008/01/'> January 2008 </option>
+	<option value='/yuiblog/blog/2007/12/'> December 2007 </option>
+	<option value='/yuiblog/blog/2007/11/'> November 2007 </option>
+	<option value='/yuiblog/blog/2007/10/'> October 2007 </option>
+	<option value='/yuiblog/blog/2007/09/'> September 2007 </option>
+	<option value='/yuiblog/blog/2007/08/'> August 2007 </option>
+	<option value='/yuiblog/blog/2007/07/'> July 2007 </option>
+	<option value='/yuiblog/blog/2007/06/'> June 2007 </option>
+	<option value='/yuiblog/blog/2007/05/'> May 2007 </option>
+	<option value='/yuiblog/blog/2007/04/'> April 2007 </option>
+	<option value='/yuiblog/blog/2007/03/'> March 2007 </option>
+	<option value='/yuiblog/blog/2007/02/'> February 2007 </option>
+	<option value='/yuiblog/blog/2007/01/'> January 2007 </option>
+	<option value='/yuiblog/blog/2006/12/'> December 2006 </option>
+	<option value='/yuiblog/blog/2006/11/'> November 2006 </option>
+	<option value='/yuiblog/blog/2006/10/'> October 2006 </option>
+	<option value='/yuiblog/blog/2006/09/'> September 2006 </option>
+	<option value='/yuiblog/blog/2006/08/'> August 2006 </option>
+	<option value='/yuiblog/blog/2006/07/'> July 2006 </option>
+	<option value='/yuiblog/blog/2006/06/'> June 2006 </option>
+	<option value='/yuiblog/blog/2006/05/'> May 2006 </option>
+	<option value='/yuiblog/blog/2006/04/'> April 2006 </option>
+	<option value='/yuiblog/blog/2006/03/'> March 2006 </option>
+	<option value='/yuiblog/blog/2006/02/'> February 2006 </option>
+		</select>
+</div></div><div id="categories-2" class="sidebox widget widget_categories"><div class="hd"><h2>Categories</h2></div><div class="bd">		<ul>
+	<li class="cat-item cat-item-69"><a href="/yuiblog/blog/category/accessibility/" >Accessibility</a> (25)
+</li>
+	<li class="cat-item cat-item-524"><a href="/yuiblog/blog/category/css-101/" >CSS 101</a> (8)
+</li>
+	<li class="cat-item cat-item-1"><a href="/yuiblog/blog/category/design/" title="This category is for design related posts. For example, all posts about the design pattern library belong here.">Design</a> (51)
+</li>
+	<li class="cat-item cat-item-2"><a href="/yuiblog/blog/category/development/" title="For development related posts, including all posts about the Yahoo! User Interface Library.">Development</a> (653)
+</li>
+	<li class="cat-item cat-item-219"><a href="/yuiblog/blog/category/frontend-engineering-jobs-at-yahoo/" >Frontend Jobs at Yahoo</a> (13)
+</li>
+	<li class="cat-item cat-item-96"><a href="/yuiblog/blog/category/graded-browser-support/" >Graded Browser Support</a> (8)
+</li>
+	<li class="cat-item cat-item-11"><a href="/yuiblog/blog/category/in-the-wild/" title="In which we mention and link to third-party tutorials, discussions, comments, feedback, and implementations.">In the Wild</a> (63)
+</li>
+	<li class="cat-item cat-item-403"><a href="/yuiblog/blog/category/miscellany/" >Miscellany</a> (13)
+</li>
+	<li class="cat-item cat-item-483"><a href="/yuiblog/blog/category/open-hours/" >Open Hours</a> (44)
+</li>
+	<li class="cat-item cat-item-13"><a href="/yuiblog/blog/category/performance/" >Performance</a> (23)
+</li>
+	<li class="cat-item cat-item-598"><a href="/yuiblog/blog/category/releases/" >Releases</a> (50)
+</li>
+	<li class="cat-item cat-item-592"><a href="/yuiblog/blog/category/target-environments/" >Target Environments</a> (11)
+</li>
+	<li class="cat-item cat-item-599"><a href="/yuiblog/blog/category/yeti-development/" >Yeti</a> (5)
+</li>
+	<li class="cat-item cat-item-292"><a href="/yuiblog/blog/category/yui-3-gallery/" >YUI 3 Gallery</a> (34)
+</li>
+	<li class="cat-item cat-item-286"><a href="/yuiblog/blog/category/yui-events/" >YUI Events</a> (48)
+</li>
+	<li class="cat-item cat-item-8"><a href="/yuiblog/blog/category/yui-implementations/" >YUI Implementations</a> (55)
+</li>
+	<li class="cat-item cat-item-9"><a href="/yuiblog/blog/category/yui-theater/" >YUI Theater</a> (164)
+</li>
+	<li class="cat-item cat-item-595"><a href="/yuiblog/blog/category/yui-weekly/" >YUI Weekly</a> (76)
+</li>
+	<li class="cat-item cat-item-602"><a href="/yuiblog/blog/category/yui-conf/" title="Posts pertaining to YUIConf - videos, notices, updates.">YUIConf</a> (27)
+</li>
+		</ul>
+</div></div>
+
+</div></div>
+		</div><!-- /#bd -->
+		<div id="ft">
+			<footer>
+				<div class="copyright">
+			&copy; 2026 YUI Blog				</div>
+			</footer></div></div><!-- /#doc -->
+
+</body>
+</html>
