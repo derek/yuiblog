@@ -30,10 +30,15 @@ module.exports = function(eleventyConfig) {
     return String(new Date(date).getDate()).padStart(2, '0');
   });
 
-  // Collection: All posts sorted by date
+  // Collection: All posts sorted by date (with secondary sort by slug for same-day posts)
   eleventyConfig.addCollection("posts", function(collectionApi) {
     return collectionApi.getFilteredByGlob("src/posts/**/*.md").sort((a, b) => {
-      return b.date - a.date;
+      const dateDiff = b.date - a.date;
+      if (dateDiff !== 0) return dateDiff;
+      // Secondary sort: reverse alphabetical by slug (Z-A) for posts on same date
+      const slugA = a.data.slug || a.fileSlug || '';
+      const slugB = b.data.slug || b.fileSlug || '';
+      return slugB.localeCompare(slugA);
     });
   });
 

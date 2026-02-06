@@ -5,7 +5,7 @@
 */
 
 h1 {
-  margin: .75em 0 .1em; /* make them the same or it looks weird with the breadcrumb */
+  margin: .75em 0 1.5em;
 }
 h2 a, h2 a:visited {
   color: inherit;
@@ -63,7 +63,8 @@ h6 {
     content: "> ";
     color: #ccc;
 }
-.breadcrumbs .front_page:before {
+.breadcrumbs .front_page:before,
+.breadcrumbs li:first-child:before {
     content: none;
 }
 

@@ -8,8 +8,6 @@ pagination:
 permalink: "blog/{% if pagination.pageNumber == 0 %}{% else %}page/{{ pagination.pageNumber + 1 }}/{% endif %}"
 ---
 
-<h1>Blog Archive</h1>
-
 <div class="post-list">
     {% for post in posts %}
     <article class="post-summary">
