@@ -4,7 +4,7 @@ title: "YUI App Framework in Cordova"
 author: "Jackson Pauls"
 date: 2014-05-13
 slug: "yui-app-framework-in-cordova"
-permalink: /blog/2014/05/13/yui-app-framework-in-cordova/
+permalink: /2014/05/13/yui-app-framework-in-cordova/
 categories:
   - "Development"
 ---

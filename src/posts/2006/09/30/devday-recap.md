@@ -4,7 +4,7 @@ title: "Yahoo! Developer Day Recap"
 author: "Eric Miraglia"
 date: 2006-09-30
 slug: "devday-recap"
-permalink: /blog/2006/09/30/devday-recap/
+permalink: /2006/09/30/devday-recap/
 categories:
   - "Development"
 ---

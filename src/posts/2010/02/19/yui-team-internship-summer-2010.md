@@ -4,7 +4,7 @@ title: "YUI Team Internship, Summer 2010"
 author: "Eric Miraglia"
 date: 2010-02-19
 slug: "yui-team-internship-summer-2010"
-permalink: /blog/2010/02/19/yui-team-internship-summer-2010/
+permalink: /2010/02/19/yui-team-internship-summer-2010/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

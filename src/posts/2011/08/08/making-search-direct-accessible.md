@@ -4,7 +4,7 @@ title: "Making Search Direct Accessible"
 author: "Caridy Patino"
 date: 2011-08-08
 slug: "making-search-direct-accessible"
-permalink: /blog/2011/08/08/making-search-direct-accessible/
+permalink: /2011/08/08/making-search-direct-accessible/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "I'd Rather switch Than Fight!"
 author: "Douglas Crockford"
 date: 2007-04-25
 slug: "id-rather-switch-than-fight"
-permalink: /blog/2007/04/25/id-rather-switch-than-fight/
+permalink: /2007/04/25/id-rather-switch-than-fight/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Announcing YUI 3.9.0"
 author: "Andrew Wooldridge"
 date: 2013-03-13
 slug: "announcing-yui-3-9-0"
-permalink: /blog/2013/03/13/announcing-yui-3-9-0/
+permalink: /2013/03/13/announcing-yui-3-9-0/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "In the Wild for February 16, 2010"
 author: "Eric Miraglia"
 date: 2010-02-16
 slug: "in-the-wild-for-february-16-2010"
-permalink: /blog/2010/02/16/in-the-wild-for-february-16-2010/
+permalink: /2010/02/16/in-the-wild-for-february-16-2010/
 categories:
   - "In the Wild"
 ---

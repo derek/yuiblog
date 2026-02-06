@@ -4,7 +4,7 @@ title: "Graded Browser Support: Update, Roadmap, and FAQ"
 author: "Unknown"
 date: 2006-08-18
 slug: "browser-support-update-2006q3"
-permalink: /blog/2006/08/18/browser-support-update-2006q3/
+permalink: /2006/08/18/browser-support-update-2006q3/
 categories:
   - "Development"
 ---

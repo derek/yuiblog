@@ -4,7 +4,7 @@ title: "Announcing YUI 3.1.0"
 author: "YUI Team"
 date: 2010-03-31
 slug: "announcing-yui-3-1-0"
-permalink: /blog/2010/03/31/announcing-yui-3-1-0/
+permalink: /2010/03/31/announcing-yui-3-1-0/
 categories:
   - "Development"
 ---

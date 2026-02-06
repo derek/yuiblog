@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery:  Page Layout"
 author: "YUI Team"
 date: 2012-04-02
 slug: "in-the-yui-3-gallery-page-layout"
-permalink: /blog/2012/04/02/in-the-yui-3-gallery-page-layout/
+permalink: /2012/04/02/in-the-yui-3-gallery-page-layout/
 categories:
   - "Development"
 ---

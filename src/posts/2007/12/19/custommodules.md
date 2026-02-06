@@ -4,7 +4,7 @@ title: "Creating Custom Modules with YUI Using the YUI Module Control"
 author: "Cyril Doussin"
 date: 2007-12-19
 slug: "custommodules"
-permalink: /blog/2007/12/19/custommodules/
+permalink: /2007/12/19/custommodules/
 categories:
   - "Development"
 ---

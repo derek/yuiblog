@@ -4,7 +4,7 @@ title: "YUI Theater -- Todd Kloots: \"Developing an Accessible Web 2.0 Widget Fr
 author: "Unknown"
 date: 2009-05-22
 slug: "video-kloots-a11y"
-permalink: /blog/2009/05/22/video-kloots-a11y/
+permalink: /2009/05/22/video-kloots-a11y/
 categories:
   - "YUI Theater"
 ---

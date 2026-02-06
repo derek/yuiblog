@@ -4,7 +4,7 @@ title: "YUI Weekly for September 20th, 2013"
 author: "Derek Gathright"
 date: 2013-09-20
 slug: "yui-weekly-for-september-20th-2013"
-permalink: /blog/2013/09/20/yui-weekly-for-september-20th-2013/
+permalink: /2013/09/20/yui-weekly-for-september-20th-2013/
 categories:
   - "Development"
 ---

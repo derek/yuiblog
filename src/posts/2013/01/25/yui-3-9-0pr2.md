@@ -4,7 +4,7 @@ title: "YUI 3.9.0pr2"
 author: "YUI Team"
 date: 2013-01-25
 slug: "yui-3-9-0pr2"
-permalink: /blog/2013/01/25/yui-3-9-0pr2/
+permalink: /2013/01/25/yui-3-9-0pr2/
 categories:
   - "Development"
 ---

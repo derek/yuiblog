@@ -4,7 +4,7 @@ title: "Design Pattern Conversation: What's the Best Way to Communicate Patterns
 author: "Bill Scott"
 date: 2006-10-20
 slug: "communicating_patterns_part_four"
-permalink: /blog/2006/10/20/communicating_patterns_part_four/
+permalink: /2006/10/20/communicating_patterns_part_four/
 categories:
   - "Design"
 ---

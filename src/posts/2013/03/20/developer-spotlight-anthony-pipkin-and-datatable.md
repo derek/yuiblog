@@ -4,7 +4,7 @@ title: "Developer Spotlight: Anthony Pipkin and DataTable"
 author: "Andrew Wooldridge"
 date: 2013-03-20
 slug: "developer-spotlight-anthony-pipkin-and-datatable"
-permalink: /blog/2013/03/20/developer-spotlight-anthony-pipkin-and-datatable/
+permalink: /2013/03/20/developer-spotlight-anthony-pipkin-and-datatable/
 categories:
   - "Development"
 ---

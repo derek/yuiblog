@@ -4,7 +4,7 @@ title: "Design Pattern Conversation: What’s the Best Way to Communicate Patter
 author: "James Reffell"
 date: 2006-10-23
 slug: "communicating_patterns_part_five"
-permalink: /blog/2006/10/23/communicating_patterns_part_five/
+permalink: /2006/10/23/communicating_patterns_part_five/
 categories:
   - "Design"
 ---

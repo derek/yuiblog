@@ -4,7 +4,7 @@ title: "Writing a WYSIWYG Wiki Editor with YUI and Grails"
 author: "Eric Miraglia"
 date: 2008-05-01
 slug: "wiki-rte"
-permalink: /blog/2008/05/01/wiki-rte/
+permalink: /2008/05/01/wiki-rte/
 categories:
   - "Development"
 ---

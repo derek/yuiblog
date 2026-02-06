@@ -4,7 +4,7 @@ title: "YUI Theater —  Paul Donnelly and Nagesh Susarla: \"YQL + YUI: Building
 author: "Eric Miraglia"
 date: 2010-12-09
 slug: "video-yuiconf2010-yqlendtoend"
-permalink: /blog/2010/12/09/video-yuiconf2010-yqlendtoend/
+permalink: /2010/12/09/video-yuiconf2010-yqlendtoend/
 categories:
   - "YUI Theater"
 ---

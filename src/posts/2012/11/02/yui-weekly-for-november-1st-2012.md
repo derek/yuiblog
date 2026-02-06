@@ -4,7 +4,7 @@ title: "YUI Weekly for November 1st, 2012"
 author: "Derek Gathright"
 date: 2012-11-02
 slug: "yui-weekly-for-november-1st-2012"
-permalink: /blog/2012/11/02/yui-weekly-for-november-1st-2012/
+permalink: /2012/11/02/yui-weekly-for-november-1st-2012/
 categories:
   - "YUI Weekly"
 ---

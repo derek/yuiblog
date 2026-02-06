@@ -4,7 +4,7 @@ title: "YUI Theater - Nate Koechley: \"Professional Frontend Engineering\""
 author: "Eric Miraglia"
 date: 2009-03-18
 slug: "video-koechley-prof2e"
-permalink: /blog/2009/03/18/video-koechley-prof2e/
+permalink: /2009/03/18/video-koechley-prof2e/
 categories:
   - "Development"
 ---

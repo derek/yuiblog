@@ -4,7 +4,7 @@ title: "Implementation Focus: SDL"
 author: "YUI Team"
 date: 2008-11-10
 slug: "sdl"
-permalink: /blog/2008/11/10/sdl/
+permalink: /2008/11/10/sdl/
 categories:
   - "YUI Implementations"
 ---

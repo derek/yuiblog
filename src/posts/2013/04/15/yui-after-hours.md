@@ -4,7 +4,7 @@ title: "YUI After Hours"
 author: "Andrew Wooldridge"
 date: 2013-04-15
 slug: "yui-after-hours"
-permalink: /blog/2013/04/15/yui-after-hours/
+permalink: /2013/04/15/yui-after-hours/
 categories:
   - "Development"
 ---

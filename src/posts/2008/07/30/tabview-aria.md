@@ -4,7 +4,7 @@ title: "Enhancing TabView Accessibility with WAI-ARIA Roles and States"
 author: "Todd Kloots"
 date: 2008-07-30
 slug: "tabview-aria"
-permalink: /blog/2008/07/30/tabview-aria/
+permalink: /2008/07/30/tabview-aria/
 categories:
   - "Development"
 ---

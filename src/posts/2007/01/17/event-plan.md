@@ -4,7 +4,7 @@ title: "Event-Driven Web Application Design"
 author: "Unknown"
 date: 2007-01-17
 slug: "event-plan"
-permalink: /blog/2007/01/17/event-plan/
+permalink: /2007/01/17/event-plan/
 categories:
   - "Development"
 ---

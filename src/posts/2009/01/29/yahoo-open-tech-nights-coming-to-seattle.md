@@ -4,7 +4,7 @@ title: "Yahoo! Open Tech Night Coming to Seattle"
 author: "Jenny Donnelly"
 date: 2009-01-29
 slug: "yahoo-open-tech-nights-coming-to-seattle"
-permalink: /blog/2009/01/29/yahoo-open-tech-nights-coming-to-seattle/
+permalink: /2009/01/29/yahoo-open-tech-nights-coming-to-seattle/
 categories:
   - "Development"
 ---

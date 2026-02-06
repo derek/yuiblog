@@ -4,7 +4,7 @@ title: "YUI Stories"
 author: "Ryan Grove"
 date: 2011-11-10
 slug: "yuiconf-yui-stories"
-permalink: /blog/2011/11/10/yuiconf-yui-stories/
+permalink: /2011/11/10/yuiconf-yui-stories/
 categories:
   - "YUI Theater"
 ---

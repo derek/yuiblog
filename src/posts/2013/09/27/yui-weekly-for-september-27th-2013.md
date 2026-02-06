@@ -4,7 +4,7 @@ title: "YUI Weekly for September 27th, 2013"
 author: "Derek Gathright"
 date: 2013-09-27
 slug: "yui-weekly-for-september-27th-2013"
-permalink: /blog/2013/09/27/yui-weekly-for-september-27th-2013/
+permalink: /2013/09/27/yui-weekly-for-september-27th-2013/
 categories:
   - "YUI Weekly"
 ---

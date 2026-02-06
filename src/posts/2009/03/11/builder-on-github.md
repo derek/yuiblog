@@ -4,7 +4,7 @@ title: "YUI Builder Now Available on GitHub"
 author: "Jenny Donnelly"
 date: 2009-03-11
 slug: "builder-on-github"
-permalink: /blog/2009/03/11/builder-on-github/
+permalink: /2009/03/11/builder-on-github/
 categories:
   - "Development"
 ---

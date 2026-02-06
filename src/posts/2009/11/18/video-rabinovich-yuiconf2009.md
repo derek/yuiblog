@@ -4,7 +4,7 @@ title: "YUI Theater —  Allen Rabinovich: \"YUI 3 Infographics\""
 author: "YUI Team"
 date: 2009-11-18
 slug: "video-rabinovich-yuiconf2009"
-permalink: /blog/2009/11/18/video-rabinovich-yuiconf2009/
+permalink: /2009/11/18/video-rabinovich-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

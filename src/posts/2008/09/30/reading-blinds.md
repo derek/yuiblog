@@ -4,7 +4,7 @@ title: "Reading Blinds — a YUI-powered Reading Tool"
 author: "Christian Heilmann"
 date: 2008-09-30
 slug: "reading-blinds"
-permalink: /blog/2008/09/30/reading-blinds/
+permalink: /2008/09/30/reading-blinds/
 categories:
   - "Development"
 ---

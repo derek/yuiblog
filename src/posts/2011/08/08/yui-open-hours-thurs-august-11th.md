@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs August 11th"
 author: "Luke Smith"
 date: 2011-08-08
 slug: "yui-open-hours-thurs-august-11th"
-permalink: /blog/2011/08/08/yui-open-hours-thurs-august-11th/
+permalink: /2011/08/08/yui-open-hours-thurs-august-11th/
 categories:
   - "Development"
 ---

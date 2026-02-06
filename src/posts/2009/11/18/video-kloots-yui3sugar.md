@@ -4,7 +4,7 @@ title: "YUI Theater —  Todd Kloots: \"YUI 3 Sugar\""
 author: "YUI Team"
 date: 2009-11-18
 slug: "video-kloots-yui3sugar"
-permalink: /blog/2009/11/18/video-kloots-yui3sugar/
+permalink: /2009/11/18/video-kloots-yui3sugar/
 categories:
   - "YUI Theater"
 ---

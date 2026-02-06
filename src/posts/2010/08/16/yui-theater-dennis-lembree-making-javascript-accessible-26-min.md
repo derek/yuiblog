@@ -4,7 +4,7 @@ title: "YUI Theater — Dennis Lembree: \"Making JavaScript Accessible (26 min.)
 author: "YUI Team"
 date: 2010-08-16
 slug: "yui-theater-dennis-lembree-making-javascript-accessible-26-min"
-permalink: /blog/2010/08/16/yui-theater-dennis-lembree-making-javascript-accessible-26-min/
+permalink: /2010/08/16/yui-theater-dennis-lembree-making-javascript-accessible-26-min/
 categories:
   - "Development"
 ---

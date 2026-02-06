@@ -4,7 +4,7 @@ title: "Graded Browser Support Update: Q3 2012"
 author: "Eric Ferraiuolo"
 date: 2012-07-26
 slug: "gbs-update-2012q3"
-permalink: /blog/2012/07/26/gbs-update-2012q3/
+permalink: /2012/07/26/gbs-update-2012q3/
 categories:
   - "Development"
 ---

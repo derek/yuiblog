@@ -4,7 +4,7 @@ title: "Tickets Remaining for Wednesday's Crockford on JavaScript"
 author: "Eric Miraglia"
 date: 2010-03-02
 slug: "tickets-remaining-for-wednesdays-crockford-on-javascript"
-permalink: /blog/2010/03/02/tickets-remaining-for-wednesdays-crockford-on-javascript/
+permalink: /2010/03/02/tickets-remaining-for-wednesdays-crockford-on-javascript/
 categories:
   - "Development"
 ---

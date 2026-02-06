@@ -4,7 +4,7 @@ title: "Implementation Focus: Confirmit"
 author: "Eric Miraglia"
 date: 2009-04-02
 slug: "confirmit"
-permalink: /blog/2009/04/02/confirmit/
+permalink: /2009/04/02/confirmit/
 categories:
   - "YUI Implementations"
 ---

@@ -4,7 +4,7 @@ title: "Using the TabView Control with My Dispatcher Plugin"
 author: "YUI Team"
 date: 2008-11-03
 slug: "tabview-dispatcher"
-permalink: /blog/2008/11/03/tabview-dispatcher/
+permalink: /2008/11/03/tabview-dispatcher/
 categories:
   - "Development"
 ---

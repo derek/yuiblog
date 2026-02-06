@@ -4,7 +4,7 @@ title: "ARIA Made Easier With YUI 3"
 author: "Todd Kloots"
 date: 2009-08-03
 slug: "aria-made-easier-with-yui-3"
-permalink: /blog/2009/08/03/aria-made-easier-with-yui-3/
+permalink: /2009/08/03/aria-made-easier-with-yui-3/
 categories:
   - "Development"
 ---

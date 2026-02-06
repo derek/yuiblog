@@ -4,7 +4,7 @@ title: "Quick Tip: Customizing the Mobile Safari tap highlight color"
 author: "Ryan Grove"
 date: 2010-10-01
 slug: "quick-tip-customizing-the-mobile-safari-tap-highlight-color"
-permalink: /blog/2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
+permalink: /2010/10/01/quick-tip-customizing-the-mobile-safari-tap-highlight-color/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Sample Chapter — Pro JavaScript Design Patterns by Ross Harmes and Dus
 author: "Eric Miraglia"
 date: 2007-12-17
 slug: "projsdesignpatterns"
-permalink: /blog/2007/12/17/projsdesignpatterns/
+permalink: /2007/12/17/projsdesignpatterns/
 categories:
   - "Development"
 ---

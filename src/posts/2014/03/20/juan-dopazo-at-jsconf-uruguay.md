@@ -4,7 +4,7 @@ title: "Juan Dopazo at JSConf Uruguay"
 author: "Juan Dopazo"
 date: 2014-03-20
 slug: "juan-dopazo-at-jsconf-uruguay"
-permalink: /blog/2014/03/20/juan-dopazo-at-jsconf-uruguay/
+permalink: /2014/03/20/juan-dopazo-at-jsconf-uruguay/
 categories:
   - "Development"
 ---

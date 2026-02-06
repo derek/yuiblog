@@ -4,7 +4,7 @@ title: "YUI 3.5.0 Roadmap and Timelines"
 author: "Jenny Donnelly"
 date: 2011-11-15
 slug: "yui-3-5-0-roadmap-and-timelines"
-permalink: /blog/2011/11/15/yui-3-5-0-roadmap-and-timelines/
+permalink: /2011/11/15/yui-3-5-0-roadmap-and-timelines/
 categories:
   - "Development"
 ---

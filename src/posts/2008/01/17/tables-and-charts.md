@@ -4,7 +4,7 @@ title: "Automatic conversion from simple, accessible data tables to YUI Charts"
 author: "Christian Heilmann"
 date: 2008-01-17
 slug: "tables-and-charts"
-permalink: /blog/2008/01/17/tables-and-charts/
+permalink: /2008/01/17/tables-and-charts/
 categories:
   - "Development"
 ---

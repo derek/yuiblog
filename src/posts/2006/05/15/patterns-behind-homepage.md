@@ -4,7 +4,7 @@ title: "Patterns Behind the Yahoo! Home Page Beta"
 author: "Bill Scott"
 date: 2006-05-15
 slug: "patterns-behind-homepage"
-permalink: /blog/2006/05/15/patterns-behind-homepage/
+permalink: /2006/05/15/patterns-behind-homepage/
 categories:
   - "Development"
 ---

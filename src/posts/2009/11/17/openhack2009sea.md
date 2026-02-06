@@ -4,7 +4,7 @@ title: "Angela Sabas Speaking on YUI 3 at Open Hack Day in Indonesia on November
 author: "YUI Team"
 date: 2009-11-17
 slug: "openhack2009sea"
-permalink: /blog/2009/11/17/openhack2009sea/
+permalink: /2009/11/17/openhack2009sea/
 categories:
   - "YUI Events"
 ---

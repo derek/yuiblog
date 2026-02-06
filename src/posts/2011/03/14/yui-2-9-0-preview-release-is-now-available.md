@@ -4,7 +4,7 @@ title: "YUI 2.9.0 Preview Release Is Now Available"
 author: "Jenny Donnelly"
 date: 2011-03-14
 slug: "yui-2-9-0-preview-release-is-now-available"
-permalink: /blog/2011/03/14/yui-2-9-0-preview-release-is-now-available/
+permalink: /2011/03/14/yui-2-9-0-preview-release-is-now-available/
 categories:
   - "Development"
 ---

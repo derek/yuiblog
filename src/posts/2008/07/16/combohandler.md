@@ -4,7 +4,7 @@ title: "Combo Handler Service Available for Yahoo-hosted JS"
 author: "Eric Miraglia"
 date: 2008-07-16
 slug: "combohandler"
-permalink: /blog/2008/07/16/combohandler/
+permalink: /2008/07/16/combohandler/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater — \"YUIConf 2010 Panel Discussion: The Future of Frontend 
 author: "Eric Miraglia"
 date: 2010-11-17
 slug: "video-yuiconf2010-panel"
-permalink: /blog/2010/11/17/video-yuiconf2010-panel/
+permalink: /2010/11/17/video-yuiconf2010-panel/
 categories:
   - "YUI Theater"
 ---

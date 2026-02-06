@@ -4,7 +4,7 @@ title: "YUI Weekly for January 25th, 2013"
 author: "Derek Gathright"
 date: 2013-01-25
 slug: "yui-weekly-for-january-25th-2013"
-permalink: /blog/2013/01/25/yui-weekly-for-january-25th-2013/
+permalink: /2013/01/25/yui-weekly-for-january-25th-2013/
 categories:
   - "YUI Weekly"
 ---

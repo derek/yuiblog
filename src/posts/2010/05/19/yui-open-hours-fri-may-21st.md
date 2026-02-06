@@ -4,7 +4,7 @@ title: "YUI: Open Hours, Fri May 21st"
 author: "Luke Smith"
 date: 2010-05-19
 slug: "yui-open-hours-fri-may-21st"
-permalink: /blog/2010/05/19/yui-open-hours-fri-may-21st/
+permalink: /2010/05/19/yui-open-hours-fri-may-21st/
 categories:
   - "Development"
 ---

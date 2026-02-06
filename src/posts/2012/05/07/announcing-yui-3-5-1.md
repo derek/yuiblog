@@ -4,7 +4,7 @@ title: "Announcing YUI 3.5.1"
 author: "YUI Team"
 date: 2012-05-07
 slug: "announcing-yui-3-5-1"
-permalink: /blog/2012/05/07/announcing-yui-3-5-1/
+permalink: /2012/05/07/announcing-yui-3-5-1/
 categories:
   - "Releases"
 ---

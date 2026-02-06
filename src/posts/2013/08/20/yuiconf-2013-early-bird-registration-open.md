@@ -4,7 +4,7 @@ title: "YUIConf 2013 Early Bird Registration Open"
 author: "YUI Team"
 date: 2013-08-20
 slug: "yuiconf-2013-early-bird-registration-open"
-permalink: /blog/2013/08/20/yuiconf-2013-early-bird-registration-open/
+permalink: /2013/08/20/yuiconf-2013-early-bird-registration-open/
 categories:
   - "Development"
 ---

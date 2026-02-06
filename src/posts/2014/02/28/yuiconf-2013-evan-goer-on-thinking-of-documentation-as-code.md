@@ -4,7 +4,7 @@ title: "YUIConf 2013: Evan Goer on Thinking of Documentation as Code"
 author: "Andrew Wooldridge"
 date: 2014-02-28
 slug: "yuiconf-2013-evan-goer-on-thinking-of-documentation-as-code"
-permalink: /blog/2014/02/28/yuiconf-2013-evan-goer-on-thinking-of-documentation-as-code/
+permalink: /2014/02/28/yuiconf-2013-evan-goer-on-thinking-of-documentation-as-code/
 categories:
   - "Development"
 ---

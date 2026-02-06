@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Caridy Patiño on Mojito for YUI Developers"
 author: "Andrew Wooldridge"
 date: 2012-12-07
 slug: "yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers"
-permalink: /blog/2012/12/07/yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers/
+permalink: /2012/12/07/yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Dan Wellman on the YUI Calendar Control"
 author: "Eric Miraglia"
 date: 2008-04-16
 slug: "wellman-calendar"
-permalink: /blog/2008/04/16/wellman-calendar/
+permalink: /2008/04/16/wellman-calendar/
 categories:
   - "Development"
 ---

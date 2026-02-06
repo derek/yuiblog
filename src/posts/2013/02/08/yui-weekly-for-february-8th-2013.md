@@ -4,7 +4,7 @@ title: "YUI Weekly for February 8th, 2013"
 author: "Derek Gathright"
 date: 2013-02-08
 slug: "yui-weekly-for-february-8th-2013"
-permalink: /blog/2013/02/08/yui-weekly-for-february-8th-2013/
+permalink: /2013/02/08/yui-weekly-for-february-8th-2013/
 categories:
   - "YUI Weekly"
 ---

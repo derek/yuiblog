@@ -4,7 +4,7 @@ title: "Enhancing YUI-based Applications With Audio"
 author: "Scott Schiller"
 date: 2009-06-30
 slug: "yui-soundmanager"
-permalink: /blog/2009/06/30/yui-soundmanager/
+permalink: /2009/06/30/yui-soundmanager/
 categories:
   - "Development"
 ---

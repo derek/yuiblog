@@ -4,7 +4,7 @@ title: "Downshift Your Code"
 author: "YUI Team"
 date: 2007-07-09
 slug: "downshift-your-code"
-permalink: /blog/2007/07/09/downshift-your-code/
+permalink: /2007/07/09/downshift-your-code/
 categories:
   - "Development"
 ---

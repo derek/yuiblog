@@ -4,7 +4,7 @@ title: "Have Another Dew with Dav"
 author: "YUI Team"
 date: 2012-12-04
 slug: "have-another-dew-with-dav"
-permalink: /blog/2012/12/04/have-another-dew-with-dav/
+permalink: /2012/12/04/have-another-dew-with-dav/
 categories:
   - "Development"
 ---

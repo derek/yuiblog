@@ -4,7 +4,7 @@ title: "Ten Questions with YAHOO.ext Author Jack Slocum"
 author: "Jack Slocum"
 date: 2006-10-10
 slug: "ten-questions-slocum"
-permalink: /blog/2006/10/10/ten-questions-slocum/
+permalink: /2006/10/10/ten-questions-slocum/
 categories:
   - "Development"
 ---

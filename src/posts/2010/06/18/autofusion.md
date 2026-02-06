@@ -4,7 +4,7 @@ title: "Implementation Focus: YUI 3 Powering Autofusion's ResearchPro"
 author: "Unknown"
 date: 2010-06-18
 slug: "autofusion"
-permalink: /blog/2010/06/18/autofusion/
+permalink: /2010/06/18/autofusion/
 categories:
   - "Development"
 ---

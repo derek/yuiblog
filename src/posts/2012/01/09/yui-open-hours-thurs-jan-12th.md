@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Jan 12th"
 author: "Luke Smith"
 date: 2012-01-09
 slug: "yui-open-hours-thurs-jan-12th"
-permalink: /blog/2012/01/09/yui-open-hours-thurs-jan-12th/
+permalink: /2012/01/09/yui-open-hours-thurs-jan-12th/
 categories:
   - "Development"
 ---

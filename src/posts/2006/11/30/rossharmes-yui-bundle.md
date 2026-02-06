@@ -4,7 +4,7 @@ title: "Screencast: Ross Harmes's YUI Bundle for Textmate"
 author: "Eric Miraglia"
 date: 2006-11-30
 slug: "rossharmes-yui-bundle"
-permalink: /blog/2006/11/30/rossharmes-yui-bundle/
+permalink: /2006/11/30/rossharmes-yui-bundle/
 categories:
   - "Development"
 ---

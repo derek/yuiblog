@@ -4,7 +4,7 @@ title: "YUI in Action at University Hack Days in Mumbai and Delhi"
 author: "Subramanyan Murali"
 date: 2009-02-17
 slug: "hacku-09-mumbai-delhi"
-permalink: /blog/2009/02/17/hacku-09-mumbai-delhi/
+permalink: /2009/02/17/hacku-09-mumbai-delhi/
 categories:
   - "Development"
 ---

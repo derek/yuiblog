@@ -4,7 +4,7 @@ title: "YUI 3.7.1 Patch Release"
 author: "Andrew Wooldridge"
 date: 2012-09-19
 slug: "yui-3-7-1-patch-release"
-permalink: /blog/2012/09/19/yui-3-7-1-patch-release/
+permalink: /2012/09/19/yui-3-7-1-patch-release/
 categories:
   - "Releases"
 ---

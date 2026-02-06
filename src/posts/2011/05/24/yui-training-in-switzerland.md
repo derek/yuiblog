@@ -4,7 +4,7 @@ title: "YUI Training in Switzerland"
 author: "YUI Team"
 date: 2011-05-24
 slug: "yui-training-in-switzerland"
-permalink: /blog/2011/05/24/yui-training-in-switzerland/
+permalink: /2011/05/24/yui-training-in-switzerland/
 categories:
   - "Development"
 ---

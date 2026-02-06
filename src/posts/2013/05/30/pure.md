@@ -4,7 +4,7 @@ title: "Pure"
 author: "Tilo"
 date: 2013-05-30
 slug: "pure"
-permalink: /blog/2013/05/30/pure/
+permalink: /2013/05/30/pure/
 categories:
   - "Releases"
 ---

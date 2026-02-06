@@ -4,7 +4,7 @@ title: "Item Pagination Design Pattern"
 author: "Bill Scott"
 date: 2006-02-13
 slug: "objectpagination"
-permalink: /blog/2006/02/13/objectpagination/
+permalink: /2006/02/13/objectpagination/
 categories:
   - "Design"
 ---

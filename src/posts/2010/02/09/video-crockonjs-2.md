@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"Crockford on JavaScript — Chapte
 author: "Eric Miraglia"
 date: 2010-02-09
 slug: "video-crockonjs-2"
-permalink: /blog/2010/02/09/video-crockonjs-2/
+permalink: /2010/02/09/video-crockonjs-2/
 categories:
   - "YUI Theater"
 ---

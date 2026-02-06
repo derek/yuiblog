@@ -4,7 +4,7 @@ title: "YUIConf 2013: Dav Glass on YUI and the History of OSS at Yahoo"
 author: "Andrew Wooldridge"
 date: 2014-02-07
 slug: "yuiconf-2013-dav-glass-on-yui-and-the-beginning-of-oss-at-yahoo"
-permalink: /blog/2014/02/07/yuiconf-2013-dav-glass-on-yui-and-the-beginning-of-oss-at-yahoo/
+permalink: /2014/02/07/yuiconf-2013-dav-glass-on-yui-and-the-beginning-of-oss-at-yahoo/
 categories:
   - "Development"
 ---

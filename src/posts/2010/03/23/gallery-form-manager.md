@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: John Lindal's Form Manager"
 author: "John Lindal"
 date: 2010-03-23
 slug: "gallery-form-manager"
-permalink: /blog/2010/03/23/gallery-form-manager/
+permalink: /2010/03/23/gallery-form-manager/
 categories:
   - "Development"
 ---

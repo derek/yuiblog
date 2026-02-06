@@ -4,7 +4,7 @@ title: "Challenges of Interface Design for Mobile Devices"
 author: "YUI Team"
 date: 2007-10-02
 slug: "challenges-of-interface-design-for-mobile-devices"
-permalink: /blog/2007/10/02/challenges-of-interface-design-for-mobile-devices/
+permalink: /2007/10/02/challenges-of-interface-design-for-mobile-devices/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Apr 7th"
 author: "Unknown"
 date: 2011-04-05
 slug: "yui-open-hours-thurs-apr-7th"
-permalink: /blog/2011/04/05/yui-open-hours-thurs-apr-7th/
+permalink: /2011/04/05/yui-open-hours-thurs-apr-7th/
 categories:
   - "Development"
 ---

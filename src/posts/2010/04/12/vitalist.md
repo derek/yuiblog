@@ -4,7 +4,7 @@ title: "Implementation Focus: Vitalist, a Getting Things Done (GTD) Web App Buil
 author: "YUI Team"
 date: 2010-04-12
 slug: "vitalist"
-permalink: /blog/2010/04/12/vitalist/
+permalink: /2010/04/12/vitalist/
 categories:
   - "Development"
 ---

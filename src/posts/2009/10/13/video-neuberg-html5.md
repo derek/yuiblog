@@ -4,7 +4,7 @@ title: "YUI Theater —  Brad Neuberg: \"Introduction to HTML5\""
 author: "YUI Team"
 date: 2009-10-13
 slug: "video-neuberg-html5"
-permalink: /blog/2009/10/13/video-neuberg-html5/
+permalink: /2009/10/13/video-neuberg-html5/
 categories:
   - "YUI Theater"
 ---

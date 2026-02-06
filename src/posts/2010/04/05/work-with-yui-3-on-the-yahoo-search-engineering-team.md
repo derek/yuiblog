@@ -4,7 +4,7 @@ title: "Work with YUI 3 on the Yahoo! Search Engineering Team"
 author: "Julien Lecomte"
 date: 2010-04-05
 slug: "work-with-yui-3-on-the-yahoo-search-engineering-team"
-permalink: /blog/2010/04/05/work-with-yui-3-on-the-yahoo-search-engineering-team/
+permalink: /2010/04/05/work-with-yui-3-on-the-yahoo-search-engineering-team/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

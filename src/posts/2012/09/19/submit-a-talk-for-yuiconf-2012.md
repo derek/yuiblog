@@ -4,7 +4,7 @@ title: "Submit a Talk for YUIConf 2012"
 author: "Andrew Wooldridge"
 date: 2012-09-19
 slug: "submit-a-talk-for-yuiconf-2012"
-permalink: /blog/2012/09/19/submit-a-talk-for-yuiconf-2012/
+permalink: /2012/09/19/submit-a-talk-for-yuiconf-2012/
 categories:
   - "Development"
 ---

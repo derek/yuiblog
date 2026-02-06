@@ -4,7 +4,7 @@ title: "YUIConf 2013 Call for Lightning Talks!"
 author: "Andrew Wooldridge"
 date: 2013-10-30
 slug: "yuiconf-2013-call-for-lightning-talks"
-permalink: /blog/2013/10/30/yuiconf-2013-call-for-lightning-talks/
+permalink: /2013/10/30/yuiconf-2013-call-for-lightning-talks/
 categories:
   - "YUI Events"
 ---

@@ -4,7 +4,7 @@ title: "Writing Effective JavaScript Unit Tests with YUI Test"
 author: "Nicholas C. Zakas"
 date: 2009-01-05
 slug: "effective-tests"
-permalink: /blog/2009/01/05/effective-tests/
+permalink: /2009/01/05/effective-tests/
 categories:
   - "Development"
 ---

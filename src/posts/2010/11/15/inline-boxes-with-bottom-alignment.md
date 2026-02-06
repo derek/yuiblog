@@ -4,7 +4,7 @@ title: "CSS Quick Tip: Inline Boxes with Bottom Alignment"
 author: "Thierry Koblentz"
 date: 2010-11-15
 slug: "inline-boxes-with-bottom-alignment"
-permalink: /blog/2010/11/15/inline-boxes-with-bottom-alignment/
+permalink: /2010/11/15/inline-boxes-with-bottom-alignment/
 categories:
   - "Development"
 ---

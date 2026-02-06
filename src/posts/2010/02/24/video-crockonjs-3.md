@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"Crockford on JavaScript -- Act III
 author: "Eric Miraglia"
 date: 2010-02-24
 slug: "video-crockonjs-3"
-permalink: /blog/2010/02/24/video-crockonjs-3/
+permalink: /2010/02/24/video-crockonjs-3/
 categories:
   - "Development"
 ---

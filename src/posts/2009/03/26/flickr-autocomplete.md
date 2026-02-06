@@ -4,7 +4,7 @@ title: "Building a Fast People-Finder for Flickr with YUI AutoComplete"
 author: "Ross Harmes"
 date: 2009-03-26
 slug: "flickr-autocomplete"
-permalink: /blog/2009/03/26/flickr-autocomplete/
+permalink: /2009/03/26/flickr-autocomplete/
 categories:
   - "Development"
 ---

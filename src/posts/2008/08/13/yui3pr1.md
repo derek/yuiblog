@@ -4,7 +4,7 @@ title: "YUI 3.0 Preview Release 1"
 author: "Eric Miraglia and Matt Sweeney"
 date: 2008-08-13
 slug: "yui3pr1"
-permalink: /blog/2008/08/13/yui3pr1/
+permalink: /2008/08/13/yui3pr1/
 categories:
   - "Development"
 ---

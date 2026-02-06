@@ -4,7 +4,7 @@ title: "Adding File Upload to the YUI Rich Text Editor's Image Dialog"
 author: "YUI Team"
 date: 2007-10-17
 slug: "rte-fileupload-231"
-permalink: /blog/2007/10/17/rte-fileupload-231/
+permalink: /2007/10/17/rte-fileupload-231/
 categories:
   - "Development"
 ---

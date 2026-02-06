@@ -4,7 +4,7 @@ title: "Date Formatting with YUI - Part I"
 author: "Unknown"
 date: 2009-02-11
 slug: "date-formatting-pt1-2"
-permalink: /blog/2009/02/11/date-formatting-pt1-2/
+permalink: /2009/02/11/date-formatting-pt1-2/
 categories:
   - "Development"
 ---

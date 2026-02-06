@@ -4,7 +4,7 @@ title: "Building Sideline: Lessons in YUI + Adobe AIR"
 author: "Chad Auld"
 date: 2009-03-31
 slug: "sideline-beta-released"
-permalink: /blog/2009/03/31/sideline-beta-released/
+permalink: /2009/03/31/sideline-beta-released/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Cheat Sheets for the YUI Utilities"
 author: "Eric Miraglia"
 date: 2006-06-02
 slug: "yui-utilities-cheat-sheets"
-permalink: /blog/2006/06/02/yui-utilities-cheat-sheets/
+permalink: /2006/06/02/yui-utilities-cheat-sheets/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2010 Summary"
 author: "Jenny Donnelly"
 date: 2010-11-17
 slug: "yuiconf-2010-summary"
-permalink: /blog/2010/11/17/yuiconf-2010-summary/
+permalink: /2010/11/17/yuiconf-2010-summary/
 categories:
   - "Development"
 ---

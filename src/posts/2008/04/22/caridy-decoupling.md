@@ -4,7 +4,7 @@ title: "Creating Component Communication Pipelines with YUI (Decoupling)"
 author: "Caridy Patino"
 date: 2008-04-22
 slug: "caridy-decoupling"
-permalink: /blog/2008/04/22/caridy-decoupling/
+permalink: /2008/04/22/caridy-decoupling/
 categories:
   - "Development"
 ---

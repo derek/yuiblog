@@ -4,7 +4,7 @@ title: "Developing an Accessible Star Ratings Widget"
 author: "Thierry Koblentz"
 date: 2010-08-24
 slug: "developing-an-accessible-star-ratings-widget"
-permalink: /blog/2010/08/24/developing-an-accessible-star-ratings-widget/
+permalink: /2010/08/24/developing-an-accessible-star-ratings-widget/
 categories:
   - "Development"
 ---

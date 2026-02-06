@@ -4,7 +4,7 @@ title: "Implementation Focus Update: Buzillions.com/PowerReviews"
 author: "Eric Miraglia"
 date: 2008-10-21
 slug: "buzillions"
-permalink: /blog/2008/10/21/buzillions/
+permalink: /2008/10/21/buzillions/
 categories:
   - "YUI Implementations"
 ---

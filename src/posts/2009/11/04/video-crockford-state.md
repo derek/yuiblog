@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"The State and Future of ECMAScript
 author: "Eric Miraglia"
 date: 2009-11-04
 slug: "video-crockford-state"
-permalink: /blog/2009/11/04/video-crockford-state/
+permalink: /2009/11/04/video-crockford-state/
 categories:
   - "YUI Theater"
 ---

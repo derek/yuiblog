@@ -4,7 +4,7 @@ title: "YUI: Open Hours Friday Sept 3rd"
 author: "Luke Smith"
 date: 2010-09-02
 slug: "yui-open-hours-friday-sept-3rd"
-permalink: /blog/2010/09/02/yui-open-hours-friday-sept-3rd/
+permalink: /2010/09/02/yui-open-hours-friday-sept-3rd/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Strict Mode Is Coming To Town"
 author: "Douglas Crockford"
 date: 2010-12-14
 slug: "strict-mode-is-coming-to-town"
-permalink: /blog/2010/12/14/strict-mode-is-coming-to-town/
+permalink: /2010/12/14/strict-mode-is-coming-to-town/
 categories:
   - "Development"
 ---

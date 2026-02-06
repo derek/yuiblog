@@ -4,7 +4,7 @@ title: "YUILibrary.com Down for Maintenance (updated: back up now)"
 author: "YUI Team"
 date: 2010-12-21
 slug: "yuilibrary-downtime-20101221"
-permalink: /blog/2010/12/21/yuilibrary-downtime-20101221/
+permalink: /2010/12/21/yuilibrary-downtime-20101221/
 categories:
   - "Development"
 ---

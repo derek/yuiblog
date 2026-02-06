@@ -4,7 +4,7 @@ title: "Full Service: The Yahoo Developer Network and the Yahoo User Interface L
 author: "YUI Team"
 date: 2006-06-27
 slug: "heilmann-excerpt"
-permalink: /blog/2006/06/27/heilmann-excerpt/
+permalink: /2006/06/27/heilmann-excerpt/
 categories:
   - "Development"
 ---

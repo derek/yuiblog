@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Caridy Patiño Mayea's Event Binder Module Provide
 author: "Caridy Patino"
 date: 2010-06-23
 slug: "event-binder"
-permalink: /blog/2010/06/23/event-binder/
+permalink: /2010/06/23/event-binder/
 categories:
   - "Development"
 ---

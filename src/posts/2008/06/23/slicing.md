@@ -4,7 +4,7 @@ title: "Image Transformations in Canvas with Slicing"
 author: "Ross Harmes and Ernest Delgado"
 date: 2008-06-23
 slug: "slicing"
-permalink: /blog/2008/06/23/slicing/
+permalink: /2008/06/23/slicing/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"Crockford on JavaScript -- Scene 6
 author: "Eric Miraglia"
 date: 2010-08-30
 slug: "yui-theater-douglas-crockford-crockford-on-javascript-scene-6-loopage-52-min"
-permalink: /blog/2010/08/30/yui-theater-douglas-crockford-crockford-on-javascript-scene-6-loopage-52-min/
+permalink: /2010/08/30/yui-theater-douglas-crockford-crockford-on-javascript-scene-6-loopage-52-min/
 categories:
   - "YUI Theater"
 ---

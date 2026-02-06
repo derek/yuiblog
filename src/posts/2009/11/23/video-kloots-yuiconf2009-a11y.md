@@ -4,7 +4,7 @@ title: "YUI Theater —  Todd Kloots: \"Building Accessible Widgets with YUI 3\"
 author: "Eric Miraglia"
 date: 2009-11-23
 slug: "video-kloots-yuiconf2009-a11y"
-permalink: /blog/2009/11/23/video-kloots-yuiconf2009-a11y/
+permalink: /2009/11/23/video-kloots-yuiconf2009-a11y/
 categories:
   - "YUI Theater"
 ---

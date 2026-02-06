@@ -4,7 +4,7 @@ title: "Using YUI at EtreProprio.com"
 author: "Philippe Bernou"
 date: 2010-03-02
 slug: "using-yui-at-etreproprio"
-permalink: /blog/2010/03/02/using-yui-at-etreproprio/
+permalink: /2010/03/02/using-yui-at-etreproprio/
 categories:
   - "Development"
 ---

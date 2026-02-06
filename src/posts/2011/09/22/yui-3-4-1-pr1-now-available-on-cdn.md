@@ -4,7 +4,7 @@ title: "YUI 3.4.1 PR1 Now Available On CDN"
 author: "Jenny Donnelly"
 date: 2011-09-22
 slug: "yui-3-4-1-pr1-now-available-on-cdn"
-permalink: /blog/2011/09/22/yui-3-4-1-pr1-now-available-on-cdn/
+permalink: /2011/09/22/yui-3-4-1-pr1-now-available-on-cdn/
 categories:
   - "Development"
 ---

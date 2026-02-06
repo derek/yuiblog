@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Clarence Leung on YUI and the New Server-Side Front-E
 author: "Andrew Wooldridge"
 date: 2014-01-10
 slug: "yuiconf-2013-talk-clarence-leung-on-yui-and-the-new-server-side-front-end"
-permalink: /blog/2014/01/10/yuiconf-2013-talk-clarence-leung-on-yui-and-the-new-server-side-front-end/
+permalink: /2014/01/10/yuiconf-2013-talk-clarence-leung-on-yui-and-the-new-server-side-front-end/
 categories:
   - "Development"
 ---

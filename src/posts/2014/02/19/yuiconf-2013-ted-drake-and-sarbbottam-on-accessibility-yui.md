@@ -4,7 +4,7 @@ title: "YUIConf 2013: Ted Drake and Sarbbottam on Accessibility + YUI"
 author: "Andrew Wooldridge"
 date: 2014-02-19
 slug: "yuiconf-2013-ted-drake-and-sarbbottam-on-accessibility-yui"
-permalink: /blog/2014/02/19/yuiconf-2013-ted-drake-and-sarbbottam-on-accessibility-yui/
+permalink: /2014/02/19/yuiconf-2013-ted-drake-and-sarbbottam-on-accessibility-yui/
 categories:
   - "Development"
 ---

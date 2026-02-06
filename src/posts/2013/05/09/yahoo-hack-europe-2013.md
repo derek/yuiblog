@@ -4,7 +4,7 @@ title: "Yahoo Hack Europe 2013"
 author: "Matt Parker"
 date: 2013-05-09
 slug: "yahoo-hack-europe-2013"
-permalink: /blog/2013/05/09/yahoo-hack-europe-2013/
+permalink: /2013/05/09/yahoo-hack-europe-2013/
 categories:
   - "Development"
 ---

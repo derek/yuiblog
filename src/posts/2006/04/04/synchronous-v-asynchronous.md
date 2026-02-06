@@ -4,7 +4,7 @@ title: "Synchronous v. Asynchronous"
 author: "Douglas Crockford"
 date: 2006-04-04
 slug: "synchronous-v-asynchronous"
-permalink: /blog/2006/04/04/synchronous-v-asynchronous/
+permalink: /2006/04/04/synchronous-v-asynchronous/
 categories:
   - "Development"
 ---

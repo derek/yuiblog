@@ -4,7 +4,7 @@ title: "YUI Weekly – Sept 7th, 2012"
 author: "Unknown"
 date: 2012-09-08
 slug: "yui-weekly-sept-7th-2012"
-permalink: /blog/2012/09/08/yui-weekly-sept-7th-2012/
+permalink: /2012/09/08/yui-weekly-sept-7th-2012/
 categories:
   - "YUI Weekly"
 ---

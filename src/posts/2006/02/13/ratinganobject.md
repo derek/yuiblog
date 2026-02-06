@@ -4,7 +4,7 @@ title: "Rating an Object Pattern"
 author: "Bill Scott"
 date: 2006-02-13
 slug: "ratinganobject"
-permalink: /blog/2006/02/13/ratinganobject/
+permalink: /2006/02/13/ratinganobject/
 categories:
   - "Design"
 ---

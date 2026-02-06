@@ -4,7 +4,7 @@ title: "Announcing YUIConf: Oct 28-29, 2009"
 author: "Jenny Donnelly"
 date: 2009-09-09
 slug: "announcing-yuiconf-2009"
-permalink: /blog/2009/09/09/announcing-yuiconf-2009/
+permalink: /2009/09/09/announcing-yuiconf-2009/
 categories:
   - "Development"
 ---

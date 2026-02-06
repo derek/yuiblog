@@ -4,7 +4,7 @@ title: "YUI Compressor has a new owner"
 author: "Dav Glass"
 date: 2013-01-24
 slug: "yui-compressor-has-a-new-owner"
-permalink: /blog/2013/01/24/yui-compressor-has-a-new-owner/
+permalink: /2013/01/24/yui-compressor-has-a-new-owner/
 categories:
   - "Development"
 ---

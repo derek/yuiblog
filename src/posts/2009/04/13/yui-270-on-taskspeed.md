@@ -4,7 +4,7 @@ title: "YUI 2.7.0 on TaskSpeed"
 author: "YUI Team"
 date: 2009-04-13
 slug: "yui-270-on-taskspeed"
-permalink: /blog/2009/04/13/yui-270-on-taskspeed/
+permalink: /2009/04/13/yui-270-on-taskspeed/
 categories:
   - "Development"
 ---

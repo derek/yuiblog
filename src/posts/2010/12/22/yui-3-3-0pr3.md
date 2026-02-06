@@ -4,7 +4,7 @@ title: "YUI 3.3.0 Preview Release 3"
 author: "Eric Miraglia"
 date: 2010-12-22
 slug: "yui-3-3-0pr3"
-permalink: /blog/2010/12/22/yui-3-3-0pr3/
+permalink: /2010/12/22/yui-3-3-0pr3/
 categories:
   - "Development"
 ---

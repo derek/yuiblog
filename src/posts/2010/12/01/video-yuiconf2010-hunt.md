@@ -4,7 +4,7 @@ title: "YUI Theater —  Dan Hunt: \"Building the Next Generation of Yahoo! Mail
 author: "YUI Team"
 date: 2010-12-01
 slug: "video-yuiconf2010-hunt"
-permalink: /blog/2010/12/01/video-yuiconf2010-hunt/
+permalink: /2010/12/01/video-yuiconf2010-hunt/
 categories:
   - "YUI Theater"
 ---

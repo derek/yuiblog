@@ -4,7 +4,7 @@ title: "YUIConf 2013 - An Amazing Two Days!"
 author: "Andrew Wooldridge"
 date: 2013-11-08
 slug: "yuiconf-2013-an-amazing-two-days"
-permalink: /blog/2013/11/08/yuiconf-2013-an-amazing-two-days/
+permalink: /2013/11/08/yuiconf-2013-an-amazing-two-days/
 categories:
   - "Development"
 ---

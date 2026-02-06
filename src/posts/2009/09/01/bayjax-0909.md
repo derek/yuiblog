@@ -4,7 +4,7 @@ title: "September 8 BayJax Meetup at Yahoo!: Nicholas Zakas on Scalable JavaScri
 author: "Gonzalo Cordero"
 date: 2009-09-01
 slug: "bayjax-0909"
-permalink: /blog/2009/09/01/bayjax-0909/
+permalink: /2009/09/01/bayjax-0909/
 categories:
   - "Development"
 ---

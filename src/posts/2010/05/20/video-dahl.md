@@ -4,7 +4,7 @@ title: "YUI Theater —  Ryan Dahl: \"Introduction to NodeJS\" (58 min.)"
 author: "Allen Rabinovich"
 date: 2010-05-20
 slug: "video-dahl"
-permalink: /blog/2010/05/20/video-dahl/
+permalink: /2010/05/20/video-dahl/
 categories:
   - "Development"
 ---

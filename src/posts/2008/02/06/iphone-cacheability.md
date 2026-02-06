@@ -4,7 +4,7 @@ title: "Performance Research, Part 5: iPhone Cacheability - Making it Stick"
 author: "Tenni Theurer"
 date: 2008-02-06
 slug: "iphone-cacheability"
-permalink: /blog/2008/02/06/iphone-cacheability/
+permalink: /2008/02/06/iphone-cacheability/
 categories:
   - "Development"
 ---

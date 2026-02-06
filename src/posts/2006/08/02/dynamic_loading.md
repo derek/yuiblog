@@ -4,7 +4,7 @@ title: "Dynamic Loading and Rendering with YUI's Menu and TreeView Controls"
 author: "YUI Team"
 date: 2006-08-02
 slug: "dynamic_loading"
-permalink: /blog/2006/08/02/dynamic_loading/
+permalink: /2006/08/02/dynamic_loading/
 categories:
   - "Development"
 ---

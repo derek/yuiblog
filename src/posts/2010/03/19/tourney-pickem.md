@@ -4,7 +4,7 @@ title: "Using YUI 3 to Build the Yahoo! Sports Tourney Pick'em Game"
 author: "YUI Team"
 date: 2010-03-19
 slug: "tourney-pickem"
-permalink: /blog/2010/03/19/tourney-pickem/
+permalink: /2010/03/19/tourney-pickem/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Open Hack Day NYC, October 9/10 2009"
 author: "Eric Miraglia"
 date: 2009-09-18
 slug: "2009-open-hack"
-permalink: /blog/2009/09/18/2009-open-hack/
+permalink: /2009/09/18/2009-open-hack/
 categories:
   - "Development"
 ---

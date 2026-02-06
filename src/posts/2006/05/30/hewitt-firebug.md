@@ -4,7 +4,7 @@ title: "Video: Joe Hewitt Talks About FireBug"
 author: "Eric Miraglia"
 date: 2006-05-30
 slug: "hewitt-firebug"
-permalink: /blog/2006/05/30/hewitt-firebug/
+permalink: /2006/05/30/hewitt-firebug/
 categories:
   - "Development"
 ---

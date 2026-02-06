@@ -4,7 +4,7 @@ title: "Birthday Party! Celebrate the 2nd Birthday of the YUI Library and Yahoo 
 author: "Eric Miraglia"
 date: 2008-01-24
 slug: "2nd-birthday"
-permalink: /blog/2008/01/24/2nd-birthday/
+permalink: /2008/01/24/2nd-birthday/
 categories:
   - "Development"
 ---

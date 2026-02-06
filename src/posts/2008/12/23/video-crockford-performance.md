@@ -4,7 +4,7 @@ title: "YUI Theater — Douglas Crockford: \"Ajax Performance\""
 author: "Eric Miraglia"
 date: 2008-12-23
 slug: "video-crockford-performance"
-permalink: /blog/2008/12/23/video-crockford-performance/
+permalink: /2008/12/23/video-crockford-performance/
 categories:
   - "Development"
 ---

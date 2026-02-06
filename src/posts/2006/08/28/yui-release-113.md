@@ -4,7 +4,7 @@ title: "Minor YUI Release Today"
 author: "Unknown"
 date: 2006-08-28
 slug: "yui-release-113"
-permalink: /blog/2006/08/28/yui-release-113/
+permalink: /2006/08/28/yui-release-113/
 categories:
   - "Development"
 ---

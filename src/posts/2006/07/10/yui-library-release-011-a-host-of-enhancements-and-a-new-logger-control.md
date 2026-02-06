@@ -4,7 +4,7 @@ title: "YUI Library Release 0.11: A Host of Enhancements and a New Logger Contro
 author: "YUI Team"
 date: 2006-07-10
 slug: "yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control"
-permalink: /blog/2006/07/10/yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control/
+permalink: /2006/07/10/yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control/
 categories:
   - "Development"
 ---

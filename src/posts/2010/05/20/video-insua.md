@@ -4,7 +4,7 @@ title: "YUI Theater —  Elijah Insua: \"jsdom: a CommonJS Implementation of the
 author: "Allen Rabinovich"
 date: 2010-05-20
 slug: "video-insua"
-permalink: /blog/2010/05/20/video-insua/
+permalink: /2010/05/20/video-insua/
 categories:
   - "Development"
 ---

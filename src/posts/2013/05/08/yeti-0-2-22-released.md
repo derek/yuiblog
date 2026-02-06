@@ -4,7 +4,7 @@ title: "Yeti 0.2.22 Released"
 author: "Reid Burke"
 date: 2013-05-08
 slug: "yeti-0-2-22-released"
-permalink: /blog/2013/05/08/yeti-0-2-22-released/
+permalink: /2013/05/08/yeti-0-2-22-released/
 categories:
   - "Development"
 ---

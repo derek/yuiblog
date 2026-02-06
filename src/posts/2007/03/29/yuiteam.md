@@ -4,7 +4,7 @@ title: "Welcoming Mike Lee and Dav Glass to the YUI Team"
 author: "Unknown"
 date: 2007-03-29
 slug: "yuiteam"
-permalink: /blog/2007/03/29/yuiteam/
+permalink: /2007/03/29/yuiteam/
 categories:
   - "Development"
 ---

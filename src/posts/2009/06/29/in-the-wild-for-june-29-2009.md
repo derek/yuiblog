@@ -4,7 +4,7 @@ title: "In the Wild for June 29, 2009"
 author: "Eric Miraglia"
 date: 2009-06-29
 slug: "in-the-wild-for-june-29-2009"
-permalink: /blog/2009/06/29/in-the-wild-for-june-29-2009/
+permalink: /2009/06/29/in-the-wild-for-june-29-2009/
 categories:
   - "In the Wild"
 ---

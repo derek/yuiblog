@@ -4,7 +4,7 @@ title: "In the Wild for November 30th"
 author: "Unknown"
 date: 2007-11-30
 slug: "in-the-wild-20071130"
-permalink: /blog/2007/11/30/in-the-wild-20071130/
+permalink: /2007/11/30/in-the-wild-20071130/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Bidi Tutorial: RTL YUI Calendar in Arabic"
 author: "YUI Team"
 date: 2011-05-23
 slug: "bidi-tutorial-rtl-yui-calendar-in-arabic"
-permalink: /blog/2011/05/23/bidi-tutorial-rtl-yui-calendar-in-arabic/
+permalink: /2011/05/23/bidi-tutorial-rtl-yui-calendar-in-arabic/
 categories:
   - "Development"
 ---

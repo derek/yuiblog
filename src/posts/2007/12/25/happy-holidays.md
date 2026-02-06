@@ -4,7 +4,7 @@ title: "Happy Holidays from the YUI Team"
 author: "Eric Miraglia"
 date: 2007-12-25
 slug: "happy-holidays"
-permalink: /blog/2007/12/25/happy-holidays/
+permalink: /2007/12/25/happy-holidays/
 categories:
   - "Development"
 ---

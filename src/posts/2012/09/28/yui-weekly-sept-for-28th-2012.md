@@ -4,7 +4,7 @@ title: "YUI Weekly - Sept 28th, 2012"
 author: "Derek Gathright"
 date: 2012-09-28
 slug: "yui-weekly-sept-for-28th-2012"
-permalink: /blog/2012/09/28/yui-weekly-sept-for-28th-2012/
+permalink: /2012/09/28/yui-weekly-sept-for-28th-2012/
 categories:
   - "YUI Weekly"
 ---

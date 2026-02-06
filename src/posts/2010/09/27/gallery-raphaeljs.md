@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Matt Taylor's RaphaelJS Module"
 author: "Matthew Taylor"
 date: 2010-09-27
 slug: "gallery-raphaeljs"
-permalink: /blog/2010/09/27/gallery-raphaeljs/
+permalink: /2010/09/27/gallery-raphaeljs/
 categories:
   - "Development"
 ---

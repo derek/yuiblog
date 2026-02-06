@@ -4,7 +4,7 @@ title: "YUI: Open Hours for Friday, April 23rd"
 author: "Luke Smith"
 date: 2010-04-22
 slug: "yui-open-hours-for-friday-april-23rd"
-permalink: /blog/2010/04/22/yui-open-hours-for-friday-april-23rd/
+permalink: /2010/04/22/yui-open-hours-for-friday-april-23rd/
 categories:
   - "Development"
 ---

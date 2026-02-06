@@ -4,7 +4,7 @@ title: "YUI Theater —  Mark Kawakami: \"Finger Tips: Lessons Learned from Buil
 author: "Unknown"
 date: 2010-11-22
 slug: "video-yuiconf2010-kawakami"
-permalink: /blog/2010/11/22/video-yuiconf2010-kawakami/
+permalink: /2010/11/22/video-yuiconf2010-kawakami/
 categories:
   - "YUI Theater"
 ---

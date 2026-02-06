@@ -4,7 +4,7 @@ title: "Implementation Focus: Pattern Insight"
 author: "Erik Hinterbichler"
 date: 2009-12-04
 slug: "pattern-insight"
-permalink: /blog/2009/12/04/pattern-insight/
+permalink: /2009/12/04/pattern-insight/
 categories:
   - "YUI Implementations"
 ---

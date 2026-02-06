@@ -4,7 +4,7 @@ title: "JavaScript, We Hardly new Ya"
 author: "Douglas Crockford"
 date: 2006-11-13
 slug: "javascript-we-hardly-new-ya"
-permalink: /blog/2006/11/13/javascript-we-hardly-new-ya/
+permalink: /2006/11/13/javascript-we-hardly-new-ya/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Weekly for May 2nd, 2014"
 author: "Tilo"
 date: 2014-05-02
 slug: "yui-weekly-for-may-2nd-2014"
-permalink: /blog/2014/05/02/yui-weekly-for-may-2nd-2014/
+permalink: /2014/05/02/yui-weekly-for-may-2nd-2014/
 categories:
   - "YUI Weekly"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"The JSON Saga\""
 author: "Eric Miraglia"
 date: 2009-08-11
 slug: "video-crockford-json"
-permalink: /blog/2009/08/11/video-crockford-json/
+permalink: /2009/08/11/video-crockford-json/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "YUI 3.16.0 Released"
 author: "Andrew Wooldridge"
 date: 2014-04-10
 slug: "yui-3-16-0-released"
-permalink: /blog/2014/04/10/yui-3-16-0-released/
+permalink: /2014/04/10/yui-3-16-0-released/
 categories:
   - "Development"
 ---

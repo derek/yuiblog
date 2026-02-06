@@ -4,7 +4,7 @@ title: "Quick GBS Status Update"
 author: "YUI Team"
 date: 2011-05-27
 slug: "quick-gbs-status-update"
-permalink: /blog/2011/05/27/quick-gbs-status-update/
+permalink: /2011/05/27/quick-gbs-status-update/
 categories:
   - "Development"
 ---

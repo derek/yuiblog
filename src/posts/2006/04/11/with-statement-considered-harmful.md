@@ -4,7 +4,7 @@ title: "with Statement Considered Harmful"
 author: "Douglas Crockford"
 date: 2006-04-11
 slug: "with-statement-considered-harmful"
-permalink: /blog/2006/04/11/with-statement-considered-harmful/
+permalink: /2006/04/11/with-statement-considered-harmful/
 categories:
   - "Development"
 ---

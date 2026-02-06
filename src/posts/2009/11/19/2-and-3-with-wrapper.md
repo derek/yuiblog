@@ -4,7 +4,7 @@ title: "Using YUI 2 and YUI 3 Together: Even Easier with Caridy's Wrapper Utilit
 author: "YUI Team"
 date: 2009-11-19
 slug: "2-and-3-with-wrapper"
-permalink: /blog/2009/11/19/2-and-3-with-wrapper/
+permalink: /2009/11/19/2-and-3-with-wrapper/
 categories:
   - "Development"
 ---

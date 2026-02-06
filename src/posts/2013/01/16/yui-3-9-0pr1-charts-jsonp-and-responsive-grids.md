@@ -4,7 +4,7 @@ title: "YUI 3.9.0pr1 - Charts, JSONP, and Responsive Grids"
 author: "YUI Team"
 date: 2013-01-16
 slug: "yui-3-9-0pr1-charts-jsonp-and-responsive-grids"
-permalink: /blog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/
+permalink: /2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/
 categories:
   - "Development"
 ---

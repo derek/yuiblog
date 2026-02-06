@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Oct 20th"
 author: "Luke Smith"
 date: 2011-10-17
 slug: "yui-open-hours-thurs-oct-20th"
-permalink: /blog/2011/10/17/yui-open-hours-thurs-oct-20th/
+permalink: /2011/10/17/yui-open-hours-thurs-oct-20th/
 categories:
   - "Development"
 ---

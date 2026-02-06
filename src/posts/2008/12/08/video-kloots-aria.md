@@ -4,7 +4,7 @@ title: "YUI Theater — Todd Kloots: \"Developing Accessible Widgets with ARIA\"
 author: "Eric Miraglia"
 date: 2008-12-08
 slug: "video-kloots-aria"
-permalink: /blog/2008/12/08/video-kloots-aria/
+permalink: /2008/12/08/video-kloots-aria/
 categories:
   - "YUI Theater"
 ---

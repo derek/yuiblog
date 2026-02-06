@@ -4,7 +4,7 @@ title: "Announcing YUI 3.3.0"
 author: "Satyen Desai"
 date: 2011-01-12
 slug: "announcing-yui-3-3-0"
-permalink: /blog/2011/01/12/announcing-yui-3-3-0/
+permalink: /2011/01/12/announcing-yui-3-3-0/
 categories:
   - "Development"
 ---

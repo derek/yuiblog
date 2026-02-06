@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Extensions for SVG, Created for SVG Wow!"
 author: "Vincent Hardy"
 date: 2010-10-18
 slug: "gallery-svg"
-permalink: /blog/2010/10/18/gallery-svg/
+permalink: /2010/10/18/gallery-svg/
 categories:
   - "Development"
 ---

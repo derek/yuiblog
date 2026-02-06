@@ -4,7 +4,7 @@ title: "Tutorial: Implementing Instant Search with YUI AutoComplete and the Yaho
 author: "Eric Miraglia"
 date: 2008-05-15
 slug: "search-suggest"
-permalink: /blog/2008/05/15/search-suggest/
+permalink: /2008/05/15/search-suggest/
 categories:
   - "Development"
 ---

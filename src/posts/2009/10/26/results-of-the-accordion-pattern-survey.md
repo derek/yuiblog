@@ -4,7 +4,7 @@ title: "Results of the Accordion Pattern survey"
 author: "Christian Crumlish"
 date: 2009-10-26
 slug: "results-of-the-accordion-pattern-survey"
-permalink: /blog/2009/10/26/results-of-the-accordion-pattern-survey/
+permalink: /2009/10/26/results-of-the-accordion-pattern-survey/
 categories:
   - "Development"
 ---

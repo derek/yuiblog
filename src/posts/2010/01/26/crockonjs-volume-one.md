@@ -4,7 +4,7 @@ title: "Crockford on JavaScript: Night One Recap, and More Tickets Released"
 author: "YUI Team"
 date: 2010-01-26
 slug: "crockonjs-volume-one"
-permalink: /blog/2010/01/26/crockonjs-volume-one/
+permalink: /2010/01/26/crockonjs-volume-one/
 categories:
   - "YUI Events"
 ---

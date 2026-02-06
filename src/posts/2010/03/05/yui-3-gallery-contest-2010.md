@@ -4,7 +4,7 @@ title: "YUI 3 Gallery Contest 2010 — Win a Ticket to JSConf 2010"
 author: "Eric Miraglia and Dav Glass"
 date: 2010-03-05
 slug: "yui-3-gallery-contest-2010"
-permalink: /blog/2010/03/05/yui-3-gallery-contest-2010/
+permalink: /2010/03/05/yui-3-gallery-contest-2010/
 categories:
   - "Development"
 ---

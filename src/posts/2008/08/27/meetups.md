@@ -4,7 +4,7 @@ title: "YUI 3.x Meetups/Discussions Next Week at Yahoo: You're Invited"
 author: "YUI Team"
 date: 2008-08-27
 slug: "meetups"
-permalink: /blog/2008/08/27/meetups/
+permalink: /2008/08/27/meetups/
 categories:
   - "Development"
 ---

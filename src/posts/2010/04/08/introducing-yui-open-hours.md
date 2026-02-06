@@ -4,7 +4,7 @@ title: "Introducing YUI Open Hours"
 author: "Luke Smith"
 date: 2010-04-08
 slug: "introducing-yui-open-hours"
-permalink: /blog/2010/04/08/introducing-yui-open-hours/
+permalink: /2010/04/08/introducing-yui-open-hours/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "In the Wild for May 12, 2010"
 author: "Unknown"
 date: 2010-05-12
 slug: "in-the-wild-for-may-12-2010"
-permalink: /blog/2010/05/12/in-the-wild-for-may-12-2010/
+permalink: /2010/05/12/in-the-wild-for-may-12-2010/
 categories:
   - "In the Wild"
 ---

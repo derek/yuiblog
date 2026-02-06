@@ -4,7 +4,7 @@ title: "YUI Theater —  Nicholas Zakas, Stoyan Stefanov, Ross Harmes, Julien Le
 author: "Eric Miraglia"
 date: 2010-04-21
 slug: "video-hpjs"
-permalink: /blog/2010/04/21/video-hpjs/
+permalink: /2010/04/21/video-hpjs/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater -- Jeff Craig: \"Demystifying Loader: Advanced Module Config
 author: "Ryan Grove"
 date: 2011-12-16
 slug: "video-yuiconf2011-jeffcraig"
-permalink: /blog/2011/12/16/video-yuiconf2011-jeffcraig/
+permalink: /2011/12/16/video-yuiconf2011-jeffcraig/
 categories:
   - "Development"
 ---

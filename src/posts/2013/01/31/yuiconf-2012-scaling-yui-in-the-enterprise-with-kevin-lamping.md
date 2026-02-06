@@ -4,7 +4,7 @@ title: "YUIConf 2012: Scaling YUI in the Enterprise with Kevin Lamping"
 author: "YUI Team"
 date: 2013-01-31
 slug: "yuiconf-2012-scaling-yui-in-the-enterprise-with-kevin-lamping"
-permalink: /blog/2013/01/31/yuiconf-2012-scaling-yui-in-the-enterprise-with-kevin-lamping/
+permalink: /2013/01/31/yuiconf-2012-scaling-yui-in-the-enterprise-with-kevin-lamping/
 categories:
   - "Development"
 ---

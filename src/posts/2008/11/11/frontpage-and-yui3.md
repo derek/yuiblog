@@ -4,7 +4,7 @@ title: "The New Yahoo! Front Page and YUI 3.0"
 author: "Nicholas C. Zakas"
 date: 2008-11-11
 slug: "frontpage-and-yui3"
-permalink: /blog/2008/11/11/frontpage-and-yui3/
+permalink: /2008/11/11/frontpage-and-yui3/
 categories:
   - "Development"
 ---

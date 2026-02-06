@@ -4,7 +4,7 @@ title: "YUI Talk at Pernambuco.JS by Eduardo Lundgren of AlloyUI"
 author: "YUI Team"
 date: 2012-04-03
 slug: "yui-talk-at-pernambuco-js-by-eduardo-lundgren-of-alloyui"
-permalink: /blog/2012/04/03/yui-talk-at-pernambuco-js-by-eduardo-lundgren-of-alloyui/
+permalink: /2012/04/03/yui-talk-at-pernambuco-js-by-eduardo-lundgren-of-alloyui/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Working with the YUI DataTable Control, Part 2: Changing the Contents of
 author: "YUI Team"
 date: 2007-09-26
 slug: "satyam-datatable-2"
-permalink: /blog/2007/09/26/satyam-datatable-2/
+permalink: /2007/09/26/satyam-datatable-2/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Happy Birthday to the Pattern Library, Too!"
 author: "Christian Crumlish"
 date: 2007-03-05
 slug: "pattern-library-anniversary"
-permalink: /blog/2007/03/05/pattern-library-anniversary/
+permalink: /2007/03/05/pattern-library-anniversary/
 categories:
   - "Design"
 ---

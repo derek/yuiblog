@@ -4,7 +4,7 @@ title: "Navigation Tabs Design Pattern"
 author: "YUI Team"
 date: 2006-02-13
 slug: "navigationtabs"
-permalink: /blog/2006/02/13/navigationtabs/
+permalink: /2006/02/13/navigationtabs/
 categories:
   - "Design"
 ---

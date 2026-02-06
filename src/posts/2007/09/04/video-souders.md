@@ -4,7 +4,7 @@ title: "YUI Theater — Steve Souders: \"High Performance Web Sites: 14 Rules Fo
 author: "Unknown"
 date: 2007-09-04
 slug: "video-souders"
-permalink: /blog/2007/09/04/video-souders/
+permalink: /2007/09/04/video-souders/
 categories:
   - "YUI Theater"
 ---

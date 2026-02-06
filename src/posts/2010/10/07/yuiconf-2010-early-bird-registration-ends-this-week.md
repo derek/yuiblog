@@ -4,7 +4,7 @@ title: "YUIConf 2010: Early-bird registration ends this week"
 author: "Jenny Donnelly"
 date: 2010-10-07
 slug: "yuiconf-2010-early-bird-registration-ends-this-week"
-permalink: /blog/2010/10/07/yuiconf-2010-early-bird-registration-ends-this-week/
+permalink: /2010/10/07/yuiconf-2010-early-bird-registration-ends-this-week/
 categories:
   - "Development"
 ---

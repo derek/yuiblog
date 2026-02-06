@@ -4,7 +4,7 @@ title: "Call for Guest Bloggers"
 author: "Andrew Wooldridge"
 date: 2013-03-06
 slug: "call-for-guest-bloggers"
-permalink: /blog/2013/03/06/call-for-guest-bloggers/
+permalink: /2013/03/06/call-for-guest-bloggers/
 categories:
   - "Development"
 ---

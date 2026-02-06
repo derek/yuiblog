@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Use YUI to Lower Project Development Costs by Jeff Pi
 author: "YUI Team"
 date: 2013-01-16
 slug: "yuiconf-2012-talk-use-yui-to-lower-project-development-costs-by-jeff-pihach"
-permalink: /blog/2013/01/16/yuiconf-2012-talk-use-yui-to-lower-project-development-costs-by-jeff-pihach/
+permalink: /2013/01/16/yuiconf-2012-talk-use-yui-to-lower-project-development-costs-by-jeff-pihach/
 categories:
   - "Development"
 ---

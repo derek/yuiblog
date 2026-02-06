@@ -4,7 +4,7 @@ title: "YUI 3.15.0 Release Candidate 1"
 author: "YUI Team"
 date: 2014-02-19
 slug: "yui-3-15-0-release-candidate-1"
-permalink: /blog/2014/02/19/yui-3-15-0-release-candidate-1/
+permalink: /2014/02/19/yui-3-15-0-release-candidate-1/
 categories:
   - "Development"
 ---

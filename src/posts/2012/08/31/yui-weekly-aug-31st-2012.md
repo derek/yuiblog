@@ -4,7 +4,7 @@ title: "YUI Weekly - Aug 31st, 2012"
 author: "Derek Gathright"
 date: 2012-08-31
 slug: "yui-weekly-aug-31st-2012"
-permalink: /blog/2012/08/31/yui-weekly-aug-31st-2012/
+permalink: /2012/08/31/yui-weekly-aug-31st-2012/
 categories:
   - "YUI Weekly"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2013: Mark Kawakami on  Touch Football: Rebuilding Yahoo Fantasy
 author: "Andrew Wooldridge"
 date: 2014-02-12
 slug: "yuiconf-2013-mark-kawakami-on-touch-football-rebuilding-yahoo-fantasy-sports-for-the-modern-web"
-permalink: /blog/2014/02/12/yuiconf-2013-mark-kawakami-on-touch-football-rebuilding-yahoo-fantasy-sports-for-the-modern-web/
+permalink: /2014/02/12/yuiconf-2013-mark-kawakami-on-touch-football-rebuilding-yahoo-fantasy-sports-for-the-modern-web/
 categories:
   - "Development"
 ---

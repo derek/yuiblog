@@ -4,7 +4,7 @@ title: "YUI: Open Hours Friday June 25th"
 author: "Luke Smith"
 date: 2010-06-23
 slug: "yui-open-hours-friday-june-25th"
-permalink: /blog/2010/06/23/yui-open-hours-friday-june-25th/
+permalink: /2010/06/23/yui-open-hours-friday-june-25th/
 categories:
   - "Development"
 ---

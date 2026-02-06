@@ -4,7 +4,7 @@ title: "David Cilley's Tutorial Series on Ajax Image Sliders"
 author: "YUI Team"
 date: 2008-04-24
 slug: "david-cilley-image-sliders"
-permalink: /blog/2008/04/24/david-cilley-image-sliders/
+permalink: /2008/04/24/david-cilley-image-sliders/
 categories:
   - "Development"
 ---

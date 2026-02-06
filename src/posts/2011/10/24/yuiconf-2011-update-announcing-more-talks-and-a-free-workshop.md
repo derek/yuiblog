@@ -4,7 +4,7 @@ title: "YUIConf 2011 Update: Announcing More Talks and a Free Workshop!"
 author: "Jenny Donnelly"
 date: 2011-10-24
 slug: "yuiconf-2011-update-announcing-more-talks-and-a-free-workshop"
-permalink: /blog/2011/10/24/yuiconf-2011-update-announcing-more-talks-and-a-free-workshop/
+permalink: /2011/10/24/yuiconf-2011-update-announcing-more-talks-and-a-free-workshop/
 categories:
   - "Development"
 ---

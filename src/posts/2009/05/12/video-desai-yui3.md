@@ -4,7 +4,7 @@ title: "YUI Theater -- Satyen Desai: \"YUI 3: Design Goals and Architecture\""
 author: "Eric Miraglia"
 date: 2009-05-12
 slug: "video-desai-yui3"
-permalink: /blog/2009/05/12/video-desai-yui3/
+permalink: /2009/05/12/video-desai-yui3/
 categories:
   - "YUI Theater"
 ---

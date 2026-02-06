@@ -4,7 +4,7 @@ title: "Unobtrusive Rollovers Using YUI"
 author: "Eric Miraglia"
 date: 2008-04-28
 slug: "unobtrusive-rollovers-using-yui"
-permalink: /blog/2008/04/28/unobtrusive-rollovers-using-yui/
+permalink: /2008/04/28/unobtrusive-rollovers-using-yui/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2012 Technical Sessions and a Survey!"
 author: "Andrew Wooldridge"
 date: 2012-10-26
 slug: "yuiconf-2012-technical-sessions-and-a-survey"
-permalink: /blog/2012/10/26/yuiconf-2012-technical-sessions-and-a-survey/
+permalink: /2012/10/26/yuiconf-2012-technical-sessions-and-a-survey/
 categories:
   - "YUI Events"
 ---

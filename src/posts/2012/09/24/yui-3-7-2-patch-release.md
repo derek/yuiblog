@@ -4,7 +4,7 @@ title: "YUI 3.7.2 Patch Release"
 author: "Unknown"
 date: 2012-09-24
 slug: "yui-3-7-2-patch-release"
-permalink: /blog/2012/09/24/yui-3-7-2-patch-release/
+permalink: /2012/09/24/yui-3-7-2-patch-release/
 categories:
   - "Releases"
 ---

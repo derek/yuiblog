@@ -4,7 +4,7 @@ title: "YUI Theater —  Brendan Eich: \"ECMA Harmony and the Future of JavaScri
 author: "Eric Miraglia"
 date: 2009-11-03
 slug: "video-eich-harmony"
-permalink: /blog/2009/11/03/video-eich-harmony/
+permalink: /2009/11/03/video-eich-harmony/
 categories:
   - "YUI Theater"
 ---

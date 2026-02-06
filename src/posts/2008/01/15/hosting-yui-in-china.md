@@ -4,7 +4,7 @@ title: "Hosting YUI Files for Implementations in Mainland China"
 author: "Unknown"
 date: 2008-01-15
 slug: "hosting-yui-in-china"
-permalink: /blog/2008/01/15/hosting-yui-in-china/
+permalink: /2008/01/15/hosting-yui-in-china/
 categories:
   - "Development"
 ---

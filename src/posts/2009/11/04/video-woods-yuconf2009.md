@@ -4,7 +4,7 @@ title: "YUI Theater —  Stephen Woods: \"Creating Beautiful Documentation with 
 author: "YUI Team"
 date: 2009-11-04
 slug: "video-woods-yuconf2009"
-permalink: /blog/2009/11/04/video-woods-yuconf2009/
+permalink: /2009/11/04/video-woods-yuconf2009/
 categories:
   - "YUI Theater"
 ---

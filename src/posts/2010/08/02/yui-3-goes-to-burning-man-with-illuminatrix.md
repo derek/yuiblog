@@ -4,7 +4,7 @@ title: "YUI 3 Goes to Burning Man with Illuminatrix"
 author: "Eric Miraglia"
 date: 2010-08-02
 slug: "yui-3-goes-to-burning-man-with-illuminatrix"
-permalink: /blog/2010/08/02/yui-3-goes-to-burning-man-with-illuminatrix/
+permalink: /2010/08/02/yui-3-goes-to-burning-man-with-illuminatrix/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "In the Wild for October 22, 2009"
 author: "Eric Miraglia"
 date: 2009-10-22
 slug: "in-the-wild-for-october-22-2009"
-permalink: /blog/2009/10/22/in-the-wild-for-october-22-2009/
+permalink: /2009/10/22/in-the-wild-for-october-22-2009/
 categories:
   - "In the Wild"
 ---

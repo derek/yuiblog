@@ -4,7 +4,7 @@ title: "YUIConf 2011 Preliminary Schedule Now Available"
 author: "Jenny Donnelly"
 date: 2011-10-17
 slug: "yuiconf-2011-preliminary-schedule-now-available"
-permalink: /blog/2011/10/17/yuiconf-2011-preliminary-schedule-now-available/
+permalink: /2011/10/17/yuiconf-2011-preliminary-schedule-now-available/
 categories:
   - "Development"
 ---

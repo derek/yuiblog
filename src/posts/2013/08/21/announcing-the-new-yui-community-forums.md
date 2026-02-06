@@ -4,7 +4,7 @@ title: "Announcing the new YUI Community Forums"
 author: "Andrew Wooldridge"
 date: 2013-08-21
 slug: "announcing-the-new-yui-community-forums"
-permalink: /blog/2013/08/21/announcing-the-new-yui-community-forums/
+permalink: /2013/08/21/announcing-the-new-yui-community-forums/
 categories:
   - "Development"
 ---

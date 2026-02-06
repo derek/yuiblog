@@ -4,7 +4,7 @@ title: "CSS Quick Tip: How to prevent a \"float drop\" in IE6"
 author: "Thierry Koblentz"
 date: 2010-10-28
 slug: "css-quick-tip-how-to-prevent-a-float-drop-in-ie6"
-permalink: /blog/2010/10/28/css-quick-tip-how-to-prevent-a-float-drop-in-ie6/
+permalink: /2010/10/28/css-quick-tip-how-to-prevent-a-float-drop-in-ie6/
 categories:
   - "Development"
 ---

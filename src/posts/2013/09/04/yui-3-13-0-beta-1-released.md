@@ -4,7 +4,7 @@ title: "YUI 3.13.0 Beta 1 Released"
 author: "Andrew Wooldridge"
 date: 2013-09-04
 slug: "yui-3-13-0-beta-1-released"
-permalink: /blog/2013/09/04/yui-3-13-0-beta-1-released/
+permalink: /2013/09/04/yui-3-13-0-beta-1-released/
 categories:
   - "Development"
 ---

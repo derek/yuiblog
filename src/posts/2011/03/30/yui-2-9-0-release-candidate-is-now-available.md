@@ -4,7 +4,7 @@ title: "YUI 2.9.0 Release Candidate Is Now Available"
 author: "Jenny Donnelly"
 date: 2011-03-30
 slug: "yui-2-9-0-release-candidate-is-now-available"
-permalink: /blog/2011/03/30/yui-2-9-0-release-candidate-is-now-available/
+permalink: /2011/03/30/yui-2-9-0-release-candidate-is-now-available/
 categories:
   - "Development"
 ---

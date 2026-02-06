@@ -4,7 +4,7 @@ title: "YUI 3.11.0 Released"
 author: "Andrew Wooldridge"
 date: 2013-07-16
 slug: "yui-3-11-0-released"
-permalink: /blog/2013/07/16/yui-3-11-0-released/
+permalink: /2013/07/16/yui-3-11-0-released/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "A Closer Look at YUI 3.0 PR 1: Dav Glass's Draggable Portal Example"
 author: "Eric Miraglia"
 date: 2008-08-15
 slug: "portal-example"
-permalink: /blog/2008/08/15/portal-example/
+permalink: /2008/08/15/portal-example/
 categories:
   - "Development"
 ---

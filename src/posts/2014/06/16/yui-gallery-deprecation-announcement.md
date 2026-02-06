@@ -4,7 +4,7 @@ title: "YUI Gallery Deprecation Announcement"
 author: "Julien Lecomte"
 date: 2014-06-16
 slug: "yui-gallery-deprecation-announcement"
-permalink: /blog/2014/06/16/yui-gallery-deprecation-announcement/
+permalink: /2014/06/16/yui-gallery-deprecation-announcement/
 categories:
   - "YUI 3 Gallery"
 ---

@@ -4,7 +4,7 @@ title: "Screencast: Jon Chambers of Thinkature on Developing with YUI"
 author: "Eric Miraglia"
 date: 2006-12-14
 slug: "thinkature-screencast"
-permalink: /blog/2006/12/14/thinkature-screencast/
+permalink: /2006/12/14/thinkature-screencast/
 categories:
   - "Development"
 ---

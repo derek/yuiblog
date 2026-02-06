@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Feb 3rd"
 author: "Eric Ferraiuolo"
 date: 2011-02-01
 slug: "yui-open-hours-thurs-feb-3rd"
-permalink: /blog/2011/02/01/yui-open-hours-thurs-feb-3rd/
+permalink: /2011/02/01/yui-open-hours-thurs-feb-3rd/
 categories:
   - "Development"
 ---

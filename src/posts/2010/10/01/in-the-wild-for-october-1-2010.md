@@ -4,7 +4,7 @@ title: "In the Wild for October 1, 2010"
 author: "Eric Miraglia"
 date: 2010-10-01
 slug: "in-the-wild-for-october-1-2010"
-permalink: /blog/2010/10/01/in-the-wild-for-october-1-2010/
+permalink: /2010/10/01/in-the-wild-for-october-1-2010/
 categories:
   - "In the Wild"
 ---

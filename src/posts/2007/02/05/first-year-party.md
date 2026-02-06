@@ -4,7 +4,7 @@ title: "You're Invited: YUI's First Year Party!"
 author: "Nate Koechley"
 date: 2007-02-05
 slug: "first-year-party"
-permalink: /blog/2007/02/05/first-year-party/
+permalink: /2007/02/05/first-year-party/
 categories:
   - "Development"
 ---

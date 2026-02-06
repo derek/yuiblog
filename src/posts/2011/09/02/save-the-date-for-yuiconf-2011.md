@@ -4,7 +4,7 @@ title: "Save the Date for YUIConf 2011"
 author: "Jenny Donnelly"
 date: 2011-09-02
 slug: "save-the-date-for-yuiconf-2011"
-permalink: /blog/2011/09/02/save-the-date-for-yuiconf-2011/
+permalink: /2011/09/02/save-the-date-for-yuiconf-2011/
 categories:
   - "Development"
 ---

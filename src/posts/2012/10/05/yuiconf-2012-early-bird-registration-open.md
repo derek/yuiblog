@@ -4,7 +4,7 @@ title: "YUIConf 2012 Early Bird Registration Open"
 author: "Unknown"
 date: 2012-10-05
 slug: "yuiconf-2012-early-bird-registration-open"
-permalink: /blog/2012/10/05/yuiconf-2012-early-bird-registration-open/
+permalink: /2012/10/05/yuiconf-2012-early-bird-registration-open/
 categories:
   - "Development"
 ---

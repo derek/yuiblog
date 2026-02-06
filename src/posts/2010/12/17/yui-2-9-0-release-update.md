@@ -4,7 +4,7 @@ title: "YUI 2.9.0 Release Update"
 author: "Jenny Donnelly"
 date: 2010-12-17
 slug: "yui-2-9-0-release-update"
-permalink: /blog/2010/12/17/yui-2-9-0-release-update/
+permalink: /2010/12/17/yui-2-9-0-release-update/
 categories:
   - "Development"
 ---

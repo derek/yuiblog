@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Gamaiel Zavala on Adopting YUI App Framework on Yahoo
 author: "YUI Team"
 date: 2012-12-26
 slug: "yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites"
-permalink: /blog/2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/
+permalink: /2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/
 categories:
   - "Development"
 ---

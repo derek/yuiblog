@@ -4,7 +4,7 @@ title: "YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules"
 author: "Eric Miraglia and Adam Moore"
 date: 2010-03-11
 slug: "yui-2-in-3-coming-soon"
-permalink: /blog/2010/03/11/yui-2-in-3-coming-soon/
+permalink: /2010/03/11/yui-2-in-3-coming-soon/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI PHP Loader Beta 2 Released"
 author: "YUI Team"
 date: 2009-12-02
 slug: "yui-php-loader-beta-2-released"
-permalink: /blog/2009/12/02/yui-php-loader-beta-2-released/
+permalink: /2009/12/02/yui-php-loader-beta-2-released/
 categories:
   - "Development"
 ---

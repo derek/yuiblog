@@ -4,7 +4,7 @@ title: "Direction-friendly Navigation Bar"
 author: "Thierry Koblentz"
 date: 2011-04-25
 slug: "direction-friendly-navigation-bar"
-permalink: /blog/2011/04/25/direction-friendly-navigation-bar/
+permalink: /2011/04/25/direction-friendly-navigation-bar/
 categories:
   - "Development"
 ---

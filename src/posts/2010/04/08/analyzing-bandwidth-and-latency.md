@@ -4,7 +4,7 @@ title: "Analyzing Bandwidth and Latency on YUIBlog.com"
 author: "Philip Tellis"
 date: 2010-04-08
 slug: "analyzing-bandwidth-and-latency"
-permalink: /blog/2010/04/08/analyzing-bandwidth-and-latency/
+permalink: /2010/04/08/analyzing-bandwidth-and-latency/
 categories:
   - "Development"
 ---

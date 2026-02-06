@@ -4,7 +4,7 @@ title: "YUI Theater: Douglas Crockford, \"Web Forward\""
 author: "Eric Miraglia"
 date: 2008-10-17
 slug: "video-crockford-webforward"
-permalink: /blog/2008/10/17/video-crockford-webforward/
+permalink: /2008/10/17/video-crockford-webforward/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Isaac Schlueter: \"Solving Problems with YUI 3\""
 author: "YUI Team"
 date: 2009-11-20
 slug: "video-schlueter-yuiconf2009"
-permalink: /blog/2009/11/20/video-schlueter-yuiconf2009/
+permalink: /2009/11/20/video-schlueter-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

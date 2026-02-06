@@ -4,7 +4,7 @@ title: "YUI Weekly – Aug 17th, 2012"
 author: "Derek Gathright"
 date: 2012-08-17
 slug: "this-week-in-yui-aug-17th-2012"
-permalink: /blog/2012/08/17/this-week-in-yui-aug-17th-2012/
+permalink: /2012/08/17/this-week-in-yui-aug-17th-2012/
 categories:
   - "YUI Weekly"
 ---

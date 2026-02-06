@@ -4,7 +4,7 @@ title: "YUI Project Founder Thomas Sha Speaking at Open Hack Day Taiwan on Satur
 author: "YUI Team"
 date: 2009-10-13
 slug: "tsha-in-taiwan"
-permalink: /blog/2009/10/13/tsha-in-taiwan/
+permalink: /2009/10/13/tsha-in-taiwan/
 categories:
   - "YUI Events"
 ---

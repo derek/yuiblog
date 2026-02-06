@@ -4,7 +4,7 @@ title: "Help Us Help Others!"
 author: "Unknown"
 date: 2012-04-25
 slug: "help-us-help-others"
-permalink: /blog/2012/04/25/help-us-help-others/
+permalink: /2012/04/25/help-us-help-others/
 categories:
   - "Development"
 ---

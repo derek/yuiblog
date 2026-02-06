@@ -4,7 +4,7 @@ title: "YUI Engineers at Web 2 Expo This Week"
 author: "Eric Miraglia"
 date: 2008-04-22
 slug: "web2expo"
-permalink: /blog/2008/04/22/web2expo/
+permalink: /2008/04/22/web2expo/
 categories:
   - "Development"
 ---

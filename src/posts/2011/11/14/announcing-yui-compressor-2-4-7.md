@@ -4,7 +4,7 @@ title: "Announcing YUI Compressor 2.4.7"
 author: "Satyen Desai"
 date: 2011-11-14
 slug: "announcing-yui-compressor-2-4-7"
-permalink: /blog/2011/11/14/announcing-yui-compressor-2-4-7/
+permalink: /2011/11/14/announcing-yui-compressor-2-4-7/
 categories:
   - "Development"
 ---

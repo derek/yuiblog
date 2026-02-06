@@ -4,7 +4,7 @@ title: "Durable Objects"
 author: "YUI Team"
 date: 2008-05-24
 slug: "durable-objects"
-permalink: /blog/2008/05/24/durable-objects/
+permalink: /2008/05/24/durable-objects/
 categories:
   - "Development"
 ---

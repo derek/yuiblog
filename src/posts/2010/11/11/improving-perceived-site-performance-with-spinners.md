@@ -4,7 +4,7 @@ title: "Improving perceived site performance with spinners"
 author: "Matt Parker"
 date: 2010-11-11
 slug: "improving-perceived-site-performance-with-spinners"
-permalink: /blog/2010/11/11/improving-perceived-site-performance-with-spinners/
+permalink: /2010/11/11/improving-perceived-site-performance-with-spinners/
 categories:
   - "Development"
 ---

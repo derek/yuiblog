@@ -4,7 +4,7 @@ title: "clearfix Reloaded + overflow:hidden Demystified"
 author: "Thierry Koblentz"
 date: 2010-09-27
 slug: "clearfix-reloaded-overflowhidden-demystified"
-permalink: /blog/2010/09/27/clearfix-reloaded-overflowhidden-demystified/
+permalink: /2010/09/27/clearfix-reloaded-overflowhidden-demystified/
 categories:
   - "CSS 101"
 ---

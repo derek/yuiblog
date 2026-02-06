@@ -4,7 +4,7 @@ title: "YUI Theater —  Anthony Pipkin: \"The Next Step: From Idea to Widget (P
 author: "Eric Miraglia"
 date: 2010-12-02
 slug: "video-yuiconf2010-pipkin"
-permalink: /blog/2010/12/02/video-yuiconf2010-pipkin/
+permalink: /2010/12/02/video-yuiconf2010-pipkin/
 categories:
   - "YUI Theater"
 ---

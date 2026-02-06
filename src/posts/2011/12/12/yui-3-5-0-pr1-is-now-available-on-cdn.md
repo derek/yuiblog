@@ -4,7 +4,7 @@ title: "YUI 3.5.0 PR1 Is Now Available"
 author: "Allen Rabinovich"
 date: 2011-12-12
 slug: "yui-3-5-0-pr1-is-now-available-on-cdn"
-permalink: /blog/2011/12/12/yui-3-5-0-pr1-is-now-available-on-cdn/
+permalink: /2011/12/12/yui-3-5-0-pr1-is-now-available-on-cdn/
 categories:
   - "Development"
 ---

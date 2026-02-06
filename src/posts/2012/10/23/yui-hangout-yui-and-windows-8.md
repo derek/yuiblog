@@ -4,7 +4,7 @@ title: "YUI Hangout: YUI and Windows 8"
 author: "Andrew Wooldridge"
 date: 2012-10-23
 slug: "yui-hangout-yui-and-windows-8"
-permalink: /blog/2012/10/23/yui-hangout-yui-and-windows-8/
+permalink: /2012/10/23/yui-hangout-yui-and-windows-8/
 categories:
   - "YUI Events"
 ---

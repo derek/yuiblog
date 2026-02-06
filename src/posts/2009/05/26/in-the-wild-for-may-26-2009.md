@@ -4,7 +4,7 @@ title: "In the Wild for May 26, 2009"
 author: "Unknown"
 date: 2009-05-26
 slug: "in-the-wild-for-may-26-2009"
-permalink: /blog/2009/05/26/in-the-wild-for-may-26-2009/
+permalink: /2009/05/26/in-the-wild-for-may-26-2009/
 categories:
   - "In the Wild"
 ---

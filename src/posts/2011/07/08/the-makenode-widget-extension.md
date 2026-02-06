@@ -4,7 +4,7 @@ title: "The \"MakeNode\" Widget Extension"
 author: "Satyam"
 date: 2011-07-08
 slug: "the-makenode-widget-extension"
-permalink: /blog/2011/07/08/the-makenode-widget-extension/
+permalink: /2011/07/08/the-makenode-widget-extension/
 categories:
   - "Development"
 ---

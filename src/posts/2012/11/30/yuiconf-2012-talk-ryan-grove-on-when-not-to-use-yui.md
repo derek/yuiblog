@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Ryan Grove on When Not to Use YUI"
 author: "Andrew Wooldridge"
 date: 2012-11-30
 slug: "yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui"
-permalink: /blog/2012/11/30/yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui/
+permalink: /2012/11/30/yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui/
 categories:
   - "Development"
 ---

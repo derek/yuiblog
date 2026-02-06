@@ -4,7 +4,7 @@ title: "Welcome Caridy Patino to the YUI Team"
 author: "Andrew Wooldridge"
 date: 2013-04-11
 slug: "welcome-caridy-patino-to-the-yui-team"
-permalink: /blog/2013/04/11/welcome-caridy-patino-to-the-yui-team/
+permalink: /2013/04/11/welcome-caridy-patino-to-the-yui-team/
 categories:
   - "Development"
 ---

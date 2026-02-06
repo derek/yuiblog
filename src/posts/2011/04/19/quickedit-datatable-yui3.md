@@ -4,7 +4,7 @@ title: "Quick Edit mode for YUI 3 DataTable"
 author: "John Lindal"
 date: 2011-04-19
 slug: "quickedit-datatable-yui3"
-permalink: /blog/2011/04/19/quickedit-datatable-yui3/
+permalink: /2011/04/19/quickedit-datatable-yui3/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Hidden Gems in the YAHOO Object"
 author: "YUI Team"
 date: 2008-04-23
 slug: "plank-hidden-gems"
-permalink: /blog/2008/04/23/plank-hidden-gems/
+permalink: /2008/04/23/plank-hidden-gems/
 categories:
   - "Development"
 ---

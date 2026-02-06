@@ -4,7 +4,7 @@ title: "Announcing YUIConf: November 8-10, 2010"
 author: "YUI Team"
 date: 2010-08-06
 slug: "announcing-yuiconf-2010"
-permalink: /blog/2010/08/06/announcing-yuiconf-2010/
+permalink: /2010/08/06/announcing-yuiconf-2010/
 categories:
   - "Development"
 ---

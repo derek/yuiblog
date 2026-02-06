@@ -4,7 +4,7 @@ title: "Implementation Focus: AA | RF's Redesign of the Pulte Homes Website"
 author: "Frederic Welterlin"
 date: 2008-07-03
 slug: "pulte"
-permalink: /blog/2008/07/03/pulte/
+permalink: /2008/07/03/pulte/
 categories:
   - "YUI Implementations"
 ---

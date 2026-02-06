@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Mjata.js -- Bring Data Models to Life by Lingyan Zhu"
 author: "YUI Team"
 date: 2012-12-17
 slug: "yuiconf-2012-talk-mjata-js-bring-data-models-to-life-by-lingyan-zhu"
-permalink: /blog/2012/12/17/yuiconf-2012-talk-mjata-js-bring-data-models-to-life-by-lingyan-zhu/
+permalink: /2012/12/17/yuiconf-2012-talk-mjata-js-bring-data-models-to-life-by-lingyan-zhu/
 categories:
   - "Development"
 ---

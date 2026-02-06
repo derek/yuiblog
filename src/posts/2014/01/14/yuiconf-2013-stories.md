@@ -4,7 +4,7 @@ title: "YUIConf 2013 Stories"
 author: "Andrew Wooldridge"
 date: 2014-01-14
 slug: "yuiconf-2013-stories"
-permalink: /blog/2014/01/14/yuiconf-2013-stories/
+permalink: /2014/01/14/yuiconf-2013-stories/
 categories:
   - "Development"
 ---

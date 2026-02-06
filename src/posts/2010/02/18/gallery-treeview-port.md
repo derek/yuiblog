@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Adam Moore's YUI TreeView Port"
 author: "Eric Miraglia"
 date: 2010-02-18
 slug: "gallery-treeview-port"
-permalink: /blog/2010/02/18/gallery-treeview-port/
+permalink: /2010/02/18/gallery-treeview-port/
 categories:
   - "Development"
 ---

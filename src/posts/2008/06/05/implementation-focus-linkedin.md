@@ -4,7 +4,7 @@ title: "Implementation Focus: LinkedIn"
 author: "YUI Team"
 date: 2008-06-05
 slug: "implementation-focus-linkedin"
-permalink: /blog/2008/06/05/implementation-focus-linkedin/
+permalink: /2008/06/05/implementation-focus-linkedin/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "Using the Yahoo Global Object to Manage Object Inheritance and Compositi
 author: "Unknown"
 date: 2007-11-06
 slug: "yahoo-global-examples"
-permalink: /blog/2007/11/06/yahoo-global-examples/
+permalink: /2007/11/06/yahoo-global-examples/
 categories:
   - "Development"
 ---

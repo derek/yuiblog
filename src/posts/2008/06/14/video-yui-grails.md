@@ -4,7 +4,7 @@ title: "Video: Scott Davis on Using YUI with Grails"
 author: "Unknown"
 date: 2008-06-14
 slug: "video-yui-grails"
-permalink: /blog/2008/06/14/video-yui-grails/
+permalink: /2008/06/14/video-yui-grails/
 categories:
   - "Development"
 ---

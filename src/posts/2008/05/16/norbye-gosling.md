@@ -4,7 +4,7 @@ title: "Tor Norbye and James Gosling Demo YUI Support in NetBeans at JavaOne"
 author: "YUI Team"
 date: 2008-05-16
 slug: "norbye-gosling"
-permalink: /blog/2008/05/16/norbye-gosling/
+permalink: /2008/05/16/norbye-gosling/
 categories:
   - "Development"
 ---

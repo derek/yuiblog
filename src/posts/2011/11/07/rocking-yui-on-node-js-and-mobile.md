@@ -4,7 +4,7 @@ title: "Rocking YUI on Node.js and Mobile"
 author: "Dav Glass"
 date: 2011-11-07
 slug: "rocking-yui-on-node-js-and-mobile"
-permalink: /blog/2011/11/07/rocking-yui-on-node-js-and-mobile/
+permalink: /2011/11/07/rocking-yui-on-node-js-and-mobile/
 categories:
   - "Development"
 ---

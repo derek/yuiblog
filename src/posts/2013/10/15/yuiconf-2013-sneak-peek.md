@@ -4,7 +4,7 @@ title: "YUIConf 2013 Sneak Peek"
 author: "Andrew Wooldridge"
 date: 2013-10-15
 slug: "yuiconf-2013-sneak-peek"
-permalink: /blog/2013/10/15/yuiconf-2013-sneak-peek/
+permalink: /2013/10/15/yuiconf-2013-sneak-peek/
 categories:
   - "Development"
 ---

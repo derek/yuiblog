@@ -4,7 +4,7 @@ title: "YUIConf 2013: Bill Walker on Firefox Marketplace: Breaking the Strangleh
 author: "Andrew Wooldridge"
 date: 2014-02-24
 slug: "yuiconf-2013-bill-walker-on-firefox-marketplace-breaking-the-stranglehold-of-app-stores"
-permalink: /blog/2014/02/24/yuiconf-2013-bill-walker-on-firefox-marketplace-breaking-the-stranglehold-of-app-stores/
+permalink: /2014/02/24/yuiconf-2013-bill-walker-on-firefox-marketplace-breaking-the-stranglehold-of-app-stores/
 categories:
   - "Development"
 ---

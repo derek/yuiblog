@@ -4,7 +4,7 @@ title: "YUI Is Hiring!"
 author: "Jenny Donnelly"
 date: 2013-01-08
 slug: "yui-is-hiring-2"
-permalink: /blog/2013/01/08/yui-is-hiring-2/
+permalink: /2013/01/08/yui-is-hiring-2/
 categories:
   - "Development"
 ---

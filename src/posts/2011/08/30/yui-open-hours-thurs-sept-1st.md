@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Sept 1st"
 author: "Unknown"
 date: 2011-08-30
 slug: "yui-open-hours-thurs-sept-1st"
-permalink: /blog/2011/08/30/yui-open-hours-thurs-sept-1st/
+permalink: /2011/08/30/yui-open-hours-thurs-sept-1st/
 categories:
   - "Development"
 ---

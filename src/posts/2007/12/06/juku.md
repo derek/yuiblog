@@ -4,7 +4,7 @@ title: "The Yahoo! Juku"
 author: "Nicholas C. Zakas"
 date: 2007-12-06
 slug: "juku"
-permalink: /blog/2007/12/06/juku/
+permalink: /2007/12/06/juku/
 categories:
   - "Development"
 ---

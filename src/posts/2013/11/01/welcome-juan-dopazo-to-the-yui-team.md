@@ -4,7 +4,7 @@ title: "Welcome Juan Dopazo to the YUI Team!"
 author: "Andrew Wooldridge"
 date: 2013-11-01
 slug: "welcome-juan-dopazo-to-the-yui-team"
-permalink: /blog/2013/11/01/welcome-juan-dopazo-to-the-yui-team/
+permalink: /2013/11/01/welcome-juan-dopazo-to-the-yui-team/
 categories:
   - "Development"
 ---

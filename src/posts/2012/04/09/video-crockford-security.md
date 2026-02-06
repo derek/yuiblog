@@ -4,7 +4,7 @@ title: "YUI Theater -- Douglas Crockford: \"Principles of Security\" (60 min.)"
 author: "YUI Team"
 date: 2012-04-09
 slug: "video-crockford-security"
-permalink: /blog/2012/04/09/video-crockford-security/
+permalink: /2012/04/09/video-crockford-security/
 categories:
   - "Development"
 ---

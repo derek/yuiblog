@@ -4,7 +4,7 @@ title: "Welcome to the Yahoo! User Interface Blog"
 author: "YUI Team"
 date: 2006-02-12
 slug: "welcome-to-the-yahoo-user-interface-blog"
-permalink: /blog/2006/02/12/welcome-to-the-yahoo-user-interface-blog/
+permalink: /2006/02/12/welcome-to-the-yahoo-user-interface-blog/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater — Matt Mlinac: \"The YUI ImageLoader Utility\""
 author: "YUI Team"
 date: 2007-08-21
 slug: "video-mlinac"
-permalink: /blog/2007/08/21/video-mlinac/
+permalink: /2007/08/21/video-mlinac/
 categories:
   - "YUI Theater"
 ---

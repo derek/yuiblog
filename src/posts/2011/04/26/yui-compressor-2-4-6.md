@@ -4,7 +4,7 @@ title: "Announcing YUI Compressor 2.4.6"
 author: "Stoyan Stefanov"
 date: 2011-04-26
 slug: "yui-compressor-2-4-6"
-permalink: /blog/2011/04/26/yui-compressor-2-4-6/
+permalink: /2011/04/26/yui-compressor-2-4-6/
 categories:
   - "Development"
 ---

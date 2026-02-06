@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Dec 15th"
 author: "Eric Ferraiuolo"
 date: 2011-12-13
 slug: "yui-open-hours-thurs-dec-15th"
-permalink: /blog/2011/12/13/yui-open-hours-thurs-dec-15th/
+permalink: /2011/12/13/yui-open-hours-thurs-dec-15th/
 categories:
   - "Development"
 ---

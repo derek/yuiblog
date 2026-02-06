@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Peter Peterson's Ratings Widget"
 author: "Unknown"
 date: 2010-04-28
 slug: "gallery-ratings"
-permalink: /blog/2010/04/28/gallery-ratings/
+permalink: /2010/04/28/gallery-ratings/
 categories:
   - "Development"
 ---

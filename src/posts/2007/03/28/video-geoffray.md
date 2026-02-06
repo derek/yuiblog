@@ -4,7 +4,7 @@ title: "YUI Theater — Doug Geoffray: \"From the Mouth of a Screenreader\""
 author: "Eric Miraglia"
 date: 2007-03-28
 slug: "video-geoffray"
-permalink: /blog/2007/03/28/video-geoffray/
+permalink: /2007/03/28/video-geoffray/
 categories:
   - "YUI Theater"
 ---

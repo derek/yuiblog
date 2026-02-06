@@ -4,7 +4,7 @@ title: "Pattern Interview: Chris Tighe-Ford"
 author: "YUI Team"
 date: 2009-05-28
 slug: "pattern-interview-chris-tighe-ford"
-permalink: /blog/2009/05/28/pattern-interview-chris-tighe-ford/
+permalink: /2009/05/28/pattern-interview-chris-tighe-ford/
 categories:
   - "Design"
 ---

@@ -4,7 +4,7 @@ title: "Register for YUICONF 2009"
 author: "Unknown"
 date: 2009-09-29
 slug: "yuiconf-2009-registration"
-permalink: /blog/2009/09/29/yuiconf-2009-registration/
+permalink: /2009/09/29/yuiconf-2009-registration/
 categories:
   - "Development"
 ---

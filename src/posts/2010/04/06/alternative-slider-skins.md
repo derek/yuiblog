@@ -4,7 +4,7 @@ title: "Alternative Skins for YUI 3.1.0 Slider"
 author: "Jeff Conniff"
 date: 2010-04-06
 slug: "alternative-slider-skins"
-permalink: /blog/2010/04/06/alternative-slider-skins/
+permalink: /2010/04/06/alternative-slider-skins/
 categories:
   - "Development"
 ---

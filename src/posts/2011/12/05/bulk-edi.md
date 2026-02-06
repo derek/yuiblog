@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery:  Bulk Editor Widget"
 author: "John Lindal"
 date: 2011-12-05
 slug: "bulk-edi"
-permalink: /blog/2011/12/05/bulk-edi/
+permalink: /2011/12/05/bulk-edi/
 categories:
   - "Development"
 ---

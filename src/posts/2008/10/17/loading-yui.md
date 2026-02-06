@@ -4,7 +4,7 @@ title: "Loading YUI: Seeds, Core, and Combo-handling"
 author: "Eric Miraglia"
 date: 2008-10-17
 slug: "loading-yui"
-permalink: /blog/2008/10/17/loading-yui/
+permalink: /2008/10/17/loading-yui/
 categories:
   - "Development"
 ---

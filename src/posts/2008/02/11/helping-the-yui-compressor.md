@@ -4,7 +4,7 @@ title: "Helping the YUI Compressor"
 author: "Nicholas Zakas"
 date: 2008-02-11
 slug: "helping-the-yui-compressor"
-permalink: /blog/2008/02/11/helping-the-yui-compressor/
+permalink: /2008/02/11/helping-the-yui-compressor/
 categories:
   - "Development"
 ---

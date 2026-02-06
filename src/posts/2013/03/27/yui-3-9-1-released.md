@@ -4,7 +4,7 @@ title: "YUI 3.9.1 Released"
 author: "Andrew Wooldridge"
 date: 2013-03-27
 slug: "yui-3-9-1-released"
-permalink: /blog/2013/03/27/yui-3-9-1-released/
+permalink: /2013/03/27/yui-3-9-1-released/
 categories:
   - "Releases"
 ---

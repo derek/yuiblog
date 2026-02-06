@@ -4,7 +4,7 @@ title: "Crockford on JavaScript: A Public Lecture Series at Yahoo!"
 author: "YUI Team"
 date: 2009-12-22
 slug: "crockford-on-javascript"
-permalink: /blog/2009/12/22/crockford-on-javascript/
+permalink: /2009/12/22/crockford-on-javascript/
 categories:
   - "YUI Events"
 ---

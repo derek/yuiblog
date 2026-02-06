@@ -4,7 +4,7 @@ title: "YUI Theater —  Ron Adams: \"Automated Integration Testing with YUI Tes
 author: "YUI Team"
 date: 2009-11-05
 slug: "video-adams-yuiconf2009"
-permalink: /blog/2009/11/05/video-adams-yuiconf2009/
+permalink: /2009/11/05/video-adams-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

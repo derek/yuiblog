@@ -4,7 +4,7 @@ title: "Search Highlight Using sm-treeview"
 author: "Gary Danko"
 date: 2013-03-13
 slug: "search-highlight-using-sm-treeview"
-permalink: /blog/2013/03/13/search-highlight-using-sm-treeview/
+permalink: /2013/03/13/search-highlight-using-sm-treeview/
 categories:
   - "Development"
 ---

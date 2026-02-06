@@ -4,7 +4,7 @@ title: "YUI Theater — Nicholas Zakas and Victor Tsaran: \"Accessibility on the
 author: "Allen Rabinovich"
 date: 2010-08-16
 slug: "video-zakas-tsaran"
-permalink: /blog/2010/08/16/video-zakas-tsaran/
+permalink: /2010/08/16/video-zakas-tsaran/
 categories:
   - "Development"
 ---

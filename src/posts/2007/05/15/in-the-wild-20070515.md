@@ -4,7 +4,7 @@ title: "The Inaugural \"In the Wild\" Post"
 author: "Nate Koechley"
 date: 2007-05-15
 slug: "in-the-wild-20070515"
-permalink: /blog/2007/05/15/in-the-wild-20070515/
+permalink: /2007/05/15/in-the-wild-20070515/
 categories:
   - "Development"
 ---

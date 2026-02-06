@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery:  Checkbox Group Behaviors"
 author: "John Lindal"
 date: 2010-03-01
 slug: "gallery-checkbox-group"
-permalink: /blog/2010/03/01/gallery-checkbox-group/
+permalink: /2010/03/01/gallery-checkbox-group/
 categories:
   - "Development"
 ---

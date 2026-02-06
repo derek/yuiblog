@@ -4,7 +4,7 @@ title: "State of YUI Compressor"
 author: "Dav Glass"
 date: 2012-10-16
 slug: "state-of-yui-compressor"
-permalink: /blog/2012/10/16/state-of-yui-compressor/
+permalink: /2012/10/16/state-of-yui-compressor/
 categories:
   - "Development"
 ---

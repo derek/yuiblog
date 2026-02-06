@@ -4,7 +4,7 @@ title: "Performance Research, Part 1:  What the 80/20 Rule Tells Us about Reduci
 author: "Tenni Theurer"
 date: 2006-11-28
 slug: "performance-research-part-1"
-permalink: /blog/2006/11/28/performance-research-part-1/
+permalink: /2006/11/28/performance-research-part-1/
 categories:
   - "Development"
 ---

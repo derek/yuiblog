@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs May 24th"
 author: "Luke Smith"
 date: 2012-05-21
 slug: "yui-open-hours-thurs-may-24th"
-permalink: /blog/2012/05/21/yui-open-hours-thurs-may-24th/
+permalink: /2012/05/21/yui-open-hours-thurs-may-24th/
 categories:
   - "Development"
 ---

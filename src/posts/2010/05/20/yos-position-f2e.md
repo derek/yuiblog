@@ -4,7 +4,7 @@ title: "Work with YUI as part of the Yahoo! Open Strategy (YOS) Engineering Team
 author: "Rohit Dube"
 date: 2010-05-20
 slug: "yos-position-f2e"
-permalink: /blog/2010/05/20/yos-position-f2e/
+permalink: /2010/05/20/yos-position-f2e/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

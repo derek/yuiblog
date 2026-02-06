@@ -4,7 +4,7 @@ title: "YUI Weekly for October 19th, 2012"
 author: "Derek Gathright"
 date: 2012-10-19
 slug: "yui-weekly-for-october-19th-2012"
-permalink: /blog/2012/10/19/yui-weekly-for-october-19th-2012/
+permalink: /2012/10/19/yui-weekly-for-october-19th-2012/
 categories:
   - "YUI Weekly"
 ---

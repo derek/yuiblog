@@ -4,7 +4,7 @@ title: "AIR 1.0 and YUI"
 author: "YUI Team"
 date: 2008-02-25
 slug: "yui-in-air"
-permalink: /blog/2008/02/25/yui-in-air/
+permalink: /2008/02/25/yui-in-air/
 categories:
   - "Development"
 ---

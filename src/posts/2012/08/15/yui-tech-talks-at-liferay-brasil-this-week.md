@@ -4,7 +4,7 @@ title: "YUI Tech Talks at Liferay Brazil This Week"
 author: "Jenny Donnelly"
 date: 2012-08-15
 slug: "yui-tech-talks-at-liferay-brasil-this-week"
-permalink: /blog/2012/08/15/yui-tech-talks-at-liferay-brasil-this-week/
+permalink: /2012/08/15/yui-tech-talks-at-liferay-brasil-this-week/
 categories:
   - "YUI Events"
 ---

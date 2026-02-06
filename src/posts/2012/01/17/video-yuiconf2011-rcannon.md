@@ -4,7 +4,7 @@ title: "YUI Theater -- Ryan Cannon: \"There is no off-season: NFL.com's move to 
 author: "Ryan Grove"
 date: 2012-01-17
 slug: "video-yuiconf2011-rcannon"
-permalink: /blog/2012/01/17/video-yuiconf2011-rcannon/
+permalink: /2012/01/17/video-yuiconf2011-rcannon/
 categories:
   - "Development"
 ---

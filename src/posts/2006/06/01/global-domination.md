@@ -4,7 +4,7 @@ title: "Global Domination"
 author: "Douglas Crockford"
 date: 2006-06-01
 slug: "global-domination"
-permalink: /blog/2006/06/01/global-domination/
+permalink: /2006/06/01/global-domination/
 categories:
   - "Development"
 ---

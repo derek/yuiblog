@@ -4,7 +4,7 @@ title: "Job Opening on the Yahoo! Sports team"
 author: "Andres Narvaez"
 date: 2009-12-17
 slug: "job-opening-on-the-yahoo-sports-team"
-permalink: /blog/2009/12/17/job-opening-on-the-yahoo-sports-team/
+permalink: /2009/12/17/job-opening-on-the-yahoo-sports-team/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

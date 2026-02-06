@@ -4,7 +4,7 @@ title: "A Recipe for a YUI 3 Application"
 author: "Satyam"
 date: 2011-04-01
 slug: "a-recipe-for-a-yui-3-application"
-permalink: /blog/2011/04/01/a-recipe-for-a-yui-3-application/
+permalink: /2011/04/01/a-recipe-for-a-yui-3-application/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI 3.9.0 Delayed"
 author: "Andrew Wooldridge"
 date: 2013-02-27
 slug: "yui-3-9-0-delayed"
-permalink: /blog/2013/02/27/yui-3-9-0-delayed/
+permalink: /2013/02/27/yui-3-9-0-delayed/
 categories:
   - "Development"
 ---

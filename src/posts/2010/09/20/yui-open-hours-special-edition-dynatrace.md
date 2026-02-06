@@ -4,7 +4,7 @@ title: "YUI: Open Hours Special edition Wed the 22nd- dynaTrace!"
 author: "Luke Smith"
 date: 2010-09-20
 slug: "yui-open-hours-special-edition-dynatrace"
-permalink: /blog/2010/09/20/yui-open-hours-special-edition-dynatrace/
+permalink: /2010/09/20/yui-open-hours-special-edition-dynatrace/
 categories:
   - "Development"
 ---

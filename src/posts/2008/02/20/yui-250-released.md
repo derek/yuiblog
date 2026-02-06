@@ -4,7 +4,7 @@ title: "YUI 2.5.0 Released — Big upgrades to DataTable, new Layout Manager, Fl
 author: "Eric Miraglia"
 date: 2008-02-20
 slug: "yui-250-released"
-permalink: /blog/2008/02/20/yui-250-released/
+permalink: /2008/02/20/yui-250-released/
 categories:
   - "Development"
 ---

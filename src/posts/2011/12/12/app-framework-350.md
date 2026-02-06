@@ -4,7 +4,7 @@ title: "App Framework Changes in YUI 3.5.0"
 author: "Ryan Grove"
 date: 2011-12-12
 slug: "app-framework-350"
-permalink: /blog/2011/12/12/app-framework-350/
+permalink: /2011/12/12/app-framework-350/
 categories:
   - "Development"
 ---

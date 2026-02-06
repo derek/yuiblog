@@ -4,7 +4,7 @@ title: "Implementation Focus: OCLC/WorldCat"
 author: "Fiz Mohamed"
 date: 2009-11-19
 slug: "yui-on-oclc-and-worldcat"
-permalink: /blog/2009/11/19/yui-on-oclc-and-worldcat/
+permalink: /2009/11/19/yui-on-oclc-and-worldcat/
 categories:
   - "YUI Implementations"
 ---

@@ -4,7 +4,7 @@ title: "Event Delegation With YUI 3"
 author: "Caridy Patino"
 date: 2009-11-13
 slug: "event-delegation-3"
-permalink: /blog/2009/11/13/event-delegation-3/
+permalink: /2009/11/13/event-delegation-3/
 categories:
   - "Development"
 ---

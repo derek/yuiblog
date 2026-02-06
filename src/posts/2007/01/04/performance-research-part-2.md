@@ -4,7 +4,7 @@ title: "Performance Research, Part 2: Browser Cache Usage - Exposed!"
 author: "YUI Team"
 date: 2007-01-04
 slug: "performance-research-part-2"
-permalink: /blog/2007/01/04/performance-research-part-2/
+permalink: /2007/01/04/performance-research-part-2/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Happy First Birthday, JSMag"
 author: "Tom Hughes-Croucher"
 date: 2010-03-03
 slug: "happy-1stbirthday-jsmag"
-permalink: /blog/2010/03/03/happy-1stbirthday-jsmag/
+permalink: /2010/03/03/happy-1stbirthday-jsmag/
 categories:
   - "Miscellany"
 ---

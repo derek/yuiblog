@@ -4,7 +4,7 @@ title: "John Peloquin's Multi-layer Calendar"
 author: "Eric Miraglia"
 date: 2009-04-03
 slug: "multi-layer-calendar"
-permalink: /blog/2009/04/03/multi-layer-calendar/
+permalink: /2009/04/03/multi-layer-calendar/
 categories:
   - "Development"
 ---

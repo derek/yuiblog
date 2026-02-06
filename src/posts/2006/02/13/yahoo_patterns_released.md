@@ -4,7 +4,7 @@ title: "Yahoo! Design Pattern Library Released"
 author: "YUI Team"
 date: 2006-02-13
 slug: "yahoo_patterns_released"
-permalink: /blog/2006/02/13/yahoo_patterns_released/
+permalink: /2006/02/13/yahoo_patterns_released/
 categories:
   - "Design"
 ---

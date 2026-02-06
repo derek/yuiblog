@@ -4,7 +4,7 @@ title: "YUI Theater — Shawn Henry: \"Web Content Accessibility Guidelines Upda
 author: "YUI Team"
 date: 2007-08-15
 slug: "video-henry"
-permalink: /blog/2007/08/15/video-henry/
+permalink: /2007/08/15/video-henry/
 categories:
   - "YUI Theater"
 ---

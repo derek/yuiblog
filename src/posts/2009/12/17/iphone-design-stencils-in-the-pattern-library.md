@@ -4,7 +4,7 @@ title: "iPhone Design Stencils in the Pattern Library"
 author: "Christian Crumlish"
 date: 2009-12-17
 slug: "iphone-design-stencils-in-the-pattern-library"
-permalink: /blog/2009/12/17/iphone-design-stencils-in-the-pattern-library/
+permalink: /2009/12/17/iphone-design-stencils-in-the-pattern-library/
 categories:
   - "Design"
 ---

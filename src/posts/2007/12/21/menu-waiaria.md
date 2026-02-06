@@ -4,7 +4,7 @@ title: "Using WAI-ARIA Roles and States with the YUI Menu Control"
 author: "Todd Kloots"
 date: 2007-12-21
 slug: "menu-waiaria"
-permalink: /blog/2007/12/21/menu-waiaria/
+permalink: /2007/12/21/menu-waiaria/
 categories:
   - "Development"
 ---

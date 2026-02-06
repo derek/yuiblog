@@ -4,7 +4,7 @@ title: "YUI Theater — \"Browser Wars Episode II: Attack of the DOMs\""
 author: "Eric Miraglia"
 date: 2007-03-05
 slug: "browserwars"
-permalink: /blog/2007/03/05/browserwars/
+permalink: /2007/03/05/browserwars/
 categories:
   - "YUI Theater"
 ---

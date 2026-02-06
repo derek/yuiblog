@@ -4,7 +4,7 @@ title: "YUI 2.6.0 Support in Aptana Studio"
 author: "Unknown"
 date: 2008-10-28
 slug: "aptana"
-permalink: /blog/2008/10/28/aptana/
+permalink: /2008/10/28/aptana/
 categories:
   - "Development"
 ---

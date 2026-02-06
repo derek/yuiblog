@@ -4,7 +4,7 @@ title: "Image Optimization Part 1: The Importance of Images"
 author: "Stoyan Stefanov"
 date: 2008-10-29
 slug: "imageopt-1"
-permalink: /blog/2008/10/29/imageopt-1/
+permalink: /2008/10/29/imageopt-1/
 categories:
   - "Development"
 ---

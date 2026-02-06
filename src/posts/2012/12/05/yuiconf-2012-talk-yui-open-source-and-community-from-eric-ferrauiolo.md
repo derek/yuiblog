@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: YUI, Open Source, and Community from Eric Ferraiuolo"
 author: "Andrew Wooldridge"
 date: 2012-12-05
 slug: "yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo"
-permalink: /blog/2012/12/05/yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo/
+permalink: /2012/12/05/yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo/
 categories:
   - "Development"
 ---

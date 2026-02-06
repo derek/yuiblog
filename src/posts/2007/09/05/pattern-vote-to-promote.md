@@ -4,7 +4,7 @@ title: "New pattern (Vote to Promote), new navigation"
 author: "Christian Crumlish"
 date: 2007-09-05
 slug: "pattern-vote-to-promote"
-permalink: /blog/2007/09/05/pattern-vote-to-promote/
+permalink: /2007/09/05/pattern-vote-to-promote/
 categories:
   - "Design"
 ---

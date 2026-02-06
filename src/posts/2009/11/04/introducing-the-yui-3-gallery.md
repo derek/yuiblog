@@ -4,7 +4,7 @@ title: "Introducing the YUI 3 Gallery"
 author: "Eric Miraglia and Dav Glass"
 date: 2009-11-04
 slug: "introducing-the-yui-3-gallery"
-permalink: /blog/2009/11/04/introducing-the-yui-3-gallery/
+permalink: /2009/11/04/introducing-the-yui-3-gallery/
 categories:
   - "Development"
 ---

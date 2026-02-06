@@ -4,7 +4,7 @@ title: "YUI Moving from Builder to Shifter"
 author: "YUI Team"
 date: 2012-12-13
 slug: "yui-moving-from-builder-to-shifter"
-permalink: /blog/2012/12/13/yui-moving-from-builder-to-shifter/
+permalink: /2012/12/13/yui-moving-from-builder-to-shifter/
 categories:
   - "Development"
 ---

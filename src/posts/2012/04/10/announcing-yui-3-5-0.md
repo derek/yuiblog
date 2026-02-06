@@ -4,7 +4,7 @@ title: "Announcing YUI 3.5.0"
 author: "Jenny Donnelly"
 date: 2012-04-10
 slug: "announcing-yui-3-5-0"
-permalink: /blog/2012/04/10/announcing-yui-3-5-0/
+permalink: /2012/04/10/announcing-yui-3-5-0/
 categories:
   - "Releases"
 ---

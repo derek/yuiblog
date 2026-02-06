@@ -4,7 +4,7 @@ title: "inputEx — a YUI-based Forms Utility"
 author: "Unknown"
 date: 2008-05-08
 slug: "inputex"
-permalink: /blog/2008/05/08/inputex/
+permalink: /2008/05/08/inputex/
 categories:
   - "Development"
 ---

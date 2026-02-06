@@ -4,7 +4,7 @@ title: "YUI 3.6.0 PR1 Is Now Available"
 author: "Unknown"
 date: 2012-05-11
 slug: "yui-3-6-0-pr1-is-now-available"
-permalink: /blog/2012/05/11/yui-3-6-0-pr1-is-now-available/
+permalink: /2012/05/11/yui-3-6-0-pr1-is-now-available/
 categories:
   - "Development"
 ---

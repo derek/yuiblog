@@ -4,7 +4,7 @@ title: "Graded Browser Support Update"
 author: "Jenny Donnelly and Matt Sweeney"
 date: 2011-07-12
 slug: "gbs-update"
-permalink: /blog/2011/07/12/gbs-update/
+permalink: /2011/07/12/gbs-update/
 categories:
   - "Development"
 ---

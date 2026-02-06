@@ -4,7 +4,7 @@ title: "YUI 3.9.0pr3"
 author: "Andrew Wooldridge"
 date: 2013-02-19
 slug: "yui-3-9-0pr3"
-permalink: /blog/2013/02/19/yui-3-9-0pr3/
+permalink: /2013/02/19/yui-3-9-0pr3/
 categories:
   - "Development"
 ---

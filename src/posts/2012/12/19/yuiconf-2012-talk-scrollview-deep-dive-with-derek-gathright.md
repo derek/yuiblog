@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Scrollview Deep Dive with Derek Gathright"
 author: "YUI Team"
 date: 2012-12-19
 slug: "yuiconf-2012-talk-scrollview-deep-dive-with-derek-gathright"
-permalink: /blog/2012/12/19/yuiconf-2012-talk-scrollview-deep-dive-with-derek-gathright/
+permalink: /2012/12/19/yuiconf-2012-talk-scrollview-deep-dive-with-derek-gathright/
 categories:
   - "Development"
 ---

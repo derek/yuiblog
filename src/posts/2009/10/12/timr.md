@@ -4,7 +4,7 @@ title: "Implementation Focus: timr"
 author: "YUI Team"
 date: 2009-10-12
 slug: "timr"
-permalink: /blog/2009/10/12/timr/
+permalink: /2009/10/12/timr/
 categories:
   - "YUI Implementations"
 ---

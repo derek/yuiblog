@@ -4,7 +4,7 @@ title: "YUI Theater — Nate Koechley: \"The YUI CSS Foundation\""
 author: "YUI Team"
 date: 2007-10-29
 slug: "video-koechley"
-permalink: /blog/2007/10/29/video-koechley/
+permalink: /2007/10/29/video-koechley/
 categories:
   - "Development"
 ---

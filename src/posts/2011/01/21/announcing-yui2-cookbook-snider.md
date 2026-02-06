@@ -4,7 +4,7 @@ title: "Announcing Yahoo! User Interface Library 2.x Cookbook"
 author: "Matt Snider"
 date: 2011-01-21
 slug: "announcing-yui2-cookbook-snider"
-permalink: /blog/2011/01/21/announcing-yui2-cookbook-snider/
+permalink: /2011/01/21/announcing-yui2-cookbook-snider/
 categories:
   - "Development"
 ---

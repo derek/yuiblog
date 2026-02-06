@@ -4,7 +4,7 @@ title: "Cinco de NodeJS — May's BayJax Celebrates Server-Side JavaScript with 
 author: "YUI Team"
 date: 2010-04-27
 slug: "cinco-de-nodejs"
-permalink: /blog/2010/04/27/cinco-de-nodejs/
+permalink: /2010/04/27/cinco-de-nodejs/
 categories:
   - "Development"
 ---

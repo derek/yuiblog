@@ -4,7 +4,7 @@ title: "YUI Theater —  Tom Preston-Werner, Chris Wanstrath and Scott Chacon: \
 author: "Unknown"
 date: 2009-09-29
 slug: "video-github"
-permalink: /blog/2009/09/29/video-github/
+permalink: /2009/09/29/video-github/
 categories:
   - "YUI Theater"
 ---

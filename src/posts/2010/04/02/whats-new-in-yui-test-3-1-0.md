@@ -4,7 +4,7 @@ title: "What's new in YUI Test 3.1.0"
 author: "Nicholas C. Zakas"
 date: 2010-04-02
 slug: "whats-new-in-yui-test-3-1-0"
-permalink: /blog/2010/04/02/whats-new-in-yui-test-3-1-0/
+permalink: /2010/04/02/whats-new-in-yui-test-3-1-0/
 categories:
   - "Development"
 ---

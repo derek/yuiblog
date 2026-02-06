@@ -4,7 +4,7 @@ title: "In the Wild for April 2, 2010"
 author: "YUI Team"
 date: 2010-04-01
 slug: "in-the-wild-for-april-2-2010"
-permalink: /blog/2010/04/01/in-the-wild-for-april-2-2010/
+permalink: /2010/04/01/in-the-wild-for-april-2-2010/
 categories:
   - "In the Wild"
 ---

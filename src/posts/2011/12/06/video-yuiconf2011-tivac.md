@@ -4,7 +4,7 @@ title: "YUI Theater -- Pat Cavit: \"Automating Website Optimizations\" (32 min.)
 author: "Ryan Grove"
 date: 2011-12-06
 slug: "video-yuiconf2011-tivac"
-permalink: /blog/2011/12/06/video-yuiconf2011-tivac/
+permalink: /2011/12/06/video-yuiconf2011-tivac/
 categories:
   - "Development"
 ---

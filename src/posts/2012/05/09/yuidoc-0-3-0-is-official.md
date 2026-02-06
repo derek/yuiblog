@@ -4,7 +4,7 @@ title: "YUIDoc 0.3.0 is Official!"
 author: "Dav Glass"
 date: 2012-05-09
 slug: "yuidoc-0-3-0-is-official"
-permalink: /blog/2012/05/09/yuidoc-0-3-0-is-official/
+permalink: /2012/05/09/yuidoc-0-3-0-is-official/
 categories:
   - "Development"
 ---

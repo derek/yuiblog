@@ -4,7 +4,7 @@ title: "Optimizing Yahoo! Search for the iPhone"
 author: "Ryan Grove"
 date: 2008-08-28
 slug: "ysearch-for-iphone"
-permalink: /blog/2008/08/28/ysearch-for-iphone/
+permalink: /2008/08/28/ysearch-for-iphone/
 categories:
   - "Development"
 ---

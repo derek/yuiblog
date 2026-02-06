@@ -4,7 +4,7 @@ title: "Implementation Focus: Mr Purple's Movies and More"
 author: "Jenny Donnelly"
 date: 2010-05-19
 slug: "implementation-focus-mr-purple"
-permalink: /blog/2010/05/19/implementation-focus-mr-purple/
+permalink: /2010/05/19/implementation-focus-mr-purple/
 categories:
   - "Development"
 ---

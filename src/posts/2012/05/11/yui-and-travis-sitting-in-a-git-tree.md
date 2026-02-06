@@ -4,7 +4,7 @@ title: "YUI and Travis sitting in a git-tree"
 author: "Dav Glass"
 date: 2012-05-11
 slug: "yui-and-travis-sitting-in-a-git-tree"
-permalink: /blog/2012/05/11/yui-and-travis-sitting-in-a-git-tree/
+permalink: /2012/05/11/yui-and-travis-sitting-in-a-git-tree/
 categories:
   - "Development"
 ---

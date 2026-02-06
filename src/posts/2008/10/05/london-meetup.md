@@ -4,7 +4,7 @@ title: "YUI London Meetup on October 16"
 author: "YUI Team"
 date: 2008-10-05
 slug: "london-meetup"
-permalink: /blog/2008/10/05/london-meetup/
+permalink: /2008/10/05/london-meetup/
 categories:
   - "Development"
 ---

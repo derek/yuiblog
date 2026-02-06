@@ -4,7 +4,7 @@ title: "Ten Things Yahoo! Is Already Doing with the YUI Library"
 author: "YUI Team"
 date: 2006-07-18
 slug: "ten_things"
-permalink: /blog/2006/07/18/ten_things/
+permalink: /2006/07/18/ten_things/
 categories:
   - "Development"
 ---

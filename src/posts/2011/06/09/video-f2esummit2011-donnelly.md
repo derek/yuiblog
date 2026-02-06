@@ -4,7 +4,7 @@ title: "YUI Theater —  Jenny Donnelly: \"Introduction to Git\" (53 min.)"
 author: "Jenny Donnelly"
 date: 2011-06-09
 slug: "video-f2esummit2011-donnelly"
-permalink: /blog/2011/06/09/video-f2esummit2011-donnelly/
+permalink: /2011/06/09/video-f2esummit2011-donnelly/
 categories:
   - "Development"
 ---

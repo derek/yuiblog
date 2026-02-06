@@ -4,7 +4,7 @@ title: "YUI 3.6.0 PR4 Now Available"
 author: "YUI Team"
 date: 2012-07-18
 slug: "yui-3-6-0-pr4-now-available"
-permalink: /blog/2012/07/18/yui-3-6-0-pr4-now-available/
+permalink: /2012/07/18/yui-3-6-0-pr4-now-available/
 categories:
   - "Development"
 ---

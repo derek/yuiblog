@@ -4,7 +4,7 @@ title: "YUI 3 Workshop in Washington, DC, April 16, 2010"
 author: "Jenny Donnelly"
 date: 2010-04-05
 slug: "yui-3-workshop-washingtondc"
-permalink: /blog/2010/04/05/yui-3-workshop-washingtondc/
+permalink: /2010/04/05/yui-3-workshop-washingtondc/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "In the Wild for December 12th"
 author: "Unknown"
 date: 2007-12-12
 slug: "in-the-wild-20071212"
-permalink: /blog/2007/12/12/in-the-wild-20071212/
+permalink: /2007/12/12/in-the-wild-20071212/
 categories:
   - "In the Wild"
 ---

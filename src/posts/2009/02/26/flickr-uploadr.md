@@ -4,7 +4,7 @@ title: "Flickr Uploadr: Improving Browser-based File Uploads with YUI Uploader"
 author: "Scott Schiller"
 date: 2009-02-26
 slug: "flickr-uploadr"
-permalink: /blog/2009/02/26/flickr-uploadr/
+permalink: /2009/02/26/flickr-uploadr/
 categories:
   - "Development"
 ---

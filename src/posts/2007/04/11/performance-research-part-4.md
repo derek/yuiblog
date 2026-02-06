@@ -4,7 +4,7 @@ title: "Performance Research, Part 4: Maximizing Parallel Downloads in the Carpo
 author: "Steve Souders"
 date: 2007-04-11
 slug: "performance-research-part-4"
-permalink: /blog/2007/04/11/performance-research-part-4/
+permalink: /2007/04/11/performance-research-part-4/
 categories:
   - "Development"
 ---

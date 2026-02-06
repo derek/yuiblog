@@ -4,7 +4,7 @@ title: "YUIConf 2013: Reid Burke on Testing YUI Everywhere"
 author: "Andrew Wooldridge"
 date: 2014-03-04
 slug: "yuiconf-2013-reid-burke-on-testing-yui-everywhere"
-permalink: /blog/2014/03/04/yuiconf-2013-reid-burke-on-testing-yui-everywhere/
+permalink: /2014/03/04/yuiconf-2013-reid-burke-on-testing-yui-everywhere/
 categories:
   - "Development"
 ---

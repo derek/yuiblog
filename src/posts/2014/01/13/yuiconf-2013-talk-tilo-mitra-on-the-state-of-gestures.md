@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Tilo Mitra on The State of Gestures"
 author: "Andrew Wooldridge"
 date: 2014-01-13
 slug: "yuiconf-2013-talk-tilo-mitra-on-the-state-of-gestures"
-permalink: /blog/2014/01/13/yuiconf-2013-talk-tilo-mitra-on-the-state-of-gestures/
+permalink: /2014/01/13/yuiconf-2013-talk-tilo-mitra-on-the-state-of-gestures/
 categories:
   - "Development"
 ---

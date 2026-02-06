@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Matt Parker's Resize Plugin"
 author: "Unknown"
 date: 2010-03-25
 slug: "gallery-resize"
-permalink: /blog/2010/03/25/gallery-resize/
+permalink: /2010/03/25/gallery-resize/
 categories:
   - "Development"
 ---

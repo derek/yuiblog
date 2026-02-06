@@ -4,7 +4,7 @@ title: "The YUI Team Is Looking for Another World-Class Engineer for Frontend Bu
 author: "YUI Team"
 date: 2010-01-28
 slug: "yui-is-hirin"
-permalink: /blog/2010/01/28/yui-is-hirin/
+permalink: /2010/01/28/yui-is-hirin/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Announcing YUI 2.9.0"
 author: "Jenny Donnelly"
 date: 2011-04-13
 slug: "announcing-yui-2-9-0"
-permalink: /blog/2011/04/13/announcing-yui-2-9-0/
+permalink: /2011/04/13/announcing-yui-2-9-0/
 categories:
   - "Development"
 ---

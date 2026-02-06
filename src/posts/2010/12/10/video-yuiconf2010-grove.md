@@ -4,7 +4,7 @@ title: "YUI Theater —  Ryan Grove: \"Introducing YUI 3 AutoComplete\" (42 min.
 author: "Eric Miraglia"
 date: 2010-12-10
 slug: "video-yuiconf2010-grove"
-permalink: /blog/2010/12/10/video-yuiconf2010-grove/
+permalink: /2010/12/10/video-yuiconf2010-grove/
 categories:
   - "YUI Theater"
 ---

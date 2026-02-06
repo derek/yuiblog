@@ -4,7 +4,7 @@ title: "YUIConf 2011 Early Bird Registration Is Now Open"
 author: "Jenny Donnelly"
 date: 2011-09-30
 slug: "yuiconf-2011-early-bird-registration-is-now-open"
-permalink: /blog/2011/09/30/yuiconf-2011-early-bird-registration-is-now-open/
+permalink: /2011/09/30/yuiconf-2011-early-bird-registration-is-now-open/
 categories:
   - "Development"
 ---

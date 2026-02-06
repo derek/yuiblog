@@ -4,7 +4,7 @@ title: "YUI Theater — Victor Tsaran: \"Introduction to Screen Readers\""
 author: "Nate Koechley"
 date: 2007-05-14
 slug: "video-intro-to-screenreaders"
-permalink: /blog/2007/05/14/video-intro-to-screenreaders/
+permalink: /2007/05/14/video-intro-to-screenreaders/
 categories:
   - "Development"
 ---

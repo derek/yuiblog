@@ -4,7 +4,7 @@ title: "Improving Accessibility Through Focus Management"
 author: "Todd Kloots"
 date: 2009-02-23
 slug: "managing-focus"
-permalink: /blog/2009/02/23/managing-focus/
+permalink: /2009/02/23/managing-focus/
 categories:
   - "Development"
 ---

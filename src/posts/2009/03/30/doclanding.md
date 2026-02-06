@@ -4,7 +4,7 @@ title: "Implementation Focus: DocLanding"
 author: "Unknown"
 date: 2009-03-30
 slug: "doclanding"
-permalink: /blog/2009/03/30/doclanding/
+permalink: /2009/03/30/doclanding/
 categories:
   - "YUI Implementations"
 ---

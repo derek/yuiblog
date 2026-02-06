@@ -4,7 +4,7 @@ title: "YUI Weekly - Sept 14th, 2012"
 author: "Derek Gathright"
 date: 2012-09-14
 slug: "yui-weekly-sept-14th-2012"
-permalink: /blog/2012/09/14/yui-weekly-sept-14th-2012/
+permalink: /2012/09/14/yui-weekly-sept-14th-2012/
 categories:
   - "YUI Weekly"
 ---

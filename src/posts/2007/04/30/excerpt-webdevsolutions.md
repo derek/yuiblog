@@ -4,7 +4,7 @@ title: "Free Excerpt — Web Development Solutions: Ajax, APIs, Libraries, and H
 author: "Eric Miraglia"
 date: 2007-04-30
 slug: "excerpt-webdevsolutions"
-permalink: /blog/2007/04/30/excerpt-webdevsolutions/
+permalink: /2007/04/30/excerpt-webdevsolutions/
 categories:
   - "Development"
 ---

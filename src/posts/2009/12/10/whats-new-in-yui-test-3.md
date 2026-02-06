@@ -4,7 +4,7 @@ title: "What's New in YUI Test 3.0.0"
 author: "Unknown"
 date: 2009-12-10
 slug: "whats-new-in-yui-test-3"
-permalink: /blog/2009/12/10/whats-new-in-yui-test-3/
+permalink: /2009/12/10/whats-new-in-yui-test-3/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Upcoming Industry Conferences"
 author: "Tom Hughes-Croucher"
 date: 2010-03-29
 slug: "upcoming-industry-conferences"
-permalink: /blog/2010/03/29/upcoming-industry-conferences/
+permalink: /2010/03/29/upcoming-industry-conferences/
 categories:
   - "Miscellany"
 ---

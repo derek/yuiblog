@@ -4,7 +4,7 @@ title: "In the Wild for November 19, 2010"
 author: "Eric Miraglia"
 date: 2010-11-19
 slug: "in-the-wild-for-november-19-2010"
-permalink: /blog/2010/11/19/in-the-wild-for-november-19-2010/
+permalink: /2010/11/19/in-the-wild-for-november-19-2010/
 categories:
   - "In the Wild"
 ---

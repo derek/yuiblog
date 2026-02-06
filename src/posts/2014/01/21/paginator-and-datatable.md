@@ -4,7 +4,7 @@ title: "Paginator and DataTable"
 author: "Anthony Pipkin"
 date: 2014-01-21
 slug: "paginator-and-datatable"
-permalink: /blog/2014/01/21/paginator-and-datatable/
+permalink: /2014/01/21/paginator-and-datatable/
 categories:
   - "Development"
 ---

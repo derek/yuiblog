@@ -4,7 +4,7 @@ title: "Implementation Focus: Phanfare Media Organizer"
 author: "Eric Miraglia"
 date: 2010-05-19
 slug: "phanfare"
-permalink: /blog/2010/05/19/phanfare/
+permalink: /2010/05/19/phanfare/
 categories:
   - "YUI Implementations"
 ---

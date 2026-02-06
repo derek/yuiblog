@@ -4,7 +4,7 @@ title: "Some Notes on the YUI Rich Text Editor"
 author: "YUI Team"
 date: 2007-08-13
 slug: "rte-notes"
-permalink: /blog/2007/08/13/rte-notes/
+permalink: /2007/08/13/rte-notes/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Weekly for October 11th, 2013"
 author: "Derek Gathright"
 date: 2013-10-11
 slug: "yui-weekly-for-october-11th-2013"
-permalink: /blog/2013/10/11/yui-weekly-for-october-11th-2013/
+permalink: /2013/10/11/yui-weekly-for-october-11th-2013/
 categories:
   - "YUI Weekly"
 ---

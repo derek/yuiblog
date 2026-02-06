@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Caridy Patiño on Introducing the 'Modown' Project"
 author: "Andrew Wooldridge"
 date: 2014-01-27
 slug: "yuiconf-2013-talk"
-permalink: /blog/2014/01/27/yuiconf-2013-talk/
+permalink: /2014/01/27/yuiconf-2013-talk/
 categories:
   - "Development"
 ---

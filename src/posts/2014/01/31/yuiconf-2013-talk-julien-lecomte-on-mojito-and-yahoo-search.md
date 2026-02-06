@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Julien Lecomte on Mojito and Yahoo Search"
 author: "Andrew Wooldridge"
 date: 2014-01-31
 slug: "yuiconf-2013-talk-julien-lecomte-on-mojito-and-yahoo-search"
-permalink: /blog/2014/01/31/yuiconf-2013-talk-julien-lecomte-on-mojito-and-yahoo-search/
+permalink: /2014/01/31/yuiconf-2013-talk-julien-lecomte-on-mojito-and-yahoo-search/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Implementation Focus: Car Rental Express"
 author: "Stefan Klopp"
 date: 2010-09-28
 slug: "carrentalexpress"
-permalink: /blog/2010/09/28/carrentalexpress/
+permalink: /2010/09/28/carrentalexpress/
 categories:
   - "YUI Implementations"
 ---

@@ -4,7 +4,7 @@ title: "A Visit from Liferay"
 author: "YUI Team"
 date: 2013-11-13
 slug: "a-visit-from-liferay"
-permalink: /blog/2013/11/13/a-visit-from-liferay/
+permalink: /2013/11/13/a-visit-from-liferay/
 categories:
   - "Development"
 ---

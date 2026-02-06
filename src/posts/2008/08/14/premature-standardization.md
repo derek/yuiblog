@@ -4,7 +4,7 @@ title: "The Only Thing We Have To Fear Is Premature Standardization"
 author: "Douglas Crockford"
 date: 2008-08-14
 slug: "premature-standardization"
-permalink: /blog/2008/08/14/premature-standardization/
+permalink: /2008/08/14/premature-standardization/
 categories:
   - "Development"
 ---

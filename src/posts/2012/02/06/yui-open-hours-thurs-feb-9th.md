@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Feb 9th"
 author: "Unknown"
 date: 2012-02-06
 slug: "yui-open-hours-thurs-feb-9th"
-permalink: /blog/2012/02/06/yui-open-hours-thurs-feb-9th/
+permalink: /2012/02/06/yui-open-hours-thurs-feb-9th/
 categories:
   - "Development"
 ---

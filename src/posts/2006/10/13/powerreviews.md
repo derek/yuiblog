@@ -4,7 +4,7 @@ title: "Implementation Focus: PowerReviews"
 author: "Jack Slocum"
 date: 2006-10-13
 slug: "powerreviews"
-permalink: /blog/2006/10/13/powerreviews/
+permalink: /2006/10/13/powerreviews/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Tilo Mitra on Building Native Windows 8 Apps with YUI
 author: "YUI Team"
 date: 2013-01-14
 slug: "yuiconf-2012-talk-tilo-mitra-on-building-native-windows-8-apps-with-yui"
-permalink: /blog/2013/01/14/yuiconf-2012-talk-tilo-mitra-on-building-native-windows-8-apps-with-yui/
+permalink: /2013/01/14/yuiconf-2012-talk-tilo-mitra-on-building-native-windows-8-apps-with-yui/
 categories:
   - "Development"
 ---

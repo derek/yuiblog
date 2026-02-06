@@ -4,7 +4,7 @@ title: "Have a Dew with Dav"
 author: "Dav Glass"
 date: 2012-10-22
 slug: "have-a-dew-with-dav"
-permalink: /blog/2012/10/22/have-a-dew-with-dav/
+permalink: /2012/10/22/have-a-dew-with-dav/
 categories:
   - "Development"
 ---

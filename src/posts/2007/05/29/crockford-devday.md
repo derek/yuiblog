@@ -4,7 +4,7 @@ title: "Douglas Crockford To Speak at the Yahoo! Widgets Conference on \"JavaScr
 author: "Eric Miraglia"
 date: 2007-05-29
 slug: "crockford-devday"
-permalink: /blog/2007/05/29/crockford-devday/
+permalink: /2007/05/29/crockford-devday/
 categories:
   - "Development"
 ---

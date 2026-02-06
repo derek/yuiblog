@@ -4,7 +4,7 @@ title: "The YUI 3 Form Module — Forms and Validation Made Simple"
 author: "Greg Hinch"
 date: 2009-12-03
 slug: "yui-3-gallery-form-module"
-permalink: /blog/2009/12/03/yui-3-gallery-form-module/
+permalink: /2009/12/03/yui-3-gallery-form-module/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Velocity 2013 - Building a Faster and Stronger Web"
 author: "Derek Gathright"
 date: 2013-07-16
 slug: "velocity-2013-building-a-faster-and-stronger-web"
-permalink: /blog/2013/07/16/velocity-2013-building-a-faster-and-stronger-web/
+permalink: /2013/07/16/velocity-2013-building-a-faster-and-stronger-web/
 categories:
   - "Miscellany"
 ---

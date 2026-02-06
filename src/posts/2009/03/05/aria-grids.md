@@ -4,7 +4,7 @@ title: "More Accessible YUI Grids Layouts with ARIA Landmark Roles"
 author: "Todd Kloots"
 date: 2009-03-05
 slug: "aria-grids"
-permalink: /blog/2009/03/05/aria-grids/
+permalink: /2009/03/05/aria-grids/
 categories:
   - "Development"
 ---

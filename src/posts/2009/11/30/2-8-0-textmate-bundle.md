@@ -4,7 +4,7 @@ title: "Updated TextMate Bundle for YUI 2.8.0"
 author: "YUI Team"
 date: 2009-11-30
 slug: "2-8-0-textmate-bundle"
-permalink: /blog/2009/11/30/2-8-0-textmate-bundle/
+permalink: /2009/11/30/2-8-0-textmate-bundle/
 categories:
   - "Development"
 ---

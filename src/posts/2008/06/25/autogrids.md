@@ -4,7 +4,7 @@ title: "\"AutoGrid\" for YUI Grids — Using JavaScript to Create Adaptive Grids
 author: "Unknown"
 date: 2008-06-25
 slug: "autogrids"
-permalink: /blog/2008/06/25/autogrids/
+permalink: /2008/06/25/autogrids/
 categories:
   - "Development"
 ---

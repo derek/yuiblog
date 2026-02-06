@@ -4,7 +4,7 @@ title: "Inheritance Patterns in YUI 3"
 author: "Stoyan Stefanov"
 date: 2010-01-06
 slug: "inheritance-patterns-in-yui-3"
-permalink: /blog/2010/01/06/inheritance-patterns-in-yui-3/
+permalink: /2010/01/06/inheritance-patterns-in-yui-3/
 categories:
   - "Development"
 ---

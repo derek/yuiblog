@@ -4,7 +4,7 @@ title: "Migrating from YUI 2 to YUI 3:  A Case Study"
 author: "YUI Team"
 date: 2012-04-02
 slug: "migrating-from-yui-2-to-yui-3-a-case-study-2"
-permalink: /blog/2012/04/02/migrating-from-yui-2-to-yui-3-a-case-study-2/
+permalink: /2012/04/02/migrating-from-yui-2-to-yui-3-a-case-study-2/
 categories:
   - "Development"
 ---

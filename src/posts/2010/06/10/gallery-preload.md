@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: The Preload Module"
 author: "Caridy Patino"
 date: 2010-06-10
 slug: "gallery-preload"
-permalink: /blog/2010/06/10/gallery-preload/
+permalink: /2010/06/10/gallery-preload/
 categories:
   - "Development"
 ---

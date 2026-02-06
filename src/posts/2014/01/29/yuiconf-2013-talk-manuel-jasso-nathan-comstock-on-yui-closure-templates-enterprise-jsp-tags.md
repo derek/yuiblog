@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Manuel Jasso & Nathan Comstock on YUI + Closure Templ
 author: "Andrew Wooldridge"
 date: 2014-01-29
 slug: "yuiconf-2013-talk-manuel-jasso-nathan-comstock-on-yui-closure-templates-enterprise-jsp-tags"
-permalink: /blog/2014/01/29/yuiconf-2013-talk-manuel-jasso-nathan-comstock-on-yui-closure-templates-enterprise-jsp-tags/
+permalink: /2014/01/29/yuiconf-2013-talk-manuel-jasso-nathan-comstock-on-yui-closure-templates-enterprise-jsp-tags/
 categories:
   - "Development"
 ---

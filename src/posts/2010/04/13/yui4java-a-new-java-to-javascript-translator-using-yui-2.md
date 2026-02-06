@@ -4,7 +4,7 @@ title: "yui4java: A New Java-to-JavaScript Translator Using YUI 2"
 author: "Eric Miraglia"
 date: 2010-04-13
 slug: "yui4java-a-new-java-to-javascript-translator-using-yui-2"
-permalink: /blog/2010/04/13/yui4java-a-new-java-to-javascript-translator-using-yui-2/
+permalink: /2010/04/13/yui4java-a-new-java-to-javascript-translator-using-yui-2/
 categories:
   - "Development"
 ---

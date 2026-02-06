@@ -5,9 +5,8 @@ bodyClass: single single-post
 
 <ul class="breadcrumbs">
     <li><a href="{{ site.baseUrl }}">YUI</a></li>
-    <li><a href="{{ site.baseUrl }}blog/">Blog</a></li>
     {% if categories and categories.length > 0 %}
-    <li><a href="{{ site.baseUrl }}blog/category/{{ categories[0] | slugify }}/">{{ categories[0] }}</a></li>
+    <li><a href="{{ site.baseUrl }}category/{{ categories[0] | slugify }}/">{{ categories[0] }}</a></li>
     {% endif %}
     <li>{{ title }}</li>
 </ul>
@@ -30,7 +29,7 @@ bodyClass: single single-post
         <div class="categories">
             <strong>Categories:</strong>
             {% for cat in categories %}
-            <a href="{{ site.baseUrl }}blog/category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ site.baseUrl }}category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
             {% endfor %}
         </div>
     </footer>

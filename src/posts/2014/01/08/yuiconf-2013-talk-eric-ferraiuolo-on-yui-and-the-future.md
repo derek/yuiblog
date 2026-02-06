@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Eric Ferraiuolo on YUI and the Future"
 author: "Andrew Wooldridge"
 date: 2014-01-08
 slug: "yuiconf-2013-talk-eric-ferraiuolo-on-yui-and-the-future"
-permalink: /blog/2014/01/08/yuiconf-2013-talk-eric-ferraiuolo-on-yui-and-the-future/
+permalink: /2014/01/08/yuiconf-2013-talk-eric-ferraiuolo-on-yui-and-the-future/
 categories:
   - "Development"
 ---

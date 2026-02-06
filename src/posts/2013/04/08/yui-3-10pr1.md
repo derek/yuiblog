@@ -4,7 +4,7 @@ title: "YUI 3.10pr1"
 author: "YUI Team"
 date: 2013-04-08
 slug: "yui-3-10pr1"
-permalink: /blog/2013/04/08/yui-3-10pr1/
+permalink: /2013/04/08/yui-3-10pr1/
 categories:
   - "Releases"
 ---

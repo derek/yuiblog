@@ -4,7 +4,7 @@ title: "Implementation Focus: Avenue A | Razorfish"
 author: "Eric Miraglia"
 date: 2007-06-15
 slug: "aarf"
-permalink: /blog/2007/06/15/aarf/
+permalink: /2007/06/15/aarf/
 categories:
   - "YUI Implementations"
 ---

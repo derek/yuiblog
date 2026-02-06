@@ -4,7 +4,7 @@ title: "Minification v Obfuscation"
 author: "Douglas Crockford"
 date: 2006-03-06
 slug: "minification-v-obfuscation"
-permalink: /blog/2006/03/06/minification-v-obfuscation/
+permalink: /2006/03/06/minification-v-obfuscation/
 categories:
   - "Development"
 ---

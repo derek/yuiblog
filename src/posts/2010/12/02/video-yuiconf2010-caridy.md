@@ -4,7 +4,7 @@ title: "YUI Theater —  Caridy Patiño Mayea: \"YUI 3 Loading Strategies: A Yah
 author: "Eric Miraglia"
 date: 2010-12-02
 slug: "video-yuiconf2010-caridy"
-permalink: /blog/2010/12/02/video-yuiconf2010-caridy/
+permalink: /2010/12/02/video-yuiconf2010-caridy/
 categories:
   - "YUI Theater"
 ---

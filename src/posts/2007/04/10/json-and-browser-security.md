@@ -4,7 +4,7 @@ title: "JSON and Browser Security"
 author: "YUI Team"
 date: 2007-04-10
 slug: "json-and-browser-security"
-permalink: /blog/2007/04/10/json-and-browser-security/
+permalink: /2007/04/10/json-and-browser-security/
 categories:
   - "Development"
 ---

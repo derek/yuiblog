@@ -4,7 +4,7 @@ title: "YUIConf 2013 Technical Sessions and Survey"
 author: "Andrew Wooldridge"
 date: 2013-10-17
 slug: "yuiconf-technical-sessions-and-survey"
-permalink: /blog/2013/10/17/yuiconf-technical-sessions-and-survey/
+permalink: /2013/10/17/yuiconf-technical-sessions-and-survey/
 categories:
   - "Development"
 ---

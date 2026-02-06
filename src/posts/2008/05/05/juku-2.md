@@ -4,7 +4,7 @@ title: "Yahoo! Juku: Calling Tomorrow's Front-End Rock Stars"
 author: "YUI Team"
 date: 2008-05-05
 slug: "juku-2"
-permalink: /blog/2008/05/05/juku-2/
+permalink: /2008/05/05/juku-2/
 categories:
   - "Development"
 ---

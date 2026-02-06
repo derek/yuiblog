@@ -4,7 +4,7 @@ title: "Design Patterns Conversation"
 author: "Unknown"
 date: 2006-05-24
 slug: "design_patterns_convers"
-permalink: /blog/2006/05/24/design_patterns_convers/
+permalink: /2006/05/24/design_patterns_convers/
 categories:
   - "Design"
 ---

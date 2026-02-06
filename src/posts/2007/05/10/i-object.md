@@ -4,7 +4,7 @@ title: "I Object"
 author: "Douglas Crockford"
 date: 2007-05-10
 slug: "i-object"
-permalink: /blog/2007/05/10/i-object/
+permalink: /2007/05/10/i-object/
 categories:
   - "Development"
 ---

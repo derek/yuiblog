@@ -4,7 +4,7 @@ title: "YUI 3.13.0 Release Candidate 1"
 author: "Andrew Wooldridge"
 date: 2013-10-02
 slug: "yui-3-13-0-release-candidate-1"
-permalink: /blog/2013/10/02/yui-3-13-0-release-candidate-1/
+permalink: /2013/10/02/yui-3-13-0-release-candidate-1/
 categories:
   - "Development"
 ---

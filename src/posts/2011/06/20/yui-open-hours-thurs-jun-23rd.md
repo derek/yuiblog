@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Jun 23rd"
 author: "Unknown"
 date: 2011-06-20
 slug: "yui-open-hours-thurs-jun-23rd"
-permalink: /blog/2011/06/20/yui-open-hours-thurs-jun-23rd/
+permalink: /2011/06/20/yui-open-hours-thurs-jun-23rd/
 categories:
   - "Development"
 ---

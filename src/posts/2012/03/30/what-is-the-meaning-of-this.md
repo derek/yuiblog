@@ -4,7 +4,7 @@ title: "What is the meaning of this?"
 author: "YUI Team"
 date: 2012-03-30
 slug: "what-is-the-meaning-of-this"
-permalink: /blog/2012/03/30/what-is-the-meaning-of-this/
+permalink: /2012/03/30/what-is-the-meaning-of-this/
 categories:
   - "Development"
 ---

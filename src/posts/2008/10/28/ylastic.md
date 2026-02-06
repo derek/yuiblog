@@ -4,7 +4,7 @@ title: "Implementation Focus: Ylastic"
 author: "YUI Team"
 date: 2008-10-28
 slug: "ylastic"
-permalink: /blog/2008/10/28/ylastic/
+permalink: /2008/10/28/ylastic/
 categories:
   - "YUI Implementations"
 ---

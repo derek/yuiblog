@@ -4,7 +4,7 @@ title: "YUI Theater —  Luke Smith: \"Events Evolved\""
 author: "Eric Miraglia"
 date: 2009-10-30
 slug: "smith-yuiconf2009-events"
-permalink: /blog/2009/10/30/smith-yuiconf2009-events/
+permalink: /2009/10/30/smith-yuiconf2009-events/
 categories:
   - "YUI Theater"
 ---

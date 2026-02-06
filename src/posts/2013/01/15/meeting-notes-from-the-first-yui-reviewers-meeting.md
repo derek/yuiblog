@@ -4,7 +4,7 @@ title: "Meeting notes from the first YUI Reviewers meeting"
 author: "YUI Team"
 date: 2013-01-15
 slug: "meeting-notes-from-the-first-yui-reviewers-meeting"
-permalink: /blog/2013/01/15/meeting-notes-from-the-first-yui-reviewers-meeting/
+permalink: /2013/01/15/meeting-notes-from-the-first-yui-reviewers-meeting/
 categories:
   - "Development"
 ---

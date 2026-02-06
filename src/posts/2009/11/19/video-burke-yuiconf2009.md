@@ -4,7 +4,7 @@ title: "YUI Theater —  Reid Burke: \"Building YAP Applications with YUI\""
 author: "Eric Miraglia"
 date: 2009-11-19
 slug: "video-burke-yuiconf2009"
-permalink: /blog/2009/11/19/video-burke-yuiconf2009/
+permalink: /2009/11/19/video-burke-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

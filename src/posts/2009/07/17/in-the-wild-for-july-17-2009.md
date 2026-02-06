@@ -4,7 +4,7 @@ title: "In the Wild for July 17, 2009"
 author: "Eric Miraglia"
 date: 2009-07-17
 slug: "in-the-wild-for-july-17-2009"
-permalink: /blog/2009/07/17/in-the-wild-for-july-17-2009/
+permalink: /2009/07/17/in-the-wild-for-july-17-2009/
 categories:
   - "In the Wild"
 ---

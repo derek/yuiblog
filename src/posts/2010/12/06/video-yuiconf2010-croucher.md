@@ -4,7 +4,7 @@ title: "YUI Theater —  Tom Hughes-Croucher: \"How to Stop Writing Spaghetti Co
 author: "Eric Miraglia"
 date: 2010-12-06
 slug: "video-yuiconf2010-croucher"
-permalink: /blog/2010/12/06/video-yuiconf2010-croucher/
+permalink: /2010/12/06/video-yuiconf2010-croucher/
 categories:
   - "YUI Theater"
 ---

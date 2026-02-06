@@ -4,7 +4,7 @@ title: "YUI Target Environments"
 author: "Eric Ferraiuolo"
 date: 2012-08-21
 slug: "yui-target-environments"
-permalink: /blog/2012/08/21/yui-target-environments/
+permalink: /2012/08/21/yui-target-environments/
 categories:
   - "Development"
 ---

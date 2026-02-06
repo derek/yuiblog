@@ -4,7 +4,7 @@ title: "Building the YUI Browser History Manager"
 author: "Julien Lecomte"
 date: 2007-02-21
 slug: "browser-history-manager"
-permalink: /blog/2007/02/21/browser-history-manager/
+permalink: /2007/02/21/browser-history-manager/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Working with the YUI DataTable Control, Part 1: Getting Started"
 author: "Satyam"
 date: 2007-09-12
 slug: "satyam-datatable"
-permalink: /blog/2007/09/12/satyam-datatable/
+permalink: /2007/09/12/satyam-datatable/
 categories:
   - "Development"
 ---

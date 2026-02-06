@@ -4,7 +4,7 @@ title: "Implementation Focus: Genius.com"
 author: "Jack Slocum"
 date: 2007-02-06
 slug: "genius"
-permalink: /blog/2007/02/06/genius/
+permalink: /2007/02/06/genius/
 categories:
   - "YUI Implementations"
 ---

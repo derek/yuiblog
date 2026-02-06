@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs May 12th"
 author: "Dav Glass"
 date: 2011-05-09
 slug: "yui-open-hours-thurs-may-12th"
-permalink: /blog/2011/05/09/yui-open-hours-thurs-may-12th/
+permalink: /2011/05/09/yui-open-hours-thurs-may-12th/
 categories:
   - "Development"
 ---

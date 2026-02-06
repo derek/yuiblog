@@ -4,7 +4,7 @@ title: "Introducing the YUI Modules Explorer"
 author: "YUI Team"
 date: 2013-04-10
 slug: "introducing-the-yui-modules-explorer"
-permalink: /blog/2013/04/10/introducing-the-yui-modules-explorer/
+permalink: /2013/04/10/introducing-the-yui-modules-explorer/
 categories:
   - "Development"
 ---

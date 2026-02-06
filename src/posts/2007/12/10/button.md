@@ -4,7 +4,7 @@ title: "The Versatile Button Control"
 author: "Todd Kloots"
 date: 2007-12-10
 slug: "button"
-permalink: /blog/2007/12/10/button/
+permalink: /2007/12/10/button/
 categories:
   - "Development"
 ---

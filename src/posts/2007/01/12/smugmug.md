@@ -4,7 +4,7 @@ title: "Implementation Focus: SmugMug"
 author: "YUI Team"
 date: 2007-01-12
 slug: "smugmug"
-permalink: /blog/2007/01/12/smugmug/
+permalink: /2007/01/12/smugmug/
 categories:
   - "YUI Implementations"
 ---

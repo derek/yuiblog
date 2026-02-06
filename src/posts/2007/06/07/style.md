@@ -4,7 +4,7 @@ title: "Who's Got Style?"
 author: "Nicholas C. Zakas"
 date: 2007-06-07
 slug: "style"
-permalink: /blog/2007/06/07/style/
+permalink: /2007/06/07/style/
 categories:
   - "Development"
 ---

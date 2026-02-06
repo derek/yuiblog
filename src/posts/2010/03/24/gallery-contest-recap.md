@@ -4,7 +4,7 @@ title: "Andrew Bialecki Wins the YUI 3 Gallery Contest 2010 with Effects Module"
 author: "YUI Team"
 date: 2010-03-24
 slug: "gallery-contest-recap"
-permalink: /blog/2010/03/24/gallery-contest-recap/
+permalink: /2010/03/24/gallery-contest-recap/
 categories:
   - "Development"
 ---

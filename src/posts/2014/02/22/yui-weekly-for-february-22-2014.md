@@ -4,7 +4,7 @@ title: "YUI Weekly for February 22, 2014"
 author: "Clarence Leung"
 date: 2014-02-22
 slug: "yui-weekly-for-february-22-2014"
-permalink: /blog/2014/02/22/yui-weekly-for-february-22-2014/
+permalink: /2014/02/22/yui-weekly-for-february-22-2014/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2012: Diego Ferreiro on NodeJS+Cocktails — Scaling Yahoo!"
 author: "YUI Team"
 date: 2013-01-28
 slug: "yuiconf-2012-diego-ferreiro-on-nodejscocktails-scaling-yahoo"
-permalink: /blog/2013/01/28/yuiconf-2012-diego-ferreiro-on-nodejscocktails-scaling-yahoo/
+permalink: /2013/01/28/yuiconf-2012-diego-ferreiro-on-nodejscocktails-scaling-yahoo/
 categories:
   - "Development"
 ---

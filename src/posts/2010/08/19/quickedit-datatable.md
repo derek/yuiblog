@@ -4,7 +4,7 @@ title: "Quick Edit mode for YUI 2 DataTable"
 author: "John Lindal"
 date: 2010-08-19
 slug: "quickedit-datatable"
-permalink: /blog/2010/08/19/quickedit-datatable/
+permalink: /2010/08/19/quickedit-datatable/
 categories:
   - "Development"
 ---

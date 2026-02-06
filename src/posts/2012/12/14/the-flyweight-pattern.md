@@ -4,7 +4,7 @@ title: "The Flyweight Pattern"
 author: "YUI Team"
 date: 2012-12-14
 slug: "the-flyweight-pattern"
-permalink: /blog/2012/12/14/the-flyweight-pattern/
+permalink: /2012/12/14/the-flyweight-pattern/
 categories:
   - "Development"
 ---

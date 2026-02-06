@@ -4,7 +4,7 @@ title: "YUI Weekly for February 28th, 2014"
 author: "YUI Team"
 date: 2014-02-28
 slug: "yui-weekly-for-february-28th-2014"
-permalink: /blog/2014/02/28/yui-weekly-for-february-28th-2014/
+permalink: /2014/02/28/yui-weekly-for-february-28th-2014/
 categories:
   - "YUI Weekly"
 ---

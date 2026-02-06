@@ -4,7 +4,7 @@ title: "What Happened at Throne of JS"
 author: "Eric Ferraiuolo"
 date: 2012-07-30
 slug: "what-happened-at-throne-of-js"
-permalink: /blog/2012/07/30/what-happened-at-throne-of-js/
+permalink: /2012/07/30/what-happened-at-throne-of-js/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Thoughts on the new HTML5 elements and surrogate DIVs"
 author: "YUI Team"
 date: 2011-03-16
 slug: "thoughts-on-the-new-html5-elements-and-surrogate-divs"
-permalink: /blog/2011/03/16/thoughts-on-the-new-html5-elements-and-surrogate-divs/
+permalink: /2011/03/16/thoughts-on-the-new-html5-elements-and-surrogate-divs/
 categories:
   - "Development"
 ---

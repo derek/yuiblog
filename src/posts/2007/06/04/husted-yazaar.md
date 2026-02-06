@@ -4,7 +4,7 @@ title: "An Interview with Ted Husted, Creator of YUI Community Site \"Planet Yaz
 author: "Ted Husted"
 date: 2007-06-04
 slug: "husted-yazaar"
-permalink: /blog/2007/06/04/husted-yazaar/
+permalink: /2007/06/04/husted-yazaar/
 categories:
   - "Development"
 ---

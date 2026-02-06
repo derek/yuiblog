@@ -4,7 +4,7 @@ title: "A YUI Grids-based WordPress Theme — YUI Autogrid Minimal"
 author: "YUI Team"
 date: 2008-07-02
 slug: "autogrid-wptheme"
-permalink: /blog/2008/07/02/autogrid-wptheme/
+permalink: /2008/07/02/autogrid-wptheme/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater — Karo Caran and Victor Tsaran: \"Introduction to Screen M
 author: "Nate Koechley"
 date: 2007-06-12
 slug: "video-intro-to-screen-magnifiers"
-permalink: /blog/2007/06/12/video-intro-to-screen-magnifiers/
+permalink: /2007/06/12/video-intro-to-screen-magnifiers/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs August 18th"
 author: "Unknown"
 date: 2011-08-15
 slug: "yui-open-hours-thurs-august-18th"
-permalink: /blog/2011/08/15/yui-open-hours-thurs-august-18th/
+permalink: /2011/08/15/yui-open-hours-thurs-august-18th/
 categories:
   - "Development"
 ---

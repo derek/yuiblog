@@ -4,7 +4,7 @@ title: "YUI Theater — John Resig, \"Advancing JavaScript with Libraries\""
 author: "Eric Miraglia"
 date: 2007-04-16
 slug: "video-resig"
-permalink: /blog/2007/04/16/video-resig/
+permalink: /2007/04/16/video-resig/
 categories:
   - "Development"
 ---

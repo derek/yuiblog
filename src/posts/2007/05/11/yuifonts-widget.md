@@ -4,7 +4,7 @@ title: "Adrien Cahen's YUI Fonts Dashboard Widget"
 author: "Eric Miraglia"
 date: 2007-05-11
 slug: "yuifonts-widget"
-permalink: /blog/2007/05/11/yuifonts-widget/
+permalink: /2007/05/11/yuifonts-widget/
 categories:
   - "Development"
 ---

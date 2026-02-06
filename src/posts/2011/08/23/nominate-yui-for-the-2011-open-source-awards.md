@@ -4,7 +4,7 @@ title: "Nominate YUI for the 2011 Open Source Awards!"
 author: "Jenny Donnelly"
 date: 2011-08-23
 slug: "nominate-yui-for-the-2011-open-source-awards"
-permalink: /blog/2011/08/23/nominate-yui-for-the-2011-open-source-awards/
+permalink: /2011/08/23/nominate-yui-for-the-2011-open-source-awards/
 categories:
   - "Miscellany"
 ---

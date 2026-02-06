@@ -4,7 +4,7 @@ title: "Using YUI in Greasemonkey Scripts"
 author: "Carlo Zottmann"
 date: 2007-01-03
 slug: "yui-greasemonkey"
-permalink: /blog/2007/01/03/yui-greasemonkey/
+permalink: /2007/01/03/yui-greasemonkey/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater — Charles McCathieNevile: \"Opera Dragonfly\""
 author: "YUI Team"
 date: 2009-06-01
 slug: "video-mccathienevile-dragonfly"
-permalink: /blog/2009/06/01/video-mccathienevile-dragonfly/
+permalink: /2009/06/01/video-mccathienevile-dragonfly/
 categories:
   - "YUI Theater"
 ---

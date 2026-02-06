@@ -4,7 +4,7 @@ title: "YUI's New Community Engineer and YUIConf Dates Set"
 author: "Andrew Wooldridge"
 date: 2012-09-18
 slug: "yuis-new-community-engineer-and-yuiconf-dates-set"
-permalink: /blog/2012/09/18/yuis-new-community-engineer-and-yuiconf-dates-set/
+permalink: /2012/09/18/yuis-new-community-engineer-and-yuiconf-dates-set/
 categories:
   - "Development"
 ---

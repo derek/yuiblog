@@ -4,7 +4,7 @@ title: "Developing a JavaScript Library for Yahoo!"
 author: "Eric Miraglia"
 date: 2006-02-17
 slug: "developing-a-javascript-library-for-yahoo"
-permalink: /blog/2006/02/17/developing-a-javascript-library-for-yahoo/
+permalink: /2006/02/17/developing-a-javascript-library-for-yahoo/
 categories:
   - "Development"
 ---

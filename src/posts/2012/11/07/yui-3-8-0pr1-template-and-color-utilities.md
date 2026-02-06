@@ -4,7 +4,7 @@ title: "YUI 3.8.0pr1 - Template and Color Utilities"
 author: "Eric Ferraiuolo"
 date: 2012-11-07
 slug: "yui-3-8-0pr1-template-and-color-utilities"
-permalink: /blog/2012/11/07/yui-3-8-0pr1-template-and-color-utilities/
+permalink: /2012/11/07/yui-3-8-0pr1-template-and-color-utilities/
 categories:
   - "Releases"
 ---

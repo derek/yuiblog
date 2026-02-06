@@ -4,7 +4,7 @@ title: "Announcing Support for GitHub Issues in YUI"
 author: "YUI Team"
 date: 2013-01-17
 slug: "announcing-support-for-github-issues-in-yui"
-permalink: /blog/2013/01/17/announcing-support-for-github-issues-in-yui/
+permalink: /2013/01/17/announcing-support-for-github-issues-in-yui/
 categories:
   - "Development"
 ---

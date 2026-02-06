@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Attribute Walkthrough with Luke Smith"
 author: "Andrew Wooldridge"
 date: 2012-11-28
 slug: "yuiconf-2012-talk-attribute-walkthrough-with-luke-smith"
-permalink: /blog/2012/11/28/yuiconf-2012-talk-attribute-walkthrough-with-luke-smith/
+permalink: /2012/11/28/yuiconf-2012-talk-attribute-walkthrough-with-luke-smith/
 categories:
   - "Development"
 ---

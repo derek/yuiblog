@@ -4,7 +4,7 @@ title: "Building TipTheWeb with YUI 3"
 author: "Eric Ferraiuolo"
 date: 2010-10-05
 slug: "building-tiptheweb-with-yui-3"
-permalink: /blog/2010/10/05/building-tiptheweb-with-yui-3/
+permalink: /2010/10/05/building-tiptheweb-with-yui-3/
 categories:
   - "Development"
 ---

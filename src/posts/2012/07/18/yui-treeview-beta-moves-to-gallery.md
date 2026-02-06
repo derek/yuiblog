@@ -4,7 +4,7 @@ title: "YUI TreeView Beta Moves to Gallery"
 author: "YUI Team"
 date: 2012-07-18
 slug: "yui-treeview-beta-moves-to-gallery"
-permalink: /blog/2012/07/18/yui-treeview-beta-moves-to-gallery/
+permalink: /2012/07/18/yui-treeview-beta-moves-to-gallery/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "In the Wild for November 13, 2009"
 author: "Eric Miraglia"
 date: 2009-11-13
 slug: "in-the-wild-for-november-13-2009"
-permalink: /blog/2009/11/13/in-the-wild-for-november-13-2009/
+permalink: /2009/11/13/in-the-wild-for-november-13-2009/
 categories:
   - "In the Wild"
 ---

@@ -4,7 +4,7 @@ title: "July 27 Bayjax Meeting at Yahoo: Speakers Include Douglas Crockford, Nic
 author: "Eric Miraglia"
 date: 2009-07-13
 slug: "bayjax-at-yahoo"
-permalink: /blog/2009/07/13/bayjax-at-yahoo/
+permalink: /2009/07/13/bayjax-at-yahoo/
 categories:
   - "Development"
 ---

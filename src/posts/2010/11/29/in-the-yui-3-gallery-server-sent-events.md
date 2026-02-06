@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Server-Sent Events"
 author: "Nicholas C. Zakas"
 date: 2010-11-29
 slug: "in-the-yui-3-gallery-server-sent-events"
-permalink: /blog/2010/11/29/in-the-yui-3-gallery-server-sent-events/
+permalink: /2010/11/29/in-the-yui-3-gallery-server-sent-events/
 categories:
   - "Development"
 ---

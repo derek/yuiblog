@@ -4,7 +4,7 @@ title: "YUI Theater -- Eric Gelinas: \"Geo Interfaces for Actual Humans\" (15 mi
 author: "Ryan Grove"
 date: 2012-02-22
 slug: "video-eric-gelinas-geo"
-permalink: /blog/2012/02/22/video-eric-gelinas-geo/
+permalink: /2012/02/22/video-eric-gelinas-geo/
 categories:
   - "Development"
 ---

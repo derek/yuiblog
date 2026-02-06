@@ -4,7 +4,7 @@ title: "YUI Theater: Douglas Crockford, The JavaScript Programming Language"
 author: "Eric Miraglia"
 date: 2007-01-24
 slug: "video-crockford-tjpl"
-permalink: /blog/2007/01/24/video-crockford-tjpl/
+permalink: /2007/01/24/video-crockford-tjpl/
 categories:
   - "Development"
 ---

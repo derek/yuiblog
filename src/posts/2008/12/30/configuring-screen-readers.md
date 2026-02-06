@@ -4,7 +4,7 @@ title: "Configuring Your Machine For Testing With A Screen Reader"
 author: "Todd Kloots"
 date: 2008-12-30
 slug: "configuring-screen-readers"
-permalink: /blog/2008/12/30/configuring-screen-readers/
+permalink: /2008/12/30/configuring-screen-readers/
 categories:
   - "Development"
 ---

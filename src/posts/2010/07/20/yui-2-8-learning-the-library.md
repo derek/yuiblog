@@ -4,7 +4,7 @@ title: "Author Notes: Writing YUI 2.8: Learning the Library, the New YUI 2 Book 
 author: "Satyam"
 date: 2010-07-20
 slug: "yui-2-8-learning-the-library"
-permalink: /blog/2010/07/20/yui-2-8-learning-the-library/
+permalink: /2010/07/20/yui-2-8-learning-the-library/
 categories:
   - "Development"
 ---

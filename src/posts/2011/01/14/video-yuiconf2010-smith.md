@@ -4,7 +4,7 @@ title: "YUI Theater —  Luke Smith: \"YUI 3: Below the Surface\" (48 min.)"
 author: "Eric Miraglia"
 date: 2011-01-14
 slug: "video-yuiconf2010-smith"
-permalink: /blog/2011/01/14/video-yuiconf2010-smith/
+permalink: /2011/01/14/video-yuiconf2010-smith/
 categories:
   - "Development"
 ---

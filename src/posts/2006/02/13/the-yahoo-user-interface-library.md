@@ -4,7 +4,7 @@ title: "The Yahoo! User Interface Library"
 author: "YUI Team"
 date: 2006-02-13
 slug: "the-yahoo-user-interface-library"
-permalink: /blog/2006/02/13/the-yahoo-user-interface-library/
+permalink: /2006/02/13/the-yahoo-user-interface-library/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI 3.1.1 and YUI 2.8.1 Released"
 author: "Unknown"
 date: 2010-05-05
 slug: "3-1-1-and-2-8-1-released"
-permalink: /blog/2010/05/05/3-1-1-and-2-8-1-released/
+permalink: /2010/05/05/3-1-1-and-2-8-1-released/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Ryan Grove's Storage Lite Cross-Browser Storage Li
 author: "Ryan Grove"
 date: 2010-02-23
 slug: "gallery-storage-lite"
-permalink: /blog/2010/02/23/gallery-storage-lite/
+permalink: /2010/02/23/gallery-storage-lite/
 categories:
   - "Development"
 ---

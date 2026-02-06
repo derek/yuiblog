@@ -4,7 +4,7 @@ title: "YUI Theater: BayJax Tech Talks from  Nicholas Zakas, Isaac Schlueter, an
 author: "Eric Miraglia"
 date: 2009-09-17
 slug: "video-bayjax-sept-09"
-permalink: /blog/2009/09/17/video-bayjax-sept-09/
+permalink: /2009/09/17/video-bayjax-sept-09/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Using YUI 2 on the DuckDuckGo Search Engine"
 author: "Gabriel Weinberg"
 date: 2010-08-19
 slug: "yui-at-duckduckgo"
-permalink: /blog/2010/08/19/yui-at-duckduckgo/
+permalink: /2010/08/19/yui-at-duckduckgo/
 categories:
   - "YUI Implementations"
 ---

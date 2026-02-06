@@ -4,7 +4,7 @@ title: "New Tutorial: YUI 3's Use and Add Methods"
 author: "Andrew Wooldridge"
 date: 2012-09-13
 slug: "new-tutorial-yui-3s-use-and-add-methods"
-permalink: /blog/2012/09/13/new-tutorial-yui-3s-use-and-add-methods/
+permalink: /2012/09/13/new-tutorial-yui-3s-use-and-add-methods/
 categories:
   - "Development"
 ---

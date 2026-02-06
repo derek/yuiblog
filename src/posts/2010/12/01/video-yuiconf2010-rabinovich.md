@@ -4,7 +4,7 @@ title: "YUI Theater —  Allen Rabinovich: \"The Many Hats of the Frontend Engin
 author: "YUI Team"
 date: 2010-12-01
 slug: "video-yuiconf2010-rabinovich"
-permalink: /blog/2010/12/01/video-yuiconf2010-rabinovich/
+permalink: /2010/12/01/video-yuiconf2010-rabinovich/
 categories:
   - "YUI Theater"
 ---

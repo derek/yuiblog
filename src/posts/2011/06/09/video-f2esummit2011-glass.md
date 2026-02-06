@@ -4,7 +4,7 @@ title: "YUI Theater —  Dav Glass: \"YUI 3 and Node.js (Not Just For Web Pages)
 author: "Unknown"
 date: 2011-06-09
 slug: "video-f2esummit2011-glass"
-permalink: /blog/2011/06/09/video-f2esummit2011-glass/
+permalink: /2011/06/09/video-f2esummit2011-glass/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "The YUI Team is Looking for a World-Class Engineer to Work on Frontend C
 author: "YUI Team"
 date: 2010-01-28
 slug: "yui-team-hiring"
-permalink: /blog/2010/01/28/yui-team-hiring/
+permalink: /2010/01/28/yui-team-hiring/
 categories:
   - "Development"
 ---

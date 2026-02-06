@@ -4,7 +4,7 @@ title: "YUI Version 2.2.2: Bug-Fix Release"
 author: "Eric Miraglia"
 date: 2007-04-18
 slug: "yui-2-2-2-released"
-permalink: /blog/2007/04/18/yui-2-2-2-released/
+permalink: /2007/04/18/yui-2-2-2-released/
 categories:
   - "Development"
 ---

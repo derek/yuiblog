@@ -4,7 +4,7 @@ title: "Screencast: Aptana Founder Paul Colton Demos YUI Support in the Aptana I
 author: "Eric Miraglia"
 date: 2006-12-08
 slug: "colton-aptana-screencast"
-permalink: /blog/2006/12/08/colton-aptana-screencast/
+permalink: /2006/12/08/colton-aptana-screencast/
 categories:
   - "Development"
 ---

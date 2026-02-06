@@ -4,7 +4,7 @@ title: "Performance Research, Part 6: Less is More — Serving Files Faster by C
 author: "Tenni Theurer"
 date: 2008-07-21
 slug: "performance-research-part-6"
-permalink: /blog/2008/07/21/performance-research-part-6/
+permalink: /2008/07/21/performance-research-part-6/
 categories:
   - "Performance"
 ---

@@ -4,7 +4,7 @@ title: "Next YUI Release (3.7.x) Plans"
 author: "Andrew Wooldridge"
 date: 2012-09-27
 slug: "next-yui-release-3-7-x-plans"
-permalink: /blog/2012/09/27/next-yui-release-3-7-x-plans/
+permalink: /2012/09/27/next-yui-release-3-7-x-plans/
 categories:
   - "Development"
 ---

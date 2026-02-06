@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs May 26th"
 author: "YUI Team"
 date: 2011-05-24
 slug: "yui-open-hours-thurs-may-26th"
-permalink: /blog/2011/05/24/yui-open-hours-thurs-may-26th/
+permalink: /2011/05/24/yui-open-hours-thurs-may-26th/
 categories:
   - "Development"
 ---

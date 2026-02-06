@@ -4,7 +4,7 @@ title: "YUI 2 and YUI 3 Source Code Now on GitHub"
 author: "YUI Team"
 date: 2009-01-14
 slug: "github"
-permalink: /blog/2009/01/14/github/
+permalink: /2009/01/14/github/
 categories:
   - "Development"
 ---

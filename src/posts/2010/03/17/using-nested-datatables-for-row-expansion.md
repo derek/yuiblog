@@ -4,7 +4,7 @@ title: "Using Nested YUI 2 DataTables for Row Expansion"
 author: "YUI Team"
 date: 2010-03-17
 slug: "using-nested-datatables-for-row-expansion"
-permalink: /blog/2010/03/17/using-nested-datatables-for-row-expansion/
+permalink: /2010/03/17/using-nested-datatables-for-row-expansion/
 categories:
   - "Development"
 ---

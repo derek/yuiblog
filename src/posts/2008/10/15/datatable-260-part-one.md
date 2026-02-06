@@ -4,7 +4,7 @@ title: "Working with the YUI DataTable (Updated for v2.6.0), Part 1: Getting Sta
 author: "Satyam"
 date: 2008-10-15
 slug: "datatable-260-part-one"
-permalink: /blog/2008/10/15/datatable-260-part-one/
+permalink: /2008/10/15/datatable-260-part-one/
 categories:
   - "Development"
 ---

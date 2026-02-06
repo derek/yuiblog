@@ -4,7 +4,7 @@ title: "An inside look at the Pattern Library"
 author: "Unknown"
 date: 2007-12-07
 slug: "pattern-library-brown-bag"
-permalink: /blog/2007/12/07/pattern-library-brown-bag/
+permalink: /2007/12/07/pattern-library-brown-bag/
 categories:
   - "YUI Theater"
 ---

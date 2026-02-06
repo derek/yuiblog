@@ -4,7 +4,7 @@ title: "Migrating PageLayout from YUI 2 to YUI 3:  A Case Study"
 author: "John Lindal"
 date: 2012-04-23
 slug: "migrating-from-yui-2-to-yui-3-a-case-study"
-permalink: /blog/2012/04/23/migrating-from-yui-2-to-yui-3-a-case-study/
+permalink: /2012/04/23/migrating-from-yui-2-to-yui-3-a-case-study/
 categories:
   - "Development"
 ---

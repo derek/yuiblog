@@ -4,7 +4,7 @@ title: "Implementation Focus: Mint.com"
 author: "Matt Snider"
 date: 2007-12-05
 slug: "mint"
-permalink: /blog/2007/12/05/mint/
+permalink: /2007/12/05/mint/
 categories:
   - "YUI Implementations"
 ---

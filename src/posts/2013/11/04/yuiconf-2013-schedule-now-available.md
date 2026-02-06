@@ -4,7 +4,7 @@ title: "YUIConf 2013 Schedule Now Available"
 author: "Jenny Donnelly"
 date: 2013-11-04
 slug: "yuiconf-2013-schedule-now-available"
-permalink: /blog/2013/11/04/yuiconf-2013-schedule-now-available/
+permalink: /2013/11/04/yuiconf-2013-schedule-now-available/
 categories:
   - "YUIConf"
 ---

@@ -4,7 +4,7 @@ title: "YUI 2.4.0 Released — Selector, Charts, Profiler, Script/CSS Get, and J
 author: "Eric Miraglia"
 date: 2007-12-04
 slug: "yuii-240"
-permalink: /blog/2007/12/04/yuii-240/
+permalink: /2007/12/04/yuii-240/
 categories:
   - "Development"
 ---

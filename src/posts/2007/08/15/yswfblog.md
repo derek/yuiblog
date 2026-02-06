@@ -4,7 +4,7 @@ title: "Introducing the Yahoo! Flash® Blog"
 author: "YUI Team"
 date: 2007-08-15
 slug: "yswfblog"
-permalink: /blog/2007/08/15/yswfblog/
+permalink: /2007/08/15/yswfblog/
 categories:
   - "Development"
 ---

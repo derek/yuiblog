@@ -4,7 +4,7 @@ title: "YUI 3.4.1 is now live"
 author: "Allen Rabinovich"
 date: 2011-09-27
 slug: "yui-3-4-1-is-now-live"
-permalink: /blog/2011/09/27/yui-3-4-1-is-now-live/
+permalink: /2011/09/27/yui-3-4-1-is-now-live/
 categories:
   - "Development"
 ---

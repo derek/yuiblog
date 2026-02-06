@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Julien Lecomte's 1.3KB SimpleMenu with Keyboard an
 author: "Eric Miraglia"
 date: 2010-02-12
 slug: "gallery-simple-menu"
-permalink: /blog/2010/02/12/gallery-simple-menu/
+permalink: /2010/02/12/gallery-simple-menu/
 categories:
   - "YUI 3 Gallery"
 ---

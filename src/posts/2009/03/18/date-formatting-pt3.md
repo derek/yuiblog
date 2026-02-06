@@ -4,7 +4,7 @@ title: "Date Formatting with YUI - Part III"
 author: "Philip Tellis"
 date: 2009-03-18
 slug: "date-formatting-pt3"
-permalink: /blog/2009/03/18/date-formatting-pt3/
+permalink: /2009/03/18/date-formatting-pt3/
 categories:
   - "Development"
 ---

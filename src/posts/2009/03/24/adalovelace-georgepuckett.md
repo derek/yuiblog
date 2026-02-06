@@ -4,7 +4,7 @@ title: "Georgiann Puckett: YUI/ASTRA Program Manager (AdaLovelaceDay09)"
 author: "Eric Miraglia"
 date: 2009-03-24
 slug: "adalovelace-georgepuckett"
-permalink: /blog/2009/03/24/adalovelace-georgepuckett/
+permalink: /2009/03/24/adalovelace-georgepuckett/
 categories:
   - "Development"
 ---

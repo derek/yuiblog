@@ -4,7 +4,7 @@ title: "ARIA Plugins for YUI Widgets"
 author: "Todd Kloots"
 date: 2008-10-02
 slug: "yui-aria"
-permalink: /blog/2008/10/02/yui-aria/
+permalink: /2008/10/02/yui-aria/
 categories:
   - "Development"
 ---

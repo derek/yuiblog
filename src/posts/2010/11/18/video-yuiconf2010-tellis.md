@@ -4,7 +4,7 @@ title: "YUI Theater —  Philip Tellis: \"Measuring the Web with Boomerang\" (52
 author: "Eric Miraglia"
 date: 2010-11-18
 slug: "video-yuiconf2010-tellis"
-permalink: /blog/2010/11/18/video-yuiconf2010-tellis/
+permalink: /2010/11/18/video-yuiconf2010-tellis/
 categories:
   - "Development"
 ---

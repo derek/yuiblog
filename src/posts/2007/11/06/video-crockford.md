@@ -4,7 +4,7 @@ title: "YDN Theater — Douglas Crockford: \"The State of Ajax\""
 author: "Eric Miraglia"
 date: 2007-11-06
 slug: "video-crockford"
-permalink: /blog/2007/11/06/video-crockford/
+permalink: /2007/11/06/video-crockford/
 categories:
   - "YUI Theater"
 ---

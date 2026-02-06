@@ -4,7 +4,7 @@ title: "YUI: Open Hours, Friday May 14th"
 author: "Unknown"
 date: 2010-05-13
 slug: "yui-open-hours-friday-may-14th"
-permalink: /blog/2010/05/13/yui-open-hours-friday-may-14th/
+permalink: /2010/05/13/yui-open-hours-friday-may-14th/
 categories:
   - "Development"
 ---

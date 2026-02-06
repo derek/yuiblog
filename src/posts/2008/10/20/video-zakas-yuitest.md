@@ -4,7 +4,7 @@ title: "YUI Theater: Nicholas Zakas — \"Test-Driven Development with YUI Test\
 author: "Eric Miraglia"
 date: 2008-10-20
 slug: "video-zakas-yuitest"
-permalink: /blog/2008/10/20/video-zakas-yuitest/
+permalink: /2008/10/20/video-zakas-yuitest/
 categories:
   - "YUI Theater"
 ---

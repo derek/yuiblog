@@ -4,7 +4,7 @@ title: "YUI Theater —  Scott Schiller: \"Probably, Maybe, No: The State Of HTM
 author: "Jenny Donnelly"
 date: 2011-06-29
 slug: "video-f2esummit2011-schiller"
-permalink: /blog/2011/06/29/video-f2esummit2011-schiller/
+permalink: /2011/06/29/video-f2esummit2011-schiller/
 categories:
   - "Development"
 ---

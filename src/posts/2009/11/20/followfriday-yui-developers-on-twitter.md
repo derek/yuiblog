@@ -4,7 +4,7 @@ title: "#followfriday: YUI Developers on Twitter"
 author: "Eric Miraglia"
 date: 2009-11-20
 slug: "followfriday-yui-developers-on-twitter"
-permalink: /blog/2009/11/20/followfriday-yui-developers-on-twitter/
+permalink: /2009/11/20/followfriday-yui-developers-on-twitter/
 categories:
   - "Development"
 ---

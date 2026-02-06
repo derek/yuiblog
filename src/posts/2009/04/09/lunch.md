@@ -4,7 +4,7 @@ title: "Implementation Focus: Lunch.com"
 author: "Eric Miraglia"
 date: 2009-04-09
 slug: "lunch"
-permalink: /blog/2009/04/09/lunch/
+permalink: /2009/04/09/lunch/
 categories:
   - "YUI Implementations"
 ---

@@ -4,7 +4,7 @@ title: "YUI Weekly for June 28th, 2013"
 author: "Derek Gathright"
 date: 2013-06-28
 slug: "yui-weekly-for-june-28th-2013"
-permalink: /blog/2013/06/28/yui-weekly-for-june-28th-2013/
+permalink: /2013/06/28/yui-weekly-for-june-28th-2013/
 categories:
   - "YUI Weekly"
 ---

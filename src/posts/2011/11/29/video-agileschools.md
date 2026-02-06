@@ -4,7 +4,7 @@ title: "YUI Theater — Steve Peha: \"Agile Schools - How Technology Saves Educa
 author: "Allen Rabinovich"
 date: 2011-11-29
 slug: "video-agileschools"
-permalink: /blog/2011/11/29/video-agileschools/
+permalink: /2011/11/29/video-agileschools/
 categories:
   - "YUI Theater"
 ---

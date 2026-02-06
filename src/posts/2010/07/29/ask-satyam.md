@@ -4,7 +4,7 @@ title: "Ask Satyam — and Be Eligible for a Free Copy of the New YUI 2.8 Book f
 author: "Unknown"
 date: 2010-07-29
 slug: "ask-satyam"
-permalink: /blog/2010/07/29/ask-satyam/
+permalink: /2010/07/29/ask-satyam/
 categories:
   - "Development"
 ---

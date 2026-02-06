@@ -4,7 +4,7 @@ title: "YUI Theater —  Ross Harmes: \"Porting Flickr to YUI 3\" (36 min.)"
 author: "Unknown"
 date: 2010-11-19
 slug: "video-yuiconf2010-harmes"
-permalink: /blog/2010/11/19/video-yuiconf2010-harmes/
+permalink: /2010/11/19/video-yuiconf2010-harmes/
 categories:
   - "Development"
 ---

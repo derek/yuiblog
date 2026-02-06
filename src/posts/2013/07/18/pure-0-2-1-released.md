@@ -4,7 +4,7 @@ title: "Pure 0.2.1 Released"
 author: "Tilo"
 date: 2013-07-18
 slug: "pure-0-2-1-released"
-permalink: /blog/2013/07/18/pure-0-2-1-released/
+permalink: /2013/07/18/pure-0-2-1-released/
 categories:
   - "Releases"
 ---

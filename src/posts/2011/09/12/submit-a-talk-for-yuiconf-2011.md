@@ -4,7 +4,7 @@ title: "Submit a Talk for YUIConf 2011"
 author: "Jenny Donnelly"
 date: 2011-09-12
 slug: "submit-a-talk-for-yuiconf-2011"
-permalink: /blog/2011/09/12/submit-a-talk-for-yuiconf-2011/
+permalink: /2011/09/12/submit-a-talk-for-yuiconf-2011/
 categories:
   - "Development"
 ---

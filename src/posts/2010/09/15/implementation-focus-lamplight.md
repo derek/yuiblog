@@ -4,7 +4,7 @@ title: "Implementation Focus: Lamplight"
 author: "Jenny Donnelly"
 date: 2010-09-15
 slug: "implementation-focus-lamplight"
-permalink: /blog/2010/09/15/implementation-focus-lamplight/
+permalink: /2010/09/15/implementation-focus-lamplight/
 categories:
   - "YUI Implementations"
 ---

@@ -4,7 +4,7 @@ title: "Graded Browser Support: Q4 Update"
 author: "Nate Koechley"
 date: 2006-11-15
 slug: "browser-support-update-2006q4"
-permalink: /blog/2006/11/15/browser-support-update-2006q4/
+permalink: /2006/11/15/browser-support-update-2006q4/
 categories:
   - "Development"
 ---

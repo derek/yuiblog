@@ -4,7 +4,7 @@ title: "YUIConf: New Dates Set: Nov 14–15"
 author: "YUI Team"
 date: 2012-09-24
 slug: "yuiconf-new-dates-set"
-permalink: /blog/2012/09/24/yuiconf-new-dates-set/
+permalink: /2012/09/24/yuiconf-new-dates-set/
 categories:
   - "YUI Events"
 ---

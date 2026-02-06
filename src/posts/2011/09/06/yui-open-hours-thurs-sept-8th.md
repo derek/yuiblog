@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Sept 8th"
 author: "Eric Ferraiuolo"
 date: 2011-09-06
 slug: "yui-open-hours-thurs-sept-8th"
-permalink: /blog/2011/09/06/yui-open-hours-thurs-sept-8th/
+permalink: /2011/09/06/yui-open-hours-thurs-sept-8th/
 categories:
   - "Development"
 ---

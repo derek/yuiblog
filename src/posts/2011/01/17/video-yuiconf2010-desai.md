@@ -4,7 +4,7 @@ title: "YUI Theater —  Satyen Desai: \"'A Phone, a Tablet and a Laptop Walk in
 author: "YUI Team"
 date: 2011-01-17
 slug: "video-yuiconf2010-desai"
-permalink: /blog/2011/01/17/video-yuiconf2010-desai/
+permalink: /2011/01/17/video-yuiconf2010-desai/
 categories:
   - "Development"
 ---

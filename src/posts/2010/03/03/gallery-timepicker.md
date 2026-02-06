@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Stephen Woods' TimePicker Module"
 author: "Stephen Woods"
 date: 2010-03-03
 slug: "gallery-timepicker"
-permalink: /blog/2010/03/03/gallery-timepicker/
+permalink: /2010/03/03/gallery-timepicker/
 categories:
   - "YUI 3 Gallery"
 ---

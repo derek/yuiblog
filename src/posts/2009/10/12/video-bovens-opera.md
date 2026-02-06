@@ -4,7 +4,7 @@ title: "YUI Theater —  Andreas Bovens and David Storey: \"10 Essential Things 
 author: "YUI Team"
 date: 2009-10-12
 slug: "video-bovens-opera"
-permalink: /blog/2009/10/12/video-bovens-opera/
+permalink: /2009/10/12/video-bovens-opera/
 categories:
   - "YUI Theater"
 ---

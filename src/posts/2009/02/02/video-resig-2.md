@@ -4,7 +4,7 @@ title: "YUI Theater — John Resig: \"The DOM Is a Mess\""
 author: "Eric Miraglia"
 date: 2009-02-02
 slug: "video-resig-2"
-permalink: /blog/2009/02/02/video-resig-2/
+permalink: /2009/02/02/video-resig-2/
 categories:
   - "YUI Theater"
 ---

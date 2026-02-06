@@ -4,7 +4,7 @@ title: "YUI 3 and AlloyUI at JAX.de"
 author: "Andrew Wooldridge"
 date: 2013-04-23
 slug: "yui3-and-alloyui-at-jax-de"
-permalink: /blog/2013/04/23/yui3-and-alloyui-at-jax-de/
+permalink: /2013/04/23/yui3-and-alloyui-at-jax-de/
 categories:
   - "Development"
 ---

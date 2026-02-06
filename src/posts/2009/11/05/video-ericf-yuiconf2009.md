@@ -4,7 +4,7 @@ title: "YUI Theater —  Eric Ferraiuolo: \"Web App Development with YUI 3\""
 author: "YUI Team"
 date: 2009-11-05
 slug: "video-ericf-yuiconf2009"
-permalink: /blog/2009/11/05/video-ericf-yuiconf2009/
+permalink: /2009/11/05/video-ericf-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

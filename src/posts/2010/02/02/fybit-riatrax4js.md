@@ -4,7 +4,7 @@ title: "Fybit Riatrax4Js: Program YUI in Java"
 author: "YUI Team"
 date: 2010-02-02
 slug: "fybit-riatrax4js"
-permalink: /blog/2010/02/02/fybit-riatrax4js/
+permalink: /2010/02/02/fybit-riatrax4js/
 categories:
   - "Development"
 ---

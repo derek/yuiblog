@@ -4,7 +4,7 @@ title: "YUI: Open Hours, Wed June 16th"
 author: "Luke Smith"
 date: 2010-06-15
 slug: "yui-open-hours-wed-june-16th"
-permalink: /blog/2010/06/15/yui-open-hours-wed-june-16th/
+permalink: /2010/06/15/yui-open-hours-wed-june-16th/
 categories:
   - "Development"
 ---

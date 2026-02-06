@@ -4,7 +4,7 @@ title: "Welcome Ezequiel Rodriguez to the YUI Team"
 author: "YUI Team"
 date: 2013-09-03
 slug: "welcome-ezequiel-rodriguez-to-the-yui-team"
-permalink: /blog/2013/09/03/welcome-ezequiel-rodriguez-to-the-yui-team/
+permalink: /2013/09/03/welcome-ezequiel-rodriguez-to-the-yui-team/
 categories:
   - "Development"
 ---

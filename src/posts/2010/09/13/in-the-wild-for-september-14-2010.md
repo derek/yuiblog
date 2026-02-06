@@ -4,7 +4,7 @@ title: "In the Wild for September 14, 2010"
 author: "Eric Miraglia"
 date: 2010-09-13
 slug: "in-the-wild-for-september-14-2010"
-permalink: /blog/2010/09/13/in-the-wild-for-september-14-2010/
+permalink: /2010/09/13/in-the-wild-for-september-14-2010/
 categories:
   - "Development"
 ---

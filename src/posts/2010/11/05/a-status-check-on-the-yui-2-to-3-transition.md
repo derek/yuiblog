@@ -4,7 +4,7 @@ title: "A Status Check on the YUI 2-to-3 Transition"
 author: "Eric Miraglia"
 date: 2010-11-05
 slug: "a-status-check-on-the-yui-2-to-3-transition"
-permalink: /blog/2010/11/05/a-status-check-on-the-yui-2-to-3-transition/
+permalink: /2010/11/05/a-status-check-on-the-yui-2-to-3-transition/
 categories:
   - "Development"
 ---

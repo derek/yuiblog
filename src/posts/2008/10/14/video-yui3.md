@@ -4,7 +4,7 @@ title: "YUI Theater: Eric Miraglia and Matt Sweeney — \"YUI 3: A Look Ahead\""
 author: "Unknown"
 date: 2008-10-14
 slug: "video-yui3"
-permalink: /blog/2008/10/14/video-yui3/
+permalink: /2008/10/14/video-yui3/
 categories:
   - "Development"
 ---

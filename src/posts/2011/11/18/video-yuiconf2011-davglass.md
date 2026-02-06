@@ -4,7 +4,7 @@ title: "YUI Theater — Dav Glass: \"Welcome to the Jungle!\" (44 min.)"
 author: "Ryan Grove"
 date: 2011-11-18
 slug: "video-yuiconf2011-davglass"
-permalink: /blog/2011/11/18/video-yuiconf2011-davglass/
+permalink: /2011/11/18/video-yuiconf2011-davglass/
 categories:
   - "Development"
 ---

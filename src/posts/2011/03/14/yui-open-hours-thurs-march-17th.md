@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs March 17th"
 author: "Luke Smith"
 date: 2011-03-14
 slug: "yui-open-hours-thurs-march-17th"
-permalink: /blog/2011/03/14/yui-open-hours-thurs-march-17th/
+permalink: /2011/03/14/yui-open-hours-thurs-march-17th/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Free Chapter: \"Advanced Techniques\" from Nicholas C. Zakas's Professio
 author: "YUI Team"
 date: 2009-01-16
 slug: "projs2"
-permalink: /blog/2009/01/16/projs2/
+permalink: /2009/01/16/projs2/
 categories:
   - "Development"
 ---

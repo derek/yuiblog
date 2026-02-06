@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talks: Triple Play Today"
 author: "Andrew Wooldridge"
 date: 2013-01-02
 slug: "yuiconf-2012-talks-triple-play-today"
-permalink: /blog/2013/01/02/yuiconf-2012-talks-triple-play-today/
+permalink: /2013/01/02/yuiconf-2012-talks-triple-play-today/
 categories:
   - "Development"
 ---

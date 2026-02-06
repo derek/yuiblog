@@ -4,7 +4,7 @@ title: "Filtering the Data Displayed by YUI 3 DataTable"
 author: "John Lindal"
 date: 2011-03-01
 slug: "filtering-yui3-datatable"
-permalink: /blog/2011/03/01/filtering-yui3-datatable/
+permalink: /2011/03/01/filtering-yui3-datatable/
 categories:
   - "Development"
 ---

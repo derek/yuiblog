@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Geo"
 author: "Nicholas C. Zakas"
 date: 2011-05-06
 slug: "in-the-yui-3-gallery-geo"
-permalink: /blog/2011/05/06/in-the-yui-3-gallery-geo/
+permalink: /2011/05/06/in-the-yui-3-gallery-geo/
 categories:
   - "Development"
 ---

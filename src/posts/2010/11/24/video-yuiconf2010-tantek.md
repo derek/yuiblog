@@ -4,7 +4,7 @@ title: "YUI Theater —  Tantek Çelik: \"HTML5: Right Here, Right Now\" (56 min
 author: "Unknown"
 date: 2010-11-24
 slug: "video-yuiconf2010-tantek"
-permalink: /blog/2010/11/24/video-yuiconf2010-tantek/
+permalink: /2010/11/24/video-yuiconf2010-tantek/
 categories:
   - "YUI Theater"
 ---

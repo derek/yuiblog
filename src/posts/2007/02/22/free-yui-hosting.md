@@ -4,7 +4,7 @@ title: "Free Hosting of YUI Files from Yahoo!"
 author: "YUI Team"
 date: 2007-02-22
 slug: "free-yui-hosting"
-permalink: /blog/2007/02/22/free-yui-hosting/
+permalink: /2007/02/22/free-yui-hosting/
 categories:
   - "Development"
 ---

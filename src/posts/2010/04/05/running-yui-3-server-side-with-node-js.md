@@ -4,7 +4,7 @@ title: "Running YUI 3 Server-Side with Node.js"
 author: "Dav Glass"
 date: 2010-04-05
 slug: "running-yui-3-server-side-with-node-js"
-permalink: /blog/2010/04/05/running-yui-3-server-side-with-node-js/
+permalink: /2010/04/05/running-yui-3-server-side-with-node-js/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Pattern-mining call for proposals: Rich interaction (web 2.0) patterns"
 author: "YUI Team"
 date: 2008-03-28
 slug: "pattern-mining"
-permalink: /blog/2008/03/28/pattern-mining/
+permalink: /2008/03/28/pattern-mining/
 categories:
   - "Design"
 ---

@@ -4,7 +4,7 @@ title: "YUI 2.3.0: Six New Components and a Prettier Face"
 author: "Eric Miraglia"
 date: 2007-07-31
 slug: "yui-2-3-0-released"
-permalink: /blog/2007/07/31/yui-2-3-0-released/
+permalink: /2007/07/31/yui-2-3-0-released/
 categories:
   - "Development"
 ---

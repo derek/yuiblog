@@ -4,7 +4,7 @@ title: "YUI 2.8.0 Preview for YAP Developers"
 author: "Eric Miraglia"
 date: 2009-10-28
 slug: "yui-2-8-0-on-yap"
-permalink: /blog/2009/10/28/yui-2-8-0-on-yap/
+permalink: /2009/10/28/yui-2-8-0-on-yap/
 categories:
   - "Development"
 ---

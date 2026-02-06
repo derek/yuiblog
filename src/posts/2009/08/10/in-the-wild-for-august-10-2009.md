@@ -4,7 +4,7 @@ title: "In the Wild for August 10, 2009"
 author: "Eric Miraglia"
 date: 2009-08-10
 slug: "in-the-wild-for-august-10-2009"
-permalink: /blog/2009/08/10/in-the-wild-for-august-10-2009/
+permalink: /2009/08/10/in-the-wild-for-august-10-2009/
 categories:
   - "In the Wild"
 ---

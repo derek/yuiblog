@@ -4,7 +4,7 @@ title: "Windows 8 Learnings"
 author: "Tilo"
 date: 2012-11-02
 slug: "windows-8-learnings"
-permalink: /blog/2012/11/02/windows-8-learnings/
+permalink: /2012/11/02/windows-8-learnings/
 categories:
   - "Development"
 ---

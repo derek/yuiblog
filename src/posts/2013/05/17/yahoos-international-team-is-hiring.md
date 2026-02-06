@@ -4,7 +4,7 @@ title: "Yahoo's International Team Is Hiring!"
 author: "Jenny Donnelly"
 date: 2013-05-17
 slug: "yahoos-international-team-is-hiring"
-permalink: /blog/2013/05/17/yahoos-international-team-is-hiring/
+permalink: /2013/05/17/yahoos-international-team-is-hiring/
 categories:
   - "Development"
 ---

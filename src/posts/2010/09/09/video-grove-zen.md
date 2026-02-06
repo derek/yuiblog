@@ -4,7 +4,7 @@ title: "YUI Theater —  Ryan Grove: \"Achieving Performance Zen with YUI 3\" (4
 author: "Eric Miraglia"
 date: 2010-09-09
 slug: "video-grove-zen"
-permalink: /blog/2010/09/09/video-grove-zen/
+permalink: /2010/09/09/video-grove-zen/
 categories:
   - "Development"
 ---

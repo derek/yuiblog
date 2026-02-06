@@ -4,7 +4,7 @@ title: "Breadcrumbs Design Pattern"
 author: "YUI Team"
 date: 2006-02-13
 slug: "breadcrumbs"
-permalink: /blog/2006/02/13/breadcrumbs/
+permalink: /2006/02/13/breadcrumbs/
 categories:
   - "Design"
 ---

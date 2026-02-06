@@ -4,7 +4,7 @@ title: "Coming in YUI 3.2.0: SimpleYUI"
 author: "Eric Miraglia and Adam Moore"
 date: 2010-09-03
 slug: "coming-inyui-3-2-0-simpleyui"
-permalink: /blog/2010/09/03/coming-inyui-3-2-0-simpleyui/
+permalink: /2010/09/03/coming-inyui-3-2-0-simpleyui/
 categories:
   - "Development"
 ---

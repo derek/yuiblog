@@ -4,7 +4,7 @@ title: "YUIConf 2013: Diego Ferreiro and Norbert Hu on Building a Performant HTM
 author: "Andrew Wooldridge"
 date: 2014-02-14
 slug: "yuiconf-2013-diego-ferreiro-and-norbert-hu-on-building-a-performant-html5hybrid-app"
-permalink: /blog/2014/02/14/yuiconf-2013-diego-ferreiro-and-norbert-hu-on-building-a-performant-html5hybrid-app/
+permalink: /2014/02/14/yuiconf-2013-diego-ferreiro-and-norbert-hu-on-building-a-performant-html5hybrid-app/
 categories:
   - "Development"
 ---

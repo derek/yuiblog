@@ -4,7 +4,7 @@ title: "Working with the YUI DataTable (Updated for v2.6.0), Part 2: Changing th
 author: "Satyam"
 date: 2008-10-27
 slug: "datatable-260-part-two"
-permalink: /blog/2008/10/27/datatable-260-part-two/
+permalink: /2008/10/27/datatable-260-part-two/
 categories:
   - "Development"
 ---

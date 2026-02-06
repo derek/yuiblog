@@ -4,7 +4,7 @@ title: "DjangoSnippets: YUI Loader as Django Middleware"
 author: "Eric Miraglia"
 date: 2008-04-25
 slug: "django-yui-loader"
-permalink: /blog/2008/04/25/django-yui-loader/
+permalink: /2008/04/25/django-yui-loader/
 categories:
   - "Development"
 ---

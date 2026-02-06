@@ -4,7 +4,7 @@ title: "The Bubbling Technique & Custom Event, YUI's Secret Weapon by Caridy Pat
 author: "Caridy Patino"
 date: 2007-09-13
 slug: "bubbling-library-by-caridy"
-permalink: /blog/2007/09/13/bubbling-library-by-caridy/
+permalink: /2007/09/13/bubbling-library-by-caridy/
 categories:
   - "Development"
 ---

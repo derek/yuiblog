@@ -4,7 +4,7 @@ title: "YUI Theater — Luke Smith: \"Class Inheritance and Composition Patterns
 author: "Ryan Grove"
 date: 2011-11-18
 slug: "video-yuiconf2011-luke"
-permalink: /blog/2011/11/18/video-yuiconf2011-luke/
+permalink: /2011/11/18/video-yuiconf2011-luke/
 categories:
   - "Development"
 ---

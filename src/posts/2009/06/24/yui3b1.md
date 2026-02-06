@@ -4,7 +4,7 @@ title: "YUI 3.0.0 beta 1 Available for Download"
 author: "Eric Miraglia"
 date: 2009-06-24
 slug: "yui3b1"
-permalink: /blog/2009/06/24/yui3b1/
+permalink: /2009/06/24/yui3b1/
 categories:
   - "Development"
 ---

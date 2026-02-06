@@ -4,7 +4,7 @@ title: "YUI Theater -- Jeff Burtoft: \"Scaling Mobile with YUI\" (49 min.)"
 author: "Unknown"
 date: 2012-01-03
 slug: "video-yuiconf2011-burtoft"
-permalink: /blog/2012/01/03/video-yuiconf2011-burtoft/
+permalink: /2012/01/03/video-yuiconf2011-burtoft/
 categories:
   - "Development"
 ---

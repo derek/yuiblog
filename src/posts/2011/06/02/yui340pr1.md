@@ -4,7 +4,7 @@ title: "YUI 3.4.0 Preview Release 1"
 author: "YUI Team"
 date: 2011-06-02
 slug: "yui340pr1"
-permalink: /blog/2011/06/02/yui340pr1/
+permalink: /2011/06/02/yui340pr1/
 categories:
   - "Development"
 ---

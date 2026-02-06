@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Douglas Crockford on Monads and Gonads (Evening Keyno
 author: "Andrew Wooldridge"
 date: 2012-12-13
 slug: "yuiconf-2012-talk-douglas-crockford-on-monads-and-gonads-evening-keynote"
-permalink: /blog/2012/12/13/yuiconf-2012-talk-douglas-crockford-on-monads-and-gonads-evening-keynote/
+permalink: /2012/12/13/yuiconf-2012-talk-douglas-crockford-on-monads-and-gonads-evening-keynote/
 categories:
   - "Development"
 ---

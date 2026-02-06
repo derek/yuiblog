@@ -258,7 +258,7 @@ function processFile(filePath) {
     `author: "${author}"`,
     `date: ${date}`,
     `slug: "${slug}"`,
-    `permalink: /blog/${date.replace(/-/g, '/')}/${slug}/`.replace(/\/\//g, '/'),
+    `permalink: /${date.replace(/-/g, '/')}/${slug}/`.replace(/\/\//g, '/'),
   ];
   
   if (categories.length > 0) {

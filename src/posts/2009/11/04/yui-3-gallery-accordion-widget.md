@@ -4,7 +4,7 @@ title: "YUI 3 Gallery: Accordion Widget"
 author: "YUI Team"
 date: 2009-11-04
 slug: "yui-3-gallery-accordion-widget"
-permalink: /blog/2009/11/04/yui-3-gallery-accordion-widget/
+permalink: /2009/11/04/yui-3-gallery-accordion-widget/
 categories:
   - "Development"
 ---

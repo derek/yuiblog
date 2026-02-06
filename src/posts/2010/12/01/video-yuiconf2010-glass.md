@@ -4,7 +4,7 @@ title: "YUI Theater —  Dav Glass: \"Node.js + YUI 3\" (44 min.)"
 author: "Eric Miraglia"
 date: 2010-12-01
 slug: "video-yuiconf2010-glass"
-permalink: /blog/2010/12/01/video-yuiconf2010-glass/
+permalink: /2010/12/01/video-yuiconf2010-glass/
 categories:
   - "YUI Theater"
 ---

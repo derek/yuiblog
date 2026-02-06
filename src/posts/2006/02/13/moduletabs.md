@@ -4,7 +4,7 @@ title: "Module Tabs Design Pattern"
 author: "YUI Team"
 date: 2006-02-13
 slug: "moduletabs"
-permalink: /blog/2006/02/13/moduletabs/
+permalink: /2006/02/13/moduletabs/
 categories:
   - "Design"
 ---

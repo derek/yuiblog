@@ -4,7 +4,7 @@ title: "Open Hack Day 2008: You're Invited"
 author: "Eric Miraglia"
 date: 2008-08-28
 slug: "openhack"
-permalink: /blog/2008/08/28/openhack/
+permalink: /2008/08/28/openhack/
 categories:
   - "Development"
 ---

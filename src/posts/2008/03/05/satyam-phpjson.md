@@ -4,7 +4,7 @@ title: "My PHP Backend Scripts for Use With YUI"
 author: "YUI Team"
 date: 2008-03-05
 slug: "satyam-phpjson"
-permalink: /blog/2008/03/05/satyam-phpjson/
+permalink: /2008/03/05/satyam-phpjson/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Gonzalo Cordero: \"A Preview of YUI 3 TreeView\" (17 mi
 author: "Eric Miraglia"
 date: 2010-12-03
 slug: "video-yuiconf2010-cordero"
-permalink: /blog/2010/12/03/video-yuiconf2010-cordero/
+permalink: /2010/12/03/video-yuiconf2010-cordero/
 categories:
   - "YUI Theater"
 ---

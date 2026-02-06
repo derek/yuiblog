@@ -4,7 +4,7 @@ title: "Announcing YUI 2.8.2 — Important Security Update for All Users of YUI 
 author: "Eric Miraglia"
 date: 2010-10-25
 slug: "yui-2-8-2-security-update"
-permalink: /blog/2010/10/25/yui-2-8-2-security-update/
+permalink: /2010/10/25/yui-2-8-2-security-update/
 categories:
   - "Development"
 ---

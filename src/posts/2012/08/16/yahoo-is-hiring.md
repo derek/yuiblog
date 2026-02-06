@@ -4,7 +4,7 @@ title: "Yahoo! Is Hiring!"
 author: "Unknown"
 date: 2012-08-16
 slug: "yahoo-is-hiring"
-permalink: /blog/2012/08/16/yahoo-is-hiring/
+permalink: /2012/08/16/yahoo-is-hiring/
 categories:
   - "Development"
 ---

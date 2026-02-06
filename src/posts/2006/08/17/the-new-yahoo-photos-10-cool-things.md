@@ -4,7 +4,7 @@ title: "10 Cool Things About The New Yahoo! Photos"
 author: "Unknown"
 date: 2006-08-17
 slug: "the-new-yahoo-photos-10-cool-things"
-permalink: /blog/2006/08/17/the-new-yahoo-photos-10-cool-things/
+permalink: /2006/08/17/the-new-yahoo-photos-10-cool-things/
 categories:
   - "Development"
 ---

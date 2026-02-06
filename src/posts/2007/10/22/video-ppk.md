@@ -4,7 +4,7 @@ title: "YUI Theater — PPK on the Professionalization of Frontend Engineering"
 author: "YUI Team"
 date: 2007-10-22
 slug: "video-ppk"
-permalink: /blog/2007/10/22/video-ppk/
+permalink: /2007/10/22/video-ppk/
 categories:
   - "YUI Theater"
 ---

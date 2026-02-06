@@ -4,7 +4,7 @@ title: "Managing your JavaScript Modules with YUI 3 Stockpile"
 author: "John Lindal"
 date: 2012-11-06
 slug: "managing-your-javascript-modules-with-yui-3-stockpile-2"
-permalink: /blog/2012/11/06/managing-your-javascript-modules-with-yui-3-stockpile-2/
+permalink: /2012/11/06/managing-your-javascript-modules-with-yui-3-stockpile-2/
 categories:
   - "Development"
 ---

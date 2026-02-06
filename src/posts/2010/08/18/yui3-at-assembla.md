@@ -4,7 +4,7 @@ title: "Implementing YUI on the Assembla.com Agile Planner"
 author: "Joachim Larsen"
 date: 2010-08-18
 slug: "yui3-at-assembla"
-permalink: /blog/2010/08/18/yui3-at-assembla/
+permalink: /2010/08/18/yui3-at-assembla/
 categories:
   - "YUI Implementations"
 ---

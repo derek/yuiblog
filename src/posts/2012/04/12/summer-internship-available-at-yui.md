@@ -4,7 +4,7 @@ title: "Summer Internship Available at YUI"
 author: "Unknown"
 date: 2012-04-12
 slug: "summer-internship-available-at-yui"
-permalink: /blog/2012/04/12/summer-internship-available-at-yui/
+permalink: /2012/04/12/summer-internship-available-at-yui/
 categories:
   - "Development"
 ---

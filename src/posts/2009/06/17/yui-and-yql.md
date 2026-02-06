@@ -4,7 +4,7 @@ title: "Coupling YUI and YQL to Build Dynamic Widgets"
 author: "Jonathan LeBlanc"
 date: 2009-06-17
 slug: "yui-and-yql"
-permalink: /blog/2009/06/17/yui-and-yql/
+permalink: /2009/06/17/yui-and-yql/
 categories:
   - "Development"
 ---

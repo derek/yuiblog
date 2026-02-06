@@ -4,7 +4,7 @@ title: "Using the YUI 3 Calendar Date Selector from Alloy"
 author: "Eric Miraglia"
 date: 2010-06-18
 slug: "alloy-date-selector"
-permalink: /blog/2010/06/18/alloy-date-selector/
+permalink: /2010/06/18/alloy-date-selector/
 categories:
   - "Development"
 ---

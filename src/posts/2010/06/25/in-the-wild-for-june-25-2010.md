@@ -4,7 +4,7 @@ title: "In the Wild for June 25, 2010"
 author: "Eric Miraglia"
 date: 2010-06-25
 slug: "in-the-wild-for-june-25-2010"
-permalink: /blog/2010/06/25/in-the-wild-for-june-25-2010/
+permalink: /2010/06/25/in-the-wild-for-june-25-2010/
 categories:
   - "In the Wild"
 ---

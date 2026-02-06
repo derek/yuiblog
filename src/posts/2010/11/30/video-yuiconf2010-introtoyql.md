@@ -4,7 +4,7 @@ title: "YUI Theater —  Mirek Grymuza and Josh Gordineer: \"YQL: An Introductio
 author: "YUI Team"
 date: 2010-11-30
 slug: "video-yuiconf2010-introtoyql"
-permalink: /blog/2010/11/30/video-yuiconf2010-introtoyql/
+permalink: /2010/11/30/video-yuiconf2010-introtoyql/
 categories:
   - "YUI Theater"
 ---

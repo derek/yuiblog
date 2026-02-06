@@ -4,7 +4,7 @@ title: "Online YUI 3 Introductory Course Fri, Jan 21st"
 author: "YUI Team"
 date: 2011-01-13
 slug: "online-yui-3-introductory-course-monday-jan-17th"
-permalink: /blog/2011/01/13/online-yui-3-introductory-course-monday-jan-17th/
+permalink: /2011/01/13/online-yui-3-introductory-course-monday-jan-17th/
 categories:
   - "Development"
 ---

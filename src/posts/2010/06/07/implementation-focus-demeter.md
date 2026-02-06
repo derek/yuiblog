@@ -4,7 +4,7 @@ title: "Implementation Focus: Demeter"
 author: "Jenny Donnelly"
 date: 2010-06-07
 slug: "implementation-focus-demeter"
-permalink: /blog/2010/06/07/implementation-focus-demeter/
+permalink: /2010/06/07/implementation-focus-demeter/
 categories:
   - "Development"
 ---

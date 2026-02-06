@@ -4,7 +4,7 @@ title: "Introducing Yeti: The YUI Easy Testing Interface"
 author: "Reid Burke"
 date: 2010-08-25
 slug: "introducing-yeti-the-yui-easy-testing-interface"
-permalink: /blog/2010/08/25/introducing-yeti-the-yui-easy-testing-interface/
+permalink: /2010/08/25/introducing-yeti-the-yui-easy-testing-interface/
 categories:
   - "Development"
 ---

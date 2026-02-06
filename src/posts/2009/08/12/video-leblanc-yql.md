@@ -4,7 +4,7 @@ title: "YUI Theater —  Jonathan LeBlanc: \"YQL and YUI\""
 author: "Eric Miraglia"
 date: 2009-08-12
 slug: "video-leblanc-yql"
-permalink: /blog/2009/08/12/video-leblanc-yql/
+permalink: /2009/08/12/video-leblanc-yql/
 categories:
   - "YUI Theater"
 ---

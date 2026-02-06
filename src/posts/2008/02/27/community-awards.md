@@ -4,7 +4,7 @@ title: "YUI Community Awards"
 author: "Eric Miraglia"
 date: 2008-02-27
 slug: "community-awards"
-permalink: /blog/2008/02/27/community-awards/
+permalink: /2008/02/27/community-awards/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Additional Hotel Information for YUIConf 2012"
 author: "Andrew Wooldridge"
 date: 2012-10-12
 slug: "additional-hotel-information-for-yuiconf-2012"
-permalink: /blog/2012/10/12/additional-hotel-information-for-yuiconf-2012/
+permalink: /2012/10/12/additional-hotel-information-for-yuiconf-2012/
 categories:
   - "YUI Events"
 ---

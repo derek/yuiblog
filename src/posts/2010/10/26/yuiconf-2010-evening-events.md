@@ -4,7 +4,7 @@ title: "YUIConf 2010 Sells Out; Announcing Two Special Evening Events"
 author: "Jenny Donnelly"
 date: 2010-10-26
 slug: "yuiconf-2010-evening-events"
-permalink: /blog/2010/10/26/yuiconf-2010-evening-events/
+permalink: /2010/10/26/yuiconf-2010-evening-events/
 categories:
   - "Development"
 ---

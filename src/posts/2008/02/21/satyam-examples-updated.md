@@ -4,7 +4,7 @@ title: "Satyam's DataTable Examples Updated for 2.5.0"
 author: "Eric Miraglia"
 date: 2008-02-21
 slug: "satyam-examples-updated"
-permalink: /blog/2008/02/21/satyam-examples-updated/
+permalink: /2008/02/21/satyam-examples-updated/
 categories:
   - "Development"
 ---

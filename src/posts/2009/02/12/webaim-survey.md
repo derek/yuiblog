@@ -4,7 +4,7 @@ title: "WebAIM Survey Shines Light on Screen Reader Usage"
 author: "Victor Tsaran"
 date: 2009-02-12
 slug: "webaim-survey"
-permalink: /blog/2009/02/12/webaim-survey/
+permalink: /2009/02/12/webaim-survey/
 categories:
   - "Development"
 ---

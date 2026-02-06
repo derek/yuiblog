@@ -4,7 +4,7 @@ title: "When You Can't Count On Your Numbers"
 author: "Douglas Crockford"
 date: 2009-03-10
 slug: "when-you-cant-count-on-your-numbers"
-permalink: /blog/2009/03/10/when-you-cant-count-on-your-numbers/
+permalink: /2009/03/10/when-you-cant-count-on-your-numbers/
 categories:
   - "Development"
 ---

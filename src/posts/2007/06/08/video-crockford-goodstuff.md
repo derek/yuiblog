@@ -4,7 +4,7 @@ title: "YUI Theater: Douglas Crockford — \"JavaScript: The Good Parts\""
 author: "Eric Miraglia"
 date: 2007-06-08
 slug: "video-crockford-goodstuff"
-permalink: /blog/2007/06/08/video-crockford-goodstuff/
+permalink: /2007/06/08/video-crockford-goodstuff/
 categories:
   - "YUI Theater"
 ---

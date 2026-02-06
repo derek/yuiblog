@@ -4,7 +4,7 @@ title: "Job Opening on the Yahoo! Media Foundation Team"
 author: "Ricardo Dotta"
 date: 2011-03-17
 slug: "job-opening-on-the-yahoo-media-foundation-team"
-permalink: /blog/2011/03/17/job-opening-on-the-yahoo-media-foundation-team/
+permalink: /2011/03/17/job-opening-on-the-yahoo-media-foundation-team/
 categories:
   - "Development"
 ---

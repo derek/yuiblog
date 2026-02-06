@@ -4,7 +4,7 @@ title: "CSS 101: Block Formatting Contexts"
 author: "Thierry Koblentz"
 date: 2010-05-19
 slug: "css-101-block-formatting-contexts"
-permalink: /blog/2010/05/19/css-101-block-formatting-contexts/
+permalink: /2010/05/19/css-101-block-formatting-contexts/
 categories:
   - "Development"
 ---

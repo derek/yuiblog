@@ -4,7 +4,7 @@ title: "Ryuichi Okumura is now a YUI Committer!"
 author: "Andrew Wooldridge"
 date: 2013-08-22
 slug: "ryuichi-okumura-is-now-a-yui-commiter"
-permalink: /blog/2013/08/22/ryuichi-okumura-is-now-a-yui-commiter/
+permalink: /2013/08/22/ryuichi-okumura-is-now-a-yui-commiter/
 categories:
   - "Development"
 ---

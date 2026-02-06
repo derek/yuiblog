@@ -4,7 +4,7 @@ title: "Next-Gen YSlow powered by YUI"
 author: "Marcel Duran"
 date: 2011-07-18
 slug: "next-gen-yslow-powered-by-yui"
-permalink: /blog/2011/07/18/next-gen-yslow-powered-by-yui/
+permalink: /2011/07/18/next-gen-yslow-powered-by-yui/
 categories:
   - "Development"
 ---

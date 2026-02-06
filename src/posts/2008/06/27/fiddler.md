@@ -4,7 +4,7 @@ title: "Production JavaScript Debugging"
 author: "Unknown"
 date: 2008-06-27
 slug: "fiddler"
-permalink: /blog/2008/06/27/fiddler/
+permalink: /2008/06/27/fiddler/
 categories:
   - "Development"
 ---

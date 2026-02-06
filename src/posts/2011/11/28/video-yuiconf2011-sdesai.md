@@ -4,7 +4,7 @@ title: "YUI Theater — Satyen Desai: \"Livestand Learnings\" (63 min.)"
 author: "YUI Team"
 date: 2011-11-28
 slug: "video-yuiconf2011-sdesai"
-permalink: /blog/2011/11/28/video-yuiconf2011-sdesai/
+permalink: /2011/11/28/video-yuiconf2011-sdesai/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Crockford delivering \"State and Future of JavaScript\" talk at ACCU in 
 author: "YUI Team"
 date: 2010-01-05
 slug: "crockford-at-accu"
-permalink: /blog/2010/01/05/crockford-at-accu/
+permalink: /2010/01/05/crockford-at-accu/
 categories:
   - "Development"
 ---

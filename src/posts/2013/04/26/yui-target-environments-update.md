@@ -4,7 +4,7 @@ title: "YUI Target Environments Update"
 author: "Jenny Donnelly"
 date: 2013-04-26
 slug: "yui-target-environments-update"
-permalink: /blog/2013/04/26/yui-target-environments-update/
+permalink: /2013/04/26/yui-target-environments-update/
 categories:
   - "Development"
 ---

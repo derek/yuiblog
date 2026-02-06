@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: David Gomez on Forget Everything You Know About Testi
 author: "Andrew Wooldridge"
 date: 2014-01-20
 slug: "yuiconf-2013-talk-david-gomez-on-forget-everything-you-know-about-testing-and-start-testing"
-permalink: /blog/2014/01/20/yuiconf-2013-talk-david-gomez-on-forget-everything-you-know-about-testing-and-start-testing/
+permalink: /2014/01/20/yuiconf-2013-talk-david-gomez-on-forget-everything-you-know-about-testing-and-start-testing/
 categories:
   - "Development"
 ---

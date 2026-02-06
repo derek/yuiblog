@@ -4,7 +4,7 @@ title: "London's Hacking — and YUI's Nate Koechley Will Be There"
 author: "Eric Miraglia"
 date: 2007-05-14
 slug: "londons-hacking"
-permalink: /blog/2007/05/14/londons-hacking/
+permalink: /2007/05/14/londons-hacking/
 categories:
   - "Development"
 ---

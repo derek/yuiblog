@@ -4,7 +4,7 @@ title: "YUI Theater — Eric Ferraiuolo: \"YUI App Framework: You've Been Wantin
 author: "Ryan Grove"
 date: 2011-11-18
 slug: "video-yuiconf2011-ericf"
-permalink: /blog/2011/11/18/video-yuiconf2011-ericf/
+permalink: /2011/11/18/video-yuiconf2011-ericf/
 categories:
   - "Development"
 ---

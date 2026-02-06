@@ -4,7 +4,7 @@ title: "NodeConf 2013"
 author: "Alexander Shusta"
 date: 2013-08-06
 slug: "nodeconf-2013"
-permalink: /blog/2013/08/06/nodeconf-2013/
+permalink: /2013/08/06/nodeconf-2013/
 categories:
   - "Development"
 ---

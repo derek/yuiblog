@@ -4,7 +4,7 @@ title: "A JavaScript Module Pattern"
 author: "Eric Miraglia"
 date: 2007-06-12
 slug: "module-pattern"
-permalink: /blog/2007/06/12/module-pattern/
+permalink: /2007/06/12/module-pattern/
 categories:
   - "Development"
 ---

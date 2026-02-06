@@ -4,7 +4,7 @@ title: "YUI Theater — Joseph Smarr: \"High-Performance JavaScript: Why Everyth
 author: "Unknown"
 date: 2007-08-29
 slug: "video-smarr"
-permalink: /blog/2007/08/29/video-smarr/
+permalink: /2007/08/29/video-smarr/
 categories:
   - "YUI Theater"
 ---

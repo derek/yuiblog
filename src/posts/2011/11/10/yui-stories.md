@@ -4,7 +4,7 @@ title: "YUI Stories"
 author: "YUI Team"
 date: 2011-11-10
 slug: "yui-stories"
-permalink: /blog/2011/11/10/yui-stories/
+permalink: /2011/11/10/yui-stories/
 categories:
   - "YUI Theater"
 ---

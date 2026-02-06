@@ -4,7 +4,7 @@ title: "CSS Border Tricks with Collapsed Boxes"
 author: "Thierry Koblentz"
 date: 2011-03-08
 slug: "css-border-tricks-with-collapsed-boxes"
-permalink: /blog/2011/03/08/css-border-tricks-with-collapsed-boxes/
+permalink: /2011/03/08/css-border-tricks-with-collapsed-boxes/
 categories:
   - "Development"
 ---

@@ -6,7 +6,7 @@ pagination:
 layout: layouts/base.njk
 eleventyComputed:
   title: "{{ category.name }}"
-  permalink: "blog/category/{{ category.slug }}/"
+  permalink: "category/{{ category.slug }}/"
 ---
 
 <h1>{{ category.name }}</h1>
@@ -24,7 +24,7 @@ eleventyComputed:
                 <div class="byline">
                     By {{ post.data.author }}
                     {% if post.data.categories and post.data.categories.length > 0 %}
-                    &nbsp;&nbsp;&nbsp;in {% for cat in post.data.categories %}<a href="{{ site.baseUrl }}blog/category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+                    &nbsp;&nbsp;&nbsp;in {% for cat in post.data.categories %}<a href="{{ site.baseUrl }}category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
                     {% endif %}
                 </div>
             </div>

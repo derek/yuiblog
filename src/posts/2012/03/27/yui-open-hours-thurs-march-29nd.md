@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs March 29nd"
 author: "Luke Smith"
 date: 2012-03-27
 slug: "yui-open-hours-thurs-march-29nd"
-permalink: /blog/2012/03/27/yui-open-hours-thurs-march-29nd/
+permalink: /2012/03/27/yui-open-hours-thurs-march-29nd/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Dr. Strangeloop or: How I Learned to Stop Worrying and Love Functional P
 author: "John Lindal"
 date: 2012-04-09
 slug: "dr-strangeloop-or-how-i-learned-to-stop-worrying-and-love-functional-programming"
-permalink: /blog/2012/04/09/dr-strangeloop-or-how-i-learned-to-stop-worrying-and-love-functional-programming/
+permalink: /2012/04/09/dr-strangeloop-or-how-i-learned-to-stop-worrying-and-love-functional-programming/
 categories:
   - "Development"
 ---

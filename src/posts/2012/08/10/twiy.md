@@ -4,7 +4,7 @@ title: "YUI Weekly - Aug 10th, 2012"
 author: "Derek Gathright"
 date: 2012-08-10
 slug: "twiy"
-permalink: /blog/2012/08/10/twiy/
+permalink: /2012/08/10/twiy/
 categories:
   - "YUI Weekly"
 ---

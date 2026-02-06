@@ -4,7 +4,7 @@ title: "YUIConf 2013 Call for Speakers + Deadline"
 author: "YUI Team"
 date: 2013-09-26
 slug: "yuiconf-2013-call-for-speakers-deadline"
-permalink: /blog/2013/09/26/yuiconf-2013-call-for-speakers-deadline/
+permalink: /2013/09/26/yuiconf-2013-call-for-speakers-deadline/
 categories:
   - "Development"
 ---

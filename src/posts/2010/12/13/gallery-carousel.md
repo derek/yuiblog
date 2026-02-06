@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: The Carousel Module"
 author: "Gopal Venkatesan and Fabian Frank"
 date: 2010-12-13
 slug: "gallery-carousel"
-permalink: /blog/2010/12/13/gallery-carousel/
+permalink: /2010/12/13/gallery-carousel/
 categories:
   - "Development"
 ---

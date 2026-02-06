@@ -4,7 +4,7 @@ title: "Design Pattern Conversation: What's the Best Way to Communicate Patterns
 author: "Luke Wroblewski"
 date: 2006-10-11
 slug: "communicating_patterns_part_one"
-permalink: /blog/2006/10/11/communicating_patterns_part_one/
+permalink: /2006/10/11/communicating_patterns_part_one/
 categories:
   - "Design"
 ---

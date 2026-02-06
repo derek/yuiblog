@@ -4,7 +4,7 @@ title: "YUI Version 2.2.0 Released: Browser History Manager, DataTable, and Butt
 author: "YUI Team"
 date: 2007-02-20
 slug: "yui-220-released"
-permalink: /blog/2007/02/20/yui-220-released/
+permalink: /2007/02/20/yui-220-released/
 categories:
   - "Development"
 ---

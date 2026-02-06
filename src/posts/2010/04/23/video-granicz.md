@@ -4,7 +4,7 @@ title: "YUI Theater —  Adam Granicz: \"Robust and Rapid Web Development with W
 author: "YUI Team"
 date: 2010-04-23
 slug: "video-granicz"
-permalink: /blog/2010/04/23/video-granicz/
+permalink: /2010/04/23/video-granicz/
 categories:
   - "Development"
 ---

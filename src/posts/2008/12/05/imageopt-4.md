@@ -4,7 +4,7 @@ title: "Image Optimization, Part 4: Progressive JPEG...Hot or Not?"
 author: "Stoyan Stefanov"
 date: 2008-12-05
 slug: "imageopt-4"
-permalink: /blog/2008/12/05/imageopt-4/
+permalink: /2008/12/05/imageopt-4/
 categories:
   - "Development"
 ---

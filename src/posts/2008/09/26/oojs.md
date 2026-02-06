@@ -4,7 +4,7 @@ title: "Free Chapter: \"Coding and Design Patterns\" from Stoyan Stefanov's Obje
 author: "YUI Team"
 date: 2008-09-26
 slug: "oojs"
-permalink: /blog/2008/09/26/oojs/
+permalink: /2008/09/26/oojs/
 categories:
   - "Development"
 ---

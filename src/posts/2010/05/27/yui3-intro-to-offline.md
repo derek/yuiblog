@@ -4,7 +4,7 @@ title: "An Introduction to Using YUI 3 in Offline Applications"
 author: "Alexander Kessinger"
 date: 2010-05-27
 slug: "yui3-intro-to-offline"
-permalink: /blog/2010/05/27/yui3-intro-to-offline/
+permalink: /2010/05/27/yui3-intro-to-offline/
 categories:
   - "Development"
 ---

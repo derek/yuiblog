@@ -4,7 +4,7 @@ title: "Implementation Focus: Squarespace"
 author: "Unknown"
 date: 2009-06-09
 slug: "implementation-focus-squarespace"
-permalink: /blog/2009/06/09/implementation-focus-squarespace/
+permalink: /2009/06/09/implementation-focus-squarespace/
 categories:
   - "YUI Implementations"
 ---

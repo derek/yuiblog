@@ -4,7 +4,7 @@ title: "Join Us for BayJax on June 15 with a Special Focus on Accessibility"
 author: "Gonzalo Cordero"
 date: 2010-06-09
 slug: "bayjax-june-2010"
-permalink: /blog/2010/06/09/bayjax-june-2010/
+permalink: /2010/06/09/bayjax-june-2010/
 categories:
   - "YUI Events"
 ---

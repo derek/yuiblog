@@ -4,7 +4,7 @@ title: "YUI's Matt Sweeney and Hands-on YUI Workshops at Yahoo! Developer Day/Ha
 author: "Eric Miraglia"
 date: 2006-09-14
 slug: "yuis-matt-sweeney-and-hands-on-yui-workshops-at-yahoo-developer-dayhack-day-september-29-30-in-sunnyvale"
-permalink: /blog/2006/09/14/yuis-matt-sweeney-and-hands-on-yui-workshops-at-yahoo-developer-dayhack-day-september-29-30-in-sunnyvale/
+permalink: /2006/09/14/yuis-matt-sweeney-and-hands-on-yui-workshops-at-yahoo-developer-dayhack-day-september-29-30-in-sunnyvale/
 categories:
   - "Development"
 ---

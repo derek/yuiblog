@@ -4,7 +4,7 @@ title: "Using YUI TreeView and DataTable Together"
 author: "YUI Team"
 date: 2009-10-12
 slug: "using-yui-treeview-and-datatable-together"
-permalink: /blog/2009/10/12/using-yui-treeview-and-datatable-together/
+permalink: /2009/10/12/using-yui-treeview-and-datatable-together/
 categories:
   - "Development"
 ---

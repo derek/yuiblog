@@ -4,7 +4,7 @@ title: "Reid Burke's Scrolling TabView"
 author: "YUI Team"
 date: 2008-05-20
 slug: "scrolling-tabview"
-permalink: /blog/2008/05/20/scrolling-tabview/
+permalink: /2008/05/20/scrolling-tabview/
 categories:
   - "Development"
 ---

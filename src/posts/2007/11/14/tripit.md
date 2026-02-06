@@ -4,7 +4,7 @@ title: "Implementation Focus: TripIt"
 author: "Unknown"
 date: 2007-11-14
 slug: "tripit"
-permalink: /blog/2007/11/14/tripit/
+permalink: /2007/11/14/tripit/
 categories:
   - "YUI Implementations"
 ---

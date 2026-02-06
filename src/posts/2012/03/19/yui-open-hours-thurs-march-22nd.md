@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs March 22nd"
 author: "YUI Team"
 date: 2012-03-19
 slug: "yui-open-hours-thurs-march-22nd"
-permalink: /blog/2012/03/19/yui-open-hours-thurs-march-22nd/
+permalink: /2012/03/19/yui-open-hours-thurs-march-22nd/
 categories:
   - "Development"
 ---

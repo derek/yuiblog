@@ -4,7 +4,7 @@ title: "In the Wild for January 18"
 author: "Eric Miraglia"
 date: 2008-01-18
 slug: "in-the-wild-20080118"
-permalink: /blog/2008/01/18/in-the-wild-20080118/
+permalink: /2008/01/18/in-the-wild-20080118/
 categories:
   - "In the Wild"
 ---

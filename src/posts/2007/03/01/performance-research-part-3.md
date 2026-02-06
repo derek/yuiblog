@@ -4,7 +4,7 @@ title: "Performance Research, Part 3: When the Cookie Crumbles"
 author: "Tenni Theurer"
 date: 2007-03-01
 slug: "performance-research-part-3"
-permalink: /blog/2007/03/01/performance-research-part-3/
+permalink: /2007/03/01/performance-research-part-3/
 categories:
   - "Development"
 ---

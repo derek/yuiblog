@@ -4,7 +4,7 @@ title: "YDN Theater — Julien Lecomte: \"High Performance Ajax Applications\""
 author: "Eric Miraglia"
 date: 2007-12-20
 slug: "video-lecomte"
-permalink: /blog/2007/12/20/video-lecomte/
+permalink: /2007/12/20/video-lecomte/
 categories:
   - "YUI Theater"
 ---

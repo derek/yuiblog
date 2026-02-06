@@ -4,7 +4,7 @@ title: "Ask Satyam — Upcoming Tutorials"
 author: "Satyam"
 date: 2010-08-04
 slug: "ask-satyam-upcoming-tutorials"
-permalink: /blog/2010/08/04/ask-satyam-upcoming-tutorials/
+permalink: /2010/08/04/ask-satyam-upcoming-tutorials/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Another YUI-based Game from Kris Cieslak: Pacman"
 author: "Unknown"
 date: 2008-09-02
 slug: "cieslak-pacman"
-permalink: /blog/2008/09/02/cieslak-pacman/
+permalink: /2008/09/02/cieslak-pacman/
 categories:
   - "Development"
 ---

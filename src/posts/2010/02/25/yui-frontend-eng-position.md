@@ -4,7 +4,7 @@ title: "Frontend Engineering Job on the YUI Team"
 author: "Eric Miraglia"
 date: 2010-02-25
 slug: "yui-frontend-eng-position"
-permalink: /blog/2010/02/25/yui-frontend-eng-position/
+permalink: /2010/02/25/yui-frontend-eng-position/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

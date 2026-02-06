@@ -4,7 +4,7 @@ title: "Christian Heilmann's Talk on YUI at GeekUp Leeds"
 author: "Eric Miraglia"
 date: 2008-02-26
 slug: "heilmann-geekup"
-permalink: /blog/2008/02/26/heilmann-geekup/
+permalink: /2008/02/26/heilmann-geekup/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater -- Derek Gathright: \"Why YUI?\" (27 min.)"
 author: "Ryan Grove"
 date: 2012-01-30
 slug: "video-yuiconf2011-dgathright"
-permalink: /blog/2012/01/30/video-yuiconf2011-dgathright/
+permalink: /2012/01/30/video-yuiconf2011-dgathright/
 categories:
   - "Development"
 ---

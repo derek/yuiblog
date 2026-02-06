@@ -4,7 +4,7 @@ title: "Survey: When is an Accordion not an Accordion?"
 author: "Christian Crumlish"
 date: 2009-03-23
 slug: "survey-when-is-an-accordion-not-an-accordion"
-permalink: /blog/2009/03/23/survey-when-is-an-accordion-not-an-accordion/
+permalink: /2009/03/23/survey-when-is-an-accordion-not-an-accordion/
 categories:
   - "Development"
 ---

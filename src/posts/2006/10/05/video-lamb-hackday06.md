@@ -4,7 +4,7 @@ title: "Video: Iain Lamb's Hack Day Talk, \"The New Hacker's Toolkit\""
 author: "Unknown"
 date: 2006-10-05
 slug: "video-lamb-hackday06"
-permalink: /blog/2006/10/05/video-lamb-hackday06/
+permalink: /2006/10/05/video-lamb-hackday06/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Weekly for November 15th, 2013"
 author: "Derek Gathright"
 date: 2013-11-15
 slug: "yui-weekly-for-november-15th-2013"
-permalink: /blog/2013/11/15/yui-weekly-for-november-15th-2013/
+permalink: /2013/11/15/yui-weekly-for-november-15th-2013/
 categories:
   - "YUI Weekly"
 ---

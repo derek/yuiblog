@@ -4,7 +4,7 @@ title: "Shift Happens — Fixing Tricky Layouts with the YUI Dom Collection"
 author: "Unknown"
 date: 2007-09-04
 slug: "yui-region"
-permalink: /blog/2007/09/04/yui-region/
+permalink: /2007/09/04/yui-region/
 categories:
   - "Development"
 ---

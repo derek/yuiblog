@@ -4,7 +4,7 @@ title: "Writing a Review Design Pattern"
 author: "YUI Team"
 date: 2006-02-13
 slug: "writingareview"
-permalink: /blog/2006/02/13/writingareview/
+permalink: /2006/02/13/writingareview/
 categories:
   - "Design"
 ---

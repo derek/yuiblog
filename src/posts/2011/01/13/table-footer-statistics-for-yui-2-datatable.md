@@ -4,7 +4,7 @@ title: "Table footer statistics for YUI 2 DataTable"
 author: "YUI Team"
 date: 2011-01-13
 slug: "table-footer-statistics-for-yui-2-datatable"
-permalink: /blog/2011/01/13/table-footer-statistics-for-yui-2-datatable/
+permalink: /2011/01/13/table-footer-statistics-for-yui-2-datatable/
 categories:
   - "Development"
 ---

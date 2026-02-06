@@ -4,7 +4,7 @@ title: "Graded Browser Support Update: Q4 2010"
 author: "Eric Miraglia and Matt Sweeney"
 date: 2010-11-03
 slug: "gbs-update-2010q4"
-permalink: /blog/2010/11/03/gbs-update-2010q4/
+permalink: /2010/11/03/gbs-update-2010q4/
 categories:
   - "Development"
 ---

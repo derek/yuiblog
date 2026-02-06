@@ -4,7 +4,7 @@ title: "YUI: Open Hours Wed, July 21st"
 author: "Unknown"
 date: 2010-07-20
 slug: "yui-open-hours-wed-july-21st"
-permalink: /blog/2010/07/20/yui-open-hours-wed-july-21st/
+permalink: /2010/07/20/yui-open-hours-wed-july-21st/
 categories:
   - "Development"
 ---

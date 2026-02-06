@@ -4,7 +4,7 @@ title: "Implementation Focus: Fun and Games with Kris Cieslak"
 author: "YUI Team"
 date: 2007-02-27
 slug: "cieslak"
-permalink: /blog/2007/02/27/cieslak/
+permalink: /2007/02/27/cieslak/
 categories:
   - "YUI Implementations"
 ---

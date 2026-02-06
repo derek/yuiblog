@@ -4,7 +4,7 @@ title: "Yahoo! Developer Day Sept. 29: Speaker & Workshop Schedule"
 author: "Eric Miraglia"
 date: 2006-09-22
 slug: "yahoo-devday-schedule"
-permalink: /blog/2006/09/22/yahoo-devday-schedule/
+permalink: /2006/09/22/yahoo-devday-schedule/
 categories:
   - "Development"
 ---

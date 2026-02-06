@@ -4,7 +4,7 @@ title: "Reflections on the 2008 Yahoo! Frontend Engineering Summit"
 author: "YUI Team"
 date: 2008-10-15
 slug: "2008-f2esummit"
-permalink: /blog/2008/10/15/2008-f2esummit/
+permalink: /2008/10/15/2008-f2esummit/
 categories:
   - "Development"
 ---

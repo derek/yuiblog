@@ -4,7 +4,7 @@ title: "Video: Lars Knoll and George Staikos on KHTML and WebKit"
 author: "Eric Miraglia"
 date: 2006-12-11
 slug: "knoll-staikos-video"
-permalink: /blog/2006/12/11/knoll-staikos-video/
+permalink: /2006/12/11/knoll-staikos-video/
 categories:
   - "Development"
 ---

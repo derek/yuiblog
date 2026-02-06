@@ -4,7 +4,7 @@ title: "Video: Douglas Crockford, \"An Inconvenient API: The Theory of the Dom\"
 author: "Eric Miraglia"
 date: 2006-10-20
 slug: "video-crockford-domtheory"
-permalink: /blog/2006/10/20/video-crockford-domtheory/
+permalink: /2006/10/20/video-crockford-domtheory/
 categories:
   - "Development"
 ---

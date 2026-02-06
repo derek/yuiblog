@@ -4,7 +4,7 @@ title: "YUI Weekly for January 31, 2014"
 author: "Tilo"
 date: 2014-01-31
 slug: "yui-weekly-for-january-31-2014"
-permalink: /blog/2014/01/31/yui-weekly-for-january-31-2014/
+permalink: /2014/01/31/yui-weekly-for-january-31-2014/
 categories:
   - "YUI Weekly"
 ---

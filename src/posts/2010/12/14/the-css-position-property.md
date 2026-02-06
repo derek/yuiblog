@@ -4,7 +4,7 @@ title: "The CSS Position Property"
 author: "Thierry Koblentz"
 date: 2010-12-14
 slug: "the-css-position-property"
-permalink: /blog/2010/12/14/the-css-position-property/
+permalink: /2010/12/14/the-css-position-property/
 categories:
   - "Development"
 ---

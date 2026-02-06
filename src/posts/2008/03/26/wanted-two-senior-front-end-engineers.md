@@ -4,7 +4,7 @@ title: "Wanted: Two Senior Front End Engineers"
 author: "Nicholas Zakas"
 date: 2008-03-26
 slug: "wanted-two-senior-front-end-engineers"
-permalink: /blog/2008/03/26/wanted-two-senior-front-end-engineers/
+permalink: /2008/03/26/wanted-two-senior-front-end-engineers/
 categories:
   - "Development"
 ---

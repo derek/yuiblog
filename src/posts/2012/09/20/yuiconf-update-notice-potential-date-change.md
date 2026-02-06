@@ -4,7 +4,7 @@ title: "YUIConf Update - Notice: potential date change"
 author: "Andrew Wooldridge"
 date: 2012-09-20
 slug: "yuiconf-update-notice-potential-date-change"
-permalink: /blog/2012/09/20/yuiconf-update-notice-potential-date-change/
+permalink: /2012/09/20/yuiconf-update-notice-potential-date-change/
 categories:
   - "Development"
 ---

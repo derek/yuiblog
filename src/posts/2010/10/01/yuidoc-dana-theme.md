@@ -4,7 +4,7 @@ title: "Carlo Zottmann's Dana Theme for YUI Doc"
 author: "Carlo Zottmann"
 date: 2010-10-01
 slug: "yuidoc-dana-theme"
-permalink: /blog/2010/10/01/yuidoc-dana-theme/
+permalink: /2010/10/01/yuidoc-dana-theme/
 categories:
   - "Development"
 ---

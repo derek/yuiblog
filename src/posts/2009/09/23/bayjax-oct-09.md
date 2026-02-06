@@ -4,7 +4,7 @@ title: "BayJax Meetup October 7 at Yahoo: Brad Neuberg on HTML 5, David Storey a
 author: "Eric Miraglia"
 date: 2009-09-23
 slug: "bayjax-oct-09"
-permalink: /blog/2009/09/23/bayjax-oct-09/
+permalink: /2009/09/23/bayjax-oct-09/
 categories:
   - "Development"
 ---

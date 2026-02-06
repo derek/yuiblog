@@ -4,7 +4,7 @@ title: "YUI Theater —  John Resig: \"Testing, Performance Analysis, and jQuery
 author: "Unknown"
 date: 2009-12-16
 slug: "video-resig-testing-and-jquery"
-permalink: /blog/2009/12/16/video-resig-testing-and-jquery/
+permalink: /2009/12/16/video-resig-testing-and-jquery/
 categories:
   - "YUI Theater"
 ---

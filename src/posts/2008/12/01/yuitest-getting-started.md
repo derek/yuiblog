@@ -4,7 +4,7 @@ title: "Getting Started with JavaScript Unit Testing and YUI Test"
 author: "Nicholas C. Zakas"
 date: 2008-12-01
 slug: "yuitest-getting-started"
-permalink: /blog/2008/12/01/yuitest-getting-started/
+permalink: /2008/12/01/yuitest-getting-started/
 categories:
   - "Development"
 ---

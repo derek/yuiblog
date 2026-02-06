@@ -4,7 +4,7 @@ title: "Ask Satyam: Using YQL and YUI with YQLDataSource"
 author: "Satyam"
 date: 2010-08-09
 slug: "ask-satyam-yql-and-yui"
-permalink: /blog/2010/08/09/ask-satyam-yql-and-yui/
+permalink: /2010/08/09/ask-satyam-yql-and-yui/
 categories:
   - "Development"
 ---

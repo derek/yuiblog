@@ -4,7 +4,7 @@ title: "YUIConf 2012: Dmitry Savintsev and Albert Yu on Security Testing of YUI-
 author: "Andrew Wooldridge"
 date: 2013-01-23
 slug: "yuiconf-2012-dmitry-savintsev-and-albert-yu-on-security-testing-of-yui-powered-applications"
-permalink: /blog/2013/01/23/yuiconf-2012-dmitry-savintsev-and-albert-yu-on-security-testing-of-yui-powered-applications/
+permalink: /2013/01/23/yuiconf-2012-dmitry-savintsev-and-albert-yu-on-security-testing-of-yui-powered-applications/
 categories:
   - "Development"
 ---

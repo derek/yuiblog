@@ -4,7 +4,7 @@ title: "YUI: Open Hours Wed March 23rd"
 author: "Luke Smith"
 date: 2011-03-21
 slug: "yui-open-hours-wed-march-23rd"
-permalink: /blog/2011/03/21/yui-open-hours-wed-march-23rd/
+permalink: /2011/03/21/yui-open-hours-wed-march-23rd/
 categories:
   - "Development"
 ---

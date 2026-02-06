@@ -4,7 +4,7 @@ title: "Introducing the New YUI Test"
 author: "Nicholas C. Zakas"
 date: 2010-11-09
 slug: "introducing-the-new-yui-test"
-permalink: /blog/2010/11/09/introducing-the-new-yui-test/
+permalink: /2010/11/09/introducing-the-new-yui-test/
 categories:
   - "Development"
 ---

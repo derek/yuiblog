@@ -4,7 +4,7 @@ title: "YUI Theater —  Nagesh Susarla: \"Building YQL Open Data Tables with YQ
 author: "YUI Team"
 date: 2010-11-30
 slug: "video-yuiconf2010-susarla"
-permalink: /blog/2010/11/30/video-yuiconf2010-susarla/
+permalink: /2010/11/30/video-yuiconf2010-susarla/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "YUI After Hours - Tomorrow!"
 author: "YUI Team"
 date: 2013-04-10
 slug: "yui-after-hours-tomorrow"
-permalink: /blog/2013/04/10/yui-after-hours-tomorrow/
+permalink: /2013/04/10/yui-after-hours-tomorrow/
 categories:
   - "Development"
 ---

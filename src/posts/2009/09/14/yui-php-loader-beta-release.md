@@ -4,7 +4,7 @@ title: "YUI PHP Loader Beta Release"
 author: "Eric Miraglia"
 date: 2009-09-14
 slug: "yui-php-loader-beta-release"
-permalink: /blog/2009/09/14/yui-php-loader-beta-release/
+permalink: /2009/09/14/yui-php-loader-beta-release/
 categories:
   - "Development"
 ---

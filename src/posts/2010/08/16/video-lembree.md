@@ -4,7 +4,7 @@ title: "YUI Theater — Dennis Lembree: \"Making JavaScript Accessible (26 min.)
 author: "Allen Rabinovich"
 date: 2010-08-16
 slug: "video-lembree"
-permalink: /blog/2010/08/16/video-lembree/
+permalink: /2010/08/16/video-lembree/
 categories:
   - "YUI Theater"
 ---

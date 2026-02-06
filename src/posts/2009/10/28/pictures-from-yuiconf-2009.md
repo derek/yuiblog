@@ -4,7 +4,7 @@ title: "Pictures from YUICONF 2009"
 author: "Unknown"
 date: 2009-10-28
 slug: "pictures-from-yuiconf-2009"
-permalink: /blog/2009/10/28/pictures-from-yuiconf-2009/
+permalink: /2009/10/28/pictures-from-yuiconf-2009/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Sample Chapter from Dan Wellman's \"Learning the Yahoo! User Interface L
 author: "YUI Team"
 date: 2008-04-10
 slug: "wellman-yui-book"
-permalink: /blog/2008/04/10/wellman-yui-book/
+permalink: /2008/04/10/wellman-yui-book/
 categories:
   - "Development"
 ---

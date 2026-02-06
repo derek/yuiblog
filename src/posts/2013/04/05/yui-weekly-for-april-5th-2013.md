@@ -4,7 +4,7 @@ title: "YUI Weekly for April 5th, 2013"
 author: "Derek Gathright"
 date: 2013-04-05
 slug: "yui-weekly-for-april-5th-2013"
-permalink: /blog/2013/04/05/yui-weekly-for-april-5th-2013/
+permalink: /2013/04/05/yui-weekly-for-april-5th-2013/
 categories:
   - "YUI Weekly"
 ---

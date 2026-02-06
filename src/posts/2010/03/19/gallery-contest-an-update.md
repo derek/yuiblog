@@ -4,7 +4,7 @@ title: "Gallery Contest: An Update"
 author: "YUI Team"
 date: 2010-03-19
 slug: "gallery-contest-an-update"
-permalink: /blog/2010/03/19/gallery-contest-an-update/
+permalink: /2010/03/19/gallery-contest-an-update/
 categories:
   - "Development"
 ---

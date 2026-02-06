@@ -4,7 +4,7 @@ title: "Ada Lovelace Day 2010: Sadaf Shahsahebi of the Yahoo! Developer Network"
 author: "Unknown"
 date: 2010-03-24
 slug: "ada-lovelace-day-2010-ydn"
-permalink: /blog/2010/03/24/ada-lovelace-day-2010-ydn/
+permalink: /2010/03/24/ada-lovelace-day-2010-ydn/
 categories:
   - "Miscellany"
 ---

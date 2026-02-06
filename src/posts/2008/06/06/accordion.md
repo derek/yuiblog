@@ -4,7 +4,7 @@ title: "Notoptimal Dev's New YUI-Based Accordion Menu"
 author: "YUI Team"
 date: 2008-06-06
 slug: "accordion"
-permalink: /blog/2008/06/06/accordion/
+permalink: /2008/06/06/accordion/
 categories:
   - "Development"
 ---

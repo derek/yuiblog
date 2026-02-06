@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs July 26th"
 author: "Eric Ferraiuolo"
 date: 2012-07-24
 slug: "yui-open-hours-thurs-july-26th"
-permalink: /blog/2012/07/24/yui-open-hours-thurs-july-26th/
+permalink: /2012/07/24/yui-open-hours-thurs-july-26th/
 categories:
   - "Development"
 ---

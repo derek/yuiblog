@@ -4,7 +4,7 @@ title: "YUI Theater -- Allen Rabinovich: \"YUI Calendar - A Case Study of Buildi
 author: "Unknown"
 date: 2011-12-08
 slug: "video-yuiconf2011-allen"
-permalink: /blog/2011/12/08/video-yuiconf2011-allen/
+permalink: /2011/12/08/video-yuiconf2011-allen/
 categories:
   - "Development"
 ---

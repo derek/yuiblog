@@ -4,7 +4,7 @@ title: "Three new navigation design patterns"
 author: "Christian Crumlish"
 date: 2010-02-22
 slug: "three-new-navigation-design-patterns"
-permalink: /blog/2010/02/22/three-new-navigation-design-patterns/
+permalink: /2010/02/22/three-new-navigation-design-patterns/
 categories:
   - "Design"
 ---

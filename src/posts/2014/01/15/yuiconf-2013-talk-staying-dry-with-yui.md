@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Jonathan Tsai and William Seo on Staying DRY with YUI
 author: "Andrew Wooldridge"
 date: 2014-01-15
 slug: "yuiconf-2013-talk-staying-dry-with-yui"
-permalink: /blog/2014/01/15/yuiconf-2013-talk-staying-dry-with-yui/
+permalink: /2014/01/15/yuiconf-2013-talk-staying-dry-with-yui/
 categories:
   - "Development"
 ---

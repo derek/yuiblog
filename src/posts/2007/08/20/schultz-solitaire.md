@@ -4,7 +4,7 @@ title: "Implementation Focus: World of Solitaire by Robert Schultz"
 author: "YUI Team"
 date: 2007-08-20
 slug: "schultz-solitaire"
-permalink: /blog/2007/08/20/schultz-solitaire/
+permalink: /2007/08/20/schultz-solitaire/
 categories:
   - "YUI Implementations"
 ---

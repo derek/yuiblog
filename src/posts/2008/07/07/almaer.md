@@ -4,7 +4,7 @@ title: "YUI Theater: Dion Almaer of Ajaxian and Google on Gears, App Engine, and
 author: "Eric Miraglia"
 date: 2008-07-07
 slug: "almaer"
-permalink: /blog/2008/07/07/almaer/
+permalink: /2008/07/07/almaer/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "Image Optimization, Part 5: AlphaImageLoader"
 author: "Stoyan Stefanov"
 date: 2008-12-08
 slug: "imageopt-5"
-permalink: /blog/2008/12/08/imageopt-5/
+permalink: /2008/12/08/imageopt-5/
 categories:
   - "Development"
 ---

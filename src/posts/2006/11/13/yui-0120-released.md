@@ -4,7 +4,7 @@ title: "YUI version 0.12.0: TabView Control, Improved API Documentation, and Mor
 author: "Eric Miraglia"
 date: 2006-11-13
 slug: "yui-0120-released"
-permalink: /blog/2006/11/13/yui-0120-released/
+permalink: /2006/11/13/yui-0120-released/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "We’ve Moved to Tumblr!"
 author: "Administrator"
 date: 2014-08-25
 slug: "weve-moved-to-tumblr"
-permalink: /blog/2014/08/25/weve-moved-to-tumblr/
+permalink: /2014/08/25/weve-moved-to-tumblr/
 categories:
   - "Development"
 ---

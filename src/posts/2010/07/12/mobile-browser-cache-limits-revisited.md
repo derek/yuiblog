@@ -4,7 +4,7 @@ title: "Mobile Browser Cache Limits, Revisited"
 author: "Ryan Grove"
 date: 2010-07-12
 slug: "mobile-browser-cache-limits-revisited"
-permalink: /blog/2010/07/12/mobile-browser-cache-limits-revisited/
+permalink: /2010/07/12/mobile-browser-cache-limits-revisited/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Development Schedule Updates"
 author: "Andrew Wooldridge"
 date: 2013-01-29
 slug: "development-schedule-updates"
-permalink: /blog/2013/01/29/development-schedule-updates/
+permalink: /2013/01/29/development-schedule-updates/
 categories:
   - "Development"
 ---

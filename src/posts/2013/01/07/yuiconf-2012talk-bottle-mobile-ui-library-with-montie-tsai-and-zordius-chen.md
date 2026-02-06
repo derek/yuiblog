@@ -4,7 +4,7 @@ title: "YUIConf 2012Talk: Bottle Mobile UI Library with Montie Tsai and Zordius 
 author: "Andrew Wooldridge"
 date: 2013-01-07
 slug: "yuiconf-2012talk-bottle-mobile-ui-library-with-montie-tsai-and-zordius-chen"
-permalink: /blog/2013/01/07/yuiconf-2012talk-bottle-mobile-ui-library-with-montie-tsai-and-zordius-chen/
+permalink: /2013/01/07/yuiconf-2012talk-bottle-mobile-ui-library-with-montie-tsai-and-zordius-chen/
 categories:
   - "Development"
 ---

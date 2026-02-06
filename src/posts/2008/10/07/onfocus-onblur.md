@@ -4,7 +4,7 @@ title: "Introducing onFocus and onBlur"
 author: "Todd Kloots"
 date: 2008-10-07
 slug: "onfocus-onblur"
-permalink: /blog/2008/10/07/onfocus-onblur/
+permalink: /2008/10/07/onfocus-onblur/
 categories:
   - "Development"
 ---

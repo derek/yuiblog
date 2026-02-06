@@ -4,7 +4,7 @@ title: "Google Hosting YUI Files on ajax.googleapis.com"
 author: "Unknown"
 date: 2008-11-19
 slug: "yui-google"
-permalink: /blog/2008/11/19/yui-google/
+permalink: /2008/11/19/yui-google/
 categories:
   - "Development"
 ---

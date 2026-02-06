@@ -4,7 +4,7 @@ title: "YUI Theater -- Scott Schiller: \"Web Audio: HTML5 + Flash (in a tree)\" 
 author: "Ryan Grove"
 date: 2012-02-24
 slug: "video-scott-schiller-web-audio"
-permalink: /blog/2012/02/24/video-scott-schiller-web-audio/
+permalink: /2012/02/24/video-scott-schiller-web-audio/
 categories:
   - "Development"
 ---

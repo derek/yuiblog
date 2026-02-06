@@ -4,7 +4,7 @@ title: "Treeble with YUI 3 DataTable"
 author: "John Lindal"
 date: 2011-01-24
 slug: "treeble-yui3-datatable"
-permalink: /blog/2011/01/24/treeble-yui3-datatable/
+permalink: /2011/01/24/treeble-yui3-datatable/
 categories:
   - "Development"
 ---

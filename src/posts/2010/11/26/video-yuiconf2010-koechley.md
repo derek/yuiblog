@@ -4,7 +4,7 @@ title: "YUI Theater —  Nate Koechley: \"A Taxonomy of Touch\" (36 min.)"
 author: "Unknown"
 date: 2010-11-26
 slug: "video-yuiconf2010-koechley"
-permalink: /blog/2010/11/26/video-yuiconf2010-koechley/
+permalink: /2010/11/26/video-yuiconf2010-koechley/
 categories:
   - "YUI Theater"
 ---

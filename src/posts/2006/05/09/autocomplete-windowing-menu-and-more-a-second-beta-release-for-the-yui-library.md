@@ -4,7 +4,7 @@ title: "AutoComplete, Windowing, Menu and More: A Second Beta Release for the YU
 author: "Nate Koechley"
 date: 2006-05-09
 slug: "autocomplete-windowing-menu-and-more-a-second-beta-release-for-the-yui-library"
-permalink: /blog/2006/05/09/autocomplete-windowing-menu-and-more-a-second-beta-release-for-the-yui-library/
+permalink: /2006/05/09/autocomplete-windowing-menu-and-more-a-second-beta-release-for-the-yui-library/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Minor YUI Assets Outage"
 author: "Jenny Donnelly"
 date: 2012-06-27
 slug: "minor-yui-assets-outage"
-permalink: /blog/2012/06/27/minor-yui-assets-outage/
+permalink: /2012/06/27/minor-yui-assets-outage/
 categories:
   - "Development"
 ---

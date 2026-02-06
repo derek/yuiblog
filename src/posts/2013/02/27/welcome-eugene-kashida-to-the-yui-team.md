@@ -4,7 +4,7 @@ title: "Welcome Eugene Kashida to the YUI Team!"
 author: "Andrew Wooldridge"
 date: 2013-02-27
 slug: "welcome-eugene-kashida-to-the-yui-team"
-permalink: /blog/2013/02/27/welcome-eugene-kashida-to-the-yui-team/
+permalink: /2013/02/27/welcome-eugene-kashida-to-the-yui-team/
 categories:
   - "Development"
 ---

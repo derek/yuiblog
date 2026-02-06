@@ -4,7 +4,7 @@ title: "YUIConf 2013: Lauren Tsung on The \"Building Blocks\" of Prototyping"
 author: "Andrew Wooldridge"
 date: 2014-02-03
 slug: "yuiconf-2013-lauren-tsung-on-the-building-blocks-of-prototyping"
-permalink: /blog/2014/02/03/yuiconf-2013-lauren-tsung-on-the-building-blocks-of-prototyping/
+permalink: /2014/02/03/yuiconf-2013-lauren-tsung-on-the-building-blocks-of-prototyping/
 categories:
   - "Development"
 ---

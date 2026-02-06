@@ -4,7 +4,7 @@ title: "Applying Matt Galvin's \"XP-style\" Skin to YUI TabView"
 author: "Eric Miraglia"
 date: 2008-04-11
 slug: "galvin-xp-tabview"
-permalink: /blog/2008/04/11/galvin-xp-tabview/
+permalink: /2008/04/11/galvin-xp-tabview/
 categories:
   - "Development"
 ---

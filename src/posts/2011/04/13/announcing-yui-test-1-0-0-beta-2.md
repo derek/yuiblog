@@ -4,7 +4,7 @@ title: "Announcing YUI Test 1.0.0 Beta 2"
 author: "Nicholas C. Zakas"
 date: 2011-04-13
 slug: "announcing-yui-test-1-0-0-beta-2"
-permalink: /blog/2011/04/13/announcing-yui-test-1-0-0-beta-2/
+permalink: /2011/04/13/announcing-yui-test-1-0-0-beta-2/
 categories:
   - "Development"
 ---

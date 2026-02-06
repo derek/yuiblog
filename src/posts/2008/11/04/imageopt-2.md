@@ -4,7 +4,7 @@ title: "Image Optimization Part 2: Selecting the Right File Format"
 author: "Stoyan Stefanov"
 date: 2008-11-04
 slug: "imageopt-2"
-permalink: /blog/2008/11/04/imageopt-2/
+permalink: /2008/11/04/imageopt-2/
 categories:
   - "Development"
 ---

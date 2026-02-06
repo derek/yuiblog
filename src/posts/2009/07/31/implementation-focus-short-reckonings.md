@@ -4,7 +4,7 @@ title: "Implementation Focus: Short Reckonings"
 author: "Jenny Donnelly"
 date: 2009-07-31
 slug: "implementation-focus-short-reckonings"
-permalink: /blog/2009/07/31/implementation-focus-short-reckonings/
+permalink: /2009/07/31/implementation-focus-short-reckonings/
 categories:
   - "YUI Implementations"
 ---

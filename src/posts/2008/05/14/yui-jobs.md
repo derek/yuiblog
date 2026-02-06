@@ -4,7 +4,7 @@ title: "Two Job Openings on the YUI Team"
 author: "Eric Miraglia and Adam Moore"
 date: 2008-05-14
 slug: "yui-jobs"
-permalink: /blog/2008/05/14/yui-jobs/
+permalink: /2008/05/14/yui-jobs/
 categories:
   - "Development"
 ---

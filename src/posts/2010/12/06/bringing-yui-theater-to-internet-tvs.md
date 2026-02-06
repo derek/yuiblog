@@ -4,7 +4,7 @@ title: "Bringing YUI Theater to Internet TVs"
 author: "Chad Auld"
 date: 2010-12-06
 slug: "bringing-yui-theater-to-internet-tvs"
-permalink: /blog/2010/12/06/bringing-yui-theater-to-internet-tvs/
+permalink: /2010/12/06/bringing-yui-theater-to-internet-tvs/
 categories:
   - "Development"
 ---

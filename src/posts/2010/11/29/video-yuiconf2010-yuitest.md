@@ -4,7 +4,7 @@ title: "YUI Theater —  Nicholas C. Zakas: \"YUI Test\" (49 min.)"
 author: "YUI Team"
 date: 2010-11-29
 slug: "video-yuiconf2010-yuitest"
-permalink: /blog/2010/11/29/video-yuiconf2010-yuitest/
+permalink: /2010/11/29/video-yuiconf2010-yuitest/
 categories:
   - "YUI Theater"
 ---

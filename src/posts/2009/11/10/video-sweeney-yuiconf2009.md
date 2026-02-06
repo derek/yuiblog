@@ -4,7 +4,7 @@ title: "YUI Theater —  Matt Sweeney: \"YUI 3 Performance\""
 author: "YUI Team"
 date: 2009-11-10
 slug: "video-sweeney-yuiconf2009"
-permalink: /blog/2009/11/10/video-sweeney-yuiconf2009/
+permalink: /2009/11/10/video-sweeney-yuiconf2009/
 categories:
   - "Development"
 ---

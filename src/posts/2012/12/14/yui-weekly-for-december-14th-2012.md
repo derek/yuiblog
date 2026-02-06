@@ -4,7 +4,7 @@ title: "YUI Weekly for December 14th, 2012"
 author: "Derek Gathright"
 date: 2012-12-14
 slug: "yui-weekly-for-december-14th-2012"
-permalink: /blog/2012/12/14/yui-weekly-for-december-14th-2012/
+permalink: /2012/12/14/yui-weekly-for-december-14th-2012/
 categories:
   - "YUI Weekly"
 ---

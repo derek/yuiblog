@@ -4,7 +4,7 @@ title: "YUI Theater - Jenny Donnelly: \"Hacking With YUI\""
 author: "Eric Miraglia"
 date: 2009-03-19
 slug: "video-donnelly-hacking"
-permalink: /blog/2009/03/19/video-donnelly-hacking/
+permalink: /2009/03/19/video-donnelly-hacking/
 categories:
   - "Development"
 ---

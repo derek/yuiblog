@@ -4,7 +4,7 @@ title: "Graded Browser Support Update: Q1 2010"
 author: "Eric Miraglia"
 date: 2010-02-16
 slug: "gbs-update-2010q1"
-permalink: /blog/2010/02/16/gbs-update-2010q1/
+permalink: /2010/02/16/gbs-update-2010q1/
 categories:
   - "Development"
 ---

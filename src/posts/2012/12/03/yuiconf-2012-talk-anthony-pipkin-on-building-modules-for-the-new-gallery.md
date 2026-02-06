@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Anthony Pipkin on Building Modules for the New Galler
 author: "Andrew Wooldridge"
 date: 2012-12-03
 slug: "yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery"
-permalink: /blog/2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/
+permalink: /2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/
 categories:
   - "Development"
 ---

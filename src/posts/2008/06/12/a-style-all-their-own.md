@@ -4,7 +4,7 @@ title: "A Style All Their Own"
 author: "Luke Smith"
 date: 2008-06-12
 slug: "a-style-all-their-own"
-permalink: /blog/2008/06/12/a-style-all-their-own/
+permalink: /2008/06/12/a-style-all-their-own/
 categories:
   - "Development"
 ---

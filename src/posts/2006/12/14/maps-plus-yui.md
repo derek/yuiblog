@@ -4,7 +4,7 @@ title: "Using YUI with the Yahoo! Maps AJAX API"
 author: "Eric Miraglia"
 date: 2006-12-14
 slug: "maps-plus-yui"
-permalink: /blog/2006/12/14/maps-plus-yui/
+permalink: /2006/12/14/maps-plus-yui/
 categories:
   - "Development"
 ---

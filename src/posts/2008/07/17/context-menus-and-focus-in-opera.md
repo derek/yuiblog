@@ -4,7 +4,7 @@ title: "Context Menus and Focus in Opera"
 author: "Unknown"
 date: 2008-07-17
 slug: "context-menus-and-focus-in-opera"
-permalink: /blog/2008/07/17/context-menus-and-focus-in-opera/
+permalink: /2008/07/17/context-menus-and-focus-in-opera/
 categories:
   - "Development"
 ---

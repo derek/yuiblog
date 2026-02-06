@@ -4,7 +4,7 @@ title: "YUI Weekly for November 9th, 2012"
 author: "Derek Gathright"
 date: 2012-11-09
 slug: "yui-weekly-for-november-9th-2012"
-permalink: /blog/2012/11/09/yui-weekly-for-november-9th-2012/
+permalink: /2012/11/09/yui-weekly-for-november-9th-2012/
 categories:
   - "YUI Weekly"
 ---

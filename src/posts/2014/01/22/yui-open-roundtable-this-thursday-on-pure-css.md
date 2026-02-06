@@ -4,7 +4,7 @@ title: "YUI Open Roundtable this Thursday on Pure CSS"
 author: "YUI Team"
 date: 2014-01-22
 slug: "yui-open-roundtable-this-thursday-on-pure-css"
-permalink: /blog/2014/01/22/yui-open-roundtable-this-thursday-on-pure-css/
+permalink: /2014/01/22/yui-open-roundtable-this-thursday-on-pure-css/
 categories:
   - "Development"
 ---

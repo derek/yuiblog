@@ -4,7 +4,7 @@ title: "YUI 2.7.0 on InsideLine.com"
 author: "YUI Team"
 date: 2009-12-14
 slug: "yui-2-7-0-on-insideline-com"
-permalink: /blog/2009/12/14/yui-2-7-0-on-insideline-com/
+permalink: /2009/12/14/yui-2-7-0-on-insideline-com/
 categories:
   - "YUI Implementations"
 ---

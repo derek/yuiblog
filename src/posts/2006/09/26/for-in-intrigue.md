@@ -4,7 +4,7 @@ title: "for in Intrigue"
 author: "Douglas Crockford"
 date: 2006-09-26
 slug: "for-in-intrigue"
-permalink: /blog/2006/09/26/for-in-intrigue/
+permalink: /2006/09/26/for-in-intrigue/
 categories:
   - "Development"
 ---

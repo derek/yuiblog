@@ -4,7 +4,7 @@ title: "Announcing the New YUI Contributor Mailing List"
 author: "Andrew Wooldridge"
 date: 2012-12-05
 slug: "announcing-the-new-yui-contributor-mailing-list"
-permalink: /blog/2012/12/05/announcing-the-new-yui-contributor-mailing-list/
+permalink: /2012/12/05/announcing-the-new-yui-contributor-mailing-list/
 categories:
   - "Development"
 ---

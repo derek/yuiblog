@@ -4,7 +4,7 @@ title: "Patterns for Designing a Reputation System"
 author: "Christian Crumlish"
 date: 2008-06-10
 slug: "patterns-for-designing-a-reputation-system"
-permalink: /blog/2008/06/10/patterns-for-designing-a-reputation-system/
+permalink: /2008/06/10/patterns-for-designing-a-reputation-system/
 categories:
   - "Design"
 ---

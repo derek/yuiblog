@@ -4,7 +4,7 @@ title: "YUI Theater —  Norbert Lindenberg: \"Internationalizing Applications U
 author: "Eric Miraglia"
 date: 2010-12-06
 slug: "video-yuiconf2010-lindenberg"
-permalink: /blog/2010/12/06/video-yuiconf2010-lindenberg/
+permalink: /2010/12/06/video-yuiconf2010-lindenberg/
 categories:
   - "YUI Theater"
 ---

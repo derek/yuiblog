@@ -4,7 +4,7 @@ title: "Interning with YUI"
 author: "Rashad Russell"
 date: 2013-09-05
 slug: "interning-with-yui"
-permalink: /blog/2013/09/05/interning-with-yui/
+permalink: /2013/09/05/interning-with-yui/
 categories:
   - "Miscellany"
 ---

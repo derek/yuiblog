@@ -4,7 +4,7 @@ title: "YUI Theater —  Christian Heilmann: \"YQL and YUI: Building Blocks for 
 author: "Eric Miraglia"
 date: 2010-02-11
 slug: "video-heilmann-yql"
-permalink: /blog/2010/02/11/video-heilmann-yql/
+permalink: /2010/02/11/video-heilmann-yql/
 categories:
   - "YUI Theater"
 ---

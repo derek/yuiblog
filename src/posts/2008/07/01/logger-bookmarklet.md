@@ -4,7 +4,7 @@ title: "Bookmarklet for the YUI Logger Control"
 author: "YUI Team"
 date: 2008-07-01
 slug: "logger-bookmarklet"
-permalink: /blog/2008/07/01/logger-bookmarklet/
+permalink: /2008/07/01/logger-bookmarklet/
 categories:
   - "Development"
 ---

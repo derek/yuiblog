@@ -4,7 +4,7 @@ title: "Updated: The \"MakeNode\" Widget Extension"
 author: "Satyam"
 date: 2011-09-12
 slug: "updated-the-makenode-widget-extension"
-permalink: /blog/2011/09/12/updated-the-makenode-widget-extension/
+permalink: /2011/09/12/updated-the-makenode-widget-extension/
 categories:
   - "Development"
 ---

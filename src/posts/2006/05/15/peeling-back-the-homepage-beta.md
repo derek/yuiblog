@@ -4,7 +4,7 @@ title: "Peeling Back the Interface of the Yahoo! Home Page Beta"
 author: "Nate Koechley"
 date: 2006-05-15
 slug: "peeling-back-the-homepage-beta"
-permalink: /blog/2006/05/15/peeling-back-the-homepage-beta/
+permalink: /2006/05/15/peeling-back-the-homepage-beta/
 categories:
   - "Development"
 ---

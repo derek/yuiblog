@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Jeff Conniff and Tilo Mitra on the Future of YUI CSS"
 author: "Allen Rabinovich"
 date: 2012-11-26
 slug: "yuiconf-2012-talk-jeff-conniff-and-tilo-mitra-on-the-future-of-yui-css"
-permalink: /blog/2012/11/26/yuiconf-2012-talk-jeff-conniff-and-tilo-mitra-on-the-future-of-yui-css/
+permalink: /2012/11/26/yuiconf-2012-talk-jeff-conniff-and-tilo-mitra-on-the-future-of-yui-css/
 categories:
   - "Development"
 ---

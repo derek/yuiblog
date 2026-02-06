@@ -4,7 +4,7 @@ title: "Draggable DataTable Rows"
 author: "Unknown"
 date: 2009-05-08
 slug: "draggable-datatable-rows"
-permalink: /blog/2009/05/08/draggable-datatable-rows/
+permalink: /2009/05/08/draggable-datatable-rows/
 categories:
   - "Development"
 ---

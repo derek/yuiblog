@@ -4,7 +4,7 @@ title: "A summer with the YUI team"
 author: "Clarence Leung"
 date: 2012-08-06
 slug: "a-summer-with-the-yui-team"
-permalink: /blog/2012/08/06/a-summer-with-the-yui-team/
+permalink: /2012/08/06/a-summer-with-the-yui-team/
 categories:
   - "Miscellany"
 ---

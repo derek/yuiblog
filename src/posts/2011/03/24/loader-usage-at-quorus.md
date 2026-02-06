@@ -4,7 +4,7 @@ title: "Loader Usage at Quorus"
 author: "Peter Abrahamsen"
 date: 2011-03-24
 slug: "loader-usage-at-quorus"
-permalink: /blog/2011/03/24/loader-usage-at-quorus/
+permalink: /2011/03/24/loader-usage-at-quorus/
 categories:
   - "Development"
 ---

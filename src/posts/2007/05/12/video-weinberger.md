@@ -4,7 +4,7 @@ title: "YUI Theater — David Weinberger in Conversation with Bradley Horowitz"
 author: "Eric Miraglia"
 date: 2007-05-12
 slug: "video-weinberger"
-permalink: /blog/2007/05/12/video-weinberger/
+permalink: /2007/05/12/video-weinberger/
 categories:
   - "Development"
 ---

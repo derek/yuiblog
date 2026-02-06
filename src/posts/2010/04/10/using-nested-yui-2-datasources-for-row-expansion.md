@@ -4,7 +4,7 @@ title: "Using Nested YUI 2 DataSources for Row Expansion"
 author: "John Lindal"
 date: 2010-04-10
 slug: "using-nested-yui-2-datasources-for-row-expansion"
-permalink: /blog/2010/04/10/using-nested-yui-2-datasources-for-row-expansion/
+permalink: /2010/04/10/using-nested-yui-2-datasources-for-row-expansion/
 categories:
   - "Development"
 ---

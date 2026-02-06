@@ -4,7 +4,7 @@ title: "Free Chapter from Douglas Crockford's \"JavaScript: The Good Parts\""
 author: "Eric Miraglia"
 date: 2008-05-05
 slug: "crockford-inheritance"
-permalink: /blog/2008/05/05/crockford-inheritance/
+permalink: /2008/05/05/crockford-inheritance/
 categories:
   - "Development"
 ---

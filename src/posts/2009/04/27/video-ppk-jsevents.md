@@ -4,7 +4,7 @@ title: "YUI Theater — PPK (Peter-Paul Koch): \"JavaScript Events\""
 author: "YUI Team"
 date: 2009-04-27
 slug: "video-ppk-jsevents"
-permalink: /blog/2009/04/27/video-ppk-jsevents/
+permalink: /2009/04/27/video-ppk-jsevents/
 categories:
   - "YUI Theater"
 ---

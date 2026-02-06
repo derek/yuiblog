@@ -4,7 +4,7 @@ title: "YUI 3.7.0pr2 - Final Round of Testing"
 author: "Eric Ferraiuolo"
 date: 2012-09-12
 slug: "yui-3-7-0pr2-final-round-of-testing"
-permalink: /blog/2012/09/12/yui-3-7-0pr2-final-round-of-testing/
+permalink: /2012/09/12/yui-3-7-0pr2-final-round-of-testing/
 categories:
   - "Releases"
 ---

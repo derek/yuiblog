@@ -4,7 +4,7 @@ title: "YUI Theater 2010 Retrospective on NetTuts.com"
 author: "Eric Miraglia"
 date: 2011-01-06
 slug: "yui-theater-2010-retrospective-on-nettuts-com"
-permalink: /blog/2011/01/06/yui-theater-2010-retrospective-on-nettuts-com/
+permalink: /2011/01/06/yui-theater-2010-retrospective-on-nettuts-com/
 categories:
   - "Development"
 ---

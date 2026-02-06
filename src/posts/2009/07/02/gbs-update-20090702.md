@@ -4,7 +4,7 @@ title: "Graded Browser Support Update: Q3 2009"
 author: "Eric Miraglia"
 date: 2009-07-02
 slug: "gbs-update-20090702"
-permalink: /blog/2009/07/02/gbs-update-20090702/
+permalink: /2009/07/02/gbs-update-20090702/
 categories:
   - "Development"
 ---

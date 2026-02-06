@@ -4,7 +4,7 @@ title: "YUI Presentation at FOSS.IN"
 author: "Unknown"
 date: 2008-11-19
 slug: "philip-foss"
-permalink: /blog/2008/11/19/philip-foss/
+permalink: /2008/11/19/philip-foss/
 categories:
   - "Development"
 ---

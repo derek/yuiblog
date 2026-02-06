@@ -4,7 +4,7 @@ title: "YUIConf 2013: Ariya Hidayat on Next-Generation JavaScript Language Tooli
 author: "Andrew Wooldridge"
 date: 2014-02-10
 slug: "yuiconf-2013-ariya-hidayat-on-next-generation-javascript-language-tooling"
-permalink: /blog/2014/02/10/yuiconf-2013-ariya-hidayat-on-next-generation-javascript-language-tooling/
+permalink: /2014/02/10/yuiconf-2013-ariya-hidayat-on-next-generation-javascript-language-tooling/
 categories:
   - "Development"
 ---

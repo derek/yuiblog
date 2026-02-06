@@ -4,7 +4,7 @@ title: "YUI 3.7.0pr4 - Minor patch"
 author: "Dav Glass"
 date: 2012-09-14
 slug: "yui-3-7-0pr4-minor-patch"
-permalink: /blog/2012/09/14/yui-3-7-0pr4-minor-patch/
+permalink: /2012/09/14/yui-3-7-0pr4-minor-patch/
 categories:
   - "Releases"
 ---

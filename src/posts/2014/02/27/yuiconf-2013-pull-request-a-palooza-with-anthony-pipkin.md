@@ -4,7 +4,7 @@ title: "YUIConf 2013: Pull-Request-A-Palooza with Anthony Pipkin"
 author: "Andrew Wooldridge"
 date: 2014-02-27
 slug: "yuiconf-2013-pull-request-a-palooza-with-anthony-pipkin"
-permalink: /blog/2014/02/27/yuiconf-2013-pull-request-a-palooza-with-anthony-pipkin/
+permalink: /2014/02/27/yuiconf-2013-pull-request-a-palooza-with-anthony-pipkin/
 categories:
   - "Development"
 ---

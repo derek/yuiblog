@@ -4,7 +4,7 @@ title: "YUI Theater —  Luke Smith: \"Debugging in YUI 3\""
 author: "YUI Team"
 date: 2009-11-10
 slug: "video-smith-yuiconf2009-debugging"
-permalink: /blog/2009/11/10/video-smith-yuiconf2009-debugging/
+permalink: /2009/11/10/video-smith-yuiconf2009-debugging/
 categories:
   - "Development"
 ---

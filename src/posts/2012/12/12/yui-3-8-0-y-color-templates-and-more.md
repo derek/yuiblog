@@ -4,7 +4,7 @@ title: "YUI 3.8.0 - Y.Color, Templates, and more!"
 author: "Andrew Wooldridge"
 date: 2012-12-12
 slug: "yui-3-8-0-y-color-templates-and-more"
-permalink: /blog/2012/12/12/yui-3-8-0-y-color-templates-and-more/
+permalink: /2012/12/12/yui-3-8-0-y-color-templates-and-more/
 categories:
   - "Development"
 ---

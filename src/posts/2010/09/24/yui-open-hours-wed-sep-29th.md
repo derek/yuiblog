@@ -4,7 +4,7 @@ title: "YUI: Open Hours Wed Sep 29th"
 author: "Luke Smith"
 date: 2010-09-24
 slug: "yui-open-hours-wed-sep-29th"
-permalink: /blog/2010/09/24/yui-open-hours-wed-sep-29th/
+permalink: /2010/09/24/yui-open-hours-wed-sep-29th/
 categories:
   - "Development"
 ---

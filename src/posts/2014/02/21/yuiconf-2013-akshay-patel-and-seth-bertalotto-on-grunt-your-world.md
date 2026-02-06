@@ -4,7 +4,7 @@ title: "YUIConf 2013: Akshay Patel and Seth Bertalotto on Grunt your World"
 author: "Andrew Wooldridge"
 date: 2014-02-21
 slug: "yuiconf-2013-akshay-patel-and-seth-bertalotto-on-grunt-your-world"
-permalink: /blog/2014/02/21/yuiconf-2013-akshay-patel-and-seth-bertalotto-on-grunt-your-world/
+permalink: /2014/02/21/yuiconf-2013-akshay-patel-and-seth-bertalotto-on-grunt-your-world/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Win 8 Hangout Video Available on Youtube Channel"
 author: "Andrew Wooldridge"
 date: 2012-11-12
 slug: "win-8-hangout-video-available-on-youtube-channel"
-permalink: /blog/2012/11/12/win-8-hangout-video-available-on-youtube-channel/
+permalink: /2012/11/12/win-8-hangout-video-available-on-youtube-channel/
 categories:
   - "Development"
 ---

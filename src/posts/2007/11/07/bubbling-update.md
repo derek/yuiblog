@@ -4,7 +4,7 @@ title: "Caridy Patiño Mayea's Bubbling Library Updated"
 author: "Unknown"
 date: 2007-11-07
 slug: "bubbling-update"
-permalink: /blog/2007/11/07/bubbling-update/
+permalink: /2007/11/07/bubbling-update/
 categories:
   - "Development"
 ---

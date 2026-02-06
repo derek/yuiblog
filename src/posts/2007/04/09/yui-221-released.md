@@ -4,7 +4,7 @@ title: "YUI Version 2.2.1 Released, and Graded Browser Support Update"
 author: "YUI Team"
 date: 2007-04-09
 slug: "yui-221-released"
-permalink: /blog/2007/04/09/yui-221-released/
+permalink: /2007/04/09/yui-221-released/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater — Grady Booch: \"The Promise, the Limits, the Beauty of So
 author: "Eric Miraglia"
 date: 2007-05-28
 slug: "video-booch"
-permalink: /blog/2007/05/28/video-booch/
+permalink: /2007/05/28/video-booch/
 categories:
   - "YUI Theater"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Andrew Wooldridge on YUI in 2013: A Year in Review, a
 author: "Andrew Wooldridge"
 date: 2014-01-15
 slug: "yuiconf-2013-talk-andrew-wooldridge-on-yui-in-2013-a-year-in-review-and-town-hall-discussion"
-permalink: /blog/2014/01/15/yuiconf-2013-talk-andrew-wooldridge-on-yui-in-2013-a-year-in-review-and-town-hall-discussion/
+permalink: /2014/01/15/yuiconf-2013-talk-andrew-wooldridge-on-yui-in-2013-a-year-in-review-and-town-hall-discussion/
 categories:
   - "Development"
 ---

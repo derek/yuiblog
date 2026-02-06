@@ -4,7 +4,7 @@ title: "YUI Theater —  Matt Taylor: \"YUI 3 & Node.js for JavaScript View Rend
 author: "Eric Miraglia"
 date: 2010-12-03
 slug: "video-yuiconf2010-taylor"
-permalink: /blog/2010/12/03/video-yuiconf2010-taylor/
+permalink: /2010/12/03/video-yuiconf2010-taylor/
 categories:
   - "YUI Theater"
 ---

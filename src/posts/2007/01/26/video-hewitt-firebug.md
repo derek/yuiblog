@@ -4,7 +4,7 @@ title: "YUI Theater: Joe Hewitt, Welcome to Firebug 1.0"
 author: "Eric Miraglia"
 date: 2007-01-26
 slug: "video-hewitt-firebug"
-permalink: /blog/2007/01/26/video-hewitt-firebug/
+permalink: /2007/01/26/video-hewitt-firebug/
 categories:
   - "Development"
 ---

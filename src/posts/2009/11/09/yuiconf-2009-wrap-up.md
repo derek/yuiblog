@@ -4,7 +4,7 @@ title: "YUICONF 2009 Wrap-up"
 author: "YUI Team"
 date: 2009-11-09
 slug: "yuiconf-2009-wrap-up"
-permalink: /blog/2009/11/09/yuiconf-2009-wrap-up/
+permalink: /2009/11/09/yuiconf-2009-wrap-up/
 categories:
   - "Development"
 ---

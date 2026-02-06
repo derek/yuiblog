@@ -4,7 +4,7 @@ title: "Ask Satyam: Writing Clean, Debuggable Code"
 author: "Satyam"
 date: 2010-09-02
 slug: "ask-satyam-writing-clean-code"
-permalink: /blog/2010/09/02/ask-satyam-writing-clean-code/
+permalink: /2010/09/02/ask-satyam-writing-clean-code/
 categories:
   - "Development"
 ---

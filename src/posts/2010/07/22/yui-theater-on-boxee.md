@@ -4,7 +4,7 @@ title: "YUI Theater Comes to Boxee, Courtesy of Chad Auld and the Brilaps Team"
 author: "Eric Miraglia"
 date: 2010-07-22
 slug: "yui-theater-on-boxee"
-permalink: /blog/2010/07/22/yui-theater-on-boxee/
+permalink: /2010/07/22/yui-theater-on-boxee/
 categories:
   - "YUI Theater"
 ---

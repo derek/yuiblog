@@ -4,7 +4,7 @@ title: "YUI Weekly for August 23rd, 2013"
 author: "Derek Gathright"
 date: 2013-08-23
 slug: "yui-weekly-for-august-23rd-2013"
-permalink: /blog/2013/08/23/yui-weekly-for-august-23rd-2013/
+permalink: /2013/08/23/yui-weekly-for-august-23rd-2013/
 categories:
   - "YUI Weekly"
 ---

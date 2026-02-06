@@ -4,7 +4,7 @@ title: "Deadline to Submit YUIConf 2012 Talk Proposals Extended"
 author: "Unknown"
 date: 2012-10-04
 slug: "deadline-to-submit-yuiconf-2012-talk-proposals-extended"
-permalink: /blog/2012/10/04/deadline-to-submit-yuiconf-2012-talk-proposals-extended/
+permalink: /2012/10/04/deadline-to-submit-yuiconf-2012-talk-proposals-extended/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Carousel Design Pattern"
 author: "Christian Crumlish"
 date: 2008-01-15
 slug: "carousel-pattern"
-permalink: /blog/2008/01/15/carousel-pattern/
+permalink: /2008/01/15/carousel-pattern/
 categories:
   - "Design"
 ---

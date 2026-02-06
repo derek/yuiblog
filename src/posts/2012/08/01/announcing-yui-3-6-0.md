@@ -4,7 +4,7 @@ title: "Announcing YUI 3.6.0"
 author: "Allen Rabinovich"
 date: 2012-08-01
 slug: "announcing-yui-3-6-0"
-permalink: /blog/2012/08/01/announcing-yui-3-6-0/
+permalink: /2012/08/01/announcing-yui-3-6-0/
 categories:
   - "Releases"
 ---

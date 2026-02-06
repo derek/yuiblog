@@ -4,7 +4,7 @@ title: "Drag and Drop Modules Design Pattern"
 author: "Bill Scott"
 date: 2006-02-13
 slug: "dragdropmodules"
-permalink: /blog/2006/02/13/dragdropmodules/
+permalink: /2006/02/13/dragdropmodules/
 categories:
   - "Design"
 ---

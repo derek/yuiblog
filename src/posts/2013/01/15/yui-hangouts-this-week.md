@@ -4,7 +4,7 @@ title: "YUI Hangouts This Week"
 author: "YUI Team"
 date: 2013-01-15
 slug: "yui-hangouts-this-week"
-permalink: /blog/2013/01/15/yui-hangouts-this-week/
+permalink: /2013/01/15/yui-hangouts-this-week/
 categories:
   - "Development"
 ---

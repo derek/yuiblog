@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Eduardo Lundgren on Reintroducing AlloyUI"
 author: "Andrew Wooldridge"
 date: 2014-01-24
 slug: "yuiconf-2013-talk-eduardo-lundgren-on-reintroducing-alloyui"
-permalink: /blog/2014/01/24/yuiconf-2013-talk-eduardo-lundgren-on-reintroducing-alloyui/
+permalink: /2014/01/24/yuiconf-2013-talk-eduardo-lundgren-on-reintroducing-alloyui/
 categories:
   - "Development"
 ---

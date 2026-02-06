@@ -4,7 +4,7 @@ title: "Image Optimization, Part 3: Four Steps to File Size Reduction"
 author: "Stoyan Stefanov"
 date: 2008-11-14
 slug: "imageopt-3"
-permalink: /blog/2008/11/14/imageopt-3/
+permalink: /2008/11/14/imageopt-3/
 categories:
   - "Development"
 ---

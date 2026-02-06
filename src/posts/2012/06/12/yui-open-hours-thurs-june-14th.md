@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs June 14th"
 author: "Luke Smith"
 date: 2012-06-12
 slug: "yui-open-hours-thurs-june-14th"
-permalink: /blog/2012/06/12/yui-open-hours-thurs-june-14th/
+permalink: /2012/06/12/yui-open-hours-thurs-june-14th/
 categories:
   - "Development"
 ---

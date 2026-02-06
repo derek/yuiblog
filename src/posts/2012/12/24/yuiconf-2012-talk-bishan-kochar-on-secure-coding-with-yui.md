@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Bishan Kochar on Secure Coding with YUI"
 author: "YUI Team"
 date: 2012-12-24
 slug: "yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui"
-permalink: /blog/2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/
+permalink: /2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Implementation Focus: Notifu"
 author: "Eric Miraglia"
 date: 2008-11-13
 slug: "notifu"
-permalink: /blog/2008/11/13/notifu/
+permalink: /2008/11/13/notifu/
 categories:
   - "YUI Implementations"
 ---

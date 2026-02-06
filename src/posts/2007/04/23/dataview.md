@@ -4,7 +4,7 @@ title: "YUI Tutorial: Subclassing DataTable to Create DataView"
 author: "Victor Morales"
 date: 2007-04-23
 slug: "dataview"
-permalink: /blog/2007/04/23/dataview/
+permalink: /2007/04/23/dataview/
 categories:
   - "Development"
 ---

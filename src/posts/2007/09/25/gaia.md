@@ -4,7 +4,7 @@ title: "Implementation Focus: Gaia Online"
 author: "YUI Team"
 date: 2007-09-25
 slug: "gaia"
-permalink: /blog/2007/09/25/gaia/
+permalink: /2007/09/25/gaia/
 categories:
   - "YUI Implementations"
 ---

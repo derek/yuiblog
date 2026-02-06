@@ -4,7 +4,7 @@ title: "Announcing Atlanta Meetup: \"YUI 3: An Introduction\", presented by YUI 
 author: "Unknown"
 date: 2011-02-08
 slug: "atlanta-meetup-apipkin"
-permalink: /blog/2011/02/08/atlanta-meetup-apipkin/
+permalink: /2011/02/08/atlanta-meetup-apipkin/
 categories:
   - "Development"
 ---

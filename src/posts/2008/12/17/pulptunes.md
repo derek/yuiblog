@@ -4,7 +4,7 @@ title: "Implementation Focus: pulpTunes"
 author: "Eric Miraglia"
 date: 2008-12-17
 slug: "pulptunes"
-permalink: /blog/2008/12/17/pulptunes/
+permalink: /2008/12/17/pulptunes/
 categories:
   - "YUI Implementations"
 ---

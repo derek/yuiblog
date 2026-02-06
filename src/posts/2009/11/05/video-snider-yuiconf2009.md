@@ -4,7 +4,7 @@ title: "YUI Theater —  Matt Snider: \"Introducing the YUI 2.8.0 Storage Utilit
 author: "YUI Team"
 date: 2009-11-05
 slug: "video-snider-yuiconf2009"
-permalink: /blog/2009/11/05/video-snider-yuiconf2009/
+permalink: /2009/11/05/video-snider-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

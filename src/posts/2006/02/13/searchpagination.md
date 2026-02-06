@@ -4,7 +4,7 @@ title: "Search Pagination Design Pattern"
 author: "Bill Scott"
 date: 2006-02-13
 slug: "searchpagination"
-permalink: /blog/2006/02/13/searchpagination/
+permalink: /2006/02/13/searchpagination/
 categories:
   - "Design"
 ---

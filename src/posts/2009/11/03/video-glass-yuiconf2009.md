@@ -4,7 +4,7 @@ title: "YUI Theater —  Dav Glass: \"Contributing to YUI\""
 author: "Eric Miraglia"
 date: 2009-11-03
 slug: "video-glass-yuiconf2009"
-permalink: /blog/2009/11/03/video-glass-yuiconf2009/
+permalink: /2009/11/03/video-glass-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

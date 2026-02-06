@@ -4,7 +4,7 @@ title: "Auto Complete Design Pattern"
 author: "Bill Scott"
 date: 2006-02-13
 slug: "autocomplete"
-permalink: /blog/2006/02/13/autocomplete/
+permalink: /2006/02/13/autocomplete/
 categories:
   - "Design"
 ---

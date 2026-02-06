@@ -4,7 +4,7 @@ title: "YUI: Open Hours Wed Aug 18th"
 author: "Luke Smith"
 date: 2010-08-16
 slug: "yui-open-hours-wed-aug-18th"
-permalink: /blog/2010/08/16/yui-open-hours-wed-aug-18th/
+permalink: /2010/08/16/yui-open-hours-wed-aug-18th/
 categories:
   - "Development"
 ---

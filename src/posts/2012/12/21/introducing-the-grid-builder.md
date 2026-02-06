@@ -4,7 +4,7 @@ title: "Introducing the Grid Builder"
 author: "YUI Team"
 date: 2012-12-21
 slug: "introducing-the-grid-builder"
-permalink: /blog/2012/12/21/introducing-the-grid-builder/
+permalink: /2012/12/21/introducing-the-grid-builder/
 categories:
   - "Development"
 ---

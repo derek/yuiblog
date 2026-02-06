@@ -4,7 +4,7 @@ title: "You're Invited: Yahoo! BrowserPlus Launch Event"
 author: "Eric Miraglia"
 date: 2008-11-11
 slug: "bp"
-permalink: /blog/2008/11/11/bp/
+permalink: /2008/11/11/bp/
 categories:
   - "Development"
 ---

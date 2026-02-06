@@ -4,7 +4,7 @@ title: "Update on 3.5.0 release schedule"
 author: "Unknown"
 date: 2012-03-12
 slug: "update-on-3-5-0-release-schedule"
-permalink: /blog/2012/03/12/update-on-3-5-0-release-schedule/
+permalink: /2012/03/12/update-on-3-5-0-release-schedule/
 categories:
   - "Development"
 ---

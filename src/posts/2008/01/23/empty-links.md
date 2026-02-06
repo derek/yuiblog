@@ -4,7 +4,7 @@ title: "Empty Links and Screen Readers"
 author: "Mike Davies"
 date: 2008-01-23
 slug: "empty-links"
-permalink: /blog/2008/01/23/empty-links/
+permalink: /2008/01/23/empty-links/
 categories:
   - "Development"
 ---

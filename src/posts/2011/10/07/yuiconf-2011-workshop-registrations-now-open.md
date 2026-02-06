@@ -4,7 +4,7 @@ title: "YUIConf 2011 Workshop Registrations Now Open"
 author: "Jenny Donnelly"
 date: 2011-10-07
 slug: "yuiconf-2011-workshop-registrations-now-open"
-permalink: /blog/2011/10/07/yuiconf-2011-workshop-registrations-now-open/
+permalink: /2011/10/07/yuiconf-2011-workshop-registrations-now-open/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Philippe Le Hégaret: \"The Next Open Web Platform\" (5
 author: "Eric Miraglia"
 date: 2010-02-26
 slug: "video-plh-nextweb"
-permalink: /blog/2010/02/26/video-plh-nextweb/
+permalink: /2010/02/26/video-plh-nextweb/
 categories:
   - "YUI Theater"
 ---

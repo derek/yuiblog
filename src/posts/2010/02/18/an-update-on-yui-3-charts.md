@@ -4,7 +4,7 @@ title: "An Update on YUI 3 Charts"
 author: "Tripp Bridges"
 date: 2010-02-18
 slug: "an-update-on-yui-3-charts"
-permalink: /blog/2010/02/18/an-update-on-yui-3-charts/
+permalink: /2010/02/18/an-update-on-yui-3-charts/
 categories:
   - "Development"
 ---

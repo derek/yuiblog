@@ -4,7 +4,7 @@ title: "In the Wild for February 26, 2010"
 author: "YUI Team"
 date: 2010-02-26
 slug: "in-the-wild-for-february-26-2010"
-permalink: /blog/2010/02/26/in-the-wild-for-february-26-2010/
+permalink: /2010/02/26/in-the-wild-for-february-26-2010/
 categories:
   - "In the Wild"
 ---

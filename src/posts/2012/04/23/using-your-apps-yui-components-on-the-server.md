@@ -4,7 +4,7 @@ title: "Using Your App's YUI Components on the Server"
 author: "Eric Ferraiuolo"
 date: 2012-04-23
 slug: "using-your-apps-yui-components-on-the-server"
-permalink: /blog/2012/04/23/using-your-apps-yui-components-on-the-server/
+permalink: /2012/04/23/using-your-apps-yui-components-on-the-server/
 categories:
   - "Development"
 ---

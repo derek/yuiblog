@@ -4,7 +4,7 @@ title: "CSS Quick Tip: CSS Arrows and Shapes Without Markup"
 author: "YUI Team"
 date: 2010-11-22
 slug: "css-quick-tip-css-arrows-and-shapes-without-markup"
-permalink: /blog/2010/11/22/css-quick-tip-css-arrows-and-shapes-without-markup/
+permalink: /2010/11/22/css-quick-tip-css-arrows-and-shapes-without-markup/
 categories:
   - "Development"
 ---

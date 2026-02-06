@@ -4,7 +4,7 @@ title: "YUI 3.0 PR2 Now Available: Widget and Plugin Infrastructure, Sample Widg
 author: "Satyen Desai"
 date: 2008-12-09
 slug: "yui3pr2-2"
-permalink: /blog/2008/12/09/yui3pr2-2/
+permalink: /2008/12/09/yui3pr2-2/
 categories:
   - "Development"
 ---

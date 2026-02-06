@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thursday August 2nd"
 author: "Eric Ferraiuolo"
 date: 2012-08-01
 slug: "yui-open-hours-thursday-august-2nd"
-permalink: /blog/2012/08/01/yui-open-hours-thursday-august-2nd/
+permalink: /2012/08/01/yui-open-hours-thursday-august-2nd/
 categories:
   - "Development"
 ---

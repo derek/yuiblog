@@ -4,7 +4,7 @@ title: "Implementation Focus: Nestoria"
 author: "Unknown"
 date: 2007-11-06
 slug: "nestoria"
-permalink: /blog/2007/11/06/nestoria/
+permalink: /2007/11/06/nestoria/
 categories:
   - "YUI Implementations"
 ---

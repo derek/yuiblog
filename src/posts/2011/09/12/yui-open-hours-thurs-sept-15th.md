@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Sept 15th"
 author: "Luke Smith"
 date: 2011-09-12
 slug: "yui-open-hours-thurs-sept-15th"
-permalink: /blog/2011/09/12/yui-open-hours-thurs-sept-15th/
+permalink: /2011/09/12/yui-open-hours-thurs-sept-15th/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Design Pattern Conversation: What’s the Best Way to Communicate Patter
 author: "Jenifer Tidwell"
 date: 2006-10-16
 slug: "communicating_patterns_part_two"
-permalink: /blog/2006/10/16/communicating_patterns_part_two/
+permalink: /2006/10/16/communicating_patterns_part_two/
 categories:
   - "Design"
 ---

@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs May 3rd"
 author: "Unknown"
 date: 2012-04-30
 slug: "yui-open-hours-thurs-may-3rd"
-permalink: /blog/2012/04/30/yui-open-hours-thurs-may-3rd/
+permalink: /2012/04/30/yui-open-hours-thurs-may-3rd/
 categories:
   - "Development"
 ---

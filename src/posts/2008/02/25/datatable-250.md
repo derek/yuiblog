@@ -4,7 +4,7 @@ title: "A Peek Under the Hood of YUI's DataTable Control in 2.5.0"
 author: "YUI Team"
 date: 2008-02-25
 slug: "datatable-250"
-permalink: /blog/2008/02/25/datatable-250/
+permalink: /2008/02/25/datatable-250/
 categories:
   - "Development"
 ---

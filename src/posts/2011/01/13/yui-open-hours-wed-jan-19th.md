@@ -4,7 +4,7 @@ title: "YUI: Open Hours Wed Jan 19th"
 author: "YUI Team"
 date: 2011-01-13
 slug: "yui-open-hours-wed-jan-19th"
-permalink: /blog/2011/01/13/yui-open-hours-wed-jan-19th/
+permalink: /2011/01/13/yui-open-hours-wed-jan-19th/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs July 28th"
 author: "Luke Smith"
 date: 2011-07-25
 slug: "yui-open-hours-thurs-july-28st"
-permalink: /blog/2011/07/25/yui-open-hours-thurs-july-28st/
+permalink: /2011/07/25/yui-open-hours-thurs-july-28st/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Christian Heilmann: \"Using (Not Abusing) YQL for Cachi
 author: "Unknown"
 date: 2010-12-01
 slug: "video-yuiconf2010-heilmann-yql"
-permalink: /blog/2010/12/01/video-yuiconf2010-heilmann-yql/
+permalink: /2010/12/01/video-yuiconf2010-heilmann-yql/
 categories:
   - "YUI Theater"
 ---

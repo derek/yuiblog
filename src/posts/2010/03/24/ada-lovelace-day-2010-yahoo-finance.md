@@ -4,7 +4,7 @@ title: "Ada Lovelace Day 2010: Julie London, Diana Liu, Helena Rajan, Shweta Hay
 author: "Brian Rountree"
 date: 2010-03-24
 slug: "ada-lovelace-day-2010-yahoo-finance"
-permalink: /blog/2010/03/24/ada-lovelace-day-2010-yahoo-finance/
+permalink: /2010/03/24/ada-lovelace-day-2010-yahoo-finance/
 categories:
   - "Miscellany"
 ---

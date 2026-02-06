@@ -4,7 +4,7 @@ title: "Displaying Controls in a DataTable: An Overview"
 author: "Unknown"
 date: 2012-05-07
 slug: "displaying-controls-in-a-datatable-an-overview"
-permalink: /blog/2012/05/07/displaying-controls-in-a-datatable-an-overview/
+permalink: /2012/05/07/displaying-controls-in-a-datatable-an-overview/
 categories:
   - "Development"
 ---

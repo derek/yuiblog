@@ -4,7 +4,7 @@ title: "Video: Douglas Crockford, \"Advanced JavaScript\""
 author: "Eric Miraglia"
 date: 2006-11-27
 slug: "video-crockford-advjs"
-permalink: /blog/2006/11/27/video-crockford-advjs/
+permalink: /2006/11/27/video-crockford-advjs/
 categories:
   - "Development"
 ---

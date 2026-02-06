@@ -4,7 +4,7 @@ title: "You Are the YUI Team: YUIConf 2012 Recap & Keynote Video"
 author: "Andrew Wooldridge"
 date: 2012-11-19
 slug: "you-are-the-yui-team-yuiconf-2012-recap-keynote-video"
-permalink: /blog/2012/11/19/you-are-the-yui-team-yuiconf-2012-recap-keynote-video/
+permalink: /2012/11/19/you-are-the-yui-team-yuiconf-2012-recap-keynote-video/
 categories:
   - "YUI Events"
 ---

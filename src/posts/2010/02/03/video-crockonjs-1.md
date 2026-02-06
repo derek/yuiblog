@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"Crockford on JavaScript — Volume
 author: "YUI Team"
 date: 2010-02-03
 slug: "video-crockonjs-1"
-permalink: /blog/2010/02/03/video-crockonjs-1/
+permalink: /2010/02/03/video-crockonjs-1/
 categories:
   - "YUI Theater"
 ---

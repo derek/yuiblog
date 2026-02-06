@@ -4,7 +4,7 @@ title: "Shifter, fast YUI module building"
 author: "Dav Glass"
 date: 2012-08-27
 slug: "shifter-fast-yui-module-building"
-permalink: /blog/2012/08/27/shifter-fast-yui-module-building/
+permalink: /2012/08/27/shifter-fast-yui-module-building/
 categories:
   - "Development"
 ---

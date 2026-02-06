@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Jan 27th"
 author: "YUI Team"
 date: 2011-01-21
 slug: "yui-open-hours-thurs-jan-27th"
-permalink: /blog/2011/01/21/yui-open-hours-thurs-jan-27th/
+permalink: /2011/01/21/yui-open-hours-thurs-jan-27th/
 categories:
   - "Development"
 ---

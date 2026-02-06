@@ -4,7 +4,7 @@ title: "Celebrating YUI's 2nd Birthday in London"
 author: "Eric Miraglia"
 date: 2008-02-11
 slug: "2nd-birthday-london"
-permalink: /blog/2008/02/11/2nd-birthday-london/
+permalink: /2008/02/11/2nd-birthday-london/
 categories:
   - "Development"
 ---

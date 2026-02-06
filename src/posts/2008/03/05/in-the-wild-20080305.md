@@ -4,7 +4,7 @@ title: "In the Wild for March 5"
 author: "YUI Team"
 date: 2008-03-05
 slug: "in-the-wild-20080305"
-permalink: /blog/2008/03/05/in-the-wild-20080305/
+permalink: /2008/03/05/in-the-wild-20080305/
 categories:
   - "In the Wild"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater — Nicole Sullivan: \"Design Fast Websites (Don't Blame the
 author: "Eric Miraglia"
 date: 2008-12-23
 slug: "video-sullivan"
-permalink: /blog/2008/12/23/video-sullivan/
+permalink: /2008/12/23/video-sullivan/
 categories:
   - "Development"
 ---

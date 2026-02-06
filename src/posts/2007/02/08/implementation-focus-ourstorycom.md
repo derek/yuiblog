@@ -4,7 +4,7 @@ title: "Implementation Focus: OurStory.com"
 author: "Jack Slocum"
 date: 2007-02-08
 slug: "implementation-focus-ourstorycom"
-permalink: /blog/2007/02/08/implementation-focus-ourstorycom/
+permalink: /2007/02/08/implementation-focus-ourstorycom/
 categories:
   - "YUI Theater"
 ---

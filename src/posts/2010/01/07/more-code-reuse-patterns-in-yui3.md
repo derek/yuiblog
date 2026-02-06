@@ -4,7 +4,7 @@ title: "More code reuse patterns in YUI3"
 author: "Stoyan Stefanov"
 date: 2010-01-07
 slug: "more-code-reuse-patterns-in-yui3"
-permalink: /blog/2010/01/07/more-code-reuse-patterns-in-yui3/
+permalink: /2010/01/07/more-code-reuse-patterns-in-yui3/
 categories:
   - "Development"
 ---

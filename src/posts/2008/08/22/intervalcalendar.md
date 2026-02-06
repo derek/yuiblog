@@ -4,7 +4,7 @@ title: "IntervalCalendar for Date-Range Selection"
 author: "YUI Team"
 date: 2008-08-22
 slug: "intervalcalendar"
-permalink: /blog/2008/08/22/intervalcalendar/
+permalink: /2008/08/22/intervalcalendar/
 categories:
   - "Development"
 ---

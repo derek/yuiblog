@@ -4,7 +4,7 @@ title: "YUI Theater — Dave Herman: \"The Future of JavaScript\" (48 min.)"
 author: "Ryan Grove"
 date: 2011-11-21
 slug: "video-yuiconf2011-dherma"
-permalink: /blog/2011/11/21/video-yuiconf2011-dherma/
+permalink: /2011/11/21/video-yuiconf2011-dherma/
 categories:
   - "Development"
 ---

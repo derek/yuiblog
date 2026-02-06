@@ -4,7 +4,7 @@ title: "YUI Theater — Douglas Crockford: \"Crockford on JavaScript — Section
 author: "Ryan Grove"
 date: 2011-11-18
 slug: "video-crockonjs-section8"
-permalink: /blog/2011/11/18/video-crockonjs-section8/
+permalink: /2011/11/18/video-crockonjs-section8/
 categories:
   - "Development"
 ---

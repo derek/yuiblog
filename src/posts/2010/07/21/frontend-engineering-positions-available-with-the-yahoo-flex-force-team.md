@@ -4,7 +4,7 @@ title: "Frontend Engineering Positions Available with the Yahoo! Flex Force Team
 author: "Gonzalo Cordero"
 date: 2010-07-21
 slug: "frontend-engineering-positions-available-with-the-yahoo-flex-force-team"
-permalink: /blog/2010/07/21/frontend-engineering-positions-available-with-the-yahoo-flex-force-team/
+permalink: /2010/07/21/frontend-engineering-positions-available-with-the-yahoo-flex-force-team/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

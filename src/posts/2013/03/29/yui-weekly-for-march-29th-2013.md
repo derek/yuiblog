@@ -4,7 +4,7 @@ title: "YUI Weekly for March 29th, 2013"
 author: "Derek Gathright"
 date: 2013-03-29
 slug: "yui-weekly-for-march-29th-2013"
-permalink: /blog/2013/03/29/yui-weekly-for-march-29th-2013/
+permalink: /2013/03/29/yui-weekly-for-march-29th-2013/
 categories:
   - "YUI Weekly"
 ---

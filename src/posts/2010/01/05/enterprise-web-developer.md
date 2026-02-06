@@ -4,7 +4,7 @@ title: "Implementation Focus: Enterprise Web Developer, a Python/YUI Framework"
 author: "YUI Team"
 date: 2010-01-05
 slug: "enterprise-web-developer"
-permalink: /blog/2010/01/05/enterprise-web-developer/
+permalink: /2010/01/05/enterprise-web-developer/
 categories:
   - "Development"
 ---

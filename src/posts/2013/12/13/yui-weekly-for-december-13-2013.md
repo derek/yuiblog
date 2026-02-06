@@ -4,7 +4,7 @@ title: "YUI Weekly for December 13, 2013"
 author: "YUI Team"
 date: 2013-12-13
 slug: "yui-weekly-for-december-13-2013"
-permalink: /blog/2013/12/13/yui-weekly-for-december-13-2013/
+permalink: /2013/12/13/yui-weekly-for-december-13-2013/
 categories:
   - "YUI Weekly"
 ---

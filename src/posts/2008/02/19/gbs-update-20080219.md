@@ -4,7 +4,7 @@ title: "Graded Browser Support: Updated A-Grade Chart"
 author: "Nate Koechley"
 date: 2008-02-19
 slug: "gbs-update-20080219"
-permalink: /blog/2008/02/19/gbs-update-20080219/
+permalink: /2008/02/19/gbs-update-20080219/
 categories:
   - "Development"
 ---

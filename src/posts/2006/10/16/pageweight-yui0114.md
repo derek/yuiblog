@@ -4,7 +4,7 @@ title: "YUI: Weighing in on Pageweights"
 author: "Eric Miraglia"
 date: 2006-10-16
 slug: "pageweight-yui0114"
-permalink: /blog/2006/10/16/pageweight-yui0114/
+permalink: /2006/10/16/pageweight-yui0114/
 categories:
   - "Development"
 ---

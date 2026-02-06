@@ -4,7 +4,7 @@ title: "Mobile Browser Cache Limits: Android, iOS, and webOS"
 author: "YUI Team"
 date: 2010-06-28
 slug: "mobile-browser-cache-limits"
-permalink: /blog/2010/06/28/mobile-browser-cache-limits/
+permalink: /2010/06/28/mobile-browser-cache-limits/
 categories:
   - "Development"
 ---

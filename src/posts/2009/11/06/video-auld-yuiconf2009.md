@@ -4,7 +4,7 @@ title: "YUI Theater —  Chad Auld: \"Introducing PHP Loader\""
 author: "YUI Team"
 date: 2009-11-06
 slug: "video-auld-yuiconf2009"
-permalink: /blog/2009/11/06/video-auld-yuiconf2009/
+permalink: /2009/11/06/video-auld-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

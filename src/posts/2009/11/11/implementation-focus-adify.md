@@ -4,7 +4,7 @@ title: "Implementation Focus: Adify"
 author: "YUI Team"
 date: 2009-11-11
 slug: "implementation-focus-adify"
-permalink: /blog/2009/11/11/implementation-focus-adify/
+permalink: /2009/11/11/implementation-focus-adify/
 categories:
   - "Development"
 ---

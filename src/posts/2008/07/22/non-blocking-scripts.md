@@ -4,7 +4,7 @@ title: "Non-blocking JavaScript Downloads"
 author: "Stoyan Stefanov"
 date: 2008-07-22
 slug: "non-blocking-scripts"
-permalink: /blog/2008/07/22/non-blocking-scripts/
+permalink: /2008/07/22/non-blocking-scripts/
 categories:
   - "Development"
 ---

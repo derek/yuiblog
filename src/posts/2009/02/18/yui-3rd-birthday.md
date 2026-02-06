@@ -4,7 +4,7 @@ title: "YUI Turns Three!"
 author: "Jenny Donnelly"
 date: 2009-02-18
 slug: "yui-3rd-birthday"
-permalink: /blog/2009/02/18/yui-3rd-birthday/
+permalink: /2009/02/18/yui-3rd-birthday/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUIConf 2013: Lightning talks"
 author: "Andrew Wooldridge"
 date: 2014-03-07
 slug: "yuiconf-2013-lightning-talks"
-permalink: /blog/2014/03/07/yuiconf-2013-lightning-talks/
+permalink: /2014/03/07/yuiconf-2013-lightning-talks/
 categories:
   - "Development"
 ---

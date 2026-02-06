@@ -4,7 +4,7 @@ title: "YUIConf 2012 Talk: Writing for Developers - Some Rational Techniques by 
 author: "Andrew Wooldridge"
 date: 2012-12-10
 slug: "yuiconf-2012-talk-writing-for-developers-some-rational-techniques-by-evan-goer"
-permalink: /blog/2012/12/10/yuiconf-2012-talk-writing-for-developers-some-rational-techniques-by-evan-goer/
+permalink: /2012/12/10/yuiconf-2012-talk-writing-for-developers-some-rational-techniques-by-evan-goer/
 categories:
   - "Development"
 ---

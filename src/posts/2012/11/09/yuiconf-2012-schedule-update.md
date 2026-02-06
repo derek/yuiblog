@@ -4,7 +4,7 @@ title: "YUIConf 2012 Schedule Update"
 author: "YUI Team"
 date: 2012-11-09
 slug: "yuiconf-2012-schedule-update"
-permalink: /blog/2012/11/09/yuiconf-2012-schedule-update/
+permalink: /2012/11/09/yuiconf-2012-schedule-update/
 categories:
   - "YUI Events"
 ---

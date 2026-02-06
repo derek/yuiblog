@@ -4,7 +4,7 @@ title: "YUI Theater —  Ryan Dahl: \"Node.js Roadmap\" (48 min.)"
 author: "YUI Team"
 date: 2010-11-30
 slug: "video-yuiconf2010-dahl"
-permalink: /blog/2010/11/30/video-yuiconf2010-dahl/
+permalink: /2010/11/30/video-yuiconf2010-dahl/
 categories:
   - "YUI Theater"
 ---

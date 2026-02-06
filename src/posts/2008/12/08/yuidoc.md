@@ -4,7 +4,7 @@ title: "YUI Doc: A New Tool for Generating JavaScript API Documentation"
 author: "Eric Miraglia"
 date: 2008-12-08
 slug: "yuidoc"
-permalink: /blog/2008/12/08/yuidoc/
+permalink: /2008/12/08/yuidoc/
 categories:
   - "Development"
 ---

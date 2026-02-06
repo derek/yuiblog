@@ -4,7 +4,7 @@ title: "YUI Theater —  Douglas Crockford: \"Project Future\" (43 min.)"
 author: "Eric Miraglia"
 date: 2010-12-07
 slug: "video-crockford-projectfuture"
-permalink: /blog/2010/12/07/video-crockford-projectfuture/
+permalink: /2010/12/07/video-crockford-projectfuture/
 categories:
   - "YUI Theater"
 ---

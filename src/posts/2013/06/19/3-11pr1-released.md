@@ -4,7 +4,7 @@ title: "3.11pr1 Released"
 author: "Andrew Wooldridge"
 date: 2013-06-19
 slug: "3-11pr1-released"
-permalink: /blog/2013/06/19/3-11pr1-released/
+permalink: /2013/06/19/3-11pr1-released/
 categories:
   - "Releases"
 ---

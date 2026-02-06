@@ -4,7 +4,7 @@ title: "YUI Theater -- Paul Donnelly: \"Using Yahoo! Pipes and the YQL Module\" 
 author: "Ryan Grove"
 date: 2012-01-11
 slug: "video-yuiconf2011-donnelly"
-permalink: /blog/2012/01/11/video-yuiconf2011-donnelly/
+permalink: /2012/01/11/video-yuiconf2011-donnelly/
 categories:
   - "Development"
 ---

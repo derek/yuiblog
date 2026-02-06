@@ -4,7 +4,7 @@ title: "Reflecting on the Legacy of YUIBlog"
 author: "Derek Gathright"
 date: 2026-02-05
 slug: "reflecting-on-yuiblog-legacy"
-permalink: /blog/2026/02/05/reflecting-on-yuiblog-legacy/
+permalink: /2026/02/05/reflecting-on-yuiblog-legacy/
 categories:
   - "Miscellany"
 ---

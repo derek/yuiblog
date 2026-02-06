@@ -4,7 +4,7 @@ title: "YUI In the Wild #2"
 author: "Nate Koechley"
 date: 2007-05-23
 slug: "in-the-wild-20070523"
-permalink: /blog/2007/05/23/in-the-wild-20070523/
+permalink: /2007/05/23/in-the-wild-20070523/
 categories:
   - "Development"
 ---

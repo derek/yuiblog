@@ -4,7 +4,7 @@ title: "Architecture of a Review Design Pattern"
 author: "Bill Scott"
 date: 2006-02-13
 slug: "architectureofreview"
-permalink: /blog/2006/02/13/architectureofreview/
+permalink: /2006/02/13/architectureofreview/
 categories:
   - "Design"
 ---

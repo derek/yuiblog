@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Matt Snider's Number Module"
 author: "Matt Snider"
 date: 2010-03-10
 slug: "gallery-number"
-permalink: /blog/2010/03/10/gallery-number/
+permalink: /2010/03/10/gallery-number/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Tilo Mitra: \"Handling Data in YUI 3\" (38 min.)"
 author: "Eric Miraglia"
 date: 2010-12-03
 slug: "video-yuiconf2010-mitra"
-permalink: /blog/2010/12/03/video-yuiconf2010-mitra/
+permalink: /2010/12/03/video-yuiconf2010-mitra/
 categories:
   - "YUI Theater"
 ---

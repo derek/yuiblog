@@ -4,7 +4,7 @@ title: "Migrating a Date/Time Widget from YUI 2 to YUI 3: A Case Study"
 author: "John Lindal"
 date: 2014-02-21
 slug: "migrating-a-datetime-widget-from-yui-2-to-yui-3-a-case-study"
-permalink: /blog/2014/02/21/migrating-a-datetime-widget-from-yui-2-to-yui-3-a-case-study/
+permalink: /2014/02/21/migrating-a-datetime-widget-from-yui-2-to-yui-3-a-case-study/
 categories:
   - "YUI 3 Gallery"
 ---

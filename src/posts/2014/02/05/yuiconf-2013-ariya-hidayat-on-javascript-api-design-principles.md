@@ -4,7 +4,7 @@ title: "YUIConf 2013: Ariya Hidayat on JavaScript API Design Principles"
 author: "Andrew Wooldridge"
 date: 2014-02-05
 slug: "yuiconf-2013-ariya-hidayat-on-javascript-api-design-principles"
-permalink: /blog/2014/02/05/yuiconf-2013-ariya-hidayat-on-javascript-api-design-principles/
+permalink: /2014/02/05/yuiconf-2013-ariya-hidayat-on-javascript-api-design-principles/
 categories:
   - "Development"
 ---

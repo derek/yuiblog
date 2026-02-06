@@ -4,7 +4,7 @@ title: "Video: Matt Sweeney's Hack Day Talk, \"Web 2.0: Getting It Right the Sec
 author: "Unknown"
 date: 2006-10-03
 slug: "video-sweeney-hackday06"
-permalink: /blog/2006/10/03/video-sweeney-hackday06/
+permalink: /2006/10/03/video-sweeney-hackday06/
 categories:
   - "Development"
 ---

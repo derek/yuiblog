@@ -4,7 +4,7 @@ title: "YUIConf 2012: Two awesome days"
 author: "Iliyan Peychev"
 date: 2012-11-29
 slug: "yuiconf-2012-two-awesome-days"
-permalink: /blog/2012/11/29/yuiconf-2012-two-awesome-days/
+permalink: /2012/11/29/yuiconf-2012-two-awesome-days/
 categories:
   - "YUI Events"
 ---

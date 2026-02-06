@@ -4,7 +4,7 @@ title: "Save the Date: YUIConf Nov 6-7"
 author: "Andrew Wooldridge"
 date: 2013-08-23
 slug: "save-the-date-yuiconf-nov-6-7"
-permalink: /blog/2013/08/23/save-the-date-yuiconf-nov-6-7/
+permalink: /2013/08/23/save-the-date-yuiconf-nov-6-7/
 categories:
   - "Development"
 ---

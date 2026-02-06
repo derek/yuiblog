@@ -4,7 +4,7 @@ title: "YUI 3.7.3 - Windows 8 Apps and IE 10"
 author: "Eric Ferraiuolo"
 date: 2012-10-17
 slug: "yui-3-7-3-windows-8-apps-and-ie-10"
-permalink: /blog/2012/10/17/yui-3-7-3-windows-8-apps-and-ie-10/
+permalink: /2012/10/17/yui-3-7-3-windows-8-apps-and-ie-10/
 categories:
   - "Releases"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater —  Eric Ferraiuolo: \"TipTheWeb.org: Heavy Duty YUI 3 & YQ
 author: "Eric Miraglia"
 date: 2010-12-08
 slug: "video-yuiconf2010-ferraiuolo"
-permalink: /blog/2010/12/08/video-yuiconf2010-ferraiuolo/
+permalink: /2010/12/08/video-yuiconf2010-ferraiuolo/
 categories:
   - "YUI Theater"
 ---

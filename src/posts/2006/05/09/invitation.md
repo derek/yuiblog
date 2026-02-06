@@ -4,7 +4,7 @@ title: "Design Pattern: Invitation"
 author: "Bill Scott"
 date: 2006-05-09
 slug: "invitation"
-permalink: /blog/2006/05/09/invitation/
+permalink: /2006/05/09/invitation/
 categories:
   - "Design"
 ---

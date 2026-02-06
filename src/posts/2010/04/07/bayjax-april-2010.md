@@ -4,7 +4,7 @@ title: "April 13 BayJax Meetup on High Performance JavaScript"
 author: "Eric Miraglia"
 date: 2010-04-07
 slug: "bayjax-april-2010"
-permalink: /blog/2010/04/07/bayjax-april-2010/
+permalink: /2010/04/07/bayjax-april-2010/
 categories:
   - "Development"
 ---

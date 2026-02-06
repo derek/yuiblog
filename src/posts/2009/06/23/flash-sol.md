@@ -4,7 +4,7 @@ title: "Flash SOL: Persistent Data with Local SharedObjects"
 author: "Unknown"
 date: 2009-06-23
 slug: "flash-sol"
-permalink: /blog/2009/06/23/flash-sol/
+permalink: /2009/06/23/flash-sol/
 categories:
   - "Development"
 ---

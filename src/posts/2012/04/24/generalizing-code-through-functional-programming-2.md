@@ -4,7 +4,7 @@ title: "Generalizing Code Through Functional Programming"
 author: "YUI Team"
 date: 2012-04-24
 slug: "generalizing-code-through-functional-programming-2"
-permalink: /blog/2012/04/24/generalizing-code-through-functional-programming-2/
+permalink: /2012/04/24/generalizing-code-through-functional-programming-2/
 categories:
   - "Development"
 ---

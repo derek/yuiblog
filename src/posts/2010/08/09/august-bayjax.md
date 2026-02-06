@@ -4,7 +4,7 @@ title: "Douglas Crockford's \"Loopage\" at August 27 BayJax Meetup"
 author: "Eric Miraglia"
 date: 2010-08-09
 slug: "august-bayjax"
-permalink: /blog/2010/08/09/august-bayjax/
+permalink: /2010/08/09/august-bayjax/
 categories:
   - "Development"
 ---

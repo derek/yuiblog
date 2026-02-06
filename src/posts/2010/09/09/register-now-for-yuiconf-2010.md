@@ -4,7 +4,7 @@ title: "Register Now for YUIConf 2010!"
 author: "Jenny Donnelly"
 date: 2010-09-09
 slug: "register-now-for-yuiconf-2010"
-permalink: /blog/2010/09/09/register-now-for-yuiconf-2010/
+permalink: /2010/09/09/register-now-for-yuiconf-2010/
 categories:
   - "Development"
 ---

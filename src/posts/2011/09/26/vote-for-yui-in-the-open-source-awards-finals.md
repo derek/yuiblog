@@ -4,7 +4,7 @@ title: "Vote for YUI in the Open Source Awards Finals"
 author: "Jenny Donnelly"
 date: 2011-09-26
 slug: "vote-for-yui-in-the-open-source-awards-finals"
-permalink: /blog/2011/09/26/vote-for-yui-in-the-open-source-awards-finals/
+permalink: /2011/09/26/vote-for-yui-in-the-open-source-awards-finals/
 categories:
   - "Miscellany"
 ---

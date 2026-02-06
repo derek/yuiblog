@@ -4,7 +4,7 @@ title: "In the YUI 3 Gallery: Base64 and Y64 encoding"
 author: "Nicholas C. Zakas"
 date: 2010-07-06
 slug: "in-the-yui-3-gallery-base64-and-y64-encoding"
-permalink: /blog/2010/07/06/in-the-yui-3-gallery-base64-and-y64-encoding/
+permalink: /2010/07/06/in-the-yui-3-gallery-base64-and-y64-encoding/
 categories:
   - "Development"
 ---

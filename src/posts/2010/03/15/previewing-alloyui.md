@@ -4,7 +4,7 @@ title: "Previewing AlloyUI, a YUI 3-based Component Library from Liferay"
 author: "YUI Team"
 date: 2010-03-15
 slug: "previewing-alloyui"
-permalink: /blog/2010/03/15/previewing-alloyui/
+permalink: /2010/03/15/previewing-alloyui/
 categories:
   - "Development"
 ---

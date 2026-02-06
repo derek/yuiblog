@@ -4,7 +4,7 @@ title: "YUI Theater — Dav Glass: \"Rich Text Editing with YUI\""
 author: "YUI Team"
 date: 2008-04-14
 slug: "video-glass-rte"
-permalink: /blog/2008/04/14/video-glass-rte/
+permalink: /2008/04/14/video-glass-rte/
 categories:
   - "YUI Theater"
 ---

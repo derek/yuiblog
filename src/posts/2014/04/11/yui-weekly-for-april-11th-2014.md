@@ -4,7 +4,7 @@ title: "YUI Weekly for April 11th, 2014"
 author: "Tilo"
 date: 2014-04-11
 slug: "yui-weekly-for-april-11th-2014"
-permalink: /blog/2014/04/11/yui-weekly-for-april-11th-2014/
+permalink: /2014/04/11/yui-weekly-for-april-11th-2014/
 categories:
   - "YUI Weekly"
 ---

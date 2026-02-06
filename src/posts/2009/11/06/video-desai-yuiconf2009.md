@@ -4,7 +4,7 @@ title: "YUI Theater —  Satyen Desai: \"A Widget Walkthrough\""
 author: "Eric Miraglia"
 date: 2009-11-06
 slug: "video-desai-yuiconf2009"
-permalink: /blog/2009/11/06/video-desai-yuiconf2009/
+permalink: /2009/11/06/video-desai-yuiconf2009/
 categories:
   - "YUI Theater"
 ---

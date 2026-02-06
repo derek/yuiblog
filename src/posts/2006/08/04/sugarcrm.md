@@ -4,7 +4,7 @@ title: "YUI Implementation Focus: SugarCRM"
 author: "YUI Team"
 date: 2006-08-04
 slug: "sugarcrm"
-permalink: /blog/2006/08/04/sugarcrm/
+permalink: /2006/08/04/sugarcrm/
 categories:
   - "Development"
 ---

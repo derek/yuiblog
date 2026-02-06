@@ -4,7 +4,7 @@ title: "December BayJax: John Resig, \"JavaScript Testing and Performance Analys
 author: "Unknown"
 date: 2009-11-24
 slug: "december-bayjax-resig"
-permalink: /blog/2009/11/24/december-bayjax-resig/
+permalink: /2009/11/24/december-bayjax-resig/
 categories:
   - "Development"
 ---

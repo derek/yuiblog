@@ -4,7 +4,7 @@ title: "YUI Version 0.12.2 Released"
 author: "Eric Miraglia"
 date: 2007-01-08
 slug: "yui-0122-released"
-permalink: /blog/2007/01/08/yui-0122-released/
+permalink: /2007/01/08/yui-0122-released/
 categories:
   - "Development"
 ---

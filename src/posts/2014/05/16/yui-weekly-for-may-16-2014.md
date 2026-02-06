@@ -4,7 +4,7 @@ title: "YUI Weekly for May 16, 2014"
 author: "YUI Team"
 date: 2014-05-16
 slug: "yui-weekly-for-may-16-2014"
-permalink: /blog/2014/05/16/yui-weekly-for-may-16-2014/
+permalink: /2014/05/16/yui-weekly-for-may-16-2014/
 categories:
   - "YUI Weekly"
 ---

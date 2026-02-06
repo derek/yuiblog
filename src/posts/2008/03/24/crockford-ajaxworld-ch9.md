@@ -4,7 +4,7 @@ title: "Crockford Speaks on \"Fixing the Web\" and Appears on Channel 9"
 author: "YUI Team"
 date: 2008-03-24
 slug: "crockford-ajaxworld-ch9"
-permalink: /blog/2008/03/24/crockford-ajaxworld-ch9/
+permalink: /2008/03/24/crockford-ajaxworld-ch9/
 categories:
   - "Development"
 ---

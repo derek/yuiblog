@@ -4,7 +4,7 @@ title: "YUI 3 \"Building Blocks, Modules, and Applications\" Workshop Coming to 
 author: "Luke Smith"
 date: 2011-04-19
 slug: "yui-3-building-blocks-modules-and-applications-workshop-coming-to-portland-and-free"
-permalink: /blog/2011/04/19/yui-3-building-blocks-modules-and-applications-workshop-coming-to-portland-and-free/
+permalink: /2011/04/19/yui-3-building-blocks-modules-and-applications-workshop-coming-to-portland-and-free/
 categories:
   - "Development"
 ---

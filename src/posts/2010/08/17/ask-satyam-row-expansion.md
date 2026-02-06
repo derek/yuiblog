@@ -4,7 +4,7 @@ title: "Ask Satyam: Row Expansion and Nested DataTables"
 author: "YUI Team"
 date: 2010-08-17
 slug: "ask-satyam-row-expansion"
-permalink: /blog/2010/08/17/ask-satyam-row-expansion/
+permalink: /2010/08/17/ask-satyam-row-expansion/
 categories:
   - "Development"
 ---

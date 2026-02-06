@@ -4,7 +4,7 @@ title: "What's So Social about Sign-in?"
 author: "YUI Team"
 date: 2008-08-26
 slug: "continuity"
-permalink: /blog/2008/08/26/continuity/
+permalink: /2008/08/26/continuity/
 categories:
   - "Design"
 ---

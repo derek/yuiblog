@@ -4,7 +4,7 @@ title: "YUI Theater — Joe Hewitt: \"An Introduction to iUI\""
 author: "YUI Team"
 date: 2007-07-29
 slug: "video-hewitt-iui"
-permalink: /blog/2007/07/29/video-hewitt-iui/
+permalink: /2007/07/29/video-hewitt-iui/
 categories:
   - "YUI Theater"
 ---

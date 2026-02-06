@@ -4,7 +4,7 @@ title: "YUI Theater — Bill Scott: \"Designing the Rich Web Experience: Princip
 author: "Eric Miraglia"
 date: 2007-10-15
 slug: "video-scott"
-permalink: /blog/2007/10/15/video-scott/
+permalink: /2007/10/15/video-scott/
 categories:
   - "Development"
 ---

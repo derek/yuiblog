@@ -4,7 +4,7 @@ title: "YUIConf 2013 Talk: Markandey Singh on Moonwalking with JavaScript"
 author: "YUI Team"
 date: 2014-01-22
 slug: "yuiconf-2013-talk-markandey-singh-on-moonwalking-with-javascript"
-permalink: /blog/2014/01/22/yuiconf-2013-talk-markandey-singh-on-moonwalking-with-javascript/
+permalink: /2014/01/22/yuiconf-2013-talk-markandey-singh-on-moonwalking-with-javascript/
 categories:
   - "Development"
 ---

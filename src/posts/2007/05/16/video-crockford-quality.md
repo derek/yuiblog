@@ -4,7 +4,7 @@ title: "YUI Theater — Douglas Crockford: \"Quality\""
 author: "Eric Miraglia"
 date: 2007-05-16
 slug: "video-crockford-quality"
-permalink: /blog/2007/05/16/video-crockford-quality/
+permalink: /2007/05/16/video-crockford-quality/
 categories:
   - "YUI Theater"
 ---

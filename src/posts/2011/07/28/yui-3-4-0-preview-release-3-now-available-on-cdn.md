@@ -4,7 +4,7 @@ title: "YUI 3.4.0 Preview Release 3 Now Available on CDN"
 author: "George Puckett"
 date: 2011-07-28
 slug: "yui-3-4-0-preview-release-3-now-available-on-cdn"
-permalink: /blog/2011/07/28/yui-3-4-0-preview-release-3-now-available-on-cdn/
+permalink: /2011/07/28/yui-3-4-0-preview-release-3-now-available-on-cdn/
 categories:
   - "Development"
 ---

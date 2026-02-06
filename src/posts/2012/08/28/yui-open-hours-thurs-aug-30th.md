@@ -4,7 +4,7 @@ title: "YUI: Open Hours Thurs Aug 30th"
 author: "Luke Smith"
 date: 2012-08-28
 slug: "yui-open-hours-thurs-aug-30th"
-permalink: /blog/2012/08/28/yui-open-hours-thurs-aug-30th/
+permalink: /2012/08/28/yui-open-hours-thurs-aug-30th/
 categories:
   - "Development"
 ---

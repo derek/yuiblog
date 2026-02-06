@@ -4,7 +4,7 @@ title: "Rey Bango of Ajaxian Interviews YUI Developers Adam Moore, Satyen Desai,
 author: "Eric Miraglia"
 date: 2010-04-30
 slug: "rey-interviews-yui-devs"
-permalink: /blog/2010/04/30/rey-interviews-yui-devs/
+permalink: /2010/04/30/rey-interviews-yui-devs/
 categories:
   - "Miscellany"
 ---

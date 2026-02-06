@@ -4,7 +4,7 @@ title: "Windows 8 Loves YUI"
 author: "Jeff Burtoft"
 date: 2013-03-12
 slug: "windows-8-loves-yui"
-permalink: /blog/2013/03/12/windows-8-loves-yui/
+permalink: /2013/03/12/windows-8-loves-yui/
 categories:
   - "Development"
 ---

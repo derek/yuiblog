@@ -4,7 +4,7 @@ title: "Mojarra Scales — New JSF Component Library Supporting Numerous YUI Com
 author: "Unknown"
 date: 2008-05-29
 slug: "mojarra-scales"
-permalink: /blog/2008/05/29/mojarra-scales/
+permalink: /2008/05/29/mojarra-scales/
 categories:
   - "Development"
 ---

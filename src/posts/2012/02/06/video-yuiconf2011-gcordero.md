@@ -4,7 +4,7 @@ title: "YUI Theater -- Gonzalo Cordero: \"Yahoo! Local Mobile Case Study\" (33 m
 author: "Ryan Grove"
 date: 2012-02-06
 slug: "video-yuiconf2011-gcordero"
-permalink: /blog/2012/02/06/video-yuiconf2011-gcordero/
+permalink: /2012/02/06/video-yuiconf2011-gcordero/
 categories:
   - "Development"
 ---

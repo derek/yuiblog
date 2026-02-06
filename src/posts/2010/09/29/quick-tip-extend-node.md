@@ -4,7 +4,7 @@ title: "YUI 3 Quick Tip: Adding Your Own Awesome"
 author: "Eric Miraglia"
 date: 2010-09-29
 slug: "quick-tip-extend-node"
-permalink: /blog/2010/09/29/quick-tip-extend-node/
+permalink: /2010/09/29/quick-tip-extend-node/
 categories:
   - "Development"
 ---

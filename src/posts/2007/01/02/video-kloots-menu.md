@@ -4,7 +4,7 @@ title: "Video: Developer Todd Kloots Talks about the YUI Menu Control"
 author: "Eric Miraglia"
 date: 2007-01-02
 slug: "video-kloots-menu"
-permalink: /blog/2007/01/02/video-kloots-menu/
+permalink: /2007/01/02/video-kloots-menu/
 categories:
   - "Development"
 ---

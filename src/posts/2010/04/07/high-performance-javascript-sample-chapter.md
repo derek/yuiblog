@@ -4,7 +4,7 @@ title: "High Performance JavaScript from O'Reilly and Yahoo! Press: Free Chapter
 author: "Eric Miraglia"
 date: 2010-04-07
 slug: "high-performance-javascript-sample-chapter"
-permalink: /blog/2010/04/07/high-performance-javascript-sample-chapter/
+permalink: /2010/04/07/high-performance-javascript-sample-chapter/
 categories:
   - "Development"
 ---

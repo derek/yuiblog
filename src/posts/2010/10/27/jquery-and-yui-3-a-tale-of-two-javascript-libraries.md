@@ -4,7 +4,7 @@ title: "jQuery and YUI 3: A Tale of Two JavaScript Libraries"
 author: "Mark Rall"
 date: 2010-10-27
 slug: "jquery-and-yui-3-a-tale-of-two-javascript-libraries"
-permalink: /blog/2010/10/27/jquery-and-yui-3-a-tale-of-two-javascript-libraries/
+permalink: /2010/10/27/jquery-and-yui-3-a-tale-of-two-javascript-libraries/
 categories:
   - "Development"
 ---

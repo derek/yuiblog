@@ -4,7 +4,7 @@ title: "YUICompressor 2.4.8 Released"
 author: "YUI Team"
 date: 2013-05-16
 slug: "yuicompressor-2-4-8-released"
-permalink: /blog/2013/05/16/yuicompressor-2-4-8-released/
+permalink: /2013/05/16/yuicompressor-2-4-8-released/
 categories:
   - "Releases"
 ---

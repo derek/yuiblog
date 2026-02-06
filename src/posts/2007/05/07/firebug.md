@@ -4,7 +4,7 @@ title: "Job Announcement: The YUI Team Is Hiring an Engineer To Work on Firebug"
 author: "Eric Miraglia"
 date: 2007-05-07
 slug: "firebug"
-permalink: /blog/2007/05/07/firebug/
+permalink: /2007/05/07/firebug/
 categories:
   - "Development"
 ---

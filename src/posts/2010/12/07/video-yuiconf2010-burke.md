@@ -4,7 +4,7 @@ title: "YUI Theater —  Reid Burke: \"Yeti: YUI's Easy Testing Interface\" (43 
 author: "Eric Miraglia"
 date: 2010-12-07
 slug: "video-yuiconf2010-burke"
-permalink: /blog/2010/12/07/video-yuiconf2010-burke/
+permalink: /2010/12/07/video-yuiconf2010-burke/
 categories:
   - "YUI Theater"
 ---

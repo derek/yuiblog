@@ -4,7 +4,7 @@ title: "YUI and Loader changes for 3.4.0"
 author: "Dav Glass"
 date: 2011-07-01
 slug: "yui-and-loader-changes-for-3-4-0"
-permalink: /blog/2011/07/01/yui-and-loader-changes-for-3-4-0/
+permalink: /2011/07/01/yui-and-loader-changes-for-3-4-0/
 categories:
   - "Development"
 ---

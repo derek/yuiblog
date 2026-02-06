@@ -4,7 +4,7 @@ title: "YUI 3.17.2 Released"
 author: "YUI Team"
 date: 2014-06-03
 slug: "yui-3-17-2-released"
-permalink: /blog/2014/06/03/yui-3-17-2-released/
+permalink: /2014/06/03/yui-3-17-2-released/
 categories:
   - "Development"
 ---

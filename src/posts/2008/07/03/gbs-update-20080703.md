@@ -4,7 +4,7 @@ title: "Graded Browser Support Update"
 author: "Nate Koechley"
 date: 2008-07-03
 slug: "gbs-update-20080703"
-permalink: /blog/2008/07/03/gbs-update-20080703/
+permalink: /2008/07/03/gbs-update-20080703/
 categories:
   - "Development"
 ---

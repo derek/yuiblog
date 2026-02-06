@@ -4,7 +4,7 @@ title: "YUI 3.7.0pr3 - Last Minute Fixes"
 author: "Eric Ferraiuolo"
 date: 2012-09-13
 slug: "yui-3-7-0pr3-last-minute-fixes"
-permalink: /blog/2012/09/13/yui-3-7-0pr3-last-minute-fixes/
+permalink: /2012/09/13/yui-3-7-0pr3-last-minute-fixes/
 categories:
   - "Releases"
 ---

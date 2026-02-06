@@ -4,7 +4,7 @@ title: "Building Your Own Widget Library with YUI"
 author: "Satyam"
 date: 2008-06-24
 slug: "buildingwidgets"
-permalink: /blog/2008/06/24/buildingwidgets/
+permalink: /2008/06/24/buildingwidgets/
 categories:
   - "Development"
 ---

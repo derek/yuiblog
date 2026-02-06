@@ -4,7 +4,7 @@ title: "Implementation Focus: Wikia"
 author: "Eric Miraglia"
 date: 2007-06-18
 slug: "wikia"
-permalink: /blog/2007/06/18/wikia/
+permalink: /2007/06/18/wikia/
 categories:
   - "YUI Implementations"
 ---

@@ -4,7 +4,7 @@ title: "YUI 3.7.0pr1 - Event Performance"
 author: "Eric Ferraiuolo"
 date: 2012-08-31
 slug: "yui-3-7-0pr1-event-performance"
-permalink: /blog/2012/08/31/yui-3-7-0pr1-event-performance/
+permalink: /2012/08/31/yui-3-7-0pr1-event-performance/
 categories:
   - "Releases"
 ---

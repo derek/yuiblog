@@ -4,7 +4,7 @@ title: "In the Wild for March 22, 2010"
 author: "YUI Team"
 date: 2010-03-22
 slug: "in-the-wild-for-march-22-2010"
-permalink: /blog/2010/03/22/in-the-wild-for-march-22-2010/
+permalink: /2010/03/22/in-the-wild-for-march-22-2010/
 categories:
   - "In the Wild"
 ---

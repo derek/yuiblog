@@ -4,7 +4,7 @@ title: "AccordionView Widget for YUI from Marco van Hylckama Vlieg"
 author: "Eric Miraglia"
 date: 2008-07-25
 slug: "accordionview"
-permalink: /blog/2008/07/25/accordionview/
+permalink: /2008/07/25/accordionview/
 categories:
   - "Development"
 ---

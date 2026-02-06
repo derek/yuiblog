@@ -4,7 +4,7 @@ title: "YUI Theater -- Stephen Woods: \"Creating Responsive HTML5 Touch Interfac
 author: "Ryan Grove"
 date: 2012-02-23
 slug: "video-stephen-woods-html5-touch"
-permalink: /blog/2012/02/23/video-stephen-woods-html5-touch/
+permalink: /2012/02/23/video-stephen-woods-html5-touch/
 categories:
   - "Development"
 ---

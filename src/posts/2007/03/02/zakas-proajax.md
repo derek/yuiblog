@@ -4,7 +4,7 @@ title: "Free Excerpt: Nicholas Zakas on YUI Connection Manager, from Professiona
 author: "Eric Miraglia"
 date: 2007-03-02
 slug: "zakas-proajax"
-permalink: /blog/2007/03/02/zakas-proajax/
+permalink: /2007/03/02/zakas-proajax/
 categories:
   - "Development"
 ---

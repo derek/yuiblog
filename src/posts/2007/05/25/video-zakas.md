@@ -4,7 +4,7 @@ title: "YUI Theater — Nicholas Zakas: \"Maintainable JavaScript\""
 author: "Eric Miraglia"
 date: 2007-05-25
 slug: "video-zakas"
-permalink: /blog/2007/05/25/video-zakas/
+permalink: /2007/05/25/video-zakas/
 categories:
   - "YUI Theater"
 ---

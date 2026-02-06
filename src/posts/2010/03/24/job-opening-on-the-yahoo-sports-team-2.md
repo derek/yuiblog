@@ -4,7 +4,7 @@ title: "Job Opening on the Yahoo! Sports team"
 author: "YUI Team"
 date: 2010-03-24
 slug: "job-opening-on-the-yahoo-sports-team-2"
-permalink: /blog/2010/03/24/job-opening-on-the-yahoo-sports-team-2/
+permalink: /2010/03/24/job-opening-on-the-yahoo-sports-team-2/
 categories:
   - "Frontend Jobs at Yahoo"
 ---

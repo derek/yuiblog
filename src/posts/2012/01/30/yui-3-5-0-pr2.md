@@ -4,7 +4,7 @@ title: "YUI 3.5.0 PR2 Is Now Available"
 author: "Unknown"
 date: 2012-01-30
 slug: "yui-3-5-0-pr2"
-permalink: /blog/2012/01/30/yui-3-5-0-pr2/
+permalink: /2012/01/30/yui-3-5-0-pr2/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "Jenny Han Donnelly: YUI Engineer (AdaLovelaceDay09)"
 author: "Eric Miraglia"
 date: 2009-03-24
 slug: "adalovelace-jennydonnelly"
-permalink: /blog/2009/03/24/adalovelace-jennydonnelly/
+permalink: /2009/03/24/adalovelace-jennydonnelly/
 categories:
   - "Development"
 ---

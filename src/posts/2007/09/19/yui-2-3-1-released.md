@@ -4,7 +4,7 @@ title: "YUI Version 2.3.1: Bug-Fix Release"
 author: "Eric Miraglia"
 date: 2007-09-19
 slug: "yui-2-3-1-released"
-permalink: /blog/2007/09/19/yui-2-3-1-released/
+permalink: /2007/09/19/yui-2-3-1-released/
 categories:
   - "Development"
 ---

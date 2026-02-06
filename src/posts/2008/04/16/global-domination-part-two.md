@@ -4,7 +4,7 @@ title: "Global Domination, Part Two"
 author: "Douglas Crockford"
 date: 2008-04-16
 slug: "global-domination-part-two"
-permalink: /blog/2008/04/16/global-domination-part-two/
+permalink: /2008/04/16/global-domination-part-two/
 categories:
   - "Development"
 ---

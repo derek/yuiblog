@@ -4,7 +4,7 @@ title: "Design Pattern: Transition"
 author: "Bill Scott"
 date: 2006-05-09
 slug: "transition"
-permalink: /blog/2006/05/09/transition/
+permalink: /2006/05/09/transition/
 categories:
   - "Design"
 ---

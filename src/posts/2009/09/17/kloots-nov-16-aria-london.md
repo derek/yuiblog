@@ -4,7 +4,7 @@ title: "YUI's Todd Kloots in London for Accessibility/ARIA Tech Talk on Nov. 17"
 author: "Eric Miraglia"
 date: 2009-09-17
 slug: "kloots-nov-16-aria-london"
-permalink: /blog/2009/09/17/kloots-nov-16-aria-london/
+permalink: /2009/09/17/kloots-nov-16-aria-london/
 categories:
   - "Development"
 ---

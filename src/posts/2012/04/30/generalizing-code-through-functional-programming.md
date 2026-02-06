@@ -4,7 +4,7 @@ title: "Generalizing Code Through Functional Programming"
 author: "John Lindal"
 date: 2012-04-30
 slug: "generalizing-code-through-functional-programming"
-permalink: /blog/2012/04/30/generalizing-code-through-functional-programming/
+permalink: /2012/04/30/generalizing-code-through-functional-programming/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI 3.4.0 Preview Release 2"
 author: "Unknown"
 date: 2011-06-23
 slug: "yui-3-4-0-preview-release-2"
-permalink: /blog/2011/06/23/yui-3-4-0-preview-release-2/
+permalink: /2011/06/23/yui-3-4-0-preview-release-2/
 categories:
   - "Development"
 ---

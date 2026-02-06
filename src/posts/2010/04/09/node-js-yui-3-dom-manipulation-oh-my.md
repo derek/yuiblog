@@ -4,7 +4,7 @@ title: "Node.js, YUI 3 & Dom Manipulation... Oh My!"
 author: "Dav Glass"
 date: 2010-04-09
 slug: "node-js-yui-3-dom-manipulation-oh-my"
-permalink: /blog/2010/04/09/node-js-yui-3-dom-manipulation-oh-my/
+permalink: /2010/04/09/node-js-yui-3-dom-manipulation-oh-my/
 categories:
   - "Development"
 ---

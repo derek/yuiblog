@@ -4,7 +4,7 @@ title: "Reminder: YUI 3.x Meetup Tonight and Yahoo! Live Channel Info"
 author: "YUI Team"
 date: 2008-09-03
 slug: "meetup-live"
-permalink: /blog/2008/09/03/meetup-live/
+permalink: /2008/09/03/meetup-live/
 categories:
   - "Development"
 ---

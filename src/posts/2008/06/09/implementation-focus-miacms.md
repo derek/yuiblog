@@ -4,7 +4,7 @@ title: "Implementation Focus: MiaCMS"
 author: "Eric Miraglia"
 date: 2008-06-09
 slug: "implementation-focus-miacms"
-permalink: /blog/2008/06/09/implementation-focus-miacms/
+permalink: /2008/06/09/implementation-focus-miacms/
 categories:
   - "YUI Implementations"
 ---

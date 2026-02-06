@@ -4,7 +4,7 @@ title: "YUI Implementation Focus: Dustin Diaz's DED|Chain"
 author: "John Resig"
 date: 2007-03-26
 slug: "dedchain"
-permalink: /blog/2007/03/26/dedchain/
+permalink: /2007/03/26/dedchain/
 categories:
   - "Development"
 ---

@@ -4,7 +4,7 @@ title: "YUI Theater -- Nicholas Zakas: \"Progressive Enhancement 2.0\" (50 min.)
 author: "YUI Team"
 date: 2012-03-19
 slug: "video-zakas-progressive-enhancement"
-permalink: /blog/2012/03/19/video-zakas-progressive-enhancement/
+permalink: /2012/03/19/video-zakas-progressive-enhancement/
 categories:
   - "Development"
 ---

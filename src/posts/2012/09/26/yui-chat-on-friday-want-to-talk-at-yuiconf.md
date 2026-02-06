@@ -4,7 +4,7 @@ title: "YUI Chat on Friday - Want to talk at YUIConf?"
 author: "Andrew Wooldridge"
 date: 2012-09-26
 slug: "yui-chat-on-friday-want-to-talk-at-yuiconf"
-permalink: /blog/2012/09/26/yui-chat-on-friday-want-to-talk-at-yuiconf/
+permalink: /2012/09/26/yui-chat-on-friday-want-to-talk-at-yuiconf/
 categories:
   - "YUI Events"
 ---
