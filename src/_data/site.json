@@ -5,7 +5,7 @@
   "url": "https://derek.io/yuiblog",
   "baseUrl": "/yuiblog/",
   "logo": "https://clarle.github.io/yui3/img/yui-logo-2x.png",
-  "copyright": "© 2014 YUI Blog",
+  "copyright": "© 2006-2014 YUI Blog",
   "categories": [
     {"name": "Accessibility", "slug": "accessibility"},
     {"name": "CSS 101", "slug": "css-101"},
