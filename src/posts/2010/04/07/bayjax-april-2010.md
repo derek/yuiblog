@@ -6,6 +6,7 @@ date: 2010-04-07
 slug: "bayjax-april-2010"
 permalink: /2010/04/07/bayjax-april-2010/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![](/yuiblog/blog-archive/assets/performanceauthors.jpg)](http://www.meetup.com/BayJax/calendar/13107337/ "High performance JavaScript -  BayJax - The Bay Area Ajax and JavaScript Meetup (Palo Alto, CA) - Meetup.com")

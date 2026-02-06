@@ -6,6 +6,7 @@ date: 2009-04-13
 slug: "yui-270-on-taskspeed"
 permalink: /2009/04/13/yui-270-on-taskspeed/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![Screenshot of TaskSpeed](/yuiblog/blog-archive/assets/taskspeed/screenshot.png)](http://dante.dojotoolkit.org/taskspeed/)

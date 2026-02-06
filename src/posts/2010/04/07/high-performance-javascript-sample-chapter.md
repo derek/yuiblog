@@ -6,6 +6,7 @@ date: 2010-04-07
 slug: "high-performance-javascript-sample-chapter"
 permalink: /2010/04/07/high-performance-javascript-sample-chapter/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![High Performance JavaScript, by Nicholas Zakas (book cover)](/yuiblog/blog-archive/assets/high-performance-javascript-20100403-070804.jpg)](/yuiblog/blog-archive/assets/High_Perf_JavaScr_Ch2.pdf)Nicholas C. Zakas has teamed with a select group of fellow Yahoo! engineers to produce a new volume from O'Reilly and Yahoo! Press on _[High Performance JavaScript](http://www.amazon.com/High-Performance-JavaScript-Nicholas-Zakas/dp/059680279X/ "Amazon.com: High Performance JavaScript (9780596802790): Nicholas C. Zakas: Books")_.

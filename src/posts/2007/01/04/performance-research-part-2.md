@@ -6,6 +6,7 @@ date: 2007-01-04
 slug: "performance-research-part-2"
 permalink: /2007/01/04/performance-research-part-2/
 categories:
+  - "Performance"
   - "Development"
 ---
 This is the second in a series of articles describing experiments conducted to learn more about optimizing web page performance. You may be wondering why you're reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.

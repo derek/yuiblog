@@ -6,6 +6,7 @@ date: 2008-12-23
 slug: "video-crockford-performance"
 permalink: /2008/12/23/video-crockford-performance/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![](http://ericmiraglia.com/assets/crockford-performance2.jpg)](http://video.yahoo.com/watch/4156174/11192533)

@@ -6,6 +6,7 @@ date: 2008-08-28
 slug: "ysearch-for-iphone"
 permalink: /2008/08/28/ysearch-for-iphone/
 categories:
+  - "Performance"
   - "Development"
 ---
 When we [set out to build](http://wonko.com/post/yahoo-search-brings-search-assist-searchmonkey-and-more-to-the-i) an [iPhone-optimized version of Yahoo! Search](http://search.yahoo.com/i), we wanted to bring [SearchMonkey](http://developer.yahoo.com/searchmonkey/), [![Yahoo! Search with Search Assist, tailored for the iPhone.](/yuiblog/blog-archive/assets/ysearch-iphone.png)](http://search.yahoo.com/i/) Search Assist, and other JavaScript-heavy Yahoo! Search features to the iPhone, but we also wanted the site to be blazing fast even over EDGE, all while reusing as much existing code as possible in order to minimize engineering effort and make maintenance easier. This is how we did it.

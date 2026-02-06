@@ -6,6 +6,7 @@ date: 2011-07-18
 slug: "next-gen-yslow-powered-by-yui"
 permalink: /2011/07/18/next-gen-yslow-powered-by-yui/
 categories:
+  - "Performance"
   - "Development"
 ---
 A couple of weeks ago, Yahoo! announced [YSlow for Mobile](http://developer.yahoo.com/blogs/ydn/posts/2011/06/yslowmobile/) at [Velocity 2011](http://velocityconf.com/velocity2011/public/schedule/detail/20287), bringing the power of YSlow performance analysis to the mobile world.

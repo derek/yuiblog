@@ -6,6 +6,7 @@ date: 2006-11-28
 slug: "performance-research-part-1"
 permalink: /2006/11/28/performance-research-part-1/
 categories:
+  - "Performance"
   - "Development"
 ---
 It's no secret that users prefer faster web sites. I work in a dedicated team focused on quantifying and improving the performance of Yahoo! products worldwide. As part of our work, we conduct experiments related to web page performance. We are sharing our findings so that other front-end engineers join us in accelerating the user experience on the web.

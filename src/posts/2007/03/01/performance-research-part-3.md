@@ -6,6 +6,7 @@ date: 2007-03-01
 slug: "performance-research-part-3"
 permalink: /2007/03/01/performance-research-part-3/
 categories:
+  - "Performance"
   - "Development"
 ---
 HTTP cookies are used for a variety of reasons such as authentication and personalization. Information about cookies is exchanged in the HTTP headers between web servers and browsers. This article discusses the impact of cookies on the overall user response time.

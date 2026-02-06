@@ -6,6 +6,7 @@ date: 2011-12-06
 slug: "video-yuiconf2011-tivac"
 permalink: /2011/12/06/video-yuiconf2011-tivac/
 categories:
+  - "Performance"
   - "Development"
 ---
 Pat Cavit ([@tivac](http://twitter.com/tivac)), a frontend engineer at [ArenaNet](http://www.arena.net/) and an active YUI contributor and community member, joined us at YUIConf 2011 to give this talk on automating build-time website optimizations such as file concatenation, minification, renaming, and more using the Ant build tool.

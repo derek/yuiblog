@@ -6,6 +6,7 @@ date: 2012-08-31
 slug: "yui-3-7-0pr1-event-performance"
 permalink: /2012/08/31/yui-3-7-0pr1-event-performance/
 categories:
+  - "Performance"
   - "Releases"
 ---
 We've previously mentioned our plans to move to a more rapid release cycle for YUI, and now the work we put into automating our unit and functional testing in 3.6.0 is making that possible. YUI 3.7.0pr1 is now available to the developer community for feedback and testing on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr1/build/yui/yui-min.js "YUI 3.7.0pr1 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr1.zip "YUI 3.7.0pr1 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation.

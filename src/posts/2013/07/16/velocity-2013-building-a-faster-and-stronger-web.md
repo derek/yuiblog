@@ -6,6 +6,7 @@ date: 2013-07-16
 slug: "velocity-2013-building-a-faster-and-stronger-web"
 permalink: /2013/07/16/velocity-2013-building-a-faster-and-stronger-web/
 categories:
+  - "Performance"
   - "Miscellany"
 ---
 .entry .imgwrap-right { width:350px; float:right; text-align:center; margin:1em 0 0 1em; } .entry .imgwrap-left { width:350px; float:left; text-align:center; margin:1em 1em 0 0; } .entry .slide { text-align:center; } /\* Site Header \*/ #hd { padding: 25px 20px 20px; } #hd .site-header { display: flex; align-items: center; } #hd .site-brand { display: flex; align-items: center; gap: 20px; } #hd .site-logo img { height: 52px; width: auto; } #hd .site-title { margin: 0; font-size: 32px; color: #30418C; line-height: 1.2; letter-spacing: normal; } #hd .site-title a { color: inherit; text-decoration: none; } #hd .site-tagline { margin: 5px 0 0; font-size: 15px; color: #666; letter-spacing: normal; }

@@ -6,6 +6,7 @@ date: 2009-11-10
 slug: "video-sweeney-yuiconf2009"
 permalink: /2009/11/10/video-sweeney-yuiconf2009/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![YUI architect Matt Sweeney at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/sweeney-yuiconf2009-performance-20091104-123521.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=sweeney-yuiconf2009-performance)

@@ -6,6 +6,7 @@ date: 2007-08-29
 slug: "video-smarr"
 permalink: /2007/08/29/video-smarr/
 categories:
+  - "Performance"
   - "YUI Theater"
 ---
 [![](/yuiblog/blog-archive/assets/smarr.jpg)](http://video.yahoo.com/video/play?vid=1041101)

@@ -6,6 +6,7 @@ date: 2010-09-09
 slug: "video-grove-zen"
 permalink: /2010/09/09/video-grove-zen/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![Ryan Grove speaking about performance and YUI 3 at Yahoo! on September 1, 2010.](/yuiblog/blog-archive/assets/ryangrove-20100902-094041.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=grove-zen)

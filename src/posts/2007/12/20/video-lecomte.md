@@ -6,6 +6,7 @@ date: 2007-12-20
 slug: "video-lecomte"
 permalink: /2007/12/20/video-lecomte/
 categories:
+  - "Performance"
   - "YUI Theater"
 ---
 [![Julien Lecomte of Yahoo delivers a tech talk on high-performance Ajax web-development.](/yuiblog/blog-archive/assets/julien_lecomte.jpg)](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v)

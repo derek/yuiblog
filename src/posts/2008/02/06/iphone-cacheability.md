@@ -6,6 +6,7 @@ date: 2008-02-06
 slug: "iphone-cacheability"
 permalink: /2008/02/06/iphone-cacheability/
 categories:
+  - "Performance"
   - "Development"
 ---
 At [MacWorld 2008](http://www.macworldexpo.com/), Steve Jobs announced that Apple sold 4 million iPhones to date, that's 20,000 iPhones sold every day. [Net Applications](http://marketshare.hitslink.com/report.aspx?sample=4&qprid=10&qpmr=14&qpdt=1&qpct=0&qptimeframe=M&qpsp=107) reports that total web browsing on iPhone is up at 0.12% for December 2007, topping the web browsing on all Windows Mobile devices combined. Apple's iPhone has changed the game for many users browsing the web on a mobile device. Web developers can now create functionally rich and visually appealing applications that run within the iPhone's version of the Safari Mobile web browser. While the iPhone presents new and exciting opportunities for mobile web application developers, it also provides a unique set of performance challenges.

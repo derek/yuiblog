@@ -6,6 +6,7 @@ date: 2007-09-04
 slug: "video-souders"
 permalink: /2007/09/04/video-souders/
 categories:
+  - "Performance"
   - "YUI Theater"
 ---
 [![](/yuiblog/blog-archive/assets/souders.jpg)](http://video.yahoo.com/video/play?vid=1040890)

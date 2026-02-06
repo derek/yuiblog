@@ -6,6 +6,7 @@ date: 2008-11-14
 slug: "imageopt-3"
 permalink: /2008/11/14/imageopt-3/
 categories:
+  - "Performance"
   - "Development"
 ---
 _This is part 3 in an ongoing series. You can read the other parts here:_

@@ -6,6 +6,7 @@ date: 2010-04-21
 slug: "video-hpjs"
 permalink: /2010/04/21/video-hpjs/
 categories:
+  - "Performance"
   - "Development"
 ---
 [![BayJax event at Yahoo! on March 31, 2010.](/yuiblog/blog-archive/assets/rossharmes-20100419-101805.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=zakas-hpjs)

@@ -6,6 +6,7 @@ date: 2007-04-11
 slug: "performance-research-part-4"
 permalink: /2007/04/11/performance-research-part-4/
 categories:
+  - "Performance"
   - "Development"
 ---
 ### Parallel Downloads
