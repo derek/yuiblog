@@ -1,0 +1,217 @@
+/* 
+	Theme Name: yuilibrary
+	Author: Anthony Pipkin and Allen Rabinovich
+	Version: 1.0
+*/
+
+body, html {
+   padding: 0px;
+   margin: 0px;
+}
+
+body {
+    font: 15px/1.6 'PT Sans','DejaVu Sans','Bitstream Vera Sans',Verdana,sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #30418C;
+    font-family: "HelveticaNeue-Light", "PT Sans", "DejaVu Sans", Verdana, sans-serif;
+    font-weight:300;
+}
+
+h6 {
+    text-transform: uppercase;
+    font-size:12px;
+    display:inline;
+    color: #888;
+}
+
+#main-nav .page_item {
+	float: left;
+	position: relative;
+}
+
+#bd .content {
+    background: #ffffff;
+	xborder: 1px solid #EFEFEF;
+	box-shadow: 5px 0px 15px -8px rgba(0,0,0,0.2);
+	margin: 0 21px;
+	position: relative;
+	z-index: 1;
+	padding-bottom: 5px;
+	color: #4a4a4a;
+    padding-left: 0px;
+}
+
+#bd .entry {
+    border-bottom: 1px solid #EEE;
+    padding-bottom: 15px;
+} 
+
+.post h2, .single-post h1 {
+    color: #6D93E4;
+	background: #efefef url('images/furley_bg.png') repeat;
+    -webkit-text-shadow: #fff -1px 1px 0;
+    -moz-text-shadow: #fff -1px 1px 0;
+    text-shadow: #fff -1px 1px 0;
+	padding: 20px 20px 40px 20px;
+	margin-left: -20px;
+	position: relative;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.27), 0 0 40px rgba(0, 0, 0, 0.06) inset; 
+}
+
+.single-post h1 {
+    margin-left: 0;
+}
+
+.post h2:before, .single-post h1:before {
+    content: '';
+    background: none;
+    z-index: -1;
+    position: absolute;
+    left: 15px;
+    bottom: 16px;
+    width: 70%;
+    max-width: 300px; /* avoid rotation causing ugly appearance at large container widths */
+    max-height: 100px;
+    height: 55%;
+    -webkit-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    -webkit-transform: skew(-15deg) rotate(-4deg);
+    -moz-transform: skew(-15deg) rotate(-4deg);
+    -ms-transform: skew(-15deg) rotate(-4deg);
+    -o-transform: skew(-15deg) rotate(-4deg);
+    transform: skew(-15deg) rotate(-4deg); 
+}
+
+.single-post h1:before {
+    bottom: 12px;
+}
+
+
+.content h2 + .meta, .single-post h1 + .meta  {
+	position: relative;
+	top: -46px;
+    left: 0px;
+    opacity: 0.9;
+}
+
+.single-post h1 + .meta {
+    left: 18px;
+}
+
+/*.content h3 {
+	color: #2a2a2a;
+}
+*/
+
+.post {
+	position: relative;
+	padding: 10px 15px 15px 0px;
+}
+.post + .post {
+	margin-top: 10px;
+}
+
+
+
+
+#sidebar {
+	xbackground: #f5f5f5;
+	xborder: 1px solid #efefef;
+	border-left-width: 0;
+	margin-top: 14px;
+	position: relative;
+	padding-bottom: 15px;
+	xleft: -40px;
+}
+
+.sidebox {
+	padding: 0 0 0 35px;
+	margin: 0 10px;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	box-shadow: none;
+}
+.sidebox + .sidebox {
+	border-top: 1px solid #efefef;
+	padding-top: 1em;
+	margin-top: 1em;
+}
+.sidebox .hd {
+	background: transparent;
+	border-radius: 0;
+	padding: 15px 6px 5px;
+	line-height: 1.4em;
+	display: block;
+}
+.sidebox .bd {
+	background: transparent;
+	border-radius: 0;
+	font-size: 12px;
+	padding: 0.5em 8px;
+}
+
+.authorbox {
+    background: #f2f2f2;
+    border: 1px solid #eee;
+    padding: 5px 10px;
+}
+.authorbox img {
+    padding: 5px;
+    box-shadow: 0 0 3px #666;
+    background: white;
+    float: left;
+    margin-right: 15px;
+}
+.authorbox br {
+    display:none;
+}
+
+.social-media {
+    margin-top:15px;
+}
+
+.social-media .twitter-share-button { /* aligns facebook and twitter buttons */
+    position:relative;
+    top:-6px;
+}
+
+#ft {
+    margin-bottom: -24px;
+}
+
+
+/* Tag button */
+a[rel='tag'], a[rel='category'] {
+  background-color: #52a8e8;
+  border-top: 1px solid #4081af;
+  border-right: 1px solid #2e69a3;
+  border-bottom: 1px solid #20559a;
+  border-left: 1px solid #2e69a3;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+  -webkit-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  -moz-box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  box-shadow: inset 0 1px 0 0 #72b9eb, 0 1px 2px 0 #b3b3b3;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1;
+  padding: 3px 10px;
+  text-align: center;
+  margin-left:5px;
+  text-shadow: 0 -1px 1px #3275bc;
+  -webkit-background-clip: padding-box; 
+}
+
+a[rel="category"] {
+    border-top: 1px solid #50802B;
+    background-color: #67A836;
+    -webkit-box-shadow: inset 0 1px 0 0 #85CC50, 0 1px 2px 0 #b3b3b3;
+    -moz-box-shadow: inset 0 1px 0 0 #85CC50, 0 1px 2px 0 #b3b3b3;
+    box-shadow: inset 0 1px 0 0 #85CC50, 0 1px 2px 0 #b3b3b3;
+}

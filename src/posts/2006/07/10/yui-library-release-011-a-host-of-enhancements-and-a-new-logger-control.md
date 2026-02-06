@@ -1,0 +1,37 @@
+---
+layout: layouts/post.njk
+title: "YUI Library Release 0.11: A Host of Enhancements and a New Logger Control"
+author: "YUI Team"
+date: 2006-07-10
+slug: "yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control"
+permalink: /blog/2006/07/10/yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control/
+categories:
+  - "Development"
+---
+In the two months since [our last release](/yuiblog/blog/2006/05/09/autocomplete-windowing-menu-and-more-a-second-beta-release-for-the-yui-library/), the YUI Team has been hard at work improving the library, optimizing code, and working with our colleagues at Yahoo! as they've launched numerous products using YUI as a foundation. The new [Yahoo! Front Page beta](http://www.yahoo.com/preview) is just one example where YUI is helping Yahoo!'s frontend engineering community to bring its most interesting visions to fruition.
+
+In addition to one brand-new component — the [Logger Control](#logger) — this release brings substantive ehancements throughout the library, including:
+
+-   **Color animation:** The [Animation Utility](http://developer.yahoo.com/yui/animation/) sports a new ColorAnim subclass that makes the animation of color properties (like `color`, `background-color`, and `border-color`) a snap.
+-   **Drag & Drop performance:** The [Drag & Drop Utility](http://developer.yahoo.com/yui/dragdrop/) has been one the YUI Library's most popular components since its release. Version 0.11 brings an improvement in the way Drag & Drop positions dragged items during a drag interaction — resulting in significant performance gains, particularly in Firefox.
+-   **Managing inheritance:** We've provided new documentation for the [Yahoo Global Object](http://developer.yahoo.com/yui/yahoo/), including its new `YAHOO.extend` method. `YAHOO.extend` supports prototype, constructor, and superclass assignments for new subclasses, making it easier than ever to manage inheritance in object-oriented JavaScript applications.
+-   **File upload:** The YUI [Connection Manager](http://developer.yahoo.com/yui/connection/) now supports file upload in addition to XMLHttpRequest-based asynchronous transactions. Connection Manager will create an iframe for you on the fly, use that iframe to post your uploaded file(s) to the server, and then return to you the HTML body of the server's response — all within the familiar syntax of the component's connection and response objects.
+-   **Minor changes and enhancements throughout:** From "popping" a branch in the [TreeView Control](http://developer.yahoo.com/yui/treeview/) (and reinserting it elsewhere in the Tree) to implementing [AutoComplete](http://developer.yahoo.com/yui/autocomplete/) with an always-visible suggestion container, a host of minor changes can be found throughout the library for 0.11. Check out the README file found in each component's build directory for detailed information about enhancements and bug fixes to the components you are implementing.
+-   **New Cheat Sheets:** [Cheat Sheets](http://developer.yahoo.com/yui/#cheatsheets) for the YUI Utilities have been updated for 0.11 and new Sheets have been added for three of the Controls (Logger, Slider, and TreeView).
+
+One of the most gratifying aspects of this release from our perspective is the growing influence of the vibrant YUI Library community on the [YDN-JavaScript Yahoo! Group](http://groups.yahoo.com/group/ydn-javascript/). [Peter Michaux](http://peter.michaux.ca/), for example, pushed us to add `YAHOO.extend` to help manage inheritance and to look at new ways to optimize drag-and-drop performance. Hundreds of other members, in ways large and small, have helped us to see places where YUI could be more complete and more useful. Many thanks to all who are contributing there.
+
+### The YUI Library's Logger Control
+
+[![The YUI Logger Component is a new entry in the library for today's 0.11 release.](/yuiblog/blog-archive/assets/logger.gif)](http://developer.yahoo.com/yui/logger)The biggest change you'll see in YUI Library 0.11 is the advent of the [YUI Logger Control](http://developer.yahoo.com/yui/logger/), a flexible and integrated logging package in the spirit of earlier tools like Five Volt Logic's estimable [fvlogger](http://www.alistapart.com/articles/jslogging). The Logger Control gives you useful insights into the operation of other YUI components, each of which now ships with a -debug version. Logger debuts with the following core features:
+
+1.  **Powerful, compact UI:** The default user interface, which is optional and highly configurable, supports live filtering of log messages by category or source and allows you to pause and resume logging on the fly. If Drag & Drop is available on the page, the UI can be repositioned; it can always be collapsed and expanded. Script hooks allow you to show and hide the Logger Control console dynamically.
+2.  **Integration with the YUI Library components:** The YUI Library components now ship with -debug versions that output logger messages at interesting moments. Take a look at how the Logger Console helps to illuminate the inner workings of the TreeView Control [in this example](http://developer.yahoo.com/yui/examples/treeview/default.html).
+3.  **Simple integration with your own projects:** Taking advantage of the Logger Control in your own projects is as simple as adding logging statements at interesting moments in your scripts' execution: e.g., `YAHOO.log("Initializing menu: Variable sName = " + sName);`. The global YAHOO.log method can be safely used throughout your scripts, even when the Logger Control is removed from the page.
+4.  **Integration with other consoles:** We're huge fans of Joe Hewitt's excellent [FireBug extension](/yuiblog/blog/2006/05/30/hewitt-firebug/) for Firefox, and we're pleased to report that the YUI Logger Control arrives with built-in FireBug integration. Moreover, Safari users who have the debug menu enabled will also find Logger messages in the Safari JavaScript Console. Either of these consoles can be used instead of or in addition to the default Logger UI. Check out Firebug and Safari integration in [this Logger example](http://developer.yahoo.com/yui/examples/logger/readlogs.html); note that external console logging, which (like most debugging instruments) can degrade performance noticably, can be disabled in your Logger configuration.
+
+We look forward to hearing your thoughts and learning from your experiences as you implement the new Logger Control, whether to enhance your toolkit while working with YUI components or in development of your own application code.
+
+### What's Next?
+
+Even as we send YUI Library 0.11 out the door we're thinking about and planning for the next release. [As we've said on YDN-JavaScript](http://groups.yahoo.com/group/ydn-javascript/message/1568), we're working on a Tab Control and a Button Control for 0.12 and beyond. And we see many further opportunities to enhance YUI as a platform for building robust, rich applications in the web browser. If you haven't already, please [join the YUI community on YDN-JavaScript](http://developer.yahoo.com/yui/#support) and share your thoughts about the 0.11 release, the Logger Control, and where you'd like to see the YUI Library go from here.

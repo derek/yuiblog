@@ -10,6 +10,9 @@ Thumbs.db
 # Build artifacts
 scripts/__pycache__/
 *.pyc
+node_modules/
+_site/
+.cache/
 
 # Editor files
 *.swp
@@ -25,8 +28,8 @@ scripts/__pycache__/
 # Original archive (too large for git)
 original/
 
-# Build scripts
-scripts/
+# Python cache in scripts
+scripts/__pycache__/
 
 # Local development symlink (for /yuiblog/ path resolution)
 yuiblog

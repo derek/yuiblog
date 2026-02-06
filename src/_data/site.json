@@ -1,0 +1,30 @@
+{
+  "title": "YUI Blog",
+  "tagline": "A Historical Archive (2006-2014)",
+  "description": "The official blog of the Yahoo User Interface Library (YUI), archived from 2006-2014.",
+  "url": "https://derek.io/yuiblog",
+  "baseUrl": "/yuiblog/",
+  "logo": "https://clarle.github.io/yui3/img/yui-logo-2x.png",
+  "copyright": "© 2014 YUI Blog",
+  "categories": [
+    {"name": "Accessibility", "slug": "accessibility"},
+    {"name": "CSS 101", "slug": "css-101"},
+    {"name": "Design", "slug": "design"},
+    {"name": "Development", "slug": "development"},
+    {"name": "Frontend Jobs at Yahoo", "slug": "frontend-jobs-at-yahoo"},
+    {"name": "Graded Browser Support", "slug": "graded-browser-support"},
+    {"name": "In the Wild", "slug": "in-the-wild"},
+    {"name": "Miscellany", "slug": "miscellany"},
+    {"name": "Open Hours", "slug": "open-hours"},
+    {"name": "Performance", "slug": "performance"},
+    {"name": "Releases", "slug": "releases"},
+    {"name": "Target Environments", "slug": "target-environments"},
+    {"name": "Yeti", "slug": "yeti"},
+    {"name": "YUI 3 Gallery", "slug": "yui-3-gallery"},
+    {"name": "YUI Events", "slug": "yui-events"},
+    {"name": "YUI Implementations", "slug": "yui-implementations"},
+    {"name": "YUI Theater", "slug": "yui-theater"},
+    {"name": "YUI Weekly", "slug": "yui-weekly"},
+    {"name": "YUIConf", "slug": "yuiconf"}
+  ]
+}

@@ -1,0 +1,41 @@
+---
+pagination:
+  data: site.categories
+  size: 1
+  alias: category
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ category.name }}"
+  permalink: "blog/category/{{ category.slug }}/"
+---
+
+<h1>{{ category.name }}</h1>
+
+{% set categoryPosts = collections.categories[category.name] %}
+
+<div class="post-list">
+    {% if categoryPosts %}
+    {% for post in categoryPosts %}
+    <article class="post-summary">
+        <header>
+            <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+            <div class="meta">
+                <div class="date">{{ post.date | dateDisplay }}</div>
+                <div class="byline">
+                    By {{ post.data.author }}
+                    {% if post.data.categories and post.data.categories.length > 0 %}
+                    &nbsp;&nbsp;&nbsp;in {% for cat in post.data.categories %}<a href="{{ site.baseUrl }}blog/category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <div class="excerpt">
+            <p>{{ post.templateContent | excerpt(250) }}</p>
+        </div>
+        <a href="{{ post.url | url }}" class="read-more">Read more &rarr;</a>
+    </article>
+    {% endfor %}
+    {% else %}
+    <p>No posts found in this category.</p>
+    {% endif %}
+</div>

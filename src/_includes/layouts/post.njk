@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+bodyClass: single single-post
+---
+
+<ul class="breadcrumbs">
+    <li><a href="{{ site.baseUrl }}">YUI</a></li>
+    <li><a href="{{ site.baseUrl }}blog/">Blog</a></li>
+    {% if categories and categories.length > 0 %}
+    <li><a href="{{ site.baseUrl }}blog/category/{{ categories[0] | slugify }}/">{{ categories[0] }}</a></li>
+    {% endif %}
+    <li>{{ title }}</li>
+</ul>
+
+<article class="post">
+    <header>
+        <h1>{{ title }}</h1>
+        <div class="meta">
+            <span class="author">By {{ author }}</span>
+            <span class="date">{{ date | dateDisplay }}</span>
+        </div>
+    </header>
+
+    <div class="blog" id="blog-content">
+        {{ content | safe }}
+    </div>
+
+    {% if categories and categories.length > 0 %}
+    <footer class="post-meta">
+        <div class="categories">
+            <strong>Categories:</strong>
+            {% for cat in categories %}
+            <a href="{{ site.baseUrl }}blog/category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        </div>
+    </footer>
+    {% endif %}
+</article>

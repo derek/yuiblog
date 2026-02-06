@@ -1,0 +1,680 @@
+/* 
+	Theme Name: yuiblog_v1 
+	Author: Nate Koechley
+	Version: 1.0 
+	Based on: Pool 1.0.7 (http://www.lamateporunyogur.net/pool), by Borja Fernandez
+	test
+*/
+
+body {
+	background: url(http://www.yuiblog.com/i/bg.gif);
+	color: #333;
+	font-family: "Trebuchet MS", "Bitstream Vera Serif", Utopia, "Times New Roman", times, serif;
+	margin: 0;
+	padding: 5px 0;
+	}
+	
+caption {font-size:12px;margin-bottom:6px;}
+
+/* Structure Divs */
+#content {
+	background: #fff;
+	border: 1px solid #F4BB2E;
+	margin: 0 auto;
+	padding: 5px;
+	width: 795px;
+	}
+
+#header {
+	background: #F5A61D url(http://www.yuiblog.com/i/header2.gif) no-repeat;
+	height: 150px;
+	margin: 0;
+	padding: 0;
+	}
+
+#pages {
+	background: #FDEBD0;
+	font-size: 12px;
+	margin: 0;
+	padding: 15px 0 6px 20px;
+	}
+	
+#search {
+	float: right;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	right: 10px;
+	top: -22px;
+}	
+	
+#noticias {
+	float: left;
+	margin: 20px 0 0 0;
+	padding: 0 0 20px 20px;
+	width: 550px;
+	overflow:hidden;
+	}
+
+#sidebar {
+	float: right;
+	font-size: 11px;
+	line-height: 1.5em;
+	margin: 0;
+	padding: 0 10px;
+	width: 170px;
+	}
+
+#credits {
+	background: transparent;
+	font-family: Verdana, Arial, Helvetica;
+	font-size: 10px;
+	margin: 0 10px;
+	padding: 5px 0;
+	text-align: left;
+	border-top:1px solid #666;
+	}
+
+/*
+	sidebar header now: #2C5B73
+	sidebar header was: #174B65 */
+
+
+/* Config Structure Divs */
+
+	/* Header */
+	#header h1 {
+		font-size: 30px;
+		letter-spacing: 0.1em;
+		margin: 0;
+		padding: 88px 0 20px 15px;
+		width: 300px;
+		text-indent:-4200px;
+		}
+		
+	#header a, #header a:hover {
+		background: transparent;
+		color: #fff;
+		text-decoration: none;
+		}
+	
+	/* Pages */
+	#pages li {
+		display: inline;
+		list-style-type: none;
+		}
+		
+	#pages ul, ol {
+		margin: 0;
+		padding: 0;
+		}
+		
+	#pages a {
+		background: #fff;
+		color: #000;
+		font-weight: bold;
+		margin: 0 3px 0 0;
+		padding: 6px 10px;
+		}
+		
+	#pages a:hover {
+		background: #F7B32A;
+		color: #fff;
+		}
+		
+	.current_page_item a, .current_page_item a:hover {
+		background: #FFF !important;
+		color: #000 !important;
+		}
+		
+	/* Search */
+	#search input {
+		border: 1px solid #F6C53E;
+		font-size: 12px;
+		padding: 2px;
+		width: 160px;
+		}
+			
+	/* Noticias */
+	#noticias p, #noticias ul, #noticias ol, #noticias span {
+		font-size: 13px;
+		line-height: 1.6em;
+		}
+
+	#noticias td, #noticias th {
+			font-size: 13px;
+			border:1px;
+			}	
+		
+			
+	#noticias ul {
+		list-style-type: disc;
+		margin: 0 0 0 30px;
+		padding: 0;
+		}
+			
+	#noticias ol {
+		margin: 0 0 0 30px;
+		padding: 0;
+		}
+
+	#noticias li {
+		margin: 0;
+		padding: 0;
+		}
+
+	#noticias h2 {
+		font-size: 16px;
+		font-weight: normal;
+		margin: 0;
+		padding: 0;
+		text-decoration: none;
+		}
+
+	#noticias h2 a {
+		color: #0643BB;
+		font-size: 18px;
+		font-weight: normal;
+		margin: 0 0 0 0;
+		padding: 0;
+		text-decoration: none;
+		}
+
+/*		#noticias h2, #noticias h2 a {
+			color: #0643BB;
+			font-size: 18px;
+			font-weight: normal;
+			margin: 50px 0 0 0;
+			padding: 0;
+			text-decoration: none;
+			}
+*/
+		
+	#noticias h2 a:hover {
+		background: transparent;
+		color: #6EB9E0;
+		}
+		
+	#noticias h3,#noticias h4 {
+		color: #000;
+		font-size: 15px;
+		font-weight: normal;
+		margin:1em 0; /* was :0;*/
+/*		padding: 10px 0 5px 0;*/
+		}
+	#noticias h4 {font-size:13px;}
+		
+	#noticias p.tags,
+	#noticias p.related,
+	#noticias p.spread,
+	#noticias small {
+		font-family: Arial, Helvetica, Sans-Serif;
+		font-size: 11px;
+		}
+	
+	#noticias p.tags {margin:0 0 0 0;}
+	#noticias p.related {margin:40px 0 0 0;}
+	#noticias p.spread {margin:0 0 0 0;}
+	#noticias p.spread img {position:relative;top:5px;}
+		
+	.feedback {
+		color: #898A8A;
+		font-size: 12px;
+		margin: 0;
+		padding: 0 20px;
+		text-align: center;
+		}
+		
+	/* Entrada */
+	.entrada {
+		/*was margin:0;*/
+		margin: 0 0 50px 0;
+		padding: 0;
+		}
+
+				
+	/* Comments */
+	#commentlist {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		}
+
+	#commentlist li {
+		margin: 10px 0;
+		padding: 5px 10px;
+		}
+			
+	#commentlist p {
+		margin: 0;
+		padding: 0;
+		}
+
+	#commentlist li p {
+		margin: 0 0 1em 0;
+		}
+			
+	#commentlist small {
+		font-size: 11px;
+		}
+
+	.class_comment1 { background: #E9E9EA; border: 1px solid #E0DEDE; }
+	.class_comment2 { background: #F4F3F3; border: 1px solid #E0DEDE; }
+	
+	#comments, #postcomment {
+		color: #0090DA;
+		font-size: 14px !important;
+		font-weight: normal;
+		margin: 40px 0 10px 10px;
+		text-transform: uppercase;
+		}
+			
+	#commentform {
+	
+		background:#FDE7C7;
+			/* was: D3E4FF; now: #FDE7C7 */
+		border: 1px solid #F4BB2E;
+			/* was: #D8D8D8; */
+		padding: 5px 20px;
+		}
+		
+	#commentform input, #commentform textarea {
+		background: #F9FBFF;
+		border: 1px solid #F4BB2E;
+			/* was: #B8D4FF; */
+		font-size: 12px;
+		padding: 1px;
+		}
+				
+	#commentform input:focus, #commentform textarea:focus {
+		background: #EEF5FF;
+		}
+	
+	/* Sidebar */
+	#sidebar h3 {
+		background: url(http://www.yuiblog.com/i/dot_666666.gif) repeat-x bottom;
+		color: #666;
+		font-size: 11px;
+		font-weight: normal;
+		letter-spacing: 0.2em;
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
+		}
+		
+	#sidebar ul, #sidebar ol {
+		list-style: none;
+		margin: 0;
+		padding: 5px;
+		}
+		
+	#sidebar li, #sidebar li:hover {
+		margin: 0;
+		padding: 0;
+		}
+		
+	#sidebar a {
+		color: #0643BB;
+		}
+		
+	#sidebar a:hover {
+		background: url(images/dot.gif) repeat-x bottom;
+		color: #2753B7;
+		}
+		
+	#sidebar div { 
+		margin: 20px 0;
+		padding: 0;
+		}
+
+	/*	Credits */
+	#credits a {
+		color: #3E708A;
+		}
+		
+	#credits a:hover {
+		background: transparent;
+		color: #0090DA;
+		}
+		
+	#credits p {
+		margin: 0 0 .25em 0;
+		padding: 0;
+		}
+	#credits img.icon {
+		position:relative;top:2px;
+		}
+
+/* General */
+a {
+	color: #0643BB;
+	text-decoration: none;
+	}
+
+a:hover {
+	background: #0643BB;
+	/*background: #0090DA;*/
+	color: #fff;
+	}
+
+a.img:hover {
+	background-color: transparent;
+	}
+
+acronym, abbr, span.caps {
+	cursor: help;
+	border-bottom: 1px dotted #000;
+	}
+	
+blockquote {
+	background: #FDEBD0; /* url(images/blockquote.png) no-repeat bottom left */
+	padding: 5px 20px;
+	margin: 1em;
+	display:block;
+	} /* Idea from ShadedGrey of http://wpthemes.info/ */
+	
+cite {
+	text-decoration: none;
+	}
+	
+code {
+	font-family: 'Courier New', Courier, Fixed, sans-serif;/*white-space:pre;*/
+	font-size: 1.0em;
+	}
+
+img {
+	border: 0;
+	}
+
+h4 {
+	color: #858585;
+	}
+	
+/* Float and Clear */
+div.floatleft {
+	float: left;
+	}
+
+div.floatright {
+	float: right;
+	}
+	
+div.both {
+	clear: both;
+	}
+	
+/* Images align */
+img.border {
+	border: 1px solid #C6C6C6;
+	padding: 4px;
+	margin: 0;
+	}
+
+img.border:hover {
+	background: #E3F5FE;
+	}
+
+img.center {
+	display: block; 
+	margin: auto;   
+	}
+
+img.alignright {
+	float: right;
+	padding: 4px;
+	margin: 0 0 2px 7px;
+	display: inline;
+	}
+
+img.alignleft {
+	float: left;
+	padding: 4px;
+	margin: 0 7px 2px 0;
+	display: inline;
+	}
+	
+/* Text align */
+.center {
+	text-align: center;
+	}
+	
+.alignright {
+	text-align: right;
+	}
+
+.alignleft {
+	text-align: left;
+	}
+	
+
+.feed12 img {position:relative;top:3px;}
+
+#credits div.hostedby img {float:right;width:88px;display:block;}
+#recent_posts li.recent {margin-bottom:6px;}
+#syndicate .icon {margin-left:2px;}
+
+#categories .icon img {position:relative;top:2px;}
+
+h2#comments,h2#postcomment {color:#666;}
+div.pattern-example img {border:3px solid #999;}
+
+table.basic th, table.basic td {background-color:#fff;padding:5px;}
+table.basic {background-color:#ccc;}
+
+table.empirical th, table.empirical td {background-color:#fff;padding:5px;text-align:right;}
+table.empirical {background-color:#ccc;}
+
+.ten-things-illustration {border:2px solid #dedede;}
+.ten-things-illustration-small {float:right; margin-left:10px; margin-bottom:10px; border:2px solid #dedede;}
+
+.photobox {float:right; margin:1em 0 1em .5em; border:1px solid #ccc; width:250px; padding:.6em;}
+.photobox p.caption {font-size:smaller; margin:.5em 0 0 0;}
+
+#schedule {border:0; margin-top:10px;}
+#schedule h3 {padding-top:0;}
+#schedule th, #schedule td {padding:3px;}
+#schedule th {text-align:left; border-bottom:1px solid #000; background-color:#E1E1E1;}
+#schedule th.negspace {background-color:#FFF; border-bottom:none;}
+#schedule td {font-size:12px;}
+#schedule td.selforganized {background-color:#E8E8E8;}
+#schedule td.plenary {background-color:#E1E1E1;}
+#schedule td.time {background-color:#9D9D9D; color:#FFF;}
+#schedule td strong {color:#7B0099;}
+div.promobox {border:1px solid #666;}
+div.promobox img, #details img {float:right; margin:0 0 5px 10px; border:1px solid #CCC;}
+div.promobox .hd {border:none; background-color:#FFF; font:bold 18px; line-height:21px; padding:5px 36px 0 10px; color:#000;}
+div.promobox .bd {padding:5px 10px 0 10px;}
+div.promobox p {font-size:12px;}
+div.promobox h4, #details h4 {margin:0 0 7px 0; border-bottom:1px dotted #666; font-size:15px;}
+#schedule td.highlight {background-color:#DCE3EF; border:1px solid #0643BB; padding:2px;}
+#schedule td.haspromo {cursor:pointer;}
+#details {margin-top:15px;}
+#details .panel .close.nonsecure {background-image:url(http://yuiblog.com/assets/devday/close.gif) !important; height:22px !important; width:36px !important; }
+.pn-content:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+
+div#update {background-color:#E3E3E3; padding:0 10px 10px 10px; margin-top:10px; border:1px solid #333333;}
+#update p.last {margin-bottom:0;}
+
+.interview .intro, .authorbox {background-color:#E3E3E3; padding:10px; margin-top:10px; border:1px solid #999; font-style:italic;}
+.interview div.intro {padding-bottom:0;margin-bottom:1em;}
+.interview .intro p, .authorbox p {margin-top:0;margin-bottom:10px;}
+
+.interview p.q,.interview h3 {font-weight:bold; margin:0;color:#7B0099;}
+.interview p.followList {margin-top:10px;}
+.interview p.a {margin-top:3px;}
+.interview div.bio, .authorbox {zoom:1;margin-top:5px;}
+.interview div.bio:after, .authorbox:after {content: "."; display: block; height: 0; clear: both; visibility: hidden;}
+.interview .bio img {float:left;margin-right:10px;}
+
+
+
+.figure img.figure {margin-bottom:1em;}
+.figure table.chart th,
+.figure table.chart td {padding:.25em;border:1px solid #fff;font-size:13px;margin:0;}
+.figure table.chart th a {color:#fff;text-decoration:underline;}
+.figure table.chart th,
+
+.figure table.chart th abbr {color:#000;}
+.figure table.chart th {background-color:#ddd;font-family:verdana;font-size:11px;}
+.figure table.chart th,
+.figure table.chart td {border-width:0 1px 1px 0;border-collapse:collapse;}
+.figure table.chart abbr {cursor:help;}
+.chart .gloss,
+.figure .gloss,
+.chart .caption {font-size:10px !important; color:#993300;}
+
+.figure {margin-bottom:1.5em;}
+.figure caption,
+.figure h4 {font-size:13px;font-family:arial;font-weight:bold !important;color:#0643BB;padding:0;margin-bottom:1em !important;text-align:left;}
+.figure table.chart th {background-color:#777;border:1px solid #333;color:#FFF;padding:2px 6px;font-family:verdana;font-size:11px;font-weight:bold;}
+.figure table.chart td {border:1px solid #666;padding:3px 6px;vertical-align:top;}
+.figure table td.empty {border:none;}
+
+
+table.gbs-chart {font-family:arial;}
+table.gbs-chart caption {margin:1em;}
+table.gbs-chart th,table.gbs-chart td {padding:.5em;border:1px solid #fff;font-size:13px;}
+table.gbs-chart th,table.gbs-chart th abbr {color:#000;}
+table.gbs-chart th {background-color:#ddd;font-family:verdana;font-size:11px;}
+table.gbs-chart th,table.gbs-chart td {border-width:0 1px 1px 0;border-collapse:collapse;}
+table.gbs-chart td.xgrade {color:#555;background-color:#FFFBCF;}
+table.gbs-chart td.cgrade {color:#555;background-color:#FFBFBF}
+table.gbs-chart td.na {color:#AAA;}
+table.gbs-chart td.agrade {background-color:#CFC;}
+table.gbs-chart tr.first th {text-align:center;}
+table.gbs-chart tr th {text-align:right;}
+table.gbs-chart abbr {cursor:help;}
+
+p.disclaimer {padding:10px;background-color:#eee;}
+
+
+#time-spent-loading-popular-web-sites td {text-align:center;}
+
+/* Browser specific (not valid) styles to make preformatted text wrap */
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+/*purple style for code blocks*/
+pre {font-size:11px; font-family:Arial, Helvetica, sans-serif; color:#330066; padding:7px; border-left:3px solid #EBEBEB; background:#F5EDFF;}
+#noticias pre p {margin:0; padding:0; font-size:11px;}
+
+/*started using this for codeblocks in the Maps article; could be improved...*/
+div.codeblock {padding:7px; border-left:3px solid #EBEBEB; background:#F5EDFF;} 
+div.codeblock pre {font-size:11px; font-family:Arial, Helvetica, sans-serif; color:#6633CC; }
+
+#mbl .mbl_h {display:none;}
+#mbl h3 {margin-bottom:5px;}
+#mbl table:firstchild {border:0;}
+
+/*for the welcoming mike and dav post*/
+#yuistaff {font-size:12px; border:1px solid #999999;}
+#yuistaff tr.odd {background-color:#FCEEE2;}
+#yuistaff th {color:#FFFFFF; background-color:#003366; font-weight:bold; text-align:left;}
+
+div.intro { /* for IE */
+	zoom:1
+}
+div.intro:after { /* for Others */
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+/*test*/
+#noticias p {margin:1em 0;}
+#noticias div.intro img {float:right;margin:0 0 1em 1em;background-color:#CCC;}
+#noticias div.alignleft img {float:left;margin:0 1em 1em 0;}
+#noticias div.image div.caption p {font-size:11px;}
+#noticias div.image {margin-bottom:1em;zoom:1;}
+#noticias div.image {zoom:1;}/* for IE  */
+#noticias div.image:after { /* for Others */
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.inlay-right {float:right;margin-left:1em;margin-bottom:1em;margin-top:.5em;}
+.inlay-left {float:left;margin-right:1em;margin-bottom:1em;margin-top:.5em;}
+#noticias .intro p {margin:0 0 1em 0;}
+
+#sitesearch {
+float:right;
+position:relative;
+text-align:right;
+width:37em;
+z-index:1000;
+}
+#searchinput {
+font-size:11px;
+font-weight:bold;
+position:relative;
+top:2px;
+width:15em;
+}
+#searchcontainer {
+line-height:normal;
+overflow:hidden;
+position:absolute;
+text-align:left;
+width:40em;
+}
+#searchcontainer .yui-ac-bd {
+background-color:#FFFFFF;
+border:1px solid #666666;
+color:#666666;
+font-size:11px;
+text-align:left;
+}
+#searchcontainer li {
+cursor:pointer;
+overflow:hidden;
+padding:2px 0 0 4px;
+}
+#searchcontainer em {
+color:#000033;
+font-style:normal;
+font-weight:bold;
+}
+.yui-ac-ft {
+background-color:#666666;
+color:#FFFFFF;
+font-size:10px;
+padding:3px;
+text-align:right;
+}
+#searchcontainer .yui-ac-highlight {
+background-color:#FFCC66;
+}
+#search #searchsubmit {
+width:5em;
+}
+#sitesearch label {
+display:none;
+}
+#search .yui-ac-ft a, #search .yui-ac-ft a:link, #search .yui-ac-ft a:visited, #search .yui-ac-ft a:hover, #search .yui-ac-ft a:active {
+background:transparent none repeat scroll 0 0;
+color:#FFFFFF;
+}
+
+#noticias .entrada h2,
+#noticias .entrada h3, 
+#noticias .entrada h4,
+#noticias .entrada h5 {font-weight:bold;color:#444;}
+#noticias .entrada .intro {font-size:14px;}
+#noticias .entrada dl {font-size:13px;}
+.entrada .topItems li {list-style:none;}
+.entrada .topItems li li {list-style:disc;}
+.entrada pre {background:none;border:0;}
+.entrada dt {margin-top:15px;}
+.entrada dt:before {content: "> ";}
+.entrada dt:after {content: ":";}
+.entrada blockquote {border:1px dotted #f4bb2e;padding:10px;}
+.gainLayout {zoom:1;}
+

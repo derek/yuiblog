@@ -1,0 +1,16 @@
+{
+  "name": "yuiblog",
+  "version": "1.0.0",
+  "description": "YUI Blog - A Historical Archive (2006-2014)",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "migrate": "node scripts/migrate.js"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "cheerio": "1.0.0-rc.10",
+    "turndown": "^7.1.2",
+    "turndown-plugin-gfm": "^1.0.2"
+  }
+}

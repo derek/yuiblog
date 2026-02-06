@@ -1,0 +1,40 @@
+<div id="sidebar" class="yui3-u-1-4">
+    <div class="liner">
+        <!-- Archives -->
+        <div id="archives" class="sidebox widget">
+            <div class="hd"><h2>Archives</h2></div>
+            <div class="bd">
+                <select onchange="if (this.value) window.location.href=this.value">
+                    <option value="">Select Month</option>
+                    {% for year in range(2014, 2005, -1) %}
+                        {% for month in range(12, 0, -1) %}
+                            {% set monthStr = month | string %}
+                            {% if month < 10 %}{% set monthStr = "0" + monthStr %}{% endif %}
+                            <option value="{{ site.baseUrl }}blog/{{ year }}/{{ monthStr }}/">
+                                {% set monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"] %}
+                                {{ monthNames[month - 1] }} {{ year }}
+                            </option>
+                        {% endfor %}
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div id="categories" class="sidebox widget widget_categories">
+            <div class="hd"><h2>Categories</h2></div>
+            <div class="bd">
+                <ul>
+                    {% for cat in site.categories %}
+                    <li>
+                        <a href="{{ site.baseUrl }}blog/category/{{ cat.slug }}/">{{ cat.name }}</a>
+                        {% if collections.categories[cat.name] %}
+                            ({{ collections.categories[cat.name].length }})
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

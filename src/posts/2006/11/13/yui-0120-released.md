@@ -1,0 +1,19 @@
+---
+layout: layouts/post.njk
+title: "YUI version 0.12.0: TabView Control, Improved API Documentation, and More"
+author: "Eric Miraglia"
+date: 2006-11-13
+slug: "yui-0120-released"
+permalink: /blog/2006/11/13/yui-0120-released/
+categories:
+  - "Development"
+---
+Today we released version 0.12 of the YUI Library. Here are the highlights:
+
+-   **The [TabView Control](http://developer.yahoo.com/yui/tabview/):** Written by YUI [Animation](http://developer.yahoo.com/yui/animation/) and [Dom](http://developer.yahoo.com/yui/dom/) author [Matt Sweeney](/yuiblog/blog/2006/10/03/video-sweeney-hackday06/), this dynamic tab solution is the newest YUI addition and features robust support both for progressive enhancement and for high-gloss richness. Check out Matt's roster of [TabView examples](http://developer.yahoo.com/yui/examples/tabview/) for an idea of what the new control can do; view source on the examples to see how they're implemented.
+-   **Improved Documentation:** YUI developer Adam Moore ([Event](http://developer.yahoo.com/yui/event/), [Drag & Drop](http://developer.yahoo.com/yui/dragdrop/), [Slider](http://developer.yahoo.com/yui/slider/), [TreeView](http://developer.yahoo.com/yui/treeview/)) has created a new tool for generating [API documentation](http://developer.yahoo.com/yui/docs/), allowing us to generate unified, crosslinked API docs with an integral [AutoComplete](http://developer.yahoo.com/yui/autocomplete/)\-powered [search control](http://developer.yahoo.com/yui/docs/). The new API documents provide developers with a clearer picture of class structures and provide separate categorization for properties and configuration options. You may never go back to [Cheat Sheets](http://developer.yahoo.com/yui/index.html#cheatsheets) again...
+-   **...But in Case You Still Like Cheat Sheets:** Cheat Sheets are updated for version 0.12 and include new sheets for TabView and for Nate Koechley's CSS [Reset](http://developer.yahoo.com/yui/reset/), [Fonts](http://developer.yahoo.com/yui/fonts/) and [Grids](http://developer.yahoo.com/yui/grids/) foundation. You can [download all the YUI Cheat Sheets](http://developer.yahoo.com/yui/index.html#cheatsheets) from the YUI Library website.
+-   **Speaking of CSS Grids:** Nate has rev'd the Grids package with baked-in support for 750px, 950px, and full-viewport ("liquid") layouts. Grids 0.12 triples the number of supported layouts and still weights in under 3KB before gzipping. We've built [the YUI website](http://developer.yahoo.com/yui/) on the Reset/Fonts/Grids foundation now and we're making use use of the new full-viewport support.
+-   **Improvements Throughout the Library:** There are enhancements to be found throughout the library, from [Event](http://developer.yahoo.com/yui/event/)'s new [onContentReady](http://developer.yahoo.com/yui/event/#onavailable) method to a significantly improved [Calendar Control](http://developer.yahoo.com/yui/calendar/) with a simplified interface for creating multi-month calendar displays (if you're upgrading from a previous version of Calendar, [check out the step-by-step upgrade guide](http://developer.yahoo.com/yui/calendar/upgrade.html)). For a full list of changes, see the release notes documentation that accompanies the distribution.
+
+We'll follow up with more information on some of these topics later in the week. For now, please make your way to [SourceForge](http://sourceforge.net/projects/yui/) to download the latest YUI distribution; see the release notes in the distribution for a full manifest of changes throughout the library. As always, the [YUI site on the Yahoo! Developer Network](http://developer.yahoo.com/yui/) has all the latest documentation.
