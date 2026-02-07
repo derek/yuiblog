@@ -6,6 +6,7 @@ date: 2012-12-05
 slug: "yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo"
 permalink: /2012/12/05/yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 One of the main themes of [YUIConf 2012](http://www.yuilibrary.com/yuiconf) was **community**. In the blog post "[You Are the YUI Team: YUIConf 2012 Recap & Keynote Video](/yuiblog/blog/2012/11/19/you-are-the-yui-team-yuiconf-2012-recap-keynote-video/)" we went into some detail about this next video, which became one of the highlights of the whole conference. As always, check out our [earlier videos](/yuiblog/blog/2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/), [YUI Theater](http://yuilibrary.com/theater/), and our [YouTube channel](http://www.youtube.com/yuilibrary) to catch up on our previous video releases.

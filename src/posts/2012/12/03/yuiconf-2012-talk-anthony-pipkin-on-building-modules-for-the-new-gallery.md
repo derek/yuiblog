@@ -6,6 +6,7 @@ date: 2012-12-03
 slug: "yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery"
 permalink: /2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [YUIConf 2012](http://www.yuilibrary.com/yuiconf) was an incredible conference with excellent speakers on topics that are relevant to the YUI community. We really enjoy sharing a bit of it with you with a new video release every few days. Be sure to check out our [earlier videos](/yuiblog/blog/2012/11/30/yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui/) as well as add our [YUI Theater](http://yuilibrary.com/theater/) and [YouTube channel](http://www.youtube.com/yuilibrary) to your bookmarks.

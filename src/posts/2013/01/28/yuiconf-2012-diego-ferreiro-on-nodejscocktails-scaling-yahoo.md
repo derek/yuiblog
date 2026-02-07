@@ -6,6 +6,7 @@ date: 2013-01-28
 slug: "yuiconf-2012-diego-ferreiro-on-nodejscocktails-scaling-yahoo"
 permalink: /2013/01/28/yuiconf-2012-diego-ferreiro-on-nodejscocktails-scaling-yahoo/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Developing server-side applications with javascript is a hot topic right now, and Mojito is a great choice for building robust apps. This talk from [Diego Ferreiro](https://twitter.com/diervo) will give you some idea of the potential of Mojito, and we encourage you to check out the other videos in this series on our [YouTube channel](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz) (and [YUI Theater](http://yuilibrary.com/theater/)).

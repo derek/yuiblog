@@ -6,6 +6,7 @@ date: 2013-08-20
 slug: "yuiconf-2013-early-bird-registration-open"
 permalink: /2013/08/20/yuiconf-2013-early-bird-registration-open/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We are excited to announce that [early bird registration for YUIConf 2013 is now open](http://www.regonline.com/yuiconf2013)! Our 5th annual conference will be held at the [Hyatt Place](http://sanjose.place.hyatt.com/en/hotel/home.html) in downtown San Jose on **November 6-7**.

@@ -6,6 +6,7 @@ date: 2011-09-30
 slug: "yuiconf-2011-early-bird-registration-is-now-open"
 permalink: /2011/09/30/yuiconf-2011-early-bird-registration-is-now-open/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [Early-bird registration for YUIConf 2011 is now open on Eventbrite!]( 

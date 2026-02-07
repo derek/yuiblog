@@ -6,6 +6,7 @@ date: 2014-03-07
 slug: "yuiconf-2013-lightning-talks"
 permalink: /2014/03/07/yuiconf-2013-lightning-talks/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We finish out our YUIConf 2013 series with our [Lightning Talks session](https://www.youtube.com/watch?v=MPaKarJ52Ic). Anyone who had interesting content to discuss could queue up and give a brief talk. Check out the links below if you would like to jump to a specific speaker.

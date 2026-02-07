@@ -6,6 +6,7 @@ date: 2011-01-14
 slug: "video-yuiconf2010-smith"
 permalink: /2011/01/14/video-yuiconf2010-smith/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![YUI engineer Luke Smith speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/luke-dejaundiced-20110114-145153.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-smith)

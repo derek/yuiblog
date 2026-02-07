@@ -6,6 +6,7 @@ date: 2009-11-18
 slug: "video-rabinovich-yuiconf2009"
 permalink: /2009/11/18/video-rabinovich-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI engineer Allen Rabinovich at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/rabinovich-yuiconf2009-charts-20091110-102439.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=rabinovich-yuiconf2009-charts)

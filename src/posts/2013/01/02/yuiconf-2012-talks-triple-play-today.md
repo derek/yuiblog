@@ -6,6 +6,7 @@ date: 2013-01-02
 slug: "yuiconf-2012-talks-triple-play-today"
 permalink: /2013/01/02/yuiconf-2012-talks-triple-play-today/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 The holidays are over and you've probably returned to the office to find your inbox full of fun things to catch up on, right? Our video series has been on a short hiatus as well and it is time to catch up a bit. We have three videos for you to check out, and you can also watch via [YUI Theater](http://yuilibrary.com/theater/) or our [YouTube playlist](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz).

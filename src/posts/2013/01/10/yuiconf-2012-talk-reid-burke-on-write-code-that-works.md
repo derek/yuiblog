@@ -6,6 +6,7 @@ date: 2013-01-10
 slug: "yuiconf-2012-talk-reid-burke-on-write-code-that-works"
 permalink: /2013/01/10/yuiconf-2012-talk-reid-burke-on-write-code-that-works/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Not all talks at [YUIConf 2012](http://yuilibrary.com/yuiconf) were directly related to features of YUI. One such talk focused instead on the need for testing code entitled "Write Code That Works" from [Reid Burke](http://reidburke.com/2012/11/18/yeti-at-yuiconf/). This was a very popular talk that was highly rated by attendees. If you develop for the web, you'll find this talk entertaining and insightful.

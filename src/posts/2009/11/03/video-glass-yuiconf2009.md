@@ -6,6 +6,7 @@ date: 2009-11-03
 slug: "video-glass-yuiconf2009"
 permalink: /2009/11/03/video-glass-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Dav Glass of Yahoo! at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/glass-yuiconf2009-contributing-20091031-094752.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=glass-yuiconf2009-contributing)

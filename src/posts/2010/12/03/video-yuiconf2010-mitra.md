@@ -6,6 +6,7 @@ date: 2010-12-03
 slug: "video-yuiconf2010-mitra"
 permalink: /2010/12/03/video-yuiconf2010-mitra/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI engineering intern Tilo Mitra speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-mitra-20101130-144948.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-mitra)

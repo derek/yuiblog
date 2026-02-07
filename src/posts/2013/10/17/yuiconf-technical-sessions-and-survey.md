@@ -6,6 +6,7 @@ date: 2013-10-17
 slug: "yuiconf-technical-sessions-and-survey"
 permalink: /2013/10/17/yuiconf-technical-sessions-and-survey/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We’re excited to announce our lineup of technical sessions for [YUIConf 2013](http://yuilibrary.com/yuiconf). To help us schedule all the talks, we want to get your feedback about which ones you most want to see.

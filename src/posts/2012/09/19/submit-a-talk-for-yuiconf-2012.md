@@ -6,6 +6,7 @@ date: 2012-09-19
 slug: "submit-a-talk-for-yuiconf-2012"
 permalink: /2012/09/19/submit-a-talk-for-yuiconf-2012/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 **NOTE:** New conference dates have been set! **Nov 14–15** (Wed. and Thurs.) at the **[Santa Clara Marriott](http://www.marriott.com/hotels/travel/sjcga-santa-clara-marriott/).**

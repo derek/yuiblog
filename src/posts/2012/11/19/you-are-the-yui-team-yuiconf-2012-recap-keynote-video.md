@@ -6,6 +6,7 @@ date: 2012-11-19
 slug: "you-are-the-yui-team-yuiconf-2012-recap-keynote-video"
 permalink: /2012/11/19/you-are-the-yui-team-yuiconf-2012-recap-keynote-video/
 categories:
+  - "YUIConf"
   - "YUI Events"
 ---
 ### Day 1: Surprises.

@@ -6,6 +6,7 @@ date: 2010-12-01
 slug: "video-yuiconf2010-glass"
 permalink: /2010/12/01/video-yuiconf2010-glass/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI engineer Dav Glass speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-glass-20101124-131708.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-glass)

@@ -6,6 +6,7 @@ date: 2010-12-03
 slug: "video-yuiconf2010-taylor"
 permalink: /2010/12/03/video-yuiconf2010-taylor/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo! engineer Matt Taylor speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-taylor-20101130-082547.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-taylor)

@@ -6,6 +6,7 @@ date: 2012-01-11
 slug: "video-yuiconf2011-donnelly"
 permalink: /2012/01/11/video-yuiconf2011-donnelly/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this talk from YUIConf 2011, [YQL](http://developer.yahoo.com/yql/) engineer Paul Donnelly demonstrates the features of the [Yahoo! Pipes](http://pipes.yahoo.com/pipes/) editor and explains how you can use Pipes and YQL to power your web apps, create mashups, and more.

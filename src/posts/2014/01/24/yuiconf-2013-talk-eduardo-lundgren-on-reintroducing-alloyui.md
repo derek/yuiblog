@@ -6,6 +6,7 @@ date: 2014-01-24
 slug: "yuiconf-2013-talk-eduardo-lundgren-on-reintroducing-alloyui"
 permalink: /2014/01/24/yuiconf-2013-talk-eduardo-lundgren-on-reintroducing-alloyui/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Happy Friday! We are pleased to release another YUIConf 2013 video for your weekend viewing. Today's release is from [Eduardo Lundgren](http://www.liferay.com/web/eduardo.lundgren) from [Liferay](http://www.liferay.com/) with a presentation entitled "[Reintroducing AlloyUI](https://www.youtube.com/watch?v=DIF5woZGsYU)". You can also check out the [previous video](/yuiblog/blog/2014/01/22/yuiconf-2013-talk-markandey-singh-on-moonwalking-with-javascript/), or watch them all via the [YouTube playlist](http://www.youtube.com/playlist?list=PLjKP9DUCzZorde6sLWHJ3GNd-6VrGrbqm).

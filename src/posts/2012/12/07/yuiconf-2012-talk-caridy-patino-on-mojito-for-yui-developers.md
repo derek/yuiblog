@@ -6,6 +6,7 @@ date: 2012-12-07
 slug: "yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers"
 permalink: /2012/12/07/yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 If you have yet to be convinced that [YUIConf 2012](http://www.yuilibrary.com/yuiconf) was the best conference yet, then perhaps this next video will help change your mind. We continue our series of video releases with one entitled "**Mojito for YUI Developers**" by [Caridy Patiño](http://lanyrd.com/profile/caridy/). You can find [previous posts](/yuiblog/blog/2012/12/05/yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo/) in this series here, as well as keep up with all of the videos via [YUI Theater](http://yuilibrary.com/theater/) and [YouTube](http://www.youtube.com/yuilibrary).

@@ -6,6 +6,7 @@ date: 2009-11-06
 slug: "video-auld-yuiconf2009"
 permalink: /2009/11/06/video-auld-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo! engineer Chad Auld at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/auld-yuiconf2009-phploader-20091103-080850.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=auld-yuiconf2009-phploader)

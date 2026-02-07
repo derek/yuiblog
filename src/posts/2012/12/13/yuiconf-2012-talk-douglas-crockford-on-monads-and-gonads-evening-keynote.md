@@ -6,6 +6,7 @@ date: 2012-12-13
 slug: "yuiconf-2012-talk-douglas-crockford-on-monads-and-gonads-evening-keynote"
 permalink: /2012/12/13/yuiconf-2012-talk-douglas-crockford-on-monads-and-gonads-evening-keynote/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Our [series](/yuiblog/blog/2012/12/10/yuiconf-2012-talk-writing-for-developers-some-rational-techniques-by-evan-goer/) progresses through the talks from [YUIConf 2012](http://yuilibrary.com/yuiconf) and takes us to the next one from [Douglas Crockford](http://www.crockford.com/). This was a lively evening keynote after the dinner at the conference. As always, keep up on the latest videos on [YUI Theater](http://yuilibrary.com/theater/) and [YouTube](http://www.youtube.com/yuilibrary).

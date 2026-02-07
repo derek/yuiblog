@@ -6,6 +6,7 @@ date: 2009-11-05
 slug: "video-ericf-yuiconf2009"
 permalink: /2009/11/05/video-ericf-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Oddnut Software engineer Eric Ferraiuolo at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/ericf-yuiconf2009-webapps-20091102-114101.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=ericf-yuiconf2009-webapps)

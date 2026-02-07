@@ -6,6 +6,7 @@ date: 2010-12-02
 slug: "video-yuiconf2010-pipkin"
 permalink: /2010/12/02/video-yuiconf2010-pipkin/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI contributor Anthony Pipkin of The Jones Group speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-pipkin-20101129-144300.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-pipkin)

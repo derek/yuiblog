@@ -6,6 +6,7 @@ date: 2013-09-17
 slug: "yuiconf-2013-registration-now-open"
 permalink: /2013/09/17/yuiconf-2013-registration-now-open/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 ### Register Now!

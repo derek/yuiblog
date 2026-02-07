@@ -6,6 +6,7 @@ date: 2010-12-08
 slug: "video-yuiconf2010-ferraiuolo"
 permalink: /2010/12/08/video-yuiconf2010-ferraiuolo/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![TipTheWeb cofounder and YUI contributor Eric Ferraiuolo speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-ferraiuolo-20101203-182837.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-ferraiuolo)

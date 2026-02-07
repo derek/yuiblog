@@ -6,6 +6,7 @@ date: 2010-12-02
 slug: "video-yuiconf2010-cavit"
 permalink: /2010/12/02/video-yuiconf2010-cavit/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![ArenaNet engineer Pat Cavit speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-cavit-20101129-143014.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-cavit)

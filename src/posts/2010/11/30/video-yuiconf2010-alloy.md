@@ -6,6 +6,7 @@ date: 2010-11-30
 slug: "video-yuiconf2010-alloy"
 permalink: /2010/11/30/video-yuiconf2010-alloy/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Liferay engineers Nate Cavanaugh and Eduardo Lundgren speak about AlloyUI at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-alloy-20101126-224724.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-alloy)

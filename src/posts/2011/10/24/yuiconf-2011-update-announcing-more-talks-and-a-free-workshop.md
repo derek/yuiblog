@@ -6,6 +6,7 @@ date: 2011-10-24
 slug: "yuiconf-2011-update-announcing-more-talks-and-a-free-workshop"
 permalink: /2011/10/24/yuiconf-2011-update-announcing-more-talks-and-a-free-workshop/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We've been busy rounding out our stellar lineup of tech talks for YUIConf 2011! [See the latest schedule](http://yuilibrary.com/yuiconf/2011/schedule/) and [register now](http://www.eventbrite.com/event/2264234386) — early bird registration ends Tuesday, October 24.

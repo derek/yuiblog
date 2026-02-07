@@ -6,6 +6,7 @@ date: 2010-12-06
 slug: "video-yuiconf2010-lindenberg"
 permalink: /2010/12/06/video-yuiconf2010-lindenberg/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo! internationalization architect Norbert Lindenberg speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-lindenberg-blog.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-lindenberg)

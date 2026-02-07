@@ -6,6 +6,7 @@ date: 2010-11-30
 slug: "video-yuiconf2010-susarla"
 permalink: /2010/11/30/video-yuiconf2010-susarla/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YQL engineer Nagesh Susarla speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-susarla-20101126-230028.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-susarla)

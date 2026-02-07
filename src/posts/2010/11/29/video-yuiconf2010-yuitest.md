@@ -6,6 +6,7 @@ date: 2010-11-29
 slug: "video-yuiconf2010-yuitest"
 permalink: /2010/11/29/video-yuiconf2010-yuitest/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Nicholas C. Zakas speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-yuitest-20101126-211755.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-yuitest)

@@ -6,6 +6,7 @@ date: 2009-09-09
 slug: "announcing-yuiconf-2009"
 permalink: /2009/09/09/announcing-yuiconf-2009/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Mark your calendars! We're pleased to announce that YUIConf 2009, Yahoo!'s annual front-end engineering conference, will take place October 28 and 29 on our Sunnyvale campus.

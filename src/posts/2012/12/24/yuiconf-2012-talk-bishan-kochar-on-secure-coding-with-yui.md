@@ -6,6 +6,7 @@ date: 2012-12-24
 slug: "yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui"
 permalink: /2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 If you are reading this blog post, then we've survived the end of the world, and you can start thinking about more immediate concerns. One of those concerns may be security for your website, and we have just the ticket for you in the form of our latest [YUIConf 2012](http://yuilibrary.com/yuiconf) talk from [Bishan Kochar](http://lanyrd.com/profile/b1shan/). Keep up with our latest video releases on [YUI Theater](http://yuilibrary.com/theater/) and [YouTube](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz).

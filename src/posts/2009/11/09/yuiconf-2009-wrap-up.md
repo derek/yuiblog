@@ -6,6 +6,7 @@ date: 2009-11-09
 slug: "yuiconf-2009-wrap-up"
 permalink: /2009/11/09/yuiconf-2009-wrap-up/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 ![Poster](/yuiblog/blog-archive/assets/yuiconf2009-summary/poster.png)Thank you to everyone who joined us for [YUICONF 2009](http://yuilibrary.com/yuiconf2009/)! We hosted over 200 YUI developers, held 18 outstanding technical sessions, and featured three unforgettable keynotes over two short days. Some of our favorite highlights include:

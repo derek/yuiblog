@@ -6,6 +6,7 @@ date: 2009-11-10
 slug: "video-sweeney-yuiconf2009"
 permalink: /2009/11/10/video-sweeney-yuiconf2009/
 categories:
+  - "YUIConf"
   - "Performance"
   - "Development"
 ---

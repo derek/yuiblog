@@ -6,6 +6,7 @@ date: 2009-11-10
 slug: "video-smith-yuiconf2009-debugging"
 permalink: /2009/11/10/video-smith-yuiconf2009-debugging/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![YUI engineer Luke Smith at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/smith-yuiconf2009-debugging-20091031-093010.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=smith-yuiconf2009-debugging)

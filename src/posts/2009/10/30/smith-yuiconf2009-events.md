@@ -6,6 +6,7 @@ date: 2009-10-30
 slug: "smith-yuiconf2009-events"
 permalink: /2009/10/30/smith-yuiconf2009-events/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Luke Smith at YUICONF 2009 held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/smith-yuiconf2009-events-20091029-075500.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=smith-yuiconf2009-events)

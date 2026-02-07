@@ -6,6 +6,7 @@ date: 2014-01-14
 slug: "yuiconf-2013-stories"
 permalink: /2014/01/14/yuiconf-2013-stories/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 During YUIConf 2013, members of the community were asked to give a brief interview detailing why they chose YUI. Lots of folks responded and we created [a video showing some of the highlights](https://www.youtube.com/watch?v=aqui-O59OcU), along with scenes from the conference. If you weren't able to attend this year, you should definitely check it out. And if you did attend, you may just catch a glimpse of yourself in the video!

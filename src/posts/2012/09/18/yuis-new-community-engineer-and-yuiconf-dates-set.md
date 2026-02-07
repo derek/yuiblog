@@ -6,6 +6,7 @@ date: 2012-09-18
 slug: "yuis-new-community-engineer-and-yuiconf-dates-set"
 permalink: /2012/09/18/yuis-new-community-engineer-and-yuiconf-dates-set/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 **NOTE:** New conference dates have been set! **Nov 14–15** (Wed. and Thurs.) at the **[Santa Clara Marriott](http://www.marriott.com/hotels/travel/sjcga-santa-clara-marriott/).**

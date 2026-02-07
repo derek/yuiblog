@@ -6,6 +6,7 @@ date: 2011-12-06
 slug: "video-yuiconf2011-tivac"
 permalink: /2011/12/06/video-yuiconf2011-tivac/
 categories:
+  - "YUIConf"
   - "Performance"
   - "Development"
 ---

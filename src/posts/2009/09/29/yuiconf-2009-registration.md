@@ -6,6 +6,7 @@ date: 2009-09-29
 slug: "yuiconf-2009-registration"
 permalink: /2009/09/29/yuiconf-2009-registration/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![Please join us for YUIConf 2009 at Yahoo! HQ in Sunnyvale, Ca.](/yuiblog/blog-archive/assets/yuiconf2009-in-sunnyvale-20090929-114252.jpg)](http://yuiconf2009.eventbrite.com/)

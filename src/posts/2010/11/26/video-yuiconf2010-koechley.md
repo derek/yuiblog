@@ -6,6 +6,7 @@ date: 2010-11-26
 slug: "video-yuiconf2010-koechley"
 permalink: /2010/11/26/video-yuiconf2010-koechley/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Nate Koechley, author of YUI 2 CSS Grids and one of the first members of the YUI team at Yahoo!, speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-koechley-20101123-134849.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-koechley)

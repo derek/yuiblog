@@ -6,6 +6,7 @@ date: 2012-11-26
 slug: "yuiconf-2012-talk-jeff-conniff-and-tilo-mitra-on-the-future-of-yui-css"
 permalink: /2012/11/26/yuiconf-2012-talk-jeff-conniff-and-tilo-mitra-on-the-future-of-yui-css/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 **Update:** You can now try out Jeff's [Skinner Demo](http://jconniff.github.com/skinner/) online.

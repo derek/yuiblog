@@ -6,6 +6,7 @@ date: 2012-12-26
 slug: "yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites"
 permalink: /2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We hope your holidays are going well. You should take some of your vacation time and catch up on [YUIConf 2012](http://yuilibrary.com/yuiconf) videos! Next in our speaker series is a talk from Gamaiel Zavala, a 7-year veteran of Yahoo! from Santa Monica who works on Yahoo! media properties. [YUI Theater](http://yuilibrary.com/theater/) and our [playlist on YouTube](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz) are the best ways to keep up on new releases.

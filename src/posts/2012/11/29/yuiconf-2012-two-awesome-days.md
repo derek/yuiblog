@@ -6,6 +6,7 @@ date: 2012-11-29
 slug: "yuiconf-2012-two-awesome-days"
 permalink: /2012/11/29/yuiconf-2012-two-awesome-days/
 categories:
+  - "YUIConf"
   - "YUI Events"
 ---
 In the past few years I had no opportunity to attend or give a talk at [YUIConf](http://www.yuilibrary.com/yuiconf). I'm currently living in Europe, so traveling to Santa Clara is not so easy. For that reason, all these years the only experience I had with YUIConf was to watch the videos on [YUI Theater](http://yuilibrary.com/theater/). I really enjoyed them, but I always wanted to be there in person to talk with people from the YUI team and other Yahoo! Engineers, to share with them my experience, to give them some feedback and just to learn from the source about the future of YUI. This year, thanks to my company, [Liferay](http://www.liferay.com/), I had this opportunity.

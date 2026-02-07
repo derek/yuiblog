@@ -6,6 +6,7 @@ date: 2012-10-05
 slug: "yuiconf-2012-early-bird-registration-open"
 permalink: /2012/10/05/yuiconf-2012-early-bird-registration-open/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We are excited to announce that [early bird registration for YUIConf 2012 is now open](http://www.regonline.com/yuiconf2012)! YUIConf 2012 will be held on **November 14–15** (Wednesday and Thursday) at the **[Santa Clara Marriott](http://www.marriott.com/hotels/travel/sjcga-santa-clara-marriott/).**

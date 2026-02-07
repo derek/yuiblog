@@ -6,6 +6,7 @@ date: 2013-01-14
 slug: "yuiconf-2012-talk-tilo-mitra-on-building-native-windows-8-apps-with-yui"
 permalink: /2013/01/14/yuiconf-2012-talk-tilo-mitra-on-building-native-windows-8-apps-with-yui/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [Tilo Mitra](http://lanyrd.com/profile/tilomitra/) has the distinction of being part of not just one but two different talks at [YUIConf 2012](http://yuilibrary.com/yuiconf) (The [other presentation](http://www.youtube.com/watch?v=KpyBAQt7hUs&feature=share&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz) he shared with [Jeff Conniff](http://lanyrd.com/profile/jeffconniff/).) His drive and energy are apparent in this next talk in our series, which you can catch up via [YouTube](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz) or [YUI Theater](http://yuilibrary.com/theater/).

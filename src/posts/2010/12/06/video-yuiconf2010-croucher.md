@@ -6,6 +6,7 @@ date: 2010-12-06
 slug: "video-yuiconf2010-croucher"
 permalink: /2010/12/06/video-yuiconf2010-croucher/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo! engineer Tom Hughes-Croucher speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-croucher-20101203-124355.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-croucher)

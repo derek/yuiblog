@@ -6,6 +6,7 @@ date: 2011-12-08
 slug: "video-yuiconf2011-allen"
 permalink: /2011/12/08/video-yuiconf2011-allen/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this talk from YUIConf 2011, YUI engineer Allen Rabinovich ([@allenr](https://twitter.com/allenr)) shares the process he used to architect and build the new [Calendar widget](http://yuilibrary.com/yui/docs/calendar/) in YUI 3, and explains how you can use a similar process to build your own widgets. He also shows off the new component and reveals a clever performance trick used to speed up the rendering of multiple calendars.

@@ -6,6 +6,7 @@ date: 2012-10-04
 slug: "deadline-to-submit-yuiconf-2012-talk-proposals-extended"
 permalink: /2012/10/04/deadline-to-submit-yuiconf-2012-talk-proposals-extended/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [YUIConf 2012](http://yuilibrary.com/yuiconf/2012) is drawing closer and we are renewing the call for speakers. We have already received many excellent proposals and we want to give you more time to send in yours as well!

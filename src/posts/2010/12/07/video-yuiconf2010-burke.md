@@ -6,6 +6,7 @@ date: 2010-12-07
 slug: "video-yuiconf2010-burke"
 permalink: /2010/12/07/video-yuiconf2010-burke/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI engineer Reid Burke speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-burke-20101125-091356.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-burke)

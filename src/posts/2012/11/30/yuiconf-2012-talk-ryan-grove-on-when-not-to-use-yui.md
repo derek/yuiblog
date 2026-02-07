@@ -6,6 +6,7 @@ date: 2012-11-30
 slug: "yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui"
 permalink: /2012/11/30/yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Happy Friday! We continue our series of video releases from [YUIConf 2012](http://www.yuilibrary.com/yuiconf) with the talk from [Ryan Grove](https://twitter.com/yaypie) entitled **"When Not to Use YUI"**. Be sure to check out the [earlier videos](/yuiblog/blog/2012/11/28/yuiconf-2012-talk-attribute-walkthrough-with-luke-smith/) in this series, as well as bookmark [YUI Theater](http://yuilibrary.com/theater/) and our [YouTube channel](http://www.youtube.com/yuilibrary) to find all the videos once they are released.

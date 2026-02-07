@@ -6,6 +6,7 @@ date: 2011-11-28
 slug: "video-yuiconf2011-sdesai"
 permalink: /2011/11/28/video-yuiconf2011-sdesai/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this talk from YUIConf 2011, YUI engineer Satyen Desai discusses what he learned about mobile performance -- and how those learnings will feed back into YUI -- when he spent a few months working with the [Yahoo! Livestand](http://itunes.apple.com/us/app/livestand-from-yahoo!/id469314404?ls=1&mt=8) team on their gorgeous (and blazing fast!) new iPad app.

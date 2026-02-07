@@ -6,6 +6,7 @@ date: 2009-11-06
 slug: "video-desai-yuiconf2009"
 permalink: /2009/11/06/video-desai-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI engineer Satyen Desai at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/desai-yuiconf2009-widgets-20091103-081339.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=desai-yuiconf2009-widgets)

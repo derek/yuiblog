@@ -6,6 +6,7 @@ date: 2012-10-26
 slug: "yuiconf-2012-technical-sessions-and-a-survey"
 permalink: /2012/10/26/yuiconf-2012-technical-sessions-and-a-survey/
 categories:
+  - "YUIConf"
   - "YUI Events"
 ---
 We're excited to announce our lineup of full-length technical sessions for [YUIConf 2012](http://yuilibrary.com/yuiconf/2012). To help us schedule all the talks, we want to get your feedback about which ones you most want to see.

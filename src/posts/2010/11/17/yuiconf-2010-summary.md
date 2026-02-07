@@ -6,6 +6,7 @@ date: 2010-11-17
 slug: "yuiconf-2010-summary"
 permalink: /2010/11/17/yuiconf-2010-summary/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Thanks to everyone who came out to [YUIConf 2010](http://yuilibrary.com/yuiconf2010/) last week! It was a jam-packed three days of learning, sharing, and being excited by all the great work being done in the YUI community.

@@ -6,6 +6,7 @@ date: 2012-01-30
 slug: "video-yuiconf2011-dgathright"
 permalink: /2012/01/30/video-yuiconf2011-dgathright/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this talk from YUIConf 2011, YUI engineer and former jQuery user Derek Gathright ([@derek](http://twitter.com/derek)) explains why you should consider using YUI to build your web apps. In particular, he stresses how YUI is designed to serve as an extensible set of building blocks (like Legos) and not just a collection of ready-to-use components (like pre-molded plastic toy cars).

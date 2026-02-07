@@ -6,6 +6,7 @@ date: 2010-11-19
 slug: "video-yuiconf2010-harmes"
 permalink: /2010/11/19/video-yuiconf2010-harmes/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![Flickr Frontend Engineering Manager Ross Harmes talks about the process of rewriting the Flickr front end using YUI 3.](/yuiblog/blog-archive/assets/yuiconf2010-harmes-20101116-151159.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-harmes)

@@ -6,6 +6,7 @@ date: 2011-12-16
 slug: "video-yuiconf2011-jeffcraig"
 permalink: /2011/12/16/video-yuiconf2011-jeffcraig/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this talk from YUIConf 2011, [Meebo](http://www.meebo.com/) engineer and YUI contributor Jeff Craig ([@foxxtrot](http://twitter.com/foxxtrot)) reveals everything you've always wanted to know about the YUI Loader but were afraid to ask. This is a must-see for anyone doing performance-critical work with YUI 3.

@@ -6,6 +6,7 @@ date: 2012-10-12
 slug: "additional-hotel-information-for-yuiconf-2012"
 permalink: /2012/10/12/additional-hotel-information-for-yuiconf-2012/
 categories:
+  - "YUIConf"
   - "YUI Events"
 ---
 [YUIConf 2012](http://yuilibrary.com/yuiconf/2012) will be held **Nov 14 - 15** at the [Santa Clara Mariott](http://www.marriott.com/hotels/travel/sjcga-santa-clara-marriott/). We have additional hotel information for you as you set up your travel plans:

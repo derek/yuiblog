@@ -6,6 +6,7 @@ date: 2012-11-09
 slug: "yuiconf-2012-schedule-update"
 permalink: /2012/11/09/yuiconf-2012-schedule-update/
 categories:
+  - "YUIConf"
   - "YUI Events"
 ---
 We can't wait to see you at YUIConf 2012 next week! We want to update you on a few changes to the [schedule](http://lanyrd.com/2012/yuiconf/schedule/) so you can plan accordingly:

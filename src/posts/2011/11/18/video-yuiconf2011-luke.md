@@ -6,6 +6,7 @@ date: 2011-11-18
 slug: "video-yuiconf2011-luke"
 permalink: /2011/11/18/video-yuiconf2011-luke/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this highly-rated talk from YUIConf 2011, YUI engineer Luke Smith provides a deeply technical overview of the various JavaScript class inheritance and composition patterns (ranging from pseudoclassical to prototypal to a mixture of both) supported by YUI.

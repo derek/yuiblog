@@ -6,6 +6,7 @@ date: 2010-08-06
 slug: "announcing-yuiconf-2010"
 permalink: /2010/08/06/announcing-yuiconf-2010/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We're excited to announce that planning for YUIConf 2010 is underway! This year's event will be held November 8-10 at Yahoo! HQ in Sunnyvale, CA and promises to offer an outstanding lineup of sessions. Not only are we welcoming our external developer community to join us, we'll be posting as many videos as possible for remote folks who can't make the trip over. Stay tuned for more details!

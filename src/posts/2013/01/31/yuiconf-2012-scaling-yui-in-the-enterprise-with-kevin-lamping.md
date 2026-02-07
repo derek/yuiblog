@@ -6,6 +6,7 @@ date: 2013-01-31
 slug: "yuiconf-2012-scaling-yui-in-the-enterprise-with-kevin-lamping"
 permalink: /2013/01/31/yuiconf-2012-scaling-yui-in-the-enterprise-with-kevin-lamping/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We draw our [YUIConf 2012](http://yuilibrary.com/yuiconf2012) video series to a close with this great talk from [Kevin Lamping](http://lanyrd.com/profile/klamping/). We had an awesome time there, and look forward to having an even more amazing conference this year! You can check out your favorite talks via our [YouTube channel](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz) or [YUI Theater](http://yuilibrary.com/theater/). The YUIConf 2012 playlist is now complete and you can check it out [here](https://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz&index=1).

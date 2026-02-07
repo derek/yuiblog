@@ -6,6 +6,7 @@ date: 2013-08-23
 slug: "save-the-date-yuiconf-nov-6-7"
 permalink: /2013/08/23/save-the-date-yuiconf-nov-6-7/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We are excited to announce the dates for YUIConf 2013: mark your calendars for November 6th and 7th! We've been working to find a bigger and better venue this year, and we've found it at the [Hyatt Place in downtown San Jose, California](http://sanjose.place.hyatt.com/en/hotel/home.html).

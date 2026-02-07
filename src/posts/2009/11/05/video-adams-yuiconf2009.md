@@ -6,6 +6,7 @@ date: 2009-11-05
 slug: "video-adams-yuiconf2009"
 permalink: /2009/11/05/video-adams-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo engineer Ron Adams at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/adams-yuiconf2009-testing-20091102-083944.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=adams-yuiconf2009-testing)

@@ -6,6 +6,7 @@ date: 2010-12-03
 slug: "video-yuiconf2010-cordero"
 permalink: /2010/12/03/video-yuiconf2010-cordero/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo! frontend engineer and YUI contributor Gonzalo Cordero speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-cordero-20101129-150952.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-cordero)

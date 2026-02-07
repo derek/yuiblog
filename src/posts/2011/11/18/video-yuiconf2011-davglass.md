@@ -6,6 +6,7 @@ date: 2011-11-18
 slug: "video-yuiconf2011-davglass"
 permalink: /2011/11/18/video-yuiconf2011-davglass/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In the opening keynote from YUIConf 2011, YUI engineer Dav Glass recaps the past year of YUI development and gives a preview of what's coming in the next few months.

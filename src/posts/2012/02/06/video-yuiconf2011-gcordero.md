@@ -6,6 +6,7 @@ date: 2012-02-06
 slug: "video-yuiconf2011-gcordero"
 permalink: /2012/02/06/video-yuiconf2011-gcordero/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In this talk from YUIConf 2011, Yahoo! frontend engineer Gonzalo Cordero ([@goonieiam](http://twitter.com/goonieiam)) reveals how [Yahoo! Local](http://local.yahoo.com/) used YUI 3 to develop their iOS app using a native Objective-C wrapper with HTML5 and YUI running in a UIWebView. He argues that there's no such thing as a desktop web and a mobile web -- there's just "the web", and YUI is the perfect framework for people who want to write web apps that run everywhere.

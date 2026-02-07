@@ -6,6 +6,7 @@ date: 2012-09-26
 slug: "yui-chat-on-friday-want-to-talk-at-yuiconf"
 permalink: /2012/09/26/yui-chat-on-friday-want-to-talk-at-yuiconf/
 categories:
+  - "YUIConf"
   - "YUI Events"
 ---
 This **Friday September 28th** from **11:30 - 12:30 PDT** we will host an informal chat for anyone interested in talking about the proposal process for **YUIConf**. Are you on the fence about submitting a propsal? Don't know if your topic is developed enough for a talk? Come hang out with us online via G+ Hangout and we'll help you find the answers. Ping [@yuilibrary](http://twitter.com/yuilibrary) [@ericf](http://twitter.com/ericf) or [@triptych](http://twitter.com/triptych) if you want a G+ invite. 

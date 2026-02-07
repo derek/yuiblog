@@ -6,6 +6,7 @@ date: 2010-11-24
 slug: "video-yuiconf2010-tantek"
 permalink: /2010/11/24/video-yuiconf2010-tantek/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Author Tantek Çelik talks about HTML 5 at YUIConf 2010 in Sunnyvale, CA. CC photo by David Calhoun.](/yuiblog/blog-archive/assets/yuiconf2010-tantek-20101123-132813.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-tantek)

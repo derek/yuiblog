@@ -6,6 +6,7 @@ date: 2010-11-30
 slug: "video-yuiconf2010-dahl"
 permalink: /2010/11/30/video-yuiconf2010-dahl/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Ryan Dahl, creator of Node.js, talks about the future of the project at YUIConf 2010 at Yahoo HQ in Sunnyvale, CA, on November 8, 2010.](/yuiblog/blog-archive/assets/yuiconf2010-dahl-20101120-162419.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-dahl)

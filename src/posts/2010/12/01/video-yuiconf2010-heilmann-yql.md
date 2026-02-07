@@ -6,6 +6,7 @@ date: 2010-12-01
 slug: "video-yuiconf2010-heilmann-yql"
 permalink: /2010/12/01/video-yuiconf2010-heilmann-yql/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Christian Heilmann speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-heilmann-yql-20101123-141045.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-heilmann-yql)

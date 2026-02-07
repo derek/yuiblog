@@ -6,6 +6,7 @@ date: 2013-11-08
 slug: "yuiconf-2013-an-amazing-two-days"
 permalink: /2013/11/08/yuiconf-2013-an-amazing-two-days/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 The past few days have been filled with amazing presentations, awesome food, and great discussions with folks from all over the country at [YUIConf 2013](http://yuilibrary.com/yuiconf/2013/). Social networks were [abuzz](http://topsy.com/s?q=%23yuiconf) over the great talks and folks were sharing snapshots of the conference through sites like [Flickr](http://www.flickr.com/photos/ydn/sets/72157637390577743/).

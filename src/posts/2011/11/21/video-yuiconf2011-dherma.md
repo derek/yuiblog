@@ -6,6 +6,7 @@ date: 2011-11-21
 slug: "video-yuiconf2011-dherma"
 permalink: /2011/11/21/video-yuiconf2011-dherma/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [Mozilla Labs](http://mozillalabs.com/) engineer and TC39 representative [Dave Herman](http://twitter.com/littlecalculist) joined us at YUIConf 2011 to give this keynote talk on the future of JavaScript, covering many of the new features currently under consideration for ES6, the next edition of the ECMAScript standard.

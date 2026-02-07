@@ -6,6 +6,7 @@ date: 2014-01-13
 slug: "yuiconf-2013-talk-tilo-mitra-on-the-state-of-gestures"
 permalink: /2014/01/13/yuiconf-2013-talk-tilo-mitra-on-the-state-of-gestures/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Happy Monday! It's time for another great [YUIConf 2013](http://yuilibrary.com/yuiconf/2013/) presentation video. As you know, we are posting a new one every few days in the order that you might have seen them during the conference. Today we have a great presentation from [Tilo Mitra](https://twitter.com/tilomitra) on "[The State of Gestures](https://www.youtube.com/watch?v=3vZiKThHv4Q)". If you are developing for mobile, you will definitely enjoy the insights presented here.

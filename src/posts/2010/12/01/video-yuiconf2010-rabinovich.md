@@ -6,6 +6,7 @@ date: 2010-12-01
 slug: "video-yuiconf2010-rabinovich"
 permalink: /2010/12/01/video-yuiconf2010-rabinovich/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![YUI engineer Allen Rabinovich speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-rabinovich-20101125-003511.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-rabinovich)

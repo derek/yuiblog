@@ -6,6 +6,7 @@ date: 2012-12-19
 slug: "yuiconf-2012-talk-scrollview-deep-dive-with-derek-gathright"
 permalink: /2012/12/19/yuiconf-2012-talk-scrollview-deep-dive-with-derek-gathright/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 As the holidays grow near we continue to send you gifts in the form of [video releases](/yuiblog/blog/2012/12/17/yuiconf-2012-talk-mjata-js-bring-data-models-to-life-by-lingyan-zhu/) of [YUIConf 2012](yuilibrary.com/yuiconf). If you are interested in learning more about [ScrollView](http://yuilibrary.com/yui/docs/scrollview/), you'll definitely want to check this talk from [Derek Gathright](http://lanyrd.com/profile/derek/). As always, keep up to speed on all the videos in this series on [YUI Theater](http://yuilibrary.com/theater/) and our new [playlist](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz) on YouTube.

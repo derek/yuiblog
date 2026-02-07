@@ -6,6 +6,7 @@ date: 2011-11-18
 slug: "video-yuiconf2011-ericf"
 permalink: /2011/11/18/video-yuiconf2011-ericf/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 In one of the most popular talks at YUIConf 2011, YUI engineer Eric Ferraiuolo discusses the MVC components of the [YUI App Framework](http://yuilibrary.com/yui/docs/app/) and some of the new features coming in YUI 3.5.0 and beyond, including [Handlebars](https://github.com/wycats/handlebars.js)\-based templating and a new Y.App component that makes the creation of MVC apps easier than ever on desktop, mobile, and the server.

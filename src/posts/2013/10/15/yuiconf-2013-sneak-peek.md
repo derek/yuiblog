@@ -6,6 +6,7 @@ date: 2013-10-15
 slug: "yuiconf-2013-sneak-peek"
 permalink: /2013/10/15/yuiconf-2013-sneak-peek/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Thank you to everyone who submitted a talk proposal for [**YUIConf**](http://yuilibrary.com/yuiconf/) this year! We're excited to bring in some fresh ideas to make this the best year ever, but as always the quality of the tech talks will be the highest priority.

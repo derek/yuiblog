@@ -6,6 +6,7 @@ date: 2010-10-26
 slug: "yuiconf-2010-evening-events"
 permalink: /2010/10/26/yuiconf-2010-evening-events/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [YUIConf 2010](http://yuilibrary.com/yuiconf2010/) is sold out! Thanks to everyone who registered — we look forward to seeing all of you in November. We're now putting the final touches on our schedule, but you can take a peek at what we have in store here: [http://yuilibrary.com/yuiconf2010/schedule.php](http://yuilibrary.com/yuiconf2010/schedule.php).

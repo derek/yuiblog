@@ -6,6 +6,7 @@ date: 2009-10-28
 slug: "pictures-from-yuiconf-2009"
 permalink: /2009/10/28/pictures-from-yuiconf-2009/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Here are [some pictures coming in on Flickr from YUICONF2009](http://www.flickr.com/search/show/?q=yuiconf2009) on a day that concluded with the father of JavaScript, Brendan Eich, talking about the future of the language:

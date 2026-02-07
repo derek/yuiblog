@@ -6,6 +6,7 @@ date: 2010-11-17
 slug: "video-yuiconf2010-panel"
 permalink: /2010/11/17/video-yuiconf2010-panel/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![A panel of thought leaders and influencers in the world of frontend engineering on stage at Yahoo for a special panel discussion at YUIConf.](/yuiblog/blog-archive/assets/yuiconf2010-panel-20101117-133251.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-panel)

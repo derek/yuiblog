@@ -6,6 +6,7 @@ date: 2010-10-07
 slug: "yuiconf-2010-early-bird-registration-ends-this-week"
 permalink: /2010/10/07/yuiconf-2010-early-bird-registration-ends-this-week/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![](/yuiblog/blog-archive/assets/yuiconfspeakers-20101007-073203.jpg)](http://yuilibrary.com/yuiconf2010/)

@@ -6,6 +6,7 @@ date: 2012-11-28
 slug: "yuiconf-2012-talk-attribute-walkthrough-with-luke-smith"
 permalink: /2012/11/28/yuiconf-2012-talk-attribute-walkthrough-with-luke-smith/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 We are continuing our series of video releases from YUIConf 2012. Check back every few days for a new release, [subscribe to the YUI Theater RSS feed](http://yuilibrary.com/theater/), and watch the [yuilibrary channel](http://www.youtube.com/yuilibrary) on YouTube. Be sure to check out [the previous video from Jeff and Tilo](/yuiblog/blog/2012/11/26/yuiconf-2012-talk-jeff-conniff-and-tilo-mitra-on-the-future-of-yui-css/ "YUIConf 2012 Talk: Jeff Conniff and Tilo Mitra on the Future of YUI CSS") as well!

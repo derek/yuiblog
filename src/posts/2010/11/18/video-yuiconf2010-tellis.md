@@ -6,6 +6,7 @@ date: 2010-11-18
 slug: "video-yuiconf2010-tellis"
 permalink: /2010/11/18/video-yuiconf2010-tellis/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![Philip Tellis discusses the Boomerang open-source performance tool at YUIConf 2010.](/yuiblog/blog-archive/assets/yuiconf2010-tellis-20101117-102409.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-tellis)

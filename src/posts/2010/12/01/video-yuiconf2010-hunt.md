@@ -6,6 +6,7 @@ date: 2010-12-01
 slug: "video-yuiconf2010-hunt"
 permalink: /2010/12/01/video-yuiconf2010-hunt/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Yahoo! Mail frontend engineer Dan Hunt talks about building a new frontend for Mail using YUI 3 at YUIConf 2010 on November, 9, 2010, at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-hunt-20101126-204540.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-hunt)

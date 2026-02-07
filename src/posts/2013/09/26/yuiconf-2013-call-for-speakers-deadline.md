@@ -6,6 +6,7 @@ date: 2013-09-26
 slug: "yuiconf-2013-call-for-speakers-deadline"
 permalink: /2013/09/26/yuiconf-2013-call-for-speakers-deadline/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [YUIConf 2013](http://yuilibrary.com/yuiconf/) is coming very soon and we want you to be a speaker! If you are working with YUI in any capacity and want to speak about it you are invited to submit a talk proposal. Simply email _yui-events_ (at) _yahoo-inc.com_ and include the following information:

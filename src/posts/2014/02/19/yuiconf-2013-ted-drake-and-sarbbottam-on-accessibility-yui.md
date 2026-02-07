@@ -6,6 +6,7 @@ date: 2014-02-19
 slug: "yuiconf-2013-ted-drake-and-sarbbottam-on-accessibility-yui"
 permalink: /2014/02/19/yuiconf-2013-ted-drake-and-sarbbottam-on-accessibility-yui/
 categories:
+  - "YUIConf"
   - "Accessibility"
   - "Development"
 ---

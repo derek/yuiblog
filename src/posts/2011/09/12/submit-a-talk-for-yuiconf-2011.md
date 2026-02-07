@@ -6,6 +6,7 @@ date: 2011-09-12
 slug: "submit-a-talk-for-yuiconf-2011"
 permalink: /2011/09/12/submit-a-talk-for-yuiconf-2011/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 Show off code you've been working on or share something you've learned while working with YUI! Submit your proposal to yui-events (at) yahoo-inc.com by Friday, September 23, 2011. Be sure to include:

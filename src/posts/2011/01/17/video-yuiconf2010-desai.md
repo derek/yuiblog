@@ -6,6 +6,7 @@ date: 2011-01-17
 slug: "video-yuiconf2010-desai"
 permalink: /2011/01/17/video-yuiconf2010-desai/
 categories:
+  - "YUIConf"
   - "Development"
 ---
 [![YUI engineer Satyen Desai speaks at YUIConf 2010 at Yahoo! HQ in Sunnyvale, CA.](/yuiblog/blog-archive/assets/yuiconf2010-desai-20110114-144319.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=yuiconf2010-desai)

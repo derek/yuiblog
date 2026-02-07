@@ -6,6 +6,7 @@ date: 2009-11-05
 slug: "video-snider-yuiconf2009"
 permalink: /2009/11/05/video-snider-yuiconf2009/
 categories:
+  - "YUIConf"
   - "YUI Theater"
 ---
 [![Mint.com engineer Matt Snider at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/snider-yuiconf2009-storage-20091102-081551.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=snider-yuiconf2009-storage)

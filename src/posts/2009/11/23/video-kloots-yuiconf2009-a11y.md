@@ -6,6 +6,7 @@ date: 2009-11-23
 slug: "video-kloots-yuiconf2009-a11y"
 permalink: /2009/11/23/video-kloots-yuiconf2009-a11y/
 categories:
+  - "YUIConf"
   - "Accessibility"
   - "YUI Theater"
 ---
