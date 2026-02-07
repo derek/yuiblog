@@ -501,3 +501,239 @@ div.code-toolbar > .toolbar span {
   font-weight: 600;
   letter-spacing: 0.5px;
 }
+
+/* ============================================
+   RESPONSIVE STYLES
+   ============================================ */
+
+/* Base responsive container */
+#doc {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Prevent text overflow */
+body {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+#main,
+#main .liner,
+.post,
+.post-summary,
+article {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Long URLs and code should break */
+a {
+  word-break: break-word;
+}
+
+p, li, dd, td, th {
+  overflow-wrap: break-word;
+}
+
+/* Tablet and below (< 960px) */
+@media screen and (max-width: 960px) {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  #doc, #wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden;
+    padding: 0 !important;
+  }
+  
+  #bd {
+    width: 100% !important;
+    padding: 15px !important;
+  }
+  
+  #bd.yui3-g {
+    display: block;
+  }
+  
+  #main.yui3-u-3-4,
+  #sidebar.yui3-u-1-4,
+  .yui3-u-3-4,
+  .yui3-u-1-4 {
+    width: 100% !important;
+    display: block;
+    float: none;
+  }
+  
+  #main .liner,
+  #sidebar .liner {
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile (< 768px) */
+@media screen and (max-width: 768px) {
+  /* Header */
+  #hd {
+    padding: 15px !important;
+  }
+  
+  #hd .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #hd .site-brand {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  #hd .site-logo img {
+    height: 40px;
+  }
+  
+  #hd .site-title {
+    font-size: 24px !important;
+  }
+  
+  #hd .site-tagline {
+    font-size: 13px !important;
+  }
+  
+  /* Post titles */
+  h1 {
+    font-size: 1.5em;
+  }
+  
+  h2 {
+    font-size: 1.3em;
+  }
+  
+  /* Post list */
+  .post-summary h2 {
+    font-size: 1.2em;
+  }
+  
+  .post-summary .meta {
+    font-size: 0.85em;
+  }
+  
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-size: 0.85em;
+  }
+  
+  .breadcrumbs li {
+    margin: 0 0.3em 0.3em 0;
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    margin-top: 2em;
+    border-top: 1px solid #ddd;
+    padding-top: 1em;
+  }
+  
+  #sidebar .sidebox {
+    margin-bottom: 1.5em;
+  }
+  
+  #sidebar select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  #sidebar ul {
+    padding-left: 1.2em;
+  }
+  
+  /* Images */
+  .post img,
+  .entry img,
+  article img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Tables */
+  table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+  
+  /* Code blocks */
+  pre {
+    font-size: 12px !important;
+    padding: 0.75em !important;
+  }
+  
+  /* Pagination */
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+  
+  .pagination .page-numbers {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  
+  .pagination .page-num {
+    padding: 0.4em 0.6em;
+    font-size: 0.9em;
+  }
+  
+  /* Footer */
+  #ft {
+    padding: 15px;
+    font-size: 0.85em;
+  }
+}
+
+/* Small mobile (< 480px) */
+@media screen and (max-width: 480px) {
+  #hd .site-title {
+    font-size: 20px !important;
+  }
+  
+  h1 {
+    font-size: 1.3em;
+  }
+  
+  .post-summary h2 {
+    font-size: 1.1em;
+  }
+  
+  /* Stack author/date info */
+  .post-summary .byline {
+    display: block;
+  }
+  
+  /* Smaller code blocks */
+  pre {
+    font-size: 11px !important;
+  }
+  
+  /* Hide some pagination numbers on very small screens */
+  .pagination .page-ellipsis {
+    display: none;
+  }
+}
