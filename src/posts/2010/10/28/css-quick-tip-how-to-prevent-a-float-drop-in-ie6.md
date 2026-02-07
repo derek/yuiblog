@@ -6,6 +6,7 @@ date: 2010-10-28
 slug: "css-quick-tip-how-to-prevent-a-float-drop-in-ie6"
 permalink: /2010/10/28/css-quick-tip-how-to-prevent-a-float-drop-in-ie6/
 categories:
+  - "CSS 101"
   - "Development"
 ---
 Even though this behavior is often called a "[float drop](http://www.positioniseverything.net/explorer/expandingboxbug.html "Internet Explorer 6 and the Expanding Box Problem ")" or a "drop float", the column that drops does _not_ have to be a float...it only has to be wider than the space allocated for it. Note that this is by spec and it's a common behavior across browsers; if a column is "too wide", then it will drop.

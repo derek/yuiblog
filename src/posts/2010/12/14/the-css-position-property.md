@@ -6,6 +6,7 @@ date: 2010-12-14
 slug: "the-css-position-property"
 permalink: /2010/12/14/the-css-position-property/
 categories:
+  - "CSS 101"
   - "Development"
 ---
 _**About the author:** Thierry Koblentz is a front-end engineer at Yahoo!  

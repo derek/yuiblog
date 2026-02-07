@@ -6,6 +6,7 @@ date: 2010-11-15
 slug: "inline-boxes-with-bottom-alignment"
 permalink: /2010/11/15/inline-boxes-with-bottom-alignment/
 categories:
+  - "CSS 101"
   - "Development"
 ---
 ## The challenge

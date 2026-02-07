@@ -6,6 +6,7 @@ date: 2010-05-19
 slug: "css-101-block-formatting-contexts"
 permalink: /2010/05/19/css-101-block-formatting-contexts/
 categories:
+  - "CSS 101"
   - "Development"
 ---
 _**About the author:** Thierry Koblentz is a front-end engineer at Yahoo!  

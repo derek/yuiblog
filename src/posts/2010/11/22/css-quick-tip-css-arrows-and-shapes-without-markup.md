@@ -6,6 +6,7 @@ date: 2010-11-22
 slug: "css-quick-tip-css-arrows-and-shapes-without-markup"
 permalink: /2010/11/22/css-quick-tip-css-arrows-and-shapes-without-markup/
 categories:
+  - "CSS 101"
   - "Development"
 ---
 ![](/yuiblog/blog-archive/assets/cssarrows/headshot.jpg)Nate Cavanaugh is the Director of User Interface Engineering for [Liferay Inc.](http://liferay.com), in which he helps guide not only the interface for end user products, but also the interface for different development methodologies. Nate currently heads up Liferay's [AlloyUI project](http://alloy.liferay.com), which is built on top of YUI3. With an extensive history in UI design and development, he is constantly looking for ways to simplify the user and developer experience alike. While responsible day-to-day for everything from UI design and Javascript development to Java integration and code refactoring, in his off time he enjoys drawing, reading, watching movies and hanging out with his wife and two dogs. He sporadically tweets under the guise of [@natecavanaugh](http://twitter.com/natecavanaugh).

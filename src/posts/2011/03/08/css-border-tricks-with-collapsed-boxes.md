@@ -6,6 +6,7 @@ date: 2011-03-08
 slug: "css-border-tricks-with-collapsed-boxes"
 permalink: /2011/03/08/css-border-tricks-with-collapsed-boxes/
 categories:
+  - "CSS 101"
   - "Development"
 ---
 These tricks will help you achieve designs without resorting to the use of images, CSS3 gradient or extraneous markup. By collapsing boxes with zero `line-height` and `height` values, we can display content _outside of the content box_, over borders.
