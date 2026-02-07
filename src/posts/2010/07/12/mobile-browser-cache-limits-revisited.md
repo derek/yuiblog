@@ -8,7 +8,7 @@ permalink: /2010/07/12/mobile-browser-cache-limits-revisited/
 categories:
   - "Development"
 ---
-In [Mobile Browser Cache Limits: Android, iOS, and webOS](/yuiblog/blog/2010/06/28/mobile-browser-cache-limits/), I shared the results of my attempts to determine browser cache limits on Android, iOS, and webOS devices. At the end of the article, I wrote:
+In [Mobile Browser Cache Limits: Android, iOS, and webOS](/yuiblog/2010/06/28/mobile-browser-cache-limits/), I shared the results of my attempts to determine browser cache limits on Android, iOS, and webOS devices. At the end of the article, I wrote:
 
 > Use these results as a starting point, but verify them yourself before you make major decisions based on assumptions about mobile cache limitations. The mobile browser world changes at a lightning pace, so this research will have a very short shelf life.
 

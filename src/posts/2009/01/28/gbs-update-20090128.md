@@ -36,6 +36,6 @@ In addition to the effective-immediately changes, we’re forecasting the discon
 
 ## The GBS Archive
 
--   [GBS Update, 2009-01-28](/yuiblog/blog/2009/01/28/gbs-update-20090128/)
--   [GBS Update, 2008-07-03](/yuiblog/blog/2008/07/03/gbs-update-20080703/)
--   [GBS Update, 2008-02-19](/yuiblog/blog/2008/02/19/gbs-update-20080219/)
+-   [GBS Update, 2009-01-28](/yuiblog/2009/01/28/gbs-update-20090128/)
+-   [GBS Update, 2008-07-03](/yuiblog/2008/07/03/gbs-update-20080703/)
+-   [GBS Update, 2008-02-19](/yuiblog/2008/02/19/gbs-update-20080219/)

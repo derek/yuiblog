@@ -10,7 +10,7 @@ categories:
 ---
 ### Fybit Riatrax4Js: Write YUI in Java
 
-YUI is not only a fantastic JavaScript library, it is also a great community. Developers contribute to YUI and allow others to benefit from it. Now, [Fybit](http://www.fybit.com/) joins the YUI community with [Riatrax4Js](http://www.fybit.com/products/riatrax4js/), a toolkit for rich internet applications (RIAs) based on YUI. Riatrax4Js allows you to program RIAs in plain Java and automatically translates your code to JavaScript, using YUI as a foundation layer. With YUI being available from [Python](/yuiblog/blog/2010/01/05/enterprise-web-developer/), Java and JavaScript, one fourth of all developers get access to YUI. And [with 18%](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html), Fybit's Riatrax4Js covers the largest part, consisting of Java developers.
+YUI is not only a fantastic JavaScript library, it is also a great community. Developers contribute to YUI and allow others to benefit from it. Now, [Fybit](http://www.fybit.com/) joins the YUI community with [Riatrax4Js](http://www.fybit.com/products/riatrax4js/), a toolkit for rich internet applications (RIAs) based on YUI. Riatrax4Js allows you to program RIAs in plain Java and automatically translates your code to JavaScript, using YUI as a foundation layer. With YUI being available from [Python](/yuiblog/2010/01/05/enterprise-web-developer/), Java and JavaScript, one fourth of all developers get access to YUI. And [with 18%](http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html), Fybit's Riatrax4Js covers the largest part, consisting of Java developers.
 
 ### Riatrax4Js: Java benefits, powerful YUI widgets
 

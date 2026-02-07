@@ -9,7 +9,7 @@ categories:
   - "YUI 3 Gallery"
   - "Development"
 ---
-The [QuickEdit plugin](/yuiblog/blog/2011/04/19/quickedit-datatable-yui3/) for [YUI 3 DataTable](http://developer.yahoo.com/yui/3/datatable/) makes it easy to edit an entire page of records as an atomic operation. However, sometimes you need to do even more. For example, you might have to simultaneously edit more records than you can comfortably fit on a single page. Or you might need to support adding, duplicating, and removing records as part of the atomic operation. Or you might wish to visually group fields by placing them in a single table cell. The [Bulk Editor](http://yuilibrary.com/gallery/show/bulkedit) widget supports all these possibilities.
+The [QuickEdit plugin](/yuiblog/2011/04/19/quickedit-datatable-yui3/) for [YUI 3 DataTable](http://developer.yahoo.com/yui/3/datatable/) makes it easy to edit an entire page of records as an atomic operation. However, sometimes you need to do even more. For example, you might have to simultaneously edit more records than you can comfortably fit on a single page. Or you might need to support adding, duplicating, and removing records as part of the atomic operation. Or you might wish to visually group fields by placing them in a single table cell. The [Bulk Editor](http://yuilibrary.com/gallery/show/bulkedit) widget supports all these possibilities.
 
 [![](http://jafl.github.com/yui3-gallery/bulkedit/example.gif)](http://jafl.github.com/yui3-gallery/bulkedit/ "YUI 3 Bulk Editor Screenshot")
 

@@ -8,7 +8,7 @@ permalink: /2006/10/16/pageweight-yui0114/
 categories:
   - "Development"
 ---
-When we opened up the [YUI Library](http://developer.yahoo.com/yui/) in February, [we talked about](/yuiblog/blog/2006/02/17/developing-a-javascript-library-for-yahoo/) some of our motivations for creating an entirely new JavaScript toolkit. One of those motivations, we said, was that Yahoo!'s diverse engineering communities demanded a solution that was lightweight, one that could be applied _à la carte_ without unnecessary k-weight overhead.
+When we opened up the [YUI Library](http://developer.yahoo.com/yui/) in February, [we talked about](/yuiblog/2006/02/17/developing-a-javascript-library-for-yahoo/) some of our motivations for creating an entirely new JavaScript toolkit. One of those motivations, we said, was that Yahoo!'s diverse engineering communities demanded a solution that was lightweight, one that could be applied _à la carte_ without unnecessary k-weight overhead.
 
 With YUI now encompassing three CSS foundation libraries, six utilities and nearly a dozen UI controls, we thought it would be a good time for a progress report on library size, page weights, and YUI's _à la carte_ architecture. (**Note:** This article focuses almost exclusively on pageweight, which itself is only one element of overall performance. Filesizes described here are based on YUI's 0.11.4 release.)
 

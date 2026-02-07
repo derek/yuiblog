@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "Development"
 ---
-For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) will be this Friday the 3rd.
+For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/2010/04/08/introducing-yui-open-hours/) will be this Friday the 3rd.
 
 The topic of this week's call will be performance. How and what to measure in your module code, and techniques and tools for measuring various aspects of site performance.
 

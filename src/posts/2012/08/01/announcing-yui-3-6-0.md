@@ -8,7 +8,7 @@ permalink: /2012/08/01/announcing-yui-3-6-0/
 categories:
   - "Releases"
 ---
-![YUI 3.6.0](/yuiblog/blog/wp-content/uploads/2012/08/yui-3-6-01.jpg "YUI 3.6.0")
+![YUI 3.6.0](/yuiblog/wp-content/uploads/2012/08/yui-3-6-01.jpg "YUI 3.6.0")
 
 We are happy to announce the release of YUI 3.6.0, now available on [CDN](http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js) or as a [download](http://yui.zenfs.com/releases/yui3/yui_3.6.0.zip).
 

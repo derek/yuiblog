@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "YUI Weekly"
 ---
--   Big week around YUI HQ as we wrapped up our latest work and pushed [3.7.0pr1](https://github.com/yui/yui3/tree/v3.7.0pr1) to the CDN. You can read all about the changes and improvements in the latest [blog post](/yuiblog/blog/2012/08/31/yui-3-7-0pr1-event-performance/). ScrollView received a major update this release, so here's a [detailed overview](https://gist.github.com/3522590) of all the changes and additions. Happy upgrade testing!
+-   Big week around YUI HQ as we wrapped up our latest work and pushed [3.7.0pr1](https://github.com/yui/yui3/tree/v3.7.0pr1) to the CDN. You can read all about the changes and improvements in the latest [blog post](/yuiblog/2012/08/31/yui-3-7-0pr1-event-performance/). ScrollView received a major update this release, so here's a [detailed overview](https://gist.github.com/3522590) of all the changes and additions. Happy upgrade testing!
     
 -   If you want to learn more about our awesome new build tool [Shifter](https://github.com/yui/shifter), and new CLI tool [Yogi](https://github.com/yui/yogi), check out [the video](http://www.youtube.com/watch?v=-4ozoej5y08) from this week's Open Hours with Dav Glass.
     

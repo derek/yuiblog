@@ -24,4 +24,4 @@ Nicholas and the publisher were kind enough to share a sample chapter with us he
 > 
 > Each of these data storage locations has a particular cost associated with reading and writing operations involving the data. In most cases, the performance difference be- tween accessing information from a literal value versus a local variable is trivial. Ac- cessing information from array items and object members is more expensive, though exactly which is more expensive depends heavily on the browser.
 
-You can meet Nicholas and his fellow authors on Tuesday, April 13, when they will be [presenting some of their work at a BayJax meetup here at Yahoo!](/yuiblog/blog/2010/04/07/bayjax-april-2010/).
+You can meet Nicholas and his fellow authors on Tuesday, April 13, when they will be [presenting some of their work at a BayJax meetup here at Yahoo!](/yuiblog/2010/04/07/bayjax-april-2010/).

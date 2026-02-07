@@ -58,7 +58,7 @@ Cookies set at the `.yahoo.com` domain affect the overall response time for user
 
 About 80% of page views have fewer than 1000 bytes of cookies, which correlates to about a 5 to 15 ms delay for users on DSL bandwidth speeds. While the data shows that the majority of page views aren't impacted by a significant delay, it also shows that about 2% of page views have over 1500 bytes of cookies set at the `.yahoo.com` domain. Although 2% sounds insignificant, at Yahoo! this translates to millions of page views per day, a compelling motivation for us to investigate this 2% and eliminate unnecessary cookies, reduce cookie sizes, and set cookies at more granualar domain levels.
 
-In an earlier post about browser cache usage, one user made a [comment](/yuiblog/blog/2007/01/04/performance-research-part-2/#comment-29021) about the side-effects of different browsers. Since Internet Explorer and Firefox have different implementations for the maximum size and number of cookies supported, we also analyzed the data by browser type and found no significant difference between the cookie sizes. It would be interesting to further investigate whether there is a difference in performance across browsers.
+In an earlier post about browser cache usage, one user made a [comment](/yuiblog/2007/01/04/performance-research-part-2/#comment-29021) about the side-effects of different browsers. Since Internet Explorer and Firefox have different implementations for the maximum size and number of cookies supported, we also analyzed the data by browser type and found no significant difference between the cookie sizes. It would be interesting to further investigate whether there is a difference in performance across browsers.
 
 ### Analysis of Cookie Sizes across the Web
 

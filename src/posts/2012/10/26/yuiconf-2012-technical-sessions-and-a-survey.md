@@ -13,6 +13,6 @@ We're excited to announce our lineup of full-length technical sessions for [YUIC
 
 Please take our survey [below](#surveyMonkeyInfo) (or follow [this link](http://www.surveymonkey.com/s/BQ8RMPL) to open in a new window). Review the talk descriptions and select your favorites. This will help us make better decisions about our calendar of events.
 
-Also remember to [register for YUIConf 2012](/yuiblog/blog/2012/10/05/yuiconf-2012-early-bird-registration-open/) today! Early bird registration ends **October 31st**.
+Also remember to [register for YUIConf 2012](/yuiblog/2012/10/05/yuiconf-2012-early-bird-registration-open/) today! Early bird registration ends **October 31st**.
 
 Create your [free online surveys](http://www.surveymonkey.com/) with SurveyMonkey, the world's leading questionnaire tool.

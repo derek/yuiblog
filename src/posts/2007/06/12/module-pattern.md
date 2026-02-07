@@ -8,7 +8,7 @@ permalink: /2007/06/12/module-pattern/
 categories:
   - "Development"
 ---
-[Global variables are evil](/yuiblog/blog/2006/06/01/global-domination/). Within [YUI](http://developer.yahoo.com/yui/), we use only two globals: `YAHOO` and `YAHOO_config`. Everthing in YUI makes use of members within the `YAHOO` object hierarchy or variables that are scoped to such a member. We advise that you exercise similar discipline in your own applications, too.
+[Global variables are evil](/yuiblog/2006/06/01/global-domination/). Within [YUI](http://developer.yahoo.com/yui/), we use only two globals: `YAHOO` and `YAHOO_config`. Everthing in YUI makes use of members within the `YAHOO` object hierarchy or variables that are scoped to such a member. We advise that you exercise similar discipline in your own applications, too.
 
 Douglas Crockford has been teaching a useful singleton pattern for achieving this discipline, and I thought his pattern might be of interest to those of you building on top of YUI. Douglas calls this the "module pattern." Here's how it works:
 

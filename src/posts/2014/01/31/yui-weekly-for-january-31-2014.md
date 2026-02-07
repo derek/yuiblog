@@ -28,7 +28,7 @@ The following YUIConf were released this week:
 
 -   [Introducing the ‘Modown’ Project](http://www.youtube.com/watch?v=v1ADXKyvHU0) by Caridy Patiño
 -   [YUI + Closure Templates = Enterprise JSP Tags](http://www.youtube.com/watch?v=KOems0HhpUA) by Manuel Jasso and Nathan Comstock
--   Julien Lecomte on [Mojito and Yahoo Search](/yuiblog/blog/2014/01/31/yuiconf-2013-talk-julien-lecomte-on-mojito-and-yahoo-search/)
+-   Julien Lecomte on [Mojito and Yahoo Search](/yuiblog/2014/01/31/yuiconf-2013-talk-julien-lecomte-on-mojito-and-yahoo-search/)
 
 [Caridy](http://twitter.com/caridy) also has slides for his talk available [on Slideshare](http://www.slideshare.net/caridy/yuiconfintroducing-modown-project)
 

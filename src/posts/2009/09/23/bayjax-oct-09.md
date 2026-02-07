@@ -14,4 +14,4 @@ The BayJax meetup for October will be held at Yahoo! once again and features ano
 
 The event starts at 6 p.m. (pizza and beer) with the talks starting at 7 p.m. Attendance is free, but seating is limited — please sign up [on the BayJax Meetup page](http://www.meetup.com/BayJax/calendar/11432565/).
 
-[Video from last month's meetup is on YUIBlog](/yuiblog/blog/2009/09/17/video-bayjax-sept-09/); [Douglas Crockford's "The JSON Saga"](http://developer.yahoo.com/yui/theater/video.php?v=crockford-json), part of the July program, is also available on [YUI Theater](http://developer.yahoo.com/yui/theater/).
+[Video from last month's meetup is on YUIBlog](/yuiblog/2009/09/17/video-bayjax-sept-09/); [Douglas Crockford's "The JSON Saga"](http://developer.yahoo.com/yui/theater/video.php?v=crockford-json), part of the July program, is also available on [YUI Theater](http://developer.yahoo.com/yui/theater/).

@@ -11,7 +11,7 @@ categories:
 ---
 ### 3.6.0 Release
 
-[YUI 3.6.0 is live](/yuiblog/blog/2012/08/01/announcing-yui-3-6-0/)! For this week's Open Hours we'll be looking at what's in 3.6.0 and what we're [planning](https://github.com/yui/yui3/wiki/Ongoing-Development-Discussions) to work on next.
+[YUI 3.6.0 is live](/yuiblog/2012/08/01/announcing-yui-3-6-0/)! For this week's Open Hours we'll be looking at what's in 3.6.0 and what we're [planning](https://github.com/yui/yui3/wiki/Ongoing-Development-Discussions) to work on next.
 
 If you want to learn more about what's in 3.6.0 and catch up on the latest YUI news, please join us!
 

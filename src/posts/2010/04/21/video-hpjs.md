@@ -11,7 +11,7 @@ categories:
 ---
 [![BayJax event at Yahoo! on March 31, 2010.](/yuiblog/blog-archive/assets/rossharmes-20100419-101805.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=zakas-hpjs)
 
-The April 2010 edition of the BayJax meetup at Yahoo! featured five speakers, all of whom are co-authors on the new _High Performance JavaScript_ volume from O'Reilly ([free chapter available here](/yuiblog/blog/2010/04/07/high-performance-javascript-sample-chapter/)). There were about 200 attendees filling the URLs Cafe in the heart of Yahoo!, and they heard five distinctly interesting takes on web-app performance.
+The April 2010 edition of the BayJax meetup at Yahoo! featured five speakers, all of whom are co-authors on the new _High Performance JavaScript_ volume from O'Reilly ([free chapter available here](/yuiblog/2010/04/07/high-performance-javascript-sample-chapter/)). There were about 200 attendees filling the URLs Cafe in the heart of Yahoo!, and they heard five distinctly interesting takes on web-app performance.
 
 If the video embed below doesn't show up correctly in your RSS reader of choice, be sure to [click through to watch the high-resolution version of the video on YUI Theater](http://developer.yahoo.com/yui/theater/video.php?v=zakas-hpjs).
 

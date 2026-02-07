@@ -8,7 +8,7 @@ permalink: /2012/09/13/yui-3-7-0pr3-last-minute-fixes/
 categories:
   - "Releases"
 ---
-Yesterday we released [YUI 3.7.0pr2](/yuiblog/blog/2012/09/12/yui-3-7-0pr2-final-round-of-testing/ "YUI 3.7.0pr2 – Final Round of Testing") and encouraged everyone to test it thoroughly, and you did! YUI 3.7.0pr3 is now available and contains some last minute fixes for issues you found in yesterday's release. It's on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr3/build/yui/yui-min.js "YUI 3.7.0pr3 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr3.zip "YUI 3.7.0pr3 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation.
+Yesterday we released [YUI 3.7.0pr2](/yuiblog/2012/09/12/yui-3-7-0pr2-final-round-of-testing/ "YUI 3.7.0pr2 – Final Round of Testing") and encouraged everyone to test it thoroughly, and you did! YUI 3.7.0pr3 is now available and contains some last minute fixes for issues you found in yesterday's release. It's on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr3/build/yui/yui-min.js "YUI 3.7.0pr3 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr3.zip "YUI 3.7.0pr3 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation.
 
 ### Issues Resolved in 3.7.0pr3
 

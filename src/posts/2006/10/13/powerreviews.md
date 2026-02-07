@@ -32,7 +32,7 @@ YUI incorporates the CSS foundation we needed and provides for us a tie-in betwe
 
 What have been the pain points in adopting YUI?
 
-The main detriment we've found is that YUI doesn't have the same kinds of distilled, one-line effects that you find in [Scriptaculous](http://script.aculo.us/). We've looked at [Jack Slocum](/yuiblog/blog/2006/10/10/ten-questions-slocum/)'s stuff, and we see some of that emerging with YUI. But there are some more complicated interactions built-in for you with Scriptaculous.
+The main detriment we've found is that YUI doesn't have the same kinds of distilled, one-line effects that you find in [Scriptaculous](http://script.aculo.us/). We've looked at [Jack Slocum](/yuiblog/2006/10/10/ten-questions-slocum/)'s stuff, and we see some of that emerging with YUI. But there are some more complicated interactions built-in for you with Scriptaculous.
 
 Filesize is a concern for us, too. We can control gzipping on our own site, but we distribute our solution to our customers; if they don't enable gzipping, the library's filesize goes up.
 

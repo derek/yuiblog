@@ -32,7 +32,7 @@ Some other recent videos from the [YUI Theater series](http://developer.yahoo.co
 -   **Eric Miraglia and Matt Sweeney:** "YUI3 — A Look Ahead" ([Yahoo! Video](http://video.yahoo.com/watch/3711767/10207432) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/miraglia-yui3.m4v))
 -   **Dion Almaer:** "Google, Front to Back" ([.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/dionalmaer.m4v))
 -   **Dav Glass:** “Rich Text Editing with YUI” ([Yahoo! Video](http://video.yahoo.com/watch/2359450/7378948) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/glass-rte.m4v))
--   **Julien Lecomte:** "High Performance Ajax Applications" ([YUIBlog](/yuiblog/blog/2007/12/20/video-lecomte/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v))
+-   **Julien Lecomte:** "High Performance Ajax Applications" ([YUIBlog](/yuiblog/2007/12/20/video-lecomte/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v))
 
 ### Subscribing to YUI Theater:
 

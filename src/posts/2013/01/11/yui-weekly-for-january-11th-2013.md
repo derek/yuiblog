@@ -14,18 +14,18 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
     
 -   Milestone - YUI reached [500 forks on Github](https://github.com/yui/yui3/network)! Thanks to everyone for the contributions and involvement. <3 <3 <3
     
--   Are you an exceptional JavaScript engineer and passionate about library development? If so, [YUI Is hiring](/yuiblog/blog/2013/01/08/yui-is-hiring-2/)!
+-   Are you an exceptional JavaScript engineer and passionate about library development? If so, [YUI Is hiring](/yuiblog/2013/01/08/yui-is-hiring-2/)!
     
 -   This week's Gallery deployment includes two new CSS modules developed by YUI team member Tilo Mitra ([@tilomitra](http://twitter.com/tilomitra)). The first is [csstables](https://github.com/tilomitra/csstables/) ([demo](http://tilomitra.github.com/csstables/)), which will make it super simple to style tables of data without the overhead of JavaScript. The second module is [cssforms](https://github.com/tilomitra/cssforms/) ([demo](http://tilomitra.github.com/cssforms/)), which is designed to help you create simple, stylish forms. Check 'em out!
     
 -   **Six** new [YUIConf 2012](http://lanyrd.com/2012/yuiconf/) videos
     
-    -   Bishan Kochar's "[Secure Coding with YUI](/yuiblog/blog/2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/)"
-    -   Gamaiel Zavala's "[Adopting YUI App Framework on Yahoo! Media Sites](/yuiblog/blog/2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/)"
+    -   Bishan Kochar's "[Secure Coding with YUI](/yuiblog/2012/12/24/yuiconf-2012-talk-bishan-kochar-on-secure-coding-with-yui/)"
+    -   Gamaiel Zavala's "[Adopting YUI App Framework on Yahoo! Media Sites](/yuiblog/2012/12/26/yuiconf-2012-talk-gamaiel-zavala-on-adopting-yui-app-framework-on-yahoo-media-sites/)"
     -   Ryan Cannon's "[Using YUI to Tackle Video](http://youtu.be/HUG1zL-bXTc)" Daniel Stockman's "[A Poignant Guide to Y.App](http://youtu.be/CH0wqEmvDIg)"
     -   YUIConf [Lightning Talks](http://youtu.be/JGoNbSWUTuI), featuring Tic Tac Loader, Gear, Mjata Charts, and Behavior-Driven Development
-    -   Montie Tsai and Zordius Chen's "[Bottle Mobile UI Library](/yuiblog/blog/2013/01/07/yuiconf-2012talk-bottle-mobile-ui-library-with-montie-tsai-and-zordius-chen/)"
-    -   Reid Burke's "[Write Code That Works](/yuiblog/blog/2013/01/10/yuiconf-2012-talk-reid-burke-on-write-code-that-works/)"
+    -   Montie Tsai and Zordius Chen's "[Bottle Mobile UI Library](/yuiblog/2013/01/07/yuiconf-2012talk-bottle-mobile-ui-library-with-montie-tsai-and-zordius-chen/)"
+    -   Reid Burke's "[Write Code That Works](/yuiblog/2013/01/10/yuiconf-2012-talk-reid-burke-on-write-code-that-works/)"
 -   Two new Open Roundtable videos
     
     -   Jan 3rd, 2013 - [YouTube](http://youtu.be/hRv8nwA62k0)

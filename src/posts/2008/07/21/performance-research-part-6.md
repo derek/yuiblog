@@ -8,7 +8,7 @@ permalink: /2008/07/21/performance-research-part-6/
 categories:
   - "Performance"
 ---
-In [Performance Research Part 1](/yuiblog/blog/2006/11/28/performance-research-part-1/), we discussed how reducing the number of HTTP requests has the biggest impact on improving the response time and is often the easiest performance improvement to make. One technique without having to simplify the page design is to combine multiple scripts into a single script, and similarly combine multiple stylesheets into a single stylesheet.
+In [Performance Research Part 1](/yuiblog/2006/11/28/performance-research-part-1/), we discussed how reducing the number of HTTP requests has the biggest impact on improving the response time and is often the easiest performance improvement to make. One technique without having to simplify the page design is to combine multiple scripts into a single script, and similarly combine multiple stylesheets into a single stylesheet.
 
 > Combining multiple files reduces the extra bytes from HTTP headers as well as potential transfer latency caused by TCP slow starts, packet losses, etc.
 
@@ -30,7 +30,7 @@ Combo Handler, built in collaboration by [Yahoo!'s Exceptional Performance team]
 
 Combo Handler provides a way to allow developers to maintain the logical organization of their code in separate files, while achieving the advantages of combining those into a single file as part of the final user experience. It alleviates the need for the time-consuming re-build and re-push processes. In addition, Combo Handler integrates seamlessly into a content delivery network, taking full advantage of the [benefits of a CDN](http://developer.yahoo.com/performance/rules.html#cdn) while reducing the drawbacks of dynamically combining separate files.
 
-We've been using this service across many Yahoo! properties for some time now to help improve end users' response times. Thanks to the YUI team, it is [now available](/yuiblog/blog/2008/07/16/combohandler/) to all of you that are using the Yahoo!-hosted YUI JavaScript files. (Note: Combo-handling of CSS files is not supported at this time.) [Head over to the YUI Configurator](http://developer.yahoo.com/yui/articles/hosting/#configure) to generate combo-ready filepaths customized for your specific YUI implementation.
+We've been using this service across many Yahoo! properties for some time now to help improve end users' response times. Thanks to the YUI team, it is [now available](/yuiblog/2008/07/16/combohandler/) to all of you that are using the Yahoo!-hosted YUI JavaScript files. (Note: Combo-handling of CSS files is not supported at this time.) [Head over to the YUI Configurator](http://developer.yahoo.com/yui/articles/hosting/#configure) to generate combo-ready filepaths customized for your specific YUI implementation.
 
 ### Combo Handler Best Practices
 
@@ -56,7 +56,7 @@ Keep in mind that the page we tested was already highly optimized for performanc
 
 ### Takeaways
 
-Improve response times by combining multiple JavaScript and CSS files. Yahoo!'s [Combo Handler](/yuiblog/blog/2008/07/16/combohandler/) Service is one solution that provides a way to make fewer HTTP requests for Yahoo!-hosted JavaScript files, and also leverages the benefits of a Content Delivery Network.
+Improve response times by combining multiple JavaScript and CSS files. Yahoo!'s [Combo Handler](/yuiblog/2008/07/16/combohandler/) Service is one solution that provides a way to make fewer HTTP requests for Yahoo!-hosted JavaScript files, and also leverages the benefits of a Content Delivery Network.
 
 -   Combine scripts and stylesheets to reduce HTTP requests.
 -   Look at different types of file combinations.

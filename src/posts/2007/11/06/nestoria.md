@@ -51,7 +51,7 @@ b. the [sliders](http://developer.yahoo.com/yui/slider/) that allow users to set
 
 _c. we're testing the use of [animations](http://developer.yahoo.com/yui/animation/) to hide more advanced features from users until they really need them_
 
-_d. some of the [CSS libraries](/yuiblog/blog/2007/10/29/video-koechley/) for styling_
+_d. some of the [CSS libraries](/yuiblog/2007/10/29/video-koechley/) for styling_
 
 **How is YUI performing for you so far?**
 

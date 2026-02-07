@@ -9,7 +9,7 @@ categories:
   - "Releases"
   - "Development"
 ---
-![YUI 3.5.0 PR1](/yuiblog/blog/wp-content/uploads/2011/12/yui350pr1.jpg "YUI 3.5.0 PR1")
+![YUI 3.5.0 PR1](/yuiblog/wp-content/uploads/2011/12/yui350pr1.jpg "YUI 3.5.0 PR1")
 
 YUI 3.5.0 Preview Release 1 has been deployed for testing and feedback from the developer community. You can find it on the Yahoo! CDN at [yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js](http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js), or [download a zip file](http://yui.zenfs.com/releases/yui3/yui_3.5.0pr1.zip) if you plan to host it yourself.
 

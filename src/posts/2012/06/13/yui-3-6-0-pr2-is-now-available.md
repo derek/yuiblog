@@ -9,7 +9,7 @@ categories:
   - "Releases"
   - "Development"
 ---
-![](/yuiblog/blog/wp-content/uploads/2012/06/yui360pr2.jpg "YUI 3.6.0 PR2")
+![](/yuiblog/wp-content/uploads/2012/06/yui360pr2.jpg "YUI 3.6.0 PR2")
 
 YUI 3.6.0 PR2 is now available to the developer community for feedback and testing on the Yahoo! CDN. Please take a moment to check it out via [CDN](http://yui.yahooapis.com/3.6.0pr2/build/yui/yui-min.js) or [download](http://yui.zenfs.com/releases/yui3/yui_3.6.0pr2.zip).
 

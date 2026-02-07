@@ -92,7 +92,7 @@ You can then use the setProperty and getProperty functions of your Control's con
 
 ### Custom Events
 
-YAHOO.util.Event provides a powerful mechanism for you to define custom events which can be triggered by your Controls and listened to by any other javascript function. This allows you to put in practice [Event-Driven Development](/yuiblog/blog/2007/01/17/event-plan/) in a simple, lightweight way.
+YAHOO.util.Event provides a powerful mechanism for you to define custom events which can be triggered by your Controls and listened to by any other javascript function. This allows you to put in practice [Event-Driven Development](/yuiblog/2007/01/17/event-plan/) in a simple, lightweight way.
 
 The first thing the YAHOO.widget.Module.prototype.init function does is to call the "initEvents" method. This means you can define any custom event you wish to use for your Control by defining this "initEvents" function as part of your object's prototype:/\*\* \* Initializes the custom events for YAHOO.Cyril.ContactList. This method gets called by YAHOO.widget.Module.prototype.init \* @method initEvents \*/ YAHOO.Cyril.ContactList.prototype.initEvents = function() { // call the base class method to make sure inherited custom events get set up YAHOO.Cyril.ContactList.superclass.initEvents.call(this); /\*\* \* CustomEvent fired before showing a different contact \* @event beforeShowContactEvent \* @param {HTMLElement} contactElement LI HTMLElement for the contact to show \*/ this.createEvent('beforeUpdateContacts'); /\*\* \* CustomEvent fired after showing a different contact \* @event updateContactsEvent \* @param {HTMLElement} contactElement LI HTMLElement for the contact now displayed \*/ this.createEvent('updateContacts'); };
 
@@ -138,7 +138,7 @@ I call a function named initDOMManipulations which performs any DOM manipulation
 
 I call a function named initEventListeners sets up any Event listener needed for the control to function. Note this can be regular DOM Events (set up using YAHOO.util.Event.addListener) or YUI Custom Events (using YAHOO.util.CustomEvent.prototype.subscribe).
 
-In our example we will use [event delegation](/yuiblog/blog/2007/01/17/event-plan/) ([see this Event Utility example for more on event delegation in YUI](http://developer.yahoo.com/yui/examples/event/event-delegation.html)) and set up a listener for the "click" event on our Control. The listener function will then perform the appropriate logic if the target of the Event was a pagination link. // initialise event delegation this.initEventListeners();
+In our example we will use [event delegation](/yuiblog/2007/01/17/event-plan/) ([see this Event Utility example for more on event delegation in YUI](http://developer.yahoo.com/yui/examples/event/event-delegation.html)) and set up a listener for the "click" event on our Control. The listener function will then perform the appropriate logic if the target of the Event was a pagination link. // initialise event delegation this.initEventListeners();
 
 #### Default behaviour
 

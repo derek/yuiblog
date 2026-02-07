@@ -12,7 +12,7 @@ When you want to present both a complex hierarchy and lists of properties, the [
 
 For this tip we will make a browser for web server logs. The TreeView will display file and folder paths, and the DataTable will display individual log lines. Clicking on a file or folder in the Tree will cause the DataTable to filter out all but that path. ([Click here for the working demo](/yuiblog/blog-archive/assets/datatable-with-treeview.html).)
 
-[![Screenshot of TreeView and DataTable example](/yuiblog/blog/wp-content/uploads/2009/10/datatable-treeview2.png)](/yuiblog/blog-archive/assets/datatable-with-treeview.html)
+[![Screenshot of TreeView and DataTable example](/yuiblog/wp-content/uploads/2009/10/datatable-treeview2.png)](/yuiblog/blog-archive/assets/datatable-with-treeview.html)
 
 For brevity's sake I will use static data. In practice you would use the dynamic data techniques detailed [here](http://developer.yahoo.com/yui/examples/treeview/dynamic_tree.html) and [here](http://developer.yahoo.com/yui/examples/datatable/dt_dynamicdata.html) and do the filtering on the server. After the static example, we'll [talk about dynamic data in more detail](#tvdtdynamic).
 

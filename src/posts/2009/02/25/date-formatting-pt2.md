@@ -8,7 +8,7 @@ permalink: /2009/02/25/date-formatting-pt2/
 categories:
   - "Development"
 ---
-In [Part I](/yuiblog/blog/2009/02/11/date-formatting-pt1-2/), we saw how to format a date using YUI's date formatter. In Part II, we'll look at formatting dates for a specific use case — inside the [DataTable](http://developer.yahoo.com/yui/datatable/) control.
+In [Part I](/yuiblog/2009/02/11/date-formatting-pt1-2/), we saw how to format a date using YUI's date formatter. In Part II, we'll look at formatting dates for a specific use case — inside the [DataTable](http://developer.yahoo.com/yui/datatable/) control.
 
 DataTables are a great tool for presenting all types of data to the users of your website, including dates. As we've seen in Part I, the date formatter makes it easy to transform a Date object into a formatted string. For this example, we'll take DataTable's [Basic Example](http://developer.yahoo.com/yui/examples/datatable/dt_basic.html) and add a custom date formatter to it. We'll start with the includes we need:
 

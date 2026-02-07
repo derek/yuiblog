@@ -13,9 +13,9 @@ We have a new preview release this morning - **YUI 3.9.0pr2**. This release is a
 
 ### Issues Resolved in 3.9.0pr2
 
-This release addresses a [few](http://yuilibrary.com/projects/yui3/ticket/2533069) [issues](http://yuilibrary.com/projects/yui3/ticket/2533066) with Charts as well as a number of pull requests and fixes to modules such as [Button](http://yuilibrary.com/yui/docs/button/) and [ScrollView](http://yuilibrary.com/yui/docs/scrollview/). This also updates **pr2** with changes from **[YUI 3.8.1](/yuiblog/blog/2013/01/23/yui-3-8-1-released/)** as it was updated from `dev-master`. You can find a complete list of changes and fixes with this [GitHub comparison](https://github.com/yui/yui3/compare/v3.9.0pr1...v3.9.0pr2).
+This release addresses a [few](http://yuilibrary.com/projects/yui3/ticket/2533069) [issues](http://yuilibrary.com/projects/yui3/ticket/2533066) with Charts as well as a number of pull requests and fixes to modules such as [Button](http://yuilibrary.com/yui/docs/button/) and [ScrollView](http://yuilibrary.com/yui/docs/scrollview/). This also updates **pr2** with changes from **[YUI 3.8.1](/yuiblog/2013/01/23/yui-3-8-1-released/)** as it was updated from `dev-master`. You can find a complete list of changes and fixes with this [GitHub comparison](https://github.com/yui/yui3/compare/v3.9.0pr1...v3.9.0pr2).
 
-You can read more about **3.9.0** on our previous blog post about **pr1** [here](/yuiblog/blog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/).
+You can read more about **3.9.0** on our previous blog post about **pr1** [here](/yuiblog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/).
 
 ### Keep Testing and Reporting Issues
 

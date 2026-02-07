@@ -10,7 +10,7 @@ categories:
 ---
 As I continue the practice of the craft of programming, I am always examining my practices. Can I improve the patterns that I use so that I can make my programs clearer, stronger, better? This is particularly important when working with a language like JavaScript which has a bias that favors patterns that are confusing, weak, and worse.
 
-One of the worst features of JavaScript is its reliance on global variables. This can be mitigated with [global abatement](/yuiblog/blog/2006/06/01/global-domination/) and the [module pattern](/yuiblog/blog/2007/06/12/module-pattern/), which can significantly reduce the number of global variables that we need to declare.
+One of the worst features of JavaScript is its reliance on global variables. This can be mitigated with [global abatement](/yuiblog/2006/06/01/global-domination/) and the [module pattern](/yuiblog/2007/06/12/module-pattern/), which can significantly reduce the number of global variables that we need to declare.
 
 But when we must declare a global variable, how best should we do that? JavaScript provides three ways of declaring a global variable, and they all have problems. Which is least worst?
 

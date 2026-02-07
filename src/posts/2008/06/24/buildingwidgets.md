@@ -12,22 +12,22 @@ The [Yahoo! User Interface Library](http://developer.yahoo.com/yui/) (YUI) has a
 
 This lengthy article is meant to get you started creating your own custom components using the tools available to you within YUI, including the Element Utility and the Event Utility. Understanding these tools can save you lots of time and make it easy to create API-driven components that expose powerful hooks to implementers making use of your work.
 
--   [Customizing Existing YUI Components](/yuiblog/blog/2008/06/24/buildingwidgets/#customizing)
-    -   [Using `YAHOO.lang.extend`](/yuiblog/blog/2008/06/24/buildingwidgets/#usingextend)
-    -   [Creating and Using Shortcuts for Common YUI References](/yuiblog/blog/2008/06/24/buildingwidgets/#shortcuts)
-    -   [Registering a Component with YUI](/yuiblog/blog/2008/06/24/buildingwidgets/#register)
--   [Developing Wholly New Widgets with YUI](/yuiblog/blog/2008/06/24/buildingwidgets/#new)
-    -   [The YUI Element Utility as a Foundation for Component Development](/yuiblog/blog/2008/06/24/buildingwidgets/#element)
-    -   [Managing DOM Events and Custom Events with Element](/yuiblog/blog/2008/06/24/buildingwidgets/#events)
-    -   [A Closer Look at `extend`](/yuiblog/blog/2008/06/24/buildingwidgets/#extend2)
-    -   [Element and AttributeProvider](/yuiblog/blog/2008/06/24/buildingwidgets/#attributeprovider)
-    -   [Adding a `render` Method](/yuiblog/blog/2008/06/24/buildingwidgets/#render)
-    -   [Adding a Destructor](/yuiblog/blog/2008/06/24/buildingwidgets/#destroy)
-    -   [Subclasses](/yuiblog/blog/2008/06/24/buildingwidgets/#subclasses)
-    -   [Bundling Functionality: The Field Object and the Fields Object](/yuiblog/blog/2008/06/24/buildingwidgets/#bundling)
--   [Progressive Enhancement](/yuiblog/blog/2008/06/24/buildingwidgets/#pe)
--   [CSS Sprites](/yuiblog/blog/2008/06/24/buildingwidgets/#sprites)
--   [Final Thoughts](/yuiblog/blog/2008/06/24/buildingwidgets/#final)
+-   [Customizing Existing YUI Components](/yuiblog/2008/06/24/buildingwidgets/#customizing)
+    -   [Using `YAHOO.lang.extend`](/yuiblog/2008/06/24/buildingwidgets/#usingextend)
+    -   [Creating and Using Shortcuts for Common YUI References](/yuiblog/2008/06/24/buildingwidgets/#shortcuts)
+    -   [Registering a Component with YUI](/yuiblog/2008/06/24/buildingwidgets/#register)
+-   [Developing Wholly New Widgets with YUI](/yuiblog/2008/06/24/buildingwidgets/#new)
+    -   [The YUI Element Utility as a Foundation for Component Development](/yuiblog/2008/06/24/buildingwidgets/#element)
+    -   [Managing DOM Events and Custom Events with Element](/yuiblog/2008/06/24/buildingwidgets/#events)
+    -   [A Closer Look at `extend`](/yuiblog/2008/06/24/buildingwidgets/#extend2)
+    -   [Element and AttributeProvider](/yuiblog/2008/06/24/buildingwidgets/#attributeprovider)
+    -   [Adding a `render` Method](/yuiblog/2008/06/24/buildingwidgets/#render)
+    -   [Adding a Destructor](/yuiblog/2008/06/24/buildingwidgets/#destroy)
+    -   [Subclasses](/yuiblog/2008/06/24/buildingwidgets/#subclasses)
+    -   [Bundling Functionality: The Field Object and the Fields Object](/yuiblog/2008/06/24/buildingwidgets/#bundling)
+-   [Progressive Enhancement](/yuiblog/2008/06/24/buildingwidgets/#pe)
+-   [CSS Sprites](/yuiblog/2008/06/24/buildingwidgets/#sprites)
+-   [Final Thoughts](/yuiblog/2008/06/24/buildingwidgets/#final)
 
 ## Customizing Existing YUI Components
 
@@ -597,4 +597,4 @@ If several of these icons need to be packaged with the component, a further tric
 
 JavaScript is a very flexible language which is very good for the component developer, but it can be tough for those using the components if the component developer does not follow some common patterns. The YUI Library provides a useful component-development paradigm with EventProvider for managed custom events and AttributeProvider for managed attributes; this article describes that paradigm, which characterizes YUI's most recent UI controls.
 
-**Author's Note:** _This article was done with the help of two Erics. One is Eric Abouaf, whose [inputEx](http://javascript.neyric.com/inputex/) library of controls, featured in the [YUI blog](/yuiblog/blog/2008/05/08/inputex/), was the reason to write this article. I realized there was no documentation to guide library developers on how to write a library. I have also used, with permission, his idea of a widget to draw sets of input fields. The code for the article, though (made for clarity rather than performance or completeness) was done anew. The other is Eric Miraglia who made significant edits and suggestions over my initial draft._
+**Author's Note:** _This article was done with the help of two Erics. One is Eric Abouaf, whose [inputEx](http://javascript.neyric.com/inputex/) library of controls, featured in the [YUI blog](/yuiblog/2008/05/08/inputex/), was the reason to write this article. I realized there was no documentation to guide library developers on how to write a library. I have also used, with permission, his idea of a widget to draw sets of input fields. The code for the article, though (made for clarity rather than performance or completeness) was done anew. The other is Eric Miraglia who made significant edits and suggestions over my initial draft._

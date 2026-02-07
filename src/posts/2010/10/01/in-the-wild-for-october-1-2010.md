@@ -8,7 +8,7 @@ permalink: /2010/10/01/in-the-wild-for-october-1-2010/
 categories:
   - "In the Wild"
 ---
-There has been significant buzz this week about [Dav Glass's tech talk on YUI 3 support in Node.js](/yuiblog/blog/2010/09/29/video-glass-node/) and what that enables in terms of progressive enhancement, as well as for [Matt Taylor's YUI 3 Gallery module for RaphaelJS](/yuiblog/blog/2010/09/27/gallery-raphaeljs/). Luke Smith had a nice developer tip on the blog this week [on extending YUI to "add your own awesome](/yuiblog/blog/2010/09/29/quick-tip-extend-node/)," [developer Stefan Klopp from CarRentalExpress.com shared his thoughts about using YUI 2 to power his site](/yuiblog/blog/2010/09/28/carrentalexpress/), and [Carlo Zottmann shared his gorgeous new "Dana" theme for YUI's documentation workhorse, YUI Doc](/yuiblog/blog/2010/10/01/yuidoc-dana-theme/).
+There has been significant buzz this week about [Dav Glass's tech talk on YUI 3 support in Node.js](/yuiblog/2010/09/29/video-glass-node/) and what that enables in terms of progressive enhancement, as well as for [Matt Taylor's YUI 3 Gallery module for RaphaelJS](/yuiblog/2010/09/27/gallery-raphaeljs/). Luke Smith had a nice developer tip on the blog this week [on extending YUI to "add your own awesome](/yuiblog/2010/09/29/quick-tip-extend-node/)," [developer Stefan Klopp from CarRentalExpress.com shared his thoughts about using YUI 2 to power his site](/yuiblog/2010/09/28/carrentalexpress/), and [Carlo Zottmann shared his gorgeous new "Dana" theme for YUI's documentation workhorse, YUI Doc](/yuiblog/2010/10/01/yuidoc-dana-theme/).
 
 Meanwhile, here are a few other recent pieces of news from the community:
 

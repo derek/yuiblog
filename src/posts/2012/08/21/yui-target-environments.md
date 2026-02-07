@@ -8,7 +8,7 @@ permalink: /2012/08/21/yui-target-environments/
 categories:
   - "Development"
 ---
-We [recently updated](/yuiblog/blog/2012/07/26/gbs-update-2012q3/ "Graded Browser Support Update: Q3 2012") the matrix of browsers in which YUI is tested. We decoupled the Browser Test Baseline matrix from Graded Browser Support [last year](/yuiblog/blog/2011/07/12/gbs-update/ "Graded Browser Support Update: Q3 2011"), but today we're taking this a step further…
+We [recently updated](/yuiblog/2012/07/26/gbs-update-2012q3/ "Graded Browser Support Update: Q3 2012") the matrix of browsers in which YUI is tested. We decoupled the Browser Test Baseline matrix from Graded Browser Support [last year](/yuiblog/2011/07/12/gbs-update/ "Graded Browser Support Update: Q3 2011"), but today we're taking this a step further…
 
 ### Introducing YUI Target Environments
 

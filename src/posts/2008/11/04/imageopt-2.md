@@ -11,9 +11,9 @@ categories:
 ---
 _This is part 2 in an ongoing series. You can read the other parts here:_
 
--   [Image Optimization Part 1: The Importance of Images](/yuiblog/blog/2008/10/29/imageopt-1/)
--   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/blog/2008/11/14/imageopt-3/)
--   [Image Optimization Part 4: Progressive JPEG…Hot or Not?](/yuiblog/blog/2008/12/05/imageopt-4/)
+-   [Image Optimization Part 1: The Importance of Images](/yuiblog/2008/10/29/imageopt-1/)
+-   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/2008/11/14/imageopt-3/)
+-   [Image Optimization Part 4: Progressive JPEG…Hot or Not?](/yuiblog/2008/12/05/imageopt-4/)
 
 This second installment of the image optimization series talks about file formats and how to chose the right one for the job. We'll briefly discuss the popular GIF and JPEG formats and then move on to highlighting the rock star, PNG, hopefully helping correct some misconceptions about it.
 

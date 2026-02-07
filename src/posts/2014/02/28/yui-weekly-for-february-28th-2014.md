@@ -12,7 +12,7 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
 
 ## Release News
 
-This week, we released [**YUI 3.15.0**](https://github.com/yui/yui3/releases/tag/v3.15.0), the latest and greatest version of YUI. It's now available via the CDN, npm, or as a zip archive. [Andrew Wooldridge](http://twitter.com/triptych) did a great job [introducing the new features in this release](/yuiblog/blog/2014/02/26/yui-3-15-0-released/), so make sure to check that out. You can also [view the changelog](https://github.com/yui/yui3/wiki/YUI-3.15.0-Change-History-Rollup).
+This week, we released [**YUI 3.15.0**](https://github.com/yui/yui3/releases/tag/v3.15.0), the latest and greatest version of YUI. It's now available via the CDN, npm, or as a zip archive. [Andrew Wooldridge](http://twitter.com/triptych) did a great job [introducing the new features in this release](/yuiblog/2014/02/26/yui-3-15-0-released/), so make sure to check that out. You can also [view the changelog](https://github.com/yui/yui3/wiki/YUI-3.15.0-Change-History-Rollup).
 
 There were a total of [449 commits by 19 contributors for this release](https://github.com/yui/yui3/compare/v3.14.1...v3.15.0). Thanks again to the entire YUI community for helping us ship another release. Try it out today!
 

@@ -8,7 +8,7 @@ permalink: /2010/08/09/ask-satyam-yql-and-yui/
 categories:
   - "Development"
 ---
-> [![](/yuiblog/blog-archive/assets/satyam-book-small-20100809-120823.jpg)](https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book)Satyam (a.k.a Daniel Barreiro) is a long-time YUI contributor and one of the most prolific, generous experts in the [YUI forums](http://yuilibrary.com/forum/ "YUI Library :: Forums :: Index page"). He is also [the author of a new book on YUI 2.8.0, _YUI 2.8.0: Learning the Library_](https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book). This article in the "Ask Satyam" series [was suggested by Mike Hatfield](/yuiblog/blog/2010/07/29/ask-satyam/#comment-593067 "Ask Satyam — and Be Eligible for a Free Copy of the New YUI 2.8 Book from Packt » Yahoo! User Interface Blog (YUIBlog)"). Satyam will be answering several additional questions in the coming weeks here on YUIBlog as part of the series.
+> [![](/yuiblog/blog-archive/assets/satyam-book-small-20100809-120823.jpg)](https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book)Satyam (a.k.a Daniel Barreiro) is a long-time YUI contributor and one of the most prolific, generous experts in the [YUI forums](http://yuilibrary.com/forum/ "YUI Library :: Forums :: Index page"). He is also [the author of a new book on YUI 2.8.0, _YUI 2.8.0: Learning the Library_](https://www.packtpub.com/yahoo-user-interface-yui-2-8-learning-library/book). This article in the "Ask Satyam" series [was suggested by Mike Hatfield](/yuiblog/2010/07/29/ask-satyam/#comment-593067 "Ask Satyam — and Be Eligible for a Free Copy of the New YUI 2.8 Book from Packt » Yahoo! User Interface Blog (YUIBlog)"). Satyam will be answering several additional questions in the coming weeks here on YUIBlog as part of the series.
 
 ### Getting to Know YQL
 
@@ -128,7 +128,7 @@ it wouldn't do us any good, because the value is not assigned to a variable. If 
 var result = 123;
 ```
 
-then, the number would be stored into variable `result`. Such a variable would be in the global scope, [which is not a good idea](/yuiblog/blog/2006/06/01/global-domination/ "Global Domination » Yahoo! User Interface Blog (YUIBlog)"). Even worse, although value would be retrievable once stored, we wouldn't know when it becomes available; we'd have to poll the `result` variable to discover when we'd gotten data. The [YUI Get Utility](http://developer.yahoo.com/yui/get/ "YUI 2: Get Utility") solves this problem by signaling both successful and failed transactions.
+then, the number would be stored into variable `result`. Such a variable would be in the global scope, [which is not a good idea](/yuiblog/2006/06/01/global-domination/ "Global Domination » Yahoo! User Interface Blog (YUIBlog)"). Even worse, although value would be retrievable once stored, we wouldn't know when it becomes available; we'd have to poll the `result` variable to discover when we'd gotten data. The [YUI Get Utility](http://developer.yahoo.com/yui/get/ "YUI 2: Get Utility") solves this problem by signaling both successful and failed transactions.
 
 A more general solution, relying on some help from the server, is to wrap the value in a callback function:
 
@@ -163,7 +163,7 @@ The basic URL takes a `q` argument containing the URL-encoded query. For JSON we
 
 ### Using YQL as a Source of Data in YUI
 
-Jonathan LeBlanc has also written a convenient [utility](http://github.com/jcleblanc/yql-utilities/tree/master/js-yql-display/) to do YQL queries and format their results based on a simple template, which he presented in a [YUI Blog article](/yuiblog/blog/2009/06/17/yui-and-yql/). You just need to provide the YQL query, the template to format the result and the container for the result and it takes care of all the minutiae for us.
+Jonathan LeBlanc has also written a convenient [utility](http://github.com/jcleblanc/yql-utilities/tree/master/js-yql-display/) to do YQL queries and format their results based on a simple template, which he presented in a [YUI Blog article](/yuiblog/2009/06/17/yui-and-yql/). You just need to provide the YQL query, the template to format the result and the container for the result and it takes care of all the minutiae for us.
 
 ```
 yqlWidget.push(

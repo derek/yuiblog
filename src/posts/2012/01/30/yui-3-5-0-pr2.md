@@ -9,7 +9,7 @@ categories:
   - "Releases"
   - "Development"
 ---
-![](/yuiblog/blog/wp-content/uploads/2012/01/yui350pr2art.png "YUI 3.5.0 PR2 Release")
+![](/yuiblog/wp-content/uploads/2012/01/yui350pr2art.png "YUI 3.5.0 PR2 Release")
 
 YUI 3.5.0 Preview Release 2 has been released to the developer community for feedback and testing. It is now available on the Yahoo! CDN at [yui.yahooapis.com/3.5.0pr2/build/yui/yui-min.js](http://yui.yahooapis.com/3.5.0pr2/build/yui/yui-min.js), or [as a download](http://yui.zenfs.com/releases/yui3/yui_3.5.0pr2.zip) if you plan to test it locally.
 

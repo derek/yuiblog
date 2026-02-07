@@ -12,9 +12,9 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
 
 -   [YUI3 IO Utils](https://github.com/juandopazo/yui3-io-utils) is a new Gallery module by Juan Dopazo ([@juandopazo](http://twitter.com/juandopazo)) that includes extra utilities for doing IO request using promises.
     
--   Matt Parker ([@Lamplightdb](http://twitter.com/Lamplightdb)) attended Yahoo's [Hack Europe](http://developer.yahoo.com/blogs/ydn/hack-europe-london-draws-hackers-corners-globe-000307942.html) event and wrote up [a nice review](/yuiblog/blog/2013/05/09/yahoo-hack-europe-2013/) of the event for the YUI blog. Also in attendence was core team member Satyen Desai who gave a presentation on [YUI for Hackers](/yuiblog/satyen/hackday2013/#/).
+-   Matt Parker ([@Lamplightdb](http://twitter.com/Lamplightdb)) attended Yahoo's [Hack Europe](http://developer.yahoo.com/blogs/ydn/hack-europe-london-draws-hackers-corners-globe-000307942.html) event and wrote up [a nice review](/yuiblog/2013/05/09/yahoo-hack-europe-2013/) of the event for the YUI blog. Also in attendence was core team member Satyen Desai who gave a presentation on [YUI for Hackers](/yuiblog/satyen/hackday2013/#/).
     
--   [Yeti](http://yeti.cx/) v0.2.22 was released this week and includes improvements for testing slower browsers. See the [release announcement](/yuiblog/blog/2013/05/08/yeti-0-2-22-released/) for more details.
+-   [Yeti](http://yeti.cx/) v0.2.22 was released this week and includes improvements for testing slower browsers. See the [release announcement](/yuiblog/2013/05/08/yeti-0-2-22-released/) for more details.
     
 -   For those interested in YUI's [Template](http://yuilibrary.com/yui/docs/template/) component, Caridy Patino ([@caridy](https://twitter.com/caridy)) posted a [template registration proposal](https://gist.github.com/caridy/5548076) with some ideas for discussion. Head on over the the [discussion thread](https://groups.google.com/forum/?fromgroups=#!topic/yui-contrib/cUpVvtoUBa8) to chime in with any thoughts and feedback.
     

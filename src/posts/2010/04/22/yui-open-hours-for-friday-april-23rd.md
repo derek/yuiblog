@@ -25,6 +25,6 @@ Like before, the plan is to use Adobe Connect for screen sharing and do voice ov
 
 And as mentioned with the first YUI: Open Hours, you can keep up to date with the upcoming schedule and topics by following [@yuilibrary](http://twitter.com/yuilibrary) on Twitter or subscribing to the [YUI Event Calendar](http://yuilibrary.com/gallery/calendar/#calendar).
 
-If this is the first you've read about YUI: Open Hours, it's an open forum with myself and other YUI team members and some great minds from the YUI community. You can [read more about it here](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/).
+If this is the first you've read about YUI: Open Hours, it's an open forum with myself and other YUI team members and some great minds from the YUI community. You can [read more about it here](/yuiblog/2010/04/08/introducing-yui-open-hours/).
 
 Hope to see you there!

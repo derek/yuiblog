@@ -12,7 +12,7 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
 
 -   This week the team is putting the finishing touches on **YUI 3.8**, due to be packaged up and put underneath the Christmas Tree on **December 11th**. For those of you who enjoy opening presents early, **[3.8.0pr2](http://yui.yahooapis.com/3.8.0pr2/build/yui/yui-min.js)** is already out on the CDN, so go take it for a spin!
     
--   Video from this week's **YUI Open Roundtable** [has been posted](http://www.youtube.com/watch?v=rKrzggbBpfY). Discussions include pull requests for [array-extras](https://github.com/yui/yui3/pull/299), [Y.Soon](https://github.com/yui/yui3/pull/304), and [Y.Deferred](https://github.com/yui/yui3/pull/241), as well as the [YUI Contributor mailing list](/yuiblog/blog/2012/12/05/announcing-the-new-yui-contributor-mailing-list/), DataTable ownership, and more.
+-   Video from this week's **YUI Open Roundtable** [has been posted](http://www.youtube.com/watch?v=rKrzggbBpfY). Discussions include pull requests for [array-extras](https://github.com/yui/yui3/pull/299), [Y.Soon](https://github.com/yui/yui3/pull/304), and [Y.Deferred](https://github.com/yui/yui3/pull/241), as well as the [YUI Contributor mailing list](/yuiblog/2012/12/05/announcing-the-new-yui-contributor-mailing-list/), DataTable ownership, and more.
     
 -   **YUI's Responsive CSS Grid Builder** is now live at [yui.github.com/gridbuilder/](http://yui.github.com/gridbuilder/). This is a new open-source project, and you can submit pull requests and file issues @ [github.com/yui/gridbuilder](https://github.com/yui/gridbuilder).
     
@@ -22,9 +22,9 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
     
 -   New YUIConf videos this week:
     
-    -   Caridy Patiño's [Mojito for YUI Developers](/yuiblog/blog/2012/12/07/yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers/)
-    -   Eric Ferrauiolo's [YUI, Open Source, and Community Town Hall](/yuiblog/blog/2012/12/05/yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo/)
-    -   Anthony Pipkin's [Building Modules for the New Gallery](/yuiblog/blog/2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/)
+    -   Caridy Patiño's [Mojito for YUI Developers](/yuiblog/2012/12/07/yuiconf-2012-talk-caridy-patino-on-mojito-for-yui-developers/)
+    -   Eric Ferrauiolo's [YUI, Open Source, and Community Town Hall](/yuiblog/2012/12/05/yuiconf-2012-talk-yui-open-source-and-community-from-eric-ferrauiolo/)
+    -   Anthony Pipkin's [Building Modules for the New Gallery](/yuiblog/2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/)
 -   YUI Team On the Road:
     
     -   I attended The Future of Web Apps conference in Prague to deliver a talk about the latest and greatest Web development tools Y! has to offer, including YUI, YQL, Mojito, and others. You can read more about that trip on the [YDN Blog](http://developer.yahoo.com/blogs/ydn/posts/2012/12/ydn-at-future-insights-praha/).

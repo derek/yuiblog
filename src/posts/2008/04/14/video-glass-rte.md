@@ -30,8 +30,8 @@ The presentation materials, including the deck and all links discussed in the vi
 
 Some other recent videos from the [YUI Theater series](http://developer.yahoo.com/yui/theater/):
 
--   **Julien Lecomte:** "High Performance Ajax Applications" ([YUIBlog](/yuiblog/blog/2007/12/20/video-lecomte/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v))
--   **Douglas Crockford:** "The State of Ajax" ([YUIBlog](/yuiblog/blog/2007/11/06/video-crockford/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/stateofajax.m4v))
+-   **Julien Lecomte:** "High Performance Ajax Applications" ([YUIBlog](/yuiblog/2007/12/20/video-lecomte/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v))
+-   **Douglas Crockford:** "The State of Ajax" ([YUIBlog](/yuiblog/2007/11/06/video-crockford/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/stateofajax.m4v))
 -   **Nate Koechley:** "The YUI CSS Foundation" ([Yahoo! Video](http://video.yahoo.com/watch/1373808) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/koechley-yuicss.m4v))
 -   **Steve Souders:** “High Performance Web Sites: 14 Rules for Faster Pages” ([Yahoo! Video](http://video.yahoo.com/watch/1040890) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/souders-performance.m4v))
 

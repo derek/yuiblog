@@ -23,7 +23,7 @@ Our team of front-end engineers are experts in JavaScript, CSS, HTML, and PHP bu
 
 ### YUI Grids in AIR
 
-Sideline contains an extensive implementation of the YUI Library. It should hopefully serve as a great example for other developers interested in experimenting with YUI and Adobe AIR. The application's layout is constructed using [YUI Grids](http://developer.yahoo.com/yui/grids/) and even makes use of the [recently added ARIA Landmark Roles](/yuiblog/blog/2009/03/05/aria-grids/). Grids worked very well in the AIR environment and made redesigns that occurred mid-development easy to implement with minimal code changes. Just like in the standard browser environment, YUI Grids can serve as a great foundation for an AIR application even if the developer decides against using the rest of the JavaScript library and opted for another framework instead.
+Sideline contains an extensive implementation of the YUI Library. It should hopefully serve as a great example for other developers interested in experimenting with YUI and Adobe AIR. The application's layout is constructed using [YUI Grids](http://developer.yahoo.com/yui/grids/) and even makes use of the [recently added ARIA Landmark Roles](/yuiblog/2009/03/05/aria-grids/). Grids worked very well in the AIR environment and made redesigns that occurred mid-development easy to implement with minimal code changes. Just like in the standard browser environment, YUI Grids can serve as a great foundation for an AIR application even if the developer decides against using the rest of the JavaScript library and opted for another framework instead.
 
 ### YUI Components in AIR
 

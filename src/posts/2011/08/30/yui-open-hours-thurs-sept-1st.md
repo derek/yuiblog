@@ -11,7 +11,7 @@ categories:
 ---
 ### YUI Loader and seed file changes, plus Loader tips and tricks
 
-Back in early July, [Dav Glass](http://twitter.com/davglass) posted an article about [changes to the Loader and seed files](/yuiblog/blog/2011/07/01/yui-and-loader-changes-for-3-4-0/) in 3.4.0. There were a few questions in the comments and some others in the forum and #yui channel on [freenode IRC](http://webchat.freenode.net), so I wanted to get Dav on the horn for a public Q&A.
+Back in early July, [Dav Glass](http://twitter.com/davglass) posted an article about [changes to the Loader and seed files](/yuiblog/2011/07/01/yui-and-loader-changes-for-3-4-0/) in 3.4.0. There were a few questions in the comments and some others in the forum and #yui channel on [freenode IRC](http://webchat.freenode.net), so I wanted to get Dav on the horn for a public Q&A.
 
 I don't expect that will take the whole hour, though, so after that, we're going to be talking about Loader best practices and tips and tricks. Depending on time, some things I'm hoping to cover are:
 

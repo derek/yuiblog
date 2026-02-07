@@ -8,7 +8,7 @@ permalink: /2006/08/17/the-new-yahoo-photos-10-cool-things/
 categories:
   - "Development"
 ---
-Editor's Note: We understand that Yahoo!'s user interface isn't all about the [YUI Library](http://developer.yahoo.com/yui/), and there are exciting projects happening here that do great work in the browser without much YUI usage. Though almost all development at Yahoo! is now using YUI, the new Yahoo! Photos site was well underway before YUI was released, and is therefore a notable exception as we [mentioned earlier](/yuiblog/blog/2006/07/18/ten_things/). (It does, however, use YUI's [Connection Manager](http://developer.yahoo.com/yui/connection).) This post is guest-written by one of Photos' lead frontend engineers. Enjoy!
+Editor's Note: We understand that Yahoo!'s user interface isn't all about the [YUI Library](http://developer.yahoo.com/yui/), and there are exciting projects happening here that do great work in the browser without much YUI usage. Though almost all development at Yahoo! is now using YUI, the new Yahoo! Photos site was well underway before YUI was released, and is therefore a notable exception as we [mentioned earlier](/yuiblog/2006/07/18/ten_things/). (It does, however, use YUI's [Connection Manager](http://developer.yahoo.com/yui/connection).) This post is guest-written by one of Photos' lead frontend engineers. Enjoy!
 
 The New Yahoo! Photos has a lot of cool features not commonly found on the web. Drag and drop and inline editing makes getting things done with your photos fast and easy, and it just feels more like a rich application.
 

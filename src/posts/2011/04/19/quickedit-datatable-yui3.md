@@ -16,7 +16,7 @@ Even though [YUI 3 DataTable](http://developer.yahoo.com/yui/3/datatable/) does 
 
 ### Overview
 
-As with the [YUI 2 version](/yuiblog/blog/2010/08/19/quickedit-datatable/), the core idea of Quick Edit mode is to swap out all the cell formatters with new ones which populate the cells with form elements, e.g., input fields or dropdowns. This is done when `start()` is called, based on the configuration described below. After the user is finished, you can call `getChanges()` to get the changed values and then persist them. To exit Quick Edit mode, call `cancel()`. (It is named cancel instead of stop to remind you that it _discards_ all changes.)
+As with the [YUI 2 version](/yuiblog/2010/08/19/quickedit-datatable/), the core idea of Quick Edit mode is to swap out all the cell formatters with new ones which populate the cells with form elements, e.g., input fields or dropdowns. This is done when `start()` is called, based on the configuration described below. After the user is finished, you can call `getChanges()` to get the changed values and then persist them. To exit Quick Edit mode, call `cancel()`. (It is named cancel instead of stop to remind you that it _discards_ all changes.)
 
 Since the Quick Edit gallery module is a plugin for DataTable, you need to plug it in to your datatable before you can use it:
 

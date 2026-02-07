@@ -19,7 +19,7 @@ Running your JavaScript code through YUI Compressor results in tremendous saving
 
 ### Use Constants for Repeated Values
 
-In my talk, [Maintainable JavaScript](/yuiblog/blog/2007/05/25/video-zakas/), I talk about using constants (really, just variables that you have no intention of changing) to store repeating values. The idea is that your code is more maintainable because you have a single place to change a value instead of multiple places. As it turns out, this technique also helps YUI Compressor to remove more bytes. Consider the following function:
+In my talk, [Maintainable JavaScript](/yuiblog/2007/05/25/video-zakas/), I talk about using constants (really, just variables that you have no intention of changing) to store repeating values. The idea is that your code is more maintainable because you have a single place to change a value instead of multiple places. As it turns out, this technique also helps YUI Compressor to remove more bytes. Consider the following function:
 
 ```
 function toggle(element){
@@ -147,7 +147,7 @@ In this code, the call to `eval()` is isolated away from the main body of the `d
 
 ### Avoid `with`
 
-The `with` statement is another that is often [recommended to avoid in JavaScript](/yuiblog/blog/2006/04/11/with-statement-considered-harmful/). For YUI Compressor, the reason is the same for `eval()`: just the presence of `with` in a function causes variable renaming to be skipped for the entire function. There is just no way to keep track of variables versus object properties in the context of a `with` statement, so YUI Compressor rightly leaves the code as-is to avoid breaking the functionality. The best advice here is to avoid using `with` altogether. If you follow the advice of [storing local copies of objects/properties](#store-local-references-to-objects-and-values), you should have no use for `with`.
+The `with` statement is another that is often [recommended to avoid in JavaScript](/yuiblog/2006/04/11/with-statement-considered-harmful/). For YUI Compressor, the reason is the same for `eval()`: just the presence of `with` in a function causes variable renaming to be skipped for the entire function. There is just no way to keep track of variables versus object properties in the context of a `with` statement, so YUI Compressor rightly leaves the code as-is to avoid breaking the functionality. The best advice here is to avoid using `with` altogether. If you follow the advice of [storing local copies of objects/properties](#store-local-references-to-objects-and-values), you should have no use for `with`.
 
 ### Use the Verbose Option
 

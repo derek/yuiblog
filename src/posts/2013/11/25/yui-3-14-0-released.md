@@ -19,7 +19,7 @@ Two of the larger changes in this release include updates to [Charts](http://yui
 
 In Charts an issue ([#1393](https://github.com/yui/yui3/issues/1393)) was fixed in which CandleStick series did not render nicely when there were large amounts of data, several histogram issues were fixed ([#1390](https://github.com/yui/yui3/issues/1390), [#1391](https://github.com/yui/yui3/issues/1391), [#1392](https://github.com/yui/yui3/issues/1392)), an issue ([#1382](https://github.com/yui/yui3/issues/1382)) was fixed where first/last values were removed from axis in certain cases, and a feature ([#1381](https://github.com/yui/yui3/issues/1381)) was added to offset labels in Axis. In Graphics there was a fix ([#1398](https://github.com/yui/yui3/issues/1398)) for an issue in which the canvas element did not properly position itself within a container and a fix ([#1375](https://github.com/yui/yui3/issues/1375)) for when the path did not stroke correctly in the SVG implementation.
 
-**NOTE**: There was a regression introduced in this release in Charts. Please see the [YUI 3.14.1 release blog post](/yuiblog/blog/2013/12/18/yui-3-14-1-released/) for more details.
+**NOTE**: There was a regression introduced in this release in Charts. Please see the [YUI 3.14.1 release blog post](/yuiblog/2013/12/18/yui-3-14-1-released/) for more details.
 
 ### EcmaScript 6 Compatible YUI Modules
 

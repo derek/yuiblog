@@ -40,7 +40,7 @@ In addition to the effective-immediately changes, we're also keeping our eyes on
 
 ## Other Notes
 
--   [YUI 2.5.0, released earlier this week](/yuiblog/blog/2008/02/20/yui-250-released/), still provides A-Grade support to Safari 2. It's unlikely that future YUI release will. For now: bonus browser support!
+-   [YUI 2.5.0, released earlier this week](/yuiblog/2008/02/20/yui-250-released/), still provides A-Grade support to Safari 2. It's unlikely that future YUI release will. For now: bonus browser support!
     
 -   We are going to begin archiving these individual updates more than we've done in the past. We've heard your request to have snapshots of the GBS chart at a particular moment in time. We plan to publish these detailed updates on this blog, and collect the links to the various updates in a new Archive section of the web site.
     

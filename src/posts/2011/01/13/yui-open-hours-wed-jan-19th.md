@@ -11,7 +11,7 @@ categories:
 ---
 Welcoming in 2011, YUI: Open Hours will be starting up again, and the first installment of the new year will be next Wednesday, the 19th.
 
-Naturally, with the [release of YUI 3.3.0](/yuiblog/blog/2011/01/12/announcing-yui-3-3-0/), that will be the main topic of this year's first Open Hours. I'm going to try to wrangle as many of the YUI team and outside contributors as I can to join the call, and we'll go over our favorite highlights then open the conversation to hear about what you have already played with from the preview releases. We'll have an update on 2.9, then (and I'm pretty excited about this), start talking 3.x roadmap for 2011. And we want your ideas, your feedback. Where do _you_ want to see YUI going this year? What are the hot ticket items on your wish list?
+Naturally, with the [release of YUI 3.3.0](/yuiblog/2011/01/12/announcing-yui-3-3-0/), that will be the main topic of this year's first Open Hours. I'm going to try to wrangle as many of the YUI team and outside contributors as I can to join the call, and we'll go over our favorite highlights then open the conversation to hear about what you have already played with from the preview releases. We'll have an update on 2.9, then (and I'm pretty excited about this), start talking 3.x roadmap for 2011. And we want your ideas, your feedback. Where do _you_ want to see YUI going this year? What are the hot ticket items on your wish list?
 
 So come and chat with the YUI team about what's new and what the future will hold!
 

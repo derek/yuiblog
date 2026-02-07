@@ -10,7 +10,7 @@ categories:
 ---
 [![Satyen Desai, Sr. Engineer, YUI Team](/yuiblog/blog-archive/assets/satyen-yui3-20090511-110704.jpg)](http://developer.yahoo.com/yui/theater/desai-yui3.html)
 
-The team here remains hard at work on YUI's next-generation codeline, YUI 3, which is [available as a documented preview release today](http://developer.yahoo.com/yui/3/) and which is [already powering some of Yahoo's next-generation projects](/yuiblog/blog/2008/11/11/frontpage-and-yui3/). As we get closer to the beta release this summer, we're spending more time talking about YUI 3's distinguishing characteristics. Satyen Desai, a Sr. Engineer on the YUI team and one of the key YUI 3 developers, gave a talk last week here at Yahoo about the design goals for YUI 3 and the architectural decisions that were driven by those goals. We're happy to share video from that event here on YUI Theater.
+The team here remains hard at work on YUI's next-generation codeline, YUI 3, which is [available as a documented preview release today](http://developer.yahoo.com/yui/3/) and which is [already powering some of Yahoo's next-generation projects](/yuiblog/2008/11/11/frontpage-and-yui3/). As we get closer to the beta release this summer, we're spending more time talking about YUI 3's distinguishing characteristics. Satyen Desai, a Sr. Engineer on the YUI team and one of the key YUI 3 developers, gave a talk last week here at Yahoo about the design goals for YUI 3 and the architectural decisions that were driven by those goals. We're happy to share video from that event here on YUI Theater.
 
 Slides from Satyen's talk are [available as a zipped PowerPoint file here](/yuiblog/blog-archive/assets/desai-yui3.zip).
 

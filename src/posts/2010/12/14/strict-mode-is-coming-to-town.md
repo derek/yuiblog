@@ -20,9 +20,9 @@ There are two ways to request strict mode. The first is to insert this pragma
 
 at the top of a file or compilation unit. It must appear before any other statements, but it may be preceded by whitespace and comments. It has the form of a useless string literal statement, so it will be ignored by ES3 systems. This means that it is possible to write ES5/strict programs that can also run on the older browsers. Strict code can also interact with non-strict (or _sloppy_) code, so strict functions can call sloppy functions, and sloppy functions can call strict functions. This high level of compatibility makes adoption of strict mode easy.
 
-All of the code in the file or compilation unit with the `"use strict";` preamble will be processed as strict code. There is a problem, though. [Performance considerations](/yuiblog/blog/2007/09/04/video-souders/) currently compel us to concatenate many JavaScript files together to avoid cumulative HTTP delays. If a file with a `"use strict";` preamble has sloppy code appended to it, the sloppy code will be processed as strict and will probably fail. There is an easy rule: Do not mix strict and sloppy in the same file, but we have already seen some famous websites get this wrong.
+All of the code in the file or compilation unit with the `"use strict";` preamble will be processed as strict code. There is a problem, though. [Performance considerations](/yuiblog/2007/09/04/video-souders/) currently compel us to concatenate many JavaScript files together to avoid cumulative HTTP delays. If a file with a `"use strict";` preamble has sloppy code appended to it, the sloppy code will be processed as strict and will probably fail. There is an easy rule: Do not mix strict and sloppy in the same file, but we have already seen some famous websites get this wrong.
 
-The second way is to insert the pragma is as the first statement of a function. That declares that the whole function will be strict, including any functions that are nested within it. Strictness respects function scope, so strict code and sloppy code can be mixed in the same file. This second form works very well with the [Module Pattern](/yuiblog/blog/2007/06/12/module-pattern/) and its many variations. The second form is preferred because it avoids the concatenation hazard.
+The second way is to insert the pragma is as the first statement of a function. That declares that the whole function will be strict, including any functions that are nested within it. Strictness respects function scope, so strict code and sloppy code can be mixed in the same file. This second form works very well with the [Module Pattern](/yuiblog/2007/06/12/module-pattern/) and its many variations. The second form is preferred because it avoids the concatenation hazard.
 
 ```
 (function () {
@@ -39,7 +39,7 @@ The second way is to insert the pragma is as the first statement of a function. 
 
 Historically, JavaScript has been confused about how functions are scoped. Sometimes they seem to be statically scoped, but some features make them behave like they are dynamically scoped. This is confusing, making programs difficult to read and understand. Misunderstanding causes bugs. It also is a problem for performance. Static scoping would permit variable binding to happen at compile time, but the requirement for dynamic scope means the binding must be deferred to runtime, which comes with a significant performance penalty.
 
-Strict mode requires that all variable binding be done statically. That means that the features that previously required dynamic binding must be eliminated or modified. Specifically, the [with statement](/yuiblog/blog/2006/04/11/with-statement-considered-harmful/) is eliminated, and the `eval` function’s ability to tamper with the environment of its caller is severely restricted.
+Strict mode requires that all variable binding be done statically. That means that the features that previously required dynamic binding must be eliminated or modified. Specifically, the [with statement](/yuiblog/2006/04/11/with-statement-considered-harmful/) is eliminated, and the `eval` function’s ability to tamper with the environment of its caller is severely restricted.
 
 One of the benefits of strict code is that tools like [YUI Compressor](http://developer.yahoo.com/yui/compressor/) can do a better job when processing it.
 
@@ -49,7 +49,7 @@ JavaScript has implied global variables. If you do not explicitly declare a vari
 
 ## Global Leakage
 
-There are a number of situations that could cause `this` to be bound to the global object. For example, if you forget to provide the `[new](/yuiblog/blog/2006/11/13/javascript-we-hardly-new-ya/)` [prefix](/yuiblog/blog/2006/11/13/javascript-we-hardly-new-ya/) when calling a constructor function, the constructor’s `this` will be bound unexpectedly to the global object, so instead of initializing a new object, it will instead be silently tampering with global variables. In these situations, strict mode will instead bind `this` to `undefined`, which will cause the constructor to throw an exception instead, allowing the error to be detected much sooner.
+There are a number of situations that could cause `this` to be bound to the global object. For example, if you forget to provide the `[new](/yuiblog/2006/11/13/javascript-we-hardly-new-ya/)` [prefix](/yuiblog/2006/11/13/javascript-we-hardly-new-ya/) when calling a constructor function, the constructor’s `this` will be bound unexpectedly to the global object, so instead of initializing a new object, it will instead be silently tampering with global variables. In these situations, strict mode will instead bind `this` to `undefined`, which will cause the constructor to throw an exception instead, allowing the error to be detected much sooner.
 
 ## Noisy Failure
 

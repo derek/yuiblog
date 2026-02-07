@@ -30,25 +30,25 @@ Let’s dive right into this. I found an entertaining little example from the YU
 
 So let’s get our environment up and running. Open up Visual Studio and under file, start a “New Project” which will present you with some options:
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_001-300x207.png "click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_001.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_001-300x207.png "click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_001.png)
 
 If you look inside the templates tree, you’ll see options for a number of different languages. We're going to use "JavaScript" so we are working in a pure HTML5/JavaScript environment. Start simple by choosing a "Blank App," give it a name and hit "Ok."
 
 Let's take a look at what's now in front of you.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_002-300x181.png "click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_002.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_002-300x181.png "click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_002.png)
 
 For web developers this should be a familiar landscape. In addition to some app-specific files (manifest, reference libraries), you have a few key components: default.html, default.css and default.js. These are generated files that are already set up to take advantage of the WinJS library. WinJS has a powerful feature set that can be used right alongside of YUI, but in this case, our app is already written in YUI so we’ll just put it aside.
 
 I want to make sure we’re clear that your YUI code is just going to work. So we're going to take the code sample directly from the YUI library and run it in the app just as we would in the browser. Let's get started by finding our code example from the YUI library: [http://yuilibrary.com/yui/docs/node/ducks.html](http://yuilibrary.com/yui/docs/node/ducks.html)
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_003-300x204.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_003.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_003-300x204.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_003.png)
 
 On this page scroll down to the full code example, select it and copy. Now let's switch back to Visual Studio and go to our default.html file. Go ahead and delete the contents of the page and paste in your code sample. This gives you your HTML,CSS, and JavaScript, but not the images. Remember we're working in a local context here, so you'll need to copy your images over to the sample page as well. Just paste them into the "images" folder of your solutions explorer.
 
 At this point there is one BIG thing missing. YUI. We need to load YUI into your app as well. Let's go over to github and clone a copy of the library. From the repo, copy the "build" directory and then head back to the solutions explorer in Visual studio and paste it into the "js" folder of your app.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_004-300x187.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_004.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_004-300x187.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_004.png)
 
 That wasn't hard at all, but you're probably already prepping to jump to your feet and point out a tragic error that I haven't considered. When you use the YUI CDN along with the Loader, you get a magical file concoction that loads all the proper files for you based on your "YUI requires statement." Since we aren’t using the CDN, we don’t get that magic. The good news is, YUI's got a tool for that. It's called the YUI Configurator and it's pretty snazzy too. Let's quickly review our `use()` statement in our sample, and you will see that we are using two library components.
 
@@ -60,13 +60,13 @@ Let’s paste that into the header of our default.html file. Now save that file,
 
 Voila! Your demo game is running inside a Windows 8 App just as it was in the browser, only now as a local app.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_005-300x193.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_005.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_005-300x193.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_005.png)
 
 Dropping a YUI app right into a Windows 8 Store app is pretty awesome from a development point of view, but it doesn't quite look like the money maker I want it to be. To dress it up a little, I’m going to add a few lines of CSS.
 
 And now my YUI sample is a Windows 8 gem.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_0061-300x193.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_0061.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_0061-300x193.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_0061.png)
 
 ### Upgrade to Multi-touch
 
@@ -80,7 +80,7 @@ If you know how to use mouse events, then you know how to use pointers. Pointers
 
 This blocks the default touch behavior and gives full control to my delegate. Now let's give it a try.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_007-300x193.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_007.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_007-300x193.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_007.png)
 
 ### Accessing Windows APIs with YUI
 
@@ -88,11 +88,11 @@ One of the great things about being inside of a Windows 8 Store app is that you 
 
 We set up a listener here for an event called "datarequested" in which we set properties of our data object. At this point every app has declared (through the app manifest) what type of data can be shared to it. In this method, we are simply declaring what data we are going to share. Now when we reload our app and select the share charm from our charm bar, you’ll see a list of apps appear that are able to handle this type of shared content.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_0082-300x193.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_0082.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_0082-300x193.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_0082.png)
 
 I’ll select the mail app and you can see how this data will be shared.
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_009-300x193.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_009.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_009-300x193.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_009.png)
 
 More information about the share contract and other [Windows APIs can be found here](http://msdn.microsoft.com/en-us/library/windows/apps/hh464906.aspx).
 
@@ -102,7 +102,7 @@ Now that we've completed our Windows 8 App, let's keep going with YUI and push t
 
 While we’re at it, wouldn't you like to port your game to the Xbox? The Xbox now has the Internet Explorer browser, so fire up the web version of your app, and play duck shooter right on your Xbox. Choosing YUI helps you get your app everywhere:
 
-[![](/yuiblog/blog/wp-content/uploads/2013/03/win8_010-300x193.png "Click to expand")](/yuiblog/blog/wp-content/uploads/2013/03/win8_010.png)
+[![](/yuiblog/wp-content/uploads/2013/03/win8_010-300x193.png "Click to expand")](/yuiblog/wp-content/uploads/2013/03/win8_010.png)
 
 ### Success!
 
@@ -114,4 +114,4 @@ By popular demand, the author has created a [github repo](https://github.com/boy
 
 <iframe frameborder="0" scrolling="no" src="http://channel9.msdn.com/posts/Title-Build-Windows-8-Apps-with-YUI/player?w=512&amp;h=288" style="height:288px;width:512px"></iframe>
 
-![](/yuiblog/blog/wp-content/uploads/2013/03/jeffburt-150x150.png)_**About the author:** Jeff Burtoft (@boyofgreen) Jeff Burtoft is as an HTML5 Evangelist for Microsoft and an avid supporter of the JavaScript/HTML5 community. Being in the Web Development community for over 10 years, his job title has morphed from the likes of "Web Master" to “Front End Engineer” and everything in-between. Jeff is a huge proponent of web standards, and loves all programing languages, as long as they are JavaScript. Additionally, Jeff is co-author of HTML5 Hacks (O’Reilly Media) and is a founding blogger of html5hacks.com. Jeff lives in Bellevue, WA with his wife and three children._
+![](/yuiblog/wp-content/uploads/2013/03/jeffburt-150x150.png)_**About the author:** Jeff Burtoft (@boyofgreen) Jeff Burtoft is as an HTML5 Evangelist for Microsoft and an avid supporter of the JavaScript/HTML5 community. Being in the Web Development community for over 10 years, his job title has morphed from the likes of "Web Master" to “Front End Engineer” and everything in-between. Jeff is a huge proponent of web standards, and loves all programing languages, as long as they are JavaScript. Additionally, Jeff is co-author of HTML5 Hacks (O’Reilly Media) and is a founding blogger of html5hacks.com. Jeff lives in Bellevue, WA with his wife and three children._

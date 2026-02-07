@@ -8,7 +8,7 @@ permalink: /2008/12/30/configuring-screen-readers/
 categories:
   - "Development"
 ---
-When developing using the [WAI-ARIA Roles and States](http://www.w3.org/TR/wai-aria/), you need to test your code in a screen reader to ensure everything is working as you expect. As a follow up to my presentation on [Developing Accessible Widgets with ARIA](/yuiblog/blog/2008/12/08/video-kloots-aria/) and in the interest of helping other developers test their code, I thought I would provide some tips on how to configure your development environment for screen reader testing.
+When developing using the [WAI-ARIA Roles and States](http://www.w3.org/TR/wai-aria/), you need to test your code in a screen reader to ensure everything is working as you expect. As a follow up to my presentation on [Developing Accessible Widgets with ARIA](/yuiblog/2008/12/08/video-kloots-aria/) and in the interest of helping other developers test their code, I thought I would provide some tips on how to configure your development environment for screen reader testing.
 
 ### Step 1: Install A Virtual Machine
 
@@ -124,7 +124,7 @@ That's it. The steps for configuring your development environment for testing us
 
 ### Resources & Further Reader
 
--   [Developing Accessible Widgets with ARIA](/yuiblog/blog/2008/12/08/video-kloots-aria/)
+-   [Developing Accessible Widgets with ARIA](/yuiblog/2008/12/08/video-kloots-aria/)
 -   [An Introduction to Screen Readers](http://video.yahoo.com/video/play?vid=514676)
 -   [Roles for Accessible Rich Internet Applications (WAI-ARIA Roles) Version 1.0](http://www.w3.org/TR/aria-role/)
 -   [States and Properties Module for Accessible Rich Internet Applications (WAI-ARIA States and Properties) Version 1.0](http://www.w3.org/TR/aria-state/)

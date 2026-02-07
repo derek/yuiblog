@@ -10,7 +10,7 @@ categories:
 ---
 [![](/yuiblog/blog-archive/assets/live.png)](http://live.yahoo.com/miraglia)
 
-If you can't make it to the [YUI meetup tonight](/yuiblog/blog/2008/08/27/meetups/) but you do want to drop in and see what's going on, we'll be broadcasting the event on the experimental [Yahoo! Live](http://live.yahoo.com/miraglia) service:
+If you can't make it to the [YUI meetup tonight](/yuiblog/2008/08/27/meetups/) but you do want to drop in and see what's going on, we'll be broadcasting the event on the experimental [Yahoo! Live](http://live.yahoo.com/miraglia) service:
 
 -   [http://live.yahoo.com/miraglia](http://live.yahoo.com/miraglia)
 

@@ -9,7 +9,7 @@ categories:
   - "Releases"
   - "Development"
 ---
-![YUI superstar community contributor Satyam.](/yuiblog/blog-archive/assets/satyam.jpg)Satyam, one of the esteemed cornerstones of the YUI community, has been busy since [yesterday's YUI 2.5.0 release](/yuiblog/blog/2008/02/20/yui-250-released/) — his [independent examples collection](http://www.satyam.com.ar/yui/) for the [DataTable Control](http://developer.yahoo.com/yui/datatable/) is already up-to-date with the 2.5.0 changes that Jenny Han Donnelly and Luke Smith have made for that component.
+![YUI superstar community contributor Satyam.](/yuiblog/blog-archive/assets/satyam.jpg)Satyam, one of the esteemed cornerstones of the YUI community, has been busy since [yesterday's YUI 2.5.0 release](/yuiblog/2008/02/20/yui-250-released/) — his [independent examples collection](http://www.satyam.com.ar/yui/) for the [DataTable Control](http://developer.yahoo.com/yui/datatable/) is already up-to-date with the 2.5.0 changes that Jenny Han Donnelly and Luke Smith have made for that component.
 
 From Satyam himself:
 

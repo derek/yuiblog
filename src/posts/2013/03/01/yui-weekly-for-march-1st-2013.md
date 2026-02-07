@@ -10,9 +10,9 @@ categories:
 ---
 _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YUI team and community. If you have any interesting demos or links you’d like to share, leave a comment below._
 
--   As [announced a few days ago](/yuiblog/blog/2013/02/27/yui-3-9-0-delayed/), the 3.9.0 GA release originally scheduled for this week has been delayed at least a week. In the meantime, you can begin using [YUI 3.9.0pr3](/yuiblog/blog/2013/02/19/yui-3-9-0pr3/) to satisfy your v3.9 cravings.
+-   As [announced a few days ago](/yuiblog/2013/02/27/yui-3-9-0-delayed/), the 3.9.0 GA release originally scheduled for this week has been delayed at least a week. In the meantime, you can begin using [YUI 3.9.0pr3](/yuiblog/2013/02/19/yui-3-9-0pr3/) to satisfy your v3.9 cravings.
     
--   We have a [new team member](/yuiblog/blog/2013/02/27/welcome-eugene-kashida-to-the-yui-team/), so here's a big YUI Weekly welcome to Eugene Kashida ([@ekashida](http://twitter.com/ekashida))!
+-   We have a [new team member](/yuiblog/2013/02/27/welcome-eugene-kashida-to-the-yui-team/), so here's a big YUI Weekly welcome to Eugene Kashida ([@ekashida](http://twitter.com/ekashida))!
     
 -   The instance of Wordpress that powers yuiblog.com experienced a change last week which has broken the commenting capabilities. We don't have an ETA on a fix, but hopefully soon. In the meantime, you can always find us on of IRC in #yui (Freenode) and on Twitter at [@yuilibrary](http://twitter.com/yuilibrary). **Update**: Fixed!
     

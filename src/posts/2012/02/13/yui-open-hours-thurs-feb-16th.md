@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "Development"
 ---
-![](/yuiblog/blog/wp-content/uploads/2012/02/Yeti-Next-Development-Update.jpg "Yeti Next Development Update")
+![](/yuiblog/wp-content/uploads/2012/02/Yeti-Next-Development-Update.jpg "Yeti Next Development Update")
 
 ### Yeti update
 

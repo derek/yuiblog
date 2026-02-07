@@ -42,4 +42,4 @@ Multimedia Spotlight (tabview, carousel) from [InsideLine.com](http://www.inside
 
 [![InsideLine.com search interface.](/yuiblog/blog-archive/assets/il-search-20091211-112649.png)](http://www.insideline.com/search/?q=bmw "Search")
 
-_**Do you have a YUI Imlementation you'd like to share on YUIBlog?** [Check out our contribution guidelines](/yuiblog/blog/contribute/) — we'd love to hear from you._
+_**Do you have a YUI Imlementation you'd like to share on YUIBlog?** [Check out our contribution guidelines](/yuiblog/contribute/) — we'd love to hear from you._

@@ -24,7 +24,7 @@ Next week is going to be the last Open Roundtable of the year! If you're interes
 
 -   The Modown team merged in Node support to the [Intl.js polyfill library](https://github.com/andyearnshaw/Intl.js) this week! You can now use JavaScript's new Internationalization features, both on the browser and server, and possibly even sharing the same code on both sides.
     
--   Thierry Koblentz, Yahoo and guest blogger for our CSS 101 series has updated his [CSS 101 post](/yuiblog/blog/2010/05/19/css-101-block-formatting-contexts/) to include new information about the list of styles that trigger a block-formatting context. Block-formatting contexts are super-important to understand in CSS so you should definitely check that post out.
+-   Thierry Koblentz, Yahoo and guest blogger for our CSS 101 series has updated his [CSS 101 post](/yuiblog/2010/05/19/css-101-block-formatting-contexts/) to include new information about the list of styles that trigger a block-formatting context. Block-formatting contexts are super-important to understand in CSS so you should definitely check that post out.
     
 
 # The World of JavaScript

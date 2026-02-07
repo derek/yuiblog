@@ -10,7 +10,7 @@ categories:
 ---
 _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YUI team and community. If you have any interesting demos or links you’d like to share, feel free to leave a comment below._
 
--   [Sprint 8](https://github.com/yui/yui3/wiki/Development-Schedule#sprint-8-current) continues this week as we approach Sunday's pull request deadline for the upcoming 3.11 release. Thanks for all the testing and feedback following last week's [3.11pr1 release](/yuiblog/blog/2013/06/19/3-11pr1-released/), especially all the discussion in [Pull #917](https://github.com/yui/yui3/pull/917). Next up in this dev cycle is a pull request deadline on July 9th before the 3.11 release window opens up on July 16th.
+-   [Sprint 8](https://github.com/yui/yui3/wiki/Development-Schedule#sprint-8-current) continues this week as we approach Sunday's pull request deadline for the upcoming 3.11 release. Thanks for all the testing and feedback following last week's [3.11pr1 release](/yuiblog/2013/06/19/3-11pr1-released/), especially all the discussion in [Pull #917](https://github.com/yui/yui3/pull/917). Next up in this dev cycle is a pull request deadline on July 9th before the 3.11 release window opens up on July 16th.
     
 -   We'd like to extend a warm YUI welcome to Clarence Leung, who joined the team this week. You might remember Clarence from his **awesome work** last summer as an intern, and we enjoyed having him around so much we decided to bring him on full-time! He joins us from Montreal, Canada where he graduated from McGill University with degrees in Computer Science and Biology, and you can find him on Twitter as [@clarler](http://twitter.com/clarler), Github as [@clarle](http://github.com/clarle), and IRC as "clarle".
     

@@ -8,9 +8,9 @@ permalink: /2010/04/09/node-js-yui-3-dom-manipulation-oh-my/
 categories:
   - "Development"
 ---
-_**Update from [the previous article](/yuiblog/blog/2010/04/05/running-yui-3-server-side-with-node-js/ "Running YUI 3 Server-Side with Node.js » Yahoo! User Interface Blog (YUIBlog)")**: YUI 3 no longer runs in the global scope. I have made some adjustments to my [nodejs-yui3](http://github.com/davglass/nodejs-yui3) project to allow YUI 3 to run fully as a proper non-global module._
+_**Update from [the previous article](/yuiblog/2010/04/05/running-yui-3-server-side-with-node-js/ "Running YUI 3 Server-Side with Node.js » Yahoo! User Interface Blog (YUIBlog)")**: YUI 3 no longer runs in the global scope. I have made some adjustments to my [nodejs-yui3](http://github.com/davglass/nodejs-yui3) project to allow YUI 3 to run fully as a proper non-global module._
 
-[Early this week](/yuiblog/blog/2010/04/05/running-yui-3-server-side-with-node-js/) I gave you a peek at running [YUI 3](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library") on the server with [Node.js](http://nodejs.org/ "node.js"). Now I'm back to tell you what I have been up to over the last week or so. A couple of weeks ago I stumbled across a project on GitHub called [jsdom](http://github.com/tmpvar/jsdom) by [Elijah Insua](http://github.com/tmpvar) ([@tmpvar](http://twitter.com/tmpvar)). jsdom describes itself as:
+[Early this week](/yuiblog/2010/04/05/running-yui-3-server-side-with-node-js/) I gave you a peek at running [YUI 3](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library") on the server with [Node.js](http://nodejs.org/ "node.js"). Now I'm back to tell you what I have been up to over the last week or so. A couple of weeks ago I stumbled across a project on GitHub called [jsdom](http://github.com/tmpvar/jsdom) by [Elijah Insua](http://github.com/tmpvar) ([@tmpvar](http://twitter.com/tmpvar)). jsdom describes itself as:
 
 > \[A\] [CommonJS](http://commonjs.org/ "CommonJS: JavaScript Standard Library") implementation of the DOM intended to be platform-independent and as minimal/light as possible while completely adhering to the w3c DOM specifications.
 
@@ -109,7 +109,7 @@ The above code will return this snippet of HTML:
 
 ### Is that what I think it is?
 
-That's the most common question I've received when showing demos of this stuff. The answer: **YES**, this is what you think it is: **a full document rendered on the server by writing standard JavaScript against standard DOM and BOM APIs**. I have several examples of its use in the [GitHub project](http://github.com/davglass/nodejs-yui3). These examples include rendering YUI 3 [Tabviews](http://developer.yahoo.com/yui/3/tabview), [Sliders](http://developer.yahoo.com/yui/3/slider) and [Overlays](http://developer.yahoo.com/yui/3/overlay). Using the [2 in 3](/yuiblog/blog/2010/03/11/yui-2-in-3-coming-soon/) project I was also able to render a YUI 2 [Calendar](http://developer.yahoo.com/yui/calendar) and [Layout Manager](http://developer.yahoo.com/yui/layout).
+That's the most common question I've received when showing demos of this stuff. The answer: **YES**, this is what you think it is: **a full document rendered on the server by writing standard JavaScript against standard DOM and BOM APIs**. I have several examples of its use in the [GitHub project](http://github.com/davglass/nodejs-yui3). These examples include rendering YUI 3 [Tabviews](http://developer.yahoo.com/yui/3/tabview), [Sliders](http://developer.yahoo.com/yui/3/slider) and [Overlays](http://developer.yahoo.com/yui/3/overlay). Using the [2 in 3](/yuiblog/2010/03/11/yui-2-in-3-coming-soon/) project I was also able to render a YUI 2 [Calendar](http://developer.yahoo.com/yui/calendar) and [Layout Manager](http://developer.yahoo.com/yui/layout).
 
 ### Examples
 

@@ -13,7 +13,7 @@ categories:
     
 -   We'd like to welcome three new additions to the team. Anthony Pipkin ([@apipkin](http://twitter.com/apipkin)), Ren Waldura ([@rw0](http://twitter.com/rw0)), and Tilo Mitra ([@tilomitra](http://twitter.com/tilomitra)). Tilo was our intern during the previous two summers, and is now back for good as a full-time engineer. We're also excited to welcome Anthony, a [long-time contributor](http://yuilibrary.com/gallery/user/apipkin) to the project. Finally, Ren is a current Yahoo who will be joining us as a product manager, in addition to his current PM role with the Mojito team. Welcome!
     
--   We bid farewell to Clarence Leung ([@clarler](http://twitter.com/clarler)), our summer intern from McGill University in Montreal. We had a great time working with him and appreciate all his valuable contributions over the summer. You can read his recap at [A summer with the YUI team](/yuiblog/blog/2012/08/06/a-summer-with-the-yui-team/). Thanks Clarence!
+-   We bid farewell to Clarence Leung ([@clarler](http://twitter.com/clarler)), our summer intern from McGill University in Montreal. We had a great time working with him and appreciate all his valuable contributions over the summer. You can read his recap at [A summer with the YUI team](/yuiblog/2012/08/06/a-summer-with-the-yui-team/). Thanks Clarence!
     
 -   We're currently working on a new module for color conversion and color attributes, tentatively called `Y.Color`. Take a look at the [proposal](https://gist.github.com/1da5e3fb2f66a7068727) and leave any comments on the gist if you have thoughts.
     

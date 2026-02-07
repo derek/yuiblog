@@ -13,7 +13,7 @@ The YUI team has just completed the final development sprint for the 3.4.0 relea
 
 There are some particular areas of the library where we'd love to have community feedback:
 
--   **Loader** has had a significant update for 3.4.0. If you are doing manual load specifications via `use("*")` or make use of submodule configurations, we'd greatly appreciate you trying your code with the new Loader to be sure we are correctly handling all use cases. For more detailed information on the Loader changes in this release, refer to the [blog post describing 3.4.0 Loader changes](/yuiblog/blog/2011/07/01/yui-and-loader-changes-for-3-4-0/).
+-   **Loader** has had a significant update for 3.4.0. If you are doing manual load specifications via `use("*")` or make use of submodule configurations, we'd greatly appreciate you trying your code with the new Loader to be sure we are correctly handling all use cases. For more detailed information on the Loader changes in this release, refer to the [blog post describing 3.4.0 Loader changes](/yuiblog/2011/07/01/yui-and-loader-changes-for-3-4-0/).
 -   **Calendar** and **Panel** are fully functional and ready for developer use.
 -   **Graphics:** There have been a few API changes that will affect any experimental code written on the Graphics API distributed in the PR2 release. `getShape()` has been renamed `addShape()`. There have also been several attribute replacements.
 -   **Transition:** Native transitions are now supported in FireFox.

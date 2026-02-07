@@ -11,7 +11,7 @@ categories:
 ---
 This is the second in a series of articles describing experiments conducted to learn more about optimizing web page performance. You may be wondering why you're reading a performance article on the YUI Blog. It turns out that most of web page performance is affected by front-end engineering, that is, the user interface design and development.
 
-In an earlier post, I described [What the 80/20 Rule Tells Us about Reducing HTTP Requests](/yuiblog/blog/2006/11/28/performance-research-part-1/). Since browsers spend 80% of the time fetching external components including scripts, stylesheets and images, reducing the number of HTTP requests has the biggest impact on reducing response time. But shouldn't everything be saved in the browser's cache anyway?
+In an earlier post, I described [What the 80/20 Rule Tells Us about Reducing HTTP Requests](/yuiblog/2006/11/28/performance-research-part-1/). Since browsers spend 80% of the time fetching external components including scripts, stylesheets and images, reducing the number of HTTP requests has the biggest impact on reducing response time. But shouldn't everything be saved in the browser's cache anyway?
 
 ### Why does cache matter?
 

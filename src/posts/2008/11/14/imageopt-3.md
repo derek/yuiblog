@@ -11,9 +11,9 @@ categories:
 ---
 _This is part 3 in an ongoing series. You can read the other parts here:_
 
--   [Image Optimization Part 1: The Importance of Images](/yuiblog/blog/2008/10/29/imageopt-1/)
--   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/blog/2008/11/04/imageopt-2/)
--   [Image Optimization Part 4: Progressive JPEG…Hot or Not?](/yuiblog/blog/2008/12/05/imageopt-4/)
+-   [Image Optimization Part 1: The Importance of Images](/yuiblog/2008/10/29/imageopt-1/)
+-   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/2008/11/04/imageopt-2/)
+-   [Image Optimization Part 4: Progressive JPEG…Hot or Not?](/yuiblog/2008/12/05/imageopt-4/)
 
 This post is about some common tools you can use to reduce the file size of your images. The idea is to be able to just take the images your designer has created and instead of using them "as is", go ahead and tidy them up in short time and no effort, without even looking at them.
 
@@ -76,7 +76,7 @@ You may be able to further improve image size by using jpegtran's `-progressive`
 
 ### Step 3: GIF to PNG
 
-What's the best way to improve a GIF? Convert it to a PNG. As funny as it may sound, it's true. Most of the time you get a smaller file size from a PNG and the same quality and browser support, [as we discussed in a previous article](/yuiblog/blog/2008/11/04/imageopt-2/). Note that PNG will not always be smaller, but most of the time it will be, so it's worth checking after the conversion and keeping the smaller of the two files.
+What's the best way to improve a GIF? Convert it to a PNG. As funny as it may sound, it's true. Most of the time you get a smaller file size from a PNG and the same quality and browser support, [as we discussed in a previous article](/yuiblog/2008/11/04/imageopt-2/). Note that PNG will not always be smaller, but most of the time it will be, so it's worth checking after the conversion and keeping the smaller of the two files.
 
 In order to automatically change your GIFs, you can use ImageMagick's `convert`:
 

@@ -24,4 +24,4 @@ So yay to hack weekends. Yay to YUI. And happily the Contextificator won second 
 
 (If you're wondering, it's called 'Contextificator' mainly because my daughter uses a 'stapleriser' to make holes in paper.)
 
-![mattparker](/yuiblog/blog/wp-content/uploads/2013/04/mattparker.jpg) _**About the author:** Matt Parker (@Lamplightdb)_ Matt is creator of [Lamplight Database Systems](http://www.lamplightdb.co.uk/), a powerful and affordable management system for charities. He is also a father of three, trombone and bazouki-ist in [Albino](http://www.albinomusic.com/), and a lapsed climber. Matt does not get to spend as much time as he would like writing JavaScript.
+![mattparker](/yuiblog/wp-content/uploads/2013/04/mattparker.jpg) _**About the author:** Matt Parker (@Lamplightdb)_ Matt is creator of [Lamplight Database Systems](http://www.lamplightdb.co.uk/), a powerful and affordable management system for charities. He is also a father of three, trombone and bazouki-ist in [Albino](http://www.albinomusic.com/), and a lapsed climber. Matt does not get to spend as much time as he would like writing JavaScript.

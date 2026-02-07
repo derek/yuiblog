@@ -8,13 +8,13 @@ permalink: /2007/09/13/bubbling-library-by-caridy/
 categories:
   - "Development"
 ---
-There have been many influential articles about [event-driven programming within the web browser](/yuiblog/blog/2007/01/17/event-plan/), and developers are increasingly using this technique. But there is room to push the approach even further, and with it the capabilities of our web applications. In this article I'll share my experiences in this space and show how my [Bubbling Library](http://www.bubbling-library.com/), combined with YUI's [Custom Event](http://developer.yahoo.com/yui/event/#customevent) capabilities, can create an unobtrusive behavioral layer suitable for powerful web applications.
+There have been many influential articles about [event-driven programming within the web browser](/yuiblog/2007/01/17/event-plan/), and developers are increasingly using this technique. But there is room to push the approach even further, and with it the capabilities of our web applications. In this article I'll share my experiences in this space and show how my [Bubbling Library](http://www.bubbling-library.com/), combined with YUI's [Custom Event](http://developer.yahoo.com/yui/event/#customevent) capabilities, can create an unobtrusive behavioral layer suitable for powerful web applications.
 
 ### Trickling & Bubbling, the DOM Event Model:
 
 In the beginning, behaviors were defined as inline attributes in the HTML layer. For example, we could assign a click handler inline by writing `<span onclick="foo()">`. But with the rise of [unobtrusive JavaScript](http://en.wikipedia.org/wiki/Unobtrusive_JavaScript) — and DOM Level 2 — this technique became deprecated. The new school promotes using the `addListener` method to attach behavior to DOM elements. I call this "simple handling." Simple handling — widely used by the JavaScript developers — is a simplification of the bubbling technique: The target of the event is the same element that will catch the event.
 
-In general, the [DOM event model](http://www.w3.org/TR/DOM-Level-2-Events/events.html) is based on two main concepts, "Event Capture" (Trickling) and "Event Delegation" (Bubbling). You can define where to catch the event, but experts [like Douglas Crockford](/yuiblog/blog/2007/01/24/video-crockford-tjpl/) caution you against using the trickling method and instead let the browser reach the event target. One reason for this is that it will be tough to combine trickling with the simple handling technique because the event will be caught before reaching a certain target. Another reason is that Internet Explorer provides incomplete support for the DOM-standard event handling during the capture or "trickling" phase.
+In general, the [DOM event model](http://www.w3.org/TR/DOM-Level-2-Events/events.html) is based on two main concepts, "Event Capture" (Trickling) and "Event Delegation" (Bubbling). You can define where to catch the event, but experts [like Douglas Crockford](/yuiblog/2007/01/24/video-crockford-tjpl/) caution you against using the trickling method and instead let the browser reach the event target. One reason for this is that it will be tough to combine trickling with the simple handling technique because the event will be caught before reaching a certain target. Another reason is that Internet Explorer provides incomplete support for the DOM-standard event handling during the capture or "trickling" phase.
 
 ![diagram showing the event propagation differences between Tricklinig (where the event target is located by walking down the DOM from the root) and Bubbling (where the event is passed up the DOM from the target until it reaches the root node.](/yuiblog/blog-archive/assets/caridy-graph1.jpg)
 
@@ -208,7 +208,7 @@ As you may have noticed, it's very simple to reuse components in different envir
 
 ![Simple Handling and Bubbling Techniques](/yuiblog/blog-archive/assets/caridy-models.jpg)
 
-[Christian Heilmann](http://wait-till-i.com/) mentioned the biggest plus of this approach in his January 2007 YUI Blog article [Event-Driven Web Application Design](/yuiblog/blog/2007/01/17/event-plan/).
+[Christian Heilmann](http://wait-till-i.com/) mentioned the biggest plus of this approach in his January 2007 YUI Blog article [Event-Driven Web Application Design](/yuiblog/2007/01/17/event-plan/).
 
 > ...\[It's good because you can\] cut the big application down into manageable chunks and components and you can plan the detailed usability, information architecture and accessibility for each component separately. This allows you to develop in parallel with the design or information architecture team and results in reusable components for other applications.
 

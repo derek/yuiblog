@@ -13,7 +13,7 @@ The next YUI: Open Hours will be this Thursday, Feb 17th.
 
 ### Implementation focus: fanity.com
 
-You may be familiar with Yvo Schaap's work from [this "In the Wild" post](/yuiblog/blog/2009/03/25/wild-20090325/#yuiBlogWild-219) from 2009. He's been working with YUI for years now, and has made the switch to YUI 3 with his latest site [fanity.com](http://fanity.com).[![fanity.com home page](/blog/wp-content/uploads/2011/02/fanity.jpg)](http://fanity.com)
+You may be familiar with Yvo Schaap's work from [this "In the Wild" post](/yuiblog/2009/03/25/wild-20090325/#yuiBlogWild-219) from 2009. He's been working with YUI for years now, and has made the switch to YUI 3 with his latest site [fanity.com](http://fanity.com).[![fanity.com home page](/blog/wp-content/uploads/2011/02/fanity.jpg)](http://fanity.com)
 
 Give it a whirl with the guest account (email: guest@fanity.com password: fanity).
 

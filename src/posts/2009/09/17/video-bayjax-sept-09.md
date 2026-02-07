@@ -8,9 +8,9 @@ permalink: /2009/09/17/video-bayjax-sept-09/
 categories:
   - "Development"
 ---
-[![Nicholas C. Zakas speaking at Yahoo on September, 8, 2009.](/yuiblog/blog-archive/assets/zakas-architecture-20090916-114518.jpg)](/yuiblog/blog/2009/09/17/video-bayjax-sept-09/)
+[![Nicholas C. Zakas speaking at Yahoo on September, 8, 2009.](/yuiblog/blog-archive/assets/zakas-architecture-20090916-114518.jpg)](/yuiblog/2009/09/17/video-bayjax-sept-09/)
 
-We had a terrific September meeting of the [BayJax](http://www.meetup.com/BayJax/) group here at Yahoo! a few weeks ago, and videos are now ready from those sessions. If you're viewing this post in an RSS reader, you may need to [click through to watch the videos](/yuiblog/blog/2009/09/17/video-bayjax-sept-09/) (the downloadable versions are much lower-resolution and formatted for iPod/iPhone playback). For best results, toggle into full-screen mode.
+We had a terrific September meeting of the [BayJax](http://www.meetup.com/BayJax/) group here at Yahoo! a few weeks ago, and videos are now ready from those sessions. If you're viewing this post in an RSS reader, you may need to [click through to watch the videos](/yuiblog/2009/09/17/video-bayjax-sept-09/) (the downloadable versions are much lower-resolution and formatted for iPod/iPhone playback). For best results, toggle into full-screen mode.
 
 ### Nicholas Zakas: "Scalable JavaScript Application Architecture"
 

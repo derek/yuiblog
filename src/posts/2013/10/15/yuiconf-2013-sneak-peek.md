@@ -15,7 +15,7 @@ Highlights include:
 
 -   Gesture events, mobile apps, testing, and performance
 -   Case studies from Yahoo Search, Yahoo Mail, and Yahoo Sports
--   Back by popular demand, a sequel to [last year's talk](/yuiblog/blog/2012/12/10/yuiconf-2012-talk-writing-for-developers-some-rational-techniques-by-evan-goer/) by Evan Goer ([@evangoer](https://twitter.com/evangoer))
+-   Back by popular demand, a sequel to [last year's talk](/yuiblog/2012/12/10/yuiconf-2012-talk-writing-for-developers-some-rational-techniques-by-evan-goer/) by Evan Goer ([@evangoer](https://twitter.com/evangoer))
 -   Keynotes by Eric Ferraiuolo ([@ericf](https://twitter.com/ericf)), Ariya Hidayat ([@ariyahidayat](https://twitter.com/ariyahidayat)), and Dav Glass ([@davglass](https://twitter.com/davglass))
 -   And much, much more!
 

@@ -16,11 +16,11 @@ We released **YUI 3.14.0** on November 25th, notably containing major improvemen
 
 It's available for you to use [directly off our CDN](http://yui.yahooapis.com/3.14.0/build/yui/yui-min.js), as a [zip](http://yui.zenfs.com/releases/yui3/yui_3.14.0), or installable through [npm](https://npmjs.org/package/yui).
 
-You can see the full list of all of the changes in [our release rollup right here](/yuiblog/blog/2013/11/25/yui-3-14-0-released/). Please definitely let us know if you come across any bugs by [filing an issue on GitHub](https://github.com/yui/yui3/issues).
+You can see the full list of all of the changes in [our release rollup right here](/yuiblog/2013/11/25/yui-3-14-0-released/). Please definitely let us know if you come across any bugs by [filing an issue on GitHub](https://github.com/yui/yui3/issues).
 
 # Open Roundtable
 
-This week's [Open Roundtable](http://www.youtube.com/watch?v=lJPdH8xmOWg) kicked off **YUI in the Wild**, a new Roundtable series we're starting based on the ['In the Wild' blog posts](/yuiblog/blog/category/in-the-wild/) from quite a while back!
+This week's [Open Roundtable](http://www.youtube.com/watch?v=lJPdH8xmOWg) kicked off **YUI in the Wild**, a new Roundtable series we're starting based on the ['In the Wild' blog posts](/yuiblog/category/in-the-wild/) from quite a while back!
 
 For our first guest, we had [Jeff Pihach](https://twitter.com/FromAnEgg) from Canonical come in to talk about building [Ubuntu Juju](https://juju.ubuntu.com/)'s GUI using YUI. He showed us how the Juju team structured their YUI App Framework application, how they bundled together their modules for a long-running app, and how they extended `Y.Router` to create URL flags for beta application features. Check out the video for all of that, and a lot more!
 

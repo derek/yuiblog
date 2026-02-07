@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "Development"
 ---
-For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) will be this Wednesday the 4th.
+For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/2010/04/08/introducing-yui-open-hours/) will be this Wednesday the 4th.
 
 This time our topic will be testing testing testing. And who better to have with us to discuss testing than [Nicholas C. Zakas](http://www.nczonline.net/) ([@slicknet](http://twitter.com/slicknet)), author of the [YUI Test](http://developer.yahoo.com/yui/3/test/) module. We'll talk about the why, when, and how to set up your JavaScript testing, how to simulate user interaction, and what sort of automation tools and strategies you have available today.
 

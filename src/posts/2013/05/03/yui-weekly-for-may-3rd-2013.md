@@ -12,7 +12,7 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
 
 -   With YUI 3.10 out the door last week, the project now shifts its focus towards the next release of YUI. A [tentative schedule](https://github.com/yui/yui3/wiki/Development-Schedule#wiki-next-release) has been posted on the wiki, which includes a release date on June 4th. Also, this is the first development cycle since the migration to [Github Issues](https://github.com/yui/yui3/issues), so for a detailed view of everything going into the next release, check out the tickets for the [Sprint 7 milestone](https://github.com/yui/yui3/issues?milestone=6&state=open).
     
--   YUI's [Target Environment Matrix](http://yuilibrary.com/yui/environments/) was [updated](/yuiblog/blog/2013/04/26/yui-target-environments-update/) to include Node 0.10.†, and drop Android 2.2, iOS 4.†, Node.js 0.4.†, and Node.js 0.6.†.
+-   YUI's [Target Environment Matrix](http://yuilibrary.com/yui/environments/) was [updated](/yuiblog/2013/04/26/yui-target-environments-update/) to include Node 0.10.†, and drop Android 2.2, iOS 4.†, Node.js 0.4.†, and Node.js 0.6.†.
     
 -   In this week's [Open Roundtable](https://github.com/yui/yui3/wiki/Roundtable-Topics) ([Notes](https://gist.github.com/triptych/5511846), [YouTube](https://www.youtube.com/watch?v=ozRumJm4QcI)), we discussed combo URLs, coding styles and best practices, linting ([yui-lint](https://github.com/yui/yui-lint)), and [pull requests](https://github.com/yui/yui3/pulls).
     

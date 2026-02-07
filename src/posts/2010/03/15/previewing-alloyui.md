@@ -12,7 +12,7 @@ categories:
 
 [![Widgets in the AlloyUI library.](/yuiblog/blog-archive/assets/alloy.jpg)](http://alloyui.com)
 
-AlloyUI comprises a wide array of components — more than 60 in all — that range from utilities to sugar layers to full-blown UI widgets. All of Alloy's component's are built on YUI 3; some of the widgets are based to some degree on [YUI 2](http://developer.yahoo.com/yui/2/ "YUI 2 — Yahoo! User Interface Library"). All are free to use under an LGPL license. Nate and Eduardo intend to share AlloyUI components on the [YUI 3 Gallery](http://yuilibrary.com/gallery/ "YUI Library :: Gallery"), making them [as easy to use as any YUI 3, YUI 2, or other Gallery module](/yuiblog/blog/2010/03/11/yui-2-in-3-coming-soon/ "YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules » Yahoo! User Interface Blog (YUIBlog)"); they hope to have more news on that effort soon.
+AlloyUI comprises a wide array of components — more than 60 in all — that range from utilities to sugar layers to full-blown UI widgets. All of Alloy's component's are built on YUI 3; some of the widgets are based to some degree on [YUI 2](http://developer.yahoo.com/yui/2/ "YUI 2 — Yahoo! User Interface Library"). All are free to use under an LGPL license. Nate and Eduardo intend to share AlloyUI components on the [YUI 3 Gallery](http://yuilibrary.com/gallery/ "YUI Library :: Gallery"), making them [as easy to use as any YUI 3, YUI 2, or other Gallery module](/yuiblog/2010/03/11/yui-2-in-3-coming-soon/ "YUI 2 in 3: Coming in YUI 3.1.0, a Simpler Way To Use YUI 2 Modules » Yahoo! User Interface Blog (YUIBlog)"); they hope to have more news on that effort soon.
 
 AlloyUI components include:
 

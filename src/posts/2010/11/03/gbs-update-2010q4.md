@@ -62,7 +62,7 @@ We expect to make the following changes in the Q1 2011 GBS update:
 
 ### Discussion
 
-This update [implements the guidance we provided in Q1 2010](/yuiblog/blog/2010/02/16/gbs-update-2010q1/). Of interest in this update:
+This update [implements the guidance we provided in Q1 2010](/yuiblog/2010/02/16/gbs-update-2010q1/). Of interest in this update:
 
 1.  **Internet Explorer 6:** We are forecasting the transition of Internet Explorer 6 from A-grade to C-grade in the next GBS update. The calculus here is simple: The proliferation of devices and browsers on the leading edge (including mobile) requires an increase in testing and attention. That testing and attention should come from shifting resources away from the trailing edge. By moving IE6 to the C-grade, we ensure a consistent baseline experience for those users while freeing up cycles to invest in richer experiences for millions of users coming to the internet today on modern, capable browsers. **Note**: This forecast should not be taken as an indication that IE6 users will see an abrupt change in their experience of Yahoo! websites in Q1 2011; the change in philosophy toward IE6 will be reflected in new development and products and applied in ways that make sense based on product needs.
 2.  **Chrome:** Chrome has been progressing rapidly through versions, and Google has communicated its intent to continue rapid development and short release cycles. As a result, we've modified our GBS strategy for Chrome to advise testing on the latest GA release of Chrome as soon as it is issued, with prior versions moving to X-grade as soon as they are superseded.
@@ -70,9 +70,9 @@ This update [implements the guidance we provided in Q1 2010](/yuiblog/blog/2010/
 
 ### The GBS Archive
 
--   [GBS Update, 2010 Q1](/yuiblog/blog/2010/02/16/gbs-update-2010q1/)
--   [GBS Update, 2009-10-16](/yuiblog/blog/2009/10/16/gbs-update-2009q4/)
--   [GBS Update, 2009-07-02](/yuiblog/blog/2009/07/02/gbs-update-20090702/)
--   [GBS Update, 2009-01-28](/yuiblog/blog/2009/01/28/gbs-update-20090128/)
--   [GBS Update, 2008-07-03](/yuiblog/blog/2008/07/03/gbs-update-20080703/)
--   [GBS Update, 2008-02-19](/yuiblog/blog/2008/02/19/gbs-update-20080219/)
+-   [GBS Update, 2010 Q1](/yuiblog/2010/02/16/gbs-update-2010q1/)
+-   [GBS Update, 2009-10-16](/yuiblog/2009/10/16/gbs-update-2009q4/)
+-   [GBS Update, 2009-07-02](/yuiblog/2009/07/02/gbs-update-20090702/)
+-   [GBS Update, 2009-01-28](/yuiblog/2009/01/28/gbs-update-20090128/)
+-   [GBS Update, 2008-07-03](/yuiblog/2008/07/03/gbs-update-20080703/)
+-   [GBS Update, 2008-02-19](/yuiblog/2008/02/19/gbs-update-20080219/)

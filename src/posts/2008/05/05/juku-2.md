@@ -8,7 +8,7 @@ permalink: /2008/05/05/juku-2/
 categories:
   - "Development"
 ---
-A few months ago, we posted [an article describing an innovative training program here at Yahoo called the "Juku."](/yuiblog/blog/2007/12/06/juku/) The basic premise of the Juku is to help fill the void of professional-grade Front-End Web Development training. Our motives for doing this are at least a little selfish: The program provides us with a stream of talent well-versed in skills that tend to be challenging to source and hire. On the flip-side, we remain committed to using the program as a platform to further the state of Front End Engineering for the entire development community.
+A few months ago, we posted [an article describing an innovative training program here at Yahoo called the "Juku."](/yuiblog/2007/12/06/juku/) The basic premise of the Juku is to help fill the void of professional-grade Front-End Web Development training. Our motives for doing this are at least a little selfish: The program provides us with a stream of talent well-versed in skills that tend to be challenging to source and hire. On the flip-side, we remain committed to using the program as a platform to further the state of Front End Engineering for the entire development community.
 
 The training curriculum includes semantic HTML, CSS, JavaScript, DOM, YUI, PHP, accessibility, performance, and more. Juku trainees are full-time Yahoo employees, and upon completion of training they move on to roles within the Yahoo network as Front End Engineers. Last fall, we piloted the program with a group of 13 students and the results have been overwhelmingly positive.
 

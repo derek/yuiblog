@@ -8,7 +8,7 @@ permalink: /2012/08/27/shifter-fast-yui-module-building/
 categories:
   - "Development"
 ---
-Our build system has been on my mind lately, our old ant system was just getting too slow to keep up with the changes I was making and it was making it very difficult for our Automatic [Travis](http://travis-ci.org/yui/yui3 "Travis") Pull Request builds to test incoming changes properly if it took so long to build our modules. One night a week or so back I couldn't sleep, so I built [Shifter](http://yui.github.com/shifter/ "Shifter"). Shifter is a command line tool built in [Node.js](http://nodejs.org "Node.js") using the [Gear.js](http://gearjs.org/ "Gear.js") build system. Gear.js was chosen as the base system because it's what powers [Mojito Shaker](https://github.com/yahoo/mojito-shaker) plus it's small and good at what it does. ![](/yuiblog/blog/wp-content/uploads/2012/08/ShifterBlog.jpg "ShifterBlog")
+Our build system has been on my mind lately, our old ant system was just getting too slow to keep up with the changes I was making and it was making it very difficult for our Automatic [Travis](http://travis-ci.org/yui/yui3 "Travis") Pull Request builds to test incoming changes properly if it took so long to build our modules. One night a week or so back I couldn't sleep, so I built [Shifter](http://yui.github.com/shifter/ "Shifter"). Shifter is a command line tool built in [Node.js](http://nodejs.org "Node.js") using the [Gear.js](http://gearjs.org/ "Gear.js") build system. Gear.js was chosen as the base system because it's what powers [Mojito Shaker](https://github.com/yahoo/mojito-shaker) plus it's small and good at what it does. ![](/yuiblog/wp-content/uploads/2012/08/ShifterBlog.jpg "ShifterBlog")
 
 ### Why It's Faster
 

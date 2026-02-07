@@ -13,7 +13,7 @@ Last night we released **YUI 3.8.1**. It is now available on the [Yahoo! CDN](ht
 
 ### iOS 6 Target Environment
 
-We've added support for **iOS 6** on the [Target Environments](http://yuilibrary.com/yui/environments/) page. This means that you as a developer can have confidence that your YUI-based sites and applications will run well in this environment, and that you may file issues for this environment as you would any of the other target environments. A big thanks to everyone who worked to make this happen including [Eric Ferraiuolo](http://twitter.com/ericf), [Matt Sweeney](http://twitter.com/msweeney), and [Tilo Mitra](http://twitter.com/tilomitra). Issues were fixed in modules including [Node](http://yuilibrary.com/yui/docs/node/), [IO](http://yuilibrary.com/yui/docs/io/), and [Attribute](http://yuilibrary.com/yui/docs/attribute/). Many unit tests were updated for **iOS 6** as well. Eric Ferraiuolo posted a [great explanation](/yuiblog/blog/2012/08/21/yui-target-environments/) of our Target Environment page and how it works.
+We've added support for **iOS 6** on the [Target Environments](http://yuilibrary.com/yui/environments/) page. This means that you as a developer can have confidence that your YUI-based sites and applications will run well in this environment, and that you may file issues for this environment as you would any of the other target environments. A big thanks to everyone who worked to make this happen including [Eric Ferraiuolo](http://twitter.com/ericf), [Matt Sweeney](http://twitter.com/msweeney), and [Tilo Mitra](http://twitter.com/tilomitra). Issues were fixed in modules including [Node](http://yuilibrary.com/yui/docs/node/), [IO](http://yuilibrary.com/yui/docs/io/), and [Attribute](http://yuilibrary.com/yui/docs/attribute/). Many unit tests were updated for **iOS 6** as well. Eric Ferraiuolo posted a [great explanation](/yuiblog/2012/08/21/yui-target-environments/) of our Target Environment page and how it works.
 
 **Note:** **iOS 4** will be removed as a target environment very soon.
 
@@ -27,4 +27,4 @@ If you check out the [YUI 3.8.1 Change History Rollup](https://github.com/yui/yu
 
 ### Next Release
 
-We are also working hard on **YUI 3.9.0** and have [already released a PR1](/yuiblog/blog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/) for you to try out and help us find any remaining issues. Once we have completed testing, **YUI 3.9.0** will be arriving soon!
+We are also working hard on **YUI 3.9.0** and have [already released a PR1](/yuiblog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/) for you to try out and help us find any remaining issues. Once we have completed testing, **YUI 3.9.0** will be arriving soon!

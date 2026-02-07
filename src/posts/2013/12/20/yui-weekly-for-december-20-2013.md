@@ -12,7 +12,7 @@ As we say goodbye to this year, we have some nice goodies lined up for you. Lear
 
 # Release News
 
-This week, we released [YUI 3.14.1](/yuiblog/blog/2013/12/18/yui-3-14-1-released/), which brings support for IE11 and Android 4.4. You can find it on the [CDN](http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js) and [npm](https://npmjs.org/package/yui), or download it as a [zip](http://yui.zenfs.com/releases/yui3/yui_3.14.1.zip). Check out the [release post](/yuiblog/blog/2013/12/18/yui-3-14-1-released/) for more details.
+This week, we released [YUI 3.14.1](/yuiblog/2013/12/18/yui-3-14-1-released/), which brings support for IE11 and Android 4.4. You can find it on the [CDN](http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js) and [npm](https://npmjs.org/package/yui), or download it as a [zip](http://yui.zenfs.com/releases/yui3/yui_3.14.1.zip). Check out the [release post](/yuiblog/2013/12/18/yui-3-14-1-released/) for more details.
 
 There was also a new release of [Yeti](http://yeti.cx). We use Yeti to automate our tests across browsers. In fact, _over 21 million_ tests have been automated with Yeti since July! [Yeti 0.2.25](https://github.com/yui/yeti/releases/tag/v0.2.25) lets you specify Selenium capabilities directly along with some other nice improvements. Get it off [npm](https://npmjs.org/package/yeti) or [view the release post](http://yeti.cx) for more details.
 

@@ -31,8 +31,8 @@ Some other recent videos from the [YUI Theater series](http://developer.yahoo.co
 
 -   **Dion Almaer:** "Google, Front to Back" ([.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/dionalmaer.m4v))
 -   **Dav Glass:** “Rich Text Editing with YUI” ([Yahoo! Video](http://video.yahoo.com/watch/2359450/7378948) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/glass-rte.m4v))
--   **Julien Lecomte:** "High Performance Ajax Applications" ([YUIBlog](/yuiblog/blog/2007/12/20/video-lecomte/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v))
--   **Douglas Crockford:** "The State of Ajax" ([YUIBlog](/yuiblog/blog/2007/11/06/video-crockford/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/stateofajax.m4v))
+-   **Julien Lecomte:** "High Performance Ajax Applications" ([YUIBlog](/yuiblog/2007/12/20/video-lecomte/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/ajaxperformanceipod.m4v))
+-   **Douglas Crockford:** "The State of Ajax" ([YUIBlog](/yuiblog/2007/11/06/video-crockford/) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/stateofajax.m4v))
 
 ### Subscribing to YUI Theater:
 

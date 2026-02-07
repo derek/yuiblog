@@ -11,7 +11,7 @@ categories:
 ---
 ### YUIDoc Updates and Travis CI Integration
 
-With the [latest release of YUIDoc](/yuiblog/blog/2012/05/09/yuidoc-0-3-0-is-official/) and his recent [post on getting YUI tests running on Travis CI](/yuiblog/blog/2012/05/11/yui-and-travis-sitting-in-a-git-tree/), it seems like a good time to have a chat and Q&A with Dav. Not that there's a bad time to have a chat with Dav.
+With the [latest release of YUIDoc](/yuiblog/2012/05/09/yuidoc-0-3-0-is-official/) and his recent [post on getting YUI tests running on Travis CI](/yuiblog/2012/05/11/yui-and-travis-sitting-in-a-git-tree/), it seems like a good time to have a chat and Q&A with Dav. Not that there's a bad time to have a chat with Dav.
 
 ### Time & Details
 

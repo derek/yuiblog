@@ -10,7 +10,7 @@ categories:
 ---
 [![Charles McCathieNevile of Opera; May 26, 2009, at Yahoo!](/yuiblog/blog-archive/assets/chaals-20090526-225526.jpg)](http://developer.yahoo.com/yui/theater/mccathienevile-dragonfly.html)
 
-One of the first [YUI Theater](http://developer.yahoo.com/yui/theater/) videos years ago was published after [Joe Hewitt came to Yahoo! to talk about the 1.0 release of Firebug](/yuiblog/blog/2007/01/26/video-hewitt-firebug/trackback/), and back in those days Firebug was a paradigm shift — it had a convenient interface that combined DOM inspection and debugging, and it allowed developers to finally put the venerable Venkman on the shelf.
+One of the first [YUI Theater](http://developer.yahoo.com/yui/theater/) videos years ago was published after [Joe Hewitt came to Yahoo! to talk about the 1.0 release of Firebug](/yuiblog/2007/01/26/video-hewitt-firebug/trackback/), and back in those days Firebug was a paradigm shift — it had a convenient interface that combined DOM inspection and debugging, and it allowed developers to finally put the venerable Venkman on the shelf.
 
 The Firebug model has penetrated into other browser families today, and today IE8 and Safari both have capable developer tools while Firebug soldiers on in service to Firefox. None of the tools is perfect, but Firebug has served as a good proof-of-concept for what a multipurpose, extensible inspector/debugger toolkit can do.
 

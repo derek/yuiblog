@@ -12,9 +12,9 @@ Recently, there was a question in the forums about using input fields in a DataT
 
 The most straightforward way to edit data would be to use inline editing, but this is not yet available in YUI 3 DataTable. In the mean time, one option is to roll your own input fields directly in the table cells, similar to [this example](http://www.satyam.com.ar/yui/2.6.0/assortedControls.html).
 
-If you do not want to save each change when it happens, you could use the [QuickEdit](/yuiblog/blog/2011/04/19/quickedit-datatable-yui3/) gallery module instead. This lets you edit all the visible cells and then save the changes in a single operation.
+If you do not want to save each change when it happens, you could use the [QuickEdit](/yuiblog/2011/04/19/quickedit-datatable-yui3/) gallery module instead. This lets you edit all the visible cells and then save the changes in a single operation.
 
-The above solutions are modal. If you prefer a non-modal way to edit all the cells, you could use the [Bulk Editor](/yuiblog/blog/2011/12/05/bulk-edi/) widget. This works with pagination, so you can save all the changes across all the pages of your table in a single operation. It even lets you easily add and remove rows -- and even when you are using a remote DataSource!
+The above solutions are modal. If you prefer a non-modal way to edit all the cells, you could use the [Bulk Editor](/yuiblog/2011/12/05/bulk-edi/) widget. This works with pagination, so you can save all the changes across all the pages of your table in a single operation. It even lets you easily add and remove rows -- and even when you are using a remote DataSource!
 
 Bulk Editor is not built on top of YUI DataTable, however. If you need other features from YUI DataTable, you could use the [state preservation plugin](http://yuilibrary.com/gallery/show/datatable-state) for YUI 3 DataTable. This also works with pagination, so you can save all the values on all the pages in a single operation, but it is not designed to let you easily add or remove rows.
 

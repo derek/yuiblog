@@ -15,7 +15,7 @@ It's been another busy week at YUI as we roll up our sleeves before the holidays
     
 -   Jeff's [Skinner demo](http://jconniff.github.com/skinner/) and Tilo's initial version of the [Responsive Grid Builder](http://gridbuilder.herokuapp.com/) are both available online.
     
--   [Iliyan Peychev](https://twitter.com/ipeychev), one of our popular community members wrote a [great post about YUIConf](/yuiblog/blog/2012/11/29/yuiconf-2012-two-awesome-days/) from a YUI contributor's perspective.
+-   [Iliyan Peychev](https://twitter.com/ipeychev), one of our popular community members wrote a [great post about YUIConf](/yuiblog/2012/11/29/yuiconf-2012-two-awesome-days/) from a YUI contributor's perspective.
     
 -   The YUI Team hosted it's first [Open Hours roundtable discussion](http://www.youtube.com/watch?v=4NjP_ndoO5Q) this **Thursday (November 29th)**. Anyone can join in and participate in these discussions, and they will take place every **Thursday at 2pm PST**. We use Google Hangouts for these sessions, so make sure to add [YUI Library](https://plus.google.com/105600930514903803035/posts) to your circles. The [Github Wiki](https://github.com/yui/yui3/wiki/Roundtable-Topics)lists ongoing roundtable topics.
     

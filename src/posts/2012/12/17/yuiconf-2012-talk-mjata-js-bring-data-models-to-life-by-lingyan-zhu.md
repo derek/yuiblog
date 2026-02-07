@@ -9,7 +9,7 @@ categories:
   - "YUIConf"
   - "Development"
 ---
-This next video in our YUIConf 2012 [video series](/yuiblog/blog/?p=7069) highlights how YUI can be used as a basis for building higher level frameworks. This team had a specific need for presenting live data and built Mjata.js on top of YUI to meet that need. This talk highlights how extensible YUI is and robust enough for very high traffic sites like Yahoo! Finance. Keep up with our video releases on [YUI Theater](http://yuilibrary.com/theater/) and [YouTube](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz).
+This next video in our YUIConf 2012 [video series](/yuiblog/?p=7069) highlights how YUI can be used as a basis for building higher level frameworks. This team had a specific need for presenting live data and built Mjata.js on top of YUI to meet that need. This talk highlights how extensible YUI is and robust enough for very high traffic sites like Yahoo! Finance. Keep up with our video releases on [YUI Theater](http://yuilibrary.com/theater/) and [YouTube](http://www.youtube.com/watch?v=ByU2zn9DmAA&list=PLjKP9DUCzZooMmiSJ_nmsLIReOZp0Uomz).
 
 In this talk from YUIConf 2012, [Lingyan Zhu](http://lanyrd.com/profile/lingyanzhu/), a frontend and applications engineer at Yahoo! Finance, talks about developing highly interactive and data-centric web applications using Mjata.js, an extensible YAF-based library for building robust data models and services for JS MVC architectures.
 

@@ -8,7 +8,7 @@ permalink: /2012/12/21/introducing-the-grid-builder/
 categories:
   - "Development"
 ---
-![](/yuiblog/blog/wp-content/uploads/2012/12/Screen-Shot-2012-12-20-at-1.42.24-PM.png "gridbuilder")
+![](/yuiblog/wp-content/uploads/2012/12/Screen-Shot-2012-12-20-at-1.42.24-PM.png "gridbuilder")
 
 Today, we're happy to announce that we've shipped YUI's [Responsive Grid Builder](http://yui.github.com/gridbuilder/). We demoed it during YUIConf, and have gotten great feedback from the community over the last few weeks. Let's dig in and see how this little app can make it easier for you to work with YUI Grids.
 

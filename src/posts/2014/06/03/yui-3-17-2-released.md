@@ -13,7 +13,7 @@ We are pleased to announce the release of **YUI 3.17.2**. You can find this rele
 
 ## What's New In This Release
 
-This point release fixes an [issue with Loader](https://github.com/yui/yui3/pull/1837) that was discovered after the release of **3.17.1**. If you are currently using **3.17.1** and have encountered Loader issues you are encouraged to update to this version. If you are using a version earlier than **3.17.1** (for example **3.16.0**) and you want to find out about what's new since then, check out our [blog post for **3.17.1**](/yuiblog/blog/2014/05/21/yui-3-17-1-released/).
+This point release fixes an [issue with Loader](https://github.com/yui/yui3/pull/1837) that was discovered after the release of **3.17.1**. If you are currently using **3.17.1** and have encountered Loader issues you are encouraged to update to this version. If you are using a version earlier than **3.17.1** (for example **3.16.0**) and you want to find out about what's new since then, check out our [blog post for **3.17.1**](/yuiblog/2014/05/21/yui-3-17-1-released/).
 
 ## Additional Information
 

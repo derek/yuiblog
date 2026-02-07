@@ -8,7 +8,7 @@ permalink: /2010/01/07/more-code-reuse-patterns-in-yui3/
 categories:
   - "Development"
 ---
-This post is a follow-up to the article ["Inheritance patterns in YUI3"](/yuiblog/blog/2010/01/06/inheritance-patterns-in-yui-3/) and dives deeper into the YUI3 APIs showing more patterns for code reuse. The [Gang of Four book](http://en.wikipedia.org/wiki/Design_Patterns_%28book%29) advocates that we should "prefer object composition to class inheritance". And in fact, inheritance is sometimes used as a workaround in strongly typed languages where the signature of an object or a class needs to be fixed at compile time. JavaScript is loosely typed and objects can be composed, mixed and augmented at any time.
+This post is a follow-up to the article ["Inheritance patterns in YUI3"](/yuiblog/2010/01/06/inheritance-patterns-in-yui-3/) and dives deeper into the YUI3 APIs showing more patterns for code reuse. The [Gang of Four book](http://en.wikipedia.org/wiki/Design_Patterns_%28book%29) advocates that we should "prefer object composition to class inheritance". And in fact, inheritance is sometimes used as a workaround in strongly typed languages where the signature of an object or a class needs to be fixed at compile time. JavaScript is loosely typed and objects can be composed, mixed and augmented at any time.
 
 ## Augmenting objects
 

@@ -12,7 +12,7 @@ categories:
 
 ### The Morning
 
-Starting early I had a first group of developers who were keen on learning about YUI. Most of them were already familiar with other major libraries or version 2 of YUI. The feedback from the group was great, as everyone loved the very clean way that YUI enables you to solve daily problems and potentially reuse code. We had a little discussion about using the sandboxing technique or just rolling with [SimpleYUI](/yuiblog/blog/2010/09/03/coming-inyui-3-2-0-simpleyui/). While the simple version enabled a nice start into the workshop most people seemed to prefer the sandboxed instances.
+Starting early I had a first group of developers who were keen on learning about YUI. Most of them were already familiar with other major libraries or version 2 of YUI. The feedback from the group was great, as everyone loved the very clean way that YUI enables you to solve daily problems and potentially reuse code. We had a little discussion about using the sandboxing technique or just rolling with [SimpleYUI](/yuiblog/2010/09/03/coming-inyui-3-2-0-simpleyui/). While the simple version enabled a nice start into the workshop most people seemed to prefer the sandboxed instances.
 
 ### The Afternoon
 
@@ -20,7 +20,7 @@ In the afternoon I had a very interesting group with a mix of developers, custom
 
 ### Next
 
-Giving a full day of training was a great and exhausting experience. Next time I'll plan a little bit more time in the morning as 3 hours were rather short for a full introduction. We will have an intermediate course based on the ["YUI Building Blocks"](/yuiblog/blog/2011/04/19/yui-3-building-blocks-modules-and-applications-workshop-coming-to-portland-and-free/) material at Liip Zurich on June 9. The space will be very limited again but leave a comment to this post if you’re interested in joining.
+Giving a full day of training was a great and exhausting experience. Next time I'll plan a little bit more time in the morning as 3 hours were rather short for a full introduction. We will have an intermediate course based on the ["YUI Building Blocks"](/yuiblog/2011/04/19/yui-3-building-blocks-modules-and-applications-workshop-coming-to-portland-and-free/) material at Liip Zurich on June 9. The space will be very limited again but leave a comment to this post if you’re interested in joining.
 
 Introducing people to YUI was real fun so we want to host a more public training in Zurich soon, probably sometime in July. It would be good to know how many people are interested so drop a comment if you would like to come.
 

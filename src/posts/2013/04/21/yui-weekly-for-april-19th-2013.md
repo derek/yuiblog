@@ -10,7 +10,7 @@ categories:
 ---
 _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YUI team and community. If you have any interesting demos or links you’d like to share, feel free to leave a comment below._
 
--   As [mentioned on yui-contrib](https://groups.google.com/forum/?fromgroups=#!topic/yui-contrib/FHK01-I9lsk) earlier this week, the scheduled release of YUI 3.10 has been delayed by at least one week. This was due to the late discovery of a few bugs, some issues with our release system, and the team needed a few additional days to patch things up. Expect some news next Monday about the updated release date. If you are anxious to get started with 3.10, check out last week's [3.10pr1](/yuiblog/blog/2013/04/08/yui-3-10pr1/).
+-   As [mentioned on yui-contrib](https://groups.google.com/forum/?fromgroups=#!topic/yui-contrib/FHK01-I9lsk) earlier this week, the scheduled release of YUI 3.10 has been delayed by at least one week. This was due to the late discovery of a few bugs, some issues with our release system, and the team needed a few additional days to patch things up. Expect some news next Monday about the updated release date. If you are anxious to get started with 3.10, check out last week's [3.10pr1](/yuiblog/2013/04/08/yui-3-10pr1/).
     
 -   [brackets-xunit](https://github.com/dschaffe/brackets-xunit) is an extension for the [Brackets](http://brackets.io/) code editor which can both execute YUI tests (in addition to [QUnit](http://qunitjs.com/) and [Jasmine](http://pivotal.github.io/jasmine/)), as well as generate them too. Check out [this video](https://www.youtube.com/watch?v=lcxx49RoZP8) for a demo.
     

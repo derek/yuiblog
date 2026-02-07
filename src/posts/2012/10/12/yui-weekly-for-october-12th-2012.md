@@ -8,7 +8,7 @@ permalink: /2012/10/12/yui-weekly-for-october-12th-2012/
 categories:
   - "YUI Weekly"
 ---
--   [YUIConf 2012](http://yuilibrary.com/yuiconf/2012) is quickly approaching! Tickets are [now available](https://www.regonline.com/yuiconf2012), and we just posted some [new hotel information](/yuiblog/blog/2012/10/12/additional-hotel-information-for-yuiconf-2012/) for anyone traveling into the Bay Area. Thanks to everyone who submitted a speaker proposal. We're currently digging through those and you'll hear back from us soon!
+-   [YUIConf 2012](http://yuilibrary.com/yuiconf/2012) is quickly approaching! Tickets are [now available](https://www.regonline.com/yuiconf2012), and we just posted some [new hotel information](/yuiblog/2012/10/12/additional-hotel-information-for-yuiconf-2012/) for anyone traveling into the Bay Area. Thanks to everyone who submitted a speaker proposal. We're currently digging through those and you'll hear back from us soon!
     
 -   Development on YUI 3.7.3 is just about complete and should be out the door next week. This minor version bump will bring improved Windows 8 and Internet Explorer 10 support to YUI, which has been the bulk of core development over the previous few weeks. As always, check out our [Github wiki](https://github.com/yui/yui3/wiki) for more details about upcoming releases.
     

@@ -20,7 +20,7 @@ You can see the full list of all of the changes in [our release rollup right her
 
 # Open Roundtable
 
-This week's [Open Roundtable](http://www.youtube.com/watch?v=aUsAtkbDuBM) continued our **YUI in the Wild** series, where we chat with different folks from a variety of companies, who tell us about some cool things they've been doing with YUI, based on our past [In the Wild](/yuiblog/blog/category/in-the-wild/) blog posts.
+This week's [Open Roundtable](http://www.youtube.com/watch?v=aUsAtkbDuBM) continued our **YUI in the Wild** series, where we chat with different folks from a variety of companies, who tell us about some cool things they've been doing with YUI, based on our past [In the Wild](/yuiblog/category/in-the-wild/) blog posts.
 
 For this week's guest, we had [Daniel Stockman](https://twitter.com/evocateur) from [Zillow](http://zillow.com) come in to talk about how they began to integrate the [d3 visualization library](http://d3js.org/) into their application. We talked about how to customize your own `d3` build, some ways of organizing an application using both `d3` and the YUI App Framework, and how Zillow is creating new build tools to improve developer productivity.
 
@@ -37,6 +37,6 @@ The following YUIConf videos were released this week:
 
 # More in the World of YUI
 
--   [John Lindal](/yuiblog/blog/2014/02/21/migrating-a-datetime-widget-from-yui-2-to-yui-3-a-case-study/) wrote a blog post on how he worked to migrate his application from YUI 2 to YUI 3. Check out the gallery modules that he created to help with that process, [gallery-datetime](http://jafl.github.io/yui-modules/datetime/) and [gallery-datetime-range](http://jafl.github.io/yui-modules/datetime-range/)
+-   [John Lindal](/yuiblog/2014/02/21/migrating-a-datetime-widget-from-yui-2-to-yui-3-a-case-study/) wrote a blog post on how he worked to migrate his application from YUI 2 to YUI 3. Check out the gallery modules that he created to help with that process, [gallery-datetime](http://jafl.github.io/yui-modules/datetime/) and [gallery-datetime-range](http://jafl.github.io/yui-modules/datetime-range/)
 
 That's all for now - hope everyone has a great week, and get ready for the release of YUI 3.15.0!

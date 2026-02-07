@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "Development"
 ---
-It's time again for the another installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/)!
+It's time again for the another installment of [YUI: Open Hours](/yuiblog/2010/04/08/introducing-yui-open-hours/)!
 
 This week, we'll be joined by [Caridy Patiño](http://twitter.com/caridy), author of the outstanding [YUI Bubbling Library](http://bubbling-library.com/) for YUI 2. We'll have a look at some of the work he's been doing migrating the Bubbling Library components to YUI 3, other modules and features he has in the Gallery already, and what new stuff he's working on these days.
 

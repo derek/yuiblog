@@ -10,7 +10,7 @@ categories:
   - "YUIConf"
   - "Development"
 ---
-[YUIConf 2012](http://www.yuilibrary.com/yuiconf) was an incredible conference with excellent speakers on topics that are relevant to the YUI community. We really enjoy sharing a bit of it with you with a new video release every few days. Be sure to check out our [earlier videos](/yuiblog/blog/2012/11/30/yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui/) as well as add our [YUI Theater](http://yuilibrary.com/theater/) and [YouTube channel](http://www.youtube.com/yuilibrary) to your bookmarks.
+[YUIConf 2012](http://www.yuilibrary.com/yuiconf) was an incredible conference with excellent speakers on topics that are relevant to the YUI community. We really enjoy sharing a bit of it with you with a new video release every few days. Be sure to check out our [earlier videos](/yuiblog/2012/11/30/yuiconf-2012-talk-ryan-grove-on-when-not-to-use-yui/) as well as add our [YUI Theater](http://yuilibrary.com/theater/) and [YouTube channel](http://www.youtube.com/yuilibrary) to your bookmarks.
 
 In this talk YUI engineer [Tony Pipkin](http://lanyrd.com/profile/apipkin/) provides a step-by-step walkthrough of building and deploying a module to the new [YUI Gallery](http://yuilibrary.com/gallery/) using `[yogi](https://github.com/yui/yogi)`. Tony goes over a variety of `yogi` functions and demonstrates how to properly assemble configuration files and setup your code to make YUI gallery submission practically effortless.
 

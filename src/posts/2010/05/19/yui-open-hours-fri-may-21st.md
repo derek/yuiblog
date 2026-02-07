@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "Development"
 ---
-It's a new week, and time for another [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/)!
+It's a new week, and time for another [YUI: Open Hours](/yuiblog/2010/04/08/introducing-yui-open-hours/)!
 
 This week, we'll be joined by the inimitable [Dav Glass](http://twitter.com/davglass), author of (among other things) YUI's [Rich Text Editor](http://developer.yahoo.com/yui/editor/) and [Drag and Drop utility](http://developer.yahoo.com/yui/3/dd/), and the primary architect behind [yuilibrary.com](http://yuilibrary.com) and the [Gallery](http://yuilibrary.com/gallery) itself. He'll be discussing the YUI 3 Gallery project — where it's going, how to contribute — and answer any questions about it, about the site, or really about anything else while we have him on the line.
 
@@ -23,7 +23,7 @@ After that, we'll jump into our main event, which will be a "Gallery widget samp
 
 They'll introduce their module, give an example or two, go over their API, and discuss their experience creating it. Besides just being a nice introduction to additional components available to YUI 3 users, it should provide a good platform to talk about widget API best practices and help give a sense of some of the decisions that are made during widget creation.
 
-Thanks again to [Caridy Patiño](http://twitter.com/caridy) for joining us [last week](/yuiblog/blog/2010/05/13/yui-open-hours-friday-may-14th/) and reviewing his [Accordion Node plugin](http://yuilibrary.com/gallery/show/node-accordion) and [Dispatcher](http://yuilibrary.com/gallery/show/dispatcher) modules. We'll have more topics in the future about creating Node plugins and the reasons why the plugin approach or the widget approach might be a better fit for your needs. And thanks to [Matt Sweeney](http://twitter.com/msweeney) (author of YUI's [Node](http://developer.yahoo.com/yui/3/node/) class and selector engine) for dropping in as a surprise guest as well.
+Thanks again to [Caridy Patiño](http://twitter.com/caridy) for joining us [last week](/yuiblog/2010/05/13/yui-open-hours-friday-may-14th/) and reviewing his [Accordion Node plugin](http://yuilibrary.com/gallery/show/node-accordion) and [Dispatcher](http://yuilibrary.com/gallery/show/dispatcher) modules. We'll have more topics in the future about creating Node plugins and the reasons why the plugin approach or the widget approach might be a better fit for your needs. And thanks to [Matt Sweeney](http://twitter.com/msweeney) (author of YUI's [Node](http://developer.yahoo.com/yui/3/node/) class and selector engine) for dropping in as a surprise guest as well.
 
 The time will be the same as before, 10am - 12pm PDT and the connection details are also the same:
 

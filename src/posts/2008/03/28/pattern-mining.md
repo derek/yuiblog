@@ -8,7 +8,7 @@ permalink: /2008/03/28/pattern-mining/
 categories:
   - "Design"
 ---
-[![Tim OReilly's web 2.0 patterns meme map](/yuiblog/blog/wp-content/uploads/2008/03/web20patterns.jpg)](http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx)
+[![Tim OReilly's web 2.0 patterns meme map](/yuiblog/wp-content/uploads/2008/03/web20patterns.jpg)](http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx)
 
 Dragos Manolescu from Microsoft Live Labs and Joe Yoder from The Refactory are organizing a [pattern-mining workshop](http://labs.live.com/Web+20+Pattern+Mining+Workshop.aspx) at [TOOLS 2008 Europe](http://tools.ethz.ch/workshops.html), July 5-6 (dates still to be confirmed) in Zurich, Switzerland. I've agreed to be on the program committee to help review proposals and advice.
 

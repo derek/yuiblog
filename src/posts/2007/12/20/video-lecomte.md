@@ -36,7 +36,7 @@ Julien was kind enough to let us shoot video, and Ricky Montalvo from the Yahoo!
 
 Some other recent videos from the [YUI Theater series](http://developer.yahoo.com/yui/theater/):
 
--   **Douglas Crockford:** "The State of Ajax" ([YUIBlog](/yuiblog/blog/2007/11/06/video-crockford/))
+-   **Douglas Crockford:** "The State of Ajax" ([YUIBlog](/yuiblog/2007/11/06/video-crockford/))
 -   **Nate Koechley:** "The YUI CSS Foundation" ([Yahoo! Video](http://video.yahoo.com/video/play?vid=1373808) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/koechley-yuicss.m4v))
 -   **Bill Scott:** "Designing the Rich Web Experience" ([Yahoo! Video](http://video.yahoo.com/video/play?vid=1285664) | [.mp4 download](/yuiblog/yuitheater/scott-patterns.m4v))
 -   **Steve Souders:** “High Performance Web Sites: 14 Rules for Faster Pages” ([Yahoo! Video](http://video.yahoo.com/video/play?vid=1040890) | [.m4v download](http://us.dl1.yimg.com/download.yahoo.com/dl/ydn/yui/theater/souders-performance.m4v))

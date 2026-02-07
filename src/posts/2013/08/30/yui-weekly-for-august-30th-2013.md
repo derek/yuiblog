@@ -10,7 +10,7 @@ categories:
 ---
 _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YUI team and community. If you have any interesting demos or links you’d like to share, feel free to leave a comment below._
 
--   This week saw the release of **YUI 3.12.0**. You can find all the details in the [release announcement](/yuiblog/blog/2013/08/29/yui-3-12-0-released/). Thanks to the dozens of contributors who have submitted hundreds of commits [over the past month](https://github.com/yui/yui3/pulse/monthly). With Sprint 10 will beginning next week, expect an update to the [development schedule wiki](https://github.com/yui/yui3/wiki/Development-Schedule) soon.
+-   This week saw the release of **YUI 3.12.0**. You can find all the details in the [release announcement](/yuiblog/2013/08/29/yui-3-12-0-released/). Thanks to the dozens of contributors who have submitted hundreds of commits [over the past month](https://github.com/yui/yui3/pulse/monthly). With Sprint 10 will beginning next week, expect an update to the [development schedule wiki](https://github.com/yui/yui3/wiki/Development-Schedule) soon.
     
 -   A big YUI welcome to Ezequiel Rodriguez who joins the team this week! Stay tuned to for a more formal introduction here on the blog, but in the meantime you can find him on Github as [@ezequiel](https://github.com/ezequiel) and Twitter at [@ziggyism](https://twitter.com/ziggyism).
     
@@ -29,4 +29,4 @@ _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YU
     -   [ES6 Generators Deliver Go Style Concurrency](http://swannodette.github.io/2013/08/24/es6-generators-and-csp/)
     -   [Debugging Modern Web Applications Part 1](http://tech.pro/tutorial/1404/debugging-modern-web-applications-part-1)
     -   ... and more over at [JavaScript Weekly](http://javascriptweekly.com/archive/145.html)
--   And finally, happy birthday to [YUI Weekly](/yuiblog/blog/category/yui-weekly/) who turns 1-year old this month!
+-   And finally, happy birthday to [YUI Weekly](/yuiblog/category/yui-weekly/) who turns 1-year old this month!

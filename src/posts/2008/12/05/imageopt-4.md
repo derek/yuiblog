@@ -11,11 +11,11 @@ categories:
 ---
 _This is part 4 in an ongoing series. You can read the other parts here:_
 
--   [Image Optimization Part 1: The Importance of Images](/yuiblog/blog/2008/10/29/imageopt-1/)
--   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/blog/2008/11/04/imageopt-2/)
--   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/blog/2008/11/14/imageopt-3/)
+-   [Image Optimization Part 1: The Importance of Images](/yuiblog/2008/10/29/imageopt-1/)
+-   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/2008/11/04/imageopt-2/)
+-   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/2008/11/14/imageopt-3/)
 
-In the [previous article](/yuiblog/blog/2008/11/14/imageopt-3/), the progressive JPEGs were briefly mentioned as a possible option when optimizing JPEGs. This post now diggs into this option a little deeper with the results of an optimization experiment involving over 10,000 images.
+In the [previous article](/yuiblog/2008/11/14/imageopt-3/), the progressive JPEGs were briefly mentioned as a possible option when optimizing JPEGs. This post now diggs into this option a little deeper with the results of an optimization experiment involving over 10,000 images.
 
 ### Baseline vs. progressive JPEGs
 

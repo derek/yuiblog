@@ -30,7 +30,7 @@ We didn't have any guests for this week's Open Roundtable, but I wanted to give 
 
 -   Ben from Facebook and TC39 has [a great talk on Recast, ES6 generators, and ES7 async/await](https://www.youtube.com/watch?v=kXY9hIPKuLQ).
     
--   Jackson Pauls [wrote an article on our own blog](/yuiblog/blog/2014/05/13/yui-app-framework-in-cordova/) this week about using the YUI App Framework to create cross-platform apps using Apache Cordova.
+-   Jackson Pauls [wrote an article on our own blog](/yuiblog/2014/05/13/yui-app-framework-in-cordova/) this week about using the YUI App Framework to create cross-platform apps using Apache Cordova.
     
 -   The Google Developers Youtube channel [has a new video up](https://www.youtube.com/watch?v=8-Zq2KUN6jM) introducing the [Polymer Project](http://www.polymer-project.org/).
     

@@ -10,7 +10,7 @@ categories:
   - "YUIConf"
   - "Development"
 ---
-Monday brings with it another great YUIConf 2013 video! In this presentation [David Gomez](https://twitter.com/testautomatr) talks about getting back to the basics in testing, and covers some core concepts in "[Forget Everything You Know About Testing, and Start Testing!](https://www.youtube.com/watch?v=gqM01dBw7Fc)". You can also check out our [previous video](/yuiblog/blog/2014/01/15/yuiconf-2013-talk-andrew-wooldridge-on-yui-in-2013-a-year-in-review-and-town-hall-discussion/) as well as the [playlist](http://www.youtube.com/playlist?list=PLjKP9DUCzZorde6sLWHJ3GNd-6VrGrbqm) on YouTube.
+Monday brings with it another great YUIConf 2013 video! In this presentation [David Gomez](https://twitter.com/testautomatr) talks about getting back to the basics in testing, and covers some core concepts in "[Forget Everything You Know About Testing, and Start Testing!](https://www.youtube.com/watch?v=gqM01dBw7Fc)". You can also check out our [previous video](/yuiblog/2014/01/15/yuiconf-2013-talk-andrew-wooldridge-on-yui-in-2013-a-year-in-review-and-town-hall-discussion/) as well as the [playlist](http://www.youtube.com/playlist?list=PLjKP9DUCzZorde6sLWHJ3GNd-6VrGrbqm) on YouTube.
 
 <iframe allowfullscreen="allowfullscreen" frameborder="0" height="315" src="//www.youtube.com/embed/gqM01dBw7Fc" width="560"></iframe>
 

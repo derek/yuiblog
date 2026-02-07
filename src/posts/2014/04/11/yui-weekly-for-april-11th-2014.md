@@ -19,7 +19,7 @@ We released **YUI 3.16.0** this week! Big props to everyone on the core team and
 
 ```
 
-Find out more about what's changed in this release by viewing the [change history rollup](https://github.com/yui/yui3/wiki/YUI-3.16.0-Change-History-Rollup). Andrew also has a [nice blog post](/yuiblog/blog/2014/04/10/yui-3-16-0-released/) summarizing the changes in this release.
+Find out more about what's changed in this release by viewing the [change history rollup](https://github.com/yui/yui3/wiki/YUI-3.16.0-Change-History-Rollup). Andrew also has a [nice blog post](/yuiblog/2014/04/10/yui-3-16-0-released/) summarizing the changes in this release.
 
 ## YUI Open Roundtable
 

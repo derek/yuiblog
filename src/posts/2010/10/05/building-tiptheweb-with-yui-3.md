@@ -42,4 +42,4 @@ We use `Y.Overlay`s extensively throughout our application's UI to implement use
 
 We'd love for you to try out [TipTheWeb](http://tiptheweb.org/); right now we are in invite-only beta, so **[request an invite](http://tiptheweb.org/notify)** on our site and we'll send you an invite code.
 
-Be sure to catch our talk at ﻿**[YUIConf 2010](/yuiblog/blog/2010/09/09/register-now-for-yuiconf-2010/)** where we will be presenting (more in depth) on how we use YUI 3 and YQL at TipTheWeb.
+Be sure to catch our talk at ﻿**[YUIConf 2010](/yuiblog/2010/09/09/register-now-for-yuiconf-2010/)** where we will be presenting (more in depth) on how we use YUI 3 and YQL at TipTheWeb.

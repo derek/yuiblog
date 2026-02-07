@@ -30,7 +30,7 @@ All of the toolkits we considered (YUI, Dojo, JQuery, Prototype) cover this deci
 
 Here's one specific example of why we chose YUI: A lot of our designs so far have a three-column layout. We started with a test of different libraries dragging items across the three columns. All of the libraries we tested had at least some problem doing that with the exception of YUI. That kind of proved to us that there were things we wouldn't have to worry about with YUI that might be a concern if we made another choice.
 
-We also talked to a lot of other companies around the valley about YUI, including [SmugMug](/yuiblog/blog/2007/01/12/smugmug/), and most of them had the same response: You're going to need to write some code to get exactly what you want done, but YUI is a great platform to write code with. For our needs, YUI felt like the right long-term choice.
+We also talked to a lot of other companies around the valley about YUI, including [SmugMug](/yuiblog/2007/01/12/smugmug/), and most of them had the same response: You're going to need to write some code to get exactly what you want done, but YUI is a great platform to write code with. For our needs, YUI felt like the right long-term choice.
 
 **Every adoption of a new technology comes with some pain. What have the pain points been in adopting and using YUI so far?**
 

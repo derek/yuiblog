@@ -8,7 +8,7 @@ permalink: /2012/10/23/yui-hangout-yui-and-windows-8/
 categories:
   - "YUI Events"
 ---
-![](/yuiblog/blog/wp-content/uploads/2012/10/dribbble_app-300x225.png "dribbble_app") Come and hang out with the YUI Team on **Tuesday, October 30th at 1pm PST** as we talk about building native apps for Windows 8 using JavaScript. Here's what we'll be covering:
+![](/yuiblog/wp-content/uploads/2012/10/dribbble_app-300x225.png "dribbble_app") Come and hang out with the YUI Team on **Tuesday, October 30th at 1pm PST** as we talk about building native apps for Windows 8 using JavaScript. Here's what we'll be covering:
 
 -   Set up your environment and include YUI in your WinJS project.
 -   Look over code for a demo WinJS app called Dribbble.

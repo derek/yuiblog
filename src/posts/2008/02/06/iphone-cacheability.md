@@ -11,7 +11,7 @@ categories:
 ---
 At [MacWorld 2008](http://www.macworldexpo.com/), Steve Jobs announced that Apple sold 4 million iPhones to date, that's 20,000 iPhones sold every day. [Net Applications](http://marketshare.hitslink.com/report.aspx?sample=4&qprid=10&qpmr=14&qpdt=1&qpct=0&qptimeframe=M&qpsp=107) reports that total web browsing on iPhone is up at 0.12% for December 2007, topping the web browsing on all Windows Mobile devices combined. Apple's iPhone has changed the game for many users browsing the web on a mobile device. Web developers can now create functionally rich and visually appealing applications that run within the iPhone's version of the Safari Mobile web browser. While the iPhone presents new and exciting opportunities for mobile web application developers, it also provides a unique set of performance challenges.
 
-Limited information is available on this device and understanding the cache properties of the browser is essential to creating a high performance web site. In earlier posts, we described how [80% or more](/yuiblog/blog/2006/11/28/performance-research-part-1/) of the end-user response time is spent on the front-end, and [why the cache matters](/yuiblog/blog/2007/01/04/performance-research-part-2/). In this research, Yahoo!'s Exceptional Performance team investigated the iPhone cache properties and looked at how the performance rules are affected. We were particularly interested in the following cache properties on the iPhone:
+Limited information is available on this device and understanding the cache properties of the browser is essential to creating a high performance web site. In earlier posts, we described how [80% or more](/yuiblog/2006/11/28/performance-research-part-1/) of the end-user response time is spent on the front-end, and [why the cache matters](/yuiblog/2007/01/04/performance-research-part-2/). In this research, Yahoo!'s Exceptional Performance team investigated the iPhone cache properties and looked at how the performance rules are affected. We were particularly interested in the following cache properties on the iPhone:
 
 -   The maximum cache limit for an individual component.
 -   The maximum cache limit for multiple components.
@@ -22,7 +22,7 @@ We conducted our cache experiments with both Apple's iPhone and iPod Touch, and 
 
 ### Cache Hit or Miss?
 
-In [Part 2](/yuiblog/blog/2007/01/04/performance-research-part-2/), we discussed the importance to differentiate between end user experiences for an empty versus a primed cache page view.
+In [Part 2](/yuiblog/2007/01/04/performance-research-part-2/), we discussed the importance to differentiate between end user experiences for an empty versus a primed cache page view.
 
 When an external component (scripts, stylesheets, and images) is referenced in an HTML page, the browser makes an HTTP request and stores the component in memory while the HTML page is rendered. Though components are stored in the browser's memory during rendering, they may or may not be stored in the browser's cache. A "cache miss" refers to when the browser bypasses the cache and requests the component over the network. A "cache hit" refers to when the component is found in the cache and the corresponding HTTP requests are avoided.
 

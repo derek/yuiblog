@@ -11,7 +11,7 @@ categories:
 ---
 [![Todd Kloots, Engineer, YUI Team](/yuiblog/blog-archive/assets/todd-a11y-20090518-082702.jpg)](http://developer.yahoo.com/yui/theater/kloots-a11y.html)
 
-As we continue to work on [YUI 3](http://developer.yahoo.com/yui/3/), we're thinking hard about accessibility. And no one here is thinking harder about that topic than Todd Kloots, who has authored [a variety of blog posts on the subject](/yuiblog/blog/category/accessibility) as well as [presenting a comprehensive tech talk on the art and sciense of accessible development](http://video.yahoo.com/watch/4073211/10996186).
+As we continue to work on [YUI 3](http://developer.yahoo.com/yui/3/), we're thinking hard about accessibility. And no one here is thinking harder about that topic than Todd Kloots, who has authored [a variety of blog posts on the subject](/yuiblog/category/accessibility) as well as [presenting a comprehensive tech talk on the art and sciense of accessible development](http://video.yahoo.com/watch/4073211/10996186).
 
 Todd spoke to Yahoo! frontend engineers recently about the lessons learned in developing the accessibility features for YUI 3, and we're happy to share that session with you here. For direct techniques to use in your own development, [refer to Todd's previous video](http://video.yahoo.com/watch/4073211/10996186); this session will take you into the higher level considerations that guide accessibility strategy in a complex system.
 

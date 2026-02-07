@@ -14,7 +14,7 @@ Windows 8 was released last week, and here at YUI, I've spent time hacking aroun
 2.  Explore what role YUI can play when developing actual apps
 3.  See if I can create a template that others can use for building Win8 apps with YUI
 
-We recently added [support for Windows 8 and IE10](/yuiblog/blog/2012/10/17/yui-3-7-3-windows-8-apps-and-ie-10/ "YUI 3.7.3 – Windows 8 Apps and IE 10") in YUI 3, so everything works great out of the box. However, JavaScript developers who want to get started with native Win8 development may face a few obstacles. In this post, I talk about the obstacles that I faced, and offer solutions around them.
+We recently added [support for Windows 8 and IE10](/yuiblog/2012/10/17/yui-3-7-3-windows-8-apps-and-ie-10/ "YUI 3.7.3 – Windows 8 Apps and IE 10") in YUI 3, so everything works great out of the box. However, JavaScript developers who want to get started with native Win8 development may face a few obstacles. In this post, I talk about the obstacles that I faced, and offer solutions around them.
 
 ### Including YUI in your WinJS Project
 
@@ -28,7 +28,7 @@ I discounted Option 3 early on because it included several manual steps, was not
 
 ### Including the seed file
 
-WinJS apps have a single-page navigation model. By default, every app has a `default.html`, which loads `default.css` and `default.js`. The `default.html` acts as a "wrapper" for all views within the app, and does not possess any UI. Similarly, `default.js` possesses general start-up code, not app-specific logic.![](/yuiblog/blog/wp-content/uploads/2012/11/default-wrapper.png "default-wrapper")
+WinJS apps have a single-page navigation model. By default, every app has a `default.html`, which loads `default.css` and `default.js`. The `default.html` acts as a "wrapper" for all views within the app, and does not possess any UI. Similarly, `default.js` possesses general start-up code, not app-specific logic.![](/yuiblog/wp-content/uploads/2012/11/default-wrapper.png "default-wrapper")
 
 Since `default.html` acts as a "wrapper" for all views, I included the YUI seed file in there instead of having to include it in every view. Additionally, I had a `YUI_config` variable defined with a path to all custom modules that were being loaded. [Here's what it looks like](https://github.com/tilomitra/Sights/blob/master/Sights/default.html). Adding the [`YUI_config`](http://yuilibrary.com/yui/docs/yui/#yui_config) makes my other `YUI().use(...)`statements much cleaner, and provides a single place for me to refer to for all custom modules.
 
@@ -45,7 +45,7 @@ One of the benefits of leveraging YUI is that code can be reused across environm
 
 #### Re-using Views
 
-When it comes to views, there are a few options. You can either use WinJS APIs for native views, such as ListView, GridView, etc., or use HTML/CSS to make your own views. There is no performance hit of making your own views as opposed to leveraging the native APIs, that I know of, since the native APIs are still manipulating the DOM under-the-hood. When you consider this, it may be worth it to take some time to construct your own views just because you'll be able to re-use that code in other environments, if needed. A good example of this is in the Detail view for my Dribbble app:![](/yuiblog/blog/wp-content/uploads/2012/11/sights-detail-med.png "sights-detail-med")
+When it comes to views, there are a few options. You can either use WinJS APIs for native views, such as ListView, GridView, etc., or use HTML/CSS to make your own views. There is no performance hit of making your own views as opposed to leveraging the native APIs, that I know of, since the native APIs are still manipulating the DOM under-the-hood. When you consider this, it may be worth it to take some time to construct your own views just because you'll be able to re-use that code in other environments, if needed. A good example of this is in the Detail view for my Dribbble app:![](/yuiblog/wp-content/uploads/2012/11/sights-detail-med.png "sights-detail-med")
 
 Although it looks like a Metro interface, I'm not using any WinJS views. It's just standard elements with my own CSS. YUI makes this easy with `Y.View`, interacting with a `Y.Model` or `Y.ModelList`. It's definitely an option to consider, especially since the APIs for regular WinJS views are a little tricky to understand (at least they seemed that way for me).
 

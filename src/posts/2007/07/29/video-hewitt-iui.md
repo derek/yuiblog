@@ -31,4 +31,4 @@ Some other recent videos from the [YUI Theater series](http://developer.yahoo.co
 
 ### Reminder: We're Looking for a Great Engineer to Work with Joe on Firebug
 
-Just a quick reminder that the YUI team is looking to hire a great frontend engineer to work with Joe on Firebug. [Check out the job description](/yuiblog/blog/2007/05/07/firebug/), and if you're interested get in touch with us at yui-jobs /at/ yahoo /dash/ inc /dot/ com. (Principals only; no recruiters, please.)
+Just a quick reminder that the YUI team is looking to hire a great frontend engineer to work with Joe on Firebug. [Check out the job description](/yuiblog/2007/05/07/firebug/), and if you're interested get in touch with us at yui-jobs /at/ yahoo /dash/ inc /dot/ com. (Principals only; no recruiters, please.)

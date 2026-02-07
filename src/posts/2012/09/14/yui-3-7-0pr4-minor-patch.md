@@ -8,7 +8,7 @@ permalink: /2012/09/14/yui-3-7-0pr4-minor-patch/
 categories:
   - "Releases"
 ---
-Tuesday we released [YUI 3.7.0pr2](/yuiblog/blog/2012/09/12/yui-3-7-0pr2-final-round-of-testing/ "YUI 3.7.0pr2 – Final Round of Testing") and encouraged everyone to test it thoroughly, and you did! YUI 3.7.0pr4 is now available and contains a last minute fix for an issue that was found in yesterday's release. It's on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr4/build/yui/yui-min.js "YUI 3.7.0pr4 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr4.zip "YUI 3.7.0pr4 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation.
+Tuesday we released [YUI 3.7.0pr2](/yuiblog/2012/09/12/yui-3-7-0pr2-final-round-of-testing/ "YUI 3.7.0pr2 – Final Round of Testing") and encouraged everyone to test it thoroughly, and you did! YUI 3.7.0pr4 is now available and contains a last minute fix for an issue that was found in yesterday's release. It's on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr4/build/yui/yui-min.js "YUI 3.7.0pr4 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr4.zip "YUI 3.7.0pr4 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation.
 
 ### Issue Resolved in 3.7.0pr4
 

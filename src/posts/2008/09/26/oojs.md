@@ -8,7 +8,7 @@ permalink: /2008/09/26/oojs/
 categories:
   - "Development"
 ---
-[![Stoyan Stefanov's 'Object Oriented JavaScript' [book cover]](/yuiblog/blog-archive/assets/oojs-cover.png)](/yuiblog/blog-archive/assets/pdf/oojs-ch-8.pdf)[Stoyan Stefanov](http://www.phpied.com/) is a member of Yahoo's [Exceptional Performance](http://developer.yahoo.com/performance/) team; he's worked on a variety of performance-related projects at Yahoo, including the popular [YSlow plugin for Firebug](http://developer.yahoo.com/yslow/). He's also a [contributing author here on YUIBlog](/yuiblog/blog/2008/07/22/non-blocking-scripts/).
+[![Stoyan Stefanov's 'Object Oriented JavaScript' [book cover]](/yuiblog/blog-archive/assets/oojs-cover.png)](/yuiblog/blog-archive/assets/pdf/oojs-ch-8.pdf)[Stoyan Stefanov](http://www.phpied.com/) is a member of Yahoo's [Exceptional Performance](http://developer.yahoo.com/performance/) team; he's worked on a variety of performance-related projects at Yahoo, including the popular [YSlow plugin for Firebug](http://developer.yahoo.com/yslow/). He's also a [contributing author here on YUIBlog](/yuiblog/2008/07/22/non-blocking-scripts/).
 
 Stoyan's latest project is [_Object Oriented JavaScript_](http://www.packtpub.com/object-oriented-javascript-applications-libraries/book), a new book from Packt whose simple goal is to help you learn how to "think in JavaScript." Stoyan and his editors were kind enough to let us share with you Chapter 8 from _OOJS_ — "Coding and Design Patterns."
 

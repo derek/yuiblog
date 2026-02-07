@@ -11,16 +11,16 @@ categories:
 ---
 _This is part 5 in an ongoing series. You can read the other parts here:_
 
--   [Image Optimization Part 1: The Importance of Images](/yuiblog/blog/2008/10/29/imageopt-1/)
--   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/blog/2008/11/04/imageopt-2/)
--   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/blog/2008/11/14/imageopt-3/)
--   [Image Optimization Part 4: Progressive JPEG...Hot or Not?](/yuiblog/blog/2008/12/05/imageopt-4/)
+-   [Image Optimization Part 1: The Importance of Images](/yuiblog/2008/10/29/imageopt-1/)
+-   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/2008/11/04/imageopt-2/)
+-   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/2008/11/14/imageopt-3/)
+-   [Image Optimization Part 4: Progressive JPEG...Hot or Not?](/yuiblog/2008/12/05/imageopt-4/)
 
 This installment of the image optimization series is about the IE-proprietary AlphaImageLoader CSS filter, which developers often use as a workaround to solve transparency issues with truecolor PNGs in IE. The problem with AlphaImageLoader is that it hurts page performance and, therefore, hurts user experience. I argue that AlphaImageLoader should be avoided when at all possible.
 
 ### Quick Refresher
 
-As mentioned in a [previous article](/yuiblog/blog/2008/11/04/imageopt-2/), [PNGs](http://en.wikipedia.org/wiki/Portable_Network_Graphics) come in several different types but can roughly be divided into:
+As mentioned in a [previous article](/yuiblog/2008/11/04/imageopt-2/), [PNGs](http://en.wikipedia.org/wiki/Portable_Network_Graphics) come in several different types but can roughly be divided into:
 
 -   Indexed (palette), also referred to as PNG8 which have up to 256 colors.
 -   Truecolor PNG, also referred to as PNG32 or PNG24.
@@ -90,7 +90,7 @@ If you have a sprite image and you use it for different elements (sprites with a
 
 Using lab tests like the one above can give us some idea of the AlphaImageLoader "price," and you might be tempted to test and calculate approximately how much you pay for each filtered element, but there's nothing better than a real life test with millions of requests coming form different parts of the world with different browsers, computers and bandwidth.
 
-[Yahoo!'s search results page](http://search.yahoo.com/search?p=yahoo+search) used to have a truecolor PNG sprite and employed AlphaImageLoader to achieve the transparency (an [older version of the sprite](http://us.js2.yimg.com/us.yimg.com/i/us/sch/el/ngsprt_srp_20071130.png) is still around if you're curious). Replacing the truecolor PNG with a gracefully degrading PNG8 ([discussed previously](/yuiblog/blog/2008/11/04/imageopt-2/)) decreased the pageload time by 50-100ms for the users of IE 5 and 6. 100ms may not seem like much, but for a page that loads under a second, it's at least 10%. Also, according to [an Amazon study](http://home.blarg.net/%7Eglinden/StanfordDataMining.2006-11-29.ppt), 100ms slower means 1% fewer sales (even for their content-heavy pages). Earning 1% more by just replacing an image doesn't look like a bad deal at all.
+[Yahoo!'s search results page](http://search.yahoo.com/search?p=yahoo+search) used to have a truecolor PNG sprite and employed AlphaImageLoader to achieve the transparency (an [older version of the sprite](http://us.js2.yimg.com/us.yimg.com/i/us/sch/el/ngsprt_srp_20071130.png) is still around if you're curious). Replacing the truecolor PNG with a gracefully degrading PNG8 ([discussed previously](/yuiblog/2008/11/04/imageopt-2/)) decreased the pageload time by 50-100ms for the users of IE 5 and 6. 100ms may not seem like much, but for a page that loads under a second, it's at least 10%. Also, according to [an Amazon study](http://home.blarg.net/%7Eglinden/StanfordDataMining.2006-11-29.ppt), 100ms slower means 1% fewer sales (even for their content-heavy pages). Earning 1% more by just replacing an image doesn't look like a bad deal at all.
 
 ### So Now What?
 

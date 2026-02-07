@@ -13,7 +13,7 @@ We have a new preview release today. This release is **YUI 3.9.0pr3** and is ava
 
 ## What's New Since PR2?
 
-We have had a number of great new features merged in since [**YUI 3.9.0pr2**](/yuiblog/blog/2013/01/25/yui-3-9-0pr2/). This has been the direct result of the growing momentum from our developer community working through our new [contributor model](https://github.com/yui/yui3/wiki/Contributing.md) as well as our quicker release cycle. Featured below are some of the additions that have been made since pr2.
+We have had a number of great new features merged in since [**YUI 3.9.0pr2**](/yuiblog/2013/01/25/yui-3-9-0pr2/). This has been the direct result of the growing momentum from our developer community working through our new [contributor model](https://github.com/yui/yui3/wiki/Contributing.md) as well as our quicker release cycle. Featured below are some of the additions that have been made since pr2.
 
 ### Y.Tree
 

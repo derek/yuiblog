@@ -8,7 +8,7 @@ permalink: /2013/05/16/yuicompressor-2-4-8-released/
 categories:
   - "Releases"
 ---
-We are pleased to announce the the immediate availability of version 2.4.8 of [YUICompressor](//github.com/yui/yuicompressor/). The first YUICompressor release to come forward since the project moved to the [new Contributor Model](/yuiblog/blog/2013/01/24/yui-compressor-has-a-new-owner/), 2.4.8 includes a number of improvements submitted by members of the YUICompressor community.
+We are pleased to announce the the immediate availability of version 2.4.8 of [YUICompressor](//github.com/yui/yuicompressor/). The first YUICompressor release to come forward since the project moved to the [new Contributor Model](/yuiblog/2013/01/24/yui-compressor-has-a-new-owner/), 2.4.8 includes a number of improvements submitted by members of the YUICompressor community.
 
 ## Special Thanks
 
@@ -23,7 +23,7 @@ In addition to the community at large, special thanks goes out to following indi
 
 ## Join the YUICompressor Community
 
-As we continue to expand our adoption of the new [Contributor Model](//github.com/yui/yui3/wiki/Contributor-Model), we invite any who are interested in the progress of YUICompressor to join us on the [mailing list](//groups.google.com/forum/?fromgroups=#!forum/yuicompressor), [file issues](//github.com/yui/yuicompressor/issues/new) or PRs on the [GitHub repo](//github.com/yui/yuicompressor), or just help us spread the word: [YUICompressor lives!](/yuiblog/blog/2013/01/24/yui-compressor-has-a-new-owner/)
+As we continue to expand our adoption of the new [Contributor Model](//github.com/yui/yui3/wiki/Contributor-Model), we invite any who are interested in the progress of YUICompressor to join us on the [mailing list](//groups.google.com/forum/?fromgroups=#!forum/yuicompressor), [file issues](//github.com/yui/yuicompressor/issues/new) or PRs on the [GitHub repo](//github.com/yui/yuicompressor), or just help us spread the word: [YUICompressor lives!](/yuiblog/2013/01/24/yui-compressor-has-a-new-owner/)
 
 If you know of systems that have integrated YUICompressor into their projects or codebases, please drop us a line or add a comment here so we can help push new versions of YUICompressor deeper into the community.
 

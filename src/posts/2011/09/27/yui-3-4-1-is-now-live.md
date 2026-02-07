@@ -9,7 +9,7 @@ categories:
   - "Releases"
   - "Development"
 ---
-![YUI 3.4.1](/yuiblog/blog/wp-content/uploads/2011/09/yui341.jpg "YUI 3.4.1")
+![YUI 3.4.1](/yuiblog/wp-content/uploads/2011/09/yui341.jpg "YUI 3.4.1")
 
 The YUI 3.4.1 short cycle release is now available on [CDN](http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js) and for [download](http://yuilibrary.com/download/yui3/), more than a week early! Here are a few highlights for this release:
 

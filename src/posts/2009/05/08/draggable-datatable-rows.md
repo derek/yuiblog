@@ -97,7 +97,7 @@ Here is the [full working example using YUI 2.7.0](/yuiblog/blog-archive/assets/
 
 ### Enhancing our example by using YUI 3.0 PR2
 
-On the Yahoo! homepage, we have been using YUI 3 to develop [our next-generation experience](/yuiblog/blog/2008/11/11/frontpage-and-yui3/), and the more I use it, the more I realize how powerful and extensible it is. So I decided to go ahead and check out the [Drag and Drop](http://developer.yahoo.com/yui/3/dd/) component from the latest [YUI 3.0 preview release](http://developer.yahoo.com/yui/3/) for this exercise.
+On the Yahoo! homepage, we have been using YUI 3 to develop [our next-generation experience](/yuiblog/2008/11/11/frontpage-and-yui3/), and the more I use it, the more I realize how powerful and extensible it is. So I decided to go ahead and check out the [Drag and Drop](http://developer.yahoo.com/yui/3/dd/) component from the latest [YUI 3.0 preview release](http://developer.yahoo.com/yui/3/) for this exercise.
 
 It was no surprise when I discovered that with this new version I could take advantage of some of the new properties and methods to make my solution more clean and efficient. For instance, Drag and Drop in YUI 3 provides an efficient way to create the Drag/Target objects we need:
 

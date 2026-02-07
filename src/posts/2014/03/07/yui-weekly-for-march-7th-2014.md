@@ -34,7 +34,7 @@ Our YUI Open Roundtable this week featured a conversation with Andy Earnshaw, th
 
 ## YUIConf Videos
 
-This week, we released the video for [Reid Burke's](http://twitter.com/reid) talk on [Testing YUI Everywhere](https://www.youtube.com/watch?v=AABmn_h4HAM). In addition, we released the [Lightning Talks](https://www.youtube.com/watch?v=MPaKarJ52Ic) video. Check out [this blog post](/yuiblog/blog/2014/03/07/yuiconf-2013-lightning-talks/) for more details on the Lightning talks.
+This week, we released the video for [Reid Burke's](http://twitter.com/reid) talk on [Testing YUI Everywhere](https://www.youtube.com/watch?v=AABmn_h4HAM). In addition, we released the [Lightning Talks](https://www.youtube.com/watch?v=MPaKarJ52Ic) video. Check out [this blog post](/yuiblog/2014/03/07/yuiconf-2013-lightning-talks/) for more details on the Lightning talks.
 
 ## The World of JavaScript
 

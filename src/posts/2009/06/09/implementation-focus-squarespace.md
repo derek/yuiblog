@@ -38,4 +38,4 @@ We pull in dynamic overlays allowing our customers to move content around, edit 
 
 We have some great features that we're working on right now that will increase the flexibility that our customers will have to modify their content and design right from the browser but the challenge with doing more stuff within the browser is ensuring that you're creating a snappy and responsive interface. We definitely don't want them to be sitting there while we load up large assets. We want them to be able to jump in and play with their sites as quickly and easily as possible.
 
-We plan to stick with YUI and will be watching [the progress of YUI 3](/yuiblog/blog/2009/05/12/video-desai-yui3/) very closely to see how it'll fit into our future plans.
+We plan to stick with YUI and will be watching [the progress of YUI 3](/yuiblog/2009/05/12/video-desai-yui3/) very closely to see how it'll fit into our future plans.

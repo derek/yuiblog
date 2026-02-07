@@ -11,7 +11,7 @@ categories:
 ---
 ### `Y.Calendar` is coming to 3.4.0
 
-![](/yuiblog/blog/wp-content/uploads/2011/07/blog-calendar.jpeg)
+![](/yuiblog/wp-content/uploads/2011/07/blog-calendar.jpeg)
 
 Calendar is one of our more popular widgets in the YUI 2 family, and it's making its debut on the YUI 3 architecture in 3.4.0. [Allen Rabinovich](http://twitter.com/allenr) is the component owner and author and will be on the call reintroducing us to this old favorite, showing some new approaches to problems faced by 2.x Calendar. I'm particularly jazzed about the support for internationalization, but the new rendering rules are also pretty fascinating.
 

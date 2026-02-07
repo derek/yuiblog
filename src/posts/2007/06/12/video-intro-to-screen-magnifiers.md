@@ -18,8 +18,8 @@ Though screen _readers_ get most of the press, it's good to remember that it's n
 
 ### Related URLs
 
--   [YUI Theater — Victor Tsaran: "Introduction to Screen Readers"](/yuiblog/blog/2007/05/14/video-intro-to-screenreaders/)
--   [YUI Theater — Doug Geoffray: "From the Mouth of a Screenreader"](/yuiblog/blog/2007/03/28/video-geoffray/)
+-   [YUI Theater — Victor Tsaran: "Introduction to Screen Readers"](/yuiblog/2007/05/14/video-intro-to-screenreaders/)
+-   [YUI Theater — Doug Geoffray: "From the Mouth of a Screenreader"](/yuiblog/2007/03/28/video-geoffray/)
 
 ### Technical Notes
 

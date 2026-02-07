@@ -38,11 +38,11 @@ Specific changes for this update include:
 
 ### GBS Archive
 
--   [GBS Update, 2011-07-12](/yuiblog/blog/2011/07/12/gbs-update/)
--   [GBS Update, 2010-11-03](/yuiblog/blog/2010/11/03/gbs-update-2010q4/)
--   [GBS Update, 2010-02-16](/yuiblog/blog/2010/02/16/gbs-update-2010q1/)
--   [GBS Update, 2009-10-16](/yuiblog/blog/2009/10/16/gbs-update-2009q4/)
--   [GBS Update, 2009-07-02](/yuiblog/blog/2009/07/02/gbs-update-20090702/)
--   [GBS Update, 2009-01-28](/yuiblog/blog/2009/01/28/gbs-update-20090128/)
--   [GBS Update, 2008-07-03](/yuiblog/blog/2008/07/03/gbs-update-20080703/)
--   [GBS Update, 2008-02-19](/yuiblog/blog/2008/02/19/gbs-update-20080219/)
+-   [GBS Update, 2011-07-12](/yuiblog/2011/07/12/gbs-update/)
+-   [GBS Update, 2010-11-03](/yuiblog/2010/11/03/gbs-update-2010q4/)
+-   [GBS Update, 2010-02-16](/yuiblog/2010/02/16/gbs-update-2010q1/)
+-   [GBS Update, 2009-10-16](/yuiblog/2009/10/16/gbs-update-2009q4/)
+-   [GBS Update, 2009-07-02](/yuiblog/2009/07/02/gbs-update-20090702/)
+-   [GBS Update, 2009-01-28](/yuiblog/2009/01/28/gbs-update-20090128/)
+-   [GBS Update, 2008-07-03](/yuiblog/2008/07/03/gbs-update-20080703/)
+-   [GBS Update, 2008-02-19](/yuiblog/2008/02/19/gbs-update-20080219/)

@@ -567,7 +567,7 @@ To test the new `enhanceAccessibility` method, we'll use the [Getting Content fr
 
 ### Further Reading and Resources
 
--   [Using WAI-ARIA Roles and States with the YUI Menu Control](/yuiblog/blog/2007/12/21/menu-waiaria/)
+-   [Using WAI-ARIA Roles and States with the YUI Menu Control](/yuiblog/2007/12/21/menu-waiaria/)
 -   [Accessible Rich Internet Applications (WAI-ARIA) Version 1.0 W3C Specification](http://www.w3.org/TR/wai-aria/)
 -   [WAI-ARIA Best Practices](http://www.w3.org/TR/wai-aria-practices/)
 -   [ARIA: Accessible Rich Internet Applications/Relationship to HTML FAQ](http://developer.mozilla.org/en/docs/ARIA:_Accessible_Rich_Internet_Applications/Relationship_to_HTML_FAQ)

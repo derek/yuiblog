@@ -9,7 +9,7 @@ categories:
   - "Graded Browser Support"
   - "Development"
 ---
-Approximately every three months we update the [chart detailing which browsers receive A-grade support](http://developer.yahoo.com/yui/articles/gbs/gbs_browser-chart.html) according to [Graded Browser Support](http://developer.yahoo.com/yui/articles/gbs/gbs.html). In conjunction with yesterday's [YUI update release](/yuiblog/blog/2006/11/13/yui-0120-released/), here is our browser support update for Q4 2006.
+Approximately every three months we update the [chart detailing which browsers receive A-grade support](http://developer.yahoo.com/yui/articles/gbs/gbs_browser-chart.html) according to [Graded Browser Support](http://developer.yahoo.com/yui/articles/gbs/gbs.html). In conjunction with yesterday's [YUI update release](/yuiblog/2006/11/13/yui-0120-released/), here is our browser support update for Q4 2006.
 
 In summary: A-grade support begins for Firefox 2.0, and is reiterated for IE7. A-grade support is discontinued for IE 5.5 and Firefox 1.0. Seldom-used Gecko derivatives (e.g., Netscape and Mozilla Application Suite) now receive X-grade instead of A-grade support. Opera 9 now receives A-grade support on additional platforms.
 

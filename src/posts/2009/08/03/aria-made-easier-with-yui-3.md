@@ -88,5 +88,5 @@ While YUI 3 is presently composed mostly of utilities, we are hard at work polis
 ### Additional Resources
 
 -   [Developing Accessible Widgets Using ARIA](http://video.yahoo.com/watch/4073211/10996186 "Todd Kloots: ")
--   [Improving Accessibility Through Focus Management](/yuiblog/blog/2009/02/23/managing-focus/ "Improving Accessibility Through Focus Management » Yahoo! User Interface Blog")
--   [Configuring Your Machine For Testing With A Screen Reader](/yuiblog/blog/2008/12/30/configuring-screen-readers/ "Configuring Your Machine For Testing With A Screen Reader » Yahoo! User Interface Blog")
+-   [Improving Accessibility Through Focus Management](/yuiblog/2009/02/23/managing-focus/ "Improving Accessibility Through Focus Management » Yahoo! User Interface Blog")
+-   [Configuring Your Machine For Testing With A Screen Reader](/yuiblog/2008/12/30/configuring-screen-readers/ "Configuring Your Machine For Testing With A Screen Reader » Yahoo! User Interface Blog")

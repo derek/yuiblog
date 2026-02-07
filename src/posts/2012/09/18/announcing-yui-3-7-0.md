@@ -8,11 +8,11 @@ permalink: /2012/09/18/announcing-yui-3-7-0/
 categories:
   - "Releases"
 ---
-**NOTE: Be sure to [update to the latest patch release](/yuiblog/blog/2012/09/24/yui-3-7-2-patch-release/): 3.7.2**
+**NOTE: Be sure to [update to the latest patch release](/yuiblog/2012/09/24/yui-3-7-2-patch-release/): 3.7.2**
 
 We are happy to announce the release of YUI 3.7.0, now available on [CDN](http://yui.yahooapis.com/3.7.0/build/yui/yui-min.js) or as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0.zip). The documentation on the [website](http://yuilibrary.com/) has been updated as well! Releases will be coming more often now, as we transition to a [shorter release cycle](https://github.com/yui/yui3/wiki/Development-Schedule). Highlights for this release are:
 
--   Significant performance improvements (up to 3x!) in [Event](http://yuilibrary.com/yui/docs/event/) through both runtime and memory optimizations. More details in our [previous blog post](/yuiblog/blog/2012/08/31/yui-3-7-0pr1-event-performance/).
+-   Significant performance improvements (up to 3x!) in [Event](http://yuilibrary.com/yui/docs/event/) through both runtime and memory optimizations. More details in our [previous blog post](/yuiblog/2012/08/31/yui-3-7-0pr1-event-performance/).
     
 -   [ScrollView](http://yuilibrary.com/yui/docs/scrollview/) has undergone a major refactoring and includes new features such as Forced-Axis, Dual-Axis, and Right-To-Left support. For more details view the [release notes](https://gist.github.com/3745807).
     

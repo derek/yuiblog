@@ -39,7 +39,7 @@ The evening was rounded out by a spicy and informative talk from [Douglas Crockf
 
 ### Day 2: Connecting.
 
-[![](/yuiblog/blog/wp-content/uploads/2012/11/ryan-225x300.jpg "ryan speaking at YUIConf 2012")](/yuiblog/blog/wp-content/uploads/2012/11/ryan.jpg)
+[![](/yuiblog/wp-content/uploads/2012/11/ryan-225x300.jpg "ryan speaking at YUIConf 2012")](/yuiblog/wp-content/uploads/2012/11/ryan.jpg)
 
 Day 2 picked up where Day 1 left off with Ryan Grove speaking on “_When Not to Use YUI_”. This may seem like an odd topic at a YUI conference, but Ryan’s main idea was to be pragmatic about how you use any framework and to know the costs behind all the “magic”. In the end, he serves as a great example of the way in which someone can use YUI, explore ways to improve it, and contribute those changes back to the codebase. This is the quintessential life cycle of a YUI developer.
 

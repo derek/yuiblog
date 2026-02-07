@@ -18,7 +18,7 @@ If you haven't had the opportunity to play with a screen reader firsthand this v
 
 ### Related URLs
 
--   [YUI Theater — Doug Geoffray: "From the Mouth of a Screenreader"](/yuiblog/blog/2007/03/28/video-geoffray/)
+-   [YUI Theater — Doug Geoffray: "From the Mouth of a Screenreader"](/yuiblog/2007/03/28/video-geoffray/)
 
 #### Technical Notes
 

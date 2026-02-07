@@ -10,7 +10,7 @@ categories:
 ---
 _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YUI team and community. If you have any interesting demos or links you’d like to share, leave a comment below._
 
--   This week saw the release of **YUI 3.9.0pr3**, our last scheduled preview release before [next week's](https://github.com/yui/yui3/wiki/Development-Schedule#wiki-next-release) **3.9.0 GA release**. This release includes the addition of Y.Tree, Normalize.css, A+ Compatible Promises, Graphics Chaining, and more! See [this blog post](/yuiblog/blog/2013/02/19/yui-3-9-0pr3/) for a recap of everything that has changed since [3.9.0pr2](/yuiblog/blog/2013/01/25/yui-3-9-0pr2/).
+-   This week saw the release of **YUI 3.9.0pr3**, our last scheduled preview release before [next week's](https://github.com/yui/yui3/wiki/Development-Schedule#wiki-next-release) **3.9.0 GA release**. This release includes the addition of Y.Tree, Normalize.css, A+ Compatible Promises, Graphics Chaining, and more! See [this blog post](/yuiblog/2013/02/19/yui-3-9-0pr3/) for a recap of everything that has changed since [3.9.0pr2](/yuiblog/2013/01/25/yui-3-9-0pr2/).
     
 -   Added to the [YUI Theater](http://www.youtube.com/user/yuilibrary) this week was [YUI Open RoundTable 02/21/2013](http://www.youtube.com/watch?v=xBmevfnqD2Q), where we discussed performance benchmarking with `yui-bench`, [YUI CSS](http://tilomitra.github.com/), [YUI Web Font](https://github.com/yui/yui3/wiki/YUI-Web-Font), and as well as the typical house-cleaning with bugs and pull requests.
     

@@ -8,7 +8,7 @@ permalink: /2007/09/12/satyam-datatable/
 categories:
   - "Development"
 ---
-**Don't miss [Part Two of this series](/yuiblog/blog/2007/09/26/satyam-datatable-2/), in which Satyam explores methods for changing data within the [YUI DataTable Control](http://developer.yahoo.com/yui/datatable/).**
+**Don't miss [Part Two of this series](/yuiblog/2007/09/26/satyam-datatable-2/), in which Satyam explores methods for changing data within the [YUI DataTable Control](http://developer.yahoo.com/yui/datatable/).**
 
 [YUI's DataTable Control](http://developer.yahoo.com/yui) has many options, more than any single application will use. Unless you want to improvise something different for each and every page, chances are you will be using a subset of those options. As most often is the case, whatever worked your first time, that's what you will use in the rest of the pages, usually copying it over and then modifying it for each page. Then, in the second or third page, you notice that clicking on a column heading does reorder the data but not in the way you expected; so, you research a little more and find out that the code you so happily copied all over needs some retouching. Given the complexity of the component and the problems you will address with it, planning a little bit in advance is a good idea.
 

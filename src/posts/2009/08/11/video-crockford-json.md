@@ -10,7 +10,7 @@ categories:
 ---
 [![Douglas Crockford of Yahoo!](/yuiblog/blog-archive/assets/crockford-json-20090811-103121.jpg)](http://yuilibrary.com/theater/douglas-crockford/crockford-json/)
 
-At the [July 27 meeting of the Bayjax group](/yuiblog/blog/2009/07/13/bayjax-at-yahoo/), hosted here at Yahoo!, we had a lineup of terrific speakers. The first of the Bayjax talks — Douglas Crockford's "The JSON Saga" — is now available on YUI Theater, [available in high definition with a full transcript on the YUI Theater site](http://yuilibrary.com/theater/douglas-crockford/crockford-json/).
+At the [July 27 meeting of the Bayjax group](/yuiblog/2009/07/13/bayjax-at-yahoo/), hosted here at Yahoo!, we had a lineup of terrific speakers. The first of the Bayjax talks — Douglas Crockford's "The JSON Saga" — is now available on YUI Theater, [available in high definition with a full transcript on the YUI Theater site](http://yuilibrary.com/theater/douglas-crockford/crockford-json/).
 
 Here's a taste of what Douglas has to say in this new talk, which covers the invention of JavaScript Object Notation as a data format and its popularization and standardization.
 

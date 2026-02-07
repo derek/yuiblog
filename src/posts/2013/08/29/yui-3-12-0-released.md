@@ -13,17 +13,17 @@ We are happy to announce the release of **YUI 3.12.0**! This release is availabl
 
 ## In This Release
 
-Our [Release Candidate blog post](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/) goes into details about this release, but here's a quick list of components updated in this release (click the links for more details):
+Our [Release Candidate blog post](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/) goes into details about this release, but here's a quick list of components updated in this release (click the links for more details):
 
--   [App Framework](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#appframework)
--   [Button](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#button)
--   [Calendar](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#calendar)
--   [Charts](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#charts)
--   [Event](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#event)
--   [Node](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#node)
--   [TabView](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#tabview)
--   [Template](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#template)
--   [Tree](/yuiblog/blog/2013/08/15/yui-3-12-0-release-candidate-1/#tree)
+-   [App Framework](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#appframework)
+-   [Button](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#button)
+-   [Calendar](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#calendar)
+-   [Charts](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#charts)
+-   [Event](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#event)
+-   [Node](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#node)
+-   [TabView](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#tabview)
+-   [Template](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#template)
+-   [Tree](/yuiblog/2013/08/15/yui-3-12-0-release-candidate-1/#tree)
 
 ## More Information
 

@@ -13,7 +13,7 @@ categories:
 
 The [Accessible Rich Interet Applications](http://www.w3.org/TR/wai-aria/) (ARIA) specification is in working-draft form in the W3C. It provides a framework for implementating rich web-applications that convey improved semantics to screen reader software as a user interacts with a page. ARIA is patterned after the more established desktop experience, but it also provides a set of tools that allows room for invention.
 
-In this talk, delivered at Yahoo! on December 3, 2008, YUI engineer and accessibility specialist Todd Kloots introduces you to ARIA and provides some insights gleaned from his work in [bringing ARIA support to a host of YUI widgets](/yuiblog/blog/2008/10/02/yui-aria/).
+In this talk, delivered at Yahoo! on December 3, 2008, YUI engineer and accessibility specialist Todd Kloots introduces you to ARIA and provides some insights gleaned from his work in [bringing ARIA support to a host of YUI widgets](/yuiblog/2008/10/02/yui-aria/).
 
 [Slides for Todd's talk can be downloaded here](/yuiblog/blog-archive/assets/kloots-aria.zip) (180MB ppt includes screencaptures of ARIA scenarios as experienced with a screen reader).
 

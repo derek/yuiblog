@@ -23,6 +23,6 @@ We finish out our YUIConf 2013 series with our [Lightning Talks session](https:/
 -   [Luke Arduini](https://www.youtube.com/watch?v=MPaKarJ52Ic#t=1h7m0s) of Yahoo on client side apps with npm
 -   [Johnathan Tsai](https://www.youtube.com/watch?v=MPaKarJ52Ic#t=1h16m50s) of Talentral on their latest features
 
-You can check out the [previous video](/yuiblog/blog/2014/03/04/yuiconf-2013-reid-burke-on-testing-yui-everywhere/) here as well as watch all the videos via our [YouTube playlist](http://www.youtube.com/playlist?list=PLjKP9DUCzZorde6sLWHJ3GNd-6VrGrbqm).
+You can check out the [previous video](/yuiblog/2014/03/04/yuiconf-2013-reid-burke-on-testing-yui-everywhere/) here as well as watch all the videos via our [YouTube playlist](http://www.youtube.com/playlist?list=PLjKP9DUCzZorde6sLWHJ3GNd-6VrGrbqm).
 
 <iframe allowfullscreen="allowfullscreen" frameborder="0" height="315" src="//www.youtube.com/embed/MPaKarJ52Ic" width="560"></iframe>

@@ -10,7 +10,7 @@ categories:
 ---
 ![Kweight of common YUI baseline assets.](/yuiblog/blog-archive/assets/loading/core.png)
 
-With [the 2.6.0 release of YUI](/yuiblog/blog/2008/10/01/yui-260/), the [YUI Loader](http://developer.yahoo.com/yui/yuiloader/) now supports combo-handling for both JavaScript and CSS files coming off of Yahoo's CDN. YUI Loader is the utility that understands the YUI module structure and dependency list and can load any YUI component on the page on-demand. The addition of combo-handling makes YUI Loader an even more viable option for many implementations, because you're never more than two HTTP requests (one for JS, one for CSS) away from downloading the requirements for any YUI component(s) to your page (not including image assets).
+With [the 2.6.0 release of YUI](/yuiblog/2008/10/01/yui-260/), the [YUI Loader](http://developer.yahoo.com/yui/yuiloader/) now supports combo-handling for both JavaScript and CSS files coming off of Yahoo's CDN. YUI Loader is the utility that understands the YUI module structure and dependency list and can load any YUI component on the page on-demand. The addition of combo-handling makes YUI Loader an even more viable option for many implementations, because you're never more than two HTTP requests (one for JS, one for CSS) away from downloading the requirements for any YUI component(s) to your page (not including image assets).
 
 In this short article, I'll take you through three common approaches to loading YUI on the page and review the filesize breakdown and benefits of each approach. All filesizes discussed here are minified and gzipped KB.
 
@@ -138,4 +138,4 @@ Here are some common implementations of YUI components using the combo-handler; 
 
 ![K-weight for common YUI components.](/yuiblog/blog-archive/assets/loading/kweight.png)
 
-Any of these single HTTP requests weighs less on the wire than the image above. [As I've discussed elsewhere](/yuiblog/blog/2006/10/16/pageweight-yui0114/), the _a la carte_ design of YUI means that you can add components to any of these payloads at a big discount because you'll be adding only incremental dependencies. For example, the DataTable payload in the image above could have TabView added to it with just a 3.5KB additional cost. Using YUI Loader and its new combo-handling functionality makes this process even more performant and responsive in your applications.
+Any of these single HTTP requests weighs less on the wire than the image above. [As I've discussed elsewhere](/yuiblog/2006/10/16/pageweight-yui0114/), the _a la carte_ design of YUI means that you can add components to any of these payloads at a big discount because you'll be adding only incremental dependencies. For example, the DataTable payload in the image above could have TabView added to it with just a 3.5KB additional cost. Using YUI Loader and its new combo-handling functionality makes this process even more performant and responsive in your applications.

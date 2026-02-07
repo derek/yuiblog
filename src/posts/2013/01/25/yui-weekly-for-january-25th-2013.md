@@ -10,11 +10,11 @@ categories:
 ---
 _Welcome to YUI Weekly, the weekly roundup of news and announcements from the YUI team and community. If you have any interesting demos or links you’d like to share, leave a comment below._
 
--   This week saw two releases of YUI. [3.8.1 was released](/yuiblog/blog/2013/01/23/yui-3-8-1-released/) as a 3.8 patch for iOS6 compatability improvements in addition to updates for DataTable, Attribute, and Template. The second release this week was [3.9.0pr2](/yuiblog/blog/2013/01/25/yui-3-9-0pr2/), a follow-up preview release to last week's [3.9.0pr1](/yuiblog/blog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/). Jenny also [posted some details](https://groups.google.com/forum/?fromgroups=#!topic/yui-contrib/eZgWdtE2wI4) about our release process policy on the mailing list. Happy upgrading!
+-   This week saw two releases of YUI. [3.8.1 was released](/yuiblog/2013/01/23/yui-3-8-1-released/) as a 3.8 patch for iOS6 compatability improvements in addition to updates for DataTable, Attribute, and Template. The second release this week was [3.9.0pr2](/yuiblog/2013/01/25/yui-3-9-0pr2/), a follow-up preview release to last week's [3.9.0pr1](/yuiblog/2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/). Jenny also [posted some details](https://groups.google.com/forum/?fromgroups=#!topic/yui-contrib/eZgWdtE2wI4) about our release process policy on the mailing list. Happy upgrading!
     
--   A huge thanks and welcome to YUI's newest external contributor, Joey Smith, who offered to [take over management](/yuiblog/blog/2013/01/24/yui-compressor-has-a-new-owner/) of the YUI Compressor project.
+-   A huge thanks and welcome to YUI's newest external contributor, Joey Smith, who offered to [take over management](/yuiblog/2013/01/24/yui-compressor-has-a-new-owner/) of the YUI Compressor project.
     
--   New to the [YUILibrary YouTube channel](http://www.youtube.com/user/yuilibrary) is Dmitry Savintsev and Albert Yu's [YUIConf 2012](http://lanyrd.com/2012/yuiconf/) talk "[Security Testing of YUI-Powered Applications](/yuiblog/blog/2013/01/23/yuiconf-2012-dmitry-savintsev-and-albert-yu-on-security-testing-of-yui-powered-applications/)".
+-   New to the [YUILibrary YouTube channel](http://www.youtube.com/user/yuilibrary) is Dmitry Savintsev and Albert Yu's [YUIConf 2012](http://lanyrd.com/2012/yuiconf/) talk "[Security Testing of YUI-Powered Applications](/yuiblog/2013/01/23/yuiconf-2012-dmitry-savintsev-and-albert-yu-on-security-testing-of-yui-powered-applications/)".
     
 -   As you may have seen from his [Future of YUI CSS talk](http://www.youtube.com/watch?v=KpyBAQt7hUs) at YUIConf, Jeff Conniff has been working on a Skin Builder app for YUI. While the project is not yet complete, you can checkout this [preview](http://jconniff.github.com/skinner/) in the meantime. Very cool!
     

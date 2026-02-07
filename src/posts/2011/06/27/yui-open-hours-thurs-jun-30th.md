@@ -15,7 +15,7 @@ In the process of building the [Charts component](http://developer.yahoo.com/yui
 
 Of course when I say "we", I mean Tripp Bridges. Tripp will join us to review the API, show some examples, and talk about the plan for the future of YUI's graphics layer.
 
-As with the components in the last couple of Open Hours, you can play with this API today using [3.4.0PR2](/yuiblog/blog/2011/06/23/yui-3-4-0-preview-release-2/). And we want your feedback (ok, and your testing).
+As with the components in the last couple of Open Hours, you can play with this API today using [3.4.0PR2](/yuiblog/2011/06/23/yui-3-4-0-preview-release-2/). And we want your feedback (ok, and your testing).
 
 ### Time & Details
 

@@ -8,7 +8,7 @@ permalink: /2008/01/18/in-the-wild-20080118/
 categories:
   - "In the Wild"
 ---
-Here are some of the stories and happenings that have caught our eye since [the last "In the Wild" post](/yuiblog/blog/2007/12/12/in-the-wild-20071212/):
+Here are some of the stories and happenings that have caught our eye since [the last "In the Wild" post](/yuiblog/2007/12/12/in-the-wild-20071212/):
 
 -   **[YUI's Nate Koechley on the TWiT Podcast](http://www.twit.tv/floss23):** Over on the TWiT network's "Free and Libre Open Source Software" (FLOSS) podcast, Randal Schwartz and Leo Laporte had YUI's Nate Koechley on as a guest to talk about YUI. It's a great interview — astute questions and observations from the hosts, and of course Nate has been on the front lines talking about YUI since its inception.  
     [![Nate Koechley with Randal Schwartz and Leo Laporte on the FLOSS podcast](/yuiblog/blog-archive/assets/nate-floss.jpg)](http://www.twit.tv/floss23)

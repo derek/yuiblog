@@ -8,7 +8,7 @@ permalink: /2008/10/15/2008-f2esummit/
 categories:
   - "Development"
 ---
-It's that time of year again. We just had the third annual Yahoo Front-end Engineering (F2E) Summit, an internal conference that brings together Yahoo F2E talent from around the world. We'll release some of the videos shortly ([the YUI 3 presentation by Eric Miraglia and Matt Sweeney is up today](/yuiblog/blog/2008/10/14/video-yui3/)). In the meantime here are some reflections on what we talked about last week.
+It's that time of year again. We just had the third annual Yahoo Front-end Engineering (F2E) Summit, an internal conference that brings together Yahoo F2E talent from around the world. We'll release some of the videos shortly ([the YUI 3 presentation by Eric Miraglia and Matt Sweeney is up today](/yuiblog/2008/10/14/video-yui3/)). In the meantime here are some reflections on what we talked about last week.
 
 [![David Filo talks to Yahoo frontend engineers last week at Yahoo HQ in Sunnyvale, CA.](http://farm4.static.flickr.com/3237/2927870413_dbfef09488.jpg?v=0)](http://www.flickr.com/photos/equanimity/2927870413/in/set-72157594305864452/)Yahoo co-founder David Filo opened the summit with a talk about the role of F2Es at Yahoo and why they are important. I think David made some really excellent points which follow on from work [Nate Koechely from the YUI team](http://nate.koechley.com/) has been doing on F2E professionalism. Keynote addresses by [Bill Scott](http://looksgoodworkswell.blogspot.com/) and [Douglas Crockford](http://blog.360.yahoo.com/douglascrockford) added depth and nuance to the conversation as well.
 
@@ -38,7 +38,7 @@ Another great example is from the European TV listing. Here, the search box is r
 
 Thinking about more than just the visual metaphor or mental model of sighted users is important. Getting the basic interaction model correct is also important and the best medium to do that in is HTML without styling.
 
-Finally, Todd Kloots from the YUI team presented the progressive enhancement features of the [YUI Menu Control](http://developer.yahoo.com/yui/menu) which [he's blogged about here previously](/yuiblog/blog/2007/12/21/menu-waiaria/).
+Finally, Todd Kloots from the YUI team presented the progressive enhancement features of the [YUI Menu Control](http://developer.yahoo.com/yui/menu) which [he's blogged about here previously](/yuiblog/2007/12/21/menu-waiaria/).
 
 Jenny Han Donnelly (YUI engineer and author of the YUI DataTable, among other things) chaired the conference, and it was our best summit yet. Can't wait for next year's edition!
 

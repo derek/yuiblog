@@ -8,7 +8,7 @@ permalink: /2012/09/12/yui-3-7-0pr2-final-round-of-testing/
 categories:
   - "Releases"
 ---
-Two weeks ago we released [YUI 3.7.0pr1](/yuiblog/blog/2012/08/31/yui-3-7-0pr1-event-performance/ "YUI 3.7.0pr1 Blog post"), today we're releasing the second and final preview release for the current development sprint. YUI 3.7.0pr2 is now available to the developer community for feedback and testing on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr2/build/yui/yui-min.js "YUI 3.7.0pr2 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr2.zip "YUI 3.7.0pr2 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation. To reiterate the importance of testing our preview releases: we rely on your feedback from testing these preview releases in your real world applications, this gives us the final vote of confidence in the stability of the code, beyond what our automated and manual testing provides.
+Two weeks ago we released [YUI 3.7.0pr1](/yuiblog/2012/08/31/yui-3-7-0pr1-event-performance/ "YUI 3.7.0pr1 Blog post"), today we're releasing the second and final preview release for the current development sprint. YUI 3.7.0pr2 is now available to the developer community for feedback and testing on the [Yahoo! CDN](http://yui.yahooapis.com/3.7.0pr2/build/yui/yui-min.js "YUI 3.7.0pr2 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.7.0pr2.zip "YUI 3.7.0pr2 Zip distribution")), and our [Staging website](http://stage.yuilibrary.com/) has the updated documentation. To reiterate the importance of testing our preview releases: we rely on your feedback from testing these preview releases in your real world applications, this gives us the final vote of confidence in the stability of the code, beyond what our automated and manual testing provides.
 
 ### The Next Production-Ready Release
 
@@ -18,7 +18,7 @@ Next week, on **September 18, 2012**, we will be cutting the next production-rea
 
 #### Building with Shifter
 
-**For this release, all modules have been minified using UglifyJS!** We have removed all of the old Ant build files from our 3.x branch, and rebuilt _all_ of our modules using the latest version of [Shifter](http://yui.github.com/shifter/), [our new build tool](/yuiblog/blog/2012/08/27/shifter-fast-yui-module-building/ "Shifter introduction blog post"), which uses [UglifyJS](https://github.com/mishoo/UglifyJS) by default. We've _rigorously_ tested the rebuilt modules on 20+ devices using [Yeti](http://yeti.cx) and have **not** seen any differences with the minified files using UglifyJS compared to YUI Compressor, besides being ~5% smaller in file size. If you notice something not working right with the new minified files, please don't hesitate to **[file a ticket](http://yuilibrary.com/projects/yui3/newticket/)**.
+**For this release, all modules have been minified using UglifyJS!** We have removed all of the old Ant build files from our 3.x branch, and rebuilt _all_ of our modules using the latest version of [Shifter](http://yui.github.com/shifter/), [our new build tool](/yuiblog/2012/08/27/shifter-fast-yui-module-building/ "Shifter introduction blog post"), which uses [UglifyJS](https://github.com/mishoo/UglifyJS) by default. We've _rigorously_ tested the rebuilt modules on 20+ devices using [Yeti](http://yeti.cx) and have **not** seen any differences with the minified files using UglifyJS compared to YUI Compressor, besides being ~5% smaller in file size. If you notice something not working right with the new minified files, please don't hesitate to **[file a ticket](http://yuilibrary.com/projects/yui3/newticket/)**.
 
 #### Graphics and Charts
 
@@ -47,7 +47,7 @@ We have graduated [Michael Matuzak's](https://github.com/emkay) [`gallery-tap`]
 
 #### ScrollView Refactoring
 
-Our preview release process has been very helpful to ScrollView's refactoring, as you've helped [identify](http://yuilibrary.com/projects/yui3/ticket/2532732) [some](http://yuilibrary.com/projects/yui3/ticket/2532742) [bugs](http://yuilibrary.com/projects/yui3/ticket/2532739) introduced in 3.7.0pr1. After reviewing the [ScrollView changes in 3.7.0pr1](/yuiblog/blog/2012/08/31/yui-3-7-0pr1-event-performance/ "YUI 3.7.0pr1 Blog post"), the following the larger changes introduced in this preview release:
+Our preview release process has been very helpful to ScrollView's refactoring, as you've helped [identify](http://yuilibrary.com/projects/yui3/ticket/2532732) [some](http://yuilibrary.com/projects/yui3/ticket/2532742) [bugs](http://yuilibrary.com/projects/yui3/ticket/2532739) introduced in 3.7.0pr1. After reviewing the [ScrollView changes in 3.7.0pr1](/yuiblog/2012/08/31/yui-3-7-0pr1-event-performance/ "YUI 3.7.0pr1 Blog post"), the following the larger changes introduced in this preview release:
 
 -   Smoother flick animations
 -   When using multiple ScrollView instances on a page, you now have the ability to adjust per-animation and drag physics per instance.
@@ -59,7 +59,7 @@ The work that has gone into improving event performance is just the beginning; y
 
 #### App Framework Additions
 
-The two major additions to the App Framework for 3.7.0, server rendered views support and route-specific middleware, appear to be very solid and useful to people. These will be the only major changes to the App Framework for 3.7.0, as the [other planned changes](/yuiblog/blog/2012/08/31/yui-3-7-0pr1-event-performance/ "YUI 3.7.0pr1 Blog post") will happen in the next development sprint.
+The two major additions to the App Framework for 3.7.0, server rendered views support and route-specific middleware, appear to be very solid and useful to people. These will be the only major changes to the App Framework for 3.7.0, as the [other planned changes](/yuiblog/2012/08/31/yui-3-7-0pr1-event-performance/ "YUI 3.7.0pr1 Blog post") will happen in the next development sprint.
 
 #### Happy Testing!
 

@@ -23,7 +23,7 @@ A future release of the Maps AJAX API will resolve this issue seamlessly; in the
     -   [Drag & Drop Utility](http://developer.yahoo.com/yui/dragdrop/)
     -   [Animation Utility](http://developer.yahoo.com/yui/animation/)
     
-    The recommended approach here is to include the combined `utilities.js` file that ships with the [YUI distribution](http://developer.yahoo.com/yui/download/) (in the `build/utilities` directory). This file will provide all of the above components in a single aggregate file (along with [Connection Manager](http://developer.yahoo.com/yui/connection/)) which weighs just 18.1KB gzipped on the wire. ([More on YUI and pageweight](/yuiblog/blog/2006/10/16/pageweight-yui0114/); [more on why reducing http requests is a Very Good Thing](/yuiblog/blog/2006/11/28/performance-research-part-1/).)
+    The recommended approach here is to include the combined `utilities.js` file that ships with the [YUI distribution](http://developer.yahoo.com/yui/download/) (in the `build/utilities` directory). This file will provide all of the above components in a single aggregate file (along with [Connection Manager](http://developer.yahoo.com/yui/connection/)) which weighs just 18.1KB gzipped on the wire. ([More on YUI and pageweight](/yuiblog/2006/10/16/pageweight-yui0114/); [more on why reducing http requests is a Very Good Thing](/yuiblog/2006/11/28/performance-research-part-1/).)
 3.  The Maps AJAX API's base include file, which we're omitting, does three things:
     1.  Includes the necessary YUI components — you've done that already.
     2.  Sets a global variable, YMAPPID, to the value of your [application ID for the Yahoo! Maps API](http://api.search.yahoo.com/webservices/register_application).

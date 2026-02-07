@@ -13,28 +13,28 @@ We are very happy to announce the release of **YUI 3.13.0**! You can find this r
 
 ## In This Release
 
-Much of the information about this release is detailed in our [Release Candidate blog post](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/). The components updated by this release are listed below.
+Much of the information about this release is detailed in our [Release Candidate blog post](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/). The components updated by this release are listed below.
 
--   [Router](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#router)
--   [Model](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#model)
--   [Button](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#button)
--   [Calendar](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#calendar)
--   [DataTable](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#datatable)
--   [Rich Text Editor](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#rich)
--   [Event, Custom Event, and Event ValueChange](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#event)
--   [File](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#file)
--   [Graphics](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#graphics)
--   [History](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#history)[](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#node)
--   [Node and ScrollInfo Node Plugin](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#node)
--   [Paginator](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#paginator)
--   [Transition](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#transition)
--   [Uploader](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#uploader)
--   [Widget](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#widget)
--   [YUI Core](/yuiblog/blog/2013/10/02/yui-3-13-0-release-candidate-1/#yuicore)
+-   [Router](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#router)
+-   [Model](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#model)
+-   [Button](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#button)
+-   [Calendar](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#calendar)
+-   [DataTable](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#datatable)
+-   [Rich Text Editor](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#rich)
+-   [Event, Custom Event, and Event ValueChange](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#event)
+-   [File](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#file)
+-   [Graphics](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#graphics)
+-   [History](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#history)[](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#node)
+-   [Node and ScrollInfo Node Plugin](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#node)
+-   [Paginator](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#paginator)
+-   [Transition](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#transition)
+-   [Uploader](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#uploader)
+-   [Widget](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#widget)
+-   [YUI Core](/yuiblog/2013/10/02/yui-3-13-0-release-candidate-1/#yuicore)
 
 ## Removals and Deprecations
 
--   SimpleYUI - It was [deprecated a while back](/yuiblog/blog/2013/06/04/yui-3-10-2-released/#deprecations), and has been removed for this release.
+-   SimpleYUI - It was [deprecated a while back](/yuiblog/2013/06/04/yui-3-10-2-released/#deprecations), and has been removed for this release.
 -   `.swf` files - All of the `.swf` files in the YUI repo have been [removed](https://groups.google.com/forum/#!topic/yui-contrib/_SaE7C8Asks), and a new unsupported repo ([yui3-swfs](https://github.com/yui/yui3-swfs)) has been created with the source files, if you want to compile and host your own `.swf` files.
 -   `widget-locale` - This component was deprecated a long time ago, and now has been removed from the source code.
 -   [YUI PHP Loader](https://github.com/yui/phploader) - It has been deprecated in this release and will no longer be supported.

@@ -19,7 +19,7 @@ We released YUI 3.16.0 Release Candidate 1 yesterday. You can get it off the [CD
 
 ```
 
-Find out more about what's changed in this release by viewing the [change history rollup](https://github.com/yui/yui3/wiki/YUI-3.16.0-Change-History-Rollup). Andrew also wrote a [blog post with more information on the release](/yuiblog/blog/2014/04/03/yui-3-16-0-release-candidate-1/), so check that out before updating. We really appreciate feedback on RC releases, as they give us a chance to catch any last-minute bugs before the GA release. If you notice any bugs, please [file them on GitHub](https://github.com/yui/yui3/issues/new). Thanks!
+Find out more about what's changed in this release by viewing the [change history rollup](https://github.com/yui/yui3/wiki/YUI-3.16.0-Change-History-Rollup). Andrew also wrote a [blog post with more information on the release](/yuiblog/2014/04/03/yui-3-16-0-release-candidate-1/), so check that out before updating. We really appreciate feedback on RC releases, as they give us a chance to catch any last-minute bugs before the GA release. If you notice any bugs, please [file them on GitHub](https://github.com/yui/yui3/issues/new). Thanks!
 
 ## YUI Open Roundtable
 

@@ -11,7 +11,7 @@ categories:
 ---
 ### Code Review: Photos Near Me
 
-In [Eric F's most recent article](/yuiblog/blog/2012/04/23/using-your-apps-yui-components-on-the-server/) he reports in on his exercise to add YUI to the server side of his project app, Photos Near Me. Short form: so far, so good.
+In [Eric F's most recent article](/yuiblog/2012/04/23/using-your-apps-yui-components-on-the-server/) he reports in on his exercise to add YUI to the server side of his project app, Photos Near Me. Short form: so far, so good.
 
 It's been a while since we've done a good old fashioned code review, and this seems like a perfect candidate for it. Server side YUI, App framework, desktop and mobile considerations, progressive enhancement. Lots of good takeaways here.
 

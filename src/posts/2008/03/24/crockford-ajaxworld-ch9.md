@@ -30,7 +30,7 @@ You can [download Douglas's slides here](/yuiblog/blog-archive/assets/crockford/
 
 ### Douglas Crockford, Alex Russell and Joseph Smarr on Channel 9
 
-[![Douglas Crockford appeared on Microsoft's Channel 9 video series talking about the zen of JavaScript.](/yuiblog/blog-archive/assets/crockford_ch9.png)Douglas was also on Microsoft's Channel 9 last week](http://channel9.msdn.com/Showpost.aspx?postid=391047), appearing in a session filmed at MIX08 along with Alex Russell (of Dojo and SitePen) and Joseph Smarr (of Plaxo; [Joseph also appeared on YUI Theater talking about performance last year](/yuiblog/blog/2007/08/29/video-smarr/)).
+[![Douglas Crockford appeared on Microsoft's Channel 9 video series talking about the zen of JavaScript.](/yuiblog/blog-archive/assets/crockford_ch9.png)Douglas was also on Microsoft's Channel 9 last week](http://channel9.msdn.com/Showpost.aspx?postid=391047), appearing in a session filmed at MIX08 along with Alex Russell (of Dojo and SitePen) and Joseph Smarr (of Plaxo; [Joseph also appeared on YUI Theater talking about performance last year](/yuiblog/2007/08/29/video-smarr/)).
 
 > At MIX08, we were lucky enough to get three of the world's top JavaScript experts to talk to us about the future of the language, the "Zen" of JavaScript, and tips and tricks on performance and management of large JavaScript projects.
 

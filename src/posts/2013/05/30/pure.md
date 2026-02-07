@@ -8,7 +8,7 @@ permalink: /2013/05/30/pure/
 categories:
   - "Releases"
 ---
-[![pure-banner](/yuiblog/blog/wp-content/uploads/2013/05/pure-banner.png)](http://purecss.io/)
+[![pure-banner](/yuiblog/wp-content/uploads/2013/05/pure-banner.png)](http://purecss.io/)
 
 Yesterday at CSSConf, we launched [Pure](http://purecss.io) - a new CSS library. Phew! Here are the slides from the presentation:
 

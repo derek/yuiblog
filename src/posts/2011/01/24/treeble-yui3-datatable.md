@@ -8,7 +8,7 @@ permalink: /2011/01/24/treeble-yui3-datatable/
 categories:
   - "Development"
 ---
-The beta release of [DataTable](http://developer.yahoo.com/yui/3/datatable/) in YUI 3.3.0 gives us a very powerful component to play with. To kick the tires in a useful way, I decided to update my [Treeble](http://yuilibrary.com/gallery/show/treeble) examples to use DataTable. (Treeble enables [displaying hierarchical data in a table](/yuiblog/blog/2010/04/14/treeble-using-nested-yui-2-datasources-for-row-expansion/).)
+The beta release of [DataTable](http://developer.yahoo.com/yui/3/datatable/) in YUI 3.3.0 gives us a very powerful component to play with. To kick the tires in a useful way, I decided to update my [Treeble](http://yuilibrary.com/gallery/show/treeble) examples to use DataTable. (Treeble enables [displaying hierarchical data in a table](/yuiblog/2010/04/14/treeble-using-nested-yui-2-datasources-for-row-expansion/).)
 
 To my delight, it was a breeze! All the hard work is done in [`TreebleDataSource`](http://jafl.github.com/yui3-gallery/treeble/yuidoc/TreebleDataSource.html), which extends YUI 3 DataSource, so all I had to do was plug it into DataTable by using `Y.Plugin.DataTableDataSource` and then configure the columns:
 

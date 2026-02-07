@@ -31,4 +31,4 @@ We have [bug tracking reports](http://yuilibrary.com/projects/yui3/report/) crea
 
 The process for deciding whether to issue a major release (in this case **3.9.0**) or a minor release (say **3.8.2**) depends on the state of each branch at the time of the Stable Release deadline. If we feel that the `3.x` branch is stable and ready to go, we will issue a **3.9.0** release. Otherwise we will release **3.8.2** off of the `master` branch. Check out the [release process](https://github.com/yui/yui3/wiki/Contribution-Standards) under the Contribution Standards document for more details.
 
-We currently have a [3.9.0pr2](/yuiblog/blog/2013/01/25/yui-3-9-0pr2/) that we are testing for features and stability. You can download this and try it out right now to help us [find any issues](http://yuilibrary.com/projects/yui3/newticket/). **Happy testing!**
+We currently have a [3.9.0pr2](/yuiblog/2013/01/25/yui-3-9-0pr2/) that we are testing for features and stability. You can download this and try it out right now to help us [find any issues](http://yuilibrary.com/projects/yui3/newticket/). **Happy testing!**

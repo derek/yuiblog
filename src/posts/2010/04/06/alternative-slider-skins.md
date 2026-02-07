@@ -36,7 +36,7 @@ We will be providing original photoshop files containing each of the rail and th
 
 ![](/yuiblog/blog-archive/assets/slider_blue_3.jpg)
 
-YUI 3's widget foundation reached GA status last week [with the release of YUI 3.1.0](/yuiblog/blog/2010/03/31/announcing-yui-3-1-0/). We don't yet have a full slate of native YUI 3 widgets, and we haven't yet defined a set of global skins. However, the work we did on visual assets for the beta Slider Component should make it more useful in the short term, and we'll carry all of these visual options on as alternative themes or examples once YUI 3's baseline themes are in place.
+YUI 3's widget foundation reached GA status last week [with the release of YUI 3.1.0](/yuiblog/2010/03/31/announcing-yui-3-1-0/). We don't yet have a full slate of native YUI 3 widgets, and we haven't yet defined a set of global skins. However, the work we did on visual assets for the beta Slider Component should make it more useful in the short term, and we'll carry all of these visual options on as alternative themes or examples once YUI 3's baseline themes are in place.
 
 Have a look at these [working code examples](http://developer.yahoo.com/yui/3/examples/slider/slider_skin.html) of the new sliders. Checkout the behind the scenes [detailed workings](http://developer.yahoo.com/yui/3/slider/#skinning) of the skin images and CSS.
 

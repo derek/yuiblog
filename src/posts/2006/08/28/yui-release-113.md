@@ -8,7 +8,7 @@ permalink: /2006/08/28/yui-release-113/
 categories:
   - "Development"
 ---
-We released a minor update to the [YUI Library](http://developer.yahoo.com/yui/) today, fixing more than a dozen bugs across the suite. This brings YUI to version 0.11.3. You can download the update, along with comprehensive release notes, from [SourceForge](http://sourceforge.net/projects/yui). (You can read more about what was new for the last major release, 0.11 in July, [here on YUIBlog](/yuiblog/blog/2006/07/10/yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control/); our latest [forward-looking roadmap for the YUI Library](http://groups.yahoo.com/group/ydn-javascript/message/3804) is available on the Yahoo! Group YDN-JavaScript.)
+We released a minor update to the [YUI Library](http://developer.yahoo.com/yui/) today, fixing more than a dozen bugs across the suite. This brings YUI to version 0.11.3. You can download the update, along with comprehensive release notes, from [SourceForge](http://sourceforge.net/projects/yui). (You can read more about what was new for the last major release, 0.11 in July, [here on YUIBlog](/yuiblog/2006/07/10/yui-library-release-011-a-host-of-enhancements-and-a-new-logger-control/); our latest [forward-looking roadmap for the YUI Library](http://groups.yahoo.com/group/ydn-javascript/message/3804) is available on the Yahoo! Group YDN-JavaScript.)
 
 Along with this release, we're updating our [YUI Cheat Sheets](http://developer.yahoo.com/yui/#cheatsheets) and broadening coverage to include additional components. Cheat Sheets are now available for the following YUI utilities and controls:
 

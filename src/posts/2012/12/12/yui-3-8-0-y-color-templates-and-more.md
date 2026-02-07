@@ -9,7 +9,7 @@ categories:
   - "Releases"
   - "Development"
 ---
-We are pleased to announce the availability of **YUI 3.8.0**. It is available via [Yahoo! CDN](http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js) (or [download](http://yui.zenfs.com/releases/yui3/yui_3.8.0.zip)) and on [npm](https://npmjs.org/package/yui). We have also updated our [website](http://yuilibrary.com/) to reflect the changes and new features of 3.8.0. The highlights of this release are listed below, inspired by the [original 3.8.0pr1 announcement](/yuiblog/blog/2012/11/07/yui-3-8-0pr1-template-and-color-utilities/) from [Eric Ferraiuolo](https://twitter.com/ericf).
+We are pleased to announce the availability of **YUI 3.8.0**. It is available via [Yahoo! CDN](http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js) (or [download](http://yui.zenfs.com/releases/yui3/yui_3.8.0.zip)) and on [npm](https://npmjs.org/package/yui). We have also updated our [website](http://yuilibrary.com/) to reflect the changes and new features of 3.8.0. The highlights of this release are listed below, inspired by the [original 3.8.0pr1 announcement](/yuiblog/2012/11/07/yui-3-8-0pr1-template-and-color-utilities/) from [Eric Ferraiuolo](https://twitter.com/ericf).
 
 ### Y.Color
 
@@ -39,7 +39,7 @@ Compared with the features of Handlebars, Template.Micro is much simpler. Using 
 
 ### Attribute and Base Observability Refactoring
 
-Back in [YUI 3.5.0](/yuiblog/blog/2012/04/10/announcing-yui-3-5-0/), the features of `Y.Attribute` were extracted out into smaller sub-components, each with a single reasonability: `Y.AttributeCore`, `Y.AttributeEvents`, `Y.AttributeExtras`. `Y.Attribute` was then redefined using these parts. At that time we also did a similar refactoring of `Y.Base` and extracted `Y.BaseCore`, a base class sans events.
+Back in [YUI 3.5.0](/yuiblog/2012/04/10/announcing-yui-3-5-0/), the features of `Y.Attribute` were extracted out into smaller sub-components, each with a single reasonability: `Y.AttributeCore`, `Y.AttributeEvents`, `Y.AttributeExtras`. `Y.Attribute` was then redefined using these parts. At that time we also did a similar refactoring of `Y.Base` and extracted `Y.BaseCore`, a base class sans events.
 
 Today we are codifying the concept of "**observability**" at the [Attribute](http://yuilibrary.com/yui/docs/api/modules/attribute.html) and [Base](http://yuilibrary.com/yui/docs/api/modules/base.html) levels. Instead of using the description "_has_ events", we're now referring to a component's qualities, i.e., "_is_ observable". This distinction is a better match for how [`Y.AttributeObservable`](http://yuilibrary.com/yui/docs/api/classes/AttributeObservable.html) (formerly `Y.AttributeEvents`) and the new [`Y.BaseObservable`](http://yuilibrary.com/yui/docs/api/classes/BaseObservable.html) class extension are used and applied.
 

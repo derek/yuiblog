@@ -15,7 +15,7 @@ There have been lots of changes across the board in this release , many of which
 
 ## Performance Improvements Through Attribute and Base Changes
 
-Continuing the theme of performance improvements begun in **[YUI 3.10.0](/yuiblog/blog/2013/04/24/yui-3-10-0-released/)**, there have been more changes to Attribute and Base. The [previous blog post](/yuiblog/blog/2013/06/19/3-11pr1-released/) discussing this change can provide more details, but there have been more updates and fixes since **3.11.0pr1**, most significantly this pull request ([#917](https://github.com/yui/yui3/pull/917)) which deals with an order of operations issue introduced with ([#629](https://github.com/yui/yui3/issues/629)).
+Continuing the theme of performance improvements begun in **[YUI 3.10.0](/yuiblog/2013/04/24/yui-3-10-0-released/)**, there have been more changes to Attribute and Base. The [previous blog post](/yuiblog/2013/06/19/3-11pr1-released/) discussing this change can provide more details, but there have been more updates and fixes since **3.11.0pr1**, most significantly this pull request ([#917](https://github.com/yui/yui3/pull/917)) which deals with an order of operations issue introduced with ([#629](https://github.com/yui/yui3/issues/629)).
 
 Essentially this has to do with creating new objects with Base() and BaseCore() and how ATTRS are handled. In this release Base now adds up all ATTRS up the class hierarchy at once instead of a class at a time which helps in instantiation times, and Base `init` and Attribute changes bypass the Event sub-system if there are no potential listeners (a speed and performance boost).
 

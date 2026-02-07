@@ -14,7 +14,7 @@ This release has a number of new features and fixes since YUI 3.9.1. Some of the
 
 ### 4x Attribute and Base Performance Improvements
 
-As detailed in our [PR1 blog post](/yuiblog/blog/2013/04/08/yui-3-10pr1/), we made significant performance improvements to [Attribute](http://yuilibrary.com/yui/docs/attribute/) and [Base](http://yuilibrary.com/yui/docs/base/), starting at the `AttributeCore` and `BaseCore` layers, resulting in up to **4x** improvement over **YUI 3.8.1** for some common use cases, from the non-event based `Core` changes alone. We're seeing even more significant gains when combined with the Custom Event optimizations discussed below for observable `Attribute` and `Base` implementations.
+As detailed in our [PR1 blog post](/yuiblog/2013/04/08/yui-3-10pr1/), we made significant performance improvements to [Attribute](http://yuilibrary.com/yui/docs/attribute/) and [Base](http://yuilibrary.com/yui/docs/base/), starting at the `AttributeCore` and `BaseCore` layers, resulting in up to **4x** improvement over **YUI 3.8.1** for some common use cases, from the non-event based `Core` changes alone. We're seeing even more significant gains when combined with the Custom Event optimizations discussed below for observable `Attribute` and `Base` implementations.
 
 #### Backwards Compatibility Note
 
@@ -54,12 +54,12 @@ Dav Glass ([@davglass](https://twitter.com/davglass)) has converted the build sy
 
 ### And More!
 
-This release continues the trend of having lots of community pull requests and issues fixed. There were a total of **365** [commits](https://github.com/yui/yui3/compare/v3.9.1...v3.10.0) by **22** authors between 3.9.1 and this release. There have been significant updates and changes to several unit tests as well as we continue to improve the CI process and weed out unstable tests. You can find out more about this release by checking out the [previous blog post](/yuiblog/blog/2013/04/08/yui-3-10pr1/) for PR1. There is also a [change history rollup](https://github.com/yui/yui3/wiki/YUI-3.10.0-Change-History-Rollup) for this release.
+This release continues the trend of having lots of community pull requests and issues fixed. There were a total of **365** [commits](https://github.com/yui/yui3/compare/v3.9.1...v3.10.0) by **22** authors between 3.9.1 and this release. There have been significant updates and changes to several unit tests as well as we continue to improve the CI process and weed out unstable tests. You can find out more about this release by checking out the [previous blog post](/yuiblog/2013/04/08/yui-3-10pr1/) for PR1. There is also a [change history rollup](https://github.com/yui/yui3/wiki/YUI-3.10.0-Change-History-Rollup) for this release.
 
 ### PR Adoption
 
 We would like to have more "real world" adoption of PRs in the future, especially for changes as broad as the infrastructure changes mentioned above, due to the level of customization on top of them. In addition to the unit and functional tests, this helps us validate the changes we make each cycle in real-world applications, and helps us avoid having to have a rapid point release once a new version is out. In other words, you can make a real difference in the quality of a release by testing our PRs in your staging environments.
 
-A big shout out goes to [Eduardo Lundgren](http://www.liferay.com/web/eduardo.lundgren/blog) at Liferay for trying the 3.10.0 PR out for us and letting us know how it went. (Check them out at [JAX.de](/yuiblog/blog/2013/04/23/yui3-and-alloyui-at-jax-de/) this week as well!)
+A big shout out goes to [Eduardo Lundgren](http://www.liferay.com/web/eduardo.lundgren/blog) at Liferay for trying the 3.10.0 PR out for us and letting us know how it went. (Check them out at [JAX.de](/yuiblog/2013/04/23/yui3-and-alloyui-at-jax-de/) this week as well!)
 
 [Let us know](http://yuilibrary.com/forum/viewtopic.php?f=18&t=12283) if you have ideas to help with PR adoption across the community.

@@ -8,7 +8,7 @@ permalink: /2006/09/14/yuis-matt-sweeney-and-hands-on-yui-workshops-at-yahoo-dev
 categories:
   - "Development"
 ---
-**Note**: [Full schedule for the Developer Day presentations and workshops](/yuiblog/blog/2006/09/22/yahoo-devday-schedule/) can be found elsewhere on YUIBlog; [check out the Hack Day website](http://hackday.org) and the [Hack Day Blog](http://developer.yahoo.net/hackday) as well for more information on the event.
+**Note**: [Full schedule for the Developer Day presentations and workshops](/yuiblog/2006/09/22/yahoo-devday-schedule/) can be found elsewhere on YUIBlog; [check out the Hack Day website](http://hackday.org) and the [Hack Day Blog](http://developer.yahoo.net/hackday) as well for more information on the event.
 
 [![](/yuiblog/blog-archive/assets/sweeney_by_schiller.jpg)](http://www.flickr.com/photos/schill/236624638/in/set-72157594273058359/)
 

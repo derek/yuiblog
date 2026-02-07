@@ -8,7 +8,7 @@ permalink: /2009/07/06/date-formatting-pt4/
 categories:
   - "Development"
 ---
-In [Part I](/yuiblog/blog/2009/02/11/date-formatting-pt1-2/) of this series, we introduced date formatting with the YUI Date utility and integrated it with the DataTable control in [Part II](/yuiblog/blog/2009/02/25/date-formatting-pt2/) and the Charts control in [Part III](/yuiblog/blog/2009/03/18/date-formatting-pt3/). In this final part, we'll look at date localisation with YUI.
+In [Part I](/yuiblog/2009/02/11/date-formatting-pt1-2/) of this series, we introduced date formatting with the YUI Date utility and integrated it with the DataTable control in [Part II](/yuiblog/2009/02/25/date-formatting-pt2/) and the Charts control in [Part III](/yuiblog/2009/03/18/date-formatting-pt3/). In this final part, we'll look at date localisation with YUI.
 
 To recap, we can format dates using YUI using the [`YAHOO.util.Date`](http://developer.yahoo.com/yui/docs/YAHOO.util.Date.html) class, which is currently distributed as part of the [DataSource](http://developer.yahoo.com/yui/datasource/) utility. Any valid `strftime` format specifier is supported, so for example, `YAHOO.util.Date.format(new Date(), { format: "%Y-%b-%d"});` would return the date as `<four digit year>-<short month name>-<two digit day of month>`.
 

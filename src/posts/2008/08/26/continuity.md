@@ -8,7 +8,7 @@ permalink: /2008/08/26/continuity/
 categories:
   - "Design"
 ---
-[![Signing into Buzz](/yuiblog/blog/wp-content/uploads/2008/08/continuity.png)](http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity  "signing into Buzz")
+[![Signing into Buzz](/yuiblog/wp-content/uploads/2008/08/continuity.png)](http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity  "signing into Buzz")
 
 Just recently I published a new pattern, [Sign-in Continuity](http://developer.yahoo.com/ypatterns/pattern.php?pattern=continuity), to the [Yahoo! Design Pattern Library](http://developer.yahoo.com/ypatterns/). It could be filed under "Engagement," a category we have internally but that hasn't appeared yet here, but I decided to put it in the "Social" category instead.
 

@@ -15,7 +15,7 @@ Yahoo! accessibility specialist Todd Kloots will be in London in November for a 
 
 The event is free; you can [register on the Skills Matter website](http://skillsmatter.com/event/os-mobile-server/more-accessible-user-interfaces-with-aria).
 
-If you can't wait until November to start diving into ARIA, Todd has you covered with a good library of [blog posts](/yuiblog/blog/category/accessibility) and [tech videos](http://video.yahoo.com/watch/4073211/10996186) on the subject.
+If you can't wait until November to start diving into ARIA, Todd has you covered with a good library of [blog posts](/yuiblog/category/accessibility) and [tech videos](http://video.yahoo.com/watch/4073211/10996186) on the subject.
 
     
 

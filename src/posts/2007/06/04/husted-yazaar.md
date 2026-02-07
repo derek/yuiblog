@@ -30,7 +30,7 @@ Yes. The concept is to complement the all-corporate YUI team with an all-volunte
 
 What kinds of projects are you hoping to attract under the Yazaar umbrella?
 
-It's not so much "projects" as "components" or "scripts". In developing any application, most of us end up building one or more reusable components. Jamie Curnow built [an unobstrusive validator](http://yazaar.org/examples/extras/jc21/validate.html) over the [YUI Dom component](http://developer.yahoo.com/yui/dom/). Victor Morales [extended DataTable to add autocomplete row filtering and row hiding](/yuiblog/blog/2007/04/23/dataview/). Matt J. Cormier created a YUI Picker, also based on the DataTable. Caridy Patiño has been developing several scripts that extend YUI components, like the [TabView](http://developer.yahoo.com/yui/tabview/). Both Satyam and I have been extending the DataTable to add editing row in a separate form window. We also have people like [Douglas Crockford](http://blog.360.yahoo.com/douglascrockford) and David Linquist posting scripts that add missing features or add support for common features, like cookies.
+It's not so much "projects" as "components" or "scripts". In developing any application, most of us end up building one or more reusable components. Jamie Curnow built [an unobstrusive validator](http://yazaar.org/examples/extras/jc21/validate.html) over the [YUI Dom component](http://developer.yahoo.com/yui/dom/). Victor Morales [extended DataTable to add autocomplete row filtering and row hiding](/yuiblog/2007/04/23/dataview/). Matt J. Cormier created a YUI Picker, also based on the DataTable. Caridy Patiño has been developing several scripts that extend YUI components, like the [TabView](http://developer.yahoo.com/yui/tabview/). Both Satyam and I have been extending the DataTable to add editing row in a separate form window. We also have people like [Douglas Crockford](http://blog.360.yahoo.com/douglascrockford) and David Linquist posting scripts that add missing features or add support for common features, like cookies.
 
 At some point, some of these scripts might be replicated by the standard YUI library. Or not. In the meantime, Yazaar provides a place where a developer can contribute a script without a lot of falderol.
 
@@ -50,7 +50,7 @@ I'm not, since that use case wouldn't apply to the applications that I'm writing
 
 As an experienced YUI user, what feedback do you have for the YUI team at this point? Any significant pain points you're hoping to see addressed? Any particular virtues in the library today that you want to see preserved?
 
-That's a tough one. [Team YUI](/yuiblog/blog/2007/03/29/yuiteam/) is already doing a vast number of things right. Overall, the project seems to be nothing but "virtues that should be preserved." :)
+That's a tough one. [Team YUI](/yuiblog/2007/03/29/yuiteam/) is already doing a vast number of things right. Overall, the project seems to be nothing but "virtues that should be preserved." :)
 
 To suggestions that we've already discussed on the list, like "Happy Trails" \[_a more intuitively arranged, less encyclopedic guide to the YUI components_\] and "starter applications" \[_holistic examples that integrate multiple YUI components_\], I'd next add: "Learn the lesson of Wikipedia."
 

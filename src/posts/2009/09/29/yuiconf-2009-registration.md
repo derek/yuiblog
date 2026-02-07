@@ -13,7 +13,7 @@ categories:
 
 We're pleased to announce that registration is now open for YUICONF 2009: [http://yuiconf2009.eventbrite.com/](http://yuiconf2009.eventbrite.com/). Tickets are free, but attendance is limited — please register as soon as possible to reserve your seat.
 
-YUICONF 2009 is the premiere event for YUI developers from around the world to get up to speed on the latest YUI advancements and best practices (with a particular focus on the [3.0.0 release announced earlier today](/yuiblog/blog/2009/09/29/yui-3-0-0/)), get the scoop about the road ahead, and share tips and tricks with each other.
+YUICONF 2009 is the premiere event for YUI developers from around the world to get up to speed on the latest YUI advancements and best practices (with a particular focus on the [3.0.0 release announced earlier today](/yuiblog/2009/09/29/yui-3-0-0/)), get the scoop about the road ahead, and share tips and tricks with each other.
 
 This year's event will be held Oct 28-29 on Yahoo's Sunnyvale campus and promises to host an all-star lineup of YUI authors, contributors, and developers leading highly technical sessions on YUI components and techniques as well as deep-dives into the API.
 

@@ -12,7 +12,7 @@ categories:
     
 -   As part of a new builder, we published a package called [yui-lint](https://github.com/yui/yui-lint/blob/master/yui-lint.js). These are our recommended JSLint configurations for doing YUI development, and will be used on all of our development tools.
     
--   If you missed it, we published our [YUI Target Environments](/yuiblog/blog/2012/08/21/yui-target-environments/) matrix, which is YUI's list of testing environments. Based on traffic both inside the Y! network and across the rest of the Web, these are the browsers (and JS engines) that have a sizable enough user base that warrants testing of the library.
+-   If you missed it, we published our [YUI Target Environments](/yuiblog/2012/08/21/yui-target-environments/) matrix, which is YUI's list of testing environments. Based on traffic both inside the Y! network and across the rest of the Web, these are the browsers (and JS engines) that have a sizable enough user base that warrants testing of the library.
     
 -   It's coming up to that time of year again, YUIConf! We're still in the early-planning stages, so nothing to announce just yet aside from sharing that we're targeting early-November. So time to start thinking about ideas for talk proposals. Stay tuned!
     

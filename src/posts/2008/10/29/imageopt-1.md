@@ -11,9 +11,9 @@ categories:
 ---
 _This is part 1 in an ongoing series. You can read the other parts here:_
 
--   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/blog/2008/11/04/imageopt-2/)
--   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/blog/2008/11/14/imageopt-3/)
--   [Image Optimization Part 4: Progressive JPEG…Hot or Not?](/yuiblog/blog/2008/12/05/imageopt-4/)
+-   [Image Optimization Part 2: Selecting the Right File Format](/yuiblog/2008/11/04/imageopt-2/)
+-   [Image Optimization Part 3: Four Steps to File Size Reduction](/yuiblog/2008/11/14/imageopt-3/)
+-   [Image Optimization Part 4: Progressive JPEG…Hot or Not?](/yuiblog/2008/12/05/imageopt-4/)
 
 This is the first in a series of posts about image optimization. In this series, I'll explore how images affect web site performance and what can you do to your images in order to improve page loading times. (I won't say how many posts in this series, so that I can claim later that I underpromised and overdelivered...).
 

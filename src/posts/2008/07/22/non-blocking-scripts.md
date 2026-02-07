@@ -22,7 +22,7 @@ Here's how the timeline looks like when downloading a slow JavaScript file (exag
 
 Another thing to note in the timeline above is how the images following the script are downloaded two-by-two. This is because of the restriction of how many components can be downloaded in parallel. In IE <= 7 and Firefox 2, it's two components at a time (following the HTTP 1.1 specs), but both IE8 and FF3 increase the default to 6.
 
-You can work around this limitation by using multiple domains to host your components, because the restriction is two components _per hostname_. For more information of this topic check the article "[Maximizing Parallel Downloads in the Carpool Lane](/yuiblog/blog/2007/04/11/performance-research-part-4/)" by Tenni Theurer.
+You can work around this limitation by using multiple domains to host your components, because the restriction is two components _per hostname_. For more information of this topic check the article "[Maximizing Parallel Downloads in the Carpool Lane](/yuiblog/2007/04/11/performance-research-part-4/)" by Tenni Theurer.
 
 The important thing to note is that _JavaScripts block downloads across all hostnames_. In fact, in the example timeline above, the script is hosted on a different domain than the images, but it still blocks them.
 

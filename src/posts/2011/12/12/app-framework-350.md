@@ -11,7 +11,7 @@ categories:
 ---
 Since the initial release of the [App Framework](http://yuilibrary.com/yui/docs/app/) in YUI 3.4.0, we've been astonished by how quickly it's been adopted. In projects [large](http://www.smugmug.com/) and [small](http://photosnear.me/), both long-time YUI users and those who are completely new to the library have been enthusiastically using the App Framework's MVC components and providing great feedback and bug reports. Thank you!
 
-In YUI 3.5.0, the App Framework will receive lots of bug fixes and some major enhancements. Eric Ferraiuolo covered many of the upcoming changes in his [fantastic YUIConf talk](http://www.youtube.com/watch?v=wCexiX_eUJA&hd=1), but we want to highlight them here as well so you'll know what's coming and what you should prepare for if you plan to upgrade App Framework-based code from 3.4.x to 3.5.0. These changes are already in [YUI 3.5.0 PR1](/yuiblog/blog/2011/12/12/yui-3-5-0-pr1-is-now-available-on-cdn/), which was released today, so now's a great time to start testing them.
+In YUI 3.5.0, the App Framework will receive lots of bug fixes and some major enhancements. Eric Ferraiuolo covered many of the upcoming changes in his [fantastic YUIConf talk](http://www.youtube.com/watch?v=wCexiX_eUJA&hd=1), but we want to highlight them here as well so you'll know what's coming and what you should prepare for if you plan to upgrade App Framework-based code from 3.4.x to 3.5.0. These changes are already in [YUI 3.5.0 PR1](/yuiblog/2011/12/12/yui-3-5-0-pr1-is-now-available-on-cdn/), which was released today, so now's a great time to start testing them.
 
 ### Y.Controller is now Y.Router
 

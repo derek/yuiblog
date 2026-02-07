@@ -9,7 +9,7 @@ categories:
   - "Open Hours"
   - "Development"
 ---
-For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) will be tomorrow, July 21st.
+For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/2010/04/08/introducing-yui-open-hours/) will be tomorrow, July 21st.
 
 This time we're going to focus on a recurring theme for YUI community contributors that are just getting started building their own modules: How to build a Widget and how to build a Plugin in a YUI 3 way.
 

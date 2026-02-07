@@ -8,7 +8,7 @@ permalink: /2008/04/10/wellman-yui-book/
 categories:
   - "Development"
 ---
-[![The cover of Dan Wellman's new book on the YUI Library.](/yuiblog/blog-archive/assets/wellman250.gif)](http://www.packtpub.com/yahoo!-user-interface-library-yui/)As we mentioned in [a recent "In the Wild" post](/yuiblog/blog/2008/03/05/in-the-wild-20080305/), the first book dedicated solely to [YUI](http://developer.yahoo.com/yui/) has hit the shelves: Dan Wellman's _[Learning the Yahoo! User Interface Library](http://www.packtpub.com/yahoo!-user-interface-library-yui/)_ from Packt Publishing.
+[![The cover of Dan Wellman's new book on the YUI Library.](/yuiblog/blog-archive/assets/wellman250.gif)](http://www.packtpub.com/yahoo!-user-interface-library-yui/)As we mentioned in [a recent "In the Wild" post](/yuiblog/2008/03/05/in-the-wild-20080305/), the first book dedicated solely to [YUI](http://developer.yahoo.com/yui/) has hit the shelves: Dan Wellman's _[Learning the Yahoo! User Interface Library](http://www.packtpub.com/yahoo!-user-interface-library-yui/)_ from Packt Publishing.
 
 Dan takes on a broad subset of topics in this volume. Dan and the team at Packt were kind enough to let us [share a sample chapter with you here](/yuiblog/blog-archive/assets/pdf/wellman-connectionmanager.pdf) to give you a sense of Dan's approach to YUI — an approach that emphasizes clear explanations, practical examples, and lots of sample code. In this sample, Dan explores Thomas Sha's [YUI Connection Manager](http://developer.yahoo.com/yui/connection/) (our wrapper for XHR/Ajax) and shows you how to build both a News Reader application and Login application. This should give you a good flavor for what the remainder of the book holds:
 

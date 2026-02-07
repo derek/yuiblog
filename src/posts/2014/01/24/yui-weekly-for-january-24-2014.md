@@ -45,6 +45,6 @@ There were some more YUIConf videos out this week! Are you caught up yet?
 
 # Other News
 
--   [Tony Pipkin](https://github.com/apipkin) wrote a nice article on [Datatable and Paginator developments](/yuiblog/blog/2014/01/21/paginator-and-datatable/) so make sure to check that out if you are interested in those widgets.
+-   [Tony Pipkin](https://github.com/apipkin) wrote a nice article on [Datatable and Paginator developments](/yuiblog/2014/01/21/paginator-and-datatable/) so make sure to check that out if you are interested in those widgets.
 
 Catch y'all next week!

@@ -8,7 +8,7 @@ permalink: /2010/03/24/ada-lovelace-day-2010-ydn/
 categories:
   - "Miscellany"
 ---
-![Sadaf Shahsahebi working on her laptop](/yuiblog/blog/wp-content/uploads/2010/03/sadaf_big_thinker.png)
+![Sadaf Shahsahebi working on her laptop](/yuiblog/wp-content/uploads/2010/03/sadaf_big_thinker.png)
 
 Growing up in the heart of Silicon Valley, one could argue that Sadaf Shahsahebi was always destined to work with technology. Her father brought home her first computer when she was 7 and by middle school she was already programming in Pascal at school while taking summer courses to learn C++. Even so, a part of Sadaf was equally drawn towards medicine and the potential to help treat and cure children. It wasn't until right before college when she definitively decided to focus on technology. The medical profession's loss turned out to be Yahoo!'s gain.
 

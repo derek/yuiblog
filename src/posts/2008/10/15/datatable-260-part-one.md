@@ -11,7 +11,7 @@ categories:
 ---
 [YUI's DataTable Control](http://developer.yahoo.com/yui) has many options, more than any single application will use. Unless you want to improvise something different for each and every page, chances are you will be using a subset of those options. As most often is the case, whatever worked your first time, that's what you will use in the rest of the pages, usually copying it over and then modifying it for each page. Then, in the second or third page, you notice that clicking on a column heading does reorder the data but not in the way you expected; so, you research a little more and find out that the code you so happily copied all over needs some retouching. Given the complexity of the component and the problems you will address with it, planning a little bit in advance is a good idea.
 
-This article is an update of a [similar article](/yuiblog/blog/2007/09/12/satyam-datatable) written when version 2.3 of YUI was current. With version 2.6, the DataTable has been taken out of beta, which means its public interfaces will no longer change — so this should be the definitive article about it on this 2.x line of code.
+This article is an update of a [similar article](/yuiblog/2007/09/12/satyam-datatable) written when version 2.3 of YUI was current. With version 2.6, the DataTable has been taken out of beta, which means its public interfaces will no longer change — so this should be the definitive article about it on this 2.x line of code.
 
 ## Data Types
 

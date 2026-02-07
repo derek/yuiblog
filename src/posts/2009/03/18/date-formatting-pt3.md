@@ -8,7 +8,7 @@ permalink: /2009/03/18/date-formatting-pt3/
 categories:
   - "Development"
 ---
-In [Part I](/yuiblog/blog/2009/02/11/date-formatting-pt1-2/), we saw how to easily format a date using YUI's date formatter and in [Part II](/yuiblog/blog/2009/02/25/date-formatting-pt2/) we looked at formatting dates for the DataTable control. We will now take a look at how to format dates for the [YUI Charts](http://developer.yahoo.com/yui/charts/) control.
+In [Part I](/yuiblog/2009/02/11/date-formatting-pt1-2/), we saw how to easily format a date using YUI's date formatter and in [Part II](/yuiblog/2009/02/25/date-formatting-pt2/) we looked at formatting dates for the DataTable control. We will now take a look at how to format dates for the [YUI Charts](http://developer.yahoo.com/yui/charts/) control.
 
 Interestingly, it was the Charts control that first led to the development of the date formatter. We were building a time-series chart and needed to format dates differently at various locations. Dates displayed along our X-axis needed to be appropriate to the range represented by the chart. For example, for data spanning months, we wanted the labels to be at a month-day level, and for data data years, we wanted the labels to show month and year. We also wanted the chart's caption to show the entire date range in a human friendly format like "January - March 2008". Finally, the chart needed a tooltip to show the exact date for the mouse hover point.
 

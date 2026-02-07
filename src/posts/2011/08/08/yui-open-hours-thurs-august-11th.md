@@ -11,7 +11,7 @@ categories:
 ---
 ### Search Direct Accessibility
 
-We're going to follow up on the previous [post about Search Direct](/yuiblog/blog/2011/08/08/making-search-direct-accessible/). There's a lot about Search Direct worth talking about, but for starters, the experience of getting the accessibility right is both interesting and important. [Victor Tsaran](http://twitter.com/vick08) and [Caridy Patiño](http://twitter.com/caridy) will join us on the call to talk about the project, review the implementation details, and answer any questions you have about Search Direct or accessibility best practices.
+We're going to follow up on the previous [post about Search Direct](/yuiblog/2011/08/08/making-search-direct-accessible/). There's a lot about Search Direct worth talking about, but for starters, the experience of getting the accessibility right is both interesting and important. [Victor Tsaran](http://twitter.com/vick08) and [Caridy Patiño](http://twitter.com/caridy) will join us on the call to talk about the project, review the implementation details, and answer any questions you have about Search Direct or accessibility best practices.
 
 ### Time & Details
 

@@ -30,7 +30,7 @@ As you can see, this is pretty simple. But, we would have to do this every time 
 
 Taking advantage of event bubbling, we can add a listener to a container element, or even to the `document`, to catch an event on its way up the bubble chain. In the callback function, we'd analyze the event target to identify if it's what we're expecting (by classname or id) before executing our overlay code.
 
-This technique reduces the DOM overhead of adding event listeners to each individual element, but we still need to analyze every single click in the container and filter for the proper targets within our callback function. [I wrote an article about this technique a while ago](/yuiblog/blog/2007/09/13/bubbling-library-by-caridy/ "The Bubbling Technique & Custom Event, YUI's Secret Weapon by Caridy Patino"), explaining in detail how the [Bubbling Library YUI Extension](http://bubbling-library.com/ "Bubbling Library YUI Extension") works.
+This technique reduces the DOM overhead of adding event listeners to each individual element, but we still need to analyze every single click in the container and filter for the proper targets within our callback function. [I wrote an article about this technique a while ago](/yuiblog/2007/09/13/bubbling-library-by-caridy/ "The Bubbling Technique & Custom Event, YUI's Secret Weapon by Caridy Patino"), explaining in detail how the [Bubbling Library YUI Extension](http://bubbling-library.com/ "Bubbling Library YUI Extension") works.
 
 But this is not new and already a widely used concept. So, what is new in YUI 3?
 

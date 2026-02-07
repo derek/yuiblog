@@ -13,7 +13,7 @@ categories:
 
 Now that YUIConf 2011 is over (and [it was awesome](http://www.youtube.com/watch?v=5EugdnrHYdw&feature=list_related&playnext=1&list=SPF49A40DA7A11F08A)!), the team is back to the grindstone, working on 3.5.0.
 
-We've outlined the [high level goals for the release](/yuiblog/blog/2011/11/15/yui-3-5-0-roadmap-and-timelines/), and we can talk about some of them, but what we'd like to focus on in this Open Hours are some new methods for sharing and engaging with the community in the design phase of this work. In particular, you'll see more Pull Requests and Gists from the YUI team to forecast new development and steer ongoing development on our respective development forks and branches.
+We've outlined the [high level goals for the release](/yuiblog/2011/11/15/yui-3-5-0-roadmap-and-timelines/), and we can talk about some of them, but what we'd like to focus on in this Open Hours are some new methods for sharing and engaging with the community in the design phase of this work. In particular, you'll see more Pull Requests and Gists from the YUI team to forecast new development and steer ongoing development on our respective development forks and branches.
 
 Here are some of the current ongoing discussions that are open for _your_ feedback:
 

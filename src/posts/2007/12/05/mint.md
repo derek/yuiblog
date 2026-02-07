@@ -24,7 +24,7 @@ We spent several months developing and iterating on the account page. It had to 
 
 Since we are using the core YUI package, we had few cross-browser issues. Consequently, the biggest challenge ended up being with the regex engine in Safari 2. The JSON object used to update each card can become quite large. I use [Douglas Crockford's JSON parser](http://json.org/) to validate that the response is a valid JSON object. However, in Safari, if the JSON object was larger than 5000-7000 characters, it would crash the browser without warning.
 
-\[_Note: Luke Smith on the YUI team has adapted Douglas's work for inclusion directly in YUI as of [the 2.4.0 release](/yuiblog/blog/2007/12/04/yuii-240/); see the [YUI JSON Utility User's Guide](http://developer.yahoo.com/yui/json/) for more. -Eric_\]
+\[_Note: Luke Smith on the YUI team has adapted Douglas's work for inclusion directly in YUI as of [the 2.4.0 release](/yuiblog/2007/12/04/yuii-240/); see the [YUI JSON Utility User's Guide](http://developer.yahoo.com/yui/json/) for more. -Eric_\]
 
 ![The Mint user interface.](/yuiblog/blog-archive/assets/mint_ui.gif)
 
