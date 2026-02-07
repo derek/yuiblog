@@ -6,6 +6,7 @@ date: 2014-05-21
 slug: "yui-3-17-1-released"
 permalink: /2014/05/21/yui-3-17-1-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are happy to announce the release of **YUI 3.17.1**! This release can be found on the [free Yahoo CDN](http://yui.yahooapis.com/3.17.1/build/yui/yui-min.js), through [npm](https://npmjs.org/package/yui), and through a [downloadable `.zip` archive](http://yui.zenfs.com/releases/yui3/yui_3.17.1.zip). We have also updated the [YUI Library website](http://yuilibrary.com/) to reflect the changes in this release. **YUI 3.17.0** was found to have an [issue](https://github.com/yui/yui3/pull/1832) with [Loader](http://yuilibrary.com/yui/docs/api/classes/Loader.html) right before it was about to be fully released, so we decided to update the version number to reflect this fix (since **3.17.0** had already been deployed to CDN, npm, etc.)

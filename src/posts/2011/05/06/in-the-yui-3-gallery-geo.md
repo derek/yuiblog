@@ -6,6 +6,7 @@ date: 2011-05-06
 slug: "in-the-yui-3-gallery-geo"
 permalink: /2011/05/06/in-the-yui-3-gallery-geo/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Geolocation is one of the more exciting HTML5-related technologies to appear in browsers, and the [Geo](http://yuilibrary.com/gallery/show/geo) Gallery module gives you access to location information. The [W3C Geolocation API](http://dev.w3.org/geo/api/spec-source.html) provides a simple interface to access the user's location from JavaScript. The following code accesses the user's current location in a supporting browser:

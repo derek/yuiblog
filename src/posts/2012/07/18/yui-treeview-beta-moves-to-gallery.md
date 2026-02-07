@@ -6,6 +6,7 @@ date: 2012-07-18
 slug: "yui-treeview-beta-moves-to-gallery"
 permalink: /2012/07/18/yui-treeview-beta-moves-to-gallery/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 A few weeks ago, we have released an out-of-cycle YUI 3.6.0 PR3 that contained a new widget, the YUI TreeView. The purpose of that release was to expose the TreeView to the wider developer community and solicit feedback and testing. We received great responses from quite a few community members -- and even some pull requests with contributed features!

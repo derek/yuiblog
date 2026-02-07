@@ -6,6 +6,7 @@ date: 2010-04-06
 slug: "alternative-slider-skins"
 permalink: /2010/04/06/alternative-slider-skins/
 categories:
+  - "Releases"
   - "Development"
 ---
 We decided to take the [YUI 3 Slider](http://developer.yahoo.com/yui/3/slider/) widget skins up a visual notch for YUI 3.1.0. These were our goals:

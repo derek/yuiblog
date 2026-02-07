@@ -6,6 +6,7 @@ date: 2010-03-05
 slug: "yui-3-gallery-contest-2010"
 permalink: /2010/03/05/yui-3-gallery-contest-2010/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 [![](/yuiblog/blog-archive/assets/yui3gallerycontest2010-20100305-135833.jpg)](/yuiblog/yui3gallerycontest2010/)

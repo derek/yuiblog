@@ -6,6 +6,7 @@ date: 2009-11-04
 slug: "yui-3-gallery-accordion-widget"
 permalink: /2009/11/04/yui-3-gallery-accordion-widget/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
  [![YUI3 Accordion Widget](/yuiblog/blog-archive/assets/iliyan-accordion-20091103-165257.jpg)](http://yuilibrary.com/gallery/show/accordion)[Accordion](http://yuilibrary.com/gallery/show/accordion) is a visual widget that allows the expansion/collapse of grouped items containing arbitrary data. Accordion items can be added or removed dynamically, reordered via drag-and-drop, closed and set as always visible. Originally, I built the widget top of [YUI 2](http://developer.yahoo.com/yui/2/), but I've since ported it to [YUI 3](http://developer.yahoo.com/yui/3/).

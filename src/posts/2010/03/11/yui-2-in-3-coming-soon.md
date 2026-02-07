@@ -6,6 +6,7 @@ date: 2010-03-11
 slug: "yui-2-in-3-coming-soon"
 permalink: /2010/03/11/yui-2-in-3-coming-soon/
 categories:
+  - "Releases"
   - "Development"
 ---
 Using [YUI 2](http://developer.yahoo.com/yui/2/ "YUI 2 — Yahoo! User Interface Library") components in the context of [YUI 3](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library") implementations is important for some implementers making the transition between YUI 2 and YUI 3. In some cases, we simply want to transition our code in stages, but we want to do so within the context of a YUI 3 implementation pattern. In other cases, we may be relying on high-level components like [YUI DataTable](http://developer.yahoo.com/yui/datatable/) that aren't yet present in YUI 3.

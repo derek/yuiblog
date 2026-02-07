@@ -6,6 +6,7 @@ date: 2013-10-07
 slug: "yui-3-13-0-released"
 permalink: /2013/10/07/yui-3-13-0-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are very happy to announce the release of **YUI 3.13.0**! You can find this release via the [Yahoo CDN](http://yui.yahooapis.com/3.13.0/build/yui/yui-min.js), installable through [npm](https://npmjs.org/package/yui), or available as a [download](http://yui.zenfs.com/releases/yui3/yui_3.13.0.zip). We have also updated the [YUI Library website](http://yuilibrary.com/) to reflect changes in this release.

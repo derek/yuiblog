@@ -6,6 +6,7 @@ date: 2010-06-23
 slug: "event-binder"
 permalink: /2010/06/23/event-binder/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 _This article introduces my [Event Binder module](http://yuilibrary.com/gallery/show/event-binder), recently released in the YUI 3 Gallery._

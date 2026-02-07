@@ -6,6 +6,7 @@ date: 2012-12-03
 slug: "yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery"
 permalink: /2012/12/03/yuiconf-2012-talk-anthony-pipkin-on-building-modules-for-the-new-gallery/
 categories:
+  - "YUI 3 Gallery"
   - "YUIConf"
   - "Development"
 ---

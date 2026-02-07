@@ -6,6 +6,7 @@ date: 2012-01-30
 slug: "yui-3-5-0-pr2"
 permalink: /2012/01/30/yui-3-5-0-pr2/
 categories:
+  - "Releases"
   - "Development"
 ---
 ![](/yuiblog/blog/wp-content/uploads/2012/01/yui350pr2art.png "YUI 3.5.0 PR2 Release")

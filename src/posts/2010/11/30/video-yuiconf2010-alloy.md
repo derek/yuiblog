@@ -6,6 +6,7 @@ date: 2010-11-30
 slug: "video-yuiconf2010-alloy"
 permalink: /2010/11/30/video-yuiconf2010-alloy/
 categories:
+  - "YUI 3 Gallery"
   - "YUIConf"
   - "YUI Theater"
 ---

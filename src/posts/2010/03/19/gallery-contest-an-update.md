@@ -6,6 +6,7 @@ date: 2010-03-19
 slug: "gallery-contest-an-update"
 permalink: /2010/03/19/gallery-contest-an-update/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 The [YUI 3 Gallery Contest 2010](/yuiblog/yui3gallerycontest2010/ "YUI 3 Gallery Contest 2010") is well underway, and with a full weekend left for submissions I wanted to share with you what's come in so far. These are all the brand new modules submitted by what I believe are eligible contest participants since the contest's start date (if you think you're eligible and I've omitted your contribution, please let me know in the comments). These are ordered from most to least recent.

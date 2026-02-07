@@ -6,6 +6,7 @@ date: 2011-06-23
 slug: "yui-3-4-0-preview-release-2"
 permalink: /2011/06/23/yui-3-4-0-preview-release-2/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team has just completed the second sprint of the 3.4.0 development cycle. We've posted the results of the sprint to the CDN for community exploration and feedback. You can access this release at [http://yui.yahooapis.com/3.4.0pr2/build/yui/yui-min.js](http://yui.yahooapis.com/3.4.0pr2/build/yui/yui-min.js). There are some particular areas of the library where we'd love to have community feedback:

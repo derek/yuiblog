@@ -6,6 +6,7 @@ date: 2009-11-30
 slug: "2-8-0-textmate-bundle"
 permalink: /2009/11/30/2-8-0-textmate-bundle/
 categories:
+  - "Releases"
   - "Development"
 ---
 I've recently brought my YUI bundle for [TextMate](http://macromates.com/) up to date with version 2.8.0 of the library. It provides syntax coloring and documentation look-up for all of the utilities and widgets, as well as tab completion for the most frequently used parts of the library.

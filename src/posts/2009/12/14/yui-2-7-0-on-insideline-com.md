@@ -6,6 +6,7 @@ date: 2009-12-14
 slug: "yui-2-7-0-on-insideline-com"
 permalink: /2009/12/14/yui-2-7-0-on-insideline-com/
 categories:
+  - "Releases"
   - "YUI Implementations"
 ---
 Here at [Edmunds](http://www.edmunds.com/) ([Edmunds.com](http://www.edmunds.com/)) we just launched a redesign of [Inside Line (InsideLine.com)](http://www.insideline.com/ "Inside Line: News, Road Tests, Auto Shows, Car Photos and Videos"), our automotive enthusiast web site, and we are using the [YUI JavaScript library](http://developer.yahoo.com/yui/ "YUI Library") extensively.

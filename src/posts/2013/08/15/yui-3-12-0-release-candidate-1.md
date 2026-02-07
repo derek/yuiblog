@@ -6,6 +6,7 @@ date: 2013-08-15
 slug: "yui-3-12-0-release-candidate-1"
 permalink: /2013/08/15/yui-3-12-0-release-candidate-1/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are pleased to announce a new release candidate for you to try out. **3.12.0-beta-1** is available via CDN [here](http://yui.yahooapis.com/3.12.0-beta-1/build/yui/yui-min.js), a downloadable [archive](http://yui.zenfs.com/releases/yui3/yui_3.12.0-beta-1.zip), or on [npm](https://npmjs.org/package/yui). We've also updated the [staging website](http://stage.yuilibrary.com/) with the latest documentation.

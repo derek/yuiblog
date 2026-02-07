@@ -6,6 +6,7 @@ date: 2009-06-24
 slug: "yui3b1"
 permalink: /2009/06/24/yui3b1/
 categories:
+  - "Releases"
   - "Development"
 ---
 [YUI 3.0.0 beta 1](http://developer.yahoo.com/yui/3/) is now [available for download from YUILibrary.com](http://yuilibrary.com/downloads/#yui3).

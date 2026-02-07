@@ -6,6 +6,7 @@ date: 2007-02-20
 slug: "yui-220-released"
 permalink: /2007/02/20/yui-220-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 [![Download YUI](http://us.i1.yimg.com/us.yimg.com/i/ydn/yuiweb/download_1.gif)](http://developer.yahoo.com/yui/download/)We released version 2.2.0 of [the Yahoo User Interface Library (YUI)](http://developer.yahoo.com/yui/) today. This release is one of the most substantial revisions we've done to the library since its inception. Leading the change manifest is a new versioning track and three brand-new YUI components:

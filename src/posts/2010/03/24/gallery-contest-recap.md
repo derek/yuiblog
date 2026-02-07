@@ -6,6 +6,7 @@ date: 2010-03-24
 slug: "gallery-contest-recap"
 permalink: /2010/03/24/gallery-contest-recap/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Congratulations to Andrew Bialecki ([@abialecki on Twitter](http://twitter.com/abialecki)), whose Scriptaculous-inspired [Effects module](http://yuilibrary.com/gallery/show/effects "YUI Library :: Gallery :: Effects") won the [YUI 3 Gallery Contest 2010](/yuiblog/blog/2010/03/05/yui-3-gallery-contest-2010/ "YUI 3 Gallery Contest 2010 — Win a Ticket to JSConf 2010 » Yahoo! User Interface Blog (YUIBlog)").

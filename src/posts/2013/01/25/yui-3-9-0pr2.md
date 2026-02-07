@@ -6,6 +6,7 @@ date: 2013-01-25
 slug: "yui-3-9-0pr2"
 permalink: /2013/01/25/yui-3-9-0pr2/
 categories:
+  - "Releases"
   - "Development"
 ---
 We have a new preview release this morning - **YUI 3.9.0pr2**. This release is available on [Yahoo! CDN](http://yui.yahooapis.com/3.9.0pr2/build/yui/yui-min.js), [download](http://yui.zenfs.com/releases/yui3/yui_3.9.0pr2.zip), and on [npm](https://npmjs.org/package/yui). The [staging website](http://stage.yuilibrary.com/) has also been updated to this version.

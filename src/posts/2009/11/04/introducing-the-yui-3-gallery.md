@@ -6,6 +6,7 @@ date: 2009-11-04
 slug: "introducing-the-yui-3-gallery"
 permalink: /2009/11/04/introducing-the-yui-3-gallery/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Last week at [YUICONF 2009](http://yuilibrary.com/yuiconf2009/), we introduced the [YUI 3 Gallery](http://yuilibrary.com/gallery/), a new way to contribute to [YUI 3](http://developer.yahoo.com/yui/3/). Within a few hours, [Greg Hinch had posted the first community contribution to the Gallery](http://yuilibrary.com/gallery/show/form). Today, less than a week later, there are 18 modules in the gallery — all of them available for you to use from your `YUI().use()` statement.

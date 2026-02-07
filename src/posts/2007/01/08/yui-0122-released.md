@@ -6,6 +6,7 @@ date: 2007-01-08
 slug: "yui-0122-released"
 permalink: /2007/01/08/yui-0122-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 Version 0.12.2 of [the Yahoo User Interface Library (YUI)](http://developer.yahoo.com/yui/) was released this morning. This minor update focuses on bugs and issues raised since 0.12.1; no new features are introduced in this release.

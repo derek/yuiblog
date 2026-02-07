@@ -6,6 +6,7 @@ date: 2011-12-12
 slug: "app-framework-350"
 permalink: /2011/12/12/app-framework-350/
 categories:
+  - "Releases"
   - "Development"
 ---
 Since the initial release of the [App Framework](http://yuilibrary.com/yui/docs/app/) in YUI 3.4.0, we've been astonished by how quickly it's been adopted. In projects [large](http://www.smugmug.com/) and [small](http://photosnear.me/), both long-time YUI users and those who are completely new to the library have been enthusiastically using the App Framework's MVC components and providing great feedback and bug reports. Thank you!

@@ -6,6 +6,7 @@ date: 2013-10-02
 slug: "yui-3-13-0-release-candidate-1"
 permalink: /2013/10/02/yui-3-13-0-release-candidate-1/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are happy to announce a new release candidate for everyone to try out: **3.13.0-rc-1**. It is available through our CDN [here](http://yui.yahooapis.com/3.13.0-rc-1/build/yui/yui-min.js), downloadable via an [archive](http://yui.zenfs.com/releases/yui3/yui_3.13.0-rc-1.zip), and installable via [npm](https://npmjs.org/package/yui).

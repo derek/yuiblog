@@ -6,6 +6,7 @@ date: 2006-11-13
 slug: "yui-0120-released"
 permalink: /2006/11/13/yui-0120-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 Today we released version 0.12 of the YUI Library. Here are the highlights:

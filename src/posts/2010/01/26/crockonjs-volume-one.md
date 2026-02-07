@@ -6,6 +6,7 @@ date: 2010-01-26
 slug: "crockonjs-volume-one"
 permalink: /2010/01/26/crockonjs-volume-one/
 categories:
+  - "Releases"
   - "YUI Events"
 ---
 [![](/yuiblog/blog-archive/assets/crockonjs-1-20100126-153939.jpg)](http://www.flickr.com/photos/equanimity/sets/72157623161722079/)

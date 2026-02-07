@@ -6,6 +6,7 @@ date: 2014-05-13
 slug: "yui-3-17-0-release-candidate-1"
 permalink: /2014/05/13/yui-3-17-0-release-candidate-1/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are pleased to announce a new release candidate for you to try out: 3.17.0-rc-1. You can find it on CDN [here](http://yui.yahooapis.com/3.17.0-rc-1/build/yui/yui-min.js), via [npm](https://www.npmjs.org/package/yui), and download it via the `.zip` [archive](http://yui.zenfs.com/releases/yui3/yui_3.17.0-rc-1.zip). We have also updated the [staging website](http://stage.yuilibrary.com/) with the latest documentation.

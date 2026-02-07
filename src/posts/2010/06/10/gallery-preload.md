@@ -6,6 +6,7 @@ date: 2010-06-10
 slug: "gallery-preload"
 permalink: /2010/06/10/gallery-preload/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 A few weeks ago, Stoyan Stefanov ([@stoyanstefanov](http://twitter.com/stoyanstefanov/)) published the result of [his research about preloading components in advance without executing them](http://www.phpied.com/preload-cssjavascript-without-execution/). This technique can help improve the performance of successive pages that make use of the cached resources.

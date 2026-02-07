@@ -6,6 +6,7 @@ date: 2013-03-20
 slug: "yeti-0-2-20-released"
 permalink: /2013/03/20/yeti-0-2-20-released/
 categories:
+  - "Releases"
   - "Yeti"
 ---
 Yeti 0.2.20 resolves a few issues, including bugs that could cause tests to be skipped or report incorrect results.

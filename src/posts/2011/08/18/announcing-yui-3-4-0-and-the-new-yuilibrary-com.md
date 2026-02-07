@@ -6,6 +6,7 @@ date: 2011-08-18
 slug: "announcing-yui-3-4-0-and-the-new-yuilibrary-com"
 permalink: /2011/08/18/announcing-yui-3-4-0-and-the-new-yuilibrary-com/
 categories:
+  - "Releases"
   - "Open Hours"
   - "Development"
 ---

@@ -6,6 +6,7 @@ date: 2012-05-11
 slug: "yui-3-6-0-pr1-is-now-available"
 permalink: /2012/05/11/yui-3-6-0-pr1-is-now-available/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are pleased to announce the availability of YUI 3.6.0 PR1 for community testing and feedback. Please take a moment to check it out via [CDN](http://yui.yahooapis.com/3.6.0pr1/build/yui/yui-min.js) or [download](http://yui.zenfs.com/releases/yui3/yui_3.6.0pr1.zip).

@@ -6,6 +6,7 @@ date: 2013-04-11
 slug: "yeti-0-2-21-released"
 permalink: /2013/04/11/yeti-0-2-21-released/
 categories:
+  - "Releases"
   - "Yeti"
 ---
 We're using [Yeti](http://yeti.cx) to test YUI on all of our [Target Environments](http://yuilibrary.com/yui/environments/). In CI, we use Yeti with Selenium to start and stop browsers. Today's release improves issues we've found while using Yeti with Selenium. Here's what's new in 0.2.21.

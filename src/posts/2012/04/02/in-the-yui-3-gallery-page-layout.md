@@ -6,6 +6,7 @@ date: 2012-04-02
 slug: "in-the-yui-3-gallery-page-layout"
 permalink: /2012/04/02/in-the-yui-3-gallery-page-layout/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 When working with tabular data, it is nice to be able to see as many columns as possible. If the table is the only widget on the page, then you can let the table expand and the viewport will scroll. However, this will not work if you need to display multiple tables along with other modules in a more complicated arrangement. Since traditional, fixed width layout is not acceptable, this led to the creation of [Page Layout](http://yuilibrary.com/gallery/show/layout) which supports fluid layout of multiple modules on a page.

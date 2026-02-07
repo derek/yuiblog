@@ -6,6 +6,7 @@ date: 2013-05-23
 slug: "yeti-0-2-23-released"
 permalink: /2013/05/23/yeti-0-2-23-released/
 categories:
+  - "Releases"
   - "Yeti"
 ---
 Last night, [Yeti](http://yeti.cx) 0.2.23 was released to fix a few bugs.

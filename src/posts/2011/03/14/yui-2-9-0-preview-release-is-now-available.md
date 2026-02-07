@@ -6,6 +6,7 @@ date: 2011-03-14
 slug: "yui-2-9-0-preview-release-is-now-available"
 permalink: /2011/03/14/yui-2-9-0-preview-release-is-now-available/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team has been hard at work closing out the last of our [2.9.0 bugs](http://yuilibrary.com/projects/yui2/report/36), and today we're pleased to announce the availability of a [2.9.0 preview release](http://yuilibrary.com/downloads/#yui2) for testing by the community. Included in this release are numerous [bug fixes and targeted enhancements](http://yuilibrary.com/projects/yui2/report/37) that will help bring [closure to the YUI 2 codeline](/yuiblog/blog/2010/12/17/yui-2-9-0-release-update/), as well as targeted code changes and documentation updates that make it more difficult for [implementers to unintentionally neglect security best practices](http://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2010-4569).

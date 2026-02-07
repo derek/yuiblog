@@ -6,6 +6,7 @@ date: 2012-05-01
 slug: "dissecting-3-5-0-datatable-part-1"
 permalink: /2012/05/01/dissecting-3-5-0-datatable-part-1/
 categories:
+  - "Releases"
   - "Development"
 ---
 DataTable has been one of YUI's most heavily used and relied upon widgets for years. In 3.5.0, DataTable got a major overhaul, resulting in some small changes to the API and some big changes to the infrastructure.

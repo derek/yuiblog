@@ -6,6 +6,7 @@ date: 2013-01-16
 slug: "yui-3-9-0pr1-charts-jsonp-and-responsive-grids"
 permalink: /2013/01/16/yui-3-9-0pr1-charts-jsonp-and-responsive-grids/
 categories:
+  - "Releases"
   - "Development"
 ---
 **YUI 3.9.0pr1** is now available to the developer community for feedback and testing on the [Yahoo! CDN](http://yui.yahooapis.com/3.9.0pr1/build/yui/yui-min.js "YUI 3.9.0pr1 seed file") (and as a [download](http://yui.zenfs.com/releases/yui3/yui_3.9.0pr1.zip "YUI 3.9.0pr1 zip distribution")), on [npm](https://npmjs.org/package/yui "Node.js Packaged Module"), and our [staging website](http://stage.yuilibrary.com/) has the updated documentation.

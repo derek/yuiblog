@@ -6,6 +6,7 @@ date: 2010-11-29
 slug: "in-the-yui-3-gallery-server-sent-events"
 permalink: /2010/11/29/in-the-yui-3-gallery-server-sent-events/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Push notifications on the web are increasing in popularity, as evidenced by the excitement over [Web Sockets](http://www.w3.org/TR/websockets/), and with good reason. The web is moving towards more accurate and up-to-date information as audiences turn to the Internet for real-time updates of stocks, news, sports, and more. While Web Sockets represents a giant leap forward in the realm of push notifications, there is a lesser-known spec that can be considered a small jump forward: [Server-Sent Events](http://dev.w3.org/html5/eventsource/).

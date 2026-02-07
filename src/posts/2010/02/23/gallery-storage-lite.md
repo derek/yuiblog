@@ -6,6 +6,7 @@ date: 2010-02-23
 slug: "gallery-storage-lite"
 permalink: /2010/02/23/gallery-storage-lite/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 With more and more browsers adding support for the [HTML5 Web Storage API](http://dev.w3.org/html5/webstorage/), the future is looking good for web applications that need persistent client-side data storage. Unfortunately, maintaining compatibility with older browsers that don't yet support Web Storage can be a challenge, and dropping support for older browsers is rarely an acceptable option.

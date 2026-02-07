@@ -6,6 +6,7 @@ date: 2011-12-12
 slug: "yui-3-5-0-pr1-is-now-available-on-cdn"
 permalink: /2011/12/12/yui-3-5-0-pr1-is-now-available-on-cdn/
 categories:
+  - "Releases"
   - "Development"
 ---
 ![YUI 3.5.0 PR1](/yuiblog/blog/wp-content/uploads/2011/12/yui350pr1.jpg "YUI 3.5.0 PR1")

@@ -6,6 +6,7 @@ date: 2007-12-04
 slug: "yuii-240"
 permalink: /2007/12/04/yuii-240/
 categories:
+  - "Releases"
   - "Development"
 ---
 We released YUI version 2.4.0 today; it's [available for download](http://developer.yahoo.com/yui/download/) and full documentation is up on [the YUI website](http://developer.yahoo.com/yui/). Here are the all-new components being issued with 2.4.0:

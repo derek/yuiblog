@@ -6,6 +6,7 @@ date: 2010-02-18
 slug: "gallery-treeview-port"
 permalink: /2010/02/18/gallery-treeview-port/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 [![click through to run this example in the browser](/yuiblog/blog-archive/assets/tvgallery-20100218-175738.jpg)](http://ericmiraglia.com/yui/demos/tvgallery.php)As the YUI Team wraps up work on [the core widget foundation for YUI 3](http://developer.yahoo.com/yui/theater/video.php?v=desai-yuiconf2009-widgets), one of the things we're seeing in the [YUI 3 Gallery](http://yuilibrary.com/gallery/ "YUI Library :: Gallery") is transitional solutions that help flesh out [YUI 3](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library") implementations. Some of these, like [Julien Lecomte's SimpleMenu](/yuiblog/blog/2010/02/12/gallery-simple-menu/), are pure YUI 3, and others, like [Adam Moore's TreeView module](http://yuilibrary.com/gallery/show/treeview "YUI Library :: Gallery :: treeview"), help bridge the gap between [YUI 2](http://developer.yahoo.com/yui/2/ "YUI 2 — Yahoo! User Interface Library") and 3 and will likely be replaced by other gallery modules or shipping YUI 3 widgets down the road.

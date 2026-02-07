@@ -6,6 +6,7 @@ date: 2014-06-03
 slug: "yui-3-17-2-released"
 permalink: /2014/06/03/yui-3-17-2-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are pleased to announce the release of **YUI 3.17.2**. You can find this release on the [Yahoo CDN](http://yui.yahooapis.com/3.17.2/build/yui/yui-min.js), through [npm](https://npmjs.org/package/yui), and via a [downloadable `.zip` archive](http://yui.zenfs.com/releases/yui3/yui_3.17.2.zip). We have also updated the [YUI Library website](http://yuilibrary.com/) to reflect the changes in this release.

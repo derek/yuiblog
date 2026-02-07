@@ -6,6 +6,7 @@ date: 2010-09-03
 slug: "coming-inyui-3-2-0-simpleyui"
 permalink: /2010/09/03/coming-inyui-3-2-0-simpleyui/
 categories:
+  - "Releases"
   - "Development"
 ---
 _The feature described in this article is available as of YUI 3.2.0pr2, and it will be a part of the upcoming 3.2.0 release. You can start playing with it today by following the code in this article._

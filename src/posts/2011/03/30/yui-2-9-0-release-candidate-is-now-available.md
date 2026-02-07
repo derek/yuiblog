@@ -6,6 +6,7 @@ date: 2011-03-30
 slug: "yui-2-9-0-release-candidate-is-now-available"
 permalink: /2011/03/30/yui-2-9-0-release-candidate-is-now-available/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI 2.9.0 release candidate is now available for review by the community. The team will be taking the next few days to do a final round of testing, so we'd like to encourage our developer community to get any feeback to us by the end of the week.

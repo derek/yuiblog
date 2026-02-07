@@ -6,6 +6,7 @@ date: 2011-11-14
 slug: "announcing-yui-compressor-2-4-7"
 permalink: /2011/11/14/announcing-yui-compressor-2-4-7/
 categories:
+  - "Releases"
   - "Development"
 ---
 We're pleased to announce the immediate availability of version 2.4.7 of the [YUI Compressor](http://yuilibrary.com/projects/yuicompressor/). This version contains fixes to Compressor's handling of CSS minification in a couple of core areas. It does not contain any JS Compression changes.

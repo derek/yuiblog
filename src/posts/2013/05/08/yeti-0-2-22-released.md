@@ -6,6 +6,7 @@ date: 2013-05-08
 slug: "yeti-0-2-22-released"
 permalink: /2013/05/08/yeti-0-2-22-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 Today's release of [Yeti](http://yeti.cx) v0.2.22 includes improvements for testing slower browsers. In particular, we focused on the slow and sometimes flaky Android emulators hosted by [Sauce Labs](https://saucelabs.com).

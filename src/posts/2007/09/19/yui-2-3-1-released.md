@@ -6,6 +6,7 @@ date: 2007-09-19
 slug: "yui-2-3-1-released"
 permalink: /2007/09/19/yui-2-3-1-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 [![YUI 2.3.1 is now available as a download from SourceForge.](http://us.i1.yimg.com/us.yimg.com/i/ydn/yuiweb/download_1.gif)](http://developer.yahoo.com/yui/download/)We're pleased to announce today the release of YUI version 2.3.1, a minor release that is characterized by bug fixes and performance improvements throughout the library. Several dozen bugs are addressed in 2.3.1. The new release is [available for download immediately](http://developer.yahoo.com/yui/download/).

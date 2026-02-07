@@ -6,6 +6,7 @@ date: 2011-07-28
 slug: "yui-3-4-0-preview-release-3-now-available-on-cdn"
 permalink: /2011/07/28/yui-3-4-0-preview-release-3-now-available-on-cdn/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team has just completed the final development sprint for the 3.4.0 release. At this time we consider the code functionally complete. We are planning to spend our next sprint focusing on our final round of testing and creating more examples and documentation. We have posted an FC (functional complete) build to the CDN for community exploration and feedback. You can access this release at [http://yui.yahooapis.com/3.4.0pr3/build/yui/yui-min.js](http://yui.yahooapis.com/3.4.0pr3/build/yui/yui-min.js).

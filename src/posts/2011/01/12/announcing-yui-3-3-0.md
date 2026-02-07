@@ -6,6 +6,7 @@ date: 2011-01-12
 slug: "announcing-yui-3-3-0"
 permalink: /2011/01/12/announcing-yui-3-3-0/
 categories:
+  - "Releases"
   - "Open Hours"
   - "Development"
 ---

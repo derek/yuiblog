@@ -6,6 +6,7 @@ date: 2007-07-31
 slug: "yui-2-3-0-released"
 permalink: /2007/07/31/yui-2-3-0-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 [![YUI 2.3.0 is now available as a download from SourceForge.](http://us.i1.yimg.com/us.yimg.com/i/ydn/yuiweb/download_1.gif)](http://developer.yahoo.com/yui/download/)We're pleased to announce today the release of YUI version 2.3.0. This release features six new additions to the library as well as a new skinning architecture and a new visual treatment for most of our UI controls. All of this, plus 250 enhancements and bug fixes, is [available for download immediately](http://developer.yahoo.com/yui/download/).

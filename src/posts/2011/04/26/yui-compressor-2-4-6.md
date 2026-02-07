@@ -6,6 +6,7 @@ date: 2011-04-26
 slug: "yui-compressor-2-4-6"
 permalink: /2011/04/26/yui-compressor-2-4-6/
 categories:
+  - "Releases"
   - "Development"
 ---
 We're pleased to announce the immediate availability of version 2.4.6 of the [YUI Compressor](http://developer.yahoo.com/yui/compressor/). This version contains mostly updates related to Compressor's handling of CSS minification and introduces batch processing of multiple files with a single command.

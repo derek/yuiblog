@@ -6,6 +6,7 @@ date: 2010-10-18
 slug: "gallery-svg"
 permalink: /2010/10/18/gallery-svg/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 ### Introduction

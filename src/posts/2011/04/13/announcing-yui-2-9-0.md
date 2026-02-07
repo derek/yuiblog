@@ -6,6 +6,7 @@ date: 2011-04-13
 slug: "announcing-yui-2-9-0"
 permalink: /2011/04/13/announcing-yui-2-9-0/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team is thrilled to announce the release of YUI version 2.9.0. YUI 2.9.0 is the [last bug fix release on the YUI 2 code line](/yuiblog/blog/2010/12/17/yui-2-9-0-release-update/) marking its transition into maintenance mode. Moving forward, expect to see releases consisting of only critical bug fixes or fixes for browser compatibility issues resulting from updates to browsers in the [GBS](http://developer.yahoo.com/yui/articles/gbs/). We're truly excited to better focus our attention on the upcoming 3.4.0 release of YUI.

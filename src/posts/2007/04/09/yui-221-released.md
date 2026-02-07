@@ -6,6 +6,7 @@ date: 2007-04-09
 slug: "yui-221-released"
 permalink: /2007/04/09/yui-221-released/
 categories:
+  - "Releases"
   - "Graded Browser Support"
   - "Development"
 ---

@@ -6,6 +6,7 @@ date: 2010-10-25
 slug: "yui-2-8-2-security-update"
 permalink: /2010/10/25/yui-2-8-2-security-update/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team released YUI 2.8.2 today. This release corrects a [security-related defect](http://yuilibrary.com/support/2.8.2/) that was introduced in the YUI 2 Flash component infrastructure beginning with the YUI 2.4.0 release. This defect allows JavaScript injection exploits to be created against domains that host affected YUI `.swf` files. [Visit the security bulletin for YUI 2.8.2 for full details about how to identify and replace affected files](http://yuilibrary.com/support/2.8.2/).

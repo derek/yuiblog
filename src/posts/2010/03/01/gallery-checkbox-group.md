@@ -6,6 +6,7 @@ date: 2010-03-01
 slug: "gallery-checkbox-group"
 permalink: /2010/03/01/gallery-checkbox-group/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Checkboxes and radio buttons are well known patterns for choosing from a small set of items. The former lets you choose any subset of items (including none), while the latter requires exactly one selection.

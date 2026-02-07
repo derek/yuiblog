@@ -6,6 +6,7 @@ date: 2008-02-20
 slug: "yui-250-released"
 permalink: /2008/02/20/yui-250-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI Team just released [version 2.5.0 of the library](http://developer.yahoo.com/yui/download/). We've added six new components — [Layout Manager](http://developer.yahoo.com/yui/layout/), [Uploader](http://developer.yahoo.com/yui/uploader/) (multi-file upload engine combining Flash and JavaScript), [Resize Utility](http://developer.yahoo.com/yui/resize/), [ImageCropper](http://developer.yahoo.com/yui/imagecropper/), [Cookie Utility](http://developer.yahoo.com/yui/cookie/) and a [ProfilerViewer Control](http://developer.yahoo.com/yui/profilerviewer/) that works in tandem with the YUI [Profiler](http://developer.yahoo.com/yui/profiler/). This release also contains major improvements to the [DataTable Control](http://developer.yahoo.com/yui/datatable/) and new [Dual-Thumb Slider functionality](http://developer.yahoo.com/yui/slider/#dual) in the Slider Control. Here are the highlights:

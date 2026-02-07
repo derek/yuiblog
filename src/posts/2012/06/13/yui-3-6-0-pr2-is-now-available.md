@@ -6,6 +6,7 @@ date: 2012-06-13
 slug: "yui-3-6-0-pr2-is-now-available"
 permalink: /2012/06/13/yui-3-6-0-pr2-is-now-available/
 categories:
+  - "Releases"
   - "Development"
 ---
 ![](/yuiblog/blog/wp-content/uploads/2012/06/yui360pr2.jpg "YUI 3.6.0 PR2")

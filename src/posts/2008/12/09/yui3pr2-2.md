@@ -6,6 +6,7 @@ date: 2008-12-09
 slug: "yui3pr2-2"
 permalink: /2008/12/09/yui3pr2-2/
 categories:
+  - "Releases"
   - "Development"
 ---
 [![YUI 3.x](/yuiblog/blog-archive/assets/yui3arch-20081209-130759.jpg)](http://developer.yahoo.com/yui/3/)

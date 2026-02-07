@@ -6,6 +6,7 @@ date: 2008-02-25
 slug: "datatable-250"
 permalink: /2008/02/25/datatable-250/
 categories:
+  - "Releases"
   - "Development"
 ---
 We think the 2.5.0 release of the [YUI DataTable Control](http://developer.yahoo.com/yui/datatable/) is our best one yet, so we wanted to take a moment to look back at some of the challenges we've faced over the past few months and to peek under the hood at some of the techniques we've used to tackle these problems.

@@ -6,6 +6,7 @@ date: 2012-03-21
 slug: "yui-3-5-0-pr4"
 permalink: /2012/03/21/yui-3-5-0-pr4/
 categories:
+  - "Releases"
   - "Development"
 ---
 ![YUI 3.5.0 PR4](/yuiblog/blog/wp-content/uploads/2012/03/350pr41.jpg "YUI 3.5.0 PR4") Illustration is adapted from [a photo by Michael Myers (@Fristle on Flickr)](http://www.flickr.com/photos/fristle/4503812795/)

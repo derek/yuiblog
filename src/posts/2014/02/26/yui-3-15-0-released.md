@@ -6,6 +6,7 @@ date: 2014-02-26
 slug: "yui-3-15-0-released"
 permalink: /2014/02/26/yui-3-15-0-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are happy to announce the release of YUI **3.15.0**! You can find this release on the [Yahoo CDN](http://yui.yahooapis.com/3.15.0/build/yui/yui-min.js), through [npm](https://npmjs.org/package/yui), and downloadable via a [`.zip` archive](http://yui.zenfs.com/releases/yui3/yui_3.15.0.zip). The [YUI Library website](http://yuilibrary.com/) has also been updated to reflect the changes in this release.

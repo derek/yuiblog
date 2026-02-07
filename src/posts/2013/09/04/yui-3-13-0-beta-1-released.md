@@ -6,6 +6,7 @@ date: 2013-09-04
 slug: "yui-3-13-0-beta-1-released"
 permalink: /2013/09/04/yui-3-13-0-beta-1-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are happy to announce the release of a new YUI beta: **YUI 3.13.0 beta 1**. It is available on [Yahoo! CDN](http://yui.yahooapis.com/3.13.0-beta-1/build/yui/yui-min.js), a [zip download](http://yui.zenfs.com/releases/yui3/yui_3.13.0-beta-1.zip), and on [npm](https://npmjs.org/package/yui). Our YUI Library [staging website](http://stage.yuilibrary.com/) has been updated as well with the latest changes in this release.

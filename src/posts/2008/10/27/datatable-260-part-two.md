@@ -6,6 +6,7 @@ date: 2008-10-27
 slug: "datatable-260-part-two"
 permalink: /2008/10/27/datatable-260-part-two/
 categories:
+  - "Releases"
   - "Development"
 ---
 **Don't miss [Part One of this series](/yuiblog/blog/2008/10/15/datatable-260-part-one/), in which Satyam explores practical steps on getting started with the [YUI DataTable Control](http://developer.yahoo.com/yui/datatable/).**

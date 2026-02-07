@@ -6,6 +6,7 @@ date: 2010-04-02
 slug: "whats-new-in-yui-test-3-1-0"
 permalink: /2010/04/02/whats-new-in-yui-test-3-1-0/
 categories:
+  - "Releases"
   - "Development"
 ---
 One of the big pushes around YUI Test for the YUI 3.1.0 release was in the area of automation. While it's great that developers are starting to write unit tests for their JavaScript, test-driven development reaches its true potential only when these tests are run automatically and reports are generated to track trends. This entire process requires more than just JavaScript, of course, and so this latest version of YUI Test has a number of new features to make usage in a continuous integration environment easier.

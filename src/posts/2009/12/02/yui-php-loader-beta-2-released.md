@@ -6,6 +6,7 @@ date: 2009-12-02
 slug: "yui-php-loader-beta-2-released"
 permalink: /2009/12/02/yui-php-loader-beta-2-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We've spent the past few months working on beta 2 of the [YUI PHP Loader](http://developer.yahoo.com/yui/phploader/). The latest release brings some general code cleanup, bug fixes, and performance enhancements. It also includes expanded API documentation and a new example which demonstrates mixed loading methods. [Full details on beta 2 are available here](http://github.com/yui/phploader/blob/master/CHANGES).

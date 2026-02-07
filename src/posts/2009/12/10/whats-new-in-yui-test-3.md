@@ -6,6 +6,7 @@ date: 2009-12-10
 slug: "whats-new-in-yui-test-3"
 permalink: /2009/12/10/whats-new-in-yui-test-3/
 categories:
+  - "Releases"
   - "Development"
 ---
 A new version of [YUI Test](http://developer.yahoo.com/yui/3/yuitest/ "YUI 3: YUI Test") accompanied the release of [YUI 3.0.0](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library"). YUI Test for 3.0.0 is more than just a port of the 2.x-compatible version of YUI Test, however, introducing several new features. These have come about as a result of developer requests and conversations I've had with those already using the tool.

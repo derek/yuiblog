@@ -6,6 +6,7 @@ date: 2010-07-06
 slug: "in-the-yui-3-gallery-base64-and-y64-encoding"
 permalink: /2010/07/06/in-the-yui-3-gallery-base64-and-y64-encoding/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 [Base64](http://en.wikipedia.org/wiki/Base64) encoding was originally designed to allow lossless data passing between 8-bit and 7-bit systems. The primary example of its usage is in email, which traditionally used 7-bit systems to transfer the email while those of us at home on our computers were using 8-bit systems. This became especially important with non-text email attachments, which would be encoded into MIME base64 and sent along to the destination. More recently, base64 encoding has gained popularity for its usage in data URIs. For those unaware, data URIs are a way of embedding files inside of HTML and CSS. One of the supported data URI formats is base64. Base64 encoding is still used frequently in programming, primarily for obfuscation but also for safe data transport. While some browsers have native base64 encoding and decoding, this functionality isn't defined in any standard nor commonly available in all browsers. The [YUI 3 Gallery Base64 module](http://yuilibrary.com/gallery/show/base64) provides a common implementation of base64 encoding that can be used across all A-grade browsers. To use the Base64 module, include the following on your page:

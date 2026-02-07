@@ -6,6 +6,7 @@ date: 2010-12-22
 slug: "yui-3-3-0pr3"
 permalink: /2010/12/22/yui-3-3-0pr3/
 categories:
+  - "Releases"
   - "Development"
 ---
 At YUIConf in November we released a preview of YUI 3.3.0, our next major release on the [YUI 3 codeline](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library"). We're now up to our third preview release, and if you have some time over the winter holidays to help us kick the tires we'd love for you to give it a spin. You can use the [YUI 3.3.0pr1 seed file from the CDN](http://yui.yahooapis.com/3.3.0pr3/build/yui/yui-min.js) to get started, [download the distribution from YUILibrary.com](http://yuilibrary.com/downloads/download.php?file=cda21a97fc509048951c5709818150e4 "YUI Library :: Downloads"), or check out the [3.3.0pr3 distribution hosted on YUIBlog](/yuiblog/sandbox/yui/3.3.0pr3/ "The Yahoo! User Interface Library (YUI) 3.3.0") (note: performance is quite sluggish on YUIBlog due to the lack of combo-handling; rest assured that your CDN-driven implementations generally will be faster than corresponding 3.2.0 usage).

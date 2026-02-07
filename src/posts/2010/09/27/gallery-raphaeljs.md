@@ -6,6 +6,7 @@ date: 2010-09-27
 slug: "gallery-raphaeljs"
 permalink: /2010/09/27/gallery-raphaeljs/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 [RaphaelJS](http://raphaeljs.com "RaphaelJS website") is a powerful JavaScript library that manages [SVG](http://www.w3.org/Graphics/SVG/ "W3C SVG site") drawings and animations. It allows you to easily create SVG canvases and draw basic shapes and paths very easily, even grouping them into sets and applying transformations to one or many vectors. You can draw shapes, manipulate images, and animate everything. RaphaelJS provides a nice [API](http://raphaeljs.com/reference.html "RaphaelJS Documentation") to create and modify SVG elements with ease.

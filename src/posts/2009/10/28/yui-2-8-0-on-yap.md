@@ -6,6 +6,7 @@ date: 2009-10-28
 slug: "yui-2-8-0-on-yap"
 permalink: /2009/10/28/yui-2-8-0-on-yap/
 categories:
+  - "Releases"
   - "Development"
 ---
 Thanks to the hard work of YUI engineer Lucas Smith, YAP engineer Felix Lee, YDN's Jonathan LeBlanc and many others, [YUI 2.8.0](http://developer.yahoo.com/yui/2/) is now available on the [Yahoo! Application Platform (YAP)](http://developer.yahoo.com/yap/) as a developer preview. YAP is the platform on which you can write applications that run on the [Yahoo! homepage](http://yahoo.com/), [My Yahoo!](http://my.yahoo.com), and other sites throughout the Yahoo! ecosystem.

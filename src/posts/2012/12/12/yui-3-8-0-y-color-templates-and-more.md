@@ -6,6 +6,7 @@ date: 2012-12-12
 slug: "yui-3-8-0-y-color-templates-and-more"
 permalink: /2012/12/12/yui-3-8-0-y-color-templates-and-more/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are pleased to announce the availability of **YUI 3.8.0**. It is available via [Yahoo! CDN](http://yui.yahooapis.com/3.8.0/build/yui/yui-min.js) (or [download](http://yui.zenfs.com/releases/yui3/yui_3.8.0.zip)) and on [npm](https://npmjs.org/package/yui). We have also updated our [website](http://yuilibrary.com/) to reflect the changes and new features of 3.8.0. The highlights of this release are listed below, inspired by the [original 3.8.0pr1 announcement](/yuiblog/blog/2012/11/07/yui-3-8-0pr1-template-and-color-utilities/) from [Eric Ferraiuolo](https://twitter.com/ericf).

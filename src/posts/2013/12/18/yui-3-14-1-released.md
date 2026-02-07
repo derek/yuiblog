@@ -6,6 +6,7 @@ date: 2013-12-18
 slug: "yui-3-14-1-released"
 permalink: /2013/12/18/yui-3-14-1-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are happy to announce the release of **YUI 3.14.1**! This release can be found on the [Yahoo CDN](http://yui.yahooapis.com/3.14.1/build/yui/yui-min.js "Yahoo CDN"), through [npm](https://npmjs.org/package/yui "npm"), and via [download](http://yui.zenfs.com/releases/yui3/yui_3.14.1.zip). We also have updated the [YUI Library website](http://yuilibrary.com/) to reflect the changes in this release.

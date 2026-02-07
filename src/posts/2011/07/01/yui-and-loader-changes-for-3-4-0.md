@@ -6,6 +6,7 @@ date: 2011-07-01
 slug: "yui-and-loader-changes-for-3-4-0"
 permalink: /2011/07/01/yui-and-loader-changes-for-3-4-0/
 categories:
+  - "Releases"
   - "Development"
 ---
 In 3.4.0 we started the process of shifting some of Loader's logic around, to not only make it more performant, but to make it more robust and easier to use in other places (like on the server). We will be rolling out more changes in future revisions, but I wanted to take some time and explain what was changed, why it was changed and how it may impact developers. For the majority of use-cases, developers will notice nothing different, except that things are a little faster and their requirement downloads are a little smaller.

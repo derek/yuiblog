@@ -6,6 +6,7 @@ date: 2009-11-05
 slug: "video-snider-yuiconf2009"
 permalink: /2009/11/05/video-snider-yuiconf2009/
 categories:
+  - "Releases"
   - "YUIConf"
   - "YUI Theater"
 ---

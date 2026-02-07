@@ -6,6 +6,7 @@ date: 2013-11-25
 slug: "yui-3-14-0-released"
 permalink: /2013/11/25/yui-3-14-0-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 We are pleased to announce the release of **YUI 3.14.0**! This release can be found on the [Yahoo CDN](http://yui.yahooapis.com/3.14.0/build/yui/yui-min.js) as well as through [npm](https://npmjs.org/package/yui) and a [`.zip` archive](http://yui.zenfs.com/releases/yui3/yui_3.14.0.zip). We also have updated the [YUI Library website](http://yuilibrary.com/) to reflect the changes in this release. ( It's fitting that this release is so near to Thanksgiving, since it's our "pi" release.)

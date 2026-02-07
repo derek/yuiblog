@@ -6,6 +6,7 @@ date: 2011-04-13
 slug: "announcing-yui-test-1-0-0-beta-2"
 permalink: /2011/04/13/announcing-yui-test-1-0-0-beta-2/
 categories:
+  - "Releases"
   - "Development"
 ---
 Late last year we released the [beta 1 version](/yuiblog/blog/2010/11/09/introducing-the-new-yui-test/) of YUI Test. Since that time, we've been gathering feedback, fixing bugs, and implementing new features. Today I'm happy to announce the availability of YUI Test 1.0.0 beta 2, the last planned beta release before GA. This release features some new core functionality as well as initial support for Node.js. All of this is designed to make YUI Test a more complete testing solution no matter where you write JavaScript.

@@ -6,6 +6,7 @@ date: 2010-03-25
 slug: "gallery-resize"
 permalink: /2010/03/25/gallery-resize/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 We use an awful lot of the different [YUI 2](http://developer.yahoo.com/yui/2/ "YUI 2 — Yahoo! User Interface Library") widgets and components in our main application, and love them! But I'd thought it was about time to start getting to grips with [YUI 3](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library"), and decided I'd have a go at bringing [YUI 2's Resize Utility](http://developer.yahoo.com/yui/resize/ "YUI 2: Resize Utility") over to YUI 3. I also have longer term plans to write a diary widget, and if it was going to be in YUI 3 it would need some resizableness.

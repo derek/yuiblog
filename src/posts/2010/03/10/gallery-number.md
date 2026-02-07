@@ -6,6 +6,7 @@ date: 2010-03-10
 slug: "gallery-number"
 permalink: /2010/03/10/gallery-number/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Natively, JavaScript has a very limited set of functions for working with numbers located on the global Math object. Mostly these functions are for working with exponents, trigonometry, and rounding. And while these functions are needed and efficient, the [Math API](http://www.w3schools.com/jsref/jsref_obj_math.asp) has remained unchanged for years, and probably won't be improved anytime in the near future. So it is up to the developers of JavaScript libraries to create and maintain a component for working with numbers.

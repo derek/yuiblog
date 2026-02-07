@@ -6,6 +6,7 @@ date: 2008-10-28
 slug: "aptana"
 permalink: /2008/10/28/aptana/
 categories:
+  - "Releases"
   - "Development"
 ---
 [![](/yuiblog/blog-archive/assets/aptana_yui.png)](http://www.aptana.com/blog/lorihc/yui2.6_released)Aptana sent a clear signal about how committed it was to the needs of frontend engineers when it hired [Lori Hylan-Cho](http://www.avocado8.com/blog/) to work specifically on support in the Aptana IDE for popular frontend libraries. This is a challenging task, given the complexity of the library landscape. But these libraries (like YUI and jQuery) are an important asset for developers of web applications, and Aptana has shown that it's going the extra mile for those developers.

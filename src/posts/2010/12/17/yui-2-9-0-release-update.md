@@ -6,6 +6,7 @@ date: 2010-12-17
 slug: "yui-2-9-0-release-update"
 permalink: /2010/12/17/yui-2-9-0-release-update/
 categories:
+  - "Releases"
   - "Development"
 ---
 Next week the YUI team will begin planning for release 2.9.0 to be shipped in the second half of Q1 2011. YUI 2.9.0 will be the last major dot-release of the 2.x codeline, and the team will be aggressively reviewing all open tickets against the YUI 2 project and either assigning them to be a part of the 2.9.0 release, closing them as "WON'T FIX", or moving them to the YUI 3 project.

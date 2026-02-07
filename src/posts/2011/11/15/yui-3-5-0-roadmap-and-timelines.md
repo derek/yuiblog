@@ -6,6 +6,7 @@ date: 2011-11-15
 slug: "yui-3-5-0-roadmap-and-timelines"
 permalink: /2011/11/15/yui-3-5-0-roadmap-and-timelines/
 categories:
+  - "Releases"
   - "Development"
 ---
 With YUIConf 2011 still fresh in our minds, we have now turned our attention to planning and early development on the next major release of YUI. We are targeting the following high-level goals for YUI 3.5.0:

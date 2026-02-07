@@ -6,6 +6,7 @@ date: 2010-12-13
 slug: "gallery-carousel"
 permalink: /2010/12/13/gallery-carousel/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 _**About the authors:** [Gopal Venkatesan](http://g13n.in/) ([@g13n](http://twitter.com/g13n)) works for Yahoo! in Bangalore where he is one of the deans of the frontend engineering community; Gopal has been the lead engineer on the [YUI 2 Carousel](http://developer.yahoo.com/yui/carousel/ "YUI 2: Carousel Control") project since the 2.6.0 release. He is also the author of the new [YUI 3 Gallery Carousel](http://yuilibrary.com/gallery/show/carousel) module. [Fabian Frank](http://uk.linkedin.com/in/fabianfrank87) hails from Germany and works for Yahoo! in Beijing; Fabian has been with Yahoo since he finished his Master's of Research at the University of Glasgow._

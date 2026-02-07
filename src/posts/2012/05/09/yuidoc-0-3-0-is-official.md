@@ -6,6 +6,7 @@ date: 2012-05-09
 slug: "yuidoc-0-3-0-is-official"
 permalink: /2012/05/09/yuidoc-0-3-0-is-official/
 categories:
+  - "Releases"
   - "Development"
 ---
 Today we are pleased to announce the official release of the new [YUIDoc](http://yui.github.com/yuidoc/), our JavaScript documentation generator. YUIDoc is a [Node.js](http://nodejs.org/) application that generates API documentation from comments in source, using a syntax similar to tools like Javadoc and Doxygen. YUIDoc is currently powering the [API documentation for YUI](http://yuilibrary.com/yui/docs/api/) and has been [actively updated over the last year](https://github.com/yui/yuidoc/graphs/commit-activity).

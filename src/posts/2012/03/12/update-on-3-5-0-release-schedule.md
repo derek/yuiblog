@@ -6,6 +6,7 @@ date: 2012-03-12
 slug: "update-on-3-5-0-release-schedule"
 permalink: /2012/03/12/update-on-3-5-0-release-schedule/
 categories:
+  - "Releases"
   - "Development"
 ---
 Some of you have been wondering when YUI 3.5.0 PR3 will be released. After all, the scheduled release date for 3.5.0 PR3 was last week, March 5th, but here we are on the 12th, and no PR3. So what gives?

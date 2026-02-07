@@ -6,6 +6,7 @@ date: 2013-01-23
 slug: "yui-3-8-1-released"
 permalink: /2013/01/23/yui-3-8-1-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 Last night we released **YUI 3.8.1**. It is now available on the [Yahoo! CDN](http://yui.yahooapis.com/3.8.1/build/yui/yui-min.js "YUI 3.8.1 Seed file") (also as a [download](http://yui.zenfs.com/releases/yui3/yui_3.8.1.zip "YUI 3.8.1 Zip file")) and on [npm](https://npmjs.org/package/yui). The [YUI Library website](http://yuilibrary.com/) has been updated with the latest documentation, including the addition of **iOS 6** to our [Target Environments](http://yuilibrary.com/yui/environments/).

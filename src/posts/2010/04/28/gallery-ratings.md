@@ -6,6 +6,7 @@ date: 2010-04-28
 slug: "gallery-ratings"
 permalink: /2010/04/28/gallery-ratings/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 _**About the author:** Peter Peterson is a lead front-end engineer for Yahoo!'s internal developer tools._

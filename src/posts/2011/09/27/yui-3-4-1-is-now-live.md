@@ -6,6 +6,7 @@ date: 2011-09-27
 slug: "yui-3-4-1-is-now-live"
 permalink: /2011/09/27/yui-3-4-1-is-now-live/
 categories:
+  - "Releases"
   - "Development"
 ---
 ![YUI 3.4.1](/yuiblog/blog/wp-content/uploads/2011/09/yui341.jpg "YUI 3.4.1")

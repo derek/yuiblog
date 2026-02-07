@@ -6,6 +6,7 @@ date: 2006-02-13
 slug: "yahoo_patterns_released"
 permalink: /2006/02/13/yahoo_patterns_released/
 categories:
+  - "Releases"
   - "Design"
 ---
 I'm excited to announce that today we are releasing the [Yahoo! Design Pattern Library](http://developer.yahoo.net/ypatterns) to the public under a friendly [Creative Commons License](http://creativecommons.org/licenses/by/2.5/). The goal in releasing this library is for us to share the common patterns that we see emerging at Yahoo! It is hoped that by opening up our design patterns we can share our current thinking as well as solicit your valuable feedback.

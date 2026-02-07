@@ -6,6 +6,7 @@ date: 2012-07-18
 slug: "yui-3-6-0-pr4-now-available"
 permalink: /2012/07/18/yui-3-6-0-pr4-now-available/
 categories:
+  - "Releases"
   - "Development"
 ---
 YUI 3.6.0 PR4 is now available to the developer community for feedback and testing on the Yahoo! CDN. Please take a minute to check it out via [CDN](http://yui.yahooapis.com/3.6.0pr4/build/yui/yui-min.js) or [download](http://yui.zenfs.com/releases/yui3/yui_3.6.0pr4.zip).

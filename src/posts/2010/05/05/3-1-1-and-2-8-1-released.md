@@ -6,6 +6,7 @@ date: 2010-05-05
 slug: "3-1-1-and-2-8-1-released"
 permalink: /2010/05/05/3-1-1-and-2-8-1-released/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team released [YUI 2.8.1](http://developer.yahoo.com/yui/2/) and [YUI 3.1.1](http://developer.yahoo.com/yui/3/) today. Each of these minor releases contains a set of targeted bug fixes. Notably, the History component in both libraries was updated to correct an issue that could result in an XSS vulnerability in some implementations.

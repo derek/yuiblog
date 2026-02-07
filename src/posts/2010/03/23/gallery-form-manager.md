@@ -6,6 +6,7 @@ date: 2010-03-23
 slug: "gallery-form-manager"
 permalink: /2010/03/23/gallery-form-manager/
 categories:
+  - "YUI 3 Gallery"
   - "Development"
 ---
 Forms have been a staple on web sites for a very long time. In the early days, they were quite simple: the user entered values and then waited while the server processed the values or spit back errors. The rise of Web 2.0 has significantly improved the experience, most notably by pre-validating on the client. This provides immediate feedback and avoids pointless connections to the server.

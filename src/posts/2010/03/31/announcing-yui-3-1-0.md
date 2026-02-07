@@ -6,6 +6,7 @@ date: 2010-03-31
 slug: "announcing-yui-3-1-0"
 permalink: /2010/03/31/announcing-yui-3-1-0/
 categories:
+  - "Releases"
   - "Development"
 ---
 The YUI team is pleased to announce the release of [YUI 3.1.0](http://developer.yahoo.com/yui/3/ "YUI 3 — Yahoo! User Interface Library").
