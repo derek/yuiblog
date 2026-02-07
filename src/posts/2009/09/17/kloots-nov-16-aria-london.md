@@ -6,6 +6,7 @@ date: 2009-09-17
 slug: "kloots-nov-16-aria-london"
 permalink: /2009/09/17/kloots-nov-16-aria-london/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 [![](/yuiblog/blog-archive/assets/klootsinlondon-20090917-100306.png)](http://upcoming.yahoo.com/event/4422218//blog-archive/assets/klootsinlondon-20090917-100306.png)

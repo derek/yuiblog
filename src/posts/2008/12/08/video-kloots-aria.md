@@ -6,6 +6,7 @@ date: 2008-12-08
 slug: "video-kloots-aria"
 permalink: /2008/12/08/video-kloots-aria/
 categories:
+  - "Accessibility"
   - "YUI Theater"
 ---
 [![Todd Kloots about ARIA and accessibility at Yahoo on December 3, 2008.](/yuiblog/blog-archive/assets/klootsaria-20081206-220516.jpg)](http://video.yahoo.com/watch/4073211/10996186)

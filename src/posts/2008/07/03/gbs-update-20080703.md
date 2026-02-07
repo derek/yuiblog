@@ -6,6 +6,7 @@ date: 2008-07-03
 slug: "gbs-update-20080703"
 permalink: /2008/07/03/gbs-update-20080703/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 Updated July 8th: The chart below has been corrected to include Safari 3.1†, replacing Safari 3.0†.

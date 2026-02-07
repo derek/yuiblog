@@ -6,6 +6,7 @@ date: 2009-07-02
 slug: "gbs-update-20090702"
 permalink: /2009/07/02/gbs-update-20090702/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 This post announces an update to Graded Browser Support. The [GBS page on the YUI site](http://developer.yahoo.com/yui/articles/gbs/) always has the most current information. This post includes a list of [changes](#changes), the [updated chart of browsers that receive A-grade support](#graded-browsers), and our [GBS forecast](#forecast). The [discussion](#gbs0907_discussion) section breaks out some of the strategy behind the current GBS update.

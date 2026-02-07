@@ -6,6 +6,7 @@ date: 2009-02-23
 slug: "managing-focus"
 permalink: /2009/02/23/managing-focus/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 A core requirement for developers using ARIA is to provide keyboard access for widgets, as users of screen readers rely on the keyboard to navigate web sites and applications. A large part of providing keyboard access is managing focus of a widget's descendants (e.g., buttons in a toolbar, tabs in a tablist, menuitems in a menu, etc.), and the W3C guidelines provide two different approaches for doing so. This article explains both approaches and provides some practical advice for choosing between them.

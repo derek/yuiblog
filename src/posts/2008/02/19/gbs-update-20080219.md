@@ -6,6 +6,7 @@ date: 2008-02-19
 slug: "gbs-update-20080219"
 permalink: /2008/02/19/gbs-update-20080219/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 This post marks the first Graded Browser Support (GBS) update of 2008. It modifies the A-Grade support chart and offers a forecast of likely future changes. The current [A-Grade support chart](http://developer.yahoo.com/yui/articles/gbs "Graded Browser Support page on the Yahoo! Developer Network") is always on the YUI web site; updates are always announced here.

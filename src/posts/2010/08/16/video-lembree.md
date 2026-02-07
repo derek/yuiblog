@@ -6,6 +6,7 @@ date: 2010-08-16
 slug: "video-lembree"
 permalink: /2010/08/16/video-lembree/
 categories:
+  - "Accessibility"
   - "YUI Theater"
 ---
 [![Dennis Lembree's Talk at the BayJax event at Yahoo! in June, 2010.](/yuiblog/blog-archive/assets/dennis-lembree-blog-june-10.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=lembree-a11y)

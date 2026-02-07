@@ -6,6 +6,7 @@ date: 2007-08-15
 slug: "video-henry"
 permalink: /2007/08/15/video-henry/
 categories:
+  - "Accessibility"
   - "YUI Theater"
 ---
 <embed flashvars="id=3712395&amp;emailUrl=http%3A%2F%2Fvideo.yahoo.com%2Futil%2Fmail%3Fei%3DUTF-8%26vid%3D955300&amp;imUrl=http%253A%252F%252Fvideo.yahoo.com%252Fvideo%252Fplay%253Fei%253DUTF-8%2526vid%253D955300&amp;imTitle=Shawn%2BHenry%253A%2B%2526quot%253BWeb%2BAccessibility%2BGuidelines%2BUpdate%2526quot%253B&amp;searchUrl=http://video.yahoo.com/search/video?p=&amp;profileUrl=http://video.yahoo.com/video/profile?yid=&amp;creatorValue=ZXJpY21pcmFnbGlh&amp;vid=955300" height="350" src="http://us.i1.yimg.com/cosmos.bcst.yahoo.com/player/media/swf/FLVVideoSolo.swf" type="application/x-shockwave-flash" width="425">

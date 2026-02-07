@@ -6,6 +6,7 @@ date: 2010-11-03
 slug: "gbs-update-2010q4"
 permalink: /2010/11/03/gbs-update-2010q4/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 This post announces an update to [Graded Browser Support](http://developer.yahoo.com/yui/articles/gbs/), Yahoo!'s recommended browser testing matrix. The [GBS page on the YUI site](http://developer.yahoo.com/yui/articles/gbs/) always has the most current GBS table. This post includes:

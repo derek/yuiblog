@@ -6,6 +6,7 @@ date: 2009-03-05
 slug: "aria-grids"
 permalink: /2009/03/05/aria-grids/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 [YUI Grids CSS](http://developer.yahoo.com/yui/grids/) has long been an important tool for developers wishing to create more accessible layouts. Through its support of source-order independent layouts, Grids enables control of the reading order of a page, allowing developers to place the most important content higher in the markup so that it can be quickly discovered by users of screen readers. However, while the role of each section of a Grid (e.g., navigation, main content, footer, etc.) is easily perceived through visual style and layout, it is not immediately perceived by users of screen readers because `<div>`s are inherently structural elements with no default semantic meaning.

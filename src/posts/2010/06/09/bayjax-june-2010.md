@@ -6,6 +6,7 @@ date: 2010-06-09
 slug: "bayjax-june-2010"
 permalink: /2010/06/09/bayjax-june-2010/
 categories:
+  - "Accessibility"
   - "YUI Events"
 ---
 [June BayJax](http://www.meetup.com/BayJax/calendar/13740808/) is is almost here, so mark your calendars for June 15 at 5:30 p.m. For this occasion, we've invited three industry experts on accessibility to share their experiences with us. Nicholas Zakas and Victor Tsaran will give us an insider's view into the work they've done for the newest Yahoo! homepage, while Dirk Ginader will be talking about "The Five Layers of Web Accessibility."

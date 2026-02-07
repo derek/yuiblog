@@ -6,6 +6,7 @@ date: 2011-08-08
 slug: "making-search-direct-accessible"
 permalink: /2011/08/08/making-search-direct-accessible/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 A few months ago we launched the first beta release of Search Direct. This new product explores the concept of real-time feedback, instantly delivering answers to the user with each keystroke. Given the diversity of Yahoo!'s audience, we wanted to make Search Direct as accessible as possible. Initially, we believed that this would be an easy task since this product would be based on YUI 3, a JavaScript library with accessibility baked into its DNA. Contrary to my expectations as an engineer, this task turned out to be more difficult than we anticipated.

@@ -6,6 +6,7 @@ date: 2010-02-16
 slug: "gbs-update-2010q1"
 permalink: /2010/02/16/gbs-update-2010q1/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 This post announces an update to [Graded Browser Support](http://developer.yahoo.com/yui/articles/gbs/). The [GBS page on the YUI site](http://developer.yahoo.com/yui/articles/gbs/) always has the most current GBS table. This post includes:

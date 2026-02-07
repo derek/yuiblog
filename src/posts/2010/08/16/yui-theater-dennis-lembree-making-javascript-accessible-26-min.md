@@ -6,6 +6,7 @@ date: 2010-08-16
 slug: "yui-theater-dennis-lembree-making-javascript-accessible-26-min"
 permalink: /2010/08/16/yui-theater-dennis-lembree-making-javascript-accessible-26-min/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 [![Dennis Lembree's Talk at the BayJax event at Yahoo! in June, 2010.](/yuiblog/blog-archive/assets/dennis-lembree-blog-june-10.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=lembree-a11y)

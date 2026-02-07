@@ -6,6 +6,7 @@ date: 2007-04-09
 slug: "yui-221-released"
 permalink: /2007/04/09/yui-221-released/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 Today is the release of version 2.2.1 of the Yahoo User Interface (YUI) Library, and the update to our [A-Grade Browser Chart](http://developer.yahoo.com/yui/articles/gbs/#gbschart). While the previous release brought new components and significant revisions, this release is primarily about bug fixes. [Download the new distribution](http://developer.yahoo.com/yui/download/) or point to the new [hosted urls](http://developer.yahoo.com/yui/articles/hosting/) to get the latest code. You can read about the fixes in the release notes, though there are two notable changes we'd like to highlight.

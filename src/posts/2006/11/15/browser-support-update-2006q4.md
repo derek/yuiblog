@@ -6,6 +6,7 @@ date: 2006-11-15
 slug: "browser-support-update-2006q4"
 permalink: /2006/11/15/browser-support-update-2006q4/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 Approximately every three months we update the [chart detailing which browsers receive A-grade support](http://developer.yahoo.com/yui/articles/gbs/gbs_browser-chart.html) according to [Graded Browser Support](http://developer.yahoo.com/yui/articles/gbs/gbs.html). In conjunction with yesterday's [YUI update release](/yuiblog/blog/2006/11/13/yui-0120-released/), here is our browser support update for Q4 2006.

@@ -6,6 +6,7 @@ date: 2009-11-23
 slug: "video-kloots-yuiconf2009-a11y"
 permalink: /2009/11/23/video-kloots-yuiconf2009-a11y/
 categories:
+  - "Accessibility"
   - "YUI Theater"
 ---
 [![YUI engineer Todd Kloots speaks at YUICONF 2009, held at the Yahoo! HQ in Sunnyvale; October 28, 2009.](/yuiblog/blog-archive/assets/kloots-yuiconf2009-a11y-20091110-101857.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=kloots-yuiconf2009-a11y)

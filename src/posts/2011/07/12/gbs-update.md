@@ -6,6 +6,7 @@ date: 2011-07-12
 slug: "gbs-update"
 permalink: /2011/07/12/gbs-update/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 ### GBS Changes

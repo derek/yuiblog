@@ -6,6 +6,7 @@ date: 2008-01-17
 slug: "tables-and-charts"
 permalink: /2008/01/17/tables-and-charts/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 Charts are a great idea to make rows and rows of boring numbers easier to understand and to take in — for people that can see them. However, not all of your site's visitors can see and you'll also want to keep information you offer available for search engines. There are a lot of libraries on the web that allow you to create charts, but not many take this use case into consideration.

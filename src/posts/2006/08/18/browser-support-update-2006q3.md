@@ -6,6 +6,7 @@ date: 2006-08-18
 slug: "browser-support-update-2006q3"
 permalink: /2006/08/18/browser-support-update-2006q3/
 categories:
+  - "Graded Browser Support"
   - "Development"
 ---
 We published a paper titled Graded Browser Support (GBS) alongside the YUI Library release in February. Called "[logical and simple, but also profoundly practical](http://www.webstandards.org/2006/02/14/yahoo-developers-setting-a-standard-for-the-new-professionalism/)" by the Web Standards Project's (WaSP) Group Lead, GBS rejects the customary "you must be this tall to ride" approach and instead defines three _grades of support_. This makes it possible to support every desktop browser - at some grade - while bringing sanity and predictability to the development and quality assurance (QA) testing processes.

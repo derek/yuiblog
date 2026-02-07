@@ -6,6 +6,7 @@ date: 2010-08-24
 slug: "developing-an-accessible-star-ratings-widget"
 permalink: /2010/08/24/developing-an-accessible-star-ratings-widget/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 In a hurry? Skip to the [demo page](http://tjkdesign.com/lab/stars/demo.html).

@@ -6,6 +6,7 @@ date: 2008-07-30
 slug: "tabview-aria"
 permalink: /2008/07/30/tabview-aria/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 The [YUI TabView Control](http://developer.yahoo.com/yui/tabview/) is built on a strong foundation of semantic markup that provides users with some basic accessibility. But while TabView looks like a desktop tab control, screen readers don't present it as an atomic widget, leaving users to figure out how the various HTML elements that compose a TabView relate to each other. However, through the application of the [WAI-ARIA Roles and States](http://www.w3.org/TR/wai-aria/), it is possible to enhance TabView's accessibility such that users of screen readers perceive it as a desktop tab control.

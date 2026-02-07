@@ -6,6 +6,7 @@ date: 2010-08-16
 slug: "video-zakas-tsaran"
 permalink: /2010/08/16/video-zakas-tsaran/
 categories:
+  - "Accessibility"
   - "Development"
 ---
 [![Nicholas Zakas and Victor Tsaran's Talk at the BayJax event at Yahoo! in June, 2010.](/yuiblog/blog-archive/assets/zakas-tsaran-blog-june-10.jpg)](http://developer.yahoo.com/yui/theater/video.php?v=zakas-tsaran)

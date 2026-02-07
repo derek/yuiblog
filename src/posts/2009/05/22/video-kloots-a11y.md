@@ -6,6 +6,7 @@ date: 2009-05-22
 slug: "video-kloots-a11y"
 permalink: /2009/05/22/video-kloots-a11y/
 categories:
+  - "Accessibility"
   - "YUI Theater"
 ---
 [![Todd Kloots, Engineer, YUI Team](/yuiblog/blog-archive/assets/todd-a11y-20090518-082702.jpg)](http://developer.yahoo.com/yui/theater/kloots-a11y.html)
