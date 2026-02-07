@@ -14,7 +14,7 @@ This article discusses two JavaScript code reuse patters implemented in [YUI 3](
 
 The prototypal pattern is available from the [core YUI 3 API](http://developer.yahoo.com/yui/3/yui/) in the yui-min.js seed file. The classical pattern requires the [`oop`](http://developer.yahoo.com/yui/3/api/YUI~oop.html) module, but since the `oop` module is a requirement for most of the other modules, you usually won't have to do anything special to get access to this functionality. But if you want to create a simple test page to play with the patterns yourself, you can satisfy the dependencies by including YUI like so:
 
-```
+```html
 <script type="text/javascript" src="http://yui.yahooapis.com/3.0.0/build/yui/yui-min.js"></script>
 <script>
 YUI().use('oop', function(Y){
@@ -22,7 +22,6 @@ YUI().use('oop', function(Y){
   // Y is the YUI instance
 });
 </script>
-
 ```
 
 ## (pseudo)Classical inheritance
@@ -33,7 +32,7 @@ In Java or other languages you can have a `Programmer` class inherit from a `Per
 
 Consider these two constructors:
 
-```
+```javascript
 // parent
 function Person() {
   // "own" members
@@ -47,21 +46,19 @@ Person.prototype.getName = function() {
 
 // child constructor
 function Programmer(){}
-
 ```
 
 YUI 3's `oop` module offers the `Y.extend(...)` method to help you with the inheritance part. It's as simple as:
 
-```
+```javascript
 Y.extend(Programmer, Person);
 ```
 
 Then you can test that the `getName()` method was properly inherited:
 
-```
+```javascript
 var guru = new Programmer();
 alert(typeof guru.getName); // "function"
-
 ```
 
 Note that the `Y.extend(...)` method will only inherit members of the prototype, not "own" members. It is considered a good practice to add all the reusable functionality to the prototype and leave all instance-specific properties as own properties (added to `this`). In the example above, only `getName()` gets inherited, while `name` does not. (In the prototypal inheritance pattern - discussed further in the article - you inherit both prototype and own members.)
@@ -74,7 +71,7 @@ You can add properties to the prototype of the child constructor using the third
 
 Here's an example of extending and augmenting at the same time:
 
-```
+```javascript
 Y.extend(Programmer, Person, {groksHTML: true}, {LIMIT: "sky"});
 
 // groksHTML is now a property of the child's prototype
@@ -88,7 +85,6 @@ alert(bob.groksHTML); // true
 // "static" properties meant to act as constants
 alert(Programmer.LIMIT); // "sky"
 var limit = bob.LIMIT; // undefined
-
 ```
 
 ### Superclass
@@ -97,7 +93,7 @@ The pseudoclassical pattern described above gives you access to the prototype of
 
 `superclass` points to the prototype of the parent and so `superclass.constructor` points to the parent constructor function. Consider an example:
 
-```
+```javascript
 // inherit
 Y.extend(Programmer, Person);
 
@@ -109,14 +105,13 @@ alert(parent === Person); // true
 // access to the parent from an instance of the child
 var guru = new Programmer();
 guru.constructor.superclass.constructor === Person; // true
-
 ```
 
 As noted earlier, with the classical pattern you only inherit prototype members. But using the `superclass` you can also initialize the parent constructor from the child and get the parent's own properties as the child's own properties.
 
 You can modify the `Programmer` constructor to call the parent constructor, passing the child object (`this`) and any initialization arguments
 
-```
+```javascript
 // ... parent definition same as shown before...
 
 // child
@@ -131,22 +126,20 @@ Y.extend(Programmer, Person);
 // test
 var pro = new Programmer();
 alert(pro.name); // "Adam"
-
 ```
 
 As you can see, the programmer instances now have a `name` property and it's an own property.
 
-```
-  alert(pro.hasOwnProperty('name')); // true
-  alert(pro.hasOwnProperty('getName')); // false  
-
+```javascript
+alert(pro.hasOwnProperty('name')); // true
+alert(pro.hasOwnProperty('getName')); // false  
 ```
 
 ### Access to overridden methods
 
 The fact that `superclass` points to the prototype of the parent lets the child gain access to overridden methods. Consider this classic example of `Triangle` that inherits `Shape`:
 
-```
+```javascript
 // parent
 function Shape(){}
 Shape.prototype.toString = function() {
@@ -169,14 +162,13 @@ Triangle.prototype.toString = function(){
 // test
 var acute = new Triangle();
 acute.toString(); "shape, triangle"
-
 ```
 
 ## Prototypal inheritance
 
 Douglas Crockford suggests this inheritance pattern, where you forget all about classes and have your objects inherit from other objects. For example:
 
-```
+```javascript
 // parent object, created with a simple object literal
 var parent = {
   name: "John",
@@ -195,7 +187,6 @@ batman.name = "Bruce";
 
 // use
 batman.say(); // I am Bruce Wayne
-
 ```
 
 Using this pattern there are two steps in setting up your objects:
@@ -211,35 +202,32 @@ If you're curious about the motivation behind the prototypal inheritance and how
 
 Using this pattern, the parent's members are inherited via the prototype chain. That means that if you add a property with the same name to the child, the new property will not overwrite the one inherited from the parent, but it will take precedence. In other words, you can redefine the `say` method like so:
 
-```
+```javascript
 batman.say = function() {
   return "Can't tell you my real name";
 };
 
 // test
 batman.say(); // "Can't tell you my real name"
-
 ```
 
 Unlike in the classical inheritance model afforded by `Y.extend`, there is no way to reference the parent's `say` method from the child object's `say` (vis. `superclass`). However, if you delete the `say` method of the child object, the parent's `say` will "shine through".
 
-```
+```javascript
 delete batman.say;
 batman.say(); // "I am Bruce Wayne"
-
 ```
 
 ### In ECMAScript 5
 
 The [new edition of the ECMAScript standard](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf) includes the prototypal inheritance pattern through a native method called `Object.create(...)`.
 
-```
+```javascript
 // YUI3
 var batman = Y.Object(parent);
 
 // ECMAScript 5 (future)
 var batman = Object.create(parent);
-
 ```
 
 ## More?
