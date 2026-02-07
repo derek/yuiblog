@@ -6,6 +6,7 @@ date: 2009-01-05
 slug: "effective-tests"
 permalink: /2009/01/05/effective-tests/
 categories:
+  - "Yeti"
   - "Development"
 ---
 One of the biggest under-the-radar movements in JavaScript development during 2008 was the reemergence of an interest in unit testing. [YUI Test](http://developer.yahoo.com/yui/yuitest/), YUI's unit testing framework, reached GA status in February and other libraries either introduced their own unit testing frameworks or started publicizing existing ones. As a result, there's a lot more documentation regarding the creation of unit tests for JavaScript. Simply having JavaScript unit tests isn't enough, though; if your tests are written improperly, they can lead to a lot of lost time. Learning to write effective JavaScript unit tests will save you time and headaches in the future.

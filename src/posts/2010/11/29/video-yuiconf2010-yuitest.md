@@ -6,6 +6,7 @@ date: 2010-11-29
 slug: "video-yuiconf2010-yuitest"
 permalink: /2010/11/29/video-yuiconf2010-yuitest/
 categories:
+  - "Yeti"
   - "YUIConf"
   - "YUI Theater"
 ---

@@ -6,6 +6,7 @@ date: 2010-08-25
 slug: "introducing-yeti-the-yui-easy-testing-interface"
 permalink: /2010/08/25/introducing-yeti-the-yui-easy-testing-interface/
 categories:
+  - "Yeti"
   - "Development"
 ---
 [![Welcome to Yeti](/yuiblog/blog-archive/assets/yeti/splash.jpg)](http://yuilibrary.com/projects/yeti/)

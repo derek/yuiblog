@@ -6,6 +6,7 @@ date: 2009-11-05
 slug: "video-adams-yuiconf2009"
 permalink: /2009/11/05/video-adams-yuiconf2009/
 categories:
+  - "Yeti"
   - "YUIConf"
   - "YUI Theater"
 ---

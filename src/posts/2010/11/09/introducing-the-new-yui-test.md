@@ -6,6 +6,7 @@ date: 2010-11-09
 slug: "introducing-the-new-yui-test"
 permalink: /2010/11/09/introducing-the-new-yui-test/
 categories:
+  - "Yeti"
   - "Development"
 ---
 When [YUI Test](http://yuilibrary.com/yuitest/) first debuted over three years ago, the JavaScript testing landscape looked very different. [JsUnit](http://www.jsunit.net/ "JsUnit") was the de facto standard and there was very little interest or attention paid to this area. YUI Test began as a weekend project of mine and evolved into one of the most complete testing frameworks available, being the first to have full event simulation for keyboard and mouse events across all A-grade browsers and one of the first to support asynchronous testing.

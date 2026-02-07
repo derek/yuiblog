@@ -6,6 +6,7 @@ date: 2013-05-08
 slug: "yeti-0-2-22-released"
 permalink: /2013/05/08/yeti-0-2-22-released/
 categories:
+  - "Yeti"
   - "Releases"
   - "Development"
 ---

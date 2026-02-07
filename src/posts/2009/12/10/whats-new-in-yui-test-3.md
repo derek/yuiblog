@@ -6,6 +6,7 @@ date: 2009-12-10
 slug: "whats-new-in-yui-test-3"
 permalink: /2009/12/10/whats-new-in-yui-test-3/
 categories:
+  - "Yeti"
   - "Releases"
   - "Development"
 ---

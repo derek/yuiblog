@@ -6,6 +6,7 @@ date: 2008-12-01
 slug: "yuitest-getting-started"
 permalink: /2008/12/01/yuitest-getting-started/
 categories:
+  - "Yeti"
   - "Development"
 ---
 For a long time, the web has been a wild west of technology. It's only been within the past five years that any sort of rigor has been applied to web development and technologies such as HTML, CSS and JavaScript. JavaScript development has been the most affected, bringing discipline from other types of programming into what previously was a free-for-all of copy-paste code. Of the traditional programming techniques, unit testing has just started to make its way into JavaScript.

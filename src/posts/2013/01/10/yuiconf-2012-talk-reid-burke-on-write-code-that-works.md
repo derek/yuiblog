@@ -6,6 +6,7 @@ date: 2013-01-10
 slug: "yuiconf-2012-talk-reid-burke-on-write-code-that-works"
 permalink: /2013/01/10/yuiconf-2012-talk-reid-burke-on-write-code-that-works/
 categories:
+  - "Yeti"
   - "YUIConf"
   - "Development"
 ---

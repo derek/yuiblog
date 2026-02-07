@@ -6,6 +6,7 @@ date: 2014-01-20
 slug: "yuiconf-2013-talk-david-gomez-on-forget-everything-you-know-about-testing-and-start-testing"
 permalink: /2014/01/20/yuiconf-2013-talk-david-gomez-on-forget-everything-you-know-about-testing-and-start-testing/
 categories:
+  - "Yeti"
   - "YUIConf"
   - "Development"
 ---

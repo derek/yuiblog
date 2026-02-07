@@ -6,6 +6,7 @@ date: 2008-10-20
 slug: "video-zakas-yuitest"
 permalink: /2008/10/20/video-zakas-yuitest/
 categories:
+  - "Yeti"
   - "YUI Theater"
 ---
 [![Nicholas C. Zakas speaks at Yahoo on October 9, 2008.](/yuiblog/blog-archive/assets/zakas-yuitest.png)](http://video.yahoo.com/watch/3737228/10267335)

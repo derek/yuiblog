@@ -6,6 +6,7 @@ date: 2010-12-07
 slug: "video-yuiconf2010-burke"
 permalink: /2010/12/07/video-yuiconf2010-burke/
 categories:
+  - "Yeti"
   - "YUIConf"
   - "YUI Theater"
 ---
