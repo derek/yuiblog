@@ -1,0 +1,41 @@
+---
+pagination:
+  data: authors
+  size: 1
+  alias: author
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ author.name }}"
+  permalink: "author/{{ author.name | slugify }}/"
+---
+
+<h1>Posts by {{ author.name }}</h1>
+
+{% set authorPosts = collections.authors[author.name] %}
+
+<div class="post-list">
+    {% if authorPosts %}
+    {% for post in authorPosts %}
+    <article class="post-summary">
+        <header>
+            <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+            <div class="meta">
+                <div class="date">{{ post.date | dateDisplay }}</div>
+                <div class="byline">
+                    By {{ post.data.author }}
+                    {% if post.data.categories and post.data.categories.length > 0 %}
+                    &nbsp;&nbsp;&nbsp;in {% for cat in post.data.categories %}<a href="{{ site.baseUrl }}category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </header>
+        <div class="excerpt">
+            <p>{{ post.templateContent | excerpt(250) }}</p>
+        </div>
+        <a href="{{ post.url | url }}" class="read-more">Read more &rarr;</a>
+    </article>
+    {% endfor %}
+    {% else %}
+    <p>No posts found by this author.</p>
+    {% endif %}
+</div>

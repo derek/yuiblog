@@ -36,5 +36,22 @@
                 </ul>
             </div>
         </div>
+
+        <!-- Authors -->
+        <div id="authors" class="sidebox widget widget_authors">
+            <div class="hd"><h2>Authors</h2></div>
+            <div class="bd">
+                <ul>
+                    {% for author in authors %}
+                    {% if author.postCount >= 5 and author.name != "Unknown" and author.name != "Administrator" %}
+                    <li>
+                        <a href="{{ site.baseUrl }}author/{{ author.name | slugify }}/">{{ author.name }}</a>
+                        ({{ author.postCount }})
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
