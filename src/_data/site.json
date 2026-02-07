@@ -18,7 +18,6 @@
     {"name": "Open Hours", "slug": "open-hours"},
     {"name": "Performance", "slug": "performance"},
     {"name": "Releases", "slug": "releases"},
-    {"name": "Target Environments", "slug": "target-environments"},
     {"name": "Yeti", "slug": "yeti"},
     {"name": "YUI 3 Gallery", "slug": "yui-3-gallery"},
     {"name": "YUI Events", "slug": "yui-events"},
