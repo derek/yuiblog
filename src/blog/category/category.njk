@@ -22,7 +22,7 @@ eleventyComputed:
             <div class="meta">
                 <div class="date">{{ post.date | dateDisplay }}</div>
                 <div class="byline">
-                    By {{ post.data.author }}
+                    By <a href="{{ site.baseUrl }}author/{{ post.data.author | slugify }}/">{{ post.data.author }}</a>
                     {% if post.data.categories and post.data.categories.length > 0 %}
                     &nbsp;&nbsp;&nbsp;in {% for cat in post.data.categories %}<a href="{{ site.baseUrl }}category/{{ cat | slugify }}/">{{ cat }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
                     {% endif %}
