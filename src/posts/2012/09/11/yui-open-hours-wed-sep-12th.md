@@ -6,6 +6,7 @@ date: 2012-09-11
 slug: "yui-open-hours-wed-sep-12th"
 permalink: /2012/09/11/yui-open-hours-wed-sep-12th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Deferreds, Promises, Transactions, and the future of IO

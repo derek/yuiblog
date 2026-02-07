@@ -6,6 +6,7 @@ date: 2011-01-13
 slug: "yui-open-hours-wed-jan-19th"
 permalink: /2011/01/13/yui-open-hours-wed-jan-19th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 Welcoming in 2011, YUI: Open Hours will be starting up again, and the first installment of the new year will be next Wednesday, the 19th.

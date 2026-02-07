@@ -6,6 +6,7 @@ date: 2012-03-19
 slug: "yui-open-hours-thurs-march-22nd"
 permalink: /2012/03/19/yui-open-hours-thurs-march-22nd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### 3.5.0 Preview Release 4

@@ -6,6 +6,7 @@ date: 2012-08-15
 slug: "yui-open-hours-thursday-august-16th"
 permalink: /2012/08/15/yui-open-hours-thursday-august-16th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Yeti Update

@@ -6,6 +6,7 @@ date: 2010-08-16
 slug: "yui-open-hours-wed-aug-18th"
 permalink: /2010/08/16/yui-open-hours-wed-aug-18th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 Let's talk about DataTable!

@@ -6,6 +6,7 @@ date: 2010-04-22
 slug: "yui-open-hours-for-friday-april-23rd"
 permalink: /2010/04/22/yui-open-hours-for-friday-april-23rd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The next installment of YUI: Open Hours is tomorrow, Friday the 23rd!

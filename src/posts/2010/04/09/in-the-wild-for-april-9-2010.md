@@ -6,6 +6,7 @@ date: 2010-04-09
 slug: "in-the-wild-for-april-9-2010"
 permalink: /2010/04/09/in-the-wild-for-april-9-2010/
 categories:
+  - "Open Hours"
   - "In the Wild"
 ---
 There's been a lot of activity in the world of YUI lately, including [our first community Open Hour this morning](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) that was attended by 30 developers from around the world. And as soon as you're done kicking the tires of [YUI 3 running on the server with full DOM/BOM support](/yuiblog/blog/2010/04/09/node-js-yui-3-dom-manipulation-oh-my/), here are a few other things worth a minute of your time:

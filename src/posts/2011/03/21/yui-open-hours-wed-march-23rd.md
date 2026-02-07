@@ -6,6 +6,7 @@ date: 2011-03-21
 slug: "yui-open-hours-wed-march-23rd"
 permalink: /2011/03/21/yui-open-hours-wed-march-23rd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI 3 Cookbook first look

@@ -6,6 +6,7 @@ date: 2012-02-21
 slug: "yui-open-hours-thurs-feb-23rd"
 permalink: /2012/02/21/yui-open-hours-thurs-feb-23rd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Tired of Ant? Check out buildy

@@ -6,6 +6,7 @@ date: 2010-05-19
 slug: "yui-open-hours-fri-may-21st"
 permalink: /2010/05/19/yui-open-hours-fri-may-21st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 It's a new week, and time for another [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/)!

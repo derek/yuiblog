@@ -6,6 +6,7 @@ date: 2011-04-05
 slug: "yui-open-hours-thurs-apr-7th"
 permalink: /2011/04/05/yui-open-hours-thurs-apr-7th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Yahoo! Search Direct code review

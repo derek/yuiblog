@@ -6,6 +6,7 @@ date: 2010-07-20
 slug: "yui-open-hours-wed-july-21st"
 permalink: /2010/07/20/yui-open-hours-wed-july-21st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) will be tomorrow, July 21st.

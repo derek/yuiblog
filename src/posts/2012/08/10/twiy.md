@@ -6,6 +6,7 @@ date: 2012-08-10
 slug: "twiy"
 permalink: /2012/08/10/twiy/
 categories:
+  - "Open Hours"
   - "YUI Weekly"
 ---
 -   This week we began Sprint 1 of our 3.6.x release cycle, and you can find all assigned tickets [here](http://yuilibrary.com/projects/yui3/query?milestone=3.6.x&sprint=3.6.x%3A%3ASprint+01). Themes are development with Event, Graphics, ScrollView, and Uploader, as well as general bug fixes. If you have any contributions, please submit any pull requests by Aug 31st, and as always, the sooner the better for inclusion into a release.

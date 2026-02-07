@@ -6,6 +6,7 @@ date: 2011-08-15
 slug: "yui-open-hours-thurs-august-18th"
 permalink: /2011/08/15/yui-open-hours-thurs-august-18th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Welcome to the new yuilibrary.com!

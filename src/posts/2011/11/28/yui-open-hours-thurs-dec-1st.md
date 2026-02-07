@@ -6,6 +6,7 @@ date: 2011-11-28
 slug: "yui-open-hours-thurs-dec-1st"
 permalink: /2011/11/28/yui-open-hours-thurs-dec-1st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI 3.5.0 Roadmap

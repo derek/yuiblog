@@ -6,6 +6,7 @@ date: 2011-01-12
 slug: "announcing-yui-3-3-0"
 permalink: /2011/01/12/announcing-yui-3-3-0/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The YUI Team is pleased to announce the general availability of YUI 3.3.0, the latest release in our JavaScript and CSS library. If you use Yahoo's CDN, you can upgrade by switching your seed file to [YUI 3.3.0](http://yui.yahooapis.com/3.3.0/build/yui/yui-min.js); you can also [download the 3.3.0 distribution from YUILibrary.com](http://yuilibrary.com/downloads/ "YUI Library :: Downloads").

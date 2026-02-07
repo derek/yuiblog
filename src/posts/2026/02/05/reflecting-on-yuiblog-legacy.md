@@ -6,6 +6,7 @@ date: 2026-02-05
 slug: "reflecting-on-yuiblog-legacy"
 permalink: /2026/02/05/reflecting-on-yuiblog-legacy/
 categories:
+  - "Open Hours"
   - "Miscellany"
 ---
 It's been over a decade since YUIBlog published its final posts in 2014, and in the subsequent years, we even saw them disappear from the internet, seemingly forever. While the library's influence on web development continues to resonate, I was saddened that there was so much valuable content that was lost to the world. Fortunately, I was able to scrape archives off the Wayback Machine, and with the help of LLMs, was able to reconstruct the disparate pieces into a cohesive archive.

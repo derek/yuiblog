@@ -6,6 +6,7 @@ date: 2012-02-06
 slug: "yui-open-hours-thurs-feb-9th"
 permalink: /2012/02/06/yui-open-hours-thurs-feb-9th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Checking in with Dav Glass

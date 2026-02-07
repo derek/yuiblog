@@ -6,6 +6,7 @@ date: 2012-08-28
 slug: "yui-open-hours-thurs-aug-30th"
 permalink: /2012/08/28/yui-open-hours-thurs-aug-30th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Checking in with Dav

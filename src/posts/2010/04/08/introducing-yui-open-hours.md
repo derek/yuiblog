@@ -6,6 +6,7 @@ date: 2010-04-08
 slug: "introducing-yui-open-hours"
 permalink: /2010/04/08/introducing-yui-open-hours/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 This Friday, April 9th, the YUI team will be initiating a new outreach project, called Open Hours. This is how it's going to work:

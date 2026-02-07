@@ -6,6 +6,7 @@ date: 2012-06-27
 slug: "yui-open-hours-thurs-june-28th"
 permalink: /2012/06/27/yui-open-hours-thurs-june-28th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### TreeView

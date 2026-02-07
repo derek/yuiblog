@@ -6,6 +6,7 @@ date: 2011-02-28
 slug: "yui-open-hours-wed-march-2nd"
 permalink: /2011/02/28/yui-open-hours-wed-march-2nd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Implementation focus: [Photo Pairs](http://eglinetwork.ch/pairs)

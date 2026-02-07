@@ -6,6 +6,7 @@ date: 2011-02-22
 slug: "yui-open-hours-thurs-feb-24th"
 permalink: /2011/02/22/yui-open-hours-thurs-feb-24th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Implementation focus: bigbigtweet.appspot.com

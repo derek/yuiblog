@@ -6,6 +6,7 @@ date: 2012-01-17
 slug: "yui-open-hours-thurs-jan-19th"
 permalink: /2012/01/17/yui-open-hours-thurs-jan-19th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### 3.5.0 DataTable update

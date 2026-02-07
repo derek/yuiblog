@@ -6,6 +6,7 @@ date: 2010-09-24
 slug: "yui-open-hours-wed-sep-29th"
 permalink: /2010/09/24/yui-open-hours-wed-sep-29th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The next installment of YUI: Open Hours will be next Wednesday, the 29th.

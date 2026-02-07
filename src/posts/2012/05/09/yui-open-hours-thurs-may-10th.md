@@ -6,6 +6,7 @@ date: 2012-05-09
 slug: "yui-open-hours-thurs-may-10th"
 permalink: /2012/05/09/yui-open-hours-thurs-may-10th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI 3.5.0 Uploader

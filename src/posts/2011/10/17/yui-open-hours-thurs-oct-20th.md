@@ -6,6 +6,7 @@ date: 2011-10-17
 slug: "yui-open-hours-thurs-oct-20th"
 permalink: /2011/10/17/yui-open-hours-thurs-oct-20th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Modules and Loaders inside and outside of YUI

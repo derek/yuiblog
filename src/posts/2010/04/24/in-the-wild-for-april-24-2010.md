@@ -6,6 +6,7 @@ date: 2010-04-24
 slug: "in-the-wild-for-april-24-2010"
 permalink: /2010/04/24/in-the-wild-for-april-24-2010/
 categories:
+  - "Open Hours"
   - "In the Wild"
 ---
 After [another nice edition of YUI: Open Hours on Friday](/yuiblog/blog/2010/04/22/yui-open-hours-for-friday-april-23rd/), we'll round out this week with just a few notes recent notes and implementations from the YUI development community:

@@ -6,6 +6,7 @@ date: 2011-06-20
 slug: "yui-open-hours-thurs-jun-23rd"
 permalink: /2011/06/20/yui-open-hours-thurs-jun-23rd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Preview of the windowing improvements in 3.4.0

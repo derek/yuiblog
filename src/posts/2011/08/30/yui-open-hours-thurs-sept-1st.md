@@ -6,6 +6,7 @@ date: 2011-08-30
 slug: "yui-open-hours-thurs-sept-1st"
 permalink: /2011/08/30/yui-open-hours-thurs-sept-1st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI Loader and seed file changes, plus Loader tips and tricks

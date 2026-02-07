@@ -6,6 +6,7 @@ date: 2010-08-02
 slug: "yui-open-hours-wed-aug-4th"
 permalink: /2010/08/02/yui-open-hours-wed-aug-4th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 For those of you that don't subscribe to the [YUI calendar](http://yuilibrary.com/gallery/calendar/#calendar) or [YUILibrary.com forum](http://yuilibrary.com/forum/), the next installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) will be this Wednesday the 4th.

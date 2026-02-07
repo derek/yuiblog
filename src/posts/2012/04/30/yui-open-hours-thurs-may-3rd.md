@@ -6,6 +6,7 @@ date: 2012-04-30
 slug: "yui-open-hours-thurs-may-3rd"
 permalink: /2012/04/30/yui-open-hours-thurs-may-3rd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Fiddling Around With DataTable

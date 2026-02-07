@@ -6,6 +6,7 @@ date: 2012-05-29
 slug: "yui-open-hours-thurs-may-31st"
 permalink: /2012/05/29/yui-open-hours-thurs-may-31st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Twitter Bootstrap, Powered by YUI?

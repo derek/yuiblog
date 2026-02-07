@@ -6,6 +6,7 @@ date: 2011-09-12
 slug: "yui-open-hours-thurs-sept-15th"
 permalink: /2011/09/12/yui-open-hours-thurs-sept-15th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Satyam's MakeNode extension

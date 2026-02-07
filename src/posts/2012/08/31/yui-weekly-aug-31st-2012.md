@@ -6,6 +6,7 @@ date: 2012-08-31
 slug: "yui-weekly-aug-31st-2012"
 permalink: /2012/08/31/yui-weekly-aug-31st-2012/
 categories:
+  - "Open Hours"
   - "YUI Weekly"
 ---
 -   Big week around YUI HQ as we wrapped up our latest work and pushed [3.7.0pr1](https://github.com/yui/yui3/tree/v3.7.0pr1) to the CDN. You can read all about the changes and improvements in the latest [blog post](/yuiblog/blog/2012/08/31/yui-3-7-0pr1-event-performance/). ScrollView received a major update this release, so here's a [detailed overview](https://gist.github.com/3522590) of all the changes and additions. Happy upgrade testing!

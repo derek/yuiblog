@@ -6,6 +6,7 @@ date: 2011-12-13
 slug: "yui-open-hours-thurs-dec-15th"
 permalink: /2011/12/13/yui-open-hours-thurs-dec-15th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI 3.5.0 PR1

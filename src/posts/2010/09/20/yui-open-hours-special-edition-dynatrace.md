@@ -6,6 +6,7 @@ date: 2010-09-20
 slug: "yui-open-hours-special-edition-dynatrace"
 permalink: /2010/09/20/yui-open-hours-special-edition-dynatrace/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 This Wednesday, on the heels of the last Open Hours, we were able to schedule a visit from [Alois Reitbauer](http://twitter.com/AloisReitbauer) from [DynaTrace Software]( http://www.dynatrace.com/). He'll be stopping onto the Yahoo! campus to give a demo of the amazing [DynaTrace Ajax edition](http://ajax.dynatrace.com/pages/), and we're opening up the presentation to you.

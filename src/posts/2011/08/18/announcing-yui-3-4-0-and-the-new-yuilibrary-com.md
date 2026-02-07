@@ -6,6 +6,7 @@ date: 2011-08-18
 slug: "announcing-yui-3-4-0-and-the-new-yuilibrary-com"
 permalink: /2011/08/18/announcing-yui-3-4-0-and-the-new-yuilibrary-com/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The YUI team has not one, but two announcements to share today. First, we have launched a completely revised [YUILibrary.com](http://yuilibrary.com/). The new site is a ground up rewrite providing a unified destination for all YUI documentation, a cleaner UI, and more intuitive organization on top of a robust new architecture. Take some time to look around. We hope you'll be very happy with what you see. ![The new site index includes examples, community updates, and clearer links to documentation and getting started content](/yuiblog/blog/wp-content/uploads/2011/08/site.jpg)

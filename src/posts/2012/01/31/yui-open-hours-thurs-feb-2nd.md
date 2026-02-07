@@ -6,6 +6,7 @@ date: 2012-01-31
 slug: "yui-open-hours-thurs-feb-2nd"
 permalink: /2012/01/31/yui-open-hours-thurs-feb-2nd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### 3.5.0pr2 is available

@@ -6,6 +6,7 @@ date: 2012-08-01
 slug: "yui-open-hours-thursday-august-2nd"
 permalink: /2012/08/01/yui-open-hours-thursday-august-2nd/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### 3.6.0 Release

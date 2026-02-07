@@ -6,6 +6,7 @@ date: 2011-05-24
 slug: "yui-open-hours-thurs-may-26th"
 permalink: /2011/05/24/yui-open-hours-thurs-may-26th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### What's coming in YUI 3.4.0?

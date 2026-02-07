@@ -6,6 +6,7 @@ date: 2012-11-30
 slug: "yui-weekly-for-november-30th-2012"
 permalink: /2012/11/30/yui-weekly-for-november-30th-2012/
 categories:
+  - "Open Hours"
   - "YUI Weekly"
 ---
 It's been another busy week at YUI as we roll up our sleeves before the holidays kick in. Wherever you live, I hope you are having better weather than we are. Apparently, it's been raining cats and dogs in Sunnyvale for the last few days. I've been in Toronto, and it's been snowing here. Good weather to stay in and code, I suppose! Anyway, let's see what's been happening in YUI this week:

@@ -6,6 +6,7 @@ date: 2012-01-09
 slug: "yui-open-hours-thurs-jan-12th"
 permalink: /2012/01/09/yui-open-hours-thurs-jan-12th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI 3.5.0 Button (and more?) update

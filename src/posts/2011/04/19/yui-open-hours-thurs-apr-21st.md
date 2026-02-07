@@ -6,6 +6,7 @@ date: 2011-04-19
 slug: "yui-open-hours-thurs-apr-21st"
 permalink: /2011/04/19/yui-open-hours-thurs-apr-21st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI Remote Loader Service

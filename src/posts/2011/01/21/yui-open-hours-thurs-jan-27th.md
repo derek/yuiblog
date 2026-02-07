@@ -6,6 +6,7 @@ date: 2011-01-21
 slug: "yui-open-hours-thurs-jan-27th"
 permalink: /2011/01/21/yui-open-hours-thurs-jan-27th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The next YUI: Open Hours will be next Thursday, the 27th.

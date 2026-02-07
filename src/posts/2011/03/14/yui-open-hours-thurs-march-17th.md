@@ -6,6 +6,7 @@ date: 2011-03-14
 slug: "yui-open-hours-thurs-march-17th"
 permalink: /2011/03/14/yui-open-hours-thurs-march-17th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Ajax

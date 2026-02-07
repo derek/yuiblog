@@ -6,6 +6,7 @@ date: 2012-09-08
 slug: "yui-weekly-sept-7th-2012"
 permalink: /2012/09/08/yui-weekly-sept-7th-2012/
 categories:
+  - "Open Hours"
   - "YUI Weekly"
 ---
 -   This week marks the conclusion of the month-long 3.7.0 development cycle. With code frozen, any further changes to 3.7.0 will be minimal, and what you see in Master [at the moment](https://github.com/yui/yui3/tree/649173504ff547cf5281be2f563cdd629dfaccec) should be very close to the final GA release. Next steps are a 2nd preview release (PR) before general availability (GA) of 3.7.0. Stay tuned!

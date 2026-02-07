@@ -6,6 +6,7 @@ date: 2012-02-13
 slug: "yui-open-hours-thurs-feb-16th"
 permalink: /2012/02/13/yui-open-hours-thurs-feb-16th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ![](/yuiblog/blog/wp-content/uploads/2012/02/Yeti-Next-Development-Update.jpg "Yeti Next Development Update")

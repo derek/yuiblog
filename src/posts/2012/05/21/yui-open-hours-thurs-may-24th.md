@@ -6,6 +6,7 @@ date: 2012-05-21
 slug: "yui-open-hours-thurs-may-24th"
 permalink: /2012/05/21/yui-open-hours-thurs-may-24th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUIDoc Updates and Travis CI Integration

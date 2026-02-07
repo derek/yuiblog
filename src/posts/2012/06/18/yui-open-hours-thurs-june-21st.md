@@ -6,6 +6,7 @@ date: 2012-06-18
 slug: "yui-open-hours-thurs-june-21st"
 permalink: /2012/06/18/yui-open-hours-thurs-june-21st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Yahoo Axis, part 2 - Mojito

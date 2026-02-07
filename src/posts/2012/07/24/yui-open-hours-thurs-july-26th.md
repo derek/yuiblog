@@ -6,6 +6,7 @@ date: 2012-07-24
 slug: "yui-open-hours-thurs-july-26th"
 permalink: /2012/07/24/yui-open-hours-thurs-july-26th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Tag (YUI Gallery module)

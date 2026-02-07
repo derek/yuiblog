@@ -6,6 +6,7 @@ date: 2011-09-06
 slug: "yui-open-hours-thurs-sept-8th"
 permalink: /2011/09/06/yui-open-hours-thurs-sept-8th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Contributing to YUI with Git and GitHub

@@ -6,6 +6,7 @@ date: 2011-05-09
 slug: "yui-open-hours-thurs-may-12th"
 permalink: /2011/05/09/yui-open-hours-thurs-may-12th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Component owner updates and a discussion about the future of Loader

@@ -6,6 +6,7 @@ date: 2010-10-15
 slug: "in-the-wild-for-october-15-2010"
 permalink: /2010/10/15/in-the-wild-for-october-15-2010/
 categories:
+  - "Open Hours"
   - "In the Wild"
 ---
 [YUIConf 2010 is right around the corner](/yuiblog/blog/2010/10/07/yuiconf-2010-early-bird-registration-ends-this-week/), and we continue to have our heads down working on that event and the upcoming YUI 3.3.0 release. In the meantime, here's what we've noted in the community in the past few weeks. Let us know [@yuilibrary](http://twitter.com/yuilibrary) (or in the comments below) what we missed!

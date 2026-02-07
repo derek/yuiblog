@@ -6,6 +6,7 @@ date: 2011-02-14
 slug: "yui-open-hours-thurs-feb-17th"
 permalink: /2011/02/14/yui-open-hours-thurs-feb-17th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The next YUI: Open Hours will be this Thursday, Feb 17th.

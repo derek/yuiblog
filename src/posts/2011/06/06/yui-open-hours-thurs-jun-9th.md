@@ -6,6 +6,7 @@ date: 2011-06-06
 slug: "yui-open-hours-thurs-jun-9th"
 permalink: /2011/06/06/yui-open-hours-thurs-jun-9th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### YUI 3 App Framework (think MVC)

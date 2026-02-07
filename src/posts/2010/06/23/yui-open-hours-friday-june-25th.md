@@ -6,6 +6,7 @@ date: 2010-06-23
 slug: "yui-open-hours-friday-june-25th"
 permalink: /2010/06/23/yui-open-hours-friday-june-25th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 The latest installment of [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/) will be this Friday, June 25th.

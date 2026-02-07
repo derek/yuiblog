@@ -6,6 +6,7 @@ date: 2011-06-27
 slug: "yui-open-hours-thurs-jun-30th"
 permalink: /2011/06/27/yui-open-hours-thurs-jun-30th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Preview of the new graphics API in 3.4.0

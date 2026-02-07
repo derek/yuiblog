@@ -6,6 +6,7 @@ date: 2011-07-19
 slug: "yui-open-hours-thurs-july-21st"
 permalink: /2011/07/19/yui-open-hours-thurs-july-21st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### A DataTable update and gallery showcase

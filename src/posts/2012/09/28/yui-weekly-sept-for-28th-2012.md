@@ -6,6 +6,7 @@ date: 2012-09-28
 slug: "yui-weekly-sept-for-28th-2012"
 permalink: /2012/09/28/yui-weekly-sept-for-28th-2012/
 categories:
+  - "Open Hours"
   - "YUI Weekly"
 ---
 -   This week saw the release of YUI 3.7.2, [a patch release](/yuiblog/blog/2012/09/24/yui-3-7-2-patch-release/) to resolve a couple bugs around CSS loading. As has been mentioned previously, YUI releases are getting faster and more granular, so don't be surprised to see more patch releases per major version. For more information on our upcoming release schedule, you can now find that on [our Github wiki](https://github.com/yui/yui3/wiki).

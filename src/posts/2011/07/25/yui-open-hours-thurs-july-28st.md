@@ -6,6 +6,7 @@ date: 2011-07-25
 slug: "yui-open-hours-thurs-july-28st"
 permalink: /2011/07/25/yui-open-hours-thurs-july-28st/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### `Y.Calendar` is coming to 3.4.0

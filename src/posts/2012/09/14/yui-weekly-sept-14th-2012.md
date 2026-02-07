@@ -6,6 +6,7 @@ date: 2012-09-14
 slug: "yui-weekly-sept-14th-2012"
 permalink: /2012/09/14/yui-weekly-sept-14th-2012/
 categories:
+  - "Open Hours"
   - "YUI Weekly"
 ---
 -   With 3.7.0 on the horizon, we pushed three additional preview releases to the CDN this week, [pr2](/yuiblog/blog/2012/09/12/yui-3-7-0pr2-final-round-of-testing/), [pr3](/yuiblog/blog/2012/09/13/yui-3-7-0pr3-last-minute-fixes/), and [pr4](/yuiblog/blog/2012/09/14/yui-3-7-0pr4-minor-patch/). Thanks to everyone who helped out with testing and feedback.

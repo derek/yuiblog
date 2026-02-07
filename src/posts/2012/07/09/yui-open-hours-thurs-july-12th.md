@@ -6,6 +6,7 @@ date: 2012-07-09
 slug: "yui-open-hours-thurs-july-12th"
 permalink: /2012/07/09/yui-open-hours-thurs-july-12th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 ### Mojito

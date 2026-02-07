@@ -6,6 +6,7 @@ date: 2010-06-15
 slug: "yui-open-hours-wed-june-16th"
 permalink: /2010/06/15/yui-open-hours-wed-june-16th/
 categories:
+  - "Open Hours"
   - "Development"
 ---
 It's time again for [YUI: Open Hours](/yuiblog/blog/2010/04/08/introducing-yui-open-hours/)! A change of schedule this week, though. **The call will be on Wednesday**.
