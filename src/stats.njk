@@ -1,0 +1,662 @@
+---
+layout: layouts/base.njk
+title: YUI Blog Over the Years
+permalink: /stats/
+---
+
+<style>
+.stats-page h1 {
+    margin-bottom: 0.5em;
+}
+.stats-intro {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 2em;
+}
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5em;
+    margin-bottom: 3em;
+}
+.stat-card {
+    background: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5em;
+    text-align: center;
+}
+.stat-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #30418C;
+    line-height: 1;
+}
+.stat-label {
+    color: #666;
+    margin-top: 0.5em;
+    font-size: 0.95em;
+}
+.chart-section {
+    margin-bottom: 3em;
+}
+.chart-section h2 {
+    border-bottom: 2px solid #30418C;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+.bar-row {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+.bar-label {
+    width: 60px;
+    text-align: right;
+    font-weight: bold;
+    color: #333;
+}
+.bar-container {
+    flex: 1;
+    background: #eee;
+    border-radius: 4px;
+    height: 28px;
+    position: relative;
+}
+.bar {
+    height: 100%;
+    background: linear-gradient(90deg, #30418C, #5a6fc2);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+.bar-value {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.85em;
+    font-weight: bold;
+    color: #333;
+}
+.author-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.5em;
+}
+.author-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em 0.75em;
+    background: #f8f8f8;
+    border-radius: 4px;
+}
+.author-item:nth-child(odd) {
+    background: #fff;
+}
+.author-name {
+    color: #30418C;
+}
+.author-count {
+    color: #666;
+    font-weight: bold;
+}
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #30418C;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 1.5em;
+    padding-left: 20px;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: #30418C;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #30418C;
+}
+.timeline-date {
+    font-weight: bold;
+    color: #30418C;
+    font-size: 1.1em;
+}
+.timeline-content {
+    color: #555;
+    margin-top: 0.25em;
+}
+.category-chart .bar {
+    background: linear-gradient(90deg, #eb8c28, #f5b041);
+}
+.books-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1em;
+}
+.book-item {
+    display: flex;
+    gap: 0.75em;
+    padding: 0.75em;
+    background: #f8f8f8;
+    border-radius: 6px;
+    border-left: 3px solid #30418C;
+}
+.book-item:hover {
+    background: #f0f0f0;
+}
+.book-title {
+    font-weight: bold;
+    color: #30418C;
+    text-decoration: none;
+}
+.book-title:hover {
+    text-decoration: underline;
+}
+.book-author {
+    color: #666;
+    font-size: 0.9em;
+}
+.book-desc {
+    color: #555;
+    font-size: 0.85em;
+    margin-top: 0.25em;
+}
+.contributors-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+.contributors-table th {
+    background: #30418C;
+    color: #fff;
+    padding: 0.75em 1em;
+    text-align: left;
+}
+.contributors-table td {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #e0e0e0;
+}
+.contributors-table tr:nth-child(even) {
+    background: #f8f8f8;
+}
+.contributors-table tr:hover {
+    background: #f0f0f0;
+}
+.contributors-table a {
+    color: #30418C;
+    text-decoration: none;
+}
+.contributors-table a:hover {
+    text-decoration: underline;
+}
+.table-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2em;
+}
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .stat-number {
+        font-size: 2em;
+    }
+    .bar-label {
+        width: 45px;
+        font-size: 0.85em;
+    }
+    .author-list {
+        grid-template-columns: 1fr;
+    }
+    .books-list {
+        grid-template-columns: 1fr;
+    }
+    .table-container {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<div class="stats-page">
+
+<h1>YUI Blog Over the Years</h1>
+<p class="stats-intro">A look back at 8 years of JavaScript history, from February 2006 to August 2014.</p>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-number">1,002</div>
+        <div class="stat-label">Total Posts</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">87</div>
+        <div class="stat-label">Contributors</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">8</div>
+        <div class="stat-label">Years Active</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">17</div>
+        <div class="stat-label">Categories</div>
+    </div>
+</div>
+
+<div class="chart-section">
+    <h2>Posts by Year</h2>
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label">2006</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 31%"></div>
+                <span class="bar-value">60</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2007</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 46%"></div>
+                <span class="bar-value">89</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2008</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 62%"></div>
+                <span class="bar-value">121</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2009</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 65%"></div>
+                <span class="bar-value">127</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2010</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 100%"></div>
+                <span class="bar-value">194</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2011</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 48%"></div>
+                <span class="bar-value">94</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2012</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 72%"></div>
+                <span class="bar-value">139</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2013</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 63%"></div>
+                <span class="bar-value">122</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label">2014</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 29%"></div>
+                <span class="bar-value">56</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="chart-section">
+    <h2>Key Milestones</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-date">February 2006</div>
+            <div class="timeline-content">YUI Blog launches with the release of YUI 0.10.0</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">June 2007</div>
+            <div class="timeline-content">The Module Pattern post published - becomes one of the most influential JavaScript articles ever</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">September 2008</div>
+            <div class="timeline-content">YUI 3 Preview Release 1 announced - complete rewrite of the library</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">September 2009</div>
+            <div class="timeline-content">YUI 3.0.0 officially released</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">November 2009</div>
+            <div class="timeline-content">First YUIConf held at Yahoo! headquarters</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">2010</div>
+            <div class="timeline-content">Peak year with 194 posts - YUI 3 Gallery launches, Open Hours begins</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">November 2012</div>
+            <div class="timeline-content">Final YUIConf held in Santa Clara</div>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-date">August 2014</div>
+            <div class="timeline-content">Final post announces move to Yahoo Engineering blog - end of an era</div>
+        </div>
+    </div>
+</div>
+
+<div class="chart-section category-chart">
+    <h2>Top Categories</h2>
+    <div class="bar-chart">
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">Development</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 100%"></div>
+                <span class="bar-value">665</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">YUIConf</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 21%"></div>
+                <span class="bar-value">137</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">Releases</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 19%"></div>
+                <span class="bar-value">123</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">YUI Theater</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 13%"></div>
+                <span class="bar-value">88</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">YUI Weekly</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 11%"></div>
+                <span class="bar-value">76</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">Open Hours</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 11%"></div>
+                <span class="bar-value">73</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">In the Wild</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 7%"></div>
+                <span class="bar-value">46</span>
+            </div>
+        </div>
+        <div class="bar-row">
+            <span class="bar-label" style="width:100px">Performance</span>
+            <div class="bar-container">
+                <div class="bar" style="width: 4%"></div>
+                <span class="bar-value">27</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="chart-section">
+    <h2>Legacy Impact</h2>
+    <div class="stats-grid" style="margin-top: 1em;">
+        <div class="stat-card">
+            <div class="stat-number">18+</div>
+            <div class="stat-label">Books Written by Contributors</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100+</div>
+            <div class="stat-label">YUI Theater Videos</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">4</div>
+            <div class="stat-label">YUIConf Events</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">JavaScript Patterns Shared</div>
+        </div>
+    </div>
+</div>
+
+<div class="chart-section">
+    <h2>Books by Contributors</h2>
+    <p style="color: #666; margin-bottom: 1.5em;">The knowledge shared on YUIBlog extended far beyond the web. Many contributors went on to write influential books that shaped how a generation of developers learned their craft:</p>
+    <div class="books-list">
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742" class="book-title">"JavaScript: The Good Parts"</a>
+                <div class="book-author">Douglas Crockford (2008)</div>
+                <div class="book-desc">The definitive guide to JavaScript's best features, based on years of his YUI Theater talks.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/How-JavaScript-Works-Douglas-Crockford/dp/1949815005" class="book-title">"How JavaScript Works"</a>
+                <div class="book-author">Douglas Crockford (2018)</div>
+                <div class="book-desc">A deep dive into the language's internals, functions, and eventual programming.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/High-Performance-Web-Sites-Essential/dp/0596529309" class="book-title">"High Performance Web Sites"</a>
+                <div class="book-author">Steve Souders (2007)</div>
+                <div class="book-desc">The 14 rules that defined web performance optimization, originating from his YUIBlog research.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Even-Faster-Web-Sites-Performance/dp/0596522304" class="book-title">"Even Faster Web Sites"</a>
+                <div class="book-author">Steve Souders (2009)</div>
+                <div class="book-desc">The sequel diving deeper into frontend performance.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Professional-JavaScript-Developers-Nicholas-Zakas/dp/1118026691" class="book-title">"Professional JavaScript for Web Developers"</a>
+                <div class="book-author">Nicholas C. Zakas (2005, 4th ed. 2019)</div>
+                <div class="book-desc">A comprehensive guide that became the go-to reference for serious JS developers.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/High-Performance-JavaScript-Application-Interfaces/dp/059680279X" class="book-title">"High Performance JavaScript"</a>
+                <div class="book-author">Nicholas C. Zakas (2010)</div>
+                <div class="book-desc">Performance patterns that built on the YUIBlog performance research.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Maintainable-JavaScript-Writing-Readable-Code/dp/1449327680" class="book-title">"Maintainable JavaScript"</a>
+                <div class="book-author">Nicholas C. Zakas (2012)</div>
+                <div class="book-desc">Code organization principles rooted in large-scale Yahoo development.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Understanding-ECMAScript-Definitive-JavaScript-Developers/dp/1593277571" class="book-title">"Understanding ECMAScript 6"</a>
+                <div class="book-author">Nicholas C. Zakas (2016)</div>
+                <div class="book-desc">The definitive guide to ES6 features.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Principles-Object-Oriented-JavaScript-Nicholas-Zakas/dp/1593275404" class="book-title">"The Principles of Object-Oriented JavaScript"</a>
+                <div class="book-author">Nicholas C. Zakas (2014)</div>
+                <div class="book-desc">Deep dive into JavaScript's object system.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Secrets-JavaScript-Ninja-John-Resig/dp/1617292850" class="book-title">"Secrets of the JavaScript Ninja"</a>
+                <div class="book-author">John Resig & Bear Bibeault (2012, 2nd ed. 2016)</div>
+                <div class="book-desc">Advanced techniques from the creator of jQuery.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Pro-JavaScript-Techniques-John-Resig/dp/1590597273" class="book-title">"Pro JavaScript Techniques"</a>
+                <div class="book-author">John Resig (2006)</div>
+                <div class="book-desc">Modern JavaScript development, DOM scripting, and Ajax.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752" class="book-title">"JavaScript Patterns"</a>
+                <div class="book-author">Stoyan Stefanov (2010)</div>
+                <div class="book-desc">Design patterns including many explored first on YUIBlog.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Object-Oriented-JavaScript-Stoyan-Stefanov/dp/1847194141" class="book-title">"Object-Oriented JavaScript"</a>
+                <div class="book-author">Stoyan Stefanov (2008, 3rd ed. 2017)</div>
+                <div class="book-desc">Foundations of OOP in JavaScript.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Designing-Web-Interfaces-Principles-Interactions/dp/0596516258" class="book-title">"Designing Web Interfaces"</a>
+                <div class="book-author">Bill Scott & Theresa Neil (2009)</div>
+                <div class="book-desc">Interaction patterns from Yahoo's design team.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Pro-JavaScript-Design-Patterns-Object-Oriented/dp/159059908X" class="book-title">"Pro JavaScript Design Patterns"</a>
+                <div class="book-author">Ross Harmes & Dustin Diaz (2008)</div>
+                <div class="book-desc">Classical design patterns adapted for JavaScript.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Beginning-JavaScript-DOM-Scripting-Ajax/dp/1590596803" class="book-title">"Beginning JavaScript with DOM Scripting and Ajax"</a>
+                <div class="book-author">Christian Heilmann (2006)</div>
+                <div class="book-desc">Practical, unobtrusive JavaScript for real-world applications.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Node-Running-Scalable-Server-Side-JavaScript/dp/1449398588" class="book-title">"Node: Up and Running"</a>
+                <div class="book-author">Tom Hughes-Croucher (2012)</div>
+                <div class="book-desc">Scalable server-side JavaScript with Node.js.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/YUI-Cookbook-Maintainable-Applications-Cookbooks/dp/1449304192" class="book-title">"YUI 3 Cookbook"</a>
+                <div class="book-author">Evan Goer (2012)</div>
+                <div class="book-desc">Over 170 recipes for building maintainable applications with YUI.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Web-Form-Design-Filling-Blanks/dp/1933820241" class="book-title">"Web Form Design"</a>
+                <div class="book-author">Luke Wroblewski (2008)</div>
+                <div class="book-desc">The definitive guide to form UX.</div>
+            </div>
+        </div>
+        <div class="book-item">
+            <div>
+                <a href="https://www.amazon.com/Mobile-First-Luke-Wroblewski/dp/1937557022" class="book-title">"Mobile First"</a>
+                <div class="book-author">Luke Wroblewski (2011)</div>
+                <div class="book-desc">The philosophy that changed responsive design.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="chart-section">
+    <h2>All Contributors</h2>
+    <p style="color: #666; margin-bottom: 1.5em;">A special thanks to the 87 authors who contributed to YUIBlog over the years:</p>
+    <div class="table-container">
+        <table class="contributors-table">
+            <thead>
+                <tr><th>Author</th><th>Posts</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><a href="{{ site.baseUrl }}author/eric-miraglia/">Eric Miraglia</a></td><td>185</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/andrew-wooldridge/">Andrew Wooldridge</a></td><td>89</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/derek-gathright/">Derek Gathright</a></td><td>62</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/jenny-donnelly/">Jenny Donnelly</a></td><td>38</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/luke-smith/">Luke Smith</a></td><td>36</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/ryan-grove/">Ryan Grove</a></td><td>20</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/tilo/">Tilo Mitra</a></td><td>19</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/eric-ferraiuolo/">Eric Ferraiuolo</a></td><td>17</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/john-lindal/">John Lindal</a></td><td>14</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/dav-glass/">Dav Glass</a></td><td>12</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/douglas-crockford/">Douglas Crockford</a></td><td>12</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/nate-koechley/">Nate Koechley</a></td><td>12</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/nicholas-c-zakas/">Nicholas C. Zakas</a></td><td>12</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/satyam/">Satyam</a></td><td>11</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/bill-scott/">Bill Scott</a></td><td>11</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/allen-rabinovich/">Allen Rabinovich</a></td><td>9</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/stoyan-stefanov/">Stoyan Stefanov</a></td><td>9</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/todd-kloots/">Todd Kloots</a></td><td>9</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/christian-crumlish/">Christian Crumlish</a></td><td>8</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/thierry-koblentz/">Thierry Koblentz</a></td><td>8</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/reid-burke/">Reid Burke</a></td><td>7</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/caridy-patino/">Caridy Patino</a></td><td>6</td></tr>
+            </tbody>
+        </table>
+        <table class="contributors-table">
+            <thead>
+                <tr><th>Author</th><th>Posts</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><a href="{{ site.baseUrl }}author/tenni-theurer/">Tenni Theurer</a></td><td>4</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/jack-slocum/">Jack Slocum</a></td><td>4</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/philip-tellis/">Philip Tellis</a></td><td>4</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/julien-lecomte/">Julien Lecomte</a></td><td>3</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/satyen-desai/">Satyen Desai</a></td><td>3</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/matt-snider/">Matt Snider</a></td><td>3</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/george-puckett/">George Puckett</a></td><td>3</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/gonzalo-cordero/">Gonzalo Cordero</a></td><td>3</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/matt-parker/">Matt Parker</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/clarence-leung/">Clarence Leung</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/nicholas-zakas/">Nicholas Zakas</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/christian-heilmann/">Christian Heilmann</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/steve-souders/">Steve Souders</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/carlo-zottmann/">Carlo Zottmann</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/chad-auld/">Chad Auld</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/scott-schiller/">Scott Schiller</a></td><td>2</td></tr>
+                <tr><td><a href="{{ site.baseUrl }}author/tom-hughes-croucher/">Tom Hughes-Croucher</a></td><td>2</td></tr>
+                <tr><td colspan="2" style="text-align:center;color:#666;font-style:italic;padding-top:1em;">+ 48 contributors with 1 post each</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</div>
